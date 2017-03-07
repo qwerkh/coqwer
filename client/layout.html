@@ -1,0 +1,53 @@
+<head>
+    <title>Navi Sample</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<template name="MainLayout">
+    {{>navbar}}
+    <div class="main" style="margin-top: 100px;">
+        {{#if currentUser}}
+            {{#if currentUser.profile.approved}}
+                {{#if notChoosenArea}}
+                    {{> co_home}}
+                {{else}}
+                    {{> Template.dynamic template=content}}
+                {{/if}}
+            {{else}}
+                {{> co_home}}
+            {{/if}}
+        {{else}}
+            <div class="ui container">
+                <div class="eight wide column">
+                    {{> atForm}}
+                </div>
+            </div>
+        {{/if}}
+        </div>
+    {{> meteorStatus position="bottom"}}
+</template>
+
+<template name="navbar">
+    <div class="ui top fixed inverted labeled huge menu">
+        <div class="ui container">
+            <a href="{{pathFor 'co.home'}}" class="{{isActiveRoute 'co.home'}} item">
+                <i class="home icon"></i>Home
+            </a>
+            <a href="{{pathFor 'co.area'}}" class="{{isActiveRoute 'co.area'}} item">
+                <i class="marker icon"></i>{{getAreaName}}
+            </a> {{#if currentUser}}
+            <div class="right menu">
+
+                <div class="ui dropdown item">
+                    {{currentUser.username}} <i class="dropdown icon"></i>
+                    <div class="menu">
+                        <a class="item signOut">Sign Out</a>
+                        <a class="item">Setting</a>
+                    </div>
+                </div>
+            </div>
+            {{/if}}
+        </div>
+    </div>
+  
+</template>

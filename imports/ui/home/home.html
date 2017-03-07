@@ -1,0 +1,17 @@
+<template name="co_home">
+    {{#if currentUser.profile.approved}} 
+        {{#if notChoosenArea}} 
+            {{> sample_area}} 
+        {{else}}
+           <h4>Hello From Home</h4>
+        {{/if}} 
+    {{else}}
+        <div class="container">
+            <div class="card">
+                <div class="card-content">
+                    <h5>Welcome {{currentUser.username}}. Ask you admin to approved! <i class="material-icons">lock</i></h5>
+                </div>
+            </div>
+        </div>
+    {{/if}}
+</template>

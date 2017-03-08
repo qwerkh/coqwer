@@ -3,7 +3,7 @@ import {CheckRoles} from '../../imports/api/methods/checkRoles';
 //import template js here
 import '../../imports/ui/home/home';
 import '../../client/layout';
-// import '../../imports/ui/user/userSetting';
+import '../../imports/ui/user/userSetting';
 import '../../imports/ui/notFound/notFound';
 import '../../imports/ui/area/area';
 
@@ -44,35 +44,35 @@ coSetting.route('/area', {
 
 
 
-//User
-// coSetting.route('/user-setting', {
-//     name: 'co.userSetting',
-//     action: function (query, params) {
-//         if (CheckRoles({roles: ['setting', 'super']})) {
-//             _Main('co_userSetting');
-//         } else {
-//             FlowRouter.go('co.home');
-//         }
-//     }
-// });
-// coSetting.route('/user-setting/new', {
-//     name: 'co.userAdd',
-//     action: function (query, params) {
-//         if (CheckRoles({roles: ['setting', 'super']})) {
+// User
+coSetting.route('/user-setting', {
+    name: 'co.userSetting',
+    action: function (query, params) {
+        if (CheckRoles({roles: ['setting', 'super']})) {
+            _Main('co_userSetting');
+        } else {
+            FlowRouter.go('co.home');
+        }
+    }
+});
+coSetting.route('/user-setting/new', {
+    name: 'co.userAdd',
+    action: function (query, params) {
+        if (CheckRoles({roles: ['setting', 'super']})) {
 
-//             _Main('co_userAdd');
-//         } else {
-//             FlowRouter.go('co.home')
-//         }
-//     }
-// });
-// coSetting.route('/user-setting/:userId/edit', {
-//     name: 'co.userSettingEdit',
-//     action: function (query, params) {
-//         if (CheckRoles({roles: ['setting', 'super']})) {
-//             _Main('co_userSettingEdit');
-//         } else {
-//             FlowRouter.go('co.home');
-//         }
-//     }
-// });
+            _Main('co_userAdd');
+        } else {
+            FlowRouter.go('co.home')
+        }
+    }
+});
+coSetting.route('/user-setting/:userId/edit', {
+    name: 'co.userSettingEdit',
+    action: function (query, params) {
+        if (CheckRoles({roles: ['setting', 'super']})) {
+            _Main('co_userSettingEdit');
+        } else {
+            FlowRouter.go('co.home');
+        }
+    }
+});

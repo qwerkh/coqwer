@@ -1,0 +1,122 @@
+<template name="co_userSetting">
+    <div class="ui container">
+        <div class="ui breadcrumb">
+            <a href="/">Home</a>
+            <div class="divider"> /</div>
+            <div class="active section">Users</div>
+        </div>
+        <h4 class="ui dividing header">User Setting</h4><a class="ui primary button" href="{{pathFor 'co.userAdd'}}">Add User</a>
+        {{> tabular table=dataTable selector=selector class="ui celled table"}}
+
+    </div>
+</template>
+<template name="co_userSettingOptions">
+    <!-- Dropdown Structure -->
+    <a class="remove cursor-pointer"><i class="material-icons">delete</i></a>
+</template>
+<template name="co_userAdd">
+    <div class="ui container animated fadeIn">
+        <div class="ui breadcrumb">
+            <a href="/">Home</a>
+            <div class="divider"> /</div>
+            <a href="{{pathFor 'co.userSetting'}}">Users</a>
+            <div class="divider"> /</div>
+            <div class="active section">Add User</div>
+        </div>
+        <h4 class="ui dividing header">Add User</h4>
+        {{#autoForm schema=schema id="co_userAdd" type="method" meteormethod="co.insertUser"
+                    singleMethodArgument=true}}
+            <div class="row">
+                <div class="field">
+                    {{> afQuickField name='username'}}
+                    {{> afQuickField name='email'}}
+                </div>
+                <div class="two fields">
+                    <div class="field">
+                        {{> afQuickField name='password' type="password"}}
+                    </div>
+                    <div class="field">
+                        {{> afQuickField name='confirmPassword' type="password"}}
+                    </div>
+                </div>
+                <div class="field">
+                    {{> afQuickField name='roles' size=10}}
+                    <div class="field">
+                        {{> afQuickField name='rolesBranch' search=true options=geoProvinces}}
+                    </div>
+                    <div class="field">
+                        {{> afQuickField name='rolesArea' options=geoArea}}
+                    </div>
+
+                    <div class="col s6">
+                        {{> afQuickField name='profile.status'}}
+                        {{> afQuickField name='areaId' value=area type="hidden"}}
+                        {{> afQuickField name='profile.approved'}}
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                {{>co_preloader}}
+                {{>co_actionAdd}}
+            </div>
+        {{/autoForm}}
+    </div>
+</template>
+<template name="co_userSettingEdit">
+    {{#if subscriptionsReady}}
+        <div class="container animated fadeIn">
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-title">
+                        <i class="material-icons">build</i> Edit User
+                        <span class="right"><a href="/co-setting/user-setting"><i
+                                class="material-icons right">arrow_back</i></a></span>
+                    </div>
+                    {{#autoForm schema=schema id="co_userEdit" doc=data type="method-update"
+                                meteormethod="co.updateUser" singleMethodArgument=true}}
+                        <div class="row">
+                            <div class="col s6">
+                                {{> afQuickField name='username'}}
+                                {{> afQuickField name='email'}}
+                                {{> afQuickField name='password' type="password"}}
+                                {{> afQuickField name='confirmPassword' type="password"}}
+                            </div>
+                            <div class="col s6">
+                                <label for="">Roles</label>
+                                {{> afQuickField name='roles' size=10}}
+                                <div class="row">
+                                    <div class="col s12">
+                                        <label for="">Roles Branch</label>
+                                        {{> afQuickField name='rolesBranch' label=false options=geoProvinces}}
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col s12">
+                                        <label for="">Roles Area</label>
+                                        {{> afQuickField name='rolesArea' label=false options=geoArea}}
+                                    </div>
+
+                                </div>
+                                <div class="row">
+                                    <div class="col s6">
+                                        {{> afQuickField name='profile.status'}}
+                                        {{> afQuickField name='areaId' value=area type="hidden"}}
+                                        {{> afQuickField name='profile.approved'}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            {{>co_preloader}}
+                            {{>co_actionEdit}}
+                        </div>
+                    {{/autoForm}}
+                </div>
+            </div>
+        </div>
+    {{else}}
+        <div class="progress ">
+            <div class="indeterminate blue darken-1 "></div>
+        </div>
+    {{/if}}
+</template>

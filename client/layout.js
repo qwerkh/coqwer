@@ -4,16 +4,27 @@ import {ReactiveVar} from 'meteor/reactive-var';
 import 'lodash';
 import 'meteor/tap:i18n-ui';
 import '../imports/ui/area/area';
+import '../imports/ui/preloader/preloader';
+import '../imports/ui/action/action';
+import {sAlert} from 'meteor/juliancwirko:s-alert';
+import moment from 'moment';
 //Page
 import './layout.html';
 Template.navbar.onRendered(function () {
-    $(".dropdown").dropdown();
-    $('#settings-dropdown').dropdown();
+    this.autorun(() => {
+        if (Meteor.userId()) {
+            setTimeout(function () {
+                $(".dropdown").dropdown();
+                $('#settings-dropdown').dropdown();
+            }, 300)
+        }
+    });
 });
 
 Template.navbar.events({
     'click .logout'(event, instance){
         Session.set('area', undefined);
+        Session.set('areaName', undefined);
         Meteor.logout();
         FlowRouter.go('co.home');
     }

@@ -34,3 +34,8 @@ fabienb4:autoform-semantic-ui
 zimme:active-route
 kadira:flow-router
 arillo:flow-router-helpers
+mdg:validated-method
+alexgreg:meteor-tabular-semantic
+risul:moment-timezone
+cottz:flow-router-query
+juliancwirko:s-alert

@@ -5,7 +5,7 @@
 
 <template name="MainLayout">
     {{>navbar}}
-    <div class="main" style="margin-top: 100px;">
+    <div class="main" style="margin-top: 70px;">
         {{#if currentUser}}
             {{#if currentUser.profile.approved}}
                 {{#if notChoosenArea}}
@@ -41,8 +41,8 @@
                 <div class="ui dropdown item">
                     {{currentUser.username}} <i class="dropdown icon"></i>
                     <div class="menu">
-                        <a class="item signOut">Sign Out</a>
-                        <a class="item">Setting</a>
+                        <a class="item logout">Sign Out</a>
+                        <a class="item" href="{{pathFor 'co.userSetting'}}">Setting</a>
                     </div>
                 </div>
             </div>

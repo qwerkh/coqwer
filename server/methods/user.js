@@ -24,5 +24,8 @@ Meteor.methods({
             return user;
         }
         return []
+    },
+    removeUser(_id){
+        Meteor.users.remove(_id);
     }
 });

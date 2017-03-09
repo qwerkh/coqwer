@@ -1,4 +1,5 @@
 <template name="co_userSetting">
+    {{> deleteModal}}
     <div class="ui container">
         <div class="ui breadcrumb">
             <a href="/">Home</a>
@@ -6,7 +7,7 @@
             <div class="active section">Users</div>
         </div>
         <h4 class="ui dividing header">User Setting</h4><a class="ui primary button" href="{{pathFor 'co.userAdd'}}">Add User</a>
-        {{> tabular table=dataTable selector=selector class="ui celled table"}}
+        {{> tabular table=dataTable selector=selector class="cursor-pointer ui celled table"}}
 
     </div>
 </template>
@@ -64,22 +65,27 @@
 </template>
 <template name="co_userSettingEdit">
     {{#if subscriptionsReady}}
-        <div class="container animated fadeIn">
-            <div class="card">
-                <div class="card-content">
-                    <div class="card-title">
-                        <i class="material-icons">build</i> Edit User
-                        <span class="right"><a href="/co-setting/user-setting"><i
-                                class="material-icons right">arrow_back</i></a></span>
-                    </div>
+        <div class="ui container animated fadeIn">
+            <div class="ui breadcrumb">
+                <a href="/">Home</a>
+                <div class="divider"> /</div>
+                <a href="{{pathFor 'co.userSetting'}}">Users</a>
+                <div class="divider"> /</div>
+                <div class="active section">Edit User</div>
+            </div>
+                    <h4 class="ui dividing header"><i class="material-icons">build</i> Edit User </h4> 
                     {{#autoForm schema=schema id="co_userEdit" doc=data type="method-update"
                                 meteormethod="co.updateUser" singleMethodArgument=true}}
                         <div class="row">
-                            <div class="col s6">
                                 {{> afQuickField name='username'}}
                                 {{> afQuickField name='email'}}
-                                {{> afQuickField name='password' type="password"}}
-                                {{> afQuickField name='confirmPassword' type="password"}}
+                             <div class="two fields">
+                                 <div class="field">
+                                    {{> afQuickField name='password' type="password"}}
+                                 </div>
+                                 <div class="field">
+                                    {{> afQuickField name='confirmPassword' type="password"}}
+                                 </div>
                             </div>
                             <div class="col s6">
                                 <label for="">Roles</label>
@@ -111,12 +117,27 @@
                             {{>co_actionEdit}}
                         </div>
                     {{/autoForm}}
-                </div>
-            </div>
         </div>
     {{else}}
-        <div class="progress ">
-            <div class="indeterminate blue darken-1 "></div>
-        </div>
+         <div class="ui active loader"></div>
     {{/if}}
+</template>
+
+<template name="deleteModal">
+    <div class="delete-user ui basic modal">
+        <div class="ui icon header">
+            <i class="archive icon"></i> Delete Users
+        </div>
+        <div class="content">
+            <p></p>
+        </div>
+        <div class="actions">
+            <div class="ui red basic cancel inverted button">
+                <i class="remove icon"></i> No
+            </div>
+            <div class="ui green ok inverted button">
+                <i class="checkmark icon"></i> Yes
+            </div>
+        </div>
+    </div>
 </template>

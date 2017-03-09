@@ -1,10 +1,13 @@
 import {Template} from 'meteor/templating';
 import {Meteor} from 'meteor/meteor';
-Meteor.isClient && require('../../imports/ui/user/userSetting.html');
+Meteor.isClient && require('../../imports/ui/action/action.html');
 export const UserSettingTabular = new Tabular.Table({
     name: "co.userSettingTabular",
     collection: Meteor.users,
     responsive: true,
+    columnDefs: [
+        {"width": "10px", "targets": 4}
+    ],
     columns: [
         {data: "username", title: "Username"},
         {
@@ -24,24 +27,10 @@ export const UserSettingTabular = new Tabular.Table({
                 return `<span class="chip light-green accent-3 white-text">${val}</span>`
             }
         },
-        // {data: "copies", title: "Copies Available"},
-        // {
-        //     data: "lastCheckedOut",
-        //     title: "Last Checkout",
-        //     render: function (val, type, doc) {
-        //         if (val instanceof Date) {
-        //             return moment(val).calendar();
-        //         } else {
-        //             return "Never";
-        //         }
-        //     }
-        // },
         {data: "summary", title: "Summary"},
-        // {
-        //     tmpl: Meteor.isClient && Template.co_action
-        // },
         {
-            extraFields: ["email"]
+            tmpl: Meteor.isClient && Template.co_action
         }
-    ]
+    ],
+    extraFields: ["email"]
 });

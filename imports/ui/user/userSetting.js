@@ -25,28 +25,40 @@ index.events({
         let rowData = dataTalbe.row(event.currentTarget).data();
         FlowRouter.go(`/co-setting/user-setting/${rowData._id}/edit`)
     },
+    'click .edit'(event, instance) {
+        FlowRouter.go(`/co-setting/user-setting/${this._id}/edit`)
+    },
     'click .remove'(event, instance){
-        var self = this;
-        alertify.confirm(
-            "Remove User",
-            "Are you sure to delete [" + self.username + "]?",
-            function () {
-                if (Meteor.userId() == self._id) {
-                    Materialize.toast("You can not remove your own account while logging in", 3000, 'red rounded')
-                } else {
-                    Meteor.call('co.removeUser', {userId: self._id}, function (error, result) {
-                        if (error) {
-                            // alertify.error(error.message);
-                            Materialize.toast(error.message, 3000, 'red rounded');
-                        } else {
-                            // alertify.success("Success");
-                            Materialize.toast('Successful', 3000, 'lime accent-4 rounded');
-                        }
-                    })
+        let data = this;
+        $('.delete-user.ui.basic.modal')
+            .modal({
+                onApprove: function(){
+                    Meteor.call('removeUser', data._id);
                 }
-            },
-            null
-        );
+            })
+            .modal('show')
+            
+        // var self = this;
+        // alertify.confirm(
+        //     "Remove User",
+        //     "Are you sure to delete [" + self.username + "]?",
+        //     function () {
+        //         if (Meteor.userId() == self._id) {
+        //             Materialize.toast("You can not remove your own account while logging in", 3000, 'red rounded')
+        //         } else {
+        //             Meteor.call('co.removeUser', {userId: self._id}, function (error, result) {
+        //                 if (error) {
+        //                     // alertify.error(error.message);
+        //                     Materialize.toast(error.message, 3000, 'red rounded');
+        //                 } else {
+        //                     // alertify.success("Success");
+        //                     Materialize.toast('Successful', 3000, 'lime accent-4 rounded');
+        //                 }
+        //             })
+        //         }
+        //     },
+        //     null
+        // );
     }
 });
 
@@ -140,15 +152,6 @@ editTmpl.onCreated(function () {
 
     });
 });
-editTmpl.onRendered(function () {
-    this.autorun(() => {
-        if (this.requestMethodReady.get()) {
-            Meteor.setTimeout(function () {
-                $('[name="rolesBranch"]').select2();
-            }, 500);
-        }
-    });
-});
 editTmpl.helpers({
     subscriptionsReady() {
         let instance = Template.instance();
@@ -185,26 +188,26 @@ editTmpl.events({
 AutoForm.hooks({
     co_userEdit: {
         onSuccess(formType, result){
-            sAlert.success('Updated successfully');
+            alertify.success('Updated successfully');
             FlowRouter.query.unset();
             FlowRouter.go('co.userSetting')
         },
         onError(formType, err){
             FlowRouter.query.unset();
-            sAlert.error(err.message);
+            alertify.error(err.message);
         }
     },
     co_userAdd: {
         onSuccess(formType, result){
             Meteor.setTimeout(function () {
                 FlowRouter.query.unset();
-                sAlert.success('Successfully Created');
+                alertify.success('Successfully Created');
             }, 500);
         },
         onError(formType, err){
             Meteor.setTimeout(function () {
                 FlowRouter.query.unset();
-                sAlert.error(err.message);
+                alertify.error(err.message);
             }, 500);
         }
     }

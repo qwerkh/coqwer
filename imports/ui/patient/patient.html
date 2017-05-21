@@ -1,0 +1,120 @@
+<template name="co_patient">
+    {{> deleteModal}}
+    <div class="ui container">
+        <div class="ui two column">
+            <div class="column">
+                <div class="ui breadcrumb">
+                    <a href="/">Home</a>
+                    <div class="divider"> /</div>
+                    <div class="active section">Patient</div>
+                </div>
+            </div>
+            <div class="column">
+                <h4 class="ui" style="text-align: right">Patient</h4>
+            </div>
+        </div>
+        <a class="ui primary button" style="margin-bottom: 2px" href="{{pathFor 'co.patientAdd'}}">Add Patient</a>
+
+        {{> tabular table=dataTable selector=selector class="cursor-pointer ui celled table"}}
+
+    </div>
+</template>
+
+<template name="co_patientAdd">
+    <div class="ui form container animated fadeIn">
+        <div class="ui breadcrumb">
+            <a href="/">Home</a>
+            <div class="divider"> /</div>
+            <a href="{{pathFor 'co.patient'}}">Patient</a>
+            <div class="divider"> /</div>
+            <div class="active section">Add Patient</div>
+        </div>
+        <h4 class="ui dividing header">Add Patient</h4>
+        {{#autoForm collection=collection id="co_patientAdd" type="insert"}}
+            <div class="row">
+                <div class="two fields">
+                    <div class="field">
+
+                        {{> afQuickField name='khName'}}
+                        {{> afQuickField name='enName'}}
+                        {{> afQuickField name='nickName'}}
+                        {{> afQuickField name='gender'}}
+                        {{> afQuickField name='address'}}
+                        {{> co_actionAdd}}
+
+                    </div>
+                    <div class="field">
+
+                        {{> afQuickField name='dob' class="month year"}}
+                        {{> afQuickField name='phoneNumber'}}
+                        {{> afQuickField name='picture'}}
+
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="field">
+                    {{> co_preloader}}
+                </div>
+            </div>
+        {{/autoForm}}
+    </div>
+</template>
+
+<template name="co_patientEdit">
+    <div class="ui container animated fadeIn">
+        <div class="ui breadcrumb">
+            <a href="/">Home</a>
+            <div class="divider"> /</div>
+            <a href="{{pathFor 'co.patient'}}">Patient</a>
+            <div class="divider"> /</div>
+            <div class="active section">Edit Patient</div>
+        </div>
+        <h4 class="ui dividing header">Edit Patient</h4>
+        {{#if subscriptionsReady}}
+            {{#autoForm collection=collection id="co_patientEdit" type="update" doc=data}}
+                <div class="row">
+                    <div class="two fields">
+                        <div class="field">
+
+                            {{> afQuickField name='khName'}}
+                            {{> afQuickField name='enName'}}
+                            {{> afQuickField name='nickName'}}
+                            {{> afQuickField name='gender'}}
+                            {{> afQuickField name='address'}}
+                            {{> co_actionEdit}}
+
+                        </div>
+                        <div class="field">
+
+                            {{> afQuickField name='dob'}}
+                            {{> afQuickField name='phoneNumber'}}
+                            {{> afQuickField name='picture'}}
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col s11">
+                        {{> co_preloader}}
+                    </div>
+                </div>
+            {{/autoForm}}
+
+        {{else}}
+            <div class="progress ">
+                <div class="indeterminate blue darken-1 "></div>
+            </div>
+        {{/if}}
+
+    </div>
+</template>
+
+<template name="_link">
+    <a href="{{_downloadRoute}}/{{_collectionName}}/{{_id}}/original/{{_id}}{{extension}}?download=true"
+       download="{{name}}">{{name}}</a>
+</template>

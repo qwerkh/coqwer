@@ -1,3 +1,4 @@
+import {Co_Company} from '../../collection/company';
 import './area.html';
 let indexTmpl = Template.sample_area;
 //import schema
@@ -14,6 +15,8 @@ indexTmpl.onCreated(function () {
             }
         });
     });
+
+
     this.autorun(() => {
         let provinceId = this.provinceId.get();
         let userId = Meteor.userId();
@@ -26,6 +29,14 @@ indexTmpl.onCreated(function () {
             });
         }
     });
+
+
+    Meteor.call('getCompany', function (err, company) {
+        if (company) {
+            Session.set('baseCurrency', company.baseCurrency);
+        }
+    })
+
 });
 
 indexTmpl.helpers({
@@ -46,7 +57,6 @@ indexTmpl.helpers({
     },
     district(){
         let district = Session.get('area');
-        debugger
     }
 });
 indexTmpl.events({
@@ -56,7 +66,7 @@ indexTmpl.events({
             instance.provinceId.set(currentValue);
         }
     },
-    'click .sumitArea'(event,instance){
+    'click .sumitArea'(event, instance){
         $('#area').submit();
     }
 });
@@ -65,16 +75,16 @@ AutoForm.hooks({
         onSubmit(doc) {
             if (doc.area != '') {
                 Session.set('area', doc.rolesArea);
-                Meteor.call("findDistrict", doc.rolesArea,function(err,result){
-                    if(!err){
-                        Session.set('areaName',result);
-                    }else{
+                Meteor.call("findDistrict", doc.rolesArea, function (err, result) {
+                    if (!err) {
+                        Session.set('areaName', result);
+                    } else {
                         console.log(err.message);
                     }
                 });
-                
+
             }
-            if(FlowRouter.current().path == "/co-setting/area"){
+            if (FlowRouter.current().path == "/co-setting/area") {
                 FlowRouter.go('/');
             }
             return false;

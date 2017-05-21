@@ -1,0 +1,126 @@
+<template name="co_registerService">
+    <div class="ui container animated fadeIn">
+        {{#autoForm schema=schemaService id="co_registerService"}}
+            <div class="row">
+                <table class="ui celled striped table">
+                    <thead>
+                    <tr>
+                        <th colspan="4">
+                            {{> afQuickField name='serviceId' label=false placeholder="Service" options=serviceOption search=true}}
+                        </th>
+                        <th>
+                            {{> afQuickField name='totalService' value=totalService label=false readonly=true}}
+                        </th>
+                        <th>: Total</th>
+                    </tr>
+                    </thead>
+
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Qty</th>
+                        <th colspan="2">Amount</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {{#each serviceList}}
+                        <tr class="service-row">
+                            <td>{{_id}}</td>
+                            <td>{{name}}</td>
+                            <td>{{> afQuickField name='price' label=false value=price class="small"}}</td>
+                            <td>{{> afQuickField name='qty' label=false value=qty class="small"}}</td>
+                            <td>
+
+                                {{> afFieldInput name='amount' label=false value=amount class="small" readonly=true}}
+
+                            </td>
+                            <td>
+                                <a style="float: right;" class="ui red button small delete-service"><i
+                                        class="remove circle icon"></i></a>
+                            </td>
+                        </tr>
+                    {{/each}}
+
+                    </tbody>
+
+                    <thead>
+                    <tr>
+                        <th colspan="3" style="text-align: right">Discount :</th>
+                        <th>{{> afQuickField name='discountServiceType' value=discountServiceType search=true label=false}}</th>
+                        <th colspan="2">{{> afQuickField name='discountService' value=discountService label=false}}</th>
+                    </tr>
+                    <tr>
+                        <th colspan="4" style="text-align: right">Net SubTotal Service :</th>
+                        <th colspan="2">{{> afQuickField name='netTotalService' value=netTotalService label=false  readonly=true}}</th>
+                    </tr>
+                    </thead>
+                </table>
+            </div>
+        {{/autoForm}}
+
+    </div>
+</template>
+
+
+<template name="co_registerMedicine">
+    <div class="ui container animated fadeIn">
+        {{#autoForm schema=schemaMedicine id="co_registerMedicine"}}
+            <div class="row">
+                <table class="ui celled striped table">
+                    <thead>
+                    <tr>
+                        <th colspan="4">
+                            {{> afQuickField name='medicineId' label=false placeholder="Medicine" options=medicineOption search=true}}
+                        </th>
+                        <th>
+                            {{> afQuickField name='totalMedicine' value=totalMedicine label=false readonly=true}}
+                        </th>
+                        <th>: Total</th>
+                    </tr>
+                    </thead>
+
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Qty</th>
+                        <th colspan="2">Amount</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {{#each medicineList}}
+                        <tr class="medicine-row">
+                            <td>{{_id}}</td>
+                            <td>{{name}}</td>
+                            <td>{{> afQuickField name='price' label=false value=price class="small"}}</td>
+                            <td>{{> afQuickField name='qty' label=false value=qty class="small"}}</td>
+                            <td>{{> afQuickField name='amount' label=false value=amount class="small" readonly=true class="loading"}}</td>
+                            <td>
+                                <a style="float: right;" class="ui red button small delete-medicine"><i
+                                        class="remove circle icon"></i></a>
+                            </td>
+                        </tr>
+                    {{/each}}
+
+                    </tbody>
+
+                    <thead>
+                    <tr>
+                        <th colspan="3" style="text-align: right">Discount :</th>
+                        <th>{{> afQuickField name='discountMedicineType' value=discountMedicineType search=true label=false}}</th>
+                        <th colspan="2">{{> afQuickField name='discountMedicine' value=discountMedicine label=false}}</th>
+                    </tr>
+                    <tr>
+                        <th colspan="4" style="text-align: right">Net SubTotal Medicine :</th>
+                        <th colspan="2">{{> afQuickField name='netTotalMedicine' value=netTotalMedicine label=false  readonly=true}}</th>
+                    </tr>
+                    </thead>
+                </table>
+            </div>
+        {{/autoForm}}
+
+    </div>
+</template>

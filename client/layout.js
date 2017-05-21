@@ -8,17 +8,29 @@ import '../imports/ui/preloader/preloader';
 import '../imports/ui/action/action';
 import {sAlert} from 'meteor/juliancwirko:s-alert';
 import moment from 'moment';
+
+import {Co_Company} from '../imports/collection/company'
+
 //Page
 import './layout.html';
 Template.navbar.onRendered(function () {
+
+    Meteor.call('getCompany', function (err, company) {
+        if (company) {
+            Session.set('baseCurrency', company.baseCurrency);
+        }
+    })
+
     this.autorun(() => {
         if (Meteor.userId()) {
+
             setTimeout(function () {
                 $(".dropdown").dropdown();
                 $('#settings-dropdown').dropdown();
             }, 300)
         }
     });
+
 });
 
 Template.navbar.events({

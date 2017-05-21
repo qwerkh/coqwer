@@ -1,6 +1,7 @@
 <template name="co_userSetting">
     {{> deleteModal}}
     <div class="ui container">
+
         <div class="ui breadcrumb">
             <a href="/">Home</a>
             <div class="divider"> /</div>
@@ -8,7 +9,6 @@
         </div>
         <h4 class="ui dividing header">User Setting</h4><a class="ui primary button" href="{{pathFor 'co.userAdd'}}">Add User</a>
         {{> tabular table=dataTable selector=selector class="cursor-pointer ui celled table"}}
-
     </div>
 </template>
 <template name="co_userSettingOptions">
@@ -43,10 +43,10 @@
                 <div class="field">
                     {{> afQuickField name='roles' size=10}}
                     <div class="field">
-                        {{> afQuickField name='rolesBranch' search=true options=geoProvinces}}
+                        {{> afQuickField name='rolesBranch' placeholder="Select One" search=true options=geoProvinces}}
                     </div>
                     <div class="field">
-                        {{> afQuickField name='rolesArea' options=geoArea}}
+                        {{> afQuickField name='rolesArea' placeholder="Select One" options=geoArea}}
                     </div>
 
                     <div class="col s6">

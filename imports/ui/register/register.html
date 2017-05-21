@@ -1,0 +1,410 @@
+<template name="co_register">
+    {{> deleteModal}}
+    <div class="ui container">
+        <div class="ui two column">
+            <div class="column">
+                <div class="ui breadcrumb">
+                    <a href="/">Home</a>
+                    <div class="divider"> /</div>
+                    <div class="active section">Register</div>
+                </div>
+            </div>
+            <div class="column">
+                <h4 class="ui" style="text-align: right">Register</h4>
+            </div>
+        </div>
+        <a class="ui primary button add" style="margin-bottom: 2px" href="{{pathFor 'co.registerAdd'}}">Add Register</a>
+
+        {{> tabular table=dataTable selector=selector class="cursor-pointer ui celled table"}}
+
+    </div>
+</template>
+
+
+<template name="co_registerAdd">
+    <div class="ui animated fadeIn" style="margin-bottom: 220px;padding: 15px;">
+
+        <!--<div class="ui breadcrumb">
+            <a href="/">Home</a>
+            <div class="divider"> /</div>
+            <a href="{{pathFor 'co.register'}}">Register</a>
+            <div class="divider"> /</div>
+            <div class="active section">Add Register</div>
+        </div>
+        <h4 class="ui dividing header">Add Register</h4>-->
+        {{#autoForm collection=collection id="co_registerAdd" type="insert"}}
+            <div class="row">
+                <div class="four fields">
+                    <div class="twelve wide field">
+
+                        <div class="ui top blue inverted attached tabular menu">
+                            <a class="item active" data-tab="service">Services</a>
+                            <a class="item" data-tab="medicine">Medicines</a>
+                        </div>
+                        <div class="ui bottom attached tab segment active" data-tab="service">
+                            {{> co_registerService}}
+                        </div>
+                        <div class="ui bottom attached tab segment" data-tab="medicine">
+                            {{> co_registerMedicine}}
+                        </div>
+                    </div>
+
+                    <div class="four wide field">
+
+                        {{#with result}}
+                            <div class="ui segments plan principal">
+                                <div class="ui top attached segment violet inverted plan-title">
+                                    <span class="plan-ribbon red">{{netDiscount}}</span>
+                                    <span class="ui header">Amount</span>
+
+                                </div>
+                                <div class="ui  attached segment feature">
+                                    <div class="amount">{{netAmount}}</div>
+                                </div>
+                            </div>
+                        {{/with}}
+                        {{> afQuickField name='netTotal' value=netTotal label=false hidden=true}}
+                        {{> afQuickField name='patientId' placeholder="Select One" options=patientOption search=true}}
+
+                        {{> afQuickField name='registerDate'}}
+
+                        {{> afQuickField name='voucherId' value=voucherId}}
+                        {{> afQuickField name='balance' value=balance label=false hidden=true}}
+
+
+                        {{> co_actionAdd}}
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col s11 floated right">
+                        {{> co_preloader}}
+                    </div>
+                </div>
+            </div>
+
+            <div class="ui large bottom fixed grid transparent menu form-page payment-form">
+
+                <div class="sixteen wide column row">
+                    {{#with returnAmount}}
+                        <div class="four wide column row">
+                            <div class="sixteen wide column">
+                                <div class="ui left action fluid input">
+                                    <a class="ui teal labeled icon button">
+                                        <i class="dollar icon"></i>Return USD
+                                    </a>
+                                    {{> afFieldInput name='returnAmountUSD' value=returnAmountDollar label=false readonly=true}}
+                                </div>
+                            </div>
+                            <br>
+                            <div class="sixteen wide column">
+                                <div class="ui left action fluid input">
+                                    <a class="ui teal labeled icon button">
+                                        <i class="icon"
+                                           style="padding-top: 12px;"><b><span>R</span>
+                                        </b></i>Return KHR
+                                    </a>
+                                    {{> afFieldInput name='returnAmountKHR' value=returnAmountRiel label=false readonly=true}}
+                                </div>
+                            </div>
+                            <br>
+                            <div class="sixteen wide column">
+                                <div class="ui left action fluid input">
+                                    <a class="ui teal labeled icon button">
+                                        <i class="bitcoin icon"></i>Return THB
+                                    </a>
+                                    {{> afFieldInput name='returnAmountTHB' value=returnAmountBaht label=false readonly=true}}
+                                </div>
+                            </div>
+                        </div>
+                    {{/with}}
+                    <div class="six wide column row ui grid">
+                        <div class="three wide column">
+
+                        </div>
+                        <div class="ten wide column">
+                            <h2 class="ui blue header aligned center">កន្លែងបង់ប្រាក់</h2>
+
+                        </div>
+                        <div class="three wide column">
+
+                        </div>
+                    </div>
+                    <div class="six wide column row">
+                        {{#with remainAmount}}
+                            <div class="sixteen wide column row">
+
+                                <div class="ui action fluid input">
+                                    <a class="ui teal left labeled icon button">
+                                        <i class="dollar icon"></i>Paid USD
+                                    </a>
+                                    {{> afFieldInput name='paidAmountUSD'  label=false}}
+                                    <a class="ui teal right labeled icon button right floated">
+                                        <i class="dollar icon"></i>{{remainAmountUSD}}
+                                    </a>
+
+                                </div>
+
+                            </div>
+                            <br>
+                            <div class="sixteen wide column row">
+                                <div class="ui left action fluid input">
+                                    <a class="ui teal labeled icon button">
+                                        <i class="icon"
+                                           style="padding-top: 12px;"><b><span>R</span>
+                                        </b></i>Paid KHR
+                                    </a>
+                                    {{> afFieldInput name='paidAmountKHR'  label=false}}
+                                    <a class="ui teal right labeled icon button right floated">
+                                        <i class="icon"
+                                           style="padding-top: 14px;"><b><span>R</span>
+                                        </b></i>{{remainAmountKHR}}
+                                    </a>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="sixteen wide column row">
+                                <div class="ui left action fluid input">
+                                    <a class="ui teal labeled icon button">
+                                        <i class="bitcoin icon"></i>Paid THB
+                                    </a>
+                                    {{> afFieldInput name='paidAmountTHB'  label=false}}
+                                    <a class="ui teal right labeled icon button right floated">
+                                        <i class="bitcoin icon"></i>{{remainAmountTHB}}
+                                    </a>
+                                </div>
+                            </div>
+                        {{/with}}
+                    </div>
+                </div>
+            </div>
+        {{/autoForm}}
+    </div>
+</template>
+
+<template name="co_registerEdit">
+    <div class="ui animated fadeIn" style="margin-bottom: 220px;padding: 15px;">
+
+        <!--<div class="ui breadcrumb">
+            <a href="/">Home</a>
+            <div class="divider"> /</div>
+            <a href="{{pathFor 'co.register'}}">Register</a>
+            <div class="divider"> /</div>
+            <div class="active section">Edit Register</div>
+        </div>
+        <h4 class="ui dividing header">Edit Register</h4>-->
+
+
+        {{#autoForm collection=collection id="co_registerEdit" type="update" doc=data}}
+            <div class="row">
+                <div class="four fields">
+                    <div class="twelve wide field">
+
+                        <div class="ui top blue inverted attached tabular menu">
+                            <a class="item active" data-tab="service">Services</a>
+                            <a class="item" data-tab="medicine">Medicines</a>
+                        </div>
+                        <div class="ui bottom attached tab segment active" data-tab="service">
+                            {{> co_registerService}}
+                        </div>
+                        <div class="ui bottom attached tab segment" data-tab="medicine">
+                            {{> co_registerMedicine}}
+                        </div>
+                    </div>
+
+                    <div class="four wide field">
+                        {{#with result}}
+                            <div class="ui segments plan principal">
+                                <div class="ui top attached segment violet inverted plan-title">
+                                    <span class="plan-ribbon red">{{netDiscount}}</span>
+                                    <span class="ui header">Amount</span>
+
+                                </div>
+                                <div class="ui  attached segment feature">
+                                    <div class="amount">{{netAmount}}</div>
+                                </div>
+                                {{> afQuickField name='netTotal' value=netTotal label=false hidden=true}}
+                            </div>
+                        {{/with}}
+                        {{> afQuickField name='balance' value=balance label=false hidden=true}}
+                        {{> afQuickField name='patientId' placeholder="Select One" options=patientOption search=true}}
+
+                        {{> afQuickField name='registerDate'}}
+
+                        {{> afQuickField name='voucherId'}}
+
+
+                        {{> co_actionAdd}}
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col s11 floated right">
+                        {{> co_preloader}}
+                    </div>
+                </div>
+            </div>
+
+            <div class="ui large bottom fixed grid transparent menu form-page payment-form">
+
+                <div class="sixteen wide column row">
+                    {{#with returnAmount}}
+                        <div class="four wide column row">
+                            <div class="sixteen wide column">
+                                <div class="ui left action fluid input">
+                                    <a class="ui teal labeled icon button">
+                                        <i class="dollar icon"></i>Return USD
+                                    </a>
+                                    {{> afFieldInput name='returnAmountUSD' value=returnAmountDollar label=false readonly=true}}
+                                </div>
+                            </div>
+                            <br>
+                            <div class="sixteen wide column">
+                                <div class="ui left action fluid input">
+                                    <a class="ui teal labeled icon button">
+                                        <i class="icon"
+                                           style="padding-top: 12px;"><b><span>R</span>
+                                        </b></i>Return KHR
+                                    </a>
+                                    {{> afFieldInput name='returnAmountKHR' value=returnAmountRiel label=false readonly=true}}
+                                </div>
+                            </div>
+                            <br>
+                            <div class="sixteen wide column">
+                                <div class="ui left action fluid input">
+                                    <a class="ui teal labeled icon button">
+                                        <i class="bitcoin icon"></i>Return THB
+                                    </a>
+                                    {{> afFieldInput name='returnAmountTHB' value=returnAmountBaht label=false readonly=true}}
+                                </div>
+                            </div>
+                        </div>
+                    {{/with}}
+                    <div class="six wide column row ui grid">
+                        <div class="three wide column">
+
+                        </div>
+                        <div class="ten wide column">
+                            <!--{{#with result}}
+                                <div class="ui segments plan principal">
+                                    <div class="ui top attached segment violet inverted plan-title">
+                                        <span class="plan-ribbon red">{{netDiscount}}</span>
+                                        <span class="ui header">Amount</span>
+
+                                    </div>
+                                    <div class="ui  attached segment feature">
+                                        <div class="amount">{{netAmount}}</div>
+                                    </div>
+                                    {{> afQuickField name='netTotal' value=netTotal label=false hidden=true}}
+                                </div>
+                            {{/with}}
+                                {{> afQuickField name='balance' value=balance label=false hidden=true}}-->
+                        </div>
+                        <div class="three wide column">
+
+                        </div>
+                    </div>
+                    <div class="six wide column row">
+                        {{#with remainAmount}}
+                            <div class="sixteen wide column row">
+
+                                <div class="ui action fluid input">
+                                    <a class="ui teal left labeled icon button">
+                                        <i class="dollar icon"></i>Paid USD
+                                    </a>
+                                    {{> afFieldInput name='paidAmountUSD'  label=false}}
+                                    <a class="ui teal right labeled icon button right floated">
+                                        <i class="dollar icon"></i>{{remainAmountUSD}}
+                                    </a>
+
+                                </div>
+
+                            </div>
+                            <br>
+                            <div class="sixteen wide column row">
+                                <div class="ui left action fluid input">
+                                    <a class="ui teal labeled icon button">
+                                        <i class="icon"
+                                           style="padding-top: 12px;"><b><span>R</span>
+                                        </b></i>Paid KHR
+                                    </a>
+                                    {{> afFieldInput name='paidAmountKHR'  label=false}}
+                                    <a class="ui teal right labeled icon button right floated">
+                                        <i class="icon"
+                                           style="padding-top: 14px;"><b><span>R</span>
+                                        </b></i>{{remainAmountKHR}}
+                                    </a>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="sixteen wide column row">
+                                <div class="ui left action fluid input">
+                                    <a class="ui teal labeled icon button">
+                                        <i class="bitcoin icon"></i>Paid THB
+                                    </a>
+                                    {{> afFieldInput name='paidAmountTHB'  label=false}}
+                                    <a class="ui teal right labeled icon button right floated">
+                                        <i class="bitcoin icon"></i>{{remainAmountTHB}}
+                                    </a>
+                                </div>
+                            </div>
+                        {{/with}}
+                    </div>
+                </div>
+            </div>
+
+
+            <!--<div class="row">
+                <div class="two fields">
+                    <div class="field">
+                        {{> afQuickField name='patientId' placeholder="Select One" options=patientOption search=true}}
+                    </div>
+                    <div class="field">
+                        {{> afQuickField name='registerDate'}}
+                    </div>
+                    <div class="field">
+                        <div class="ui segment inverted greenli hiddenui register-total" style="margin:-20px 0 0 0">
+                            <div class="ui one statistics inverted">
+                                <div class="statistic">
+                                    <div class="label">
+                                        Amount
+                                    </div>
+
+                                    {{> afQuickField name='total' value=netTotal label=false readonly=true}}
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="ui top attached tabular menu">
+                    <a class="item active" data-tab="service">Services</a>
+                    <a class="item" data-tab="medicine">Medicines</a>
+                </div>
+                <div class="ui bottom attached tab segment active" data-tab="service">
+                    {{> co_registerService}}
+
+                </div>
+                <div class="ui bottom attached tab segment" data-tab="medicine">
+                    {{> co_registerMedicine}}
+
+                </div>
+
+                <div class="row">
+                    <div class="field">
+                        {{> co_preloader}}
+                {{> co_actionEdit}}
+                    </div>
+                </div>
+            </div>-->
+        {{/autoForm}}
+        {{#if subscriptionsReady}}
+        {{else}}
+            <div class="progress ">
+                <div class="indeterminate blue darken-1 "></div>
+            </div>
+        {{/if}}
+    </div>
+</template>

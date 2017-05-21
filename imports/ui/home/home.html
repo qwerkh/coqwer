@@ -1,15 +1,66 @@
 <template name="co_home">
-    {{#if currentUser.profile.approved}} 
-        {{#if notChoosenArea}} 
-            {{> sample_area}} 
+    {{#if currentUser.profile.approved}}
+        {{#if notChoosenArea}}
+            {{> sample_area}}
         {{else}}
-           <h4>Hello From Home</h4>
-        {{/if}} 
+            <div class="ui container" style="height: 100%">
+                <div class="row">
+                    <div class="field">
+                        <h5><u>Setting</u></h5>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <ul>
+                                    <li>
+                                        <a class="cursor-pointer" href="{{pathFor 'co.machin'}}">
+                                            Machin
+                                        </a>
+                                    </li>
+
+                                </ul>
+                                <ul>
+                                    <li>
+                                        <a class="cursor-pointer" href="{{pathFor 'co.medicine'}}">
+                                            Medicine
+                                        </a>
+                                    </li>
+
+                                </ul>
+                                <ul>
+                                    <li>
+                                        <a class="cursor-pointer" href="{{pathFor 'co.service'}}">
+                                            Service
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <h5><u>Data</u></h5>
+                        <div class="row">
+                            <div class="field">
+                                <ul>
+                                    <li>
+                                        <a class="cursor-pointer" href="{{pathFor 'co.patient'}}">
+                                            Patient
+                                        </a>
+                                    </li>
+                                </ul>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {{/if}}
     {{else}}
         <div class="container">
             <div class="card">
                 <div class="card-content">
-                    <h5>Welcome {{currentUser.username}}. Ask you admin to approved! <i class="material-icons">lock</i></h5>
+                    <h5>Welcome {{currentUser.username}}. Ask you admin to approved! <i class="material-icons">lock</i>
+                    </h5>
                 </div>
             </div>
         </div>

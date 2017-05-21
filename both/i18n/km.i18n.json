@@ -1,0 +1,50 @@
+{
+  "co": {
+    "sidebarMenu": {
+      "home": "home",
+      "customer": "Customer",
+      "customerType": "Customer Type",
+      "activity": "Activity"
+    },
+    "home": {
+      "title": "Home"
+    },
+    "customer": {
+      "title": "Customer",
+      "schema": {
+        "_id": {
+          "label": "ID"
+        },
+        "name": {
+          "label": "Name"
+        },
+        "gender": {
+          "label": "Gender"
+        },
+        "dob": {
+          "label": "Date of birth"
+        },
+        "address": {
+          "label": "Address"
+        },
+        "telephone": {
+          "label": "Telephone"
+        },
+        "email": {
+          "label": "Email"
+        },
+        "branchId": {
+          "label": "Branch"
+        }
+      }
+    },
+    "customerType": {
+      "title": "Customer Type",
+      "info": "Welcome to POS!"
+    },
+    "meteor": {
+      "title": "Meter",
+      "info": "Meter"
+    }
+  }
+}

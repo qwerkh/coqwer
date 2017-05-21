@@ -1,0 +1,105 @@
+<template name="co_machin">
+    {{> deleteModal}}
+    <div class="ui container">
+        <div class="ui two column">
+            <div class="column">
+                <div class="ui breadcrumb">
+                    <a href="/">Home</a>
+                    <div class="divider"> /</div>
+                    <div class="active section">Machin</div>
+                </div>
+            </div>
+            <div class="column">
+                <h4 class="ui" style="text-align: right">Machin</h4>
+            </div>
+        </div>
+        <a class="ui primary button" style="margin-bottom: 2px" href="{{pathFor 'co.machinAdd'}}">Add Machin</a>
+
+        {{> tabular table=dataTable selector=selector class="cursor-pointer ui celled table"}}
+    </div>
+</template>
+
+<template name="co_machinAdd">
+    <div class="ui container animated fadeIn">
+
+
+        <div class="ui breadcrumb">
+            <a href="/">Home</a>
+            <div class="divider"> /</div>
+            <a href="{{pathFor 'co.machin'}}">Machin</a>
+            <div class="divider"> /</div>
+            <div class="active section">Add Machin</div>
+        </div>
+
+
+        <h4 class="ui dividing header">Add Machin</h4>
+
+        {{#autoForm collection=collection id="co_machinAdd" type="insert"}}
+            <div class="row">
+                <div class="two fields">
+                    <div class="field">
+                        {{> afQuickField name='name'}}
+                        {{> afQuickField name='machinTypeId' placeholder="Select One" options=machinTypeOption search=true}}
+                        {{> afQuickField name='model'}}
+                    </div>
+                    <div class="field">
+                        {{> afQuickField name='buyDate'}}
+                        {{> afQuickField name='description'}}
+                        <br>
+                        {{> afQuickField name='status' class="toggle !important"}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="field">
+                        {{> co_preloader}}
+                        {{> co_actionAdd}}
+                    </div>
+                </div>
+            </div>
+        {{/autoForm}}
+    </div>
+</template>
+
+<template name="co_machinEdit">
+    <div class="ui container animated fadeIn">
+
+        <div class="ui breadcrumb">
+            <a href="/">Home</a>
+            <div class="divider"> /</div>
+            <a href="{{pathFor 'co.machin'}}">Machin</a>
+            <div class="divider"> /</div>
+            <div class="active section">Edit Machin</div>
+        </div>
+        <h4 class="ui dividing header">Edit Machin</h4>
+        {{#if subscriptionsReady}}
+            {{#autoForm collection=collection id="co_machinEdit" type="update" doc=data}}
+                <div class="row">
+                    <div class="two fields">
+                        <div class="field">
+                            {{> afQuickField name='name'}}
+                            {{> afQuickField name='machinTypeId' placeholder="Select One" options=machinTypeOption search=true}}
+                            {{> afQuickField name='model'}}
+                        </div>
+                        <div class="field">
+                            {{> afQuickField name='buyDate'}}
+                            {{> afQuickField name='description'}}
+                            <br>
+                            {{> afQuickField name='status' class="toggle !important"}}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="field">
+                            {{> co_preloader}}
+                            {{> co_actionEdit}}
+                        </div>
+                    </div>
+                </div>
+            {{/autoForm}}
+
+        {{else}}
+            <div class="progress ">
+                <div class="indeterminate blue darken-1 "></div>
+            </div>
+        {{/if}}
+    </div>
+</template>

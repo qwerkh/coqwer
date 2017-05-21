@@ -22,37 +22,96 @@
                     {{> atForm}}
                 </div>
             </div>
+            <!--<div class="ui middle aligned center aligned grid">
+                <div class="column">
+                    <form class="ui large form">
+                        <div class="ui stacked segment">
+                            {{> atForm}}
+                        </div>
+                    </form>
+                </div>
+            </div>-->
         {{/if}}
-        </div>
-        {{> footer}}
+    </div>
+    {{> footer}}
     {{> meteorStatus position="bottom"}}
 </template>
 
 <template name="navbar">
-    <div class="ui top fixed inverted labeled huge menu">
+    <div class="ui top fixed green inverted labeled huge menu">
         <div class="ui container">
             <a href="{{pathFor 'co.home'}}" class="{{isActiveRoute 'co.home'}} item">
                 <i class="home icon"></i>Home
             </a>
             <a href="{{pathFor 'co.area'}}" class="{{isActiveRoute 'co.area'}} item">
                 <i class="marker icon"></i>{{getAreaName}}
-            </a> {{#if currentUser}}
-            <div class="right menu">
+            </a>
+
+            {{#if currentUser}}
 
                 <div class="ui dropdown item">
-                    {{currentUser.username}} <i class="dropdown icon"></i>
+                    <div class="text"><i class="wpforms icon"></i> Form</div>
+                    <i class="dropdown icon"></i>
                     <div class="menu">
-                        <a class="item logout">Sign Out</a>
-                        <a class="item" href="{{pathFor 'co.userSetting'}}">Setting</a>
+                        <a href="{{pathFor 'co.patient'}}" class="item"><i class="user icon"></i> Patient</a>
+
+                        <div class="divider"></div>
+
+
+                        <div class="ui left pointing dropdown link item">
+                            <i class="dropdown icon"></i>
+                            <i class="database icon"></i> Data
+                            <div class="menu">
+                                <a href="{{pathFor 'co.machinType'}}" class="item"><i class="camera retro icon"></i>
+                                    Machin Type</a>
+                                <a href="{{pathFor 'co.medicineType'}}" class="item"><i class="add square icon"></i>
+                                    Medicine Type</a>
+                                <a href="{{pathFor 'co.serviceType'}}" class="item"><i class="yelp icon"></i> Service
+                                    Type</a>
+                                <a href="{{pathFor 'co.reference'}}" class="item"><i class="university icon"></i>
+                                    Reference</a>
+                            </div>
+                        </div>
+
+                        <a href="{{pathFor 'co.exchange'}}" class="item"><i class="exchange icon"></i> Exchange</a>
+                        <a href="{{pathFor 'co.machin'}}" class="item"><i class="camera retro icon"></i> Machin</a>
+                        <a href="{{pathFor 'co.medicine'}}" class="item"><i class="add square icon"></i> Medicine</a>
+                        <a href="{{pathFor 'co.service'}}" class="item"><i class="yelp icon"></i> Service</a>
+                        <a href="{{pathFor 'co.company'}}" class="item"><i class="university icon"></i> Company</a>
+
+                        <div class="ui left pointing dropdown link item">
+                            <i class="dropdown icon"></i>
+                            <i class="shield icon"></i> Account
+                            <div class="menu">
+                                <a href="{{pathFor 'co.chartAccount'}}" class="item"><i class="camera retro icon"></i>
+                                    Chart Account</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
+
+                <a href="{{pathFor 'co.register'}}" class="{{isActiveRoute 'co.register'}} item">
+                    <i class="registered icon"></i> Register
+                </a>
+                <a href="{{pathFor 'co.payment'}}" class="{{isActiveRoute 'co.payment'}} item">
+                    <i class="money icon"></i> Payment
+                </a>
+
+                <div class="right menu">
+                    <div class="ui dropdown item">
+                        {{currentUser.username}} <i class="dropdown icon"></i>
+                        <div class="menu">
+                            <a class="item logout">Sign Out</a>
+                            <a class="item" href="{{pathFor 'co.userSetting'}}">Setting</a>
+                        </div>
+                    </div>
+                </div>
             {{/if}}
         </div>
     </div>
-  
+
 </template>
 
 <template name="footer">
-    
+
 </template>

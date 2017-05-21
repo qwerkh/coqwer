@@ -37,7 +37,17 @@ arillo:flow-router-helpers
 mdg:validated-method
 alexgreg:meteor-tabular-semantic
 risul:moment-timezone
+momentjs:moment
 cottz:flow-router-query
 juliancwirko:s-alert
 ovcharik:alertifyjs
 ongoworks:security
+ostrio:files
+ostrio:autoform-files
+robertlowe:autoform-pickadate
+xamfoo:reactive-obj
+czbaker:lightbox2
+ksrv:autoform-inputmask
+theara:autoform-inputmask
+numeral:numeral
+ecwyne:mathjs

@@ -1,0 +1,287 @@
+<template name="co_payment">
+    {{> deleteModal}}
+    <div class="ui container">
+        <div class="ui two column">
+            <div class="column">
+                <div class="ui breadcrumb">
+                    <a href="/">Home</a>
+                    <div class="divider"> /</div>
+                    <div class="active section">Payment</div>
+                </div>
+            </div>
+            <div class="column">
+                <h4 class="ui" style="text-align: right">Payment</h4>
+            </div>
+        </div>
+        <a class="ui primary button" style="margin-bottom: 2px" href="{{pathFor 'co.paymentAdd'}}">Add Payment</a>
+
+        {{> tabular table=dataTable selector=selector class="cursor-pointer ui celled table"}}
+
+    </div>
+</template>
+
+<template name="co_paymentAdd">
+    <div class="ui animated fadeIn" style="margin-bottom: 220px;padding: 15px;">
+
+        {{#autoForm collection=collection id="co_paymentAdd" type="insert"}}
+
+
+            <div class="row">
+                <div class="fields">
+                    <div class="twelve wide field">
+                        <div class="row">
+                            <div class="fields">
+                                <div class="ui card" style="width: 99%; height: 70%; !important;">
+                                    <div class="ui extra content">
+                                        <h1 class="ui blue header">Patient Name :
+                                            {{#with patientDoc}}
+                                                {{khName}} ( {{dobString}} )
+                                            {{/with}}
+                                        </h1>
+                                    </div>
+                                    <div class="content">
+
+                                        <div class="ui grid">
+                                            <div class="three column row">
+                                                <div class="column">
+
+                                                </div>
+                                                <div class="column">
+                                                    <div class="ui blue statistic" style="margin-left: 40%">
+                                                        <div class="label">
+                                                            Amount Paid
+                                                        </div>
+                                                        <div class="value">
+                                                            <u>{{paid}}</u>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <div class="column">
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="ui grid" style="margin-top: 15%">
+                                            <div class="sixteen wide center aligned column">
+                                                <h3>Quick Cash Payment</h3>
+                                            </div>
+                                        </div>
+                                        <div class="ui grid">
+                                            <div class="two wide column">
+
+                                            </div>
+                                            <div class="three wide column">
+                                                <a class="ui grey button quickCashOne"
+                                                   style="width: 100%;">{{quickCashOne}}</a>
+                                            </div>
+                                            <div class="three wide column">
+                                                <a class="ui grey button quickCashTwo"
+                                                   style="width: 100%;">{{quickCashTwo}}</a>
+                                            </div>
+                                            <div class="three wide column">
+                                                <a class="ui grey button quickCashThree"
+                                                   style="width: 100%;">{{quickCashThree}}</a>
+                                            </div>
+                                            <div class="three wide column">
+                                                <a class="ui grey button quickCashFour"
+                                                   style="width: 100%;">{{quickCashFour}}</a>
+                                            </div>
+
+                                            <div class="two wide column">
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="four wide field">
+                        {{#with result}}
+                            <div class="ui segments plan principal">
+                                <div class="ui top attached segment violet inverted plan-title">
+                                    <span class="plan-ribbon red">{{netDiscount}}</span>
+                                    <span class="ui header">Amount</span>
+
+                                </div>
+                                <div class="ui  attached segment feature">
+                                    <div class="amount">{{netAmount}}</div>
+                                </div>
+                                {{> afQuickField name='netTotal' value=netTotal label=false hidden=true}}
+                            </div>
+                        {{/with}}
+
+                        {{> afQuickField name='balance' value=balance label=false hidden=true}}
+
+
+                        {{> afQuickField name='patientId' placeholder="Select One" options=patientOption search=true}}
+                        {{> afQuickField name='registerId' placeholder="Select One" options=registerOption search=true}}
+
+                        {{> afQuickField name='paymentDate'}}
+                        {{> afQuickField name='voucherId' value=voucherId}}
+
+
+
+                        {{> co_actionAdd}}
+
+                    </div>
+
+
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="field">
+                    {{> co_preloader}}
+                </div>
+            </div>
+
+            <div class="ui large bottom fixed grid transparent menu form-page payment-form">
+
+                <div class="sixteen wide column row">
+                    {{#with returnAmount}}
+                        <div class="four wide column row">
+                            <div class="sixteen wide column">
+                                <div class="ui left action fluid input">
+                                    <a class="ui teal labeled icon button">
+                                        <i class="dollar icon"></i>Return USD
+                                    </a>
+                                    {{> afFieldInput name='returnAmountUSD' value=returnAmountDollar label=false readonly=true}}
+                                </div>
+                            </div>
+                            <br>
+                            <div class="sixteen wide column">
+                                <div class="ui left action fluid input">
+                                    <a class="ui teal labeled icon button">
+                                        <i class="icon"
+                                           style="padding-top: 12px;"><b><span>R</span>
+                                        </b></i>Return KHR
+                                    </a>
+                                    {{> afFieldInput name='returnAmountKHR' value=returnAmountRiel label=false readonly=true}}
+                                </div>
+                            </div>
+                            <br>
+                            <div class="sixteen wide column">
+                                <div class="ui left action fluid input">
+                                    <a class="ui teal labeled icon button">
+                                        <i class="bitcoin icon"></i>Return THB
+                                    </a>
+                                    {{> afFieldInput name='returnAmountTHB' value=returnAmountBaht label=false readonly=true}}
+                                </div>
+                            </div>
+                        </div>
+                    {{/with}}
+                    <div class="six wide column row ui grid">
+                        <div class="three wide column">
+
+                        </div>
+                        <div class="ten wide column">
+                            <h2 class="ui blue header aligned center">កន្លែងបង់ប្រាក់</h2>
+                        </div>
+                        <div class="three wide column">
+
+                        </div>
+                    </div>
+                    <div class="six wide column row">
+                        {{#with remainAmount}}
+                            <div class="sixteen wide column row">
+
+                                <div class="ui action fluid input">
+                                    <a class="ui teal left labeled icon button">
+                                        <i class="dollar icon"></i>Paid USD
+                                    </a>
+                                    {{> afFieldInput name='paidAmountUSD' value=paidAmountUSD  label=false}}
+                                    <a class="ui teal right labeled icon button right floated">
+                                        <i class="dollar icon"></i>{{remainAmountUSD}}
+                                    </a>
+
+                                </div>
+
+                            </div>
+                            <br>
+                            <div class="sixteen wide column row">
+                                <div class="ui left action fluid input">
+                                    <a class="ui teal labeled icon button">
+                                        <i class="icon"
+                                           style="padding-top: 12px;"><b><span>R</span>
+                                        </b></i>Paid KHR
+                                    </a>
+                                    {{> afFieldInput name='paidAmountKHR' value=paidAmountKHR  label=false}}
+                                    <a class="ui teal right labeled icon button right floated">
+                                        <i class="icon"
+                                           style="padding-top: 14px;"><b><span>R</span>
+                                        </b></i>{{remainAmountKHR}}
+                                    </a>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="sixteen wide column row">
+                                <div class="ui left action fluid input">
+                                    <a class="ui teal labeled icon button">
+                                        <i class="bitcoin icon"></i>Paid THB
+                                    </a>
+                                    {{> afFieldInput name='paidAmountTHB' value=paidAmountTHB label=false}}
+                                    <a class="ui teal right labeled icon button right floated">
+                                        <i class="bitcoin icon"></i>{{remainAmountTHB}}
+                                    </a>
+                                </div>
+                            </div>
+                        {{/with}}
+                    </div>
+                </div>
+            </div>
+
+        {{/autoForm}}
+    </div>
+</template>
+
+<template name="co_paymentEdit">
+    <div class="ui container animated fadeIn">
+        <!--<div class="ui breadcrumb">
+            <a href="/">Home</a>
+            <div class="divider"> /</div>
+            <a href="{{pathFor 'co.payment'}}">Payment</a>
+            <div class="divider"> /</div>
+            <div class="active section">Edit Payment</div>
+        </div>
+        <h4 class="ui dividing header">Edit Payment</h4>-->
+        {{#if subscriptionsReady}}
+            {{#autoForm collection=collection id="co_paymentEdit" type="update" doc=data}}
+                <div class="row">
+                    <div class="two fields">
+                        <div class="field">
+
+
+                            {{> afQuickField name='patientId'}}
+                            {{> afQuickField name='registerId'}}
+                            {{> afQuickField name='paymentDate'}}
+
+                            {{> co_actionEdit}}
+
+                        </div>
+                        <div class="field">
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col s11">
+                        {{> co_preloader}}
+                    </div>
+                </div>
+            {{/autoForm}}
+
+        {{else}}
+            <div class="progress ">
+                <div class="indeterminate blue darken-1 "></div>
+            </div>
+        {{/if}}
+
+    </div>
+</template>

@@ -1,0 +1,46 @@
+{
+  "co": {
+    "sidebarMenu": {
+      "home": "Home",
+      "patient": "Patient",
+      "machin": "Machin",
+      "medicine": "Medicine",
+      "service": "Service"
+    },
+    "home": {
+      "title": "Home"
+    },
+    "patient": {
+      "title": "Patient",
+      "schema": {
+        "_id": {
+          "label": "ID"
+        }
+      }
+    },
+    "machin": {
+      "title": "Machin",
+      "schema": {
+        "_id": {
+          "label": "ID"
+        }
+      }
+    },
+    "medicine": {
+      "title": "Medicine",
+      "schema": {
+        "_id": {
+          "label": "ID"
+        }
+      }
+    },
+    "service": {
+      "title": "Service",
+      "schema": {
+        "_id": {
+          "label": "ID"
+        }
+      }
+    }
+  }
+}

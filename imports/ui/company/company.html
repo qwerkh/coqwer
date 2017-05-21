@@ -1,0 +1,164 @@
+<template name="co_company">
+    <div class="ui container animated fadeIn">
+        <div class="content">
+            <div class="header">
+                <h1 class="ui blue header">Company</h1>
+            </div>
+            {{#if data}}
+                {{#with data}}
+
+                    <div class="ui raised segment grid">
+                        <table class="ui celled padded table">
+                            <tbody>
+                            <tr>
+                                <td ><b>KH Name : </b></td>
+                                <td class="ui blue header">{{khName}}</td>
+                                <td><b>EN Name : </b></td>
+                                <td class="ui blue header">{{enName}}</td>
+                            </tr>
+                            <tr>
+                                <td> <b>KH Short Name : </b></td>
+                                <td class="ui blue header">{{khShortName}}</td>
+                                <td><b>EN Short Name : </b></td>
+                                <td class="ui blue header">{{enShortName}}</td>
+                            </tr>
+                            <tr>
+                                <td> <b>KH Address: </b></td>
+                                <td class="ui blue header">{{khAddress}}</td>
+                                <td> <b>EN Address : </b></td>
+                                <td class="ui blue header">{{enAddress}}</td>
+                            </tr>
+                            <tr>
+                                <td> <b>Phone Number : </b></td>
+                                <td class="ui blue header">{{telephone}}</td>
+                                <td><b>Email : </b></td>
+                                <td class="ui blue header">{{email}}</td>
+                            </tr>
+                            <tr>
+                                <td><b>Website : </b></td>
+                                <td class="ui blue header">{{website}}</td>
+                                <td> <b>Base Currency : </b></td>
+                                <td class="ui blue header">{{baseCurrency}}</td>
+                            </tr>
+                            <tr>
+                                <td> <b>Language : </b></td>
+                                <td class="ui blue header">{{language}}</td>
+                                <td></td>
+                                <td class="ui blue header"></td>
+                            </tr>
+
+
+                            </tbody>
+                        </table>
+
+                       <!-- <div class="ui two columns row">
+                            <div class="column">
+                                <b>KH Name : </b>{{khName}}
+                            </div>
+                            <div class="column">
+                                <b>EN Name : </b> {{enName}}
+
+                            </div>
+                        </div>
+
+                        <div class="ui two columns row">
+                            <div class="column">
+                                <b>KH Short Name : </b> {{khShortName}}
+                            </div>
+
+                            <div class="column">
+                                <b>EN Short Name : </b>{{enShortName}}
+                            </div>
+                        </div>
+                        <div class="ui two columns row">
+                            <div class="column">
+                                <b>KH Address : </b> {{khAddress}}
+                            </div>
+
+                            <div class="column">
+                                <b>EN Address : </b>{{enAddress}}
+                            </div>
+                        </div>
+                        <div class="ui two columns row">
+                            <div class="column">
+                                <b>Phone Number : </b>{{telephone}}
+                            </div>
+
+                            <div class="column">
+                                <b>Email : </b>{{email}}
+                            </div>
+                        </div>
+                        <div class="ui two columns row">
+                            <div class="column">
+                                <b>Website : </b>{{website}}
+                            </div>
+
+                            <div class="column">
+                                <b>Base Currency : </b> {{baseCurrency}}
+                            </div>
+                        </div>
+                        <div class="ui two columns row">
+                            <div class="column">
+                                <b>Language : </b>{{language}}
+                            </div>
+                        </div>-->
+                    </div>
+                {{/with}}
+            {{/if}}
+        </div>
+        <div class="extra content">
+            <div class="ui button basic green button right floated edit">Update</div>
+        </div>
+    </div>
+</template>
+
+<template name="co_companyEdit">
+    <div class="ui container animated fadeIn">
+
+        <div class="ui breadcrumb">
+            <a href="/">Home</a>
+            <div class="divider"> /</div>
+            <a href="{{pathFor 'co.company'}}">Company</a>
+            <div class="divider"> /</div>
+            <div class="active section">Edit Company</div>
+        </div>
+        <h4 class="ui dividing header">Edit Company</h4>
+
+
+        {{#autoForm collection=collection id="co_companyEdit" type="update" doc=data}}
+            <div class="row">
+                <div class="two fields">
+                    <div class="field">
+                        {{> afQuickField name='khName'}}
+                        {{> afQuickField name='khShortName'}}
+                        {{> afQuickField name='enName'}}
+                        {{> afQuickField name='enShortName'}}
+                        {{> afQuickField name='khAddress' row=3}}
+                        {{> afQuickField name='baseCurrency'}}
+
+                    </div>
+                    <div class="field">
+                        {{> afQuickField name='enAddress' row=3}}
+                        {{> afQuickField name='telephone'}}
+                        {{> afQuickField name='email'}}
+                        {{> afQuickField name='website'}}
+                        {{> afQuickField name='language'}}
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="field">
+                        {{> co_preloader}}
+                        {{> co_actionEdit}}
+                    </div>
+                </div>
+            </div>
+        {{/autoForm}}
+        {{#if subscriptionsReady}}
+        {{else}}
+            <div class="progress ">
+                <div class="indeterminate blue darken-1 "></div>
+            </div>
+        {{/if}}
+    </div>
+</template>

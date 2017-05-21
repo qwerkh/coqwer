@@ -1,0 +1,66 @@
+<template name="co_reference">
+    {{> deleteModal}}
+    <div class="ui container">
+        <div class="ui two column">
+            <div class="column">
+                <div class="ui breadcrumb">
+                    <a href="/">Home</a>
+                    <div class="divider"> /</div>
+                    <div class="active section">Reference</div>
+                </div>
+            </div>
+            <div class="column">
+                <h4 class="ui" style="text-align: right">Reference</h4>
+            </div>
+        </div>
+        <!--<a class="ui primary button" style="margin-bottom: 2px" href="{{pathFor 'co.referenceAdd'}}">Add Reference</a>-->
+
+        {{> tabular table=dataTable selector=selector class="cursor-pointer ui celled table"}}
+
+    </div>
+</template>
+
+
+<template name="co_referenceEdit">
+    <div class="ui container animated fadeIn">
+
+        <div class="ui breadcrumb">
+            <a href="/">Home</a>
+            <div class="divider"> /</div>
+            <a href="{{pathFor 'co.reference'}}">Reference</a>
+            <div class="divider"> /</div>
+            <div class="active section">Edit Reference</div>
+        </div>
+        <h4 class="ui dividing header">Edit Reference</h4>
+
+        {{#if subscriptionsReady}}
+            {{#autoForm collection=collection id="co_referenceEdit" type="update" doc=data}}
+                <div class="row">
+                    <div class="two fields">
+                        <div class="field">
+                            {{> afQuickField name='name'}}
+                            {{> afQuickField name='type' readonly=true}}
+                        </div>
+                        <div class="field">
+                            {{> afQuickField name='order'}}
+                            {{> afQuickField name='description'}}
+                        </div>
+
+
+                    </div>
+                    <div class="row">
+                        <div class="field">
+                            {{> co_preloader}}
+                            {{> co_actionEdit}}
+                        </div>
+                    </div>
+                </div>
+            {{/autoForm}}
+
+        {{else}}
+            <div class="progress ">
+                <div class="indeterminate blue darken-1 "></div>
+            </div>
+        {{/if}}
+    </div>
+</template>

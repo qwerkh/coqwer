@@ -1,0 +1,93 @@
+<template name="co_exchange">
+    {{> deleteModal}}
+    <div class="ui container">
+        <div class="ui two column">
+            <div class="column">
+                <div class="ui breadcrumb">
+                    <a href="/">Home</a>
+                    <div class="divider"> /</div>
+                    <div class="active section">Exchage</div>
+                </div>
+            </div>
+            <div class="column">
+                <h4 class="ui" style="text-align: right">Exchage</h4>
+            </div>
+        </div>
+        <a class="ui primary button" style="margin-bottom: 2px" href="{{pathFor 'co.exchangeAdd'}}">Add Exchage</a>
+
+        {{> tabular table=dataTable selector=selector class="cursor-pointer ui celled table"}}
+
+    </div>
+</template>
+
+<template name="co_exchangeAdd">
+    <div class="ui container animated fadeIn">
+
+        <div class="ui breadcrumb">
+            <a href="/">Home</a>
+            <div class="divider"> /</div>
+            <a href="{{pathFor 'co.exchange'}}">Exchage</a>
+            <div class="divider"> /</div>
+            <div class="active section">Add Exchage</div>
+        </div>
+        <h4 class="ui dividing header">Add Exchage</h4>
+        {{#autoForm collection=collection id="co_exchangeAdd" type="insert"}}
+            <div class="row">
+                <div class="field">
+                    {{> afQuickField name="exDate"}}
+                    <!--{{> afQuickField name="base" class="disabled field" readonly="true"}}-->
+                    {{> afQuickField name="rates"}}
+                    {{> afQuickField name="status"}}
+
+                </div>
+                <div class="row">
+                    <div class="col s11">
+                        {{> co_preloader}}
+                        {{> co_actionAdd}}
+                    </div>
+                </div>
+            </div>
+
+        {{/autoForm}}
+
+    </div>
+</template>
+
+<template name="co_exchangeEdit">
+    <div class="ui container animated fadeIn">
+
+        <div class="ui breadcrumb">
+            <a href="/">Home</a>
+            <div class="divider"> /</div>
+            <a href="{{pathFor 'co.exchange'}}">Exchage</a>
+            <div class="divider"> /</div>
+            <div class="active section">Edit Exchage</div>
+        </div>
+        <h4 class="ui dividing header">Edit Exchage</h4>
+
+        {{#if subscriptionsReady}}
+            {{#autoForm collection=collection id="co_exchangeEdit" type="update" doc=data}}
+                <div class="row">
+                    <div class="field">
+                        {{> afQuickField name="exDate"}}
+                        <!--{{> afQuickField name="base" class="disabled field" readonly="true"}}-->
+                        {{> afQuickField name="rates"}}
+                        {{> afQuickField name="status"}}
+
+                    </div>
+                    <div class="row">
+                        <div class="field">
+                            {{> co_preloader}}
+                            {{> co_actionEdit}}
+                        </div>
+                    </div>
+                </div>
+            {{/autoForm}}
+
+        {{else}}
+            <div class="progress ">
+                <div class="indeterminate blue darken-1 "></div>
+            </div>
+        {{/if}}
+    </div>
+</template>

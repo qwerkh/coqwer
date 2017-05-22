@@ -227,7 +227,7 @@ Co_Register.schema = new SimpleSchema({
         autoform: {
             type: "inputmask",
             inputmaskOptions: function () {
-                return inputmaskOptions.decimal(2);
+                return inputmaskOptions.decimal({digits: 2});
             }
         }
     },
@@ -305,7 +305,6 @@ Co_Register.serviceForm = new SimpleSchema({
     },
     discountServiceType: {
         type: String,
-        optional: true,
         autoform: {
             type: "select",
             defaultValue: "Amount",
@@ -395,7 +394,6 @@ Co_Register.medicineForm = new SimpleSchema({
     },
     discountMedicineType: {
         type: String,
-        optional: true,
         autoform: {
             type: "select",
             defaultValue: "Amount",

@@ -24,7 +24,7 @@ Co_Payment.before.update(function (userId, doc, fieldNames, modifier, options) {
 Co_Payment.after.insert(function (userId, doc) {
 
     let status = "Partial";
-    if (doc.balance == 0) {
+    if (doc.balance <= 0) {
         status = "Complete";
     } else if (doc.balance == doc.netTotal) {
         status = "Active";
@@ -45,7 +45,7 @@ Co_Payment.after.insert(function (userId, doc) {
                 paymentNumber: 1,
             },
             $set: {
-                balance: doc.balance,
+                balance: doc.balance <= 0 ? 0 : doc.balance,
                 status: status
             }
         }
@@ -89,7 +89,9 @@ Co_Payment.after.remove(function (userId, doc) {
     )
 
     let paymentDoc = Co_Payment.find({registerId: doc.registerId}, {sort: {paymentDate: -1}}).fetch();
-    Co_Payment.direct.update({_id: paymentDoc[0]._id}, {$set: {canRemove: true}});
+    if (paymentDoc.length > 0) {
+        Co_Payment.direct.update({_id: paymentDoc[0]._id}, {$set: {canRemove: true}});
+    }
 
 })
 

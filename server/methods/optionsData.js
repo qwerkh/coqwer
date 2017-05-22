@@ -18,7 +18,9 @@ import {SpaceChar} from "../../both/config/space"
 Meteor.methods({
     co_serviceOption(rolesArea){
         let list = [];
+        list.push({label: "(Select Service)", value: ""});
         let selector = {};
+
         if (rolesArea) {
             selector.rolesArea = rolesArea;
         }
@@ -31,6 +33,7 @@ Meteor.methods({
     co_medicineOption(){
 
         let list = [];
+        list.push({label: "(Select Medicine)", value: ""});
         Co_Medicine.find({}).fetch().forEach(function (obj) {
             list.push({label: obj.name, value: obj._id});
         })
@@ -38,6 +41,7 @@ Meteor.methods({
     },
     co_machinOption(rolesArea){
         let selector = {};
+        list.push({label: "(Select One)", value: ""});
         if (rolesArea) {
             selector.rolesArea = rolesArea;
         }
@@ -53,6 +57,8 @@ Meteor.methods({
             selector.rolesArea = rolesArea;
         }
         let list = [];
+        list.push({label: "(Select Patient)", value: ""});
+
         Co_Patient.find(selector).fetch().forEach(function (obj) {
             list.push({label: obj.khName, value: obj._id});
         })
@@ -101,6 +107,8 @@ Meteor.methods({
     },
     chartAccountOption(accountType){
         let arr = [];
+        arr.push({label: "(Select ChartAccount)", value: ""});
+
         let selector = {};
         if (accountType) {
             selector.accountType = accountType;
@@ -126,6 +134,8 @@ Meteor.methods({
     parentOption: function (selector) {
         var selector = _.isUndefined(selector) ? {} : selector;
         var list = [];
+        list.push({label: "(Select Parent)", value: ""});
+
         Co_ChartAccount.find(selector, {sort: {code: 1}})
             .forEach(function (obj) {
                 list.push({

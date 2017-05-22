@@ -33,15 +33,15 @@ Co_ChartAccount.before.update(function (userId, doc, fieldNames, modifier, optio
         modifier.$set.level = check.level + 1;
     }
 
-    doc._id = GeneralFunction.generateId(Co_ChartAccount, 4);
-
     Co_ChartAccount.direct.update(
         {
-            parentId: modifier.$set._id
+            parentId: doc._id
         }, {
             $set: {
-                parentName: modifier.$set.name
+                parentName: modifier.$set.code + " | " + modifier.$set.name
             }
+        }, {
+            multi: true
         })
 })
 

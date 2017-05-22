@@ -13,7 +13,8 @@
                 <h4 class="ui" style="text-align: right">Machin Type</h4>
             </div>
         </div>
-        <a class="ui primary button" style="margin-bottom: 2px" href="{{pathFor 'co.machinTypeAdd'}}">Add Machin Type</a>
+        <a class="ui primary button" style="margin-bottom: 2px" href="{{pathFor 'co.machinTypeAdd'}}">Add Machin
+            Type</a>
 
         {{> tabular table=dataTable selector=selector class="cursor-pointer ui celled table"}}
 
@@ -33,10 +34,12 @@
         <h4 class="ui dividing header">Add Machin Type</h4>
         {{#autoForm collection=collection id="co_machinTypeAdd" type="insert"}}
             <div class="row">
-                <div class="field">
-                    {{> afQuickField name='name'}}
-                    {{> afQuickField name='description'}}
+                <div class="two fields">
+                    <div class="field">
+                        {{> afQuickField name='name'}}
+                        {{> afQuickField name='description'}}
 
+                    </div>
                 </div>
                 <div class="row">
                     <div class="col s11">
@@ -66,10 +69,12 @@
         {{#if subscriptionsReady}}
             {{#autoForm collection=collection id="co_machinTypeEdit" type="update" doc=data}}
                 <div class="row">
-                    <div class="field">
-                        {{> afQuickField name='name'}}
-                        {{> afQuickField name='description'}}
+                    <div class="two fields">
+                        <div class="field">
+                            {{> afQuickField name='name'}}
+                            {{> afQuickField name='description'}}
 
+                        </div>
                     </div>
                     <div class="row">
                         <div class="field">

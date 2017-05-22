@@ -27,6 +27,7 @@ Co_Service.schema = new SimpleSchema({
     },
     machinTypeId: {
         type: [String],
+        optional: true,
         autoform: {
             type: "select",
             multiple: true

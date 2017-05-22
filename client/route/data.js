@@ -5,6 +5,7 @@ import {CheckRoles} from '../../imports/api/methods/checkRoles';
 import '../../imports/ui/patient/patient';
 import '../../imports/ui/register/register';
 import '../../imports/ui/payment/payment';
+import '../../imports/ui/journal/journal';
 
 
 import {_Main} from '../lib/_renderLayout';
@@ -99,6 +100,31 @@ coData.route('/payment/:paymentId/edit', {
     name: 'co.paymentEdit',
     action: function (query, params) {
         _Main("co_paymentEdit");
+    }
+
+})
+
+//Journal
+coData.route('/journal', {
+    name: 'co.journal',
+    action: function (query, params) {
+        _Main("co_journal");
+    }
+
+})
+
+coData.route('/journal/add', {
+    name: 'co.journalAdd',
+    action: function (query, params) {
+        _Main("co_journalAdd");
+    }
+
+})
+
+coData.route('/journal/:journalId/edit', {
+    name: 'co.journalEdit',
+    action: function (query, params) {
+        _Main("co_journalEdit");
     }
 
 })

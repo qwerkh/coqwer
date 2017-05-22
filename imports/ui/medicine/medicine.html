@@ -33,12 +33,14 @@
         <h4 class="ui dividing header">Add Medicine</h4>
         {{#autoForm collection=collection id="co_medicineAdd" type="insert"}}
             <div class="row">
-                <div class="field">
-                    {{> afQuickField name='name'}}
-                    {{> afQuickField name='medicineTypeId' placeholder="Select One" search=true options=medicineTypeOption}}
-                    {{> afQuickField name='price'}}
-                    {{> afQuickField name='description'}}
+                <div class="two fields">
+                    <div class="field">
+                        {{> afQuickField name='name'}}
+                        {{> afQuickField name='medicineTypeId' placeholder="Select One" search=true options=medicineTypeOption}}
+                        {{> afQuickField name='price'}}
+                        {{> afQuickField name='description'}}
 
+                    </div>
                 </div>
                 <div class="row">
                     <div class="col s11">
@@ -68,12 +70,14 @@
         {{#if subscriptionsReady}}
             {{#autoForm collection=collection id="co_medicineEdit" type="update" doc=data}}
                 <div class="row">
-                    <div class="field">
-                        {{> afQuickField name='name'}}
-                        {{> afQuickField name='medicineTypeId' placeholder="Select One" search=true options=medicineTypeOption}}
-                        {{> afQuickField name='price'}}
-                        {{> afQuickField name='description'}}
+                    <div class="two fields">
+                        <div class="field">
+                            {{> afQuickField name='name'}}
+                            {{> afQuickField name='medicineTypeId' placeholder="Select One" search=true options=medicineTypeOption}}
+                            {{> afQuickField name='price'}}
+                            {{> afQuickField name='description'}}
 
+                        </div>
                     </div>
                     <div class="row">
                         <div class="field">

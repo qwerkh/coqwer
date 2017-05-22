@@ -65,7 +65,7 @@ registerServiceTmpl.onRendered(function () {
 registerServiceTmpl.events({
     'change [name="serviceId"]'(e, t){
         let serviceId = e.currentTarget.value;
-        if (serviceId) {
+        if (serviceId != "") {
             Meteor.call("co_serviceById", serviceId, Session.get("area"), function (err, result) {
                 if (result) {
                     let service = serviceTem.find(serviceId).fetch();
@@ -89,6 +89,8 @@ registerServiceTmpl.events({
                 }
             })
         }
+        serviceDoc = {};
+        serviceId = "";
         $("[name='serviceId']").parents('.selection.dropdown').dropdown('clear');
     },
     'keyup [name="price"]'(e, t){
@@ -105,6 +107,7 @@ registerServiceTmpl.events({
 
     },
     'keyup [name="qty"]'(e, t){
+
         if (serviceDoc) {
             let amount = e.currentTarget.value * serviceDoc.price;
             serviceTem.update(
@@ -137,7 +140,13 @@ registerServiceTmpl.events({
         discountService.set(e.currentTarget.value);
         reactTotalService();
     },
+
     'click .service-row'(){
+        debugger;
+        serviceDoc = this;
+    },
+    'select .service-row'(){
+        debugger;
         serviceDoc = this;
     }
 })
@@ -186,7 +195,7 @@ registerMedicineTmpl.onCreated(function () {
 registerMedicineTmpl.events({
     'change [name="medicineId"]'(e, t){
         let medicineId = e.currentTarget.value;
-        if (medicineId) {
+        if (medicineId != "") {
             Meteor.call("co_medicineById", medicineId, function (err, result) {
                 if (result) {
                     let medicine = medicineTem.find(medicineId).fetch();
@@ -212,7 +221,8 @@ registerMedicineTmpl.events({
                 }
             })
         }
-
+        medicineDoc = {};
+        medicineId = "";
         $("[name='medicineId']").parents('.selection.dropdown').dropdown('clear');
 
     },
@@ -266,6 +276,11 @@ registerMedicineTmpl.events({
         reactTotalMedicine();
     },
     'click .medicine-row'(){
+        medicineDoc = this;
+
+    }
+    ,
+    'select .medicine-row'(){
         medicineDoc = this;
 
     }

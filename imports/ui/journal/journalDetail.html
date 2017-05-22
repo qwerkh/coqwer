@@ -1,0 +1,117 @@
+<template name="co_journalDetailPayment">
+    <div class="ui container animated fadeIn">
+        {{#autoForm schema=schemaPayment id="co_journalDetailPayment"}}
+            <div class="row">
+                <table class="ui celled striped table">
+
+                    <thead>
+                    <tr>
+                        <th>{{> afQuickField name='paymentReceiveMethod'}}</th>
+                    </tr>
+                    </thead>
+                    <thead>
+                    <tr>
+                        <th colspan="4">
+                            {{> afQuickField name='account' label=false placeholder="Account" options=serviceOption search=true}}
+                        </th>
+                        <th>
+                            {{> afQuickField name='amount' placeholder="Amount" label=false}}
+                        </th>
+                        <th>
+                            <a style="float: right;" class="ui red button small delete-service"><i
+                                    class="remove circle icon"></i></a>
+                        </th>
+                    </tr>
+                    </thead>
+
+                    <thead>
+                    <tr>
+                        <th>Account</th>
+                        <th>Amount</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {{#each serviceList}}
+                        <tr class="service-row">
+                            <td>{{_id}}</td>
+                            <td>{{name}}</td>
+                            <td>
+                                <a style="float: right;" class="ui red button small delete-service"><i
+                                        class="remove circle icon"></i></a>
+                            </td>
+                        </tr>
+                    {{/each}}
+
+                    </tbody>
+
+                    <thead>
+                    <tr>
+                        <th style="text-align: right">Total :</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                </table>
+            </div>
+        {{/autoForm}}
+
+    </div>
+</template>
+
+
+<template name="co_journalDetailReceive">
+    <div class="ui container animated fadeIn">
+        {{#autoForm schema=schemaReceive id="co_journalDetailReceive"}}
+            <div class="row">
+                <table class="ui celled striped table">
+
+                    <thead>
+                    <tr>
+                        <th>{{> afQuickField name='paymentReceiveMethod'}}</th>
+                    </tr>
+                    </thead>
+                    <thead>
+                    <tr>
+                        <th colspan="4">
+                            {{> afQuickField name='account' label=false placeholder="Account" options=serviceOption search=true}}
+                        </th>
+                        <th>
+                            {{> afQuickField name='amount' placeholder="Amount" label=false}}
+                        </th>
+                        <th>
+                            <a style="float: right;" class="ui red button small delete-service"><i
+                                    class="remove circle icon"></i></a>
+                        </th>
+                    </tr>
+                    </thead>
+
+                    <thead>
+                    <tr>
+                        <th>Account</th>
+                        <th>Amount</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {{#each serviceList}}
+                        <tr class="service-row">
+                            <td>{{_id}}</td>
+                            <td>{{name}}</td>
+                            <td>
+                                <a style="float: right;" class="ui red button small delete-service"><i
+                                        class="remove circle icon"></i></a>
+                            </td>
+                        </tr>
+                    {{/each}}
+
+                    </tbody>
+
+                    <thead>
+                    <tr>
+                        <th style="text-align: right">Total :</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                </table>
+            </div>
+        {{/autoForm}}
+    </div>
+</template>

@@ -44,7 +44,7 @@ Co_ChartAccount.schema = new SimpleSchema({
         label: "Payment/Receive Type",
         autoform: {
             type: "select-radio-inline",
-            defaultValue: "Payment/Receive",
+            defaultValue: "Normal",
             options: function () {
                 let arr = [];
                 arr.push({value: "Payment/Receive", label: "Payment/Receive"});

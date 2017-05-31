@@ -6,7 +6,7 @@ import moment from "moment";
 
 
 Co_Register.before.insert(function (userId, doc) {
-
+    doc.printId = doc._id;
     doc.createdAt = moment().toDate();
     doc.createdBy = userId;
 

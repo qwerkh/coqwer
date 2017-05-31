@@ -6,7 +6,7 @@ import '../../imports/ui/patient/patient';
 import '../../imports/ui/register/register';
 import '../../imports/ui/payment/payment';
 import '../../imports/ui/journal/journal';
-
+import '../../imports/ui/print/a4'
 
 import {_Main} from '../lib/_renderLayout';
 
@@ -53,7 +53,17 @@ coData.route('/register', {
     }
 
 })
+//Register
+coData.route('/register/print', {
+    name: 'co.register-print',
+ /*   action: function (query, params) {
+        _Main("co_printA4");
+    }*/
+    action: function (params,queryParams) {
+        BlazeLayout.render('PrintLayout', {printLayout: 'co_printA4'});
+    }
 
+})
 coData.route('/register/:patientId/byPatient', {
     name: 'co.registerByPatientId',
     action: function (query, params) {

@@ -1,4 +1,5 @@
 import './journal.html';
+import './journalDetail';
 import {Template} from 'meteor/templating';
 import {ReactiveVar} from 'meteor/reactive-var';
 
@@ -86,7 +87,9 @@ indexTmpl.events({
 
     },
     'click .edit' (event, instance) {
+        debugger;
         let self = this;
+        journalDetailTem.remove({});
         FlowRouter.go(`/co-data/journal/${self._id}/edit`);
     },
     'click .show'(event, instance){
@@ -100,12 +103,30 @@ indexTmpl.events({
 addTmpl.events({
     'click .cancel'(e, t){
         FlowRouter.go(`/co-data/journal`);
+    },
+    'keypress [name="voucherId"]': function (evt) {
+        var charCode = (evt.which) ? evt.which : evt.keyCode;
+        if ($(evt.currentTarget).val().indexOf('.') != -1) {
+            if (charCode == 46) {
+                return false;
+            }
+        }
+        return !(charCode != 46 && charCode > 31 && (charCode < 48 || charCode > 57));
     }
 })
 
 editTmpl.events({
     'click .cancel'(e, t){
         FlowRouter.go(`/co-data/journal`);
+    },
+    'keypress [name="voucherId"]': function (evt) {
+        var charCode = (evt.which) ? evt.which : evt.keyCode;
+        if ($(evt.currentTarget).val().indexOf('.') != -1) {
+            if (charCode == 46) {
+                return false;
+            }
+        }
+        return !(charCode != 46 && charCode > 31 && (charCode < 48 || charCode > 57));
     }
 });
 
@@ -166,41 +187,68 @@ AutoForm.hooks({
     co_journalAdd: {
         before: {
             insert: function (doc) {
+                debugger;
 
-                doc.parentName = $("[name='parentId']").parents('.selection.dropdown').dropdown('get text') == "Select One" ? "" : $("[name='parentId']").parents('.selection.dropdown').dropdown('get text');
-                doc.accountTypeName = $("[name='accountTypeId']").parents('.selection.dropdown').dropdown('get text')
+                //doc.parentName = $("[name='parentId']").parents('.selection.dropdown').dropdown('get text') == "Select One" ? "" : $("[name='parentId']").parents('.selection.dropdown').dropdown('get text');
+                //doc.accountTypeName = $("[name='accountTypeId']").parents('.selection.dropdown').dropdown('get text');
 
+                doc.type = "Payment";
+                let transaction = [];
+                journalDetailTem.find({}).fetch().forEach(function (obj) {
+                    if (obj) {
+                        obj.account = obj.chartAccountId;
+                        obj.drcr = obj.amount;
+                        transaction.push(obj);
+                    }
+                });
+                doc.transaction = transaction;
 
                 doc.rolesArea = Session.get('area');
+                doc.$unset = {};
                 return doc;
             }
         },
         onSuccess: function (formType, result) {
             alertify.success('Successfully');
             FlowRouter.go(`/co-data/journal`);
+            journalDetailTem.remove({});
             FlowRouter.query.unset();
         },
         onError: function (formType, error) {
             alertify.error(error.message);
             FlowRouter.query.unset();
         },
-        onSubmit: function (insertDoc, updateDoc, currentDoc) {
+      /*  onSubmit: function (insertDoc, updateDoc, currentDoc) {
             event.preventDefault();
             this.done();
-        }
+        }*/
     },
     co_journalEdit: {
         before: {
             update: function (doc) {
-                debugger;
-                doc.$set.parentName = $("[name='parentId']").parents('.selection.dropdown').dropdown('get text') == "Select One" ? "" : $("[name='parentId']").parents('.selection.dropdown').dropdown('get text');
-                doc.$set.accountTypeName = $("[name='accountTypeId']").parents('.selection.dropdown').dropdown('get text')
+                doc.$set.rolesArea = Session.get('area');
+                //doc.$set.parentName = $("[name='parentId']").parents('.selection.dropdown').dropdown('get text') == "Select One" ? "" : $("[name='parentId']").parents('.selection.dropdown').dropdown('get text');
+                //doc.$set.accountTypeName = $("[name='accountTypeId']").parents('.selection.dropdown').dropdown('get text')
+
+                doc.$set.type = "Payment";
+                let transaction = [];
+                journalDetailTem.find({}).fetch().forEach(function (obj) {
+                    if (obj) {
+                        obj.account = obj.chartAccountId;
+                        obj.drcr = obj.amount;
+                        transaction.push(obj);
+                    }
+                });
+                doc.$set.transaction = transaction;
+
+                doc.$unset = {};
                 return doc;
             }
         },
         onSuccess: function (formType, result) {
             alertify.success('Updated Successfully');
             FlowRouter.go(`/co-data/journal`);
+            journalDetailTem.remove({});
             FlowRouter.query.unset();
         },
         onError: function (formType, error) {

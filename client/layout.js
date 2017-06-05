@@ -2,7 +2,7 @@ import './layout.html';
 import {Template} from 'meteor/templating';
 import {ReactiveVar} from 'meteor/reactive-var';
 import 'lodash';
-import 'meteor/tap:i18n-ui';
+// import 'meteor/tap:i18n-ui';
 import '../imports/ui/area/area';
 import '../imports/ui/preloader/preloader';
 import '../imports/ui/action/action';

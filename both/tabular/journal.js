@@ -10,14 +10,14 @@ export const JournalTabular = new Tabular.Table({
     ],
     columns: [
         {data: "_id", title: 'Id'},
-        {data: "code", title: 'Code'},
-        {data: "name", title: 'Name'},
-        {data: "parentName", title: 'Parent'},
-        {data: "accountTypeName", title: 'Account Type'},
+        {data: "journalDateName", title: 'Date'},
+        {data: "voucherId", title: 'Voucher'},
+        {data: "total", title: 'Amount'},
+        {data: "memo", title: 'Description'},
         {
             tmpl: Meteor.isClient && Template.co_action
         }
     ],
-    extraFields: ["parentId", "accountTypeId"]
+    extraFields: ["paymentReceiveMethod", "transaction"]
 
 })

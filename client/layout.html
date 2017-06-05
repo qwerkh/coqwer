@@ -53,10 +53,13 @@
                     <div class="text"><i class="wpforms icon"></i> Form</div>
                     <i class="dropdown icon"></i>
                     <div class="menu">
-                        <a href="{{pathFor 'co.patient'}}" class="item"><i class="user icon"></i> Patient</a>
 
+
+                        <a href="{{pathFor 'co.exchange'}}" class="item"><i class="exchange icon"></i> Exchange</a>
                         <div class="divider"></div>
-
+                        <a href="{{pathFor 'co.machin'}}" class="item"><i class="camera retro icon"></i> Machin</a>
+                        <a href="{{pathFor 'co.medicine'}}" class="item"><i class="add square icon"></i> Medicine</a>
+                        <a href="{{pathFor 'co.service'}}" class="item"><i class="yelp icon"></i> Service</a>
 
                         <div class="ui left pointing dropdown link item">
                             <i class="dropdown icon"></i>
@@ -73,24 +76,20 @@
                             </div>
                         </div>
 
-                        <a href="{{pathFor 'co.exchange'}}" class="item"><i class="exchange icon"></i> Exchange</a>
-                        <a href="{{pathFor 'co.machin'}}" class="item"><i class="camera retro icon"></i> Machin</a>
-                        <a href="{{pathFor 'co.medicine'}}" class="item"><i class="add square icon"></i> Medicine</a>
-                        <a href="{{pathFor 'co.service'}}" class="item"><i class="yelp icon"></i> Service</a>
                         <a href="{{pathFor 'co.company'}}" class="item"><i class="university icon"></i> Company</a>
-
+                        <div class="divider"></div>
                         <div class="ui left pointing dropdown link item">
                             <i class="dropdown icon"></i>
                             <i class="shield icon"></i> Account
                             <div class="menu">
                                 <a href="{{pathFor 'co.chartAccount'}}" class="item"><i class="camera retro icon"></i>
                                     Chart Account</a>
-                                <a href="{{pathFor 'co.journal'}}" class="item"><i class="camera retro icon"></i>
-                                    Journal</a>
+
                             </div>
                         </div>
                     </div>
                 </div>
+                <a href="{{pathFor 'co.patient'}}" class="item"><i class="user icon"></i> Patient</a>
 
                 <a href="{{pathFor 'co.register'}}" class="{{isActiveRoute 'co.register'}} item">
                     <i class="registered icon"></i> Register
@@ -98,6 +97,8 @@
                 <a href="{{pathFor 'co.payment'}}" class="{{isActiveRoute 'co.payment'}} item">
                     <i class="money icon"></i> Payment
                 </a>
+                <a href="{{pathFor 'co.journal'}}" class="item"><i class="font icon"></i>
+                    Journal</a>
 
                 <div class="right menu">
                     <div class="ui dropdown item">

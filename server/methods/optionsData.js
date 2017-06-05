@@ -113,9 +113,9 @@ Meteor.methods({
         if (accountType) {
             selector.accountType = accountType;
         }
-        Co_ChartAccount.find({selector}, {sort: {code: 1}}).fetch().forEach(function (obj) {
+        Co_ChartAccount.find(selector, {sort: {code: 1}}).fetch().forEach(function (obj) {
             arr.push({
-                label: Spacebars.SafeString(SpaceChar.space(obj.level * 6) + obj.code + " | " + obj.name),
+                label: SpaceChar.space(obj.level * 6) + obj.code + " | " + obj.name,
                 value: obj._id
             })
         })
@@ -144,6 +144,17 @@ Meteor.methods({
                 })
             });
 
+        return list;
+    },
+    paymentReceiveMethodOpt: function () {
+        let list = [];
+        Co_ChartAccount.find({paymentReceiveType: "Payment/Receive"}, {sort: {code: 1}}).forEach(function (obj) {
+            list.push({
+                label: obj.paymentReceiveName,
+                value: obj._id
+            })
+
+        });
         return list;
     }
 

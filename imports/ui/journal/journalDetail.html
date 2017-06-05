@@ -3,53 +3,48 @@
         {{#autoForm schema=schemaPayment id="co_journalDetailPayment"}}
             <div class="row">
                 <table class="ui celled striped table">
-
                     <thead>
                     <tr>
-                        <th>{{> afQuickField name='paymentReceiveMethod'}}</th>
+                        <th colspan="3">{{> afQuickField name='paymentReceiveMethod' options=paymentReceiveMethodOption value=cashMethod}}</th>
                     </tr>
                     </thead>
                     <thead>
                     <tr>
-                        <th colspan="4">
-                            {{> afQuickField name='account' label=false placeholder="Account" options=serviceOption search=true}}
+                        <th>
+                            {{> afQuickField name='account' id="account"  label=false placeholder="Chart Account" options=chartAccountOption search=true}}
                         </th>
                         <th>
-                            {{> afQuickField name='amount' placeholder="Amount" label=false}}
+                            {{> afQuickField name='amount' id="amount"  placeholder="Amount" label=false}}
                         </th>
                         <th>
-                            <a style="float: right;" class="ui red button small delete-service"><i
-                                    class="remove circle icon"></i></a>
+                            <a style="float: right;" class="ui blue button small add-journal"><i
+                                    class="add circle icon"></i></a>
                         </th>
                     </tr>
-                    </thead>
-
-                    <thead>
                     <tr>
-                        <th>Account</th>
-                        <th>Amount</th>
+                        <th>Chart Account</th>
+                        <th colspan="2">Amount</th>
                     </tr>
                     </thead>
                     <tbody>
-                    {{#each serviceList}}
-                        <tr class="service-row">
-                            <td>{{_id}}</td>
-                            <td>{{name}}</td>
+                    {{#each journalList}}
+                        <tr class="journal-row">
+                            <td>{{chartAccountId}} | {{chartAccountName}}</td>
+                            <td>{{> afQuickField name='amount' id="amountValue"  value=amount placeholder="Amount" label=false}}
+                            </td>
                             <td>
                                 <a style="float: right;" class="ui red button small delete-service"><i
                                         class="remove circle icon"></i></a>
                             </td>
                         </tr>
                     {{/each}}
-
-                    </tbody>
-
-                    <thead>
                     <tr>
                         <th style="text-align: right">Total :</th>
-                        <th></th>
+                        <th colspan="2">{{> afQuickField name='total' value=total placeholder="Total" label=false readonly=true}}
+                        </th>
                     </tr>
-                    </thead>
+                    </tbody>
+
                 </table>
             </div>
         {{/autoForm}}
@@ -66,7 +61,7 @@
 
                     <thead>
                     <tr>
-                        <th>{{> afQuickField name='paymentReceiveMethod'}}</th>
+                        <th>{{> afQuickField name='paymentReceiveMethod' options=paymentReceiveMethodOption}}</th>
                     </tr>
                     </thead>
                     <thead>

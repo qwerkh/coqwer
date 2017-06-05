@@ -12,7 +12,15 @@ Co_Journal.schema = new SimpleSchema({
     journalDate: {
         type: Date,
         label: "Journal Date",
-        defaultValue: moment().toDate()
+        autoform: {
+            type: 'pickadate',
+            defaultValue: moment().toDate(),
+            pickadateOptions: {
+                // selectMonths: true, // Creates a dropdown to control month
+                selectYears: 170, // Creates a dropdown of 15 years to control year
+                formatSubmit: "DD/MM/YYYY"
+            }
+        }
     },
     voucherId: {
         type: String,
@@ -21,7 +29,20 @@ Co_Journal.schema = new SimpleSchema({
     },
     currencyId: {
         type: String,
-        label: "Currency"
+        label: "Currency",
+        autoform: {
+            type: "select",
+            defaultValue: "USD",
+            options: function () {
+                let list = [];
+                list.push({label: "USD", value: "USD"});
+                list.push({label: "KHR", value: "KHR"});
+                list.push({label: "THB", value: "THB"});
+
+                return list;
+
+            }
+        }
 
     },
     memo: {
@@ -39,12 +60,13 @@ Co_Journal.schema = new SimpleSchema({
     transaction: {
         type: [Object],
         minCount: 1,
-        optional: true
+        optional: true,
+        blackbox: true
     },
     'transaction.$': {
         type: Object
     },
-    'transaction.$.account': {
+    /*'transaction.$.account': {
         type: String,
         max: 200,
         optional: true,
@@ -91,7 +113,7 @@ Co_Journal.schema = new SimpleSchema({
         }
     }
 
-    ,
+    ,*/
 
     total: {
         type: Number,
@@ -123,9 +145,10 @@ Co_Journal.schema = new SimpleSchema({
         optional: true,
         defaultValue: "0"
     },
-    transactionAsset: {
+    /*transactionAsset: {
         type: [Object],
-        optional: true
+        optional: true,
+        blackbox: true
     },
     'transactionAsset.$': {
         type: Object
@@ -203,7 +226,7 @@ Co_Journal.schema = new SimpleSchema({
         autoform: {
             placeholder: "Description",
         }
-    },
+    },*/
     refId: {
         type: String,
         optional: true
@@ -211,6 +234,29 @@ Co_Journal.schema = new SimpleSchema({
     refFrom: {
         type: String,
         optional: true
+    },
+    rolesArea: {
+        type: String,
+        optional: true
+    },
+    type: {
+        type: String,
+        optional: true
+    },
+    paymentReceiveMethod: {
+        type: String,
+        label: "Payment/Receive Method",
+        autoform: {
+            type: "select-radio-inline",
+        }
+    },
+    createdAt:{
+        type: Date,
+        optional:true
+    },
+    createdBy:{
+        type: String,
+        optional:true
     }
 });
 
@@ -224,8 +270,8 @@ Co_Journal.journalDetalPaymentReceive = new SimpleSchema({
     },
     amount: {
         type: Number,
-        decimal: true,
         label: "Amount",
+        optional: true,
         autoform: {
             type: 'inputmask',
             placeholder: "Debit",
@@ -236,14 +282,26 @@ Co_Journal.journalDetalPaymentReceive = new SimpleSchema({
     },
     paymentReceiveMethod: {
         type: String,
+        optional: true,
         label: "Payment/Receive Method",
         autoform: {
             type: "select-radio-inline",
-            options: function () {
-                // return SelectOpts.paymentReceiveMethod();
+        }
+    },
+    total: {
+        type: Number,
+        decimal: true,
+        optional: true,
+        label: "Total",
+        autoform: {
+            type: 'inputmask',
+            placeholder: "Total",
+            inputmaskOptions: function () {
+                return inputmaskOptions.decimal();
             }
         }
     }
+
 });
 
 //Sub
@@ -266,7 +324,8 @@ Co_Journal.fixAssetSchema = new SimpleSchema({
                 return inputmaskOptions.decimal();
             }
         }
-    }, life: {
+    },
+    life: {
         type: Number,
         optional: true,
         label: "Life (Year)",
@@ -314,8 +373,8 @@ Co_Journal.fixAssetSchema = new SimpleSchema({
         }
     },
     description: {
-        label: "Description",
         type: String,
+        label: "Description",
         optional: true,
         autoform: {
             placeholder: "Description",

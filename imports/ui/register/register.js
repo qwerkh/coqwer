@@ -287,7 +287,7 @@ indexTmpl.events({
             })
             FlowRouter.go(`/co-data/register/${self._id}/edit`);
         } else {
-            alertify.error("Can't Remove");
+            alertify.error("Can't Update");
         }
     },
     'click .show'(event, instance){

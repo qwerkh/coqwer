@@ -7,7 +7,8 @@
             <div class="divider"> /</div>
             <div class="active section">Users</div>
         </div>
-        <h4 class="ui dividing header">User Setting</h4><a class="ui primary button" href="{{pathFor 'co.userAdd'}}">Add User</a>
+        <h4 class="ui dividing header">User Setting</h4><a class="ui primary button" href="{{pathFor 'co.userAdd'}}">Add
+        User</a>
         {{> tabular table=dataTable selector=selector class="cursor-pointer ui celled table"}}
     </div>
 </template>
@@ -24,7 +25,9 @@
             <div class="divider"> /</div>
             <div class="active section">Add User</div>
         </div>
-        <h4 class="ui dividing header">Add User</h4>
+        <div class="progress">
+            <!--<div class="indeterminate"></div>-->
+        </div>
         {{#autoForm schema=schema id="co_userAdd" type="method" meteormethod="co.insertUser"
                     singleMethodArgument=true}}
             <div class="row">
@@ -73,53 +76,55 @@
                 <div class="divider"> /</div>
                 <div class="active section">Edit User</div>
             </div>
-                    <h4 class="ui dividing header"><i class="material-icons">build</i> Edit User </h4> 
-                    {{#autoForm schema=schema id="co_userEdit" doc=data type="method-update"
-                                meteormethod="co.updateUser" singleMethodArgument=true}}
+            <div class="progress">
+                <!--<div class="indeterminate"></div>-->
+            </div>
+            {{#autoForm schema=schema id="co_userEdit" doc=data type="method-update"
+                        meteormethod="co.updateUser" singleMethodArgument=true}}
+                <div class="row">
+                    {{> afQuickField name='username'}}
+                    {{> afQuickField name='email'}}
+                    <div class="two fields">
+                        <div class="field">
+                            {{> afQuickField name='password' type="password"}}
+                        </div>
+                        <div class="field">
+                            {{> afQuickField name='confirmPassword' type="password"}}
+                        </div>
+                    </div>
+                    <div class="col s6">
+                        <label for="">Roles</label>
+                        {{> afQuickField name='roles' size=10}}
                         <div class="row">
-                                {{> afQuickField name='username'}}
-                                {{> afQuickField name='email'}}
-                             <div class="two fields">
-                                 <div class="field">
-                                    {{> afQuickField name='password' type="password"}}
-                                 </div>
-                                 <div class="field">
-                                    {{> afQuickField name='confirmPassword' type="password"}}
-                                 </div>
+                            <div class="col s12">
+                                <label for="">Roles Branch</label>
+                                {{> afQuickField name='rolesBranch' label=false options=geoProvinces}}
                             </div>
-                            <div class="col s6">
-                                <label for="">Roles</label>
-                                {{> afQuickField name='roles' size=10}}
-                                <div class="row">
-                                    <div class="col s12">
-                                        <label for="">Roles Branch</label>
-                                        {{> afQuickField name='rolesBranch' label=false options=geoProvinces}}
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col s12">
-                                        <label for="">Roles Area</label>
-                                        {{> afQuickField name='rolesArea' label=false options=geoArea}}
-                                    </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12">
+                                <label for="">Roles Area</label>
+                                {{> afQuickField name='rolesArea' label=false options=geoArea}}
+                            </div>
 
-                                </div>
-                                <div class="row">
-                                    <div class="col s6">
-                                        {{> afQuickField name='profile.status'}}
-                                        {{> afQuickField name='areaId' value=area type="hidden"}}
-                                        {{> afQuickField name='profile.approved'}}
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                         <div class="row">
-                            {{>co_preloader}}
-                            {{>co_actionEdit}}
+                            <div class="col s6">
+                                {{> afQuickField name='profile.status'}}
+                                {{> afQuickField name='areaId' value=area type="hidden"}}
+                                {{> afQuickField name='profile.approved'}}
+                            </div>
                         </div>
-                    {{/autoForm}}
+                    </div>
+                </div>
+                <div class="row">
+                    {{>co_preloader}}
+                    {{>co_actionEdit}}
+                </div>
+            {{/autoForm}}
         </div>
     {{else}}
-         <div class="ui active loader"></div>
+        <div class="ui active loader"></div>
     {{/if}}
 </template>
 

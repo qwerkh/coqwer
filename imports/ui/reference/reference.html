@@ -31,7 +31,9 @@
             <div class="divider"> /</div>
             <div class="active section">Edit Reference</div>
         </div>
-        <h4 class="ui dividing header">Edit Reference</h4>
+        <div class="progress">
+            <!--<div class="indeterminate"></div>-->
+        </div>
 
         {{#if subscriptionsReady}}
             {{#autoForm collection=collection id="co_referenceEdit" type="update" doc=data}}

@@ -22,7 +22,9 @@
 
 <template name="co_paymentAdd">
     <div class="ui animated fadeIn" style="margin-bottom: 220px;padding: 15px;">
-
+        <div class="progress">
+            <!--<div class="indeterminate"></div>-->
+        </div>
         {{#autoForm collection=collection id="co_paymentAdd" type="insert"}}
 
 
@@ -249,6 +251,9 @@
             <div class="active section">Edit Payment</div>
         </div>
         <h4 class="ui dividing header">Edit Payment</h4>-->
+        <div class="progress">
+            <!--<div class="indeterminate"></div>-->
+        </div>
         {{#if subscriptionsReady}}
             {{#autoForm collection=collection id="co_paymentEdit" type="update" doc=data}}
                 <div class="row">

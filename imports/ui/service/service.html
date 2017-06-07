@@ -30,7 +30,9 @@
             <div class="divider"> /</div>
             <div class="active section">Add Service</div>
         </div>
-        <h4 class="ui dividing header">Add Service</h4>
+        <div class="progress">
+            <!--<div class="indeterminate"></div>-->
+        </div>
         {{#autoForm collection=collection id="co_serviceAdd" type="insert"}}
             <div class="row">
                 <div class="two fields">
@@ -70,7 +72,9 @@
             <div class="divider"> /</div>
             <div class="active section">Edit Service</div>
         </div>
-        <h4 class="ui dividing header">Edit Service</h4>
+        <div class="progress">
+            <!--<div class="indeterminate"></div>-->
+        </div>
         {{#if subscriptionsReady}}
             {{#autoForm collection=collection id="co_serviceEdit" type="update" doc=data}}
                 <div class="row">

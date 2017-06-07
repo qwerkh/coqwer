@@ -32,7 +32,9 @@
         </div>
 
 
-        <h4 class="ui dividing header">Add Machin</h4>
+        <div class="progress">
+            <!--<div class="indeterminate"></div>-->
+        </div>
 
         {{#autoForm collection=collection id="co_machinAdd" type="insert"}}
             <div class="row">
@@ -70,7 +72,9 @@
             <div class="divider"> /</div>
             <div class="active section">Edit Machin</div>
         </div>
-        <h4 class="ui dividing header">Edit Machin</h4>
+        <div class="progress">
+            <!--<div class="indeterminate"></div>-->
+        </div>
         {{#if subscriptionsReady}}
             {{#autoForm collection=collection id="co_machinEdit" type="update" doc=data}}
                 <div class="row">

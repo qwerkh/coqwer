@@ -30,7 +30,9 @@
             <div class="divider"> /</div>
             <div class="active section">Add ChartAccount</div>
         </div>
-        <h4 class="ui dividing header">Add ChartAccount</h4>
+        <div class="progress">
+            <!--<div class="indeterminate"></div>-->
+        </div>
         {{#autoForm collection=collection id="co_chartAccountAdd" type="insert"}}
             <div class="row">
                 <div class="two fields">
@@ -66,7 +68,9 @@
             <div class="divider"> /</div>
             <div class="active section">Edit ChartAccount</div>
         </div>
-        <h4 class="ui dividing header">Edit ChartAccount</h4>
+        <div class="progress">
+            <!--<div class="indeterminate"></div>-->
+        </div>
         {{#if subscriptionsReady}}
             {{#autoForm collection=collection id="co_chartAccountEdit" type="update" doc=data}}
                 <div class="row">

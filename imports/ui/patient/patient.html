@@ -29,7 +29,9 @@
             <div class="divider"> /</div>
             <div class="active section">Add Patient</div>
         </div>
-        <h4 class="ui dividing header">Add Patient</h4>
+        <div class="progress">
+            <!--<div class="indeterminate"></div>-->
+        </div>
         {{#autoForm collection=collection id="co_patientAdd" type="insert"}}
             <div class="row">
                 <div class="two fields">
@@ -72,7 +74,9 @@
             <div class="divider"> /</div>
             <div class="active section">Edit Patient</div>
         </div>
-        <h4 class="ui dividing header">Edit Patient</h4>
+        <div class="progress">
+            <!--<div class="indeterminate"></div>-->
+        </div>
         {{#if subscriptionsReady}}
             {{#autoForm collection=collection id="co_patientEdit" type="update" doc=data}}
                 <div class="row">

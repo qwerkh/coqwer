@@ -31,7 +31,9 @@
             <div class="divider"> /</div>
             <div class="active section">Add Service Type</div>
         </div>
-        <h4 class="ui dividing header">Add Service Type</h4>
+        <div class="progress">
+            <!--<div class="indeterminate"></div>-->
+        </div>
         {{#autoForm collection=collection id="co_serviceTypeAdd" type="insert"}}
             <div class="row">
                 <div class="two fields">
@@ -65,7 +67,9 @@
             <div class="divider"> /</div>
             <div class="active section">Edit Service Type</div>
         </div>
-        <h4 class="ui dividing header">Edit Service Type</h4>
+        <div class="progress">
+            <!--<div class="indeterminate"></div>-->
+        </div>
 
         {{#if subscriptionsReady}}
             {{#autoForm collection=collection id="co_serviceTypeEdit" type="update" doc=data}}

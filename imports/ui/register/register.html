@@ -32,6 +32,9 @@
             <div class="active section">Add Register</div>
         </div>
         <h4 class="ui dividing header">Add Register</h4>-->
+        <div class="progress">
+            <!--<div class="indeterminate"></div>-->
+        </div>
         {{#autoForm collection=collection id="co_registerAdd" type="insert"}}
             <div class="row">
                 <div class="four fields">
@@ -194,7 +197,9 @@
         </div>
         <h4 class="ui dividing header">Edit Register</h4>-->
 
-
+        <div class="progress">
+            <!--<div class="indeterminate"></div>-->
+        </div>
         {{#autoForm collection=collection id="co_registerEdit" type="update" doc=data}}
             <div class="row">
                 <div class="four fields">
@@ -285,20 +290,8 @@
 
                         </div>
                         <div class="ten wide column">
-                            <!--{{#with result}}
-                                <div class="ui segments plan principal">
-                                    <div class="ui top attached segment violet inverted plan-title">
-                                        <span class="plan-ribbon red">{{netDiscount}}</span>
-                                        <span class="ui header">Amount</span>
+                            <h2 class="ui blue header aligned center">កន្លែងបង់ប្រាក់</h2>
 
-                                    </div>
-                                    <div class="ui  attached segment feature">
-                                        <div class="amount">{{netAmount}}</div>
-                                    </div>
-                                    {{> afQuickField name='netTotal' value=netTotal label=false hidden=true}}
-                                </div>
-                            {{/with}}
-                                {{> afQuickField name='balance' value=balance label=false hidden=true}}-->
                         </div>
                         <div class="three wide column">
 
@@ -402,7 +395,7 @@
         {{/autoForm}}
         {{#if subscriptionsReady}}
         {{else}}
-            <div class="progress ">
+            <div class="progress">
                 <div class="indeterminate blue darken-1 "></div>
             </div>
         {{/if}}

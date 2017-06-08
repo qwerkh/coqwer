@@ -218,10 +218,10 @@ AutoForm.hooks({
             alertify.error(error.message);
             FlowRouter.query.unset();
         },
-      /*  onSubmit: function (insertDoc, updateDoc, currentDoc) {
+        onSubmit: function (insertDoc, updateDoc, currentDoc) {
             event.preventDefault();
             this.done();
-        }*/
+        }
     },
     co_journalEdit: {
         before: {

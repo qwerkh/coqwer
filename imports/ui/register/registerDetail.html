@@ -2,7 +2,7 @@
     <div class="ui container animated fadeIn">
         {{#autoForm schema=schemaService id="co_registerService"}}
             <div class="row">
-                <table class="ui celled striped table">
+                <table class="ui celled single line table ">
                     <thead>
                     <tr>
                         <th colspan="4">
@@ -32,9 +32,7 @@
                             <td>{{> afQuickField name='price' label=false value=price class="small"}}</td>
                             <td>{{> afQuickField name='qty' label=false value=qty class="small"}}</td>
                             <td>
-
                                 {{> afFieldInput name='amount' label=false value=amount class="small" readonly=true}}
-
                             </td>
                             <td>
                                 <a style="float: right;" class="ui red button small delete-service"><i

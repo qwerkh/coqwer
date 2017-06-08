@@ -15,15 +15,17 @@ Meteor.methods({
         let serviceDoc = Co_Service.findOne({_id: id});
         let machinId = [];
         if (serviceDoc) {
-            serviceDoc.machinTypeId.forEach(function (obj) {
+            if (serviceDoc.machinTypeId && serviceDoc.machinTypeId.length > 0) {
+                serviceDoc.machinTypeId.forEach(function (obj) {
 
-                if (obj) {
-                    let machin = Co_Machin.findOne({machinTypeId: obj, status: true, rolesArea: rolesArea});
-                    if (machin) {
-                        machinId.push(machin._id);
+                    if (obj) {
+                        let machin = Co_Machin.findOne({machinTypeId: obj, status: true, rolesArea: rolesArea});
+                        if (machin) {
+                            machinId.push(machin._id);
+                        }
                     }
-                }
-            })
+                })
+            }
             serviceDoc.machinId = machinId;
         }
         return serviceDoc;

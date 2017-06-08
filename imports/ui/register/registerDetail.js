@@ -64,19 +64,13 @@ registerServiceTmpl.onRendered(function () {
 
 registerServiceTmpl.events({
     'change [name="serviceId"]'(e, t){
+        debugger;
         let serviceId = e.currentTarget.value;
         if (serviceId != "") {
             Meteor.call("co_serviceById", serviceId, Session.get("area"), function (err, result) {
                 if (result) {
-                    let service = serviceTem.find(serviceId).fetch();
-                    if (service.length > 0) {
-                        serviceTem.update(result._id, {
-                            $inc: {
-                                qty: 1,
-                                amount: result.price
-                            }
-                        })
-                    } else {
+                    let service = serviceTem.find({_id: serviceId}).fetch();
+                    if (service.length == 0 && serviceId != "") {
                         serviceTem.insert({
                             _id: result._id,
                             name: result.name,
@@ -86,12 +80,13 @@ registerServiceTmpl.events({
                             amount: result.price
                         })
                     }
+                    serviceDoc = {};
+                    serviceId = "";
+                    $("[name='serviceId']").parents('.selection.dropdown').dropdown('clear');
+
                 }
             })
         }
-        serviceDoc = {};
-        serviceId = "";
-        $("[name='serviceId']").parents('.selection.dropdown').dropdown('clear');
     },
     'keyup [name="price"]'(e, t){
 
@@ -142,11 +137,9 @@ registerServiceTmpl.events({
     },
 
     'click .service-row'(){
-        debugger;
         serviceDoc = this;
     },
     'select .service-row'(){
-        debugger;
         serviceDoc = this;
     }
 })
@@ -198,17 +191,8 @@ registerMedicineTmpl.events({
         if (medicineId != "") {
             Meteor.call("co_medicineById", medicineId, function (err, result) {
                 if (result) {
-                    let medicine = medicineTem.find(medicineId).fetch();
-                    if (medicine.length > 0) {
-
-                        medicineTem.update(medicineId, {
-                            $inc: {
-                                qty: 1,
-                                amount: result.price
-                            }
-                        })
-                    } else {
-
+                    let medicine = medicineTem.find({_id: medicineId}).fetch();
+                    if (medicine.length == 0 && medicineId != "") {
                         medicineTem.insert({
                             _id: result._id,
                             name: result.name,
@@ -217,13 +201,15 @@ registerMedicineTmpl.events({
                             amount: result.price
                         })
                     }
-                    $('[name="medicineId"]').val('');
+
+                    medicineDoc = {};
+                    medicineId = "";
+                    $("[name='medicineId']").parents('.selection.dropdown').dropdown('clear');
                 }
+
             })
         }
-        medicineDoc = {};
-        medicineId = "";
-        $("[name='medicineId']").parents('.selection.dropdown').dropdown('clear');
+
 
     },
     'keyup [name="price"]'(e, t){

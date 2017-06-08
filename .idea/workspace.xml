@@ -3,54 +3,54 @@
   <component name="BookmarkManager">
     <bookmark url="file://$PROJECT_DIR$/imports/ui/patient/patient.js" line="113" />
     <bookmark url="file://$PROJECT_DIR$/imports/collection/patient.js" line="19" />
-    <bookmark url="file://$PROJECT_DIR$/imports/ui/register/register.js" line="384" />
+    <bookmark url="file://$PROJECT_DIR$/imports/ui/register/register.js" line="387" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="37b05a99-1bf8-426c-a9a5-9f4248831879" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/both/tabular/service.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/imports/ui/machinType/machinType.html" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/both/i18n/km.i18n.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/imports/collection/service.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/collectionHook/service.js" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/imports/ui/medicine/medicine.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/imports/ui/medicineType/medicineType.html" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/meteor_packages_auto_import_browser.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/methods/optionsData.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/publication.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/imports/collection/image.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/imports/ui/machin/machin.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/imports/collection/register.js" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/imports/ui/patient/patient.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/imports/ui/medicineType/medicineType.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/publication.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/both/i18n/en.i18n.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/both/tabular/machin.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/both/tabular/patient.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/imports/collection/medicine.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/methods/optionsData.js" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/imports/ui/machin/machin.html" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/route/data.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/imports/collection/medicine.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/collectionHook/patient.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/meteor_packages_auto_import_npm.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/imports/ui/machinType/machinType.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/imports/ui/register/register.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/collectionHook/medicine.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/imports/ui/register/register.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/both/tabular/medicine.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/both/tabular/patient.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/collectionHook/service.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/imports/ui/service/service.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/imports/collection/service.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/imports/collection/register.js" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/imports/collection/patient.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/imports/ui/medicine/medicine.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/imports/ui/machinType/machinType.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/both/tabular/service.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/both/tabular/machin.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/imports/ui/service/service.html" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/collectionHook/machin.js" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/imports/ui/patient/patient.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/imports/ui/medicineType/medicineType.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/meteor_packages_auto_import_npm.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/collectionHook/patient.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/imports/ui/register/register.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/imports/ui/medicineType/medicineType.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/imports/ui/machinType/machinType.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/imports/ui/medicine/medicine.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/imports/ui/machin/machin.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/both/tabular/medicine.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/imports/ui/register/register.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/imports/ui/service/service.js" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/imports/collection/machin.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/both/i18n/en.i18n.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.meteor/packages" afterPath="$PROJECT_DIR$/.meteor/packages" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/route/setting.js" afterPath="$PROJECT_DIR$/client/route/setting.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/imports/ui/home/home.html" afterPath="$PROJECT_DIR$/imports/ui/home/home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/layout.html" afterPath="$PROJECT_DIR$/client/layout.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/collectionHook/medicine.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/imports/collection/image.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/imports/ui/service/service.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/both/i18n/km.i18n.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/methods/view.js" afterPath="$PROJECT_DIR$/server/methods/view.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/security.js" afterPath="$PROJECT_DIR$/server/security.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/imports/ui/user/userSetting.html" afterPath="$PROJECT_DIR$/imports/ui/user/userSetting.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/imports/ui/home/home.html" afterPath="$PROJECT_DIR$/imports/ui/home/home.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.meteor/versions" afterPath="$PROJECT_DIR$/.meteor/versions" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/route/setting.js" afterPath="$PROJECT_DIR$/client/route/setting.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/security.js" afterPath="$PROJECT_DIR$/server/security.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/layout.html" afterPath="$PROJECT_DIR$/client/layout.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/imports/ui/user/userSetting.html" afterPath="$PROJECT_DIR$/imports/ui/user/userSetting.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.meteor/packages" afterPath="$PROJECT_DIR$/.meteor/packages" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -67,12 +67,62 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="register.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/imports/ui/register/register.js">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="journal.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/imports/ui/journal/journal.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="219">
-              <caret line="249" column="38" lean-forward="true" selection-start-line="249" selection-start-column="38" selection-end-line="249" selection-end-column="38" />
+            <state relative-caret-position="19">
+              <caret line="189" column="6" lean-forward="true" selection-start-line="189" selection-start-column="6" selection-end-line="189" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="journal.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/imports/ui/journal/journal.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="324">
+              <caret line="78" column="42" lean-forward="true" selection-start-line="78" selection-start-column="42" selection-end-line="78" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="journalDetail.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/imports/ui/journal/journalDetail.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="703">
+              <caret line="49" column="0" lean-forward="true" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="registerDetail.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/imports/ui/register/registerDetail.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="855">
+              <caret line="45" column="27" lean-forward="true" selection-start-line="45" selection-start-column="27" selection-end-line="45" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="register.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/imports/ui/register/register.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="443">
+              <caret line="228" column="72" lean-forward="false" selection-start-line="228" selection-start-column="72" selection-end-line="228" selection-end-column="72" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="payment.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/imports/ui/payment/payment.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="228">
+              <caret line="33" column="41" lean-forward="true" selection-start-line="33" selection-start-column="41" selection-end-line="33" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -90,10 +140,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>medicineDoc</find>
-      <find>debu</find>
-      <find>net To</find>
-      <find>netTo</find>
       <find>amountDiscountService</find>
       <find>unP</find>
       <find>mul</find>
@@ -120,6 +166,10 @@
       <find>TAPi18n</find>
       <find>prog</find>
       <find>inpu</find>
+      <find>co_serviceBy</find>
+      <find>co_serviceById</find>
+      <find>fiel</find>
+      <find>field</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$</dir>
@@ -131,8 +181,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/server/collectionHook/serviceType.js" />
-        <option value="$PROJECT_DIR$/server/collectionHook/service.js" />
         <option value="$PROJECT_DIR$/server/collectionHook/register.js" />
         <option value="$PROJECT_DIR$/server/collectionHook/reference.js" />
         <option value="$PROJECT_DIR$/server/collectionHook/patient.js" />
@@ -143,7 +191,6 @@
         <option value="$PROJECT_DIR$/both/tabular/payment.js" />
         <option value="$PROJECT_DIR$/both/tabular/register.js" />
         <option value="$PROJECT_DIR$/imports/ui/patient/patient.js" />
-        <option value="$PROJECT_DIR$/imports/ui/register/registerDetail.js" />
         <option value="$PROJECT_DIR$/server/collectionHook/payment.js" />
         <option value="$PROJECT_DIR$/server/collectionHook/chartAccount.js" />
         <option value="$PROJECT_DIR$/imports/collection/chartAccount.js" />
@@ -154,7 +201,6 @@
         <option value="$PROJECT_DIR$/client/layout.html" />
         <option value="$PROJECT_DIR$/server/methods/optionsData.js" />
         <option value="$PROJECT_DIR$/both/tabular/journal.js" />
-        <option value="$PROJECT_DIR$/imports/ui/journal/journalDetail.html" />
         <option value="$PROJECT_DIR$/imports/ui/journal/journalDetail.js" />
         <option value="$PROJECT_DIR$/client/layout.js" />
         <option value="$PROJECT_DIR$/imports/collection/userSchema.js" />
@@ -162,26 +208,30 @@
         <option value="$PROJECT_DIR$/client/route/data.js" />
         <option value="$PROJECT_DIR$/server/collectionHook/journal.js" />
         <option value="$PROJECT_DIR$/imports/collection/journal.js" />
-        <option value="$PROJECT_DIR$/imports/ui/journal/journal.js" />
         <option value="$PROJECT_DIR$/client/stylesheet/style.scss" />
         <option value="$PROJECT_DIR$/client/stylesheet/linear style.css" />
         <option value="$PROJECT_DIR$/imports/ui/journal/journal.html" />
-        <option value="$PROJECT_DIR$/imports/ui/register/register.html" />
         <option value="$PROJECT_DIR$/imports/ui/company/company.html" />
         <option value="$PROJECT_DIR$/imports/ui/machin/machin.html" />
         <option value="$PROJECT_DIR$/imports/ui/machinType/machinType.html" />
         <option value="$PROJECT_DIR$/imports/ui/medicine/medicine.html" />
         <option value="$PROJECT_DIR$/imports/ui/medicineType/medicineType.html" />
         <option value="$PROJECT_DIR$/imports/ui/patient/patient.html" />
-        <option value="$PROJECT_DIR$/imports/ui/payment/payment.html" />
         <option value="$PROJECT_DIR$/imports/ui/reference/reference.html" />
         <option value="$PROJECT_DIR$/imports/ui/service/service.html" />
         <option value="$PROJECT_DIR$/imports/ui/serviceType/serviceType.html" />
         <option value="$PROJECT_DIR$/imports/ui/user/userSetting.html" />
         <option value="$PROJECT_DIR$/imports/ui/exchange/exchange.html" />
-        <option value="$PROJECT_DIR$/client/stylesheet/style.css" />
         <option value="$PROJECT_DIR$/imports/ui/chartAccount/chartAccount.html" />
         <option value="$PROJECT_DIR$/imports/ui/register/register.js" />
+        <option value="$PROJECT_DIR$/server/methods/getData.js" />
+        <option value="$PROJECT_DIR$/imports/ui/register/registerDetail.js" />
+        <option value="$PROJECT_DIR$/imports/ui/journal/journal.js" />
+        <option value="$PROJECT_DIR$/imports/ui/register/registerDetail.html" />
+        <option value="$PROJECT_DIR$/client/stylesheet/style.css" />
+        <option value="$PROJECT_DIR$/imports/ui/journal/journalDetail.html" />
+        <option value="$PROJECT_DIR$/imports/ui/register/register.html" />
+        <option value="$PROJECT_DIR$/imports/ui/payment/payment.html" />
       </list>
     </option>
   </component>
@@ -353,6 +403,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="payment" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cosmetic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cosmetic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="imports" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ui" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="journal" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -662,12 +734,13 @@
       <workItem from="1496439832969" duration="54000" />
       <workItem from="1496564728277" duration="4319000" />
       <workItem from="1496570089869" duration="7829000" />
-      <workItem from="1496840102028" duration="11958000" />
+      <workItem from="1496840102028" duration="12082000" />
+      <workItem from="1496927267891" duration="5590000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="337748000" />
+    <option name="totallyTimeSpent" value="343462000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -682,23 +755,23 @@
     <frame x="1431" y="24" width="1301" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26056337" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27308294" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972136" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972136" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972136" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5324074" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -714,27 +787,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/server/collectionHook/serviceType.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/collectionHook/chartAccount.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/collectionHook/exchange.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="741">
-          <caret line="41" column="9" lean-forward="true" selection-start-line="41" selection-start-column="9" selection-end-line="41" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/collectionHook/service.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
@@ -746,13 +798,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
           <caret line="41" column="22" lean-forward="false" selection-start-line="41" selection-start-column="4" selection-end-line="41" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/methods/optionsData.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -830,7 +875,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-171">
           <caret line="75" column="34" lean-forward="false" selection-start-line="75" selection-start-column="34" selection-end-line="75" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -890,29 +934,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/imports/ui/journal/journalDetail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="16" lean-forward="false" selection-start-line="0" selection-start-column="16" selection-end-line="0" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/imports/ui/register/registerDetail.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="80" column="44" lean-forward="true" selection-start-line="80" selection-start-column="44" selection-end-line="80" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/stylesheet/style.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/client/stylesheet/style.scss" />
     <entry file="file://$PROJECT_DIR$/client/stylesheet/linear style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="115">
@@ -921,35 +943,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/imports/ui/register/register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="298" column="26" lean-forward="true" selection-start-line="298" selection-start-column="26" selection-end-line="298" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/imports/ui/journal/journal.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="33" column="14" lean-forward="true" selection-start-line="31" selection-start-column="7" selection-end-line="33" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/imports/ui/journal/journal.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="210" column="48" lean-forward="true" selection-start-line="210" selection-start-column="48" selection-end-line="210" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/imports/ui/company/company.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-298">
           <caret line="126" column="14" lean-forward="false" selection-start-line="126" selection-start-column="14" selection-end-line="126" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -957,7 +954,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="418">
           <caret line="73" column="14" lean-forward="true" selection-start-line="73" selection-start-column="14" selection-end-line="73" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -965,7 +961,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="380">
           <caret line="35" column="14" lean-forward="false" selection-start-line="35" selection-start-column="14" selection-end-line="35" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -973,7 +968,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="19">
           <caret line="7" column="49" lean-forward="true" selection-start-line="7" selection-start-column="49" selection-end-line="7" selection-end-column="49" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -981,7 +975,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-70">
           <caret line="70" column="14" lean-forward="false" selection-start-line="70" selection-start-column="14" selection-end-line="70" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -989,17 +982,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-393">
           <caret line="78" column="14" lean-forward="false" selection-start-line="78" selection-start-column="14" selection-end-line="78" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/imports/ui/payment/payment.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="255" column="14" lean-forward="false" selection-start-line="255" selection-start-column="14" selection-end-line="255" selection-end-column="14" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#template#1;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1015,7 +997,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1023,7 +1004,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="291">
           <caret line="35" column="14" lean-forward="false" selection-start-line="35" selection-start-column="14" selection-end-line="35" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1031,7 +1011,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-222">
           <caret line="76" column="14" lean-forward="false" selection-start-line="76" selection-start-column="14" selection-end-line="76" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1039,7 +1018,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-51">
           <caret line="71" column="14" lean-forward="false" selection-start-line="71" selection-start-column="14" selection-end-line="71" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1055,10 +1033,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="418">
           <caret line="22" column="32" lean-forward="true" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
-          <folding>
-            <element signature="n#style#0;n#h4#0;n#div#1;n#div#0;n#div#0;n#template#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#a#0;n#div#0;n#template#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1066,15 +1040,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/stylesheet/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="43" column="17" lean-forward="false" selection-start-line="43" selection-start-column="17" selection-end-line="43" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1082,7 +1047,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="267">
           <caret line="58" column="10" lean-forward="true" selection-start-line="58" selection-start-column="10" selection-end-line="58" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1090,16 +1054,101 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-5586">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#24#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/imports/ui/register/register.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="249" column="38" lean-forward="true" selection-start-line="249" selection-start-column="38" selection-end-line="249" selection-end-column="38" />
+        <state relative-caret-position="910">
+          <caret line="118" column="27" lean-forward="false" selection-start-line="118" selection-start-column="27" selection-end-line="118" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/ui/register/registerDetail.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="428">
+          <caret line="206" column="51" lean-forward="true" selection-start-line="206" selection-start-column="51" selection-end-line="206" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/methods/geoData.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/methods/optionsData.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/methods/getDataById.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/ui/journal/journal.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="189" column="6" lean-forward="true" selection-start-line="189" selection-start-column="6" selection-end-line="189" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/ui/journal/journal.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="78" column="42" lean-forward="true" selection-start-line="78" selection-start-column="42" selection-end-line="78" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/stylesheet/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="158">
+          <caret line="224" column="8" lean-forward="false" selection-start-line="224" selection-start-column="8" selection-end-line="224" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/ui/journal/journalDetail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="703">
+          <caret line="49" column="0" lean-forward="true" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/ui/register/registerDetail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="855">
+          <caret line="45" column="27" lean-forward="true" selection-start-line="45" selection-start-column="27" selection-end-line="45" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/ui/register/register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="443">
+          <caret line="228" column="72" lean-forward="false" selection-start-line="228" selection-start-column="72" selection-end-line="228" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/ui/payment/payment.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="33" column="41" lean-forward="true" selection-start-line="33" selection-start-column="41" selection-end-line="33" selection-end-column="41" />
           <folding />
         </state>
       </provider>

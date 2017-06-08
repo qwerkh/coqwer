@@ -2,7 +2,7 @@
     <div class="ui container animated fadeIn">
         {{#autoForm schema=schemaPayment id="co_journalDetailPayment"}}
             <div class="row">
-                <table class="ui celled striped table">
+                <table class="ui celled single line  table">
                     <thead>
                     <tr>
                         <th colspan="3">{{> afQuickField name='paymentReceiveMethod' options=paymentReceiveMethodOption value=cashMethod}}</th>
@@ -38,12 +38,15 @@
                             </td>
                         </tr>
                     {{/each}}
+                    </tbody>
+                    <thead>
                     <tr>
                         <th style="text-align: right">Total :</th>
                         <th colspan="2">{{> afQuickField name='total' value=total placeholder="Total" label=false readonly=true}}
                         </th>
                     </tr>
-                    </tbody>
+                    </thead>
+
 
                 </table>
             </div>

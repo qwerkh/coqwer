@@ -33,7 +33,7 @@
             <div class="indeterminate"></div>
         </div>
         {{#autoForm collection=collection id="co_journalAdd" type="insert"}}
-            <div class="ui top attached button blue"><h2>Journal Entry</h2></div>
+            <div class="ui top attached button teal"><h3>Journal Entry</h3></div>
             <div class="ui grid">
                 <div class="ten wide column">
                     {{> co_journalDetailPayment}}
@@ -70,7 +70,7 @@
         <h4 class="ui dividing header">Edit Journal</h4>
         {{#if subscriptionsReady}}
             {{#autoForm collection=collection id="co_journalEdit" type="update" doc=data}}
-                <div class="ui top attached button blue"><h2>Journal Entry</h2></div>
+                <div class="ui top attached button teal"><h3>Journal Entry</h3></div>
                 <div class="ui grid">
                     <div class="ten wide column">
                         {{> co_journalDetailPayment transaction=data.transaction paymentReceiveMethod=data.paymentReceiveMethod}}

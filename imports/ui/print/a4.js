@@ -16,8 +16,18 @@ indexTmpl.onCreated(function () {
     // });
 });
 
-indexTmpl.helpers({
+indexTmpl.onRendered(function () {
+    Meteor.setTimeout(function () {
+        window.print();
+        FlowRouter.go('/co-data/register')
+    },2000)
+});
 
+indexTmpl.helpers({
+    formatDate(value,formatString){
+        debugger;
+        return moment(value).format(formatString);
+    },
     data(){
         let instance = Template.instance();
         return instance.printData.get();

@@ -1,6 +1,7 @@
 import {Co_Register} from '../../../imports/collection/register';
 import {Co_Company} from '../../../imports/collection/company';
 import {Co_Payment} from '../../../imports/collection/payment.js';
+import {Co_Patient} from '../../../imports/collection/patient.js';
 
 Meteor.methods({
     printA4({invoiceId}){
@@ -11,8 +12,8 @@ Meteor.methods({
                 {printId: invoiceId}
             ]
         });
+        register.patient=Co_Patient.findOne({_id: register.patientId});
         let payment = Co_Payment.findOne({registerId: register._id});
-        console.log(register);
         return {company: company, register: register, payment: payment}
 
     },

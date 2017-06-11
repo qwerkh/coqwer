@@ -217,7 +217,7 @@ registerMedicineTmpl.events({
         if (medicineDoc) {
             Meteor.setTimeout(function () {
                 let amount = e.currentTarget.value * medicineDoc.qty;
-                serviceTem.update(
+                medicineTem.update(
                     medicineDoc._id,
                     {
                         $set: {price: e.currentTarget.value, amount: amount}

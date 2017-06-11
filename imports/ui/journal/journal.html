@@ -67,37 +67,39 @@
             <div class="divider"> /</div>
             <div class="active section">Edit Journal</div>
         </div>
-        <h4 class="ui dividing header">Edit Journal</h4>
+
         {{#if subscriptionsReady}}
-            {{#autoForm collection=collection id="co_journalEdit" type="update" doc=data}}
-                <div class="ui top attached button teal"><h3>Journal Entry</h3></div>
-                <div class="ui grid">
-                    <div class="ten wide column">
-                        {{> co_journalDetailPayment transaction=data.transaction paymentReceiveMethod=data.paymentReceiveMethod}}
-                    </div>
-                    <div class="six wide column">
-                        <div class="ui raised segment">
-                            {{> afQuickField name="journalDate"}}
-                            {{> afQuickField name="currencyId"}}
-                            {{> afQuickField name="voucherId"}}
-                            {{> afQuickField name="memo"}}
-                        </div>
-
-                        {{> co_actionAdd}}
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col s11">
-                        {{> co_preloader}}
-                    </div>
-                </div>
-            {{/autoForm}}
-
+            <div class="progress">
+            </div>
         {{else}}
-            <div class="progress ">
-                <div class="indeterminate blue darken-1 "></div>
+            <div class="progress">
+                <div class="indeterminate"></div>
             </div>
         {{/if}}
+        {{#autoForm collection=collection id="co_journalEdit" type="update" doc=data}}
+            <div class="ui top attached button teal"><h3>Journal Entry</h3></div>
+            <div class="ui grid">
+                <div class="ten wide column">
+                    {{> co_journalDetailPayment transaction=data.transaction paymentReceiveMethod=data.paymentReceiveMethod}}
+                </div>
+                <div class="six wide column">
+                    <div class="ui raised segment">
+                        {{> afQuickField name="journalDate"}}
+                        {{> afQuickField name="currencyId"}}
+                        {{> afQuickField name="voucherId"}}
+                        {{> afQuickField name="memo"}}
+                    </div>
+
+                    {{> co_actionAdd}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s11">
+                    {{> co_preloader}}
+                </div>
+            </div>
+        {{/autoForm}}
+
 
     </div>
 </template>

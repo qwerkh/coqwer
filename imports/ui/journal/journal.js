@@ -87,7 +87,6 @@ indexTmpl.events({
 
     },
     'click .edit' (event, instance) {
-        debugger;
         let self = this;
         journalDetailTem.remove({});
         FlowRouter.go(`/co-data/journal/${self._id}/edit`);
@@ -204,7 +203,7 @@ AutoForm.hooks({
                 doc.transaction = transaction;
 
                 doc.rolesArea = Session.get('area');
-                doc.$unset = {};
+                // doc.$unset = {};
                 return doc;
             }
         },

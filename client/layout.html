@@ -5,7 +5,7 @@
 
 <template name="MainLayout">
     {{>navbar}}
-    <div class="main" style="margin-top: 70px;">
+    <div class="main" style="margin-top: 70px; height: 1000px">
         {{#if currentUser}}
             {{#if currentUser.profile.approved}}
                 {{#if notChoosenArea}}
@@ -17,11 +17,27 @@
                 {{> co_home}}
             {{/if}}
         {{else}}
-            <div class="ui container">
+
+            <div class="body-login">
+                <div class="ui one column center aligned grid">
+                    <div class="column six wide form-holder">
+                        {{> atForm}}
+                    </div>
+                </div>
+            </div>
+
+            <!--<div class="custom-login-background">
+                <div class="login-box particles-js-content">
+                    {{> atForm}}
+                </div>
+            </div>-->
+
+            <!--<div class="ui container">
                 <div class="eight wide column">
                     {{> atForm}}
                 </div>
-            </div>
+            </div>-->
+
             <!--<div class="ui middle aligned center aligned grid">
                 <div class="column">
                     <form class="ui large form">
@@ -33,7 +49,15 @@
             </div>-->
         {{/if}}
     </div>
-    {{> footer}}
+    {{#if currentUser}}
+        {{#if currentUser.profile.approved}}
+            {{#if notChoosenArea}}
+
+            {{else}}
+                {{> footer}}
+            {{/if}}
+        {{/if}}
+    {{/if}}
     {{> meteorStatus position="bottom"}}
 </template>
 
@@ -58,20 +82,25 @@
                         <a href="{{pathFor 'co.exchange'}}" class="item"><i class="exchange icon"></i> Exchange</a>
                         <div class="divider"></div>
                         <a href="{{pathFor 'co.machin'}}" class="item"><i class="camera retro icon"></i> Machin</a>
-                        <a href="{{pathFor 'co.medicine'}}" class="item"><i class="add square icon"></i> Medicine</a>
+                        <a href="{{pathFor 'co.medicine'}}" class="item"><i class="add square icon"></i>
+                            Medicine</a>
                         <a href="{{pathFor 'co.service'}}" class="item"><i class="yelp icon"></i> Service</a>
 
                         <div class="ui left pointing dropdown link item">
                             <i class="dropdown icon"></i>
                             <i class="database icon"></i> Data
                             <div class="menu">
-                                <a href="{{pathFor 'co.machinType'}}" class="item"><i class="camera retro icon"></i>
+                                <a href="{{pathFor 'co.machinType'}}" class="item"><i
+                                        class="camera retro icon"></i>
                                     Machin Type</a>
-                                <a href="{{pathFor 'co.medicineType'}}" class="item"><i class="add square icon"></i>
+                                <a href="{{pathFor 'co.medicineType'}}" class="item"><i
+                                        class="add square icon"></i>
                                     Medicine Type</a>
-                                <a href="{{pathFor 'co.serviceType'}}" class="item"><i class="yelp icon"></i> Service
+                                <a href="{{pathFor 'co.serviceType'}}" class="item"><i class="yelp icon"></i>
+                                    Service
                                     Type</a>
-                                <a href="{{pathFor 'co.reference'}}" class="item"><i class="university icon"></i>
+                                <a href="{{pathFor 'co.reference'}}" class="item"><i
+                                        class="university icon"></i>
                                     Reference</a>
                             </div>
                         </div>
@@ -82,7 +111,8 @@
                             <i class="dropdown icon"></i>
                             <i class="shield icon"></i> Account
                             <div class="menu">
-                                <a href="{{pathFor 'co.chartAccount'}}" class="item"><i class="camera retro icon"></i>
+                                <a href="{{pathFor 'co.chartAccount'}}" class="item"><i
+                                        class="camera retro icon"></i>
                                     Chart Account</a>
 
                             </div>
@@ -116,5 +146,25 @@
 </template>
 
 <template name="footer">
+    <footer>
+        <div class="ui vertical stripe segment">
+            <div class="ui container">
+                <div class="ui stackable relaxed divided grid">
+                    <div class="ten wide column">
 
+                        <div class="item">
+                            © 2017 Develope By <i class="heart icon"></i> by Navi Team;.
+                        </div>
+
+                    </div>
+
+                    <div class="six wide column">
+                        <div class="item" style="float: right;">
+                            navi@gmail.com
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 </template>

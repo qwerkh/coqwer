@@ -243,3 +243,127 @@ td .field {
 th .field {
     margin-bottom: 0em !important;
 }
+
+.ui.footer.form-page { /* Increased specificity for SO snippet priority */
+    position: fixed !important;
+    margin-top: 70px !important;
+    bottom: 0;
+    width: 100%;
+    z-index: 101;
+    background-color: green !important;
+}
+
+/*Style Form Login 0*/
+
+.custom-login-background {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background: #333;
+    background: -webkit-gradient(radial, center center, 120, center center, 900, from(#69f0ae), to(#2E2329)) !important;
+    background: -moz-radial-gradient(circle, #33495E, #2E2329) !important;
+}
+
+.particles-js-content {
+    z-index: 100;
+    position: relative;
+}
+
+.login-box, .register-box {
+    width: 360px;
+    margin: 7% auto;
+}
+
+.ui.center.aligned.header {
+    text-align: center;
+    color: white !important;
+}
+
+/*Stye Form Login*/
+.body-login {
+    background: url('https://ununsplash.imgix.net/uploads/141362941583982a7e0fc/abcfbca1?q=75&fm=jpg&s=5266baf09e0e878b72b2e34adf2f54a0') fixed;
+    background-size: cover;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+}
+
+.form-holder {
+    background: rgba(255, 255, 255, 0.2);
+    margin-top: 10%;
+    border-radius: 3px;
+}
+
+.form-head {
+    font-size: 30px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #fff;
+    text-shadow: 0 0 30px #000;
+    margin: 15px auto 30px auto;
+}
+
+.remember-me {
+    text-align: left;
+}
+
+.ui.checkbox label {
+    color: #ddd;
+}
+
+.ui.form .field > label {
+    text-align: left !important;
+}
+
+.ui.dividing.header.area {
+    text-align: left !important;
+}
+
+.ui.primary.button.area {
+    width: 150px;
+}
+
+/*Footer*/
+
+footer > .ui.vertical.stripe.segment {
+    background-color: rgba(0, 0, 0, 0.06);
+}
+
+.ui.vertical.segment {
+    margin: 0;
+    padding-left: 0;
+    padding-right: 0;
+    background: none transparent;
+    border-radius: 0;
+    box-shadow: none;
+    border: none;
+    border-bottom: 1px solid rgba(34, 36, 38, .15);
+}
+
+.ui.segment:first-child {
+    margin-top: 0;
+}
+
+.ui.segment, .ui.segments .segment {
+    font-size: 1rem;
+}
+
+.ui.segment {
+    position: relative;
+    background: #fff;
+    box-shadow: 0 1px 2px 0 rgba(34, 36, 38, .15);
+    margin: 1rem 0;
+    padding: 1em 1em;
+    border-radius: .28571429rem;
+    border: 1px solid rgba(34, 36, 38, .15);
+}
+
+*, :after, :before {
+    box-sizing: inherit;
+}

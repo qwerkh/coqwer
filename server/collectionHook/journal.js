@@ -11,7 +11,7 @@ Co_Journal.before.insert(function (userId, doc) {
 
     let newTransaction = [];
     let paymentReceiveMethodDoc = Co_ChartAccount.findOne({_id: doc.paymentReceiveMethod});
-    console.log(doc.transaction);
+
     if (doc.type == "Payment") {
         doc.transaction.forEach(function (obj) {
             let paidDoc = Co_ChartAccount.findOne({_id: obj.account});

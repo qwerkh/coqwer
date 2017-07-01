@@ -4,52 +4,57 @@
             {{> sample_area}}
         {{else}}
             <div class="ui container" style="height: 100%">
-                <div class="row">
-                    <div class="field">
-                        <h5><u>Setting</u></h5>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <ul>
-                                    <li>
-                                        <a class="cursor-pointer" href="{{pathFor 'co.machin'}}">
-                                            Machin
-                                        </a>
-                                    </li>
-
-                                </ul>
-                                <ul>
-                                    <li>
-                                        <a class="cursor-pointer" href="{{pathFor 'co.medicine'}}">
-                                            Medicine
-                                        </a>
-                                    </li>
-
-                                </ul>
-                                <ul>
-                                    <li>
-                                        <a class="cursor-pointer" href="{{pathFor 'co.service'}}">
-                                            Service
-                                        </a>
-                                    </li>
-
-                                </ul>
-                            </div>
-                        </div>
+                <div class="ui grid">
+                    <div class="row">
+                        <h1 class="ui huge header">
+                            Dashboard
+                        </h1>
                     </div>
-                    <div class="field">
-                        <h5><u>Data</u></h5>
-                        <div class="row">
-                            <div class="field">
-                                <ul>
-                                    <li>
-                                        <a class="cursor-pointer" href="{{pathFor 'co.patient'}}">
-                                            Patient
-                                        </a>
-                                    </li>
-                                </ul>
-
-
+                    <div class="ui divider"></div>
+                    <div class="four column center aligned row">
+                        <div class="column">
+                            <img class="ui centered small circular image"
+                                 src="/square-image.png">
+                            <div class="ui hidden divider"></div>
+                            <div class="ui large green label">
+                                Label
                             </div>
+                            <p>
+                                Something else
+                            </p>
+                        </div>
+                        <div class="column">
+                            <img class="ui centered small circular image"
+                                 src="/square-image.png">
+                            <div class="ui hidden divider"></div>
+                            <div class="ui large blue label">
+                                Label
+                            </div>
+                            <p>
+                                Something else
+                            </p>
+                        </div>
+                        <div class="column">
+                            <img class="ui centered small circular image"
+                                 src="/square-image.png">
+                            <div class="ui hidden divider"></div>
+                            <div class="ui large pink label">
+                                Label
+                            </div>
+                            <p>
+                                Something else
+                            </p>
+                        </div>
+                        <div class="column">
+                            <img class="ui centered small circular image"
+                                 src="/square-image.png">
+                            <div class="ui hidden divider"></div>
+                            <div class="ui large red label">
+                                Label
+                            </div>
+                            <p>
+                                Something else
+                            </p>
                         </div>
                     </div>
                 </div>

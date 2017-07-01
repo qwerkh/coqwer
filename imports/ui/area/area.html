@@ -1,5 +1,5 @@
 <template name="sample_area">
-    <div class="ui container">
+    <!--<div class="ui container">
         {{#autoForm schema=schema id="area"}}
         <h4 class="ui dividing header">Choose Area</h4>
                 {{#if fetchGeoDataReady}}
@@ -12,8 +12,8 @@
                     </div>
                 </div>
                 {{else}}
-                    
-                {{/if}}
+
+    {{/if}}
                 <div class="ui vertical animated area primary button sumitArea" tabindex="0">
                     <div class="hidden content">GO</div>
                     <div class="visible content">
@@ -21,5 +21,26 @@
                     </div>
                 </div>
         {{/autoForm}}
+    </div>-->
+
+
+    <div class="body-login">
+        <div class="ui one column center aligned grid">
+            <div class="column six wide form-holder">
+                {{#autoForm schema=schema id="area"}}
+                    <h4 class="ui dividing header area">Choose Area</h4>
+
+                    {{>afQuickField  name="rolesBranch" placeholder="Select One" options=rolesBranchOptions search=true}}
+                    {{>afQuickField   name="rolesArea" placeholder="Select One" options=rolesAreaOptions search=true}}
+
+                    <div class="ui vertical animated area primary button sumitArea" style="float: right;" tabindex="0">
+                        <div class="hidden content">GO</div>
+                        <div class="visible content">
+                            <i class="material-icons">send</i>
+                        </div>
+                    </div>
+                {{/autoForm}};
+            </div>
+        </div>
     </div>
 </template>

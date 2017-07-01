@@ -332,6 +332,9 @@ addTmpl.events({
 })
 
 editTmpl.events({
+    'click #save-print'(e, t){
+        FlowRouter.query.set({p: 'true'});
+    },
     'click .cancel'(e, t){
         FlowRouter.go(`/co-data/register`);
     },
@@ -583,9 +586,17 @@ AutoForm.hooks({
             }
         },
         onSuccess: function (formType, result) {
-            alertify.success('Updated successfully');
-            FlowRouter.go(`/co-data/register`);
-            FlowRouter.query.unset();
+
+            let id =this.currentDoc._id;
+            let print = FlowRouter.query.get('p');
+           // let qp = FlowRouter.query.get('qp'); //trigger quick payment
+            if (print == 'true') {
+                FlowRouter.go('/co-data/register/print?inv=' + id);
+            } else {
+                alertify.success('Updated Successfully');
+                FlowRouter.go(`/co-data/register`);
+                FlowRouter.query.unset();
+            }
         },
         onError: function (formType, error) {
             alertify.error(error.message);
@@ -596,7 +607,7 @@ AutoForm.hooks({
             this.done();
         }
     }
-})
+});
 
 
 

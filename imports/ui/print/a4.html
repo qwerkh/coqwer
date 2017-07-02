@@ -104,6 +104,9 @@
 
 
                             </table>
+
+
+
                             <table width="100%" style="font-size: 16px;">
                                <!-- <tr align="right" style="height: 25px; font-size: 14px;">
                                     <td width="85%"><b>Sub Total</b>:</td>
@@ -160,10 +163,36 @@
                                         <!--</tr>-->
                                             <!--{{/with}}-->
                                         <!--{{/if}}-->
-                                    <!--{{/unless}}-->
+                                    <!--{{/unless}}
+                                -->
+                            </table>
+
+                        {{/with}}
+                        {{#if payment}}
+                        {{#with payment}}
+                            <table width="100%" style="font-size: 16px;">
+
+                                <tr align="right" style=" height: 25px; font-size: 14px;">
+                                    <td align="right">Paid USD:</td>
+                                    <td align="right"><b>{{paidAmountUSD}}</b></td>
+                                    <td align="right">Paid KHR:</td>
+                                    <td align="right"><b>{{paidAmountKHR}}</b></td>
+                                    <td align="right">Paid THB:</td>
+                                    <td align="right"><b>{{paidAmountTHB}}</b></td>
+                                </tr>
+                                <tr align="right" style=" height: 25px; font-size: 14px;">
+                                    <td align="right">Return USD:</td>
+                                    <td align="right"><b>{{returnAmountUSD}}</b></td>
+                                    <td align="right">Return KHR:</td>
+                                    <td align="right"><b>{{returnAmountKHR}}</b></td>
+                                    <td align="right">Return THB:</td>
+                                    <td align="right"><b>{{returnAmountTHB}}</b></td>
+                                </tr>
+
                             </table>
                         {{/with}}
-                        <div style="height: 7px;"></div>
+                        {{/if}}
+                      <!--  <div style="height: 7px;"></div>
                         <div class="row">
                             <div class="col-md-12">
                                 <div style="height: 7px;"></div>
@@ -192,7 +221,7 @@
                                     </tr>
                                 </table>
                             </div>
-                        </div>
+                        </div>-->
 
                     </div>
                 </div>

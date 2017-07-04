@@ -20,11 +20,11 @@ indexTmpl.onRendered(function () {
     Meteor.setTimeout(function () {
         window.print();
         FlowRouter.go('/co-data/register')
-    },2000)
+    }, 2000)
 });
 
 indexTmpl.helpers({
-    formatDate(value,formatString){
+    formatDate(value, formatString){
         debugger;
         return moment(value).format(formatString);
     },
@@ -35,6 +35,9 @@ indexTmpl.helpers({
     no(index){
         return index + 1;
     },
+    getDiscountType(discountType){
+        return discountType == "Percent" ? "(%)" : "($)";
+    }
 
 });
 indexTmpl.events({

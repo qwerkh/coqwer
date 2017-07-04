@@ -20,18 +20,16 @@ Template.navbar.onRendered(function () {
             Session.set('baseCurrency', company.baseCurrency);
         }
     })
-
     this.autorun(() => {
         if (Meteor.userId()) {
-
             setTimeout(function () {
                 $(".dropdown").dropdown();
                 $('#settings-dropdown').dropdown();
-            }, 300)
+            }, 1500)
         }
     });
-
 });
+
 
 Template.navbar.events({
     'click .logout'(event, instance){
@@ -53,3 +51,4 @@ Template.MainLayout.helpers({
         return _.isUndefined(Session.get('area'));
     }
 });
+

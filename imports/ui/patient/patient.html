@@ -13,7 +13,8 @@
                 <h4 class="ui" style="text-align: right">Patient</h4>
             </div>
         </div>
-        <a class="ui primary button" style="margin-bottom: 2px" href="{{pathFor 'co.patientAdd'}}">Add Patient</a>
+        <a class="ui primary button" style="margin-bottom: 2px" href="{{pathFor 'co.patientAdd'}}"><i
+                class="add sign icon"></i>Add Patient</a>
 
         {{> tabular table=dataTable selector=selector class="cursor-pointer ui celled table"}}
 
@@ -121,4 +122,185 @@
 <template name="_link">
     <a href="{{_downloadRoute}}/{{_collectionName}}/{{_id}}/original/{{_id}}{{extension}}?download=true"
        download="{{name}}">{{name}}</a>
+</template>
+
+
+<template name="co_patientDetail">
+    <div class="ui container animated fadeIn">
+        <!--<div class="ui breadcrumb" style="float: right">
+            <a href="/">Home</a>
+            <div class="divider"> /</div>
+            <a href="{{pathFor 'co.patient'}}">Patient</a>
+            <div class="divider"> /</div>
+            <div class="active section">Show Patient Detail</div>
+        </div>-->
+        <div class="ui grid">
+            <div class="four wide column">
+                <!-- Profile Image -->
+                <div class="box box-primary">
+                    <div class="box-body box-profile">
+                        {{#with patientDoc}}
+                            <img class="ui profile-user-img img-responsive img-circle" src="/no-user-image.png"
+                                 alt="User profile picture">
+
+                            <h3 class="profile-username text-center">{{khName}}</h3>
+
+                            <ul class="list-group list-group-unbordered">
+                                <li class="list-group-item">
+                                    <b>Gender</b> <a class="pull-right" style="float: right">{{gender}}</a>
+                                </li>
+                                <li class="list-group-item">
+                                    <b>Phone Number</b> <a class="pull-right" style="float: right">{{phoneNumber}}</a>
+                                </li>
+                                <li class="list-group-item">
+                                    <b>DOB</b> <a class="pull-right" style="float: right">{{dobString}}</a>
+                                </li>
+                                <li class="list-group-item">
+                                    <b>Address</b> <a class="pull-right" style="float: right">{{address}}</a>
+                                </li>
+                            </ul>
+                        {{/with}}
+                        <a href="{{pathFor 'co.patient'}}" class="ui positive button"
+                           style="width: 100%"><b>Back</b></a>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+            </div>
+            <!-- /.col -->
+            <div class="twelve wide column">
+                <div class="ui segment">
+                    <div class="ui menu top">
+                        <a class="active item" data-tab="history-tab-service"><i class="history icon blue"></i>Services
+                            History</a>
+                        <a class="item" data-tab="history-tab-medicine"><i class="history icon blue"></i>Medicine
+                            History</a>
+                        <a class="item" data-tab="register-tab"><i class="registered icon blue"></i> Register</a>
+                    </div>
+
+                    <div class="ui tab active" data-tab="history-tab-service">
+                        <div class="ui form">
+                            <table class="ui celled table">
+                                {{#if registerList}}
+                                    <thead>
+                                    <th>
+                                        Date
+                                    </th>
+                                    <th>#Id</th>
+                                    <th>Service Name</th>
+                                    <th>Qty</th>
+                                    <th>Price</th>
+                                    <th>Amount</th>
+                                    </thead>
+                                    {{#each registerList}}
+                                        <thead>
+                                        <tr>
+                                            <th colspan="6">
+                                                {{formatDate registerDate}} ( <span
+                                                    style="color: blue"> Net Total: {{formatNumber
+                                                    netTotalService}}</span> , <span
+                                                    style="color: red">Discount: {{formatNumber
+                                                    serviceDiscount}}</span>)
+                                            </th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        {{#each services}}
+                                            <tr>
+                                                <td class="collapsing"></td>
+                                                <td>{{serviceId}}</td>
+                                                <td>{{serviceName}}</td>
+                                                <td>{{qty}}</td>
+                                                <td>{{formatNumber price}}</td>
+                                                <td>{{formatNumber amount}}</td>
+                                            </tr>
+                                        {{/each}}
+                                        </tbody>
+                                    {{/each}}
+                                {{/if}}
+                            </table>
+                        </div>
+                    </div>
+                    <div class="ui tab" data-tab="history-tab-medicine">
+                        <div class="ui form">
+                            <table class="ui celled table">
+                                {{#if registerList}}
+                                    <thead>
+                                    <th>
+                                        Date
+                                    </th>
+                                    <th>#Id</th>
+                                    <th>Medicine Name</th>
+                                    <th>Qty</th>
+                                    <th>Price</th>
+                                    <th>Amount</th>
+                                    </thead>
+                                    {{#each registerList}}
+                                        <thead>
+                                        <tr>
+                                            <th colspan="6">
+                                                {{formatDate registerDate}} ( <span
+                                                    style="color: blue"> Net Total: {{formatNumber
+                                                    netTotalMedicine}}</span> , <span
+                                                    style="color: red">Discount: {{formatNumber
+                                                    medicineDiscount}}</span>)
+                                            </th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        {{#each medicines}}
+                                            <tr>
+                                                <td class="collapsing"></td>
+                                                <td>{{medicineId}}</td>
+                                                <td>{{medicineName}}</td>
+                                                <td>{{qty}}</td>
+                                                <td>{{price}}</td>
+                                                <td>{{amount}}</td>
+                                            </tr>
+                                        {{/each}}
+                                        </tbody>
+                                    {{/each}}
+                                {{/if}}
+                            </table>
+                        </div>
+                    </div>
+                    <div class="ui tab" data-tab="register-tab">
+                        <div class="ui form">
+                            <table class="ui celled table">
+                                {{#if registerList}}
+                                    <thead>
+                                    <th>#Id</th>
+                                    <th>
+                                        Date
+                                    </th>
+                                    <th>Total</th>
+                                    <th>Discount</th>
+                                    <th>Net Total</th>
+                                    <th>Unpaid</th>
+                                    <th>Status</th>
+                                    </thead>
+                                    {{#each registerList}}
+                                        <tbody>
+                                        <tr>
+                                            <td>{{_id}}</td>
+                                            <td>{{formatDate registerDate}}</td>
+                                            <td>{{formatNumber total}}</td>
+                                            <td>{{formatNumber discount}}</td>
+                                            <td>{{formatNumber netTotal}}</td>
+                                            <td>{{formatNumber balance}}</td>
+                                            <td>{{status}}</td>
+                                        </tr>
+                                        </tbody>
+                                    {{/each}}
+                                {{/if}}
+                            </table>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- /.col -->
+        </div>
+    </div>
 </template>

@@ -16,5 +16,8 @@ Meteor.methods({
         }
         selector.status = {$in: ["Active", "Partial"]};
         return Co_Register.findOne(selector);
+    },
+    getAllRegisterBypatient(parientId){
+        return Co_Register.find({parientId: parientId});
     }
 })

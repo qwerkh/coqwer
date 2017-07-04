@@ -47,6 +47,13 @@ Meteor.publish('co_registerById', function co_registerById({id}) {
     }
     return this.ready();
 })
+
+Meteor.publish('co_registerByPatientId', function co_registerByPatientId({patientId}) {
+    if (this.userId) {
+        return Co_Register.find({patientId});
+    }
+    return this.ready();
+})
 Meteor.publish('co_machinTypeById', function co_machinTypeById({id}) {
     if (this.userId) {
         return Co_MachinType.find({id});

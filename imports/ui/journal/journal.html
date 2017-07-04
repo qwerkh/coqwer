@@ -13,12 +13,16 @@
                 <h4 class="ui" style="text-align: right">Journal</h4>
             </div>
         </div>
-        <a class="ui primary button" style="margin-bottom: 2px" href="{{pathFor 'co.journalAdd'}}">Payment</a>
-        <a class="ui purple button" style="margin-bottom: 2px" href="{{pathFor 'co.journalAdd'}}">Receive</a>
+        <a class="ui primary button" style="margin-bottom: 2px" href="{{pathFor 'co.journalAdd'}}"><i
+                class="add sign icon"></i>Payment</a>
+        <a class="ui purple button" style="margin-bottom: 2px" href="{{pathFor 'co.journalReceiveAdd'}}"><i
+                class="add sign icon"></i>Receive</a>
         {{> tabular table=dataTable selector=selector class="cursor-pointer ui celled table"}}
 
     </div>
 </template>
+
+<!--Payment-->
 
 <template name="co_journalAdd">
     <div class="ui form container animated fadeIn">
@@ -33,10 +37,10 @@
             <!--<div class="indeterminate"></div>-->
         </div>
         {{#autoForm collection=collection id="co_journalAdd" type="insert"}}
-            <div class="ui top attached button teal"><h3>Journal Entry</h3></div>
+            <div class="ui top attached button teal"><h3>Journal Payment</h3></div>
             <div class="ui grid">
                 <div class="ten wide column">
-                    {{> co_journalDetailPayment}}
+                    {{> co_journalDetail}}
                 </div>
                 <div class="six wide column">
                     <div class="ui raised segment">
@@ -77,10 +81,10 @@
             </div>
         {{/if}}
         {{#autoForm collection=collection id="co_journalEdit" type="update" doc=data}}
-            <div class="ui top attached button teal"><h3>Journal Entry</h3></div>
+            <div class="ui top attached button teal"><h3>Journal Payment</h3></div>
             <div class="ui grid">
                 <div class="ten wide column">
-                    {{> co_journalDetailPayment transaction=data.transaction paymentReceiveMethod=data.paymentReceiveMethod}}
+                    {{> co_journalDetail transaction=data.transaction paymentReceiveMethod=data.paymentReceiveMethod}}
                 </div>
                 <div class="six wide column">
                     <div class="ui raised segment">
@@ -99,8 +103,90 @@
                 </div>
             </div>
         {{/autoForm}}
+    </div>
+</template>
 
 
+<!--Received-->
+<template name="co_journalReceiveAdd">
+    <div class="ui form container animated fadeIn">
+        <div class="ui breadcrumb">
+            <a href="/">Home</a>
+            <div class="divider"> /</div>
+            <a href="{{pathFor 'co.journal'}}">Journal</a>
+            <div class="divider"> /</div>
+            <div class="active section">Add Journal</div>
+        </div>
+        <div class="progress">
+            <!--<div class="indeterminate"></div>-->
+        </div>
+        {{#autoForm collection=collection id="co_journalReceiveAdd" type="insert"}}
+            <div class="ui top attached button teal"><h3>Journal Receive</h3></div>
+            <div class="ui grid">
+                <div class="ten wide column">
+                    {{> co_journalDetail}}
+                </div>
+                <div class="six wide column">
+                    <div class="ui raised segment">
+                        {{> afQuickField name="journalDate"}}
+                        {{> afQuickField name="currencyId"}}
+                        {{> afQuickField name="voucherId"}}
+                        {{> afQuickField name="memo"}}
+                    </div>
+
+                    {{> co_actionAdd}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="field">
+                    {{> co_preloader}}
+                </div>
+            </div>
+        {{/autoForm}}
+    </div>
+</template>
+
+<template name="co_journalReceiveEdit">
+    <div class="ui container animated fadeIn">
+        <div class="ui breadcrumb">
+            <a href="/">Home</a>
+            <div class="divider"> /</div>
+            <a href="{{pathFor 'co.journal'}}">Journal</a>
+            <div class="divider"> /</div>
+            <div class="active section">Edit Journal</div>
+        </div>
+
+        {{#if subscriptionsReady}}
+            <div class="progress">
+            </div>
+        {{else}}
+            <div class="progress">
+                <div class="indeterminate"></div>
+            </div>
+        {{/if}}
+        {{#autoForm collection=collection id="co_journalReceiveEdit" type="update" doc=data}}
+            <div class="ui top attached button teal"><h3>Journal Receive</h3></div>
+            <div class="ui grid">
+                <div class="ten wide column">
+                    {{> co_journalDetail transaction=data.transaction paymentReceiveMethod=data.paymentReceiveMethod}}
+                </div>
+                <div class="six wide column">
+                    <div class="ui raised segment">
+                        {{> afQuickField name="journalDate"}}
+                        {{> afQuickField name="currencyId"}}
+                        {{> afQuickField name="voucherId"}}
+                        {{> afQuickField name="memo"}}
+                    </div>
+
+                    {{> co_actionAdd}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s11">
+                    {{> co_preloader}}
+                </div>
+            </div>
+        {{/autoForm}}
     </div>
 </template>
 

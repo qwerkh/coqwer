@@ -7,8 +7,7 @@ import {Co_Journal} from '../../collection/journal';
 import {SpaceChar} from "../../../both/config/space"
 
 
-var journalDetailPaymentTmpl = Template.co_journalDetailPayment,
-    journalDetailReceiveTmpl = Template.co_journalDetailReceive;
+var journalDetailTmpl = Template.co_journalDetail;
 
 
 journalDetailTem = new Meteor.Collection(null);
@@ -22,18 +21,18 @@ var total = new ReactiveVar(0);
 
 let journalDocUpdateLine = new ReactiveObj();
 
-journalDetailPaymentTmpl.onCreated(function () {
+journalDetailTmpl.onCreated(function () {
 
-    debugger;
     let data = Template.currentData();
     if (data.transaction) {
         cashMethod.set(data.paymentReceiveMethod);
+
         data.transaction.forEach(function (obj) {
-            if (obj.drcr > 0) {
+            if (data.paymentReceiveMethod != obj.account) {
                 let docTransaction = {};
                 docTransaction.chartAccountId = obj.account;
                 docTransaction.chartAccountName = SpaceChar.space(obj.accountDoc.level * 6) + obj.accountDoc.name;
-                docTransaction.amount = obj.drcr;
+                docTransaction.amount = math.abs(obj.drcr);
                 journalDetailTem.insert(docTransaction);
                 reactTotal();
             }
@@ -54,8 +53,8 @@ journalDetailPaymentTmpl.onCreated(function () {
     })
 
 })
-journalDetailPaymentTmpl.helpers({
-    schemaPayment(){
+journalDetailTmpl.helpers({
+    schema(){
         return Co_Journal.journalDetalPaymentReceive;
     },
     chartAccountOption(){
@@ -76,12 +75,12 @@ journalDetailPaymentTmpl.helpers({
     }
 })
 
-journalDetailPaymentTmpl.onRendered(function () {
+journalDetailTmpl.onRendered(function () {
 
 })
 
 
-journalDetailPaymentTmpl.events({
+journalDetailTmpl.events({
     'click .add-journal'(e, t){
         let journalDoc = {};
         journalDoc.chartAccountId = $("#account").val();
@@ -118,25 +117,7 @@ journalDetailPaymentTmpl.events({
 })
 
 
-journalDetailReceiveTmpl.helpers({})
-
-journalDetailReceiveTmpl.onRendered(function () {
-
-})
-
-journalDetailReceiveTmpl.onCreated(function () {
-
-
-})
-
-journalDetailReceiveTmpl.events({})
-
-
-journalDetailReceiveTmpl.onDestroyed(function () {
-
-})
-
-journalDetailPaymentTmpl.onDestroyed(function () {
+journalDetailTmpl.onDestroyed(function () {
     total.set(0);
     journalDetailTem.remove({});
 })

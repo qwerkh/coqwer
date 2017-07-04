@@ -10,6 +10,7 @@ Co_Journal.before.insert(function (userId, doc) {
     doc.createdBy = userId;
 
     let newTransaction = [];
+
     let paymentReceiveMethodDoc = Co_ChartAccount.findOne({_id: doc.paymentReceiveMethod});
 
     if (doc.type == "Payment") {
@@ -33,6 +34,30 @@ Co_Journal.before.insert(function (userId, doc) {
             drcr: -doc.total,
             accountDoc: paymentReceiveMethodDoc
         })
+    } else {
+
+        newTransaction.push({
+            account: paymentReceiveMethodDoc._id,
+            dr: doc.total,
+            cr: 0,
+            drcr: doc.total,
+            accountDoc: paymentReceiveMethodDoc
+        })
+
+        doc.transaction.forEach(function (obj) {
+            let paidDoc = Co_ChartAccount.findOne({_id: obj.account});
+
+            newTransaction.push({
+                account: paidDoc._id,
+                dr: 0,
+                cr: obj.drcr,
+                drcr: -obj.drcr,
+                accountDoc: paidDoc
+            })
+
+        })
+
+
     }
 
     doc.transaction = newTransaction;
@@ -72,6 +97,29 @@ Co_Journal.before.update(function (userId, doc, fieldNames, modifier, options) {
             drcr: -doc.total,
             accountDoc: paymentReceiveMethodDoc
         })
+    } else {
+        newTransaction.push({
+            account: paymentReceiveMethodDoc._id,
+            dr: doc.total,
+            cr: 0,
+            drcr: doc.total,
+            accountDoc: paymentReceiveMethodDoc
+        })
+
+        modifier.$set.transaction.forEach(function (obj) {
+            let paidDoc = Co_ChartAccount.findOne({_id: obj.account});
+
+            newTransaction.push({
+                account: paidDoc._id,
+                dr: 0,
+                cr: obj.drcr,
+                drcr: -obj.drcr,
+                accountDoc: paidDoc
+            })
+
+        })
+
+
     }
     modifier.$set.transaction = newTransaction;
 })

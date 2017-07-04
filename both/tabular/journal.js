@@ -18,6 +18,6 @@ export const JournalTabular = new Tabular.Table({
             tmpl: Meteor.isClient && Template.co_action
         }
     ],
-    extraFields: ["paymentReceiveMethod", "transaction"]
+    extraFields: ["paymentReceiveMethod", "transaction", "type"]
 
 })

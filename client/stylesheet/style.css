@@ -367,3 +367,13 @@ footer > .ui.vertical.stripe.segment {
 *, :after, :before {
     box-sizing: inherit;
 }
+
+.ui.container {
+    width: 90% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.ui.button > .icon:not(.button) {
+    opacity: 9.8 !important;
+}

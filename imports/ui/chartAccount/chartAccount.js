@@ -170,6 +170,9 @@ AutoForm.hooks({
                 doc.parentName = $("[name='parentId']").parents('.selection.dropdown').dropdown('get text') == "Select One" ? "" : $("[name='parentId']").parents('.selection.dropdown').dropdown('get text');
                 doc.accountTypeName = $("[name='accountTypeId']").parents('.selection.dropdown').dropdown('get text')
 
+                if (doc.parentName == "(Select Parent)") {
+                    doc.parentName = "";
+                }
 
                 doc.rolesArea = Session.get('area');
                 return doc;
@@ -192,9 +195,13 @@ AutoForm.hooks({
     co_chartAccountEdit: {
         before: {
             update: function (doc) {
-                debugger;
                 doc.$set.parentName = $("[name='parentId']").parents('.selection.dropdown').dropdown('get text') == "Select One" ? "" : $("[name='parentId']").parents('.selection.dropdown').dropdown('get text');
                 doc.$set.accountTypeName = $("[name='accountTypeId']").parents('.selection.dropdown').dropdown('get text')
+
+                if (doc.$set.parentName == "(Select Parent)") {
+                    doc.$set.parentName = "";
+                }
+
                 return doc;
             }
         },

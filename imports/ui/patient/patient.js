@@ -4,13 +4,15 @@ import {Template} from 'meteor/templating';
 import {ReactiveVar} from 'meteor/reactive-var';
 
 import {Co_Patient} from '../../collection/patient';
+import {Co_Register} from '../../collection/register';
 import {PatientTabular} from '../../../both/tabular/patient';
 import {Images} from '../../collection/image'
 
 
 let indexTmpl = Template.co_patient,
     addTmpl = Template.co_patientAdd,
-    editTmpl = Template.co_patientEdit;
+    editTmpl = Template.co_patientEdit,
+    showPatientDetail = Template.co_patientDetail;
 
 
 indexTmpl.helpers({
@@ -84,8 +86,8 @@ indexTmpl.events({
 
         var dataTable = $(event.target).closest('table').DataTable();
         var rowData = dataTable.row(event.currentTarget).data();
-
-        FlowRouter.go(`/co-data/register/${rowData._id}/byPatient`);
+        FlowRouter.go(`/co-data/patient/${rowData._id}/showDetail`);
+        // FlowRouter.go(`/co-data/register/${rowData._id}/byPatient`);
     }
 
 })
@@ -126,6 +128,43 @@ editTmpl.onCreated(function () {
 
 addTmpl.onCreated(function () {
 
+})
+
+
+showPatientDetail.onRendered(function () {
+    $('.top.menu .item').tab();
+
+});
+
+
+showPatientDetail.helpers({
+    patientDoc(){
+        let id = FlowRouter.getParam('patientId');
+        return Co_Patient.findOne({_id: id});
+    },
+    registerList(){
+        let id = FlowRouter.getParam('patientId');
+        let data = Co_Register.find({patientId: id}, {sort: {registerDate: -1}}).fetch();
+        data.forEach(function (obj) {
+            obj.serviceDiscount = obj.totalService - obj.netTotalService;
+            obj.medicineDiscount = obj.totalMedicine - obj.netTotalMedicine;
+            obj.total = obj.totalMedicine + obj.totalService;
+            obj.discount = obj.serviceDiscount + obj.medicineDiscount;
+        })
+        return data;
+    }
+})
+
+
+showPatientDetail.onCreated(function () {
+    this.subUserReady = new ReactiveVar(false);
+    this.autorun(() => {
+        let id = FlowRouter.getParam('patientId');
+        if (id) {
+            this.subscription = Meteor.subscribe('co_patientById', {_id: id});
+            this.subscription = Meteor.subscribe('co_registerByPatientId', {patientId: id});
+        }
+    })
 })
 
 

@@ -44,6 +44,14 @@ coData.route('/patient/:patientId/edit', {
 
 })
 
+coData.route('/patient/:patientId/showDetail', {
+    name: 'co.patientShowDetail',
+    action: function (query, params) {
+        _Main("co_patientDetail");
+    }
+
+})
+
 
 //Register
 coData.route('/register', {
@@ -56,10 +64,10 @@ coData.route('/register', {
 //Register
 coData.route('/register/print', {
     name: 'co.register-print',
- /*   action: function (query, params) {
-        _Main("co_printA4");
-    }*/
-    action: function (params,queryParams) {
+    /*   action: function (query, params) {
+     _Main("co_printA4");
+     }*/
+    action: function (params, queryParams) {
         BlazeLayout.render('PrintLayout', {printLayout: 'co_printA4'});
     }
 
@@ -122,7 +130,7 @@ coData.route('/journal', {
     }
 
 })
-
+//Payment
 coData.route('/journal/add', {
     name: 'co.journalAdd',
     action: function (query, params) {
@@ -135,6 +143,22 @@ coData.route('/journal/:journalId/edit', {
     name: 'co.journalEdit',
     action: function (query, params) {
         _Main("co_journalEdit");
+    }
+
+})
+//Receive
+coData.route('/journalReceive/add', {
+    name: 'co.journalReceiveAdd',
+    action: function (query, params) {
+        _Main("co_journalReceiveAdd");
+    }
+
+})
+
+coData.route('/journalReceive/:journalId/edit', {
+    name: 'co.journalReceiveEdit',
+    action: function (query, params) {
+        _Main("co_journalReceiveEdit");
     }
 
 })

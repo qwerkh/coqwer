@@ -13,6 +13,7 @@ import {Co_Payment} from '../imports/collection/payment';
 import {Co_ChartAccount} from '../imports/collection/chartAccount';
 import {Co_AccountType} from '../imports/collection/accountType';
 import {Co_Journal} from '../imports/collection/journal';
+import {Co_FixAsset} from '../imports/collection/fixAsset';
 
 Meteor.publish('co_patientById', function co_patientById({id}) {
     if (this.userId) {
@@ -121,6 +122,13 @@ Meteor.publish('co_accountType', function co_accountType({id}) {
 Meteor.publish('co_journalById', function co_journalById({id}) {
     if (this.userId) {
         return Co_Journal.find({id});
+    }
+    return this.ready();
+})
+
+Meteor.publish('co_fixAssetById', function co_fixAssetById({id}) {
+    if (this.userId) {
+        return Co_FixAsset.find({id});
     }
     return this.ready();
 })

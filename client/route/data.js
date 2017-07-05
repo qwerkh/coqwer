@@ -6,6 +6,7 @@ import '../../imports/ui/patient/patient';
 import '../../imports/ui/register/register';
 import '../../imports/ui/payment/payment';
 import '../../imports/ui/journal/journal';
+import '../../imports/ui/fixAsset/fixAsset';
 import '../../imports/ui/print/a4'
 
 import {_Main} from '../lib/_renderLayout';
@@ -159,6 +160,32 @@ coData.route('/journalReceive/:journalId/edit', {
     name: 'co.journalReceiveEdit',
     action: function (query, params) {
         _Main("co_journalReceiveEdit");
+    }
+
+})
+
+
+//FixAsset
+coData.route('/fixAsset', {
+    name: 'co.fixAsset',
+    action: function (query, params) {
+        _Main("co_fixAsset");
+    }
+
+})
+
+coData.route('/fixAsset/add', {
+    name: 'co.fixAssetAdd',
+    action: function (query, params) {
+        _Main("co_fixAssetAdd");
+    }
+
+})
+
+coData.route('/fixAsset/:fixAssetId/edit', {
+    name: 'co.fixAssetEdit',
+    action: function (query, params) {
+        _Main("co_fixAssetEdit");
     }
 
 })

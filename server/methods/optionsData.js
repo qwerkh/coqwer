@@ -111,7 +111,7 @@ Meteor.methods({
 
         let selector = {};
         if (accountType) {
-            selector.accountType = accountType;
+            selector.accountTypeId = accountType;
         }
         Co_ChartAccount.find(selector, {sort: {code: 1}}).fetch().forEach(function (obj) {
             arr.push({

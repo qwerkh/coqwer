@@ -34,6 +34,7 @@
         <item url="file://$USER_HOME$/.meteor/packages/kadira_flow-router/2.12.1/web.browser/test/client/triggers.js" />
         <item url="file://$USER_HOME$/.meteor/packages/kadira_flow-router/2.12.1/web.browser/test/common/fast_render_route.js" />
         <item url="file://$USER_HOME$/.meteor/packages/autoupdate/1.3.12/web.browser/autoupdate_client.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/akryum_vue/1.2.2/web.browser/index.js" />
         <item url="file://$USER_HOME$/.meteor/packages/aldeed_simple-schema/1.3.3/web.browser/packages/aldeed_simple-schema.js" />
         <item url="file://$USER_HOME$/.meteor/packages/accounts-base/1.2.14/web.browser/accounts_client.js" />
         <item url="file://$USER_HOME$/.meteor/packages/accounts-base/1.2.14/web.browser/accounts_rate_limit.js" />
@@ -61,7 +62,11 @@
         <item url="file://$USER_HOME$/.meteor/packages/theara_autoform-inputmask/0.4.7/web.browser/inputmask-opts.js" />
         <item url="file://$USER_HOME$/.meteor/packages/theara_autoform-inputmask/0.4.7/web.browser/autoform-inputmask.js" />
         <item url="file://$USER_HOME$/.meteor/packages/numeral_numeral/1.5.3_1/web.browser/meteor-post.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/akryum_vue-component-dev-client/0.2.12/web.browser/client/vue2-hot.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/akryum_vue-component-dev-client/0.2.12/web.browser/client/dev-client.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/akryum_vue-component-dev-client/0.2.12/web.browser/client/buffer.js" />
         <item url="file://$USER_HOME$/.meteor/packages/ksrv_autoform-inputmask/0.0.2/web.browser/autoform-inputmask.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/akryum_vue-component-dev-client/0.2.12/web.browser/client/vue-hot.js" />
         <item url="file://$USER_HOME$/.meteor/packages/bigdsk_inputmask/3.1.63/web.browser/packages/bigdsk_inputmask.js" />
         <item url="file://$USER_HOME$/.meteor/packages/czbaker_lightbox2/2.7.1_1/web.browser/packages/czbaker_lightbox2.js" />
         <item url="file://$USER_HOME$/.meteor/packages/czbaker_lightbox2/2.7.1_1/web.browser/packages/czbaker_lightbox2/css/lightbox.css" />
@@ -475,6 +480,7 @@
       <root url="file://$USER_HOME$/.meteor/packages/kadira_flow-router/2.12.1/web.browser/test/client/triggers.js" />
       <root url="file://$USER_HOME$/.meteor/packages/kadira_flow-router/2.12.1/web.browser/test/common/fast_render_route.js" />
       <root url="file://$USER_HOME$/.meteor/packages/autoupdate/1.3.12/web.browser/autoupdate_client.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/akryum_vue/1.2.2/web.browser/index.js" />
       <root url="file://$USER_HOME$/.meteor/packages/aldeed_simple-schema/1.3.3/web.browser/packages/aldeed_simple-schema.js" />
       <root url="file://$USER_HOME$/.meteor/packages/accounts-base/1.2.14/web.browser/accounts_client.js" />
       <root url="file://$USER_HOME$/.meteor/packages/accounts-base/1.2.14/web.browser/accounts_rate_limit.js" />
@@ -502,7 +508,11 @@
       <root url="file://$USER_HOME$/.meteor/packages/theara_autoform-inputmask/0.4.7/web.browser/inputmask-opts.js" />
       <root url="file://$USER_HOME$/.meteor/packages/theara_autoform-inputmask/0.4.7/web.browser/autoform-inputmask.js" />
       <root url="file://$USER_HOME$/.meteor/packages/numeral_numeral/1.5.3_1/web.browser/meteor-post.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/akryum_vue-component-dev-client/0.2.12/web.browser/client/vue2-hot.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/akryum_vue-component-dev-client/0.2.12/web.browser/client/dev-client.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/akryum_vue-component-dev-client/0.2.12/web.browser/client/buffer.js" />
       <root url="file://$USER_HOME$/.meteor/packages/ksrv_autoform-inputmask/0.0.2/web.browser/autoform-inputmask.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/akryum_vue-component-dev-client/0.2.12/web.browser/client/vue-hot.js" />
       <root url="file://$USER_HOME$/.meteor/packages/bigdsk_inputmask/3.1.63/web.browser/packages/bigdsk_inputmask.js" />
       <root url="file://$USER_HOME$/.meteor/packages/czbaker_lightbox2/2.7.1_1/web.browser/packages/czbaker_lightbox2.js" />
       <root url="file://$USER_HOME$/.meteor/packages/czbaker_lightbox2/2.7.1_1/web.browser/packages/czbaker_lightbox2/css/lightbox.css" />

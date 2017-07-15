@@ -28,6 +28,9 @@ export const PatientTabular = new Tabular.Table({
         {
             data: "dobString", title: 'DOB'
 
+        }, {
+            data: "age", title: 'Age'
+
         },
         /*{
          data: "dob", title: 'DOB',

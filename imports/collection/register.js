@@ -271,6 +271,14 @@ Co_Register.schema = new SimpleSchema({
         type: Number,
         optional: true,
         defaultValue: 0
+    },
+    description: {
+        type: String,
+        label: "Description",
+        optional: true,
+        autoform: {
+            type: "textarea"
+        }
     }
 
 })

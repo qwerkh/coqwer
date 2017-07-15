@@ -32,6 +32,7 @@ Co_Patient.schema = new SimpleSchema({
     dob: {
         type: Date,
         label: 'Date of birth',
+        optional: true,
         autoform: {
             type: 'pickadate',
             pickadateOptions: {
@@ -39,6 +40,10 @@ Co_Patient.schema = new SimpleSchema({
                 selectYears: 170 // Creates a dropdown of 15 years to control year
             }
         }
+    },
+    age: {
+        type: Number,
+        label: "Age"
     },
     dobString: {
         type: String,

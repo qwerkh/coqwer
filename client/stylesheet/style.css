@@ -43,7 +43,7 @@
 input[type="search"] {
     height: 30px;
     border-radius: 500rem;
-    padding-right: 2.67142857em!important;
+    padding-right: 2.67142857em !important;
 }
 
 .payment-form {
@@ -257,15 +257,35 @@ th .field {
 
 /*Style Form Login 0*/
 
+/*.custom-login-background {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+
+    background: #283048; !* fallback for old browsers *!
+    background: -webkit-linear-gradient(to left, #859398, teal); !* Chrome 10-25, Safari 5.1-6 *!
+    background: linear-gradient(to left, #859398, teal); !* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ *!
+
+}*/
 .custom-login-background {
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     position: fixed;
-    background: #333;
-    background: -webkit-gradient(radial, center center, 120, center center, 900, from(#69f0ae), to(#2E2329)) !important;
-    background: -moz-radial-gradient(circle, #33495E, #2E2329) !important;
+
+    background-color: teal;
+    background-image: radial-gradient(
+            white,
+            teal
+    );
+
+    /*background: #283048; !* fallback for old browsers *!
+    background: -webkit-linear-gradient(to left, #859398, teal); !* Chrome 10-25, Safari 5.1-6 *!
+    background: linear-gradient(to left, #859398, teal); !* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ *!
+*/
 }
 
 .particles-js-content {
@@ -275,7 +295,7 @@ th .field {
 
 .login-box, .register-box {
     width: 360px;
-    margin: 7% auto;
+    margin: 10% auto;
 }
 
 .ui.center.aligned.header {

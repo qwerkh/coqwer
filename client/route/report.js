@@ -5,7 +5,7 @@ import {CheckRoles} from '../../imports/api/methods/checkRoles';
 import '../../imports/report/register/register';
 
 
-import {_Main} from '../lib/_renderLayout';
+import {_Report} from '../lib/_renderLayout';
 
 var reportData = FlowRouter.group({
     prefix: '/co-report',
@@ -20,6 +20,6 @@ var reportData = FlowRouter.group({
 reportData.route('/registerReport', {
     name: 'co.registerReport',
     action: function (query, params) {
-        _Main("co_registerReport");
+        _Report("co_registerReport");
     }
 })

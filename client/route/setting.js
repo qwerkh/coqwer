@@ -1,4 +1,4 @@
-//import func
+//import funcchartAccount
 import {CheckRoles} from '../../imports/api/methods/checkRoles';
 //import template js here
 import '../../imports/ui/home/home';
@@ -17,6 +17,7 @@ import '../../imports/ui/exchange/exchange';
 import '../../imports/ui/company/company';
 import '../../imports/ui/reference/reference';
 import '../../imports/ui/chartAccount/chartAccount';
+import '../../imports/ui/endOfProcess/endOfProcess';
 
 //import layout render
 import {_Main} from '../lib/_renderLayout';
@@ -449,4 +450,18 @@ coSetting.route('/chartAccount/:chartAccountId/edit', {
     }
 
 })
+
+//End Of Process
+coSetting.route('/endOfProcess', {
+    name: 'co.endOfProcess',
+    action: function (query, params) {
+        if (CheckRoles({roles: ['setting', 'super']})) {
+            _Main("co_endOfProcess");
+        } else {
+            FlowRouter.go('co.home');
+        }
+    }
+
+})
+
 

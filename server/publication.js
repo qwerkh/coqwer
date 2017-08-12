@@ -14,6 +14,7 @@ import {Co_ChartAccount} from '../imports/collection/chartAccount';
 import {Co_AccountType} from '../imports/collection/accountType';
 import {Co_Journal} from '../imports/collection/journal';
 import {Co_FixAsset} from '../imports/collection/fixAsset';
+import {Co_EndOfProcess} from '../imports/collection/endOfProcess';
 
 Meteor.publish('co_patientById', function co_patientById({id}) {
     if (this.userId) {
@@ -129,6 +130,13 @@ Meteor.publish('co_journalById', function co_journalById({id}) {
 Meteor.publish('co_fixAssetById', function co_fixAssetById({id}) {
     if (this.userId) {
         return Co_FixAsset.find({id});
+    }
+    return this.ready();
+})
+
+Meteor.publish('co_endOfProcess', function co_endOfProcessById() {
+    if (this.userId) {
+        return Co_EndOfProcess.find({});
     }
     return this.ready();
 })

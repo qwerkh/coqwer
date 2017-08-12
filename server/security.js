@@ -14,6 +14,7 @@ import {Co_AccountType} from '../imports/collection/accountType';
 import {Co_ChartAccount} from '../imports/collection/chartAccount';
 import {Co_Journal} from '../imports/collection/journal';
 import {Co_FixAsset} from '../imports/collection/fixAsset';
+import {Co_EndOfProcess} from '../imports/collection/endOfProcess';
 import {Security} from 'meteor/ongoworks:security';
 
 /*Security.permit(['insert', 'update', 'remove']).collections([
@@ -45,5 +46,6 @@ Security.permit(['insert', 'update', 'remove']).collections([
     Co_Payment,
     Co_ChartAccount,
     Co_Journal,
-    Co_FixAsset
+    Co_FixAsset,
+    Co_EndOfProcess
 ]).allowInClientCode();

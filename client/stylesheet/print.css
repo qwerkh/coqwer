@@ -1,0 +1,19 @@
+@media print {
+    .no-print {
+        display: none;
+    }
+}
+
+.a4-landscape {
+    width: 1020px;
+    margin: 0px auto;
+    padding: 0px;
+
+}
+
+.a4-portrait {
+    width: 720px;
+    margin: 0px auto;
+    padding: 0px;
+
+}

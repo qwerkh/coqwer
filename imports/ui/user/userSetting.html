@@ -39,8 +39,14 @@
         {{#autoForm schema=schema id="co_userAdd" type="method" meteormethod="co.insertUser"
                     singleMethodArgument=true}}
             <div class="row">
-                {{> afQuickField name='username'}}
-                {{> afQuickField name='email'}}
+                <div class="two fields">
+                    <div class="field">
+                        {{> afQuickField name='username'}}
+                    </div>
+                    <div class="field">
+                        {{> afQuickField name='email'}}
+                    </div>
+                </div>
                 <div class="two fields">
                     <div class="field">
                         {{> afQuickField name='password' type="password"}}
@@ -88,8 +94,14 @@
             {{#autoForm schema=schema id="co_userEdit" doc=data type="method-update"
                         meteormethod="co.updateUser" singleMethodArgument=true}}
                 <div class="row">
-                    {{> afQuickField name='username'}}
-                    {{> afQuickField name='email'}}
+                    <div class="two fields">
+                        <div class="field">
+                            {{> afQuickField name='username'}}
+                        </div>
+                        <div class="field">
+                            {{> afQuickField name='email'}}
+                        </div>
+                    </div>
                     <div class="two fields">
                         <div class="field">
                             {{> afQuickField name='password' type="password"}}

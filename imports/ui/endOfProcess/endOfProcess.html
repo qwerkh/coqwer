@@ -1,0 +1,35 @@
+<template name="co_endOfProcess">
+    {{> deleteModal}}
+    <div class="ui container">
+        <div class="ui two column">
+            <div class="column">
+                <div class="ui breadcrumb">
+                    <a href="/">Home</a>
+                    <div class="divider"> /</div>
+                    <div class="active section">EndOfProcess</div>
+                </div>
+            </div>
+            <div class="column">
+                <h4 class="ui" style="text-align: right">EndOfProcess</h4>
+            </div>
+        </div>
+        <a class="ui primary button add" style="margin-bottom: 2px"><i
+                class="add sign icon"></i>Add EndOfProcess</a>
+
+        {{> tabular table=dataTable selector=selector class="cursor-pointer ui celled table"}}
+
+    </div>
+</template>
+
+<template name="co_endOfProcessAdd">
+    <div class="animated fadeIn">
+        {{#autoForm collection=collection id="co_endOfProcessAdd" type="insert"}}
+            {{> afQuickField name='endDate'}}
+
+            <div class="alertify ajs-footer">
+                {{> co_actionAddSemantic}}
+            </div>
+        {{/autoForm}}
+    </div>
+</template>
+

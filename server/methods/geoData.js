@@ -4,7 +4,7 @@ Meteor.methods({
     fetchProvinces(){
         let list = [];
         let provinces = JSON.parse(Assets.getText('geoData/province.json'));
-        provinces.forEach(function(province){
+        provinces.forEach(function (province) {
             list.push({label: `${province.properties.NAME1}`, value: `${province.properties.ADMIN_ID1}`});
         });
         return list;
@@ -52,7 +52,7 @@ Meteor.methods({
                 if (currentUser) {
                     let province = provinces.find(o => o.properties.ADMIN_ID1 == currentUser.rolesBranch);
                     if (province) {
-                        list.push({label: `${province.properties.NAME1}`, value: `${province.properties.ADMIN_ID1}}`});
+                        list.push({label: `${province.properties.NAME1}`, value: `${province.properties.ADMIN_ID1}`});
                     }
                 }
             }
@@ -66,7 +66,7 @@ Meteor.methods({
             let currentUser = Meteor.users.findOne(userId);
             if (!userId || currentUser && currentUser.username == 'super') {
                 districts.map(function (o) {
-                    if(adminId1) {
+                    if (adminId1) {
                         if (o.properties.ADMIN_ID1 == adminId1) {
                             list.push({label: `${o.properties.NAME2}`, value: `${o.properties.ADMIN_ID2}`});
                         }
@@ -76,12 +76,43 @@ Meteor.methods({
                 let geoDistrict = currentUser.rolesArea;
                 geoDistrict.forEach(function (elem) {
                     let geoDistrictObj = districts.find(o => o.properties.ADMIN_ID2 == elem);
-                    if(geoDistrictObj) {
-                        list.push({label: `${geoDistrictObj.properties.NAME2}`, value: `${geoDistrictObj.properties.ADMIN_ID2}`});
+                    if (geoDistrictObj) {
+                        list.push({
+                            label: `${geoDistrictObj.properties.NAME2}`,
+                            value: `${geoDistrictObj.properties.ADMIN_ID2}`
+                        });
                     }
                 });
             }
 
+        }
+        return list;
+    },
+    fetchRolesAreaByMultiRoleBranch(userId, adminId1){
+        let list = [];
+        if (Meteor.userId()) {
+            let districts = JSON.parse(Assets.getText('geoData/district.json'));
+            let currentUser = Meteor.users.findOne(userId);
+            if (!userId || currentUser && (currentUser.username == 'super' || currentUser.username == "own-admin"  )) {
+                districts.map(function (o) {
+                    if (adminId1) {
+                        if (adminId1.indexOf(o.properties.ADMIN_ID1) > -1) {
+                            list.push({label: `${o.properties.NAME2}`, value: `${o.properties.ADMIN_ID2}`});
+                        }
+                    }
+                });
+            } else {
+                let geoDistrict = currentUser.rolesArea;
+                geoDistrict.forEach(function (elem) {
+                    let geoDistrictObj = districts.find(o => o.properties.ADMIN_ID2 == elem);
+                    if (geoDistrictObj && adminId1.indexOf(geoDistrictObj.properties.ADMIN_ID1) > -1) {
+                        list.push({
+                            label: `${geoDistrictObj.properties.NAME2}`,
+                            value: `${geoDistrictObj.properties.ADMIN_ID2}`
+                        });
+                    }
+                });
+            }
         }
         return list;
     },

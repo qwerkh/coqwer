@@ -32,12 +32,12 @@ index.events({
         let data = this;
         $('.delete-user.ui.basic.modal')
             .modal({
-                onApprove: function(){
+                onApprove: function () {
                     Meteor.call('removeUser', data._id);
                 }
             })
             .modal('show')
-            
+
         // var self = this;
         // alertify.confirm(
         //     "Remove User",

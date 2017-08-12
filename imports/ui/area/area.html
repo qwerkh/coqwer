@@ -23,17 +23,18 @@
         {{/autoForm}}
     </div>-->
 
+    <div class="custom-login-background">
+        <!--<div class="body-login">-->
 
-    <div class="body-login">
-        <div class="ui one column center aligned grid">
-            <div class="column six wide form-holder">
+        <div class="login-box particles-js-content">
+            <div class="ui stacked segment">
                 {{#autoForm schema=schema id="area"}}
-                    <h4 class="ui dividing header area">Choose Area</h4>
+                    <h4 class="ui dividing header area" style="text-align:center !important;">Choose Area</h4>
 
                     {{>afQuickField  name="rolesBranch" placeholder="Select One" options=rolesBranchOptions search=true}}
                     {{>afQuickField   name="rolesArea" placeholder="Select One" options=rolesAreaOptions search=true}}
 
-                    <div class="ui vertical animated area primary button sumitArea" style="float: right;" tabindex="0">
+                    <div class="ui fluid vertical animated area positive button sumitArea" tabindex="0">
                         <div class="hidden content">GO</div>
                         <div class="visible content">
                             <i class="material-icons">send</i>

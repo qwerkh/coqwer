@@ -1,47 +1,67 @@
-import './medicine.html';
+import './mapFixAsset.html';
 import {Template} from 'meteor/templating';
 import {ReactiveVar} from 'meteor/reactive-var';
 
-import {Co_Medicine} from '../../collection/medicine';
-import {MedicineTabular} from '../../../both/tabular/medicine';
+import {Co_MapFixAsset} from '../../collection/mapFixAsset';
+import {MapFixAssetTabular} from '../../../both/tabular/mapFixAsset';
 
 
-let indexTmpl = Template.co_medicine,
-    addTmpl = Template.co_medicineAdd,
-    editTmpl = Template.co_medicineEdit;
+let indexTmpl = Template.co_mapFixAsset,
+    addTmpl = Template.co_mapFixAssetAdd,
+    editTmpl = Template.co_mapFixAssetEdit;
 
-let medicineTypeOption=new ReactiveVar([]);
+let assetOption = new ReactiveVar([]);
+let assetAccumulatedOption = new ReactiveVar([]);
+let assetExpenseOption = new ReactiveVar([]);
 
 indexTmpl.helpers({
     dataTable () {
-        return MedicineTabular;
+        return MapFixAssetTabular;
     },
     selector(){
-        return {};
         // return {rolesArea: Session.get("area")};
     }
+
 })
 
 addTmpl.helpers({
     collection(){
-        return Co_Medicine;
+        return Co_MapFixAsset;
     },
-    medicineTypeOption(){
-        return medicineTypeOption.get();
+    assetOption(){
+        return assetOption.get();
+    },
+    assetAccumulatedOption(){
+        return assetAccumulatedOption.get();
+    },
+    assetExpenseOption(){
+        return assetExpenseOption.get();
     }
 })
+
 addTmpl.onCreated(function () {
-    Meteor.call("co_medicineTypeOption",function (err,result) {
-        if(result){
-            medicineTypeOption.set(result);
+    Meteor.call("assetOption", function (err, result) {
+        if (result) {
+            assetOption.set(result);
+        }
+    })
+    Meteor.call("assetAccumulatedOption", function (err, result) {
+        if (result) {
+            assetAccumulatedOption.set(result);
+        }
+    })
+    Meteor.call("assetExpenseOption", function (err, result) {
+        if (result) {
+            assetExpenseOption.set(result);
         }
     })
 })
 
 editTmpl.helpers({
     data() {
-            let id = FlowRouter.getParam('medicineId');
-            return Co_Medicine.findOne({_id: id});
+
+        let id = FlowRouter.getParam('mapFixAssetId');
+        return Co_MapFixAsset.findOne({_id: id});
 
     },
     subscriptionsReady() {
@@ -49,40 +69,55 @@ editTmpl.helpers({
         return instance.subUserReady.get()
     },
     collection(){
-        return Co_Medicine;
+        return Co_MapFixAsset;
     },
-    medicineTypeOption(){
-        return medicineTypeOption.get();
+    assetOption(){
+        return assetOption.get();
+    },
+    assetAccumulatedOption(){
+        return assetAccumulatedOption.get();
+    },
+    assetExpenseOption(){
+        return assetExpenseOption.get();
     }
 })
 
 editTmpl.onCreated(function () {
-    Meteor.call("co_medicineTypeOption",function (err,result) {
-        if(result){
-            medicineTypeOption.set(result);
+    Meteor.call("assetOption", function (err, result) {
+        if (result) {
+            assetOption.set(result);
+        }
+    })
+    Meteor.call("assetAccumulatedOption", function (err, result) {
+        if (result) {
+            assetAccumulatedOption.set(result);
+        }
+    })
+    Meteor.call("assetExpenseOption", function (err, result) {
+        if (result) {
+            assetExpenseOption.set(result);
         }
     })
 })
-
 //event
 
 indexTmpl.events({
     'click .add'(){
-        FlowRouter.go('/co-setting/medicine/add');
+        FlowRouter.go('/co-setting/mapFixAsset/add');
     },
 
     'click .remove'(e){
         var self = this;
         alertify.confirm(
-            'Medicine',
+            'MapFixAsset',
             'Are you sure to delete [' + self._id + ']?',
             () => {
-                Co_Medicine.remove(self._id, (error) => {
+                Co_MapFixAsset.remove(self._id, (error) => {
                     if (error) {
 
                         alertify.error(error.message);
                     } else {
-                        alertify.success('Deleted Successfully');
+                        alertify.success('Deleted successfully');
                         $(e.currentTarget).parents('tr').remove();
                     }
                 })
@@ -93,11 +128,11 @@ indexTmpl.events({
     },
     'click .edit' (event, instance) {
         let self = this;
-        FlowRouter.go(`/co-setting/medicine/${self._id}/edit`);
+        FlowRouter.go(`/co-setting/mapFixAsset/${self._id}/edit`);
     },
     'click .show'(event, instance){
         let self = this;
-        FlowRouter.go(`/co-setting/medicine/${self._id}/show`);
+        FlowRouter.go(`/co-setting/mapFixAsset/${self._id}/show`);
     }
 
 })
@@ -105,19 +140,18 @@ indexTmpl.events({
 
 addTmpl.events({
     'click .cancel'(e, t){
-        FlowRouter.go(`/co-setting/medicine`);
+        FlowRouter.go(`/co-setting/mapFixAsset`);
     }
 })
 
 editTmpl.events({
     'click .cancel'(e, t){
-        FlowRouter.go(`/co-setting/medicine`);
+        FlowRouter.go(`/co-setting/mapFixAsset`);
     }
 });
 
 
 addTmpl.onRendered(function () {
-
 })
 editTmpl.onRendered(function () {
     this.autorun(() => {
@@ -131,17 +165,20 @@ editTmpl.onRendered(function () {
 editTmpl.onCreated(function () {
     this.subUserReady = new ReactiveVar(false);
     this.autorun(() => {
-        let id = FlowRouter.getParam('medicineId');
+        let id = FlowRouter.getParam('mapFixAssetId');
         if (id) {
-            this.subscription = Meteor.subscribe('co_medicineById', {_id: id});
+            this.subscription = Meteor.subscribe('co_mapFixAssetById', {_id: id});
         }
     })
 })
 
+addTmpl.onCreated(function () {
+
+})
 
 
 AutoForm.hooks({
-    co_medicineAdd: {
+    co_mapFixAssetAdd: {
         before: {
             insert: function (doc) {
 
@@ -151,7 +188,7 @@ AutoForm.hooks({
         },
         onSuccess: function (formType, result) {
             alertify.success('Successfully');
-            FlowRouter.go(`/co-setting/medicine`);
+            FlowRouter.go(`/co-setting/mapFixAsset`);
             FlowRouter.query.unset();
         },
         onError: function (formType, error) {
@@ -163,10 +200,10 @@ AutoForm.hooks({
             this.done();
         }
     },
-    co_medicineEdit: {
+    co_mapFixAssetEdit: {
         onSuccess: function (formType, result) {
             alertify.success('Updated successfully');
-            FlowRouter.go(`/co-setting/medicine`);
+            FlowRouter.go(`/co-setting/mapFixAsset`);
             FlowRouter.query.unset();
         },
         onError: function (formType, error) {

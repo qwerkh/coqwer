@@ -37,6 +37,10 @@ Co_Register.schema = new SimpleSchema({
     'services.$.serviceName': {
         type: String
     },
+    'medicines.$.isRetailPrice': {
+        type: Boolean,
+        label: " "
+    },
     'services.$.machinId': {
         type: [String]
     },
@@ -67,6 +71,10 @@ Co_Register.schema = new SimpleSchema({
         type: String
     }, 'medicines.$.medicineName': {
         type: String
+    },
+    'medicines.$.isRetailPrice': {
+        type: Boolean,
+        label: " "
     },
     'medicines.$.price': {
         type: Number,
@@ -377,6 +385,10 @@ Co_Register.serviceForm = new SimpleSchema({
                 return inputmaskOptions.decimal(2);
             }
         }
+    },
+    isRetailPrice: {
+        type: Boolean,
+        label: " "
     }
 })
 
@@ -466,6 +478,10 @@ Co_Register.medicineForm = new SimpleSchema({
                 return inputmaskOptions.decimal(2);
             }
         }
+    },
+    isRetailPrice: {
+        type: Boolean,
+        label: " "
     }
 })
 

@@ -43,15 +43,16 @@ indexTmpl.events({
             'EndOfProcess',
             'Are you sure to delete [' + self._id + ']?',
             () => {
-                Co_EndOfProcess.remove(self._id, (error) => {
+                Meteor.call("removeEndOfProcess", self._id, function (error) {
                     if (error) {
-
                         alertify.error(error.message);
                     } else {
                         alertify.success('Deleted Successfully');
                         $(e.currentTarget).parents('tr').remove();
+
                     }
-                })
+                });
+
             },
             null
         )

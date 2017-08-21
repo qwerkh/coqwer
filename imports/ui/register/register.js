@@ -245,6 +245,7 @@ indexTmpl.events({
         }
     },
     'click .edit' (event, instance) {
+        debugger;
         let self = this;
 
         if (self.paymentNumber <= 1) {
@@ -489,6 +490,7 @@ AutoForm.hooks({
                     services.push({
                         serviceId: obj._id,
                         serviceName: obj.name,
+                        isRetailPrice: obj.isRetailPrice,
                         machinId: obj.machinId,
                         qty: obj.qty,
                         price: obj.price,
@@ -499,6 +501,7 @@ AutoForm.hooks({
                     medicines.push({
                         medicineId: obj._id,
                         medicineName: obj.name,
+                        isRetailPrice: obj.isRetailPrice,
                         qty: obj.qty,
                         price: obj.price,
                         amount: obj.amount
@@ -553,6 +556,7 @@ AutoForm.hooks({
                     services.push({
                         serviceId: obj._id,
                         serviceName: obj.name,
+                        isRetailPrice: obj.isRetailPrice,
                         machinId: obj.machinId,
                         qty: obj.qty,
                         price: obj.price,
@@ -563,6 +567,7 @@ AutoForm.hooks({
                     medicines.push({
                         medicineId: obj._id,
                         medicineName: obj.name,
+                        isRetailPrice: obj.isRetailPrice,
                         qty: obj.qty,
                         price: obj.price,
                         amount: obj.amount
@@ -587,9 +592,9 @@ AutoForm.hooks({
         },
         onSuccess: function (formType, result) {
 
-            let id =this.currentDoc._id;
+            let id = this.currentDoc._id;
             let print = FlowRouter.query.get('p');
-           // let qp = FlowRouter.query.get('qp'); //trigger quick payment
+            // let qp = FlowRouter.query.get('qp'); //trigger quick payment
             if (print == 'true') {
                 FlowRouter.go('/co-data/register/print?inv=' + id);
             } else {

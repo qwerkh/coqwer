@@ -18,6 +18,7 @@ import '../../imports/ui/company/company';
 import '../../imports/ui/reference/reference';
 import '../../imports/ui/chartAccount/chartAccount';
 import '../../imports/ui/endOfProcess/endOfProcess';
+import '../../imports/ui/mapFixAsset/mapFixAsset';
 
 //import layout render
 import {_Main} from '../lib/_renderLayout';
@@ -444,6 +445,45 @@ coSetting.route('/chartAccount/:chartAccountId/edit', {
         if (CheckRoles({roles: ['setting', 'super']})) {
 
             _Main("co_chartAccountEdit");
+        } else {
+            FlowRouter.go('co.home');
+        }
+    }
+
+})
+
+//Map FixAsset
+coSetting.route('/mapFixAsset', {
+    name: 'co.mapFixAsset',
+    action: function (query, params) {
+        if (CheckRoles({roles: ['setting', 'super']})) {
+            _Main("co_mapFixAsset");
+        } else {
+            FlowRouter.go('co.home');
+        }
+    }
+
+})
+
+coSetting.route('/mapFixAsset/add', {
+    name: 'co.mapFixAssetAdd',
+    action: function (query, params) {
+        if (CheckRoles({roles: ['setting', 'super']})) {
+
+            _Main("co_mapFixAssetAdd");
+        } else {
+            FlowRouter.go('co.home');
+        }
+    }
+
+})
+
+coSetting.route('/mapFixAsset/:mapFixAssetId/edit', {
+    name: 'co.mapFixAssetEdit',
+    action: function (query, params) {
+        if (CheckRoles({roles: ['setting', 'super']})) {
+
+            _Main("co_mapFixAssetEdit");
         } else {
             FlowRouter.go('co.home');
         }

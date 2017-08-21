@@ -19,7 +19,6 @@ var paymentReceiveMethodOpt = new ReactiveVar([]);
 var journalDoc = new ReactiveVar();
 var total = new ReactiveVar(0);
 
-let journalDocUpdateLine = new ReactiveObj();
 
 journalDetailTmpl.onCreated(function () {
 
@@ -91,10 +90,11 @@ journalDetailTmpl.events({
 
     },
     'keyup #amountValue'(e, t){
-        let self = this;
-        if (journalDocUpdateLine) {
+        debugger;
+        let id = $(e.currentTarget).attr("data_id");
+        if (id) {
             journalDetailTem.update(
-                journalDocUpdateLine._id,
+                id,
                 {
                     $set: {amount: e.currentTarget.value}
                 }
@@ -107,13 +107,7 @@ journalDetailTmpl.events({
         let self = this;
         journalDetailTem.remove({_id: self._id});
         reactTotal();
-    },
-    'click .journal-row'(e, t){
-        journalDocUpdateLine = this;
-    }/*,
-     'select .journal-row'(){
-     journalDocUpdateLine = this;
-     }*/
+    }
 })
 
 

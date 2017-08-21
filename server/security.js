@@ -15,6 +15,7 @@ import {Co_ChartAccount} from '../imports/collection/chartAccount';
 import {Co_Journal} from '../imports/collection/journal';
 import {Co_FixAsset} from '../imports/collection/fixAsset';
 import {Co_EndOfProcess} from '../imports/collection/endOfProcess';
+import {Co_MapFixAsset} from '../imports/collection/mapFixAsset';
 import {Security} from 'meteor/ongoworks:security';
 
 /*Security.permit(['insert', 'update', 'remove']).collections([
@@ -47,5 +48,6 @@ Security.permit(['insert', 'update', 'remove']).collections([
     Co_ChartAccount,
     Co_Journal,
     Co_FixAsset,
-    Co_EndOfProcess
+    Co_EndOfProcess,
+    Co_MapFixAsset
 ]).allowInClientCode();

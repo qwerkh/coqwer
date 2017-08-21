@@ -156,6 +156,36 @@ Meteor.methods({
 
         });
         return list;
+    },
+    assetOption: function () {
+        let list = [];
+        Co_ChartAccount.find({accountTypeId: "20"}, {sort: {code: 1}}).forEach(function (obj) {
+            list.push({
+                label: obj.code + " | " + obj.name,
+                value: obj._id
+            })
+        });
+        return list;
+    },
+    assetAccumulatedOption: function () {
+        let list = [];
+        Co_ChartAccount.find({accountTypeId: "21"}, {sort: {code: 1}}).forEach(function (obj) {
+            list.push({
+                label: obj.code + " | " + obj.name,
+                value: obj._id
+            })
+        });
+        return list;
+    },
+    assetExpenseOption: function () {
+        let list = [];
+        Co_ChartAccount.find({accountTypeId: "61"}, {sort: {code: 1}}).forEach(function (obj) {
+            list.push({
+                label: obj.code + " | " + obj.name,
+                value: obj._id
+            })
+        });
+        return list;
     }
 
 })

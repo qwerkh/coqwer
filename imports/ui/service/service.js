@@ -16,7 +16,8 @@ indexTmpl.helpers({
         return ServiceTabular;
     },
     selector(){
-        return {rolesArea: Session.get("area")};
+        return {};
+        // return {rolesArea: Session.get("area")};
     }
 
 })

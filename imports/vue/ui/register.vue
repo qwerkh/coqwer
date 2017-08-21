@@ -7,7 +7,7 @@
                             Register Report
                         </span>
 
-                <el-form :inline="true" :rule="ruleRegisterReport" :model="registerReport" ref="registerReport">
+                <el-form :inline="true" :model="registerReport" ref="registerReport">
                     <el-row type="flex" class="row-bg" justify="left" style="width: 100%">
                         <el-col :span="21">
                             <el-form-item label="Branch :">
@@ -83,19 +83,6 @@
                                     </el-option>
                                 </el-select>
                             </el-form-item>
-                            <!--<el-form-item label-width="80px" prop="exchange"
-                                          class="registerExchange"
-                                          label="Exchange :">
-                                <el-select filterable v-model="registerReport.exchangeOptionsModel"
-                                           placeholder="(Select One)">
-                                    <el-option
-                                            v-for="item in exchangeOptions"
-                                            :key="item.value"
-                                            :label="item.label"
-                                            :value="item.value">
-                                    </el-option>
-                                </el-select>
-                            </el-form-item>-->
                         </el-col>
                         <el-col :span="3">
                             <el-button v-show="dataExist" :loading="printLoading" type="success"
@@ -164,9 +151,9 @@
                             <!--</template>-->
                             <!--</el-table-column>-->
 
-                        <el-table-column type="index" width="40px auto" sortable></el-table-column>
+                        <el-table-column type="index" width="50px auto" sortable></el-table-column>
                         <el-table-column prop="patientDoc.khName" sortable label="Name"></el-table-column>
-                        <el-table-column prop="registerDate" width="80px auto" sortable label="Date"></el-table-column>
+                        <el-table-column prop="registerDate" width="100px auto" sortable label="Date"></el-table-column>
                         <el-table-column label="Item" width="160px auto">
                             <template scope="props">
                                 <span v-html="props.row.itemDetail"></span>
@@ -190,29 +177,13 @@
 <script>
     export default {
         data(){
-            let validateExchange = (rule, value, callback) => {
-                if (value === '') {
-                    callback(new Error('Please input the password'));
-                } else {
-                    if (this.registerReport.exchangeOptionsModel !== '') {
-                        this.$refs.registerReport.validateField('exchange');
-                    }
-                    callback();
-                }
-            };
-
             return {
                 registerReport: {
                     roleBranchOptionsModel: [],
                     roleAreaOptionsModel: [],
                     patientOptionsModel: [],
                     typeOptionsModel: [],
-                    exchangeOptionsModel: []
-                },
-                ruleRegisterReport: {
-                    exchange: [
-                        {validator: validateExchange, trigger: 'blur'}
-                    ]
+                    dateRange: ""
                 },
 
                 roleBranchOptions: [],
@@ -233,8 +204,6 @@
 
                 branchHeader: "All",
                 dateRangeHeader: "All",
-
-
                 pickerOptions2: {
                     shortcuts: [{
                         text: 'Last week',
@@ -401,7 +370,6 @@
             this.fetchBranchOption();
 //            this.fetchPatientOption([]);
             this.fetchTypeOption([]);
-//            this.fetchExchangeOption();
             this.getCompany();
             this.registerReport.dateRange = [moment().startOf("months").toDate(), moment().endOf("months").toDate()];
 

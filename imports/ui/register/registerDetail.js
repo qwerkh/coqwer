@@ -18,11 +18,6 @@ let totalService = new ReactiveVar(0);
 let medicineOption = new ReactiveVar([]);
 let totalMedicine = new ReactiveVar(0);
 
-
-let serviceDoc = new ReactiveObj();
-let medicineDoc = new ReactiveObj();
-
-
 registerServiceTmpl.onCreated(function () {
 
     Meteor.call('co_serviceOption', Session.get("area"), function (err, result) {
@@ -59,12 +54,14 @@ registerServiceTmpl.helpers({
 
 registerServiceTmpl.onRendered(function () {
     $("[name='discountType']").val("Amount").trigger("change");
+    $('.ui.checkbox')
+        .checkbox()
+    ;
 })
 
 
 registerServiceTmpl.events({
     'change [name="serviceId"]'(e, t){
-        debugger;
         let serviceId = e.currentTarget.value;
         if (serviceId != "") {
             Meteor.call("co_serviceById", serviceId, Session.get("area"), function (err, result) {
@@ -74,13 +71,13 @@ registerServiceTmpl.events({
                         serviceTem.insert({
                             _id: result._id,
                             name: result.name,
+                            isRetailPrice: false,
                             price: result.price,
                             qty: 1,
                             machinId: result.machinId,
                             amount: result.price
                         })
                     }
-                    serviceDoc = {};
                     serviceId = "";
                     $("[name='serviceId']").parents('.selection.dropdown').dropdown('clear');
 
@@ -89,7 +86,8 @@ registerServiceTmpl.events({
         }
     },
     'keyup [name="price"]'(e, t){
-
+        let serviceId = $(e.currentTarget).attr("data_id");
+        let serviceDoc = serviceTem.findOne({_id: serviceId});
         if (serviceDoc) {
             let amount = e.currentTarget.value * serviceDoc.qty;
             serviceTem.update(
@@ -102,7 +100,8 @@ registerServiceTmpl.events({
 
     },
     'keyup [name="qty"]'(e, t){
-
+        let serviceId = $(e.currentTarget).attr("data_id");
+        let serviceDoc = serviceTem.findOne({_id: serviceId});
         if (serviceDoc) {
             let amount = e.currentTarget.value * serviceDoc.price;
             serviceTem.update(
@@ -112,6 +111,7 @@ registerServiceTmpl.events({
                 }
             );
         }
+
     },
     'click .delete-service'(e, t){
         alertify.confirm("Service", "Are You Sure?", () => {
@@ -136,11 +136,34 @@ registerServiceTmpl.events({
         reactTotalService();
     },
 
-    'click .service-row'(){
-        serviceDoc = this;
-    },
-    'select .service-row'(){
-        serviceDoc = this;
+    'change [name="isRetailPrice"]'(e, t){
+        let isRetail = $(e.currentTarget).prop("checked");
+        let serviceId = $(e.currentTarget).attr("data_id");
+        Meteor.call("co_serviceById", serviceId, Session.get("area"), function (err, result) {
+            if (result) {
+                let serviceDoc = serviceTem.findOne({_id: serviceId});
+                if (serviceDoc) {
+                    if (isRetail == false) {
+                        let amount = serviceDoc.qty * result.price;
+                        serviceTem.update(
+                            serviceDoc._id,
+                            {
+                                $set: {amount: amount, isRetailPrice: isRetail, price: result.price}
+                            }
+                        );
+                    } else {
+                        let amount = serviceDoc.qty * result.retailPrice;
+                        serviceTem.update(
+                            serviceDoc._id,
+                            {
+                                $set: {
+                                    amount: amount, isRetailPrice: isRetail, price: result.retailPrice
+                                }
+                            });
+                    }
+                }
+            }
+        })
     }
 })
 
@@ -172,6 +195,9 @@ registerMedicineTmpl.helpers({
 
 registerMedicineTmpl.onRendered(function () {
     $("[name='discountType']").val("Amount").trigger("change");
+    $('.ui.checkbox')
+        .checkbox()
+    ;
 })
 
 registerMedicineTmpl.onCreated(function () {
@@ -196,13 +222,12 @@ registerMedicineTmpl.events({
                         medicineTem.insert({
                             _id: result._id,
                             name: result.name,
+                            isRetailPrice: false,
                             price: result.price,
                             qty: 1,
                             amount: result.price
                         })
                     }
-
-                    medicineDoc = {};
                     medicineId = "";
                     $("[name='medicineId']").parents('.selection.dropdown').dropdown('clear');
                 }
@@ -213,7 +238,8 @@ registerMedicineTmpl.events({
 
     },
     'keyup [name="price"]'(e, t){
-
+        let medicineId = $(e.currentTarget).attr("data_id");
+        let medicineDoc = medicineTem.findOne({_id: medicineId});
         if (medicineDoc) {
             Meteor.setTimeout(function () {
                 let amount = e.currentTarget.value * medicineDoc.qty;
@@ -228,6 +254,8 @@ registerMedicineTmpl.events({
 
     },
     'keyup [name="qty"]'(e, t){
+        let medicineId = $(e.currentTarget).attr("data_id");
+        let medicineDoc = medicineTem.findOne({_id: medicineId});
         if (medicineDoc) {
             Meteor.setTimeout(function () {
                 let amount = e.currentTarget.value * medicineDoc.price;
@@ -261,14 +289,35 @@ registerMedicineTmpl.events({
         discountMedicine.set(e.currentTarget.value);
         reactTotalMedicine();
     },
-    'click .medicine-row'(){
-        medicineDoc = this;
 
-    }
-    ,
-    'select .medicine-row'(){
-        medicineDoc = this;
-
+    'change [name="isRetailPrice"]'(e, t){
+        let isRetail = $(e.currentTarget).prop("checked");
+        let medicineId = $(e.currentTarget).attr("data_id");
+        Meteor.call("co_medicineById", medicineId, Session.get("area"), function (err, result) {
+            if (result) {
+                let medicineDoc = medicineTem.findOne({_id: medicineId});
+                if (medicineDoc) {
+                    if (isRetail == false) {
+                        let amount = medicineDoc.qty * result.price;
+                        medicineTem.update(
+                            medicineDoc._id,
+                            {
+                                $set: {amount: amount, isRetailPrice: isRetail, price: result.price}
+                            }
+                        );
+                    } else {
+                        let amount = medicineDoc.qty * result.retailPrice;
+                        medicineTem.update(
+                            medicineDoc._id,
+                            {
+                                $set: {
+                                    amount: amount, isRetailPrice: isRetail, price: result.retailPrice
+                                }
+                            });
+                    }
+                }
+            }
+        })
     }
 
 })

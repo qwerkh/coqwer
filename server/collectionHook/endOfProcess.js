@@ -4,6 +4,7 @@ import {Co_EndOfProcess} from '../../imports/collection/endOfProcess';
 import {Co_Journal} from '../../imports/collection/journal';
 import {Co_FixAsset} from '../../imports/collection/fixAsset';
 import {Co_AccountType} from '../../imports/collection/accountType';
+import {VW_MapFixAsset} from '../../imports/collection/mapFixAsset';
 
 //Ensure Index
 Co_EndOfProcess._ensureIndex({month: 1, year: 1, rolesArea: 1}, {unique: 1});
@@ -19,14 +20,14 @@ Co_EndOfProcess.before.insert(function (userId, doc) {
 })
 
 Co_EndOfProcess.after.insert(function (userId, doc) {
-
     let depType = {};
     depType.depPerTime = 1;
     var selectorList = {};
-    selectorList.date = {$lte: moment(doc.endDate).add(-1, 'months').endOf('months').toDate()};
+    selectorList.buyDate = {$lte: moment(doc.endDate).add(-1, 'months').endOf('months').toDate()};
     selectorList.isDep = false;
     selectorList.rolesArea = doc.rolesArea;
     var depList = Co_FixAsset.find(selectorList).fetch();
+
     var startYear = moment(doc.endDate).year();
     var startDate = moment(startYear + '-' + '01-01').toDate();
     if (depList.length != 0) {
@@ -70,20 +71,16 @@ Co_EndOfProcess.after.insert(function (userId, doc) {
             selectorJournal.total = selectorExpenseObj.value;
             selectorJournal.endId = doc._id;
 
-            var accountMap = MapFixAsset.findOne({fixAssetCon: obj.account});
+            var accountMap = VW_MapFixAsset.findOne({fixAsset: obj.account});
 
-            var accountTypeAccu = Co_AccountType.findOne(accountMap.accuFixAssetDoc.accountTypeId);
-            var accountTypeDepre = Co_AccountType.findOne(accountMap.fixAssetExpenseDoc.accountTypeId);
 
-            if (accountTypeAccu && accountTypeDepre) {
+            if (accountMap) {
                 var transaction = [];
+                selectorJournal.type = "Payment";
+                selectorJournal.paymentReceiveMethod = accountMap.fixAssetExpense;
+
                 transaction.push({
-                    account: accountMap.fixAssetExpenseDoc.code + " | " + accountMap.fixAssetExpenseDoc.name + " | " + accountTypeDepre.name,
-                    dr: selectorExpenseObj.value,
-                    cr: 0,
-                    drcr: selectorExpenseObj.value
-                }, {
-                    account: accountMap.accuFixAssetDoc.code + " | " + accountMap.accuFixAssetDoc.name + " | " + accountTypeAccu.name,
+                    account: accountMap.accuFixAsset,
                     dr: 0,
                     cr: selectorExpenseObj.value,
                     drcr: (-1) * selectorExpenseObj.value
@@ -118,20 +115,11 @@ Co_EndOfProcess.after.insert(function (userId, doc) {
         })
         doc.transactionExpense = selectorExpenseList;
     }
-
 })
 
-
-Co_EndOfProcess.after.update(function (userId, doc) {
-
+Co_EndOfProcess.after.remove(function (userId, doc) {
+    Co_Journal.direct.remove({endId: doc._id});
 })
-
-Co_EndOfProcess.before.update(function (userId, doc, fieldNames, modifier, options) {
-
-    doc.updatedAt = moment().toDate();
-    doc.updatedBy = userId;
-})
-
 
 function compare(a, b) {
     if (a.year < b.year) {

@@ -16,6 +16,7 @@ export const ServiceTabular = new Tabular.Table({
         {data: "name", title: 'Name'},
         {data: "serviceTypeDoc.name", title: 'Service Type'},
         {data: "price", title: 'Price'},
+        {data: "retailPrice", title: 'Retail Price'},
         {data: "description", title: 'Description'},
         {data: "machinTypeList", title: 'Machin Type'},
         {data: "status", title: 'Status'},

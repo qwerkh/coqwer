@@ -1,4 +1,4 @@
-<template name="co_medicine">
+<template name="co_mapFixAsset">
     {{> deleteModal}}
     <div class="ui container">
         <div class="ui two column">
@@ -6,92 +6,79 @@
                 <div class="ui breadcrumb">
                     <a href="/">Home</a>
                     <div class="divider"> /</div>
-                    <div class="active section">Medicine</div>
+                    <div class="active section">Map FixAsset</div>
                 </div>
             </div>
             <div class="column">
-                <h4 class="ui" style="text-align: right">Medicine</h4>
+                <h4 class="ui" style="text-align: right">Map FixAsset</h4>
             </div>
         </div>
-        <a class="ui primary button" style="margin-bottom: 2px" href="{{pathFor 'co.medicineAdd'}}"><i
-                class="add sign icon"></i>Add Medicine</a>
+        <a class="ui primary button" style="margin-bottom: 2px" href="{{pathFor 'co.mapFixAssetAdd'}}"><i
+                class="add sign icon"></i>Add Map FixAsset</a>
 
         {{> tabular table=dataTable selector=selector class="cursor-pointer ui celled table"}}
-
     </div>
 </template>
 
-<template name="co_medicineAdd">
+<template name="co_mapFixAssetAdd">
     <div class="ui container animated fadeIn">
+
 
         <div class="ui breadcrumb">
             <a href="/">Home</a>
             <div class="divider"> /</div>
-            <a href="{{pathFor 'co.medicine'}}">Medicine</a>
+            <a href="{{pathFor 'co.mapFixAsset'}}">Map FixAsset</a>
             <div class="divider"> /</div>
-            <div class="active section">Add Medicine</div>
+            <div class="active section">Add Map FixAsset</div>
         </div>
+
+
         <div class="progress">
             <!--<div class="indeterminate"></div>-->
         </div>
-        {{#autoForm collection=collection id="co_medicineAdd" type="insert"}}
+
+        {{#autoForm collection=collection id="co_mapFixAssetAdd" type="insert"}}
             <div class="row">
                 <div class="two fields">
                     <div class="field">
-                        {{> afQuickField name='name'}}
-                        {{> afQuickField name='medicineTypeId' placeholder="Select One" search=true options=medicineTypeOption}}
-                        {{> afQuickField name='description'}}
-
-
-                    </div>
-                    <div class="field">
-                        {{> afQuickField name='price'}}
-                        {{> afQuickField name='retailPrice'}}
-
+                        {{> afQuickField name='fixAsset' placeholder="Select One" options=assetOption search=true}}
+                        {{> afQuickField name='accuFixAsset' placeholder="Select One" options=assetAccumulatedOption search=true}}
+                        {{> afQuickField name='fixAssetExpense' placeholder="Select One" options=assetExpenseOption search=true}}
                         {{> co_actionAdd}}
-
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col s11">
+                    <div class="field">
                         {{> co_preloader}}
                     </div>
                 </div>
             </div>
-
         {{/autoForm}}
-
     </div>
 </template>
 
-<template name="co_medicineEdit">
+<template name="co_mapFixAssetEdit">
     <div class="ui container animated fadeIn">
 
         <div class="ui breadcrumb">
             <a href="/">Home</a>
             <div class="divider"> /</div>
-            <a href="{{pathFor 'co.medicine'}}">Medicine</a>
+            <a href="{{pathFor 'co.mapFixAsset'}}">Map FixAsset</a>
             <div class="divider"> /</div>
-            <div class="active section">Edit Medicine</div>
+            <div class="active section">Edit Map FixAsset</div>
         </div>
         <div class="progress">
             <!--<div class="indeterminate"></div>-->
         </div>
-
         {{#if subscriptionsReady}}
-            {{#autoForm collection=collection id="co_medicineEdit" type="update" doc=data}}
+            {{#autoForm collection=collection id="co_mapFixAssetEdit" type="update" doc=data}}
                 <div class="row">
                     <div class="two fields">
                         <div class="field">
-                            {{> afQuickField name='name'}}
-                            {{> afQuickField name='medicineTypeId' placeholder="Select One" search=true options=medicineTypeOption}}
-                            {{> afQuickField name='description'}}
-                        </div>
-                        <div class="field">
-                            {{> afQuickField name='price'}}
-                            {{> afQuickField name='retailPrice'}}
+                            {{> afQuickField name='fixAsset' placeholder="Select One" options=assetOption search=true}}
+                            {{> afQuickField name='accuFixAsset' placeholder="Select One" options=assetAccumulatedOption search=true}}
+                            {{> afQuickField name='fixAssetExpense' placeholder="Select One" options=assetExpenseOption search=true}}
                             {{> co_actionEdit}}
-
                         </div>
                     </div>
                     <div class="row">

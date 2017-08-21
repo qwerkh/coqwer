@@ -30,7 +30,7 @@
                     {{#each journalList}}
                         <tr class="journal-row">
                             <td>{{chartAccountId}} | {{chartAccountName}}</td>
-                            <td>{{> afQuickField name='amount' id="amountValue"  value=amount placeholder="Amount" label=false}}
+                            <td>{{> afQuickField name='amount' data_id=_id id="amountValue"  value=amount placeholder="Amount" label=false}}
                             </td>
                             <td>
                                 <a style="float: right;" class="ui red button small delete-service"><i

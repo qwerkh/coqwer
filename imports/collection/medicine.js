@@ -27,6 +27,18 @@ Co_Medicine.schema = new SimpleSchema({
             }
         }
     },
+    retailPrice: {
+        type: Number,
+        decimal: true,
+        optional: true,
+        label: "Retail Price",
+        autoform: {
+            type: 'inputmask',
+            afFieldInput: {
+                inputmaskOptions: inputmaskOptions.decimal()
+            }
+        }
+    },
     rolesArea: {
         type: String,
         optional: true

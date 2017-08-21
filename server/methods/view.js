@@ -42,6 +42,7 @@ if (false) {
                 $project: {
                     "name": 1,
                     "price": 1,
+                    "retailPrice": 1,
                     "description": 1,
                     "status": 1,
                     "rolesArea": 1,
@@ -102,6 +103,39 @@ if (false) {
             },
             {$unwind: {path: "$patientDoc", preserveNullAndEmptyArrays: true}}
 
+        ]
+    )
+
+
+    //Map Fix Asset
+    db.createView('vw_mapFixAsset', 'co_mapFixAsset',
+        [
+            {
+                $lookup: {
+                    from: "co_chartAccount",
+                    localField: "fixAsset",
+                    foreignField: "_id",
+                    as: "fixAssetDoc"
+                }
+            },
+            {$unwind: {path: "$fixAssetDoc", preserveNullAndEmptyArrays: true}},
+            {
+                $lookup: {
+                    from: "co_chartAccount",
+                    localField: "accuFixAsset",
+                    foreignField: "_id",
+                    as: "accuDoc"
+                }
+            },
+            {$unwind: {path: "$accuDoc", preserveNullAndEmptyArrays: true}}, {
+            $lookup: {
+                from: "co_chartAccount",
+                localField: "fixAssetExpense",
+                foreignField: "_id",
+                as: "expenseDoc"
+            }
+        },
+            {$unwind: {path: "$expenseDoc", preserveNullAndEmptyArrays: true}}
         ]
     )
 

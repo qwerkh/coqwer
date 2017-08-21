@@ -19,6 +19,17 @@ Co_Service.schema = new SimpleSchema({
             }
         }
     },
+    retailPrice: {
+        type: Number,
+        decimal: true,
+        label: "Retail Price",
+        autoform: {
+            type: 'inputmask',
+            afFieldInput: {
+                inputmaskOptions: inputmaskOptions.decimal()
+            }
+        }
+    },
     serviceTypeId: {
         type: String,
         autoform: {

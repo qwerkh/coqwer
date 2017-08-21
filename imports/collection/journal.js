@@ -67,53 +67,53 @@ Co_Journal.schema = new SimpleSchema({
         type: Object
     },
     /*'transaction.$.account': {
-        type: String,
-        max: 200,
-        optional: true,
-        label: "Chart Of Account"
-    }
-    ,
-    'transaction.$.dr': {
-        type: Number,
-        decimal: true,
-        optional: true,
-        label: "Debit",
-        autoform: {
-            type: 'inputmask',
-            placeholder: "Debit",
-            inputmaskOptions: function () {
-                return inputmaskOptions.decimal();
-            }
-        }
-    }
-    ,
-    'transaction.$.cr': {
-        type: Number,
-        decimal: true,
-        optional: true,
-        label: "Credit",
-        autoform: {
-            type: 'inputmask',
-            placeholder: "Credit",
-            inputmaskOptions: function () {
-                return inputmaskOptions.decimal();
-            }
-        }
-    }
-    ,
-    'transaction.$.drcr': {
-        type: Number,
-        decimal: true,
-        optional: true,
-        autoform: {
-            type: 'inputmask',
-            inputmaskOptions: function () {
-                return inputmaskOptions.decimal();
-            }
-        }
-    }
+     type: String,
+     max: 200,
+     optional: true,
+     label: "Chart Of Account"
+     }
+     ,
+     'transaction.$.dr': {
+     type: Number,
+     decimal: true,
+     optional: true,
+     label: "Debit",
+     autoform: {
+     type: 'inputmask',
+     placeholder: "Debit",
+     inputmaskOptions: function () {
+     return inputmaskOptions.decimal();
+     }
+     }
+     }
+     ,
+     'transaction.$.cr': {
+     type: Number,
+     decimal: true,
+     optional: true,
+     label: "Credit",
+     autoform: {
+     type: 'inputmask',
+     placeholder: "Credit",
+     inputmaskOptions: function () {
+     return inputmaskOptions.decimal();
+     }
+     }
+     }
+     ,
+     'transaction.$.drcr': {
+     type: Number,
+     decimal: true,
+     optional: true,
+     autoform: {
+     type: 'inputmask',
+     inputmaskOptions: function () {
+     return inputmaskOptions.decimal();
+     }
+     }
+     }
 
-    ,*/
+     ,*/
 
     total: {
         type: Number,
@@ -134,99 +134,11 @@ Co_Journal.schema = new SimpleSchema({
         defaultValue: "0"
     }
     ,
-    fixAssetExpenseId: {
-        type: String,
-        optional: true,
-        defaultValue: "0"
-    }
-    ,
     closingId: {
         type: String,
         optional: true,
         defaultValue: "0"
     },
-    /*transactionAsset: {
-        type: [Object],
-        optional: true,
-        blackbox: true
-    },
-    'transactionAsset.$': {
-        type: Object
-    },
-    'transactionAsset.$.account': {
-        type: String,
-        max: 200,
-        optional: true,
-        label: "Chart Of Account"
-    },
-    'transactionAsset.$.value': {
-        type: Number,
-        decimal: true,
-        label: "Value",
-        optional: true,
-        autoform: {
-            type: 'inputmask',
-            placeholder: "Value",
-            inputmaskOptions: function () {
-                return inputmaskOptions.decimal();
-            }
-        }
-    },
-    'transactionAsset.$.life': {
-        type: Number,
-        optional: true,
-        label: "Life (Year)",
-        autoform: {
-            type: 'inputmask',
-            placeholder: "Life(Year)",
-
-            inputmaskOptions: function () {
-                return inputmaskOptions.integer();
-            }
-        }
-    },
-    'transactionAsset.$.estSalvage': {
-        type: Number,
-        optional: true,
-        label: "Estimate Salvage",
-
-        autoform: {
-            type: 'inputmask',
-            placeholder: "Estimate Salvage",
-            inputmaskOptions: function () {
-                return inputmaskOptions.decimal();
-            }
-        }
-    },
-    'transactionAsset.$.code': {
-        type: String,
-        label: "Code",
-        optional: true,
-        autoform: {
-            placeholder: "Code"
-        }
-    },
-    'transactionAsset.$.percent': {
-        type: Number,
-        label: "Percentage",
-        decimal: true,
-        optional: true,
-        autoform: {
-            type: 'inputmask',
-            placeholder: "Percentage",
-            inputmaskOptions: function () {
-                return inputmaskOptions.percentage();
-            }
-        }
-    },
-    'transactionAsset.$.description': {
-        label: "Description",
-        type: String,
-        optional: true,
-        autoform: {
-            placeholder: "Description",
-        }
-    },*/
     refId: {
         type: String,
         optional: true
@@ -250,13 +162,13 @@ Co_Journal.schema = new SimpleSchema({
             type: "select-radio-inline",
         }
     },
-    createdAt:{
+    createdAt: {
         type: Date,
-        optional:true
+        optional: true
     },
-    createdBy:{
+    createdBy: {
         type: String,
-        optional:true
+        optional: true
     }
 });
 

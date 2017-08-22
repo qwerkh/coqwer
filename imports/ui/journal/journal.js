@@ -106,30 +106,38 @@ indexTmpl.events({
 
     'click .remove'(e){
         var self = this;
-        alertify.confirm(
-            'Journal',
-            'Are you sure to delete [' + self._id + ']?',
-            () => {
-                Co_Journal.remove(self._id, (error) => {
-                    if (error) {
-                        alertify.error(error.message);
-                    } else {
-                        alertify.success('Deleted Successfully');
-                        $(e.currentTarget).parents('tr').remove();
-                    }
-                })
-            },
-            null
-        )
+        if (self.endId != "0" || self.refFrom != undefined) {
+            alertify.warning("Can't not update! Is not a normal Transaction");
+        } else {
+            alertify.confirm(
+                'Journal',
+                'Are you sure to delete [' + self._id + ']?',
+                () => {
+                    Co_Journal.remove(self._id, (error) => {
+                        if (error) {
+                            alertify.error(error.message);
+                        } else {
+                            alertify.success('Deleted Successfully');
+                            $(e.currentTarget).parents('tr').remove();
+                        }
+                    })
+                },
+                null
+            )
+        }
 
     },
     'click .edit' (event, instance) {
         let self = this;
-        journalDetailTem.remove({});
-        if (self.type == "Payment") {
-            FlowRouter.go(`/co-data/journal/${self._id}/edit`);
+        if (self.endId != "0" || self.refFrom != undefined) {
+            alertify.warning("Can't not update! Is not a normal Transaction");
         } else {
-            FlowRouter.go(`/co-data/journalReceive/${self._id}/edit`);
+            journalDetailTem.remove({});
+            if (self.type == "Payment") {
+                FlowRouter.go(`/co-data/journal/${self._id}/edit`);
+            } else {
+                FlowRouter.go(`/co-data/journalReceive/${self._id}/edit`);
+            }
         }
     },
     'click .show'(event, instance){

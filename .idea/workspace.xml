@@ -10,37 +10,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="37b05a99-1bf8-426c-a9a5-9f4248831879" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/both/tabular/mapFixAsset.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/imports/collection/mapFixAsset.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/imports/ui/mapFixAsset/mapFixAsset.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/imports/ui/mapFixAsset/mapFixAsset.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/collectionHook/mapFixAsset.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/methods/fixAssetExpense.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/both/tabular/medicine.js" afterPath="$PROJECT_DIR$/both/tabular/medicine.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/both/tabular/service.js" afterPath="$PROJECT_DIR$/both/tabular/service.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/layout.html" afterPath="$PROJECT_DIR$/client/layout.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/route/setting.js" afterPath="$PROJECT_DIR$/client/route/setting.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/imports/collection/journal.js" afterPath="$PROJECT_DIR$/imports/collection/journal.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/imports/collection/medicine.js" afterPath="$PROJECT_DIR$/imports/collection/medicine.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/imports/collection/register.js" afterPath="$PROJECT_DIR$/imports/collection/register.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/imports/collection/service.js" afterPath="$PROJECT_DIR$/imports/collection/service.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/imports/ui/endOfProcess/endOfProcess.js" afterPath="$PROJECT_DIR$/imports/ui/endOfProcess/endOfProcess.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/imports/ui/journal/journalDetail.html" afterPath="$PROJECT_DIR$/imports/ui/journal/journalDetail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/imports/ui/journal/journalDetail.js" afterPath="$PROJECT_DIR$/imports/ui/journal/journalDetail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/imports/ui/medicine/medicine.html" afterPath="$PROJECT_DIR$/imports/ui/medicine/medicine.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/imports/ui/medicine/medicine.js" afterPath="$PROJECT_DIR$/imports/ui/medicine/medicine.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/imports/ui/register/register.js" afterPath="$PROJECT_DIR$/imports/ui/register/register.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/imports/ui/register/registerDetail.html" afterPath="$PROJECT_DIR$/imports/ui/register/registerDetail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/imports/ui/register/registerDetail.js" afterPath="$PROJECT_DIR$/imports/ui/register/registerDetail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/imports/ui/service/service.html" afterPath="$PROJECT_DIR$/imports/ui/service/service.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/imports/ui/service/service.js" afterPath="$PROJECT_DIR$/imports/ui/service/service.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/imports/vue/ui/register.vue" afterPath="$PROJECT_DIR$/imports/vue/ui/register.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/collectionHook/endOfProcess.js" afterPath="$PROJECT_DIR$/server/collectionHook/endOfProcess.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/methods/optionsData.js" afterPath="$PROJECT_DIR$/server/methods/optionsData.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/methods/view.js" afterPath="$PROJECT_DIR$/server/methods/view.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/publication.js" afterPath="$PROJECT_DIR$/server/publication.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/security.js" afterPath="$PROJECT_DIR$/server/security.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/both/tabular/journal.js" afterPath="$PROJECT_DIR$/both/tabular/journal.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/imports/ui/journal/journal.js" afterPath="$PROJECT_DIR$/imports/ui/journal/journal.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -57,7 +29,28 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="journal.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/both/tabular/journal.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="544">
+              <caret line="35" column="70" lean-forward="true" selection-start-line="35" selection-start-column="70" selection-end-line="35" selection-end-column="70" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="journal.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/imports/ui/journal/journal.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="544">
+              <caret line="131" column="29" lean-forward="false" selection-start-line="131" selection-start-column="29" selection-end-line="131" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -111,8 +104,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/.vueingnore" />
-        <option value="$PROJECT_DIR$/.vueignore" />
         <option value="$PROJECT_DIR$/server/methods/report/getHeaderReport.js" />
         <option value="$PROJECT_DIR$/client/stylesheet/report.css" />
         <option value="$PROJECT_DIR$/server/methods/optionsDataReport.js" />
@@ -162,6 +153,8 @@
         <option value="$PROJECT_DIR$/imports/collection/journal.js" />
         <option value="$PROJECT_DIR$/imports/ui/endOfProcess/endOfProcess.js" />
         <option value="$PROJECT_DIR$/server/methods/fixAssetExpense.js" />
+        <option value="$PROJECT_DIR$/both/tabular/journal.js" />
+        <option value="$PROJECT_DIR$/imports/ui/journal/journal.js" />
       </list>
     </option>
   </component>
@@ -197,7 +190,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -650,7 +643,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -897,11 +890,12 @@
       <workItem from="1503066732532" duration="607000" />
       <workItem from="1503319033170" duration="8097000" />
       <workItem from="1503331950134" duration="1677000" />
+      <workItem from="1503358237991" duration="1790000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="580068000" />
+    <option name="totallyTimeSpent" value="581858000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -914,8 +908,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1430" y="-11" width="1303" height="780" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18908532" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23981553" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972136" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972136" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -1110,7 +1105,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
           <caret line="5" column="16" lean-forward="true" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1188,7 +1182,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="16">
           <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="64" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1220,24 +1213,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/both/tabular/medicine.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="44" lean-forward="false" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/both/tabular/service.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="17" column="40" lean-forward="false" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/both/tabular/journal.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1294,9 +1273,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="224">
           <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#74#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1311,19 +1287,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1281">
           <caret line="13" column="88" lean-forward="false" selection-start-line="13" selection-start-column="68" selection-end-line="13" selection-end-column="88" />
-          <folding>
-            <element signature="e#0#74#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/imports/ui/journal/journal.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="318" column="37" lean-forward="true" selection-start-line="318" selection-start-column="37" selection-end-line="318" selection-end-column="37" />
-          <folding>
-            <element signature="e#0#24#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1331,10 +1294,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="224">
           <caret line="14" column="31" lean-forward="true" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#37#0" expanded="true" />
-            <element signature="e#221#281#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1342,7 +1301,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="96">
           <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1350,6 +1308,29 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="112">
           <caret line="134" column="5" lean-forward="false" selection-start-line="134" selection-start-column="5" selection-end-line="134" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/both/tabular/medicine.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="44" lean-forward="false" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/both/tabular/journal.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="35" column="70" lean-forward="true" selection-start-line="35" selection-start-column="70" selection-end-line="35" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/ui/journal/journal.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="131" column="29" lean-forward="false" selection-start-line="131" selection-start-column="29" selection-end-line="131" selection-end-column="29" />
           <folding />
         </state>
       </provider>

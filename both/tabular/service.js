@@ -8,6 +8,8 @@ import {VW_Service} from '../../imports/collection/service';
 export const ServiceTabular = new Tabular.Table({
     name: "co.service",
     collection: VW_Service,
+    order: ['0', 'desc'],
+
     columnDefs: [
         {"width": "10px", "targets": 0}
     ],

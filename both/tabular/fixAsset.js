@@ -9,11 +9,17 @@ export const FixAssetTabular = new Tabular.Table({
     name: "co.fixAsset",
     collection: Co_FixAsset,
     responsive: true,
+    order: ['0', 'desc'],
     columnDefs: [
         {"width": "10px", "targets": 0}
     ],
     columns: [
-        {data: "_id", title: 'Id'},
+        {
+            data: "_id", title: 'Id',
+            render: function (val, type, doc) {
+                return `<u style="color: blue" depList=${val} class="depList">${val}</u>`
+            }
+        },
         {data: "description", title: 'Description'},
         {data: "code", title: 'Code'},
         {
@@ -41,6 +47,7 @@ export const FixAssetTabular = new Tabular.Table({
         {
             tmpl: Meteor.isClient && Template.co_action
         }
-    ]
+    ],
+    extraFields: ["_id", "numberOfExpense"]
 
 })

@@ -22,10 +22,10 @@ Template.navbar.onRendered(function () {
     })
     this.autorun(() => {
         if (Meteor.userId()) {
-            setTimeout(function () {
-                $(".dropdown").dropdown();
-                $('#settings-dropdown').dropdown();
-            }, 1500)
+            // setTimeout(function () {
+            $(".dropdown").dropdown();
+            $('#settings-dropdown').dropdown();
+            // }, 1500)
         }
     });
 });
@@ -51,4 +51,5 @@ Template.MainLayout.helpers({
         return _.isUndefined(Session.get('area'));
     }
 });
+
 

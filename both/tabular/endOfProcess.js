@@ -8,6 +8,7 @@ import {Co_EndOfProcess} from '../../imports/collection/endOfProcess';
 export const EndOfProcessTabular = new Tabular.Table({
     name: "co.endOfProcess",
     collection: Co_EndOfProcess,
+    order: ['0', 'desc'],
     columnDefs: [
         {"width": "10px", "targets": 0}
     ],

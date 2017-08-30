@@ -5,6 +5,8 @@ import {Co_Journal} from '../../imports/collection/journal';
 export const JournalTabular = new Tabular.Table({
     name: "co.journal",
     collection: Co_Journal,
+    order: ['0', 'desc'],
+
     columnDefs: [
         {"width": "10px", "targets": 0},
         {"width": "50px", "targets": 5}

@@ -152,6 +152,10 @@ Co_FixAsset.schema = new SimpleSchema({
     increment: {
         type: Number,
         defaultValue: 0
+    },
+    numberOfExpense: {
+        type: Number,
+        defaultValue: 0
     }
 });
 
@@ -159,3 +163,13 @@ Meteor.startup(function () {
     Co_FixAsset.attachSchema(Co_FixAsset.schema);
 });
 
+
+export const ExchangeForFixAsset = new SimpleSchema({
+    exchangeId: {
+        type: String,
+        label: "Exchange",
+        autoform: {
+            type: "select"
+        }
+    }
+});

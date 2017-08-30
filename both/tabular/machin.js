@@ -10,6 +10,8 @@ export const MachinTabular = new Tabular.Table({
     name: "co.machin",
     collection: VW_Machin,
     responsive: true,
+    order: ['0', 'desc'],
+
     columnDefs: [
         {"width": "10px", "targets": 0}
     ],

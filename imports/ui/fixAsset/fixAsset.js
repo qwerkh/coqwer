@@ -1,16 +1,23 @@
 import './fixAsset.html';
 import {Template} from 'meteor/templating';
+import {AutoForm} from 'meteor/aldeed:autoform';
 import {ReactiveVar} from 'meteor/reactive-var';
 
 import {Co_FixAsset} from '../../collection/fixAsset';
+import {ExchangeForFixAsset} from '../../collection/fixAsset';
 import {FixAssetTabular} from '../../../both/tabular/fixAsset';
-
+import {createNewAlertify} from '../../../client/lib/create-alertify';
+import {renderTemplate} from '../../../client/lib/render-template';
 
 let indexTmpl = Template.co_fixAsset,
     addTmpl = Template.co_fixAssetAdd,
-    editTmpl = Template.co_fixAssetEdit;
+    editTmpl = Template.co_fixAssetEdit,
+    depListTmpl = Template.co_fixAssetDepList,
+    depListSummaryTmpl = Template.co_fixAssetDepSummaryList,
+    exchangeTmpl = Template.co_exchangeForFixAsset;
 
 var chartAccountOpt = new ReactiveVar([]);
+var exchangeOpt = new ReactiveVar([]);
 
 indexTmpl.helpers({
     dataTable () {
@@ -20,6 +27,10 @@ indexTmpl.helpers({
         return {rolesArea: Session.get("area")};
     }
 
+})
+
+indexTmpl.onRendered(function () {
+    createNewAlertify("fixAssetDep");
 })
 
 addTmpl.helpers({
@@ -77,34 +88,59 @@ indexTmpl.events({
     },
 
     'click .remove'(e){
-        var self = this;
-        alertify.confirm(
-            'FixAsset',
-            'Are you sure to delete [' + self._id + ']?',
-            () => {
-                Co_FixAsset.remove(self._id, (error) => {
-                    if (error) {
 
-                        alertify.error(error.message);
-                    } else {
-                        alertify.success('Deleted successfully');
-                        $(e.currentTarget).parents('tr').remove();
-                    }
-                })
-            },
-            null
-        )
+        var self = this;
+        console.log(self);
+        if (self.numberOfExpense <= 0) {
+            alertify.confirm(
+                'FixAsset',
+                'Are you sure to delete [' + self._id + ']?',
+                () => {
+                    Co_FixAsset.remove(self._id, (error) => {
+                        if (error) {
+
+                            alertify.error(error.message);
+                        } else {
+                            alertify.success('Deleted successfully');
+                            $(e.currentTarget).parents('tr').remove();
+                        }
+                    })
+                },
+                null
+            )
+        } else {
+            alertify.warning("Can't Update!!!");
+        }
 
     },
     'click .edit' (event, instance) {
         let self = this;
-        FlowRouter.go(`/co-data/fixAsset/${self._id}/edit`);
+        if (self.numberOfExpense <= 0) {
+            FlowRouter.go(`/co-data/fixAsset/${self._id}/edit`);
+        } else {
+            alertify.warning("Can't Update!!!");
+        }
     },
     'click .show'(event, instance){
         let self = this;
         FlowRouter.go(`/co-data/fixAsset/${self._id}/show`);
-    }
+    },
+    'click .depList': function (e, t) {
+        debugger;
+        let params = {};
+        let queryParams = {};
 
+        let rowId = $(e.currentTarget).attr("depList")
+        queryParams.rolesArea = Session.get("area");
+        queryParams._id = rowId;
+
+        let path = FlowRouter.path("co.fixAssetDepListReport", params, queryParams);
+        window.open(path, "_blank");
+
+    },
+    'click .fixedAssetSummaryDepreciation': function (e, t) {
+        alertify.fixAssetDep("Exchange", renderTemplate(exchangeTmpl));
+    }
 })
 
 
@@ -186,4 +222,104 @@ AutoForm.hooks({
         }
     }
 })
+
+
+depListTmpl.helpers({
+    options: function () {
+        // font size = null (default), bg
+        // paper = a4, a5, mini
+        // orientation = portrait, landscape
+        return {
+            //fontSize: 'bg',
+            paper: 'a4',
+            orientation: 'portrait'
+        };
+    },
+    data: function () {
+        // Get query params
+        //FlowRouter.watchPathChange();
+        let q = FlowRouter.current().queryParams
+        Fetcher.setDefault('data', false);
+        Fetcher.retrieve('data', 'co_fixAssetDepList', q);
+        return Fetcher.get('data');
+    }
+})
+
+depListSummaryTmpl.helpers({
+    options: function () {
+        // font size = null (default), bg
+        // paper = a4, a5, mini
+        // orientation = portrait, landscape
+        return {
+            //fontSize: 'bg',
+            paper: 'a4',
+            orientation: 'portrait'
+        };
+    },
+    data: function () {
+        // Get query params
+        //FlowRouter.watchPathChange();
+        var q = FlowRouter.current().queryParams;
+
+        Fetcher.setDefault('data', false);
+        Fetcher.retrieve('data', 'co_fixAssetDepSummaryList', q);
+
+        return Fetcher.get('data');
+    }
+})
+
+
+//Pop up Exchange Date
+exchangeTmpl.events({
+    'click .go': function (e, t) {
+        let params = {};
+        let queryParams = {};
+        let exchangeId = $('[name="exchangeId"]').val();
+
+        queryParams.rolesArea = Session.get("area");
+        queryParams.exchangeId = exchangeId;
+
+        let path = FlowRouter.path("co.fixAssetDepSummaryList", params, queryParams);
+
+        window.open(path, "_blank");
+
+        alertify.fixAssetDep().close();
+
+    },
+    'change [name="exchangeId"]'(e, t){
+        Session.set('exId', $(e.currentTarget).val());
+    }
+})
+
+exchangeTmpl.onCreated(function () {
+    this.autorun(() => {
+        Meteor.call("exchangeOption", function (err, result) {
+            if (result) {
+                exchangeOpt.set(result);
+            }
+        })
+    })
+
+})
+
+exchangeTmpl.helpers({
+    schema() {
+        return ExchangeForFixAsset;
+    },
+    cssClassForSubmit(){
+        if (Session.get('exId') == "" || Session.get('exId') == undefined) {
+            return 'disabled';
+        } else {
+            return "";
+        }
+    },
+    exchangeOption(){
+        return exchangeOpt.get();
+    }
+})
+
+exchangeTmpl.onDestroyed(function () {
+    Session.set('exId', "");
+})
+
 

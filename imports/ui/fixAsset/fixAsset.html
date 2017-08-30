@@ -13,8 +13,17 @@
                 <h4 class="ui" style="text-align: right">FixAsset</h4>
             </div>
         </div>
-        <a class="ui primary button" style="margin-bottom: 2px" href="{{pathFor 'co.fixAssetAdd'}}"><i
-                class="add sign icon"></i>Add FixAsset</a>
+        <!--<a class="ui primary button" style="margin-bottom: 2px" href="{{pathFor 'co.fixAssetAdd'}}"><i
+                class="add sign icon"></i>Add FixAsset</a>-->
+
+        <div class="ui labeled button" tabindex="0" style="margin-bottom: 2px">
+            <a href="{{pathFor 'co.fixAssetAdd'}}" class="ui blue button">
+                <i class="add sign icon"></i> Add FixAsset
+            </a>
+            <a class="ui basic green left pointing label fixedAssetSummaryDepreciation">
+                Report
+            </a>
+        </div>
 
         {{> tabular table=dataTable selector=selector class="cursor-pointer ui celled table"}}
     </div>
@@ -115,4 +124,137 @@
             </div>
         {{/if}}
     </div>
+</template>
+
+
+<template name="co_fixAssetDepList">
+    {{#if data}}
+        {{#ReportContent options}}
+            {{#with data}}
+                <!--Title-->
+                <br><br>
+                {{#with title}}
+                    <div class="title">
+                        <div class="title-1x-kh-muol">{{khName}}</div>
+                        <div class="title-1x">{{enName}}</div>
+                        <div><u>Depreciation Schedule</u></div>
+                        <div class="title-2x">{{khAddress}}</div>
+                    </div>
+                {{/with}}
+
+                <!--Header-->
+                {{#with header}}
+                    <div style="width: 100%">
+                        <div style="width: 50%; float: left">
+
+                            <strong>Branch:</strong> {{rolesAreaName}}
+
+                        </div>
+
+                    </div>
+
+                {{/with}}
+
+                <!--Content-->
+                <table class="report-content">
+                    <thead class="report-content-header">
+                    <tr>
+                        <th>Year</th>
+                        <th>Per Month</th>
+                        <th>Per Year</th>
+                        <th>Cum Deprec</th>
+                        <th>BV End Year</th>
+                        <th>Expense Month</th>
+                    </tr>
+                    </thead>
+                    <tbody class="report-content-body">
+
+                    {{{content}}}
+
+                    </tbody>
+                </table>
+                <!--Footer-->
+            {{/with}}
+
+            <!--Sign-->
+            {{> ReportSignFooter}}
+
+        {{/ReportContent}}
+    {{else}}
+        {{> spinner}}
+    {{/if}}
+</template>
+<template name="co_fixAssetDepSummaryList">
+
+    {{#if data}}
+        {{#ReportContent options}}
+            {{#with data}}
+                <!--Title-->
+                <br><br>
+                {{#with title}}
+                    <div class="title">
+                        <div class="title-1x-kh-muol">{{khName}}</div>
+                        <div class="title-1x">{{enName}}</div>
+                        <div><u>Depreciation on Property and Equipment</u></div>
+
+                    </div>
+                {{/with}}
+
+                <!--Header-->
+                {{#with header}}
+                    <div style="width: 100%">
+                        <div style="width: 50%; float: left">
+                            <strong>Branch:</strong> {{rolesAreaName}}
+
+                        </div>
+                        <div style="width: 50%; float: right" class="pull-right">
+                            <strong>Exchange:</strong> {{exchangeData}}
+                        </div>
+                    </div>
+                {{/with}}
+
+                <!--Content-->
+                <table class="report-content">
+                    <thead class="report-content-header">
+                    <tr>
+                        <th>N<sup>o</sup></th>
+                        <th>Code</th>
+                        <th>Description</th>
+                        <th>Issue Date</th>
+                        <th>Price</th>
+                        <th>Months</th>
+                        <th>Depre/Exp</th>
+                        <th>Acc/Depre</th>
+                        <th>Estimate Salvage</th>
+                    </tr>
+                    </thead>
+                    <tbody class="report-content-body">
+
+                    {{{content}}}
+
+                    </tbody>
+                </table>
+                <!--Footer-->
+            {{/with}}
+
+            <!--Sign-->
+            {{> ReportSignFooter}}
+
+        {{/ReportContent}}
+    {{else}}
+        {{> spinner}}
+    {{/if}}
+</template>
+
+
+<template name="co_exchangeForFixAsset">
+    <div class="box-body">
+        {{#autoForm schema=schema id="co_exchangeForFixAsset" target="_blank"}}
+            <div class="animated fadeIn">
+                {{> afQuickField name='exchangeId' options=exchangeOption search=true }}
+                <button class="btn btn-primary go" style="float: right;" {{cssClassForSubmit}}>Go...</button>
+            </div>
+        {{/autoForm}}
+    </div>
+
 </template>

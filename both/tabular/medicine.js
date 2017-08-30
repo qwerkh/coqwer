@@ -6,6 +6,8 @@ import {VW_Medicine} from '../../imports/collection/medicine';
 export const MedicineTabular = new Tabular.Table({
     name: "co.medicine",
     collection: VW_Medicine,
+    order: ['0', 'desc'],
+
     columnDefs: [
         {"width": "10px", "targets": 0}
     ],

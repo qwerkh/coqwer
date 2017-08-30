@@ -8,6 +8,8 @@ export const ReferenceTabular = new Tabular.Table({
     name: "co.reference",
     collection: Co_Reference,
     responsive: true,
+    order: ['0', 'desc'],
+
     columnDefs: [
         {"width": "10px", "targets": 0}
     ],

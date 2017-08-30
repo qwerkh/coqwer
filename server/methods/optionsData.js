@@ -12,6 +12,8 @@ import {Co_ServiceType} from '../../imports/collection/serviceType'
 import {Co_Register} from '../../imports/collection/register'
 import {Co_ChartAccount} from '../../imports/collection/chartAccount'
 import {Co_AccountType} from '../../imports/collection/accountType'
+import {Co_Exchange} from '../../imports/collection/exchange'
+import {Co_Company} from '../../imports/collection/company'
 
 import {SpaceChar} from "../../both/config/space"
 
@@ -182,6 +184,17 @@ Meteor.methods({
         Co_ChartAccount.find({accountTypeId: "61"}, {sort: {code: 1}}).forEach(function (obj) {
             list.push({
                 label: obj.code + " | " + obj.name,
+                value: obj._id
+            })
+        });
+        return list;
+    },
+    exchangeOption: function () {
+        let list = [];
+        let com = Co_Company.findOne({});
+        Co_Exchange.find({base: com.baseCurrency}, {sort: {exDate: -1}}).forEach(function (obj) {
+            list.push({
+                label: moment(obj.exDate).format("DD/MM/YYYY") + ' | ' + JSON.stringify(obj.rates),
                 value: obj._id
             })
         });

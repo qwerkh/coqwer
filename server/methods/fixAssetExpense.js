@@ -39,8 +39,14 @@ Meteor.methods({
                     transactionUpdate.push(ob);
                 })
                 transactionUpdate.sort(compareASD);
+                obj.numberOfExpense -= 1;
                 obj.transaction = transactionUpdate;
-                Co_FixAsset.update({_id: obj._id}, {$set: obj});
+                Co_FixAsset.update({_id: obj._id},
+                    {
+
+                        $set: obj
+                    })
+                ;
             })
         }
 

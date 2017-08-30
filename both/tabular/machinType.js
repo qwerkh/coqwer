@@ -7,6 +7,8 @@ import {Co_MachinType} from '../../imports/collection/machinType';
 export const MachinTypeTabular = new Tabular.Table({
     name: "co.machinType",
     collection: Co_MachinType,
+    order: ['0', 'desc'],
+
     responsive: true,
     columnDefs: [
         {"width": "10px", "targets": 0}

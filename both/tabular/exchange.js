@@ -9,6 +9,7 @@ export const ExchangeTabular = new Tabular.Table({
     name: "co.exchange",
     collection: Co_Exchange,
     responsive: true,
+    order: ['0', 'desc'],
     columnDefs: [
         {"width": "10px", "targets": 0}
     ],

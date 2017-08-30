@@ -109,8 +109,15 @@ Co_EndOfProcess.after.insert(function (userId, doc) {
                     }
                     transactionUpdate.push(ob);
                 })
+
                 obj.transaction = transactionUpdate;
-                Co_FixAsset.update({_id: obj._id}, {$set: obj});
+                obj.numberOfExpense += 1;
+                Co_FixAsset.update({_id: obj._id},
+                    {
+                        $set: obj
+                    });
+
+                // Co_FixAsset.direct.update({_id: obj._id}, {$inc: {numberOfExpense: 1}});
             }
         })
         doc.transactionExpense = selectorExpenseList;

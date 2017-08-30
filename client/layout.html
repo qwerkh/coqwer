@@ -108,6 +108,13 @@
     {{> meteorStatus position="bottom"}}
 </template>
 
+<template name="ReportLayoutNoSideBar">
+    <div class="main">
+        {{> Template.dynamic template=content}}
+    </div>
+    {{> meteorStatus position="bottom"}}
+</template>
+
 <template name="navbar">
     <div class="no-print">
         <div class="ui top fixed teal inverted labeled huge menu">

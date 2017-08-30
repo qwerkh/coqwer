@@ -5,6 +5,8 @@ import {Co_MedicineType} from '../../imports/collection/medicineType';
 export const MedicineTypeTabular = new Tabular.Table({
     name: "co.medicineType",
     collection: Co_MedicineType,
+    order: ['0', 'desc'],
+
     columnDefs: [
         {"width": "10px", "targets": 0}
     ],

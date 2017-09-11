@@ -1,17 +1,17 @@
 <template>
-    <div class="co-register-report">
+    <div class="co-profitLost-report">
         <el-collapse v-model="activeName" class="no-print" accordion>
             <el-collapse-item name="1">
                 <span slot="title">
 
-                            Register Report
+                            ProfitLost Report
                         </span>
 
-                <el-form :inline="true" :model="registerReport" ref="registerReport">
+                <el-form :inline="true" :model="profitLostReport" ref="profitLostReport">
                     <el-row type="flex" class="row-bg" justify="left" style="width: 100%">
                         <el-col :span="21">
                             <el-form-item label="Branch :">
-                                <el-select width="100%" filterable v-model="registerReport.roleBranchOptionsModel"
+                                <el-select width="100%" filterable v-model="profitLostReport.roleBranchOptionsModel"
                                            multiple
                                            placeholder="All">
                                     <el-option
@@ -25,7 +25,7 @@
 
 
                             <el-form-item label-width="60px" label="Area  :">
-                                <el-select width="100%" filterable v-model="registerReport.roleAreaOptionsModel"
+                                <el-select width="100%" filterable v-model="profitLostReport.roleAreaOptionsModel"
                                            multiple
                                            placeholder="All">
                                     <el-option
@@ -37,9 +37,9 @@
                                 </el-select>
                             </el-form-item>
 
-                            <el-form-item class="registerDateRange" label="Date :">
+                            <el-form-item class="profitLostDateRange" label="Date :">
                                 <el-date-picker format="dd/MM/yyyy"
-                                                v-model="registerReport.dateRange"
+                                                v-model="profitLostReport.dateRange"
                                                 type="daterange"
                                                 align="right"
                                                 placeholder="Pick a range"
@@ -62,7 +62,7 @@
 
                         <el-col :span="21">
                             <el-form-item label="Patient :">
-                                <el-select filterable v-model="registerReport.patientOptionsModel" multiple
+                                <el-select filterable v-model="profitLostReport.patientOptionsModel" multiple
                                            placeholder="All">
                                     <el-option
                                             v-for="item in patientOptions"
@@ -73,7 +73,7 @@
                                 </el-select>
                             </el-form-item>
                             <el-form-item label-width="60px" label="Status :">
-                                <el-select filterable v-model="registerReport.typeOptionsModel" multiple
+                                <el-select filterable v-model="profitLostReport.typeOptionsModel" multiple
                                            placeholder="All">
                                     <el-option
                                             v-for="item in typeOptions"
@@ -106,7 +106,7 @@
                                 {{companyEnName}}
                             </div>
                             <div class="title2">
-                                <u>Register Report</u>
+                                <u>ProfitLost Report</u>
                             </div>
                             <div class="title3">
                                 {{addressName}}
@@ -122,9 +122,9 @@
                             <strong>Date:</strong> {{dateRangeHeader}}
                         </div>
                     </div>
-                        <el-table fit v-loading.body="loading" :data="registersData" border
-                                  :default-sort="{prop: 'registerDate', order: 'descending'}"
-                                  :summary-method="getSummariesRegister"
+                        <el-table fit v-loading.body="loading" :data="profitLostsData" border
+                                  :default-sort="{prop: 'profitLostDate', order: 'descending'}"
+                                  :summary-method="getSummariesProfitLost"
                                   show-summary
                                   style="width: 100%">
 
@@ -153,7 +153,7 @@
 
                         <el-table-column type="index" width="50px auto" sortable></el-table-column>
                         <el-table-column prop="patientDoc.khName" sortable label="Name"></el-table-column>
-                        <el-table-column prop="registerDate" width="100px auto" sortable label="Date"></el-table-column>
+                        <el-table-column prop="profitLostDate" width="100px auto" sortable label="Date"></el-table-column>
                         <el-table-column label="Item" width="160px auto">
                             <template scope="props">
                                 <span v-html="props.row.itemDetail"></span>
@@ -196,7 +196,7 @@
     export default {
         data(){
             return {
-                registerReport: {
+                profitLostReport: {
                     roleBranchOptionsModel: [],
                     roleAreaOptionsModel: [],
                     patientOptionsModel: [],
@@ -213,7 +213,7 @@
 
                 dateRange: "",
                 activeName: "1",
-                registersData: [],
+                profitLostsData: [],
                 loading: false,
 
                 companyName: "",
@@ -286,35 +286,35 @@
 
                 let params = {};
                 this.loading = true;
-                if (this.registerReport.roleAreaOptionsModel != "") {
-                    params.rolesArea = {$in: this.registerReport.roleAreaOptionsModel};
+                if (this.profitLostReport.roleAreaOptionsModel != "") {
+                    params.rolesArea = {$in: this.profitLostReport.roleAreaOptionsModel};
 
-                    Meteor.call("getBranchHeader", this.registerReport.roleAreaOptionsModel, (err, result) => {
+                    Meteor.call("getBranchHeader", this.profitLostReport.roleAreaOptionsModel, (err, result) => {
                         this.branchHeader = result;
                     })
                 }
 
-                if (this.registerReport.dateRange != "") {
-                    params.registerDate = {
-                        $gte: moment(this.registerReport.dateRange[0]).startOf("days").toDate(),
-                        $lte: moment(this.registerReport.dateRange[1]).startOf("days").toDate()
+                if (this.profitLostReport.dateRange != "") {
+                    params.profitLostDate = {
+                        $gte: moment(this.profitLostReport.dateRange[0]).startOf("days").toDate(),
+                        $lte: moment(this.profitLostReport.dateRange[1]).startOf("days").toDate()
                     };
 
-                    this.dateRangeHeader = moment(this.registerReport.dateRange[0]).format("DD/MM/YYYY") + "-" + moment(this.registerReport.dateRange[1]).format("DD/MM/YYYY");
+                    this.dateRangeHeader = moment(this.profitLostReport.dateRange[0]).format("DD/MM/YYYY") + "-" + moment(this.profitLostReport.dateRange[1]).format("DD/MM/YYYY");
                 }
 
-                if (this.registerReport.patientOptionsModel != "") {
-                    params.patientId = {$in: this.registerReport.patientOptionsModel};
+                if (this.profitLostReport.patientOptionsModel != "") {
+                    params.patientId = {$in: this.profitLostReport.patientOptionsModel};
                 }
 
-                if (this.registerReport.typeOptionsModel != "") {
-                    params.status = {$in: this.registerReport.typeOptionsModel};
+                if (this.profitLostReport.typeOptionsModel != "") {
+                    params.status = {$in: this.profitLostReport.typeOptionsModel};
                 }
 
 
-                Meteor.call('giveMeRegisterReport', params, (err, result) => {
+                Meteor.call('giveMeProfitLostReport', params, (err, result) => {
                     if (!err) {
-                        this.registersData = result;
+                        this.profitLostsData = result;
                     }
                     this.loading = false;
                 });
@@ -332,7 +332,7 @@
 
             },
 
-            getSummariesRegister(param) {
+            getSummariesProfitLost(param) {
                 const {columns, data} = param;
                 const sums = [];
                 columns.forEach((column, index) => {
@@ -359,10 +359,10 @@
                 return sums;
             },
             /* exportToExcel(){
-             Meteor.call('giveMeRegisterReport', this.registersData, (err, workbookBuffer) => {
+             Meteor.call('giveMeProfitLostReport', this.profitLostsData, (err, workbookBuffer) => {
              if (!err) {
              //call mixin saveAs from '/imports/api/mixins/file-saver-fn.js'
-             this.saveAs(workbookBuffer, 'RegisterReport');
+             this.saveAs(workbookBuffer, 'ProfitLostReport');
              }
              })
              },*/
@@ -373,11 +373,11 @@
         watch: {
 
 
-            "registerReport.roleBranchOptionsModel"(val){
+            "profitLostReport.roleBranchOptionsModel"(val){
                 this.fetchAreaOption(val);
             }
             ,
-            "registerReport.roleAreaOptionsModel"(val)
+            "profitLostReport.roleAreaOptionsModel"(val)
             {
                 this.fetchPatientOption(val);
             }
@@ -389,13 +389,13 @@
 //            this.fetchPatientOption([]);
             this.fetchTypeOption([]);
             this.getCompany();
-            this.registerReport.dateRange = [moment().startOf("months").toDate(), moment().endOf("months").toDate()];
+            this.profitLostReport.dateRange = [moment().startOf("months").toDate(), moment().endOf("months").toDate()];
 
 
         },
         computed: {
             dataExist(){
-                return this.registersData.length > 0;
+                return this.profitLostsData.length > 0;
             }
         },
 
@@ -459,11 +459,11 @@
         text-align: center !important;
     }
 
-    /*.registerDateRange .el-date-editor--daterange.el-input {
+    /*.profitLostDateRange .el-date-editor--daterange.el-input {
         width: 280px;
     }*/
 
-    /*.registerExchange .el-select {
+    /*.profitLostExchange .el-select {
         width: 280px;
     }*/
 

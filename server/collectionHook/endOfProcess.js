@@ -76,14 +76,13 @@ Co_EndOfProcess.after.insert(function (userId, doc) {
 
             if (accountMap) {
                 var transaction = [];
-                selectorJournal.type = "Payment";
+                selectorJournal.type = "Receive";
                 selectorJournal.paymentReceiveMethod = accountMap.fixAssetExpense;
-
                 transaction.push({
                     account: accountMap.accuFixAsset,
                     dr: 0,
                     cr: selectorExpenseObj.value,
-                    drcr: (-1) * selectorExpenseObj.value
+                    drcr: selectorExpenseObj.value
                 });
                 selectorJournal.transaction = transaction;
                 Co_Journal.insert(selectorJournal);

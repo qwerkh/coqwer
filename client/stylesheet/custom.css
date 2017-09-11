@@ -5,3 +5,38 @@
 .ui.checkbox label {
     color: black !important;
 }
+
+.ui.menu {
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.ui.menu .menu {
+    border-bottom: none;
+}
+
+.megamenu {
+    background-color: #efefef;
+    position: absolute;
+    left: 0;
+    right: 0;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    display: none;
+    margin-top: 0;
+}
+
+.mega-dropdown:hover > .megamenu {
+    display: block;
+}
+
+.ui.popup > .ui.grid:not(.padded) {
+    width: calc(100% + 1.75rem);
+    margin: -.7rem -.875rem;
+}
+
+.ui[class*="center aligned"].grid {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}

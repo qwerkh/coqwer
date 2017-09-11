@@ -128,13 +128,19 @@
 
                 {{#if currentUser}}
 
+                    <!-- <a class="browse item">
+                         Setting
+                         <i class="dropdown icon"></i>
+                     </a>-->
                     <div class="ui dropdown item">
                         <div class="text"><i class="wpforms icon"></i> Form</div>
                         <i class="dropdown icon"></i>
                         <div class="menu">
 
-
                             <a href="{{pathFor 'co.exchange'}}" class="item"><i class="exchange icon"></i> Exchange</a>
+                            <a href="{{pathFor 'co.endOfProcess'}}" class="item"><i
+                                    class="camera retro icon"></i>
+                                End Of Process</a>
                             <div class="divider"></div>
                             <a href="{{pathFor 'co.machin'}}" class="item"><i class="camera retro icon"></i> Machin</a>
                             <a href="{{pathFor 'co.medicine'}}" class="item"><i class="add square icon"></i>
@@ -177,9 +183,6 @@
                                             class="camera retro icon"></i>
                                         Map FixAsset</a>
 
-                                    <a href="{{pathFor 'co.endOfProcess'}}" class="item"><i
-                                            class="camera retro icon"></i>
-                                        End Of Process</a>
 
                                 </div>
                             </div>
@@ -204,6 +207,10 @@
 
                             <a href="{{pathFor 'co.registerReport'}}" class="item"><i class="exchange icon"></i>
                                 Register</a>
+                            <a href="{{pathFor 'co.journalReport'}}" class="item"><i class="exchange icon"></i>
+                                Journal</a>
+                            <!--<a href="{{pathFor 'co.profitLostReport'}}" class="item"><i class="exchange icon"></i>
+                                Profit Lost</a>-->
                         </div>
                     </div>
 
@@ -217,6 +224,48 @@
                         </div>
                     </div>
                 {{/if}}
+            </div>
+        </div>
+
+
+        <div class="ui fluid popup bottom left transition hidden">
+            <div class="ui four column relaxed equal height divided grid">
+                <div class="column">
+                    <h4 class="ui header">Fabrics</h4>
+                    <div class="ui link list">
+                        <a class="item">Cashmere</a>
+                        <a class="item">Linen</a>
+                        <a class="item">Cotton</a>
+                        <a class="item">Viscose</a>
+                    </div>
+                </div>
+                <div class="column">
+                    <h4 class="ui header">Size</h4>
+                    <div class="ui link list">
+                        <a class="item">Small</a>
+                        <a class="item">Medium</a>
+                        <a class="item">Large</a>
+                        <a class="item">Plus Sizes</a>
+                    </div>
+                </div>
+                <div class="column">
+                    <h4 class="ui header">Colored</h4>
+                    <div class="ui link list">
+                        <a class="item">Neutrals</a>
+                        <a class="item">Brights</a>
+                        <a class="item">Pastels</a>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <h4 class="ui header">Types</h4>
+                    <div class="ui link list">
+                        <a class="item">Knitwear</a>
+                        <a class="item">Outerwear</a>
+                        <a class="item">Pants</a>
+                        <a class="item">Shoes</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

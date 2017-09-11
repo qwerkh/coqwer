@@ -216,7 +216,7 @@ addTmpl.helpers({
         return remain;
     },
     balance(){
-        return remainAmount.get();
+        return remainAmount.get() > 0 ? remainAmount.get() : 0;
     },
     patientOption(){
         return patientOption.get();

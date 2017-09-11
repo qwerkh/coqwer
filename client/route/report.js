@@ -3,6 +3,8 @@ import {CheckRoles} from '../../imports/api/methods/checkRoles';
 
 //template js 
 import '../../imports/report/register/register';
+import '../../imports/report/journal/journal';
+import '../../imports/report/profitLost/profitLost';
 import '../../imports/ui/fixAsset/fixAsset';
 
 import '../../imports/report/content.html';
@@ -26,6 +28,21 @@ reportData.route('/registerReport', {
     name: 'co.registerReport',
     action: function (query, params) {
         _Report("co_registerReport");
+    }
+})
+
+//Journal
+reportData.route('/journalReport', {
+    name: 'co.journalReport',
+    action: function (query, params) {
+        _Report("co_journalReport");
+    }
+})
+//Profit Lost
+reportData.route('/profitLostReport', {
+    name: 'co.profitLostReport',
+    action: function (query, params) {
+        _Report("co_profitLostReport");
     }
 })
 

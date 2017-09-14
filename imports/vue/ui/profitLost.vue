@@ -59,7 +59,6 @@
                     </el-row>
 
                     <el-row type="flex" class="row-bg" justify="left">
-
                         <el-col :span="21">
                             <el-form-item label="Patient :">
                                 <el-select filterable v-model="profitLostReport.patientOptionsModel" multiple
@@ -84,6 +83,7 @@
                                 </el-select>
                             </el-form-item>
                         </el-col>
+
                         <el-col :span="3">
                             <el-button v-show="dataExist" :loading="printLoading" type="success"
                                        style="float: right;width: 130px;"
@@ -153,7 +153,8 @@
 
                         <el-table-column type="index" width="50px auto" sortable></el-table-column>
                         <el-table-column prop="patientDoc.khName" sortable label="Name"></el-table-column>
-                        <el-table-column prop="profitLostDate" width="100px auto" sortable label="Date"></el-table-column>
+                        <el-table-column prop="profitLostDate" width="100px auto" sortable
+                                         label="Date"></el-table-column>
                         <el-table-column label="Item" width="160px auto">
                             <template scope="props">
                                 <span v-html="props.row.itemDetail"></span>

@@ -14,7 +14,7 @@
     "moment": "^2.17.1",
     "node-excel-export": "^1.4.2",
     "print-this": "^1.11.0",
-    "vue": "^2.4.1",
+    "vue": "^2.3.3",
     "vue-meteor-tracker": "^1.0.3"
   },
   "postcss": {

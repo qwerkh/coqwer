@@ -8,6 +8,6 @@ Template.registerHelper('formatDate', (date) => {
 Template.registerHelper('formatNumber', (dataNumber) => {
 
     if (dataNumber) {
-        return numeral(dataNumber).format("0,00.00");
+        return numeral(dataNumber).format("0,00.000");
     }
 });

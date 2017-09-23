@@ -286,6 +286,12 @@ Co_Register.schema = new SimpleSchema({
         optional: true,
         autoform: {
             type: "textarea"
+            /*afFieldInput: {
+                type: 'summernote',
+                class: 'editor', // optional
+                // settings: // summernote options goes here
+            }*/
+
         }
     }
 

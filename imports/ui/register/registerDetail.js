@@ -354,7 +354,7 @@ let reactTotalService = function () {
             netTotal = total - (total * discountService.get() / 100);
             amountDiscountService.set(total * discountService.get() / 100);
         }
-        netTotalService.set(math.round(netTotal, 2));
+        netTotalService.set(math.round(netTotal, 3));
     }
 }
 
@@ -382,6 +382,6 @@ let reactTotalMedicine = function () {
             netTotal = total - (total * discountMedicine.get() / 100);
             amountDiscountMedicine.set(total * discountMedicine.get() / 100);
         }
-        netTotalMedicine.set(math.round(netTotal));
+        netTotalMedicine.set(math.round(netTotal,3));
     }
 }

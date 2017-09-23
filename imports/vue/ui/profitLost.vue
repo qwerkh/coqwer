@@ -351,7 +351,7 @@
                                 return prev;
                             }
                         }, 0);
-                        sums[index] = numeral(sums[index]).format("0,00.00");
+                        sums[index] = numeral(sums[index]).format("0,00.000");
                     } else {
                         sums[index] = 'N/A';
                     }

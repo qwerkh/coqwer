@@ -30,13 +30,13 @@ export const RegisterTabular = new Tabular.Table({
         {
             data: "netTotal", title: "Total",
             render: function (val, type, doc) {
-                return numeral(val).format("0,00.00");
+                return numeral(val).format("0,00.000");
             }
         },
         {
             data: "balance", title: "Unpaid",
             render: function (val, type, doc) {
-                return numeral(val).format("0,00.00");
+                return numeral(val).format("0,00.000");
             }
         },
         {

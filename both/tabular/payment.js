@@ -21,14 +21,14 @@ export const PaymentTabular = new Tabular.Table({
         {
             data: "paidAmountUSD", title: 'Paid Dollar',
             render: function (val, type, doc) {
-                return numeral(val).format("0,00.00");
+                return numeral(val).format("0,00.000");
             }
 
         },
         {
             data: "paidAmountKHR", title: 'Paid Riel',
             render: function (val, type, doc) {
-                return numeral(val).format("0,00");
+                return numeral(val).format("0,000");
             }
         },
         {

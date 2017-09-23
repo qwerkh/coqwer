@@ -181,7 +181,7 @@ addTmpl.helpers({
     },
     result(){
         let result = {};
-        result.netAmount = numeral(balanceUnpaid.get()).format("0,00.00");
+        result.netAmount = numeral(balanceUnpaid.get()).format("0,00.000");
         result.netDiscount = isNaN(parseFloat(amountDiscountService.get()) + parseFloat(amountDiscountMedicine.get())) ? 0 : parseFloat(amountDiscountService.get()) + parseFloat(amountDiscountMedicine.get());
         return result;
     },
@@ -202,14 +202,14 @@ addTmpl.helpers({
             returnAmount.set(remainAmount.get() * (-1));
 
             remain.remainAmountKHR = numeral(0).format("0,00");
-            remain.remainAmountUSD = numeral(0).format("0,00");
+            remain.remainAmountUSD = numeral(0).format("0,00.000");
             remain.remainAmountTHB = numeral(0).format("0,00");
 
         } else {
             returnAmount.set(0);
 
             remain.remainAmountKHR = numeral(GeneralFunction.exchange(Session.get("baseCurrency"), "KHR", remainAmount.get())).format("0,00");
-            remain.remainAmountUSD = numeral(GeneralFunction.exchange(Session.get("baseCurrency"), "USD", remainAmount.get())).format("0,00.00");
+            remain.remainAmountUSD = numeral(GeneralFunction.exchange(Session.get("baseCurrency"), "USD", remainAmount.get())).format("0,00.000");
             remain.remainAmountTHB = numeral(GeneralFunction.exchange(Session.get("baseCurrency"), "THB", remainAmount.get())).format("0,00");
         }
 
@@ -231,10 +231,10 @@ addTmpl.helpers({
         return patientDoc.get();
     },
     paid(){
-        return numeral(GeneralFunction.exchange("USD", Session.get("baseCurrency"), paidAmount.get("paidAmountDollar")) + GeneralFunction.exchange("KHR", Session.get("baseCurrency"), paidAmount.get("paidAmountRiel")) + GeneralFunction.exchange("THB", Session.get("baseCurrency"), paidAmount.get("paidAmountBaht"))).format("0,00.00");
+        return numeral(GeneralFunction.exchange("USD", Session.get("baseCurrency"), paidAmount.get("paidAmountDollar")) + GeneralFunction.exchange("KHR", Session.get("baseCurrency"), paidAmount.get("paidAmountRiel")) + GeneralFunction.exchange("THB", Session.get("baseCurrency"), paidAmount.get("paidAmountBaht"))).format("0,00.000");
     },
     quickCashOne(){
-        return numeral(balanceUnpaid.get()).format("0,00.00");
+        return numeral(balanceUnpaid.get()).format("0,00.000");
     },
     quickCashTwo(){
         return cashTwo(balanceUnpaid.get());
@@ -437,7 +437,7 @@ AutoForm.hooks({
 
 function cashTwo(val) {
     if (Session.get("baseCurrency") == "USD") {
-        return numeral(math.round(val) + 1).format("0,00.00");
+        return numeral(math.round(val) + 1).format("0,00.000");
     } else if (Session.get("baseCurrency") == "KHR") {
         let numberOfMoney = numeral((val + 1) / 5000).format("0,00");
         return numeral((numeral(numberOfMoney).value() + 1) * 5000).format("0,00");
@@ -449,8 +449,8 @@ function cashTwo(val) {
 
 function cashThree(val) {
     if (Session.get("baseCurrency") == "USD") {
-        let numberOfMoney = numeral((val + 1) / 10).format("0,00");
-        return numeral((numeral(numberOfMoney).value() + 1) * 10).format("0,00.00");
+        let numberOfMoney = numeral((val + 1) / 10).format("0,00.000");
+        return numeral((numeral(numberOfMoney).value() + 1) * 10).format("0,00.000");
     } else if (Session.get("baseCurrency") == "KHR") {
         let numberOfMoney = numeral((val + 1) / 5000).format("0,00");
         return numeral((numeral(numberOfMoney).value() + 2) * 5000).format("0,00");
@@ -462,8 +462,8 @@ function cashThree(val) {
 
 function cashFour(val) {
     if (Session.get("baseCurrency") == "USD") {
-        let numberOfMoney = numeral((val + 1) / 10).format("0,00");
-        return numeral((numeral(numberOfMoney).value() + 2) * 10).format("0,00.00");
+        let numberOfMoney = numeral((val + 1) / 10).format("0,00.000");
+        return numeral((numeral(numberOfMoney).value() + 2) * 10).format("0,00.000");
     } else if (Session.get("baseCurrency") == "KHR") {
         let numberOfMoney = numeral((val + 1) / 5000).format("0,00");
         return numeral((numeral(numberOfMoney).value() + 3) * 5000).format("0,00");

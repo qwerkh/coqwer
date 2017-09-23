@@ -284,10 +284,11 @@
                                     <th>Discount</th>
                                     <th>Net Total</th>
                                     <th>Unpaid</th>
+                                    <th>Description</th>
                                     <th>Status</th>
                                     </thead>
+                                <tbody>
                                     {{#each registerList}}
-                                        <tbody>
                                         <tr>
                                             <td>{{_id}}</td>
                                             <td>{{formatDate registerDate}}</td>
@@ -295,10 +296,11 @@
                                             <td>{{formatNumber discount}}</td>
                                             <td>{{formatNumber netTotal}}</td>
                                             <td>{{formatNumber balance}}</td>
+                                            <td>{{{description}}}</td>
                                             <td>{{status}}</td>
                                         </tr>
-                                        </tbody>
                                     {{/each}}
+                                </tbody>
                                 {{/if}}
                             </table>
                         </div>

@@ -53,26 +53,26 @@ export class GeneralFunction {
             if (exchangeDoc) {
                 if (curFrom == "USD") {
                     if (curTo == "KHR") {
-                        result = math.round(val * exchangeDoc.rates.KHR / 100, 2) * 100;
+                        result = math.round(val * exchangeDoc.rates.KHR / 100, 3) * 100;
                     } else if (curTo == "THB") {
-                        result = math.round(val * exchangeDoc.rates.THB);
+                        result = math.round(val * exchangeDoc.rates.THB,3);
                     } else {
                         result = val;
                     }
 
                 } else if (curFrom == "KHR") {
                     if (curTo == "USD") {
-                        result = math.round(val / exchangeDoc.rates.KHR, 2);
+                        result = math.round(val / exchangeDoc.rates.KHR, 3);
                     } else if (curTo == "THB") {
-                        result = math.round(val * exchangeDoc.rates.THB / exchangeDoc.rates.KHR);
+                        result = math.round(val * exchangeDoc.rates.THB / exchangeDoc.rates.KHR,3);
                     } else {
                         result = val;
                     }
                 } else if (curFrom == "THB") {
                     if (curTo == "USD") {
-                        result = math.round(val / exchangeDoc.rates.THB, 2);
+                        result = math.round(val / exchangeDoc.rates.THB, 3);
                     } else if (curTo == "KHR") {
-                        result = math.round((val * exchangeDoc.rates.KHR / exchangeDoc.rates.THB, 2) / 100) * 100;
+                        result = math.round((val * exchangeDoc.rates.KHR / exchangeDoc.rates.THB, 3) / 100) * 100;
                     } else {
                         result = val;
                     }

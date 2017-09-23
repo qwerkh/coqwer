@@ -150,6 +150,7 @@ AutoForm.hooks({
         before: {
             insert: function (doc) {
 
+                doc.buyDate=moment(doc.buyDate).startOf("day").add(12,"hour").toDate();
                 doc.rolesArea = Session.get('area');
                 return doc;
             }
@@ -169,6 +170,12 @@ AutoForm.hooks({
         }
     },
     co_machinEdit: {
+        before:{
+            update: function (doc) {
+                doc.$set.buyDate=moment(doc.$set.buyDate).startOf("day").add(12,"hour").toDate();
+                return doc;
+            }
+        },
         onSuccess: function (formType, result) {
             alertify.success('Updated successfully');
             FlowRouter.go(`/co-setting/machin`);

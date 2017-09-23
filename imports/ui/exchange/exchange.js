@@ -127,6 +127,7 @@ AutoForm.hooks({
             insert: function (doc) {
 
                 doc.rolesArea = Session.get('area');
+                doc.exDate=moment(doc.exDate).startOf("day").add(12,"hour").toDate();
                 return doc;
             }
         },
@@ -145,6 +146,13 @@ AutoForm.hooks({
         }
     },
     co_exchangeEdit: {
+        before:{
+            update: function (doc) {
+                doc.$set.exDate=moment(doc.$set.exDate).startOf("day").add(12,"hour").toDate();
+                return doc;
+            }
+        },
+
         onSuccess: function (formType, result) {
             alertify.success('Updated successfully');
             FlowRouter.go(`/co-setting/exchange`);

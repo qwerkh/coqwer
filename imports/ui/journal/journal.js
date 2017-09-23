@@ -333,6 +333,8 @@ AutoForm.hooks({
                         transaction.push(obj);
                     }
                 });
+
+                doc.journalDate=moment(doc.journalDate).startOf("day").add(12,"hour").toDate();
                 doc.transaction = transaction;
 
                 doc.rolesArea = Session.get('area');
@@ -372,6 +374,7 @@ AutoForm.hooks({
                     }
                 });
                 doc.$set.transaction = transaction;
+                doc.$set.journalDate=moment(doc.$set.journalDate).startOf("day").add(12,"hour").toDate();
 
                 doc.$unset = {};
                 return doc;
@@ -411,6 +414,7 @@ AutoForm.hooks({
                     }
                 });
                 doc.transaction = transaction;
+                doc.journalDate=moment(doc.journalDate).startOf("day").add(12,"hour").toDate();
 
                 doc.rolesArea = Session.get('area');
                 // doc.$unset = {};
@@ -449,6 +453,7 @@ AutoForm.hooks({
                     }
                 });
                 doc.$set.transaction = transaction;
+                doc.$set.journalDate=moment(doc.$set.journalDate).startOf("day").add(12,"hour").toDate();
 
                 doc.$unset = {};
                 return doc;

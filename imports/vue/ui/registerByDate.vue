@@ -1,18 +1,18 @@
 <template>
-    <div class="co-register-report">
+    <div class="co-registerByDate-report">
         <div slot="header">
             <el-collapse v-model="activeName" class="no-print" accordion>
                 <el-collapse-item name="1">
                 <span slot="title">
 
-                            Register Report
+                            Register By Date Report
                         </span>
 
-                    <el-form :inline="true" :model="registerReport" ref="registerReport">
+                    <el-form :inline="true" :model="registerByDateReport" ref="registerByDateReport">
                         <el-row type="flex" class="row-bg" justify="left" style="width: 100%">
                             <el-col :span="21">
                                 <el-form-item label="Branch :">
-                                    <el-select width="100%" filterable v-model="registerReport.roleBranchOptionsModel"
+                                    <el-select width="100%" filterable v-model="registerByDateReport.roleBranchOptionsModel"
                                                multiple
                                                placeholder="All">
                                         <el-option
@@ -26,7 +26,7 @@
 
 
                                 <el-form-item label-width="60px" label="Area  :">
-                                    <el-select width="100%" filterable v-model="registerReport.roleAreaOptionsModel"
+                                    <el-select width="100%" filterable v-model="registerByDateReport.roleAreaOptionsModel"
                                                multiple
                                                placeholder="All">
                                         <el-option
@@ -40,7 +40,7 @@
 
                                 <el-form-item class="registerDateRange" label="Date :">
                                     <el-date-picker format="dd/MM/yyyy"
-                                                    v-model="registerReport.dateRange"
+                                                    v-model="registerByDateReport.dateRange"
                                                     type="daterange"
                                                     align="right"
                                                     placeholder="Pick a range"
@@ -63,7 +63,7 @@
 
                             <el-col :span="21">
                                 <el-form-item label="Patient :">
-                                    <el-select filterable v-model="registerReport.patientOptionsModel" multiple
+                                    <el-select filterable v-model="registerByDateReport.patientOptionsModel" multiple
                                                placeholder="All">
                                         <el-option
                                                 v-for="item in patientOptions"
@@ -74,7 +74,7 @@
                                     </el-select>
                                 </el-form-item>
                                 <el-form-item label-width="60px" label="Status :">
-                                    <el-select filterable v-model="registerReport.typeOptionsModel" multiple
+                                    <el-select filterable v-model="registerByDateReport.typeOptionsModel" multiple
                                                placeholder="All">
                                         <el-option
                                                 v-for="item in typeOptions"
@@ -99,57 +99,7 @@
 
         </div>
         <span slot="content">
-             <!--<el-row type="flex" class="row-bg a4-portrait" justify="center">
-                    <el-col :span="24">
-                        <div class="title">
-                            <div class="title1">
-                                {{companyName}}
-                            </div>
-                            <div class="title1">
-                                {{companyEnName}}
-                            </div>
-                            <div class="title2">
-                                <u>Register Report</u>
-                            </div>
-                            <div class="title3">
-                                {{addressName}}
-                            </div>
-                        </div>
 
-                        <div style="width: 100%">
-                        <div style="width: 50%; float: left">
-                            <strong>Branch : </strong> {{branchHeader}}
-                        </div>
-
-                        <div style="width: 50%; float: right;text-align: right;">
-                            <strong>Date:</strong> {{dateRangeHeader}}
-                        </div>
-                    </div>
-                        <el-table fit v-loading.body="loading" :data="registersData" border
-                                  :default-sort="{prop: 'registerDate', order: 'descending'}"
-                                  :summary-method="getSummariesRegister"
-                                  show-summary
-                                  style="width: 100%">
-
-
-                        <el-table-column type="index" width="50px auto" sortable></el-table-column>
-                        <el-table-column prop="patientDoc.khName" sortable label="Name"></el-table-column>
-                        <el-table-column prop="registerDate" width="100px auto" sortable label="Date"></el-table-column>
-                        <el-table-column label="Item" width="160px auto">
-                            <template scope="props">
-                                <span v-html="props.row.itemDetail"></span>
-                            </template>
-                        </el-table-column>
-                            &lt;!&ndash;
-                                                    <el-table-column prop="total" label="Total"></el-table-column>
-                                                    <el-table-column prop="totalDiscount" label="Discount"></el-table-column>
-                            &ndash;&gt;
-                        <el-table-column prop="netTotal" label="Amount"></el-table-column>
-                        <el-table-column prop="totalPaid" label="Paid"></el-table-column>
-                        <el-table-column prop="balance" label="Un Paid"></el-table-column>
-                            &lt;!&ndash;<el-table-column prop="status" label="Status"></el-table-column>&ndash;&gt;
-
-                        </el-table>-->
                         <span slot="content">
                             <div class="title">
                             <div class="title1">
@@ -159,7 +109,7 @@
                                 {{companyEnName}}
                             </div>
                             <div class="title2">
-                                <u>Register Report</u>
+                                <u>Register By Date Report</u>
                             </div>
                             <div class="title3">
                                 {{addressName}}
@@ -178,9 +128,7 @@
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>Name</th>
                                         <th>Date</th>
-                                        <th>Item</th>
                                         <th>Amount</th>
                                         <th>Paid</th>
                                         <th>UnPaid</th>
@@ -190,43 +138,22 @@
                                     <slot v-for="(register,index) in registersData.data">
                                         <tr>
                                             <td>{{index +1}}</td>
-                                            <td>{{register.patientDoc.khName}}</td>
                                             <td>{{register.registerDate}}</td>
-                                            <td v-html="register.itemDetail"></td>
                                             <td style="text-align: right">{{register.netTotal}}</td>
                                             <td style="text-align: right">{{register.totalPaid}}</td>
                                             <td style="text-align: right">{{register.balance}}</td>
                                         </tr>
                                     </slot>
                                     <tr>
-                                        <td colspan="4" style="text-align: right">Total :</td>
+                                        <td colspan="2" style="text-align: right">Total :</td>
                                         <td style="text-align: right">{{registersData.totalNetTotal}}</td>
                                         <td style="text-align: right">{{registersData.total}}</td>
                                         <td style="text-align: right">{{registersData.totalBalance}}</td>
                                     </tr>
                                 </tbody>
                         </table>
-                         <!--<div style="width: 100%">
 
-                                <div style="width: 30%; float: left; text-align: right">
-                                   <div style="margin-bottom: 7em">
-                                        Approved By
-                                    </div>
-                                    __________________
-                                </div>
-                            <div style="width: 40%">
-                            </div>
-                                <div style="width: 30%; float: right;text-align: left;">
-                                            <div style="margin-bottom: 7em">
-                                        Prepared By
-                                            </div>
-                                    __________________
-
-                                    </div>
-                                </div>-->
                             </span>
-                    <!--</el-col>
-             </el-row>-->
         </span>
     </div>
 </template>
@@ -234,7 +161,7 @@
     export default {
         data(){
             return {
-                registerReport: {
+                registerByDateReport: {
                     roleBranchOptionsModel: [],
                     roleAreaOptionsModel: [],
                     patientOptionsModel: [],
@@ -324,35 +251,36 @@
 
                 let params = {};
                 this.loading = true;
-                if (this.registerReport.roleAreaOptionsModel != "") {
-                    params.rolesArea = {$in: this.registerReport.roleAreaOptionsModel};
+                if (this.registerByDateReport.roleAreaOptionsModel != "") {
+                    params.rolesArea = {$in: this.registerByDateReport.roleAreaOptionsModel};
 
-                    Meteor.call("getBranchHeader", this.registerReport.roleAreaOptionsModel, (err, result) => {
+                    Meteor.call("getBranchHeader", this.registerByDateReport.roleAreaOptionsModel, (err, result) => {
                         this.branchHeader = result;
                     })
                 }
 
-                if (this.registerReport.dateRange != "") {
+                if (this.registerByDateReport.dateRange != "") {
                     params.registerDate = {
-                        $gte: moment(this.registerReport.dateRange[0]).startOf("days").toDate(),
-                        $lte: moment(this.registerReport.dateRange[1]).startOf("days").toDate()
+                        $gte: moment(this.registerByDateReport.dateRange[0]).startOf("days").toDate(),
+                        $lte: moment(this.registerByDateReport.dateRange[1]).startOf("days").toDate()
                     };
 
-                    this.dateRangeHeader = moment(this.registerReport.dateRange[0]).format("DD/MM/YYYY") + "-" + moment(this.registerReport.dateRange[1]).format("DD/MM/YYYY");
+                    this.dateRangeHeader = moment(this.registerByDateReport.dateRange[0]).format("DD/MM/YYYY") + "-" + moment(this.registerByDateReport.dateRange[1]).format("DD/MM/YYYY");
                 }
 
-                if (this.registerReport.patientOptionsModel != "") {
-                    params.patientId = {$in: this.registerReport.patientOptionsModel};
+                if (this.registerByDateReport.patientOptionsModel != "") {
+                    params.patientId = {$in: this.registerByDateReport.patientOptionsModel};
                 }
 
-                if (this.registerReport.typeOptionsModel != "") {
-                    params.status = {$in: this.registerReport.typeOptionsModel};
+                if (this.registerByDateReport.typeOptionsModel != "") {
+                    params.status = {$in: this.registerByDateReport.typeOptionsModel};
                 }
 
 
-                Meteor.call('giveMeRegisterReport', params, (err, result) => {
+                Meteor.call('giveMeRegisterByDateReport', params, (err, result) => {
                     if (!err) {
                         this.registersData = result;
+                        console.log(result);
                     }
                     this.loading = false;
                 });
@@ -369,41 +297,6 @@
                 })
 
             },
-
-            getSummariesRegister(param) {
-                const {columns, data} = param;
-                const sums = [];
-                columns.forEach((column, index) => {
-                    if (index === 0) {
-                        sums[index] = 'Total';
-                        return;
-                    }
-                    const values = data.map(item => Number(numeral().unformat(item[column.property])));
-                    if (!values.every(value => isNaN(value)) && index > 3) {
-                        sums[index] = values.reduce((prev, curr) => {
-                            const value = Number(curr);
-                            if (!isNaN(value)) {
-                                return prev + curr;
-                            } else {
-                                return prev;
-                            }
-                        }, 0);
-                        sums[index] = numeral(sums[index]).format("0,00.00");
-                    } else {
-                        sums[index] = 'N/A';
-                    }
-                });
-
-                return sums;
-            },
-            /* exportToExcel(){
-             Meteor.call('giveMeRegisterReport', this.registersData, (err, workbookBuffer) => {
-             if (!err) {
-             //call mixin saveAs from '/imports/api/mixins/file-saver-fn.js'
-             this.saveAs(workbookBuffer, 'RegisterReport');
-             }
-             })
-             },*/
             PrintReport(){
                 window.print();
             }
@@ -411,11 +304,11 @@
         watch: {
 
 
-            "registerReport.roleBranchOptionsModel"(val){
+            "registerByDateReport.roleBranchOptionsModel"(val){
                 this.fetchAreaOption(val);
             }
             ,
-            "registerReport.roleAreaOptionsModel"(val)
+            "registerByDateReport.roleAreaOptionsModel"(val)
             {
                 this.fetchPatientOption(val);
             }
@@ -427,7 +320,7 @@
 //            this.fetchPatientOption([]);
             this.fetchTypeOption([]);
             this.getCompany();
-            this.registerReport.dateRange = [moment().startOf("months").toDate(), moment().endOf("months").toDate()];
+            this.registerByDateReport.dateRange = [moment().startOf("months").toDate(), moment().endOf("months").toDate()];
 
 
         },

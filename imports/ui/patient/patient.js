@@ -172,7 +172,7 @@ AutoForm.hooks({
     co_patientAdd: {
         before: {
             insert: function (doc) {
-
+                doc.dob=moment(doc.dob).startOf("day").add(12,"hour").toDate();
                 doc.rolesArea = Session.get('area');
                 return doc;
             }
@@ -192,6 +192,12 @@ AutoForm.hooks({
         }
     },
     co_patientEdit: {
+        before:{
+            update:function (doc) {
+                doc.$set.dob=moment(doc.$set.dob).startOf("day").add(12,"hour").toDate();
+                return doc;
+            }
+        },
         onSuccess: function (formType, result) {
             alertify.success('Updated Successfully');
             FlowRouter.go(`/co-data/patient`);

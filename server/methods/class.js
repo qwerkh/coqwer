@@ -1,29 +1,25 @@
 import {VW_Register} from "../../imports/collection/register";
+import {Co_Register} from "../../imports/collection/register";
 import {Co_Journal} from "../../imports/collection/journal";
 
 export default class ClassReport {
     static registerReport(param) {
         let parameter = {};
+        let data={};
+        let total=0;
+        let totalNetTotal=0;
+        let totalBalance=0;
 
         if (param) {
             parameter = param;
         }
         let registerList = VW_Register.find(parameter).fetch().map(function (obj) {
-            /*obj.total = numeral(obj.totalMedicine + obj.totalService).format("0,00.00");
-             obj.discountServiceAmount = numeral(obj.totalService - obj.netTotalService).format("0,00.00");
-             obj.discountMedicineAmount = numeral(obj.totalMedicine - obj.netTotalMedicine).format("0,00.00");
-             obj.totalDiscount = numeral(obj.totalMedicine + obj.totalService - obj.netTotal).format("0,00.00");
-             */
 
-            obj.totalPaid = numeral(obj.netTotal - obj.balance).format("0,00.00");
-
-            obj.netTotal = numeral(obj.netTotal).format("0,00.00");
-            obj.balance = numeral(obj.balance).format("0,00.00");
-
+            total+= obj.netTotal-obj.balance;
+            totalNetTotal+=obj.netTotal;
+            totalBalance+=obj.balance;
 
             obj.registerDate = moment(obj.registerDate).format("DD/MM/YYYY");
-
-
             obj.serviceDetail = "";
             obj.medicineDetail = "";
             obj.itemDetail = "";
@@ -36,6 +32,10 @@ export default class ClassReport {
                 obj.itemDetail += `<li>` + o.medicineName + `</li>`;
             })
 
+            obj.totalPaid = numeral(obj.netTotal - obj.balance).format("0,00.00");
+            obj.netTotal = numeral(obj.netTotal).format("0,00.00");
+            obj.balance = numeral(obj.balance).format("0,00.00");
+
             /*obj.totalMedicine = numeral(obj.totalMedicine).format("0,00.00");
              obj.totalService = numeral(obj.totalService).format("0,00.00");
              obj.netTotalMedicine = numeral(obj.netTotalMedicine).format("0,00.00");
@@ -43,7 +43,49 @@ export default class ClassReport {
 
             return obj;
         });
-        return registerList;
+        data.data=registerList;
+        data.total=numeral(total).format("0,00.00");
+        data.totalNetTotal=numeral(totalNetTotal).format("0,00.00");
+        data.totalBalance=numeral(totalBalance).format("0,00.00");
+
+        return data;
+    }
+
+    static registerByDateReport(param) {
+        let parameter = {};
+        let data={};
+        let total=0;
+        let totalNetTotal=0;
+        let totalBalance=0;
+
+        if (param) {
+            parameter = param;
+        }
+        let registerList = Co_Register.aggregate([
+                {$match: parameter},
+                { $project: { registerDate: 1, netTotal: 1, balance: 1, month: { $month: "$registerDate" }, day: { $dayOfMonth: "$registerDate" }, year: { $year: "$registerDate" } } },
+
+                { $group: { _id: { day: "$day", month: "$month", year: "$year"},registerDate: {$last: "$registerDate"},netTotal:{$sum: "$netTotal"},balance:{$sum: "$balance"} }},
+                {$sort:{registerDate:1}}
+                ]).map(function (obj) {
+                obj.registerDate=moment(obj.registerDate).format("DD/MM/YYYY");
+                totalNetTotal+=obj.netTotal;
+                totalBalance+=obj.balance;
+                total+=obj.netTotal+obj.balance;
+
+            obj.totalPaid = numeral(obj.netTotal - obj.balance).format("0,00.00");
+            obj.netTotal = numeral(obj.netTotal).format("0,00.00");
+            obj.balance = numeral(obj.balance).format("0,00.00");
+                return obj;
+
+        });
+
+        data.data=registerList;
+        data.total=numeral(total).format("0,00.00");
+        data.totalNetTotal=numeral(totalNetTotal).format("0,00.00");
+        data.totalBalance=numeral(totalBalance).format("0,00.00");
+
+        return data;
     }
 
 
@@ -54,12 +96,6 @@ export default class ClassReport {
             parameter = param;
         }
         let registerList = VW_Register.find(parameter).fetch().map(function (obj) {
-            /*obj.total = numeral(obj.totalMedicine + obj.totalService).format("0,00.00");
-             obj.discountServiceAmount = numeral(obj.totalService - obj.netTotalService).format("0,00.00");
-             obj.discountMedicineAmount = numeral(obj.totalMedicine - obj.netTotalMedicine).format("0,00.00");
-             obj.totalDiscount = numeral(obj.totalMedicine + obj.totalService - obj.netTotal).format("0,00.00");
-             */
-
             obj.totalPaid = numeral(obj.netTotal - obj.balance).format("0,00.00");
 
             obj.netTotal = numeral(obj.netTotal).format("0,00.00");

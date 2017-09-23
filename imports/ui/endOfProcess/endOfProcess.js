@@ -76,6 +76,7 @@ AutoForm.hooks({
                 doc.rolesArea = Session.get('area');
                 doc.month = moment(doc.endDate).format("MM");
                 doc.year = moment(doc.endDate).format("YYYY");
+                doc.endDate=moment(doc.endDate).startOf("day").add(12,"hour").toDate();
                 return doc;
             }
         },

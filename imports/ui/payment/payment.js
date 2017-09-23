@@ -392,6 +392,7 @@ AutoForm.hooks({
 
                 doc.voucherId = doc.voucherId.padStart(6, "0");
 
+                doc.paymentDate=moment(doc.paymentDate).startOf("day").add(12,"hour").toDate();
                 doc.rolesArea = Session.get('area');
                 return doc;
             }
@@ -411,6 +412,12 @@ AutoForm.hooks({
         }
     },
     co_paymentEdit: {
+        before:{
+            update: function (doc) {
+                doc.$set.paymentDate=moment(doc.paymentDate).startOf("day").add(12,"hour").toDate();
+                return doc;
+            }
+        },
         onSuccess: function (formType, result) {
             alertify.success('Updated Successfully');
             FlowRouter.go(`/co-data/payment`);

@@ -483,7 +483,7 @@ AutoForm.hooks({
                 if (doc.voucherId != "" || doc.voucherId != "0") {
                     doc.voucherId = doc.voucherId.padStart(6, "0");
                 }
-
+                doc.registerDate=moment(doc.registerDate).startOf("day").add(12,"hour").toDate();
                 let services = [];
                 let medicines = [];
                 serviceTem.find().fetch().forEach(function (obj) {
@@ -576,6 +576,7 @@ AutoForm.hooks({
 
                 doc.$set.services = services;
                 doc.$set.medicines = medicines;
+                doc.$set.registerDate=moment(doc.$set.registerDate).startOf("day").add(12,"hour").toDate();
 
                 if (doc.$set.balance <= 0) {
                     doc.$set.status = "Complete";

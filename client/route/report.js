@@ -3,6 +3,7 @@ import {CheckRoles} from '../../imports/api/methods/checkRoles';
 
 //template js 
 import '../../imports/report/register/register';
+import '../../imports/report/registerByDate/registerByDate';
 import '../../imports/report/journal/journal';
 import '../../imports/report/profitLost/profitLost';
 import '../../imports/ui/fixAsset/fixAsset';
@@ -28,6 +29,13 @@ reportData.route('/registerReport', {
     name: 'co.registerReport',
     action: function (query, params) {
         _Report("co_registerReport");
+    }
+})
+//Register By Date
+reportData.route('/registerByDateReport', {
+    name: 'co.registerByDateReport',
+    action: function (query, params) {
+        _Report("co_registerByDateReport");
     }
 })
 

@@ -85,7 +85,7 @@
             </el-collapse-item>
         </el-collapse>
         <span slot="content">
-             <el-row type="flex" class="row-bg a4-portrait" justify="center">
+             <!--<el-row type="flex" class="row-bg a4-portrait" justify="center">
                     <el-col :span="24">
                         <div class="title">
                             <div class="title1">
@@ -157,7 +157,77 @@
                                 </div>
 
     </el-col>
-    </el-row>
+    </el-row>-->
+
+
+            <div class="title">
+                            <div class="title1">
+                                {{companyName}}
+                            </div>
+                            <div class="title1">
+                                {{companyEnName}}
+                            </div>
+                            <div class="title2">
+                                <u>Journal Report</u>
+                            </div>
+                            <div class="title3">
+                                {{addressName}}
+                            </div>
+                        </div>
+
+                        <div style="width: 100%">
+                        <div style="width: 50%; float: left">
+                            <strong>Branch : </strong> {{branchHeader}}
+                        </div>
+
+                        <div style="width: 50%; float: right;text-align: right;">
+                            <strong>Date:</strong> {{dateRangeHeader}}
+                        </div>
+                        </div>
+            <table class="ui celled table table-report">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Date</th>
+                        <th>Voucher</th>
+                        <th>Description</th>
+                        <th>Account Name</th>
+                        <th>Dr</th>
+                        <th>Cr</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <slot v-for="(journal, index) in journalsData">
+                        <tr>
+                            <td>{{index +1}}</td>
+                            <td>{{journal.journalDateName}}</td>
+                            <td>{{journal.voucherId}}</td>
+                            <td>{{journal.memo}}</td>
+                            <td v-html="journal.accountName"></td>
+                            <td style="text-align: right"><span v-html="journal.dr"></span></td>
+                            <td style="text-align: right"><span v-html="journal.cr"></span></td>
+                        </tr>
+                    </slot>
+                </tbody>
+            </table>
+            <!--<div style="width: 100%">
+
+                                <div style="width: 30%; float: left; text-align: right">
+                                   <div style="margin-bottom: 7em">
+                                        Approved By
+                                    </div>
+                                    __________________
+                                </div>
+                            <div style="width: 40%">
+                            </div>
+                                <div style="width: 30%; float: right;text-align: left;">
+                                            <div style="margin-bottom: 7em">
+                                        Prepared By
+                                            </div>
+                                    __________________
+
+                                    </div>
+                                </div>-->
     </span>
     </div>
 </template>

@@ -17,7 +17,7 @@
 
         {{/if}}
     {{/if}}
-    <div class="main" style="margin-top: 70px; min-height: 1300px">
+    <div class="main main-layout">
         {{#if currentUser}}
             {{#if currentUser.profile.approved}}
                 {{#if notChoosenArea}}
@@ -84,7 +84,7 @@
 
         {{/if}}
     {{/if}}
-    <div class="main" style="margin-top: 70px;">
+    <div class="main main-layout">
         {{#if currentUser}}
             {{#if currentUser.profile.approved}}
                 {{#if notChoosenArea}}
@@ -209,10 +209,13 @@
                             <a href="{{pathFor 'co.registerReport'}}" class="item"><i class="fa fa-file-text-o"
                                                                                       aria-hidden="true"></i>
                                 Register</a>
+                            <a href="{{pathFor 'co.registerByDateReport'}}" class="item"><i class="fa fa-file-text-o"
+                                                                                      aria-hidden="true"></i>
+                                Register By Date</a>
                             <a href="{{pathFor 'co.journalReport'}}" class="item"><i class="fa fa-file-text-o"
                                                                                      aria-hidden="true"> </i>
                                 Journal</a>
-                           <!-- <a href="{{pathFor 'co.profitLostReport'}}" class="item"><i class="fa fa-file-text-o"
+                           <!--<a href="{{pathFor 'co.profitLostReport'}}" class="item"><i class="fa fa-file-text-o"
                                                                                         aria-hidden="true"> </i> Profit
                                 Lost</a>-->
                         </div>

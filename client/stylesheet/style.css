@@ -399,3 +399,7 @@ footer > .ui.vertical.stripe.segment {
 .ui.button > .icon:not(.button) {
     opacity: 9.8 !important;
 }
+
+.medium-editor{
+    min-height: 50px;
+}

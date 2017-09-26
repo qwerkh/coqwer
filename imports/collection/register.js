@@ -285,12 +285,22 @@ Co_Register.schema = new SimpleSchema({
         label: "Description",
         optional: true,
         autoform: {
-            type: "textarea"
-            /*afFieldInput: {
-                type: 'summernote',
-                class: 'editor', // optional
-                // settings: // summernote options goes here
-            }*/
+            // type: "textarea"
+
+            type: "medium",
+            mediumOptions: {
+                /*toolbar: {
+                    buttons: ['bold', 'italic', 'underline', 'anchor'],
+                    diffLeft: 25,
+                    diffTop: 10,
+                },*/
+                keepLabel: true
+            }
+                /*afFieldInput: {
+                    type: 'summernote',
+                    class: 'editor', // optional
+                    // settings: // summernote options goes here
+                }*/
 
         }
     }

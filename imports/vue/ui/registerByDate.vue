@@ -145,10 +145,10 @@
                                         </tr>
                                     </slot>
                                     <tr>
-                                        <td colspan="2" style="text-align: right">Total :</td>
-                                        <td style="text-align: right">{{registersData.totalNetTotal}}</td>
-                                        <td style="text-align: right">{{registersData.total}}</td>
-                                        <td style="text-align: right">{{registersData.totalBalance}}</td>
+                                        <th colspan="2" style="text-align: right">Total :</th>
+                                        <th style="text-align: right">{{registersData.totalNetTotal}}</th>
+                                        <th style="text-align: right">{{registersData.total}}</th>
+                                        <th style="text-align: right">{{registersData.totalBalance}}</th>
                                     </tr>
                                 </tbody>
                         </table>

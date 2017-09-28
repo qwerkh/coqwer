@@ -60,28 +60,6 @@
 
                     <el-row type="flex" class="row-bg" justify="left">
                         <el-col :span="21">
-                            <el-form-item label="Patient :">
-                                <el-select filterable v-model="profitLostReport.patientOptionsModel" multiple
-                                           placeholder="All">
-                                    <el-option
-                                            v-for="item in patientOptions"
-                                            :key="item.value"
-                                            :label="item.label"
-                                            :value="item.value">
-                                    </el-option>
-                                </el-select>
-                            </el-form-item>
-                            <el-form-item label-width="60px" label="Status :">
-                                <el-select filterable v-model="profitLostReport.typeOptionsModel" multiple
-                                           placeholder="All">
-                                    <el-option
-                                            v-for="item in typeOptions"
-                                            :key="item.value"
-                                            :label="item.label"
-                                            :value="item.value">
-                                    </el-option>
-                                </el-select>
-                            </el-form-item>
                         </el-col>
 
                         <el-col :span="3">
@@ -122,34 +100,77 @@
                             <strong>Date:</strong> {{dateRangeHeader}}
                         </div>
                     </div>
-                        <el-table fit v-loading.body="loading" :data="profitLostsData" border
+
+
+                        <table class="ui celled table table-report">
+                                <tbody>
+                                    <tr>
+                                        <td>Sale & Service</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Cost Of Good Sold</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><b><u>Gross Profit</u></b> </td>
+                                        <td></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Operating Expense</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><b><u>Total Operating Expense</u></b> </td>
+                                        <td></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><b><u>Operating Income</u></b></td>
+                                        <td></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Non Operating Expense</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><b><u>Total Non Operating Expense</u></b> </td>
+                                        <th></th>
+                                    </tr>
+
+                                     <tr>
+                                        <td><b><u>Net Income</u></b></td>
+                                        <td></td>
+                                    </tr>
+
+                                </tbody>
+                                <!--<tbody>
+                                    <slot v-for="(register,index) in registersData.data">
+                                        <tr>
+                                            <td>{{index +1}}</td>
+                                            <td>{{register.patientDoc.khName}}</td>
+                                            <td>{{register.registerDate}}</td>
+                                            <td v-html="register.itemDetail"></td>
+                                            <td style="text-align: right">{{register.netTotal}}</td>
+                                            <td style="text-align: right">{{register.totalPaid}}</td>
+                                            <td style="text-align: right">{{register.balance}}</td>
+                                        </tr>
+                                    </slot>
+                                    <tr>
+                                        <th colspan="4" style="text-align: right">Total :</th>
+                                        <th style="text-align: right">{{registersData.totalNetTotal}}</th>
+                                        <th style="text-align: right">{{registersData.total}}</th>
+                                        <th style="text-align: right">{{registersData.totalBalance}}</th>
+                                    </tr>
+                                </tbody>-->
+                        </table>
+                       <!-- <el-table fit v-loading.body="loading" :data="profitLostsData" border
                                   :default-sort="{prop: 'profitLostDate', order: 'descending'}"
                                   :summary-method="getSummariesProfitLost"
                                   show-summary
                                   style="width: 100%">
-
-                            <!--<el-table-column type="expand">-->
-                            <!--<template scope="props">-->
-                            <!--<el-row>-->
-                            <!--<el-col :span="12">-->
-
-                            <!--<p><b>Total Service : </b>{{ props.row.totalService }}</p>-->
-                            <!--<p><b>Discount Service : </b>{{ props.row.discountServiceAmount }}</p>-->
-                            <!--<p><b>Net Total Service : </b>{{ props.row.netTotalService }}</p>-->
-
-                            <!--</el-col>-->
-                            <!--<el-col :span="12">-->
-
-
-                            <!--<p><b>Total Medicine : </b>{{ props.row.totalMedicine }}</p>-->
-                            <!--<p><b>Discount Medicine : </b>{{ props.row.discountMedicineAmount }}</p>-->
-                            <!--<p><b>Net Total Medicine : </b>{{ props.row.netTotalMedicine }}</p>-->
-
-                            <!--</el-col>-->
-                            <!--</el-row>-->
-
-                            <!--</template>-->
-                            <!--</el-table-column>-->
 
                         <el-table-column type="index" width="50px auto" sortable></el-table-column>
                         <el-table-column prop="patientDoc.khName" sortable label="Name"></el-table-column>
@@ -160,16 +181,16 @@
                                 <span v-html="props.row.itemDetail"></span>
                             </template>
                         </el-table-column>
-                            <!--
+                            &lt;!&ndash;
                                                     <el-table-column prop="total" label="Total"></el-table-column>
                                                     <el-table-column prop="totalDiscount" label="Discount"></el-table-column>
-                            -->
+                            &ndash;&gt;
                         <el-table-column prop="netTotal" label="Amount"></el-table-column>
                         <el-table-column prop="totalPaid" label="Paid"></el-table-column>
                         <el-table-column prop="balance" label="Un Paid"></el-table-column>
-                            <!--<el-table-column prop="status" label="Status"></el-table-column>-->
+                            &lt;!&ndash;<el-table-column prop="status" label="Status"></el-table-column>&ndash;&gt;
 
-                        </el-table>
+                        </el-table>-->
                          <div style="width: 100%">
 
                                 <div style="width: 30%; float: left; text-align: right">

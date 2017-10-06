@@ -93,6 +93,12 @@ Meteor.startup(function () {
                 name: 'Other Expense'
             }
         );
+        Co_AccountType.insert(
+            {
+                _id: '70',
+                name: 'Cost Of Good Sold'
+            }
+        );
 
     }
 });

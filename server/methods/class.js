@@ -1,6 +1,8 @@
 import {VW_Register} from "../../imports/collection/register";
 import {Co_Register} from "../../imports/collection/register";
 import {Co_Journal} from "../../imports/collection/journal";
+import {SpaceChar} from "../../both/config/space";
+
 
 export default class ClassReport {
     static registerReport(param) {
@@ -95,36 +97,120 @@ export default class ClassReport {
         if (param) {
             parameter = param;
         }
-        let registerList = VW_Register.find(parameter).fetch().map(function (obj) {
-            obj.totalPaid = numeral(obj.netTotal - obj.balance).format("0,00.000");
 
-            obj.netTotal = numeral(obj.netTotal).format("0,00.000");
-            obj.balance = numeral(obj.balance).format("0,00.000");
+       let journalList= Co_Journal.aggregate([
 
+           {
+               $match:parameter
+           },
 
-            obj.registerDate = moment(obj.registerDate).format("DD/MM/YYYY");
+           {
+               $unwind: {
+                   path:"$transaction",
+                   preserveNullAndEmptyArrays: true}
+           },
 
+           {
+               $graphLookup: {
+                   from: "co_chartAccount",
+                   startWith: "$transaction.accountDoc.parentId",
+                   connectFromField: "parentId",
+                   connectToField: "_id",
+                   maxDepth: 3,
+                   depthField: "numConnections",
+                   as: "parentDoc"
+               }
+           },
+           {
+               $group: {
+                   _id:{
+                       id:"$_id",
+                       journalDate:"$journalDate",
+                       total:"$total",
+                       voucherId:"$voucherId",
+                       memo:"$memo",
+                       transaction: "$transaction",
+                       parentArr: "$parentDoc"
+                   },
+                   transactionArr: {$push: "$transaction.accountDoc"}
+               }
 
-            obj.serviceDetail = "";
-            obj.medicineDetail = "";
-            obj.itemDetail = "";
-            obj.services.forEach(function (o) {
-                obj.itemDetail += `<li>` + o.serviceName + `</li>`;
-            })
+           },{
+               $project: {
+                   id: "$_id.id",
+                   journalDate: "$_id.journalDate",
+                   total: "$_id.total",
+                   voucherId: "$_id.voucherId",
+                   memo: "$_id.memo",
+                   transaction: "$_id.transaction",
+                   newTransaction:{
+                       $concatArrays: ["$transactionArr","$_id.parentArr"]
+                   }
+               }
+           },
+           {
+               $unwind: {path:"$newTransaction",preserveNullAndEmptyArrays: true}
+           },
+           {
+               $group: {
+                   _id: {
+                       accountType:"$newTransaction.accountTypeId",
+                       code:"$newTransaction.code",
+                       name: "$newTransaction.name",
+                       level: "$newTransaction.level",
 
+                   },
+                   totalDr: {$sum:"$transaction.dr"},
+                   totalCr: {$sum:"$transaction.cr"},
+                   total: {$sum:"$transaction.drcr"}
+               }
+           },
+           {$sort: {"_id.code": 1}},
+           {
+               $group: {
+                   _id: {
+                       accountType: "$_id.accountType"
+                   },
+                   data: {$push: "$$ROOT"},
+                   totalRevenue: {$sum: {$cond:[{$and:[{"$in":["$_id.accountType",["50","51"]]},{"$eq":["$_id.level",0]}]},"$total",0]}},
+                   totalExpense: {$sum: {$cond:[{$and:[{"$in":["$_id.accountType",["60","61"]]},{"$eq":["$_id.level",0]}]},"$total",0]}},
+                   totalCOGS: {$sum: {$cond:[{$and:[{"$in":["$_id.accountType",["70"]]},{"$eq":["$_id.level",0]}]},"$total",0]}}
+               }
+           }
 
-            obj.medicines.forEach(function (o) {
-                obj.itemDetail += `<li>` + o.medicineName + `</li>`;
-            })
+       ])
 
-            /*obj.totalMedicine = numeral(obj.totalMedicine).format("0,00.00");
-             obj.totalService = numeral(obj.totalService).format("0,00.00");
-             obj.netTotalMedicine = numeral(obj.netTotalMedicine).format("0,00.00");
-             obj.netTotalService = numeral(obj.netTotalService).format("0,00.00");*/
+        let data={};
+        data.dataIncome=[];
+        data.dataExpense=[];
+        data.cogs=[];
 
-            return obj;
-        });
-        return registerList;
+        data.totalRevenue=0;
+        data.totalExpense=0;
+        data.totalCOGS=0;
+        data.grossProfit=0;
+        data.netIncome=0;
+
+        journalList.forEach(function (obj) {
+
+            if(obj._id.accountType=="50" || obj._id.accountType=="51"){
+                data.dataIncome=obj.data;
+                data.totalRevenue=obj.totalRevenue;
+            }else if(obj._id.accountType=="60" || obj._id.accountType=="61"){
+                data.dataExpense=obj.data;
+                data.totalExpense=obj.totalExpense;
+
+            }else if(obj._id.accountType=="70"){
+                data.cogs=obj.data;
+                data.totalCOGS=obj.totalCOGS;
+
+            }
+        })
+        data.grossProfit=data.totalRevenue-data.totalCOGS;
+        data.netIncome=data.grossProfit-data.totalExpense;
+
+        return data;
+
     }
 
     static journalReport(param) {

@@ -1,81 +1,82 @@
 <template>
     <div class="co-profitLost-report">
-        <el-collapse v-model="activeName" class="no-print" accordion>
-            <el-collapse-item name="1">
+        <div slot="header">
+            <el-collapse v-model="activeName" class="no-print" accordion>
+                <el-collapse-item name="1">
                 <span slot="title">
 
                             ProfitLost Report
                         </span>
 
-                <el-form :inline="true" :model="profitLostReport" ref="profitLostReport">
-                    <el-row type="flex" class="row-bg" justify="left" style="width: 100%">
-                        <el-col :span="21">
-                            <el-form-item label="Branch :">
-                                <el-select width="100%" filterable v-model="profitLostReport.roleBranchOptionsModel"
-                                           multiple
-                                           placeholder="All">
-                                    <el-option
-                                            v-for="item in roleBranchOptions"
-                                            :key="item.value"
-                                            :label="item.label"
-                                            :value="item.value">
-                                    </el-option>
-                                </el-select>
-                            </el-form-item>
+                    <el-form :inline="true" :model="profitLostReport" ref="profitLostReport">
+                        <el-row type="flex" class="row-bg" justify="left" style="width: 100%">
+                            <el-col :span="21">
+                                <el-form-item label="Branch :">
+                                    <el-select width="100%" filterable v-model="profitLostReport.roleBranchOptionsModel"
+                                               multiple
+                                               placeholder="All">
+                                        <el-option
+                                                v-for="item in roleBranchOptions"
+                                                :key="item.value"
+                                                :label="item.label"
+                                                :value="item.value">
+                                        </el-option>
+                                    </el-select>
+                                </el-form-item>
 
 
-                            <el-form-item label-width="60px" label="Area  :">
-                                <el-select width="100%" filterable v-model="profitLostReport.roleAreaOptionsModel"
-                                           multiple
-                                           placeholder="All">
-                                    <el-option
-                                            v-for="item in roleAreaOptions"
-                                            :key="item.value"
-                                            :label="item.label"
-                                            :value="item.value">
-                                    </el-option>
-                                </el-select>
-                            </el-form-item>
+                                <el-form-item label-width="60px" label="Area  :">
+                                    <el-select width="100%" filterable v-model="profitLostReport.roleAreaOptionsModel"
+                                               multiple
+                                               placeholder="All">
+                                        <el-option
+                                                v-for="item in roleAreaOptions"
+                                                :key="item.value"
+                                                :label="item.label"
+                                                :value="item.value">
+                                        </el-option>
+                                    </el-select>
+                                </el-form-item>
 
-                            <el-form-item class="profitLostDateRange" label="Date :">
-                                <el-date-picker format="dd/MM/yyyy"
-                                                v-model="profitLostReport.dateRange"
-                                                type="daterange"
-                                                align="right"
-                                                placeholder="Pick a range"
-                                                :picker-options="pickerOptions2">
-                                </el-date-picker>
-                            </el-form-item>
+                                <el-form-item class="profitLostDateRange" label="Date :">
+                                    <el-date-picker format="dd/MM/yyyy"
+                                                    v-model="profitLostReport.dateRange"
+                                                    type="daterange"
+                                                    align="right"
+                                                    placeholder="Pick a range"
+                                                    :picker-options="pickerOptions2">
+                                    </el-date-picker>
+                                </el-form-item>
 
-                        </el-col>
-                        <el-col :span="3">
-                            <el-button :loading="loading" @click="handleRunReport('dynamicValidateForm')"
-                                       type="primary"
-                                       style="float: right;width: 130px;">
-                                <i class="el-icon-caret-right"></i>
-                                Run Report
-                            </el-button>
-                        </el-col>
-                    </el-row>
+                            </el-col>
+                            <el-col :span="3">
+                                <el-button :loading="loading" @click="handleRunReport('dynamicValidateForm')"
+                                           type="primary"
+                                           style="float: right;width: 130px;">
+                                    <i class="el-icon-caret-right"></i>
+                                    Run Report
+                                </el-button>
+                            </el-col>
+                        </el-row>
 
-                    <el-row type="flex" class="row-bg" justify="left">
-                        <el-col :span="21">
-                        </el-col>
+                        <el-row type="flex" class="row-bg" justify="left">
+                            <el-col :span="21">
+                            </el-col>
 
-                        <el-col :span="3">
-                            <el-button v-show="dataExist" :loading="printLoading" type="success"
-                                       style="float: right;width: 130px;"
-                                       @click="PrintReport"><i class="el-icon-document"></i>
-                                Print
-                            </el-button>
-                        </el-col>
-                    </el-row>
-                </el-form>
-            </el-collapse-item>
-        </el-collapse>
+                            <el-col :span="3">
+                                <el-button v-show="dataExist" :loading="printLoading" type="success"
+                                           style="float: right;width: 130px;"
+                                           @click="PrintReport"><i class="el-icon-document"></i>
+                                    Print
+                                </el-button>
+                            </el-col>
+                        </el-row>
+                    </el-form>
+                </el-collapse-item>
+            </el-collapse>
+        </div>
         <span slot="content">
-             <el-row type="flex" class="row-bg a4-portrait" justify="center">
-                    <el-col :span="24">
+
                         <div class="title">
                             <div class="title1">
                                 {{companyName}}
@@ -91,7 +92,7 @@
                             </div>
                         </div>
 
-                        <div style="width: 100%">
+                    <div style="width: 100%">
                         <div style="width: 50%; float: left">
                             <strong>Branch : </strong> {{branchHeader}}
                         </div>
@@ -105,92 +106,61 @@
                         <table class="ui celled table table-report">
                                 <tbody>
                                     <tr>
-                                        <td>Sale & Service</td>
-                                        <td></td>
+                                        <td colspan="2"><b>Revenue</b></td>
                                     </tr>
-                                    <tr>
-                                        <td>Cost Of Good Sold</td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td><b><u>Gross Profit</u></b> </td>
-                                        <td></td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>Operating Expense</td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td><b><u>Total Operating Expense</u></b> </td>
-                                        <td></td>
-                                    </tr>
-
-                                    <tr>
-                                        <td><b><u>Operating Income</u></b></td>
-                                        <td></td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>Non Operating Expense</td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td><b><u>Total Non Operating Expense</u></b> </td>
-                                        <th></th>
-                                    </tr>
-
-                                     <tr>
-                                        <td><b><u>Net Income</u></b></td>
-                                        <td></td>
-                                    </tr>
-
-                                </tbody>
-                                <!--<tbody>
-                                    <slot v-for="(register,index) in registersData.data">
+                                    <slot v-for="(revenue,index) in profitLostsData.dataIncome">
                                         <tr>
-                                            <td>{{index +1}}</td>
-                                            <td>{{register.patientDoc.khName}}</td>
-                                            <td>{{register.registerDate}}</td>
-                                            <td v-html="register.itemDetail"></td>
-                                            <td style="text-align: right">{{register.netTotal}}</td>
-                                            <td style="text-align: right">{{register.totalPaid}}</td>
-                                            <td style="text-align: right">{{register.balance}}</td>
+                                            <td class="margin-report-td">{{revenue._id.level | tabFormat}}{{revenue._id.code}} : {{revenue._id.name}}</td>
+                                            <td>{{revenue.total | numFormat}}</td>
+
                                         </tr>
                                     </slot>
                                     <tr>
-                                        <th colspan="4" style="text-align: right">Total :</th>
-                                        <th style="text-align: right">{{registersData.totalNetTotal}}</th>
-                                        <th style="text-align: right">{{registersData.total}}</th>
-                                        <th style="text-align: right">{{registersData.totalBalance}}</th>
+                                        <td><b>Total Revenue</b></td>
+                                        <td><b>{{profitLostsData.totalRevenue | numFormat}}</b></td>
                                     </tr>
-                                </tbody>-->
+                                    <tr>
+                                        <td colspan="2"><b>Cost Of Good Sold</b></td>
+                                    </tr>
+                                    <slot v-for="(cog,index) in profitLostsData.cogs">
+                                        <tr>
+                                            <td class="margin-report-td">{{cog._id.level | tabFormat}}{{cog._id.code}} : {{cog._id.name}}</td>
+                                            <td>{{cog._id.level | tabFormat}}{{cog.total | numFormat}}</td>
+                                        </tr>
+                                    </slot>
+                                    <tr>
+                                        <td><b>Total Cost Of Goods Sold</b></td>
+                                        <td><b>{{profitLostsData.totalCOGS | numFormat}}</b></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><b><u>Gross Profit</u></b> </td>
+                                        <td><b>{{profitLostsData.grossProfit | numFormat}}</b></td>
+
+                                    </tr>
+
+                                    <tr>
+                                        <td><b>Expense</b></td>
+                                        <td></td>
+                                    </tr>
+                                     <slot v-for="(expense,index) in profitLostsData.dataExpense">
+                                        <tr>
+                                            <td class="margin-report-td">{{expense._id.level | tabFormat}}{{expense._id.code}} : {{expense._id.name}}</td>
+                                            <td>{{expense._id.level | tabFormat}}{{expense.total | numFormat}}</td>
+                                        </tr>
+                                    </slot>
+                                    <tr>
+                                        <td><b><u>Total Expense</u></b> </td>
+                                        <td><b>{{profitLostsData.totalExpense | numFormat}}</b></td>
+
+                                    </tr>
+                                     <tr>
+                                        <td><b><u>Net Income</u></b></td>
+                                         <td><b>{{profitLostsData.netIncome | numFormat}}</b></td>
+                                    </tr>
+
+                                </tbody>
                         </table>
-                       <!-- <el-table fit v-loading.body="loading" :data="profitLostsData" border
-                                  :default-sort="{prop: 'profitLostDate', order: 'descending'}"
-                                  :summary-method="getSummariesProfitLost"
-                                  show-summary
-                                  style="width: 100%">
-
-                        <el-table-column type="index" width="50px auto" sortable></el-table-column>
-                        <el-table-column prop="patientDoc.khName" sortable label="Name"></el-table-column>
-                        <el-table-column prop="profitLostDate" width="100px auto" sortable
-                                         label="Date"></el-table-column>
-                        <el-table-column label="Item" width="160px auto">
-                            <template scope="props">
-                                <span v-html="props.row.itemDetail"></span>
-                            </template>
-                        </el-table-column>
-                            &lt;!&ndash;
-                                                    <el-table-column prop="total" label="Total"></el-table-column>
-                                                    <el-table-column prop="totalDiscount" label="Discount"></el-table-column>
-                            &ndash;&gt;
-                        <el-table-column prop="netTotal" label="Amount"></el-table-column>
-                        <el-table-column prop="totalPaid" label="Paid"></el-table-column>
-                        <el-table-column prop="balance" label="Un Paid"></el-table-column>
-                            &lt;!&ndash;<el-table-column prop="status" label="Status"></el-table-column>&ndash;&gt;
-
-                        </el-table>-->
                          <div style="width: 100%">
 
                                 <div style="width: 30%; float: left; text-align: right">
@@ -208,15 +178,14 @@
                                     __________________
 
                                     </div>
-                                </div>
-                    </el-col>
-             </el-row>
+                         </div>
+
         </span>
     </div>
 </template>
 <script>
     export default {
-        data(){
+        data() {
             return {
                 profitLostReport: {
                     roleBranchOptionsModel: [],
@@ -275,27 +244,27 @@
             }
         },
         methods: {
-            fetchBranchOption(){
+            fetchBranchOption() {
                 Meteor.call("fetchRolesBranch", Meteor.userId(), (err, result) => {
                     this.roleBranchOptions = result;
                 })
             },
-            fetchAreaOption(val){
+            fetchAreaOption(val) {
                 Meteor.call("fetchRolesAreaByMultiRoleBranch", Meteor.userId(), val, (err, result) => {
                     this.roleAreaOptions = result;
                 })
             },
-            fetchPatientOption(val){
+            fetchPatientOption(val) {
                 Meteor.call("fetchPatientOption", val, (err, result) => {
                     this.patientOptions = result;
                 })
             },
-            fetchExchangeOption(){
+            fetchExchangeOption() {
                 Meteor.call("fetchExchangeOption", (err, result) => {
                     this.exchangeOptions = result;
                 })
             },
-            fetchTypeOption(){
+            fetchTypeOption() {
                 let list = [];
                 list.push({label: "Active", value: "Active"});
                 list.push({label: "Partial", value: "Partial"});
@@ -304,7 +273,7 @@
                 this.typeOptions = list;
             },
 
-            handleRunReport(formName){
+            handleRunReport(formName) {
 
                 let params = {};
                 this.loading = true;
@@ -317,22 +286,12 @@
                 }
 
                 if (this.profitLostReport.dateRange != "") {
-                    params.profitLostDate = {
+                    params.journalDate = {
                         $gte: moment(this.profitLostReport.dateRange[0]).startOf("days").toDate(),
                         $lte: moment(this.profitLostReport.dateRange[1]).startOf("days").toDate()
                     };
-
                     this.dateRangeHeader = moment(this.profitLostReport.dateRange[0]).format("DD/MM/YYYY") + "-" + moment(this.profitLostReport.dateRange[1]).format("DD/MM/YYYY");
                 }
-
-                if (this.profitLostReport.patientOptionsModel != "") {
-                    params.patientId = {$in: this.profitLostReport.patientOptionsModel};
-                }
-
-                if (this.profitLostReport.typeOptionsModel != "") {
-                    params.status = {$in: this.profitLostReport.typeOptionsModel};
-                }
-
 
                 Meteor.call('giveMeProfitLostReport', params, (err, result) => {
                     if (!err) {
@@ -343,7 +302,7 @@
 
 
             },
-            getCompany(){
+            getCompany() {
                 Meteor.call("getCompany", (err, result) => {
                     if (!err) {
                         this.companyName = result.khName;
@@ -354,32 +313,6 @@
 
             },
 
-            getSummariesProfitLost(param) {
-                const {columns, data} = param;
-                const sums = [];
-                columns.forEach((column, index) => {
-                    if (index === 0) {
-                        sums[index] = 'Total';
-                        return;
-                    }
-                    const values = data.map(item => Number(numeral().unformat(item[column.property])));
-                    if (!values.every(value => isNaN(value)) && index > 3) {
-                        sums[index] = values.reduce((prev, curr) => {
-                            const value = Number(curr);
-                            if (!isNaN(value)) {
-                                return prev + curr;
-                            } else {
-                                return prev;
-                            }
-                        }, 0);
-                        sums[index] = numeral(sums[index]).format("0,00.000");
-                    } else {
-                        sums[index] = 'N/A';
-                    }
-                });
-
-                return sums;
-            },
             /* exportToExcel(){
              Meteor.call('giveMeProfitLostReport', this.profitLostsData, (err, workbookBuffer) => {
              if (!err) {
@@ -388,25 +321,23 @@
              }
              })
              },*/
-            PrintReport(){
+            PrintReport() {
                 window.print();
             }
         },
         watch: {
 
 
-            "profitLostReport.roleBranchOptionsModel"(val){
+            "profitLostReport.roleBranchOptionsModel"(val) {
                 this.fetchAreaOption(val);
             }
             ,
-            "profitLostReport.roleAreaOptionsModel"(val)
-            {
+            "profitLostReport.roleAreaOptionsModel"(val) {
                 this.fetchPatientOption(val);
             }
 
         },
-        created()
-        {
+        created() {
             this.fetchBranchOption();
 //            this.fetchPatientOption([]);
             this.fetchTypeOption([]);
@@ -416,7 +347,7 @@
 
         },
         computed: {
-            dataExist(){
+            dataExist() {
                 return this.profitLostsData.length > 0;
             }
         },

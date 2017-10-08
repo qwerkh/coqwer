@@ -189,7 +189,7 @@
                                 <tbody>
                                     <slot v-for="(register,index) in registersData.data">
                                         <tr>
-                                            <td>{{index +1}}</td>
+                                            <td>{{index + 1}}</td>
                                             <td>{{register.patientDoc.khName}}</td>
                                             <td>{{register.registerDate}}</td>
                                             <td v-html="register.itemDetail"></td>
@@ -199,14 +199,14 @@
                                         </tr>
                                     </slot>
                                     <tr>
-                                        <th colspan="4" style="text-align: right">Total :</th>
-                                        <th style="text-align: right">{{registersData.totalNetTotal}}</th>
-                                        <th style="text-align: right">{{registersData.total}}</th>
-                                        <th style="text-align: right">{{registersData.totalBalance}}</th>
+                                        <td colspan="4" style="text-align: right">Total :</td>
+                                        <td style="text-align: right">{{registersData.totalNetTotal}}</td>
+                                        <td style="text-align: right">{{registersData.total}}</td>
+                                        <td style="text-align: right">{{registersData.totalBalance}}</td>
                                     </tr>
                                 </tbody>
                         </table>
-                         <!--<div style="width: 100%">
+                         <div style="width: 100%">
 
                                 <div style="width: 30%; float: left; text-align: right">
                                    <div style="margin-bottom: 7em">
@@ -223,16 +223,16 @@
                                     __________________
 
                                     </div>
-                                </div>-->
+                                </div>
                             </span>
-                    <!--</el-col>
-             </el-row>-->
+            <!--</el-col>
+     </el-row>-->
         </span>
     </div>
 </template>
 <script>
     export default {
-        data(){
+        data() {
             return {
                 registerReport: {
                     roleBranchOptionsModel: [],
@@ -291,27 +291,27 @@
             }
         },
         methods: {
-            fetchBranchOption(){
+            fetchBranchOption() {
                 Meteor.call("fetchRolesBranch", Meteor.userId(), (err, result) => {
                     this.roleBranchOptions = result;
                 })
             },
-            fetchAreaOption(val){
+            fetchAreaOption(val) {
                 Meteor.call("fetchRolesAreaByMultiRoleBranch", Meteor.userId(), val, (err, result) => {
                     this.roleAreaOptions = result;
                 })
             },
-            fetchPatientOption(val){
+            fetchPatientOption(val) {
                 Meteor.call("fetchPatientOption", val, (err, result) => {
                     this.patientOptions = result;
                 })
             },
-            fetchExchangeOption(){
+            fetchExchangeOption() {
                 Meteor.call("fetchExchangeOption", (err, result) => {
                     this.exchangeOptions = result;
                 })
             },
-            fetchTypeOption(){
+            fetchTypeOption() {
                 let list = [];
                 list.push({label: "Active", value: "Active"});
                 list.push({label: "Partial", value: "Partial"});
@@ -320,7 +320,7 @@
                 this.typeOptions = list;
             },
 
-            handleRunReport(formName){
+            handleRunReport(formName) {
 
                 let params = {};
                 this.loading = true;
@@ -359,7 +359,7 @@
 
 
             },
-            getCompany(){
+            getCompany() {
                 Meteor.call("getCompany", (err, result) => {
                     if (!err) {
                         this.companyName = result.khName;
@@ -404,25 +404,23 @@
              }
              })
              },*/
-            PrintReport(){
+            PrintReport() {
                 window.print();
             }
         },
         watch: {
 
 
-            "registerReport.roleBranchOptionsModel"(val){
+            "registerReport.roleBranchOptionsModel"(val) {
                 this.fetchAreaOption(val);
             }
             ,
-            "registerReport.roleAreaOptionsModel"(val)
-            {
+            "registerReport.roleAreaOptionsModel"(val) {
                 this.fetchPatientOption(val);
             }
 
         },
-        created()
-        {
+        created() {
             this.fetchBranchOption();
 //            this.fetchPatientOption([]);
             this.fetchTypeOption([]);
@@ -432,7 +430,7 @@
 
         },
         computed: {
-            dataExist(){
+            dataExist() {
                 return this.registersData.length > 0;
             }
         },

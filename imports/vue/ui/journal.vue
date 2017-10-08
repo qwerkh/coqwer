@@ -210,7 +210,7 @@
                     </slot>
                 </tbody>
             </table>
-            <!--<div style="width: 100%">
+            <div style="width: 100%">
 
                                 <div style="width: 30%; float: left; text-align: right">
                                    <div style="margin-bottom: 7em">
@@ -227,7 +227,7 @@
                                     __________________
 
                                     </div>
-                                </div>-->
+                                </div>
     </span>
     </div>
 </template>

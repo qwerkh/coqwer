@@ -5,18 +5,20 @@
     <bookmark url="file://$PROJECT_DIR$/imports/collection/patient.js" line="19" />
     <bookmark url="file://$PROJECT_DIR$/imports/ui/register/register.js" line="391" />
     <bookmark url="file://$PROJECT_DIR$/package.json" line="9" />
-    <bookmark url="file://$PROJECT_DIR$/imports/vue/ui/register.vue" line="436" />
+    <bookmark url="file://$PROJECT_DIR$/imports/vue/ui/register.vue" line="434" />
     <bookmark url="file://$PROJECT_DIR$/imports/vue/ui/register.vue" line="374" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="37b05a99-1bf8-426c-a9a5-9f4248831879" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/lib/format.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/stylesheet/report.css" afterPath="$PROJECT_DIR$/client/stylesheet/report.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/imports/ui/journal/journal.js" afterPath="$PROJECT_DIR$/imports/ui/journal/journal.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/imports/ui/journal/journalDetail.js" afterPath="$PROJECT_DIR$/imports/ui/journal/journalDetail.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/imports/vue/ui/journal.vue" afterPath="$PROJECT_DIR$/imports/vue/ui/journal.vue" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/imports/vue/ui/profitLost.vue" afterPath="$PROJECT_DIR$/imports/vue/ui/profitLost.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/imports/vue/ui/register.vue" afterPath="$PROJECT_DIR$/imports/vue/ui/register.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/imports/vue/ui/registerByDate.vue" afterPath="$PROJECT_DIR$/imports/vue/ui/registerByDate.vue" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/methods/class.js" afterPath="$PROJECT_DIR$/server/methods/class.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/startup.js" afterPath="$PROJECT_DIR$/server/startup.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/methods/report/reportMethod.js" afterPath="$PROJECT_DIR$/server/methods/report/reportMethod.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -33,93 +35,35 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="profitLost.vue" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/imports/vue/ui/profitLost.vue">
+      <file leaf-file-name="journal.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/collectionHook/journal.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="293" column="17" lean-forward="false" selection-start-line="293" selection-start-column="17" selection-end-line="293" selection-end-column="17" />
-              <folding>
-                <element signature="n#style#0;n#el-row#0;n#el-form#0;n#el-collapse-item#0;n#el-collapse#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#el-button#0;n#el-col#1;n#el-row#0;n#el-form#0;n#el-collapse-item#0;n#el-collapse#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#el-button#0;n#el-col#1;n#el-row#1;n#el-form#0;n#el-collapse-item#0;n#el-collapse#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#span#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#1;n#span#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#1;n#span#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#2;n#span#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#2;n#span#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#2;n#span#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#2;n#div#2;n#span#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/stylesheet/style.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="765">
-              <caret line="403" column="21" lean-forward="false" selection-start-line="403" selection-start-column="21" selection-end-line="403" selection-end-column="21" />
+            <state relative-caret-position="522">
+              <caret line="33" column="29" lean-forward="true" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="29" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="report.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/stylesheet/report.css">
+      <file leaf-file-name="journalDetail.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/imports/ui/journal/journalDetail.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="127" column="42" lean-forward="true" selection-start-line="127" selection-start-column="42" selection-end-line="127" selection-end-column="42" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="register.vue" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/imports/vue/ui/register.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="194" column="82" lean-forward="true" selection-start-line="194" selection-start-column="82" selection-end-line="194" selection-end-column="82" />
+            <state relative-caret-position="198">
+              <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding>
-                <element signature="n#style#0;n#div#1;n#span#0;n#span#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#1;n#span#0;n#span#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#1;n#span#0;n#span#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="e#0#30#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="class.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/server/methods/class.js">
+      <file leaf-file-name="journal.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/imports/ui/journal/journal.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-342">
-              <caret line="91" column="0" lean-forward="true" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
+            <state relative-caret-position="13">
+              <caret line="435" column="9" lean-forward="true" selection-start-line="435" selection-start-column="9" selection-end-line="435" selection-end-column="9" />
               <folding>
-                <element signature="e#0#62#0" expanded="true" />
-                <marker date="1507303516744" expanded="true" signature="8061:8083" ph="..." />
-                <marker date="1507303516744" expanded="true" signature="8133:8155" ph="..." />
-                <marker date="1507303516744" expanded="true" signature="8279:8301" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="space.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/both/config/space.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="7" column="20" lean-forward="true" selection-start-line="2" selection-start-column="8" selection-end-line="7" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="format.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/lib/format.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
+                <element signature="e#0#24#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -138,7 +82,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>this.</find>
       <find>.alertify .ajs-footer .ajs-buttons .ajs-button</find>
       <find>.alertify .ajs-footer .ajs-buttons .ajs-butto</find>
       <find>.alertify .ajs-footer .ajs-buttons .ajs</find>
@@ -168,6 +111,7 @@
       <find>0,00.00</find>
       <find>descr</find>
       <find>des</find>
+      <find>cons</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/imports</dir>
@@ -180,8 +124,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/both/tabular/exchange.js" />
-        <option value="$PROJECT_DIR$/both/tabular/journal.js" />
         <option value="$PROJECT_DIR$/both/tabular/machin.js" />
         <option value="$PROJECT_DIR$/both/tabular/machinType.js" />
         <option value="$PROJECT_DIR$/both/tabular/mapFixAsset.js" />
@@ -207,10 +149,8 @@
         <option value="$PROJECT_DIR$/imports/report/journal/journal.html" />
         <option value="$PROJECT_DIR$/imports/report/journal/journal.js" />
         <option value="$PROJECT_DIR$/server/collectionHook/endOfProcess.js" />
-        <option value="$PROJECT_DIR$/imports/vue/ui/journal.vue" />
         <option value="$PROJECT_DIR$/client/stylesheet/custom.css" />
         <option value="$PROJECT_DIR$/client/layout.js" />
-        <option value="$PROJECT_DIR$/server/methods/report/reportMethod.js" />
         <option value="$PROJECT_DIR$/imports/report/profitLost/register.js" />
         <option value="$PROJECT_DIR$/imports/report/profitLost/profitLost.js" />
         <option value="$PROJECT_DIR$/client/route/report.js" />
@@ -219,18 +159,22 @@
         <option value="$PROJECT_DIR$/imports/ui/register/registerDetail.js" />
         <option value="$PROJECT_DIR$/imports/ui/register/register.js" />
         <option value="$PROJECT_DIR$/imports/ui/payment/payment.js" />
-        <option value="$PROJECT_DIR$/imports/ui/patient/patient.html" />
         <option value="$PROJECT_DIR$/client/stylesheet/style.css" />
         <option value="$PROJECT_DIR$/imports/collection/register.js" />
-        <option value="$PROJECT_DIR$/imports/vue/ui/registerByDate.vue" />
         <option value="$PROJECT_DIR$/client/layout.html" />
-        <option value="$PROJECT_DIR$/imports/vue/ui/register.vue" />
         <option value="$PROJECT_DIR$/client/stylesheet/print.css" />
         <option value="$PROJECT_DIR$/server/startup.js" />
         <option value="$PROJECT_DIR$/client/stylesheet/report.css" />
         <option value="$PROJECT_DIR$/client/lib/format.js" />
+        <option value="$PROJECT_DIR$/imports/vue/ui/journal.vue" />
+        <option value="$PROJECT_DIR$/imports/vue/ui/register.vue" />
+        <option value="$PROJECT_DIR$/imports/vue/ui/registerByDate.vue" />
+        <option value="$PROJECT_DIR$/imports/ui/patient/patient.html" />
+        <option value="$PROJECT_DIR$/server/methods/report/reportMethod.js" />
         <option value="$PROJECT_DIR$/imports/vue/ui/profitLost.vue" />
         <option value="$PROJECT_DIR$/server/methods/class.js" />
+        <option value="$PROJECT_DIR$/imports/ui/journal/journalDetail.js" />
+        <option value="$PROJECT_DIR$/imports/ui/journal/journal.js" />
       </list>
     </option>
   </component>
@@ -267,6 +211,7 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -338,6 +283,13 @@
               <item name="cosmetic" type="462c0819:PsiDirectoryNode" />
               <item name="imports" type="462c0819:PsiDirectoryNode" />
               <item name="ui" type="462c0819:PsiDirectoryNode" />
+              <item name="journal" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cosmetic" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cosmetic" type="462c0819:PsiDirectoryNode" />
+              <item name="imports" type="462c0819:PsiDirectoryNode" />
+              <item name="ui" type="462c0819:PsiDirectoryNode" />
               <item name="patient" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -390,6 +342,12 @@
               <item name="cosmetic" type="b2602c69:ProjectViewProjectNode" />
               <item name="cosmetic" type="462c0819:PsiDirectoryNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="collectionHook" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cosmetic" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cosmetic" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
               <item name="methods" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -410,7 +368,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -689,12 +646,16 @@
       <workItem from="1506601955478" duration="41000" />
       <workItem from="1506953754187" duration="5176000" />
       <workItem from="1507037062179" duration="935000" />
-      <workItem from="1507291265932" duration="9610000" />
+      <workItem from="1507291265932" duration="9755000" />
+      <workItem from="1507356778714" duration="2500000" />
+      <workItem from="1507386387736" duration="3351000" />
+      <workItem from="1507392361649" duration="1986000" />
+      <workItem from="1507427103855" duration="448000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="656376000" />
+    <option name="totallyTimeSpent" value="664806000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -767,27 +728,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/server/methods/fixAssetDepList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16">
-          <caret line="141" column="24" lean-forward="false" selection-start-line="141" selection-start-column="24" selection-end-line="141" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/imports/report/journal/journal.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="6" column="35" lean-forward="true" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/imports/report/journal/journal.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="5" column="11" lean-forward="true" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/collectionHook/endOfProcess.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="16">
@@ -799,13 +739,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="320">
           <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/collectionHook/journal.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="50" column="0" lean-forward="true" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -944,13 +877,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/imports/ui/patient/patient.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="274" column="31" lean-forward="true" selection-start-line="274" selection-start-column="31" selection-end-line="274" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/imports/ui/patient/patient.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -987,25 +913,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/imports/vue/ui/journal.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="209" column="27" lean-forward="true" selection-start-line="209" selection-start-column="27" selection-end-line="209" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/imports/vue/ui/registerByDate.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="114" column="47" lean-forward="true" selection-start-line="114" selection-start-column="47" selection-end-line="114" selection-end-column="47" />
         </state>
       </provider>
     </entry>
@@ -1020,7 +931,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="5" column="10" lean-forward="true" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1028,7 +938,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="855">
           <caret line="219" column="40" lean-forward="false" selection-start-line="219" selection-start-column="40" selection-end-line="219" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1036,7 +945,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1044,7 +952,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1052,7 +959,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1060,26 +966,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/methods/optionsData.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="7" lean-forward="true" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="7" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-            <element signature="e#39#100#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/methods/report/reportMethod.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="13" column="31" lean-forward="false" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1087,7 +973,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1095,15 +980,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="7" column="20" lean-forward="true" selection-start-line="2" selection-start-column="8" selection-end-line="7" selection-end-column="20" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/lib/format.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/stylesheet/report.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="127" column="42" lean-forward="true" selection-start-line="127" selection-start-column="42" selection-end-line="127" selection-end-column="42" />
-          <folding />
+        <state relative-caret-position="171">
+          <caret line="127" column="42" lean-forward="false" selection-start-line="127" selection-start-column="42" selection-end-line="127" selection-end-column="42" />
         </state>
       </provider>
     </entry>
@@ -1111,60 +1001,111 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="765">
           <caret line="403" column="21" lean-forward="false" selection-start-line="403" selection-start-column="21" selection-end-line="403" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/lib/format.js">
+    <entry file="file://$PROJECT_DIR$/imports/vue/ui/journal.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="466">
+          <caret line="212" column="36" lean-forward="false" selection-start-line="212" selection-start-column="36" selection-end-line="212" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/ui/patient/patient.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="14" column="14" lean-forward="true" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/vue/ui/registerByDate.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="702">
+          <caret line="48" column="61" lean-forward="true" selection-start-line="48" selection-start-column="61" selection-end-line="48" selection-end-column="61" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/imports/vue/ui/register.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="194" column="82" lean-forward="true" selection-start-line="194" selection-start-column="82" selection-end-line="194" selection-end-column="82" />
+        <state relative-caret-position="3258">
+          <caret line="199" column="43" lean-forward="false" selection-start-line="199" selection-start-column="43" selection-end-line="199" selection-end-column="43" />
           <folding>
-            <element signature="n#style#0;n#div#1;n#span#0;n#span#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#span#0;n#span#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#1;n#span#0;n#span#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/imports/vue/ui/profitLost.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="293" column="17" lean-forward="false" selection-start-line="293" selection-start-column="17" selection-end-line="293" selection-end-column="17" />
-          <folding>
-            <element signature="n#style#0;n#el-row#0;n#el-form#0;n#el-collapse-item#0;n#el-collapse#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#el-button#0;n#el-col#1;n#el-row#0;n#el-form#0;n#el-collapse-item#0;n#el-collapse#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#el-button#0;n#el-col#1;n#el-row#1;n#el-form#0;n#el-collapse-item#0;n#el-collapse#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#span#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#span#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#1;n#span#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#span#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#2;n#span#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#2;n#span#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#2;n#span#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#span#0;n#span#0;n#div#0;n#template#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#span#0;n#span#0;n#div#0;n#template#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#1;n#div#1;n#span#0;n#span#0;n#div#0;n#template#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#span#0;n#span#0;n#div#0;n#template#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#span#0;n#span#0;n#div#0;n#template#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#2;n#tr#0;n#tbody#0;n#table#0;n#span#0;n#span#0;n#div#0;n#template#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#3;n#tr#0;n#tbody#0;n#table#0;n#span#0;n#span#0;n#div#0;n#template#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#2;n#span#0;n#span#0;n#div#0;n#template#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#span#0;n#span#0;n#div#0;n#template#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#span#0;n#span#0;n#div#0;n#template#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#1;n#div#2;n#span#0;n#span#0;n#div#0;n#template#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#2;n#div#2;n#span#0;n#span#0;n#div#0;n#template#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#div#2;n#span#0;n#span#0;n#div#0;n#template#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/methods/class.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-342">
-          <caret line="91" column="0" lean-forward="true" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
+        <state relative-caret-position="657">
+          <caret line="214" column="25" lean-forward="true" selection-start-line="214" selection-start-column="25" selection-end-line="214" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/methods/optionsData.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="549">
+          <caret line="191" column="18" lean-forward="false" selection-start-line="191" selection-start-column="4" selection-end-line="191" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/vue/ui/profitLost.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="35" column="68" lean-forward="false" selection-start-line="35" selection-start-column="68" selection-end-line="35" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/methods/optionsDataReport.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="567">
+          <caret line="52" column="23" lean-forward="false" selection-start-line="52" selection-start-column="4" selection-end-line="52" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/methods/report/reportMethod.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="13" column="60" lean-forward="false" selection-start-line="13" selection-start-column="60" selection-end-line="13" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/collectionHook/journal.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="522">
+          <caret line="33" column="29" lean-forward="true" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/ui/journal/journalDetail.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding>
-            <element signature="e#0#62#0" expanded="true" />
-            <marker date="1507303516744" expanded="true" signature="8061:8083" ph="..." />
-            <marker date="1507303516744" expanded="true" signature="8133:8155" ph="..." />
-            <marker date="1507303516744" expanded="true" signature="8279:8301" ph="..." />
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/ui/journal/journal.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="13">
+          <caret line="435" column="9" lean-forward="true" selection-start-line="435" selection-start-column="9" selection-end-line="435" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
           </folding>
         </state>
       </provider>

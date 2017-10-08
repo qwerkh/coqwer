@@ -48,6 +48,18 @@
                                     </el-date-picker>
                                 </el-form-item>
 
+                                <el-form-item label-width="100px" label="Exchange  :">
+                                    <el-select width="100%" filterable v-model="profitLostReport.exchangeOptionsModel"
+                                               placeholder="(Select One)">
+                                        <el-option
+                                                v-for="item in exchangeOptions"
+                                                :key="item.value"
+                                                :label="item.label"
+                                                :value="item.value">
+                                        </el-option>
+                                    </el-select>
+                                </el-form-item>
+
                             </el-col>
                             <el-col :span="3">
                                 <el-button :loading="loading" @click="handleRunReport('dynamicValidateForm')"
@@ -190,8 +202,7 @@
                 profitLostReport: {
                     roleBranchOptionsModel: [],
                     roleAreaOptionsModel: [],
-                    patientOptionsModel: [],
-                    typeOptionsModel: [],
+                    exchangeOptionsModel: "",
                     dateRange: ""
                 },
 
@@ -254,23 +265,15 @@
                     this.roleAreaOptions = result;
                 })
             },
-            fetchPatientOption(val) {
-                Meteor.call("fetchPatientOption", val, (err, result) => {
-                    this.patientOptions = result;
+            fetchExchangeOption(val) {
+                Meteor.call("fetchExchangeOption", val, (err, result) => {
+                    this.exchangeOptions = result;
                 })
             },
             fetchExchangeOption() {
                 Meteor.call("fetchExchangeOption", (err, result) => {
                     this.exchangeOptions = result;
                 })
-            },
-            fetchTypeOption() {
-                let list = [];
-                list.push({label: "Active", value: "Active"});
-                list.push({label: "Partial", value: "Partial"});
-                list.push({label: "Complete", value: "Complete"});
-
-                this.typeOptions = list;
             },
 
             handleRunReport(formName) {
@@ -293,7 +296,7 @@
                     this.dateRangeHeader = moment(this.profitLostReport.dateRange[0]).format("DD/MM/YYYY") + "-" + moment(this.profitLostReport.dateRange[1]).format("DD/MM/YYYY");
                 }
 
-                Meteor.call('giveMeProfitLostReport', params, (err, result) => {
+                Meteor.call('giveMeProfitLostReport', params, this.profitLostReport.exchangeOptionsModel, (err, result) => {
                     if (!err) {
                         this.profitLostsData = result;
                     }
@@ -339,8 +342,7 @@
         },
         created() {
             this.fetchBranchOption();
-//            this.fetchPatientOption([]);
-            this.fetchTypeOption([]);
+            this.fetchExchangeOption();
             this.getCompany();
             this.profitLostReport.dateRange = [moment().startOf("months").toDate(), moment().endOf("months").toDate()];
 

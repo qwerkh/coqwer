@@ -10,7 +10,7 @@ Meteor.methods({
     giveMeJournalReport(param){
         return ClassReport.journalReport(param);
     },
-    giveMeProfitLostReport(param){
-        return ClassReport.profitLostReport(param);
+    giveMeProfitLostReport(param,exchangeId){
+        return ClassReport.profitLostReport(param,exchangeId);
     }
 })

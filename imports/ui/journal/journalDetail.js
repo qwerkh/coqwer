@@ -90,13 +90,12 @@ journalDetailTmpl.events({
 
     },
     'keyup #amountValue'(e, t){
-        debugger;
         let id = $(e.currentTarget).attr("data_id");
         if (id) {
             journalDetailTem.update(
                 id,
                 {
-                    $set: {amount: e.currentTarget.value}
+                    $set: {amount: parseFloat(e.currentTarget.value)}
                 }
             );
             reactTotal();

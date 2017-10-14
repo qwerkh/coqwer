@@ -8,6 +8,7 @@ let indexTmpl = Template.co_company,
     editTmpl = Template.co_companyEdit;
 
 
+let userOpt = new ReactiveVar([]);
 indexTmpl.helpers({
     selector(){
         return {};
@@ -19,6 +20,7 @@ indexTmpl.helpers({
 
 indexTmpl.onCreated(function () {
     this.subscription = Meteor.subscribe('co_company');
+
 })
 
 editTmpl.helpers({
@@ -33,6 +35,9 @@ editTmpl.helpers({
     },
     collection(){
         return Co_Company;
+    },
+    userOption(){
+        return userOpt.get();
     }
 })
 
@@ -69,6 +74,11 @@ editTmpl.onCreated(function () {
     this.autorun(() => {
         this.subscription = Meteor.subscribe('co_company');
 
+        Meteor.call("userOption", function (err, result) {
+            if (result) {
+                userOpt.set(result);
+            }
+        })
     })
 })
 

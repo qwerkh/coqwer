@@ -269,6 +269,8 @@
             handleRunReport(formName) {
 
                 let params = {};
+                let userId=Meteor.userId();
+
                 this.loading = true;
                 if (this.registerByDateReport.roleAreaOptionsModel != "") {
                     params.rolesArea = {$in: this.registerByDateReport.roleAreaOptionsModel};
@@ -296,7 +298,7 @@
                 }
 
 
-                Meteor.call('giveMeRegisterByDateReport', params, (err, result) => {
+                Meteor.call('giveMeRegisterByDateReport', params,userId, (err, result) => {
                     if (!err) {
                         this.registersData = result;
                         console.log(result);

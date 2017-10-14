@@ -7,13 +7,14 @@ import {SpaceChar} from "../../both/config/space";
 
 
 export default class ClassReport {
-    static registerReport(param) {
+    static registerReport(param,userId) {
         let parameter = {};
         let data = {};
         let total = 0;
         let totalNetTotal = 0;
         let totalBalance = 0;
 
+        let CompanyDoc=Co_Company.findOne({});
         if (param) {
             parameter = param;
         }
@@ -31,7 +32,6 @@ export default class ClassReport {
                 obj.itemDetail += `<li>` + o.serviceName + `</li>`;
             })
 
-
             obj.medicines.forEach(function (o) {
                 obj.itemDetail += `<li>` + o.medicineName + `</li>`;
             })
@@ -39,14 +39,10 @@ export default class ClassReport {
             obj.totalPaid = numeral(obj.netTotal - obj.balance).format("0,00.000");
             obj.netTotal = numeral(obj.netTotal).format("0,00.000");
             obj.balance = numeral(obj.balance).format("0,00.000");
-
-            /*obj.totalMedicine = numeral(obj.totalMedicine).format("0,00.00");
-             obj.totalService = numeral(obj.totalService).format("0,00.00");
-             obj.netTotalMedicine = numeral(obj.netTotalMedicine).format("0,00.00");
-             obj.netTotalService = numeral(obj.netTotalService).format("0,00.00");*/
-
             return obj;
         });
+
+
         data.data = registerList;
         data.total = numeral(total).format("0,00.000");
         data.totalNetTotal = numeral(totalNetTotal).format("0,00.000");
@@ -55,7 +51,7 @@ export default class ClassReport {
         return data;
     }
 
-    static registerByDateReport(param) {
+    static registerByDateReport(param,userId) {
         let parameter = {};
         let data = {};
         let total = 0;
@@ -91,7 +87,7 @@ export default class ClassReport {
             obj.registerDate = moment(obj.registerDate).format("DD/MM/YYYY");
             totalNetTotal += obj.netTotal;
             totalBalance += obj.balance;
-            total += obj.netTotal + obj.balance;
+            total += obj.netTotal - obj.balance;
 
             obj.totalPaid = numeral(obj.netTotal - obj.balance).format("0,00.000");
             obj.netTotal = numeral(obj.netTotal).format("0,00.000");
@@ -109,7 +105,7 @@ export default class ClassReport {
     }
 
 
-    static profitLostReport(param, exchangeId) {
+    static profitLostReport(param, exchangeId,userId) {
         let parameter = {};
 
         if (param) {
@@ -273,7 +269,7 @@ export default class ClassReport {
 
     }
 
-    static journalReport(param) {
+    static journalReport(param,userId) {
         let parameter = {};
         if (param) {
             parameter = param;

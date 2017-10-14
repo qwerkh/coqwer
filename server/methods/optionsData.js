@@ -18,7 +18,7 @@ import {Co_Company} from '../../imports/collection/company'
 import {SpaceChar} from "../../both/config/space"
 
 Meteor.methods({
-    co_serviceOption(rolesArea){
+    co_serviceOption(rolesArea) {
         let list = [];
         list.push({label: "(Select Service)", value: ""});
         let selector = {};
@@ -32,7 +32,7 @@ Meteor.methods({
         })
         return list;
     },
-    co_medicineOption(){
+    co_medicineOption() {
 
         let list = [];
         list.push({label: "(Select Medicine)", value: ""});
@@ -41,7 +41,7 @@ Meteor.methods({
         })
         return list;
     },
-    co_machinOption(rolesArea){
+    co_machinOption(rolesArea) {
         let selector = {};
         list.push({label: "(Select One)", value: ""});
         if (rolesArea) {
@@ -53,7 +53,7 @@ Meteor.methods({
         })
         return list;
     },
-    co_patientOption(rolesArea){
+    co_patientOption(rolesArea) {
         let selector = {};
         if (rolesArea) {
             selector.rolesArea = rolesArea;
@@ -66,28 +66,28 @@ Meteor.methods({
         })
         return list;
     },
-    co_machinTypeOption(isMulti){
+    co_machinTypeOption(isMulti) {
         let list = [];
         Co_MachinType.find().fetch().forEach(function (obj) {
             list.push({label: obj.name, value: obj._id});
         })
         return list;
     },
-    co_medicineTypeOption(){
+    co_medicineTypeOption() {
         let list = [];
         Co_MedicineType.find().fetch().forEach(function (obj) {
             list.push({label: obj.name, value: obj._id});
         })
         return list;
     },
-    co_serviceTypeOption(){
+    co_serviceTypeOption() {
         let list = [];
         Co_ServiceType.find().fetch().forEach(function (obj) {
             list.push({label: obj.name, value: obj._id});
         })
         return list;
     },
-    co_registerOption(patientId, option, rolesArea){
+    co_registerOption(patientId, option, rolesArea) {
         let list = [];
         let selector = {};
         if (patientId) {
@@ -107,7 +107,7 @@ Meteor.methods({
 
         return list;
     },
-    chartAccountOption(accountType){
+    chartAccountOption(accountType) {
         let arr = [];
         arr.push({label: "(Select ChartAccount)", value: ""});
 
@@ -124,7 +124,7 @@ Meteor.methods({
 
         return arr;
     },
-    accountTypeOption(selector){
+    accountTypeOption(selector) {
         var selector = _.isUndefined(selector) ? {} : selector;
         var list = [];
         Co_AccountType.find(selector)
@@ -198,6 +198,18 @@ Meteor.methods({
                 value: obj._id
             })
         });
+        return list;
+    },
+    userOption: function () {
+        let list = [];
+        let userList = Meteor.users.find({username: {$ne: "super"}}).fetch();
+        console.log(userList);
+        userList.forEach(function (obj) {
+            list.push({
+                label: obj.username,
+                value: obj._id
+            })
+        })
         return list;
     }
 

@@ -323,6 +323,8 @@
             handleRunReport(formName) {
 
                 let params = {};
+                let userId=Meteor.userId();
+
                 this.loading = true;
                 if (this.registerReport.roleAreaOptionsModel != "") {
                     params.rolesArea = {$in: this.registerReport.roleAreaOptionsModel};
@@ -350,7 +352,7 @@
                 }
 
 
-                Meteor.call('giveMeRegisterReport', params, (err, result) => {
+                Meteor.call('giveMeRegisterReport', params,userId, (err, result) => {
                     if (!err) {
                         this.registersData = result;
                     }

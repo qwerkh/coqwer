@@ -75,8 +75,90 @@ Co_Company.schema = new SimpleSchema({
                 ];
             }
         }
-    }
+    },
+    asigneUser:{
+        type: [String],
+        label: "Assign User",
 
+        optional: true,
+        autoform:{
+            type: "select",
+            multiple:true
+        }
+    },
+    jan:{
+        type: Number,
+        label: "January (%)",
+        decimal: true,
+        max:99
+    },
+    feb:{
+        type: Number,
+        label: "February (%)",
+        decimal: true,
+        max:99
+    },
+    mar:{
+        type: Number,
+        label: "March (%)",
+        decimal: true,
+        max:99
+    },
+    apr:{
+        type: Number,
+        label: "April (%)",
+        decimal: true,
+        max:99
+    },
+    may:{
+        type: Number,
+        label: "May (%)",
+        decimal: true,
+        max:99
+    },
+    jun:{
+        type: Number,
+        label: "June (%)",
+        decimal: true,
+        max:99
+    },
+    jul:{
+        type: Number,
+        label: "July (%)",
+        decimal: true,
+        max:99
+    },
+    aug:{
+        type: Number,
+        label: "August (%)",
+        decimal: true,
+        max:99
+    },
+    sep:{
+        type: Number,
+        label: "September (%)",
+        decimal: true,
+        max:99
+    },
+    oct:{
+        type: Number,
+        label: "October (%)",
+        decimal: true,
+        max:99
+    },
+    nov:{
+        type: Number,
+        label: "November (%)",
+        decimal: true,
+        max:99
+    },
+
+    dec:{
+        type: Number,
+        label: "December (%)",
+        decimal: true,
+        max:99
+    }
 
 })
 

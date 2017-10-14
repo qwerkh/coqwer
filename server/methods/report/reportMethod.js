@@ -1,16 +1,16 @@
 import ClassReport from "../class";
 
 Meteor.methods({
-    giveMeRegisterReport(param){
-        return ClassReport.registerReport(param);
+    giveMeRegisterReport(param,userId){
+        return ClassReport.registerReport(param,userId);
     },
-    giveMeRegisterByDateReport(param){
-        return ClassReport.registerByDateReport(param);
+    giveMeRegisterByDateReport(param,userId){
+        return ClassReport.registerByDateReport(param,userId);
     },
-    giveMeJournalReport(param){
-        return ClassReport.journalReport(param);
+    giveMeJournalReport(param,userId){
+        return ClassReport.journalReport(param,userId);
     },
-    giveMeProfitLostReport(param,exchangeId){
-        return ClassReport.profitLostReport(param,exchangeId);
+    giveMeProfitLostReport(param,exchangeId,userId){
+        return ClassReport.profitLostReport(param,exchangeId,userId);
     }
 })

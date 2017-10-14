@@ -279,6 +279,8 @@
             handleRunReport(formName) {
 
                 let params = {};
+                let userId=Meteor.userId();
+
                 this.loading = true;
                 if (this.profitLostReport.roleAreaOptionsModel != "") {
                     params.rolesArea = {$in: this.profitLostReport.roleAreaOptionsModel};
@@ -296,7 +298,7 @@
                     this.dateRangeHeader = moment(this.profitLostReport.dateRange[0]).format("DD/MM/YYYY") + "-" + moment(this.profitLostReport.dateRange[1]).format("DD/MM/YYYY");
                 }
 
-                Meteor.call('giveMeProfitLostReport', params, this.profitLostReport.exchangeOptionsModel, (err, result) => {
+                Meteor.call('giveMeProfitLostReport', params, this.profitLostReport.exchangeOptionsModel,userId, (err, result) => {
                     if (!err) {
                         this.profitLostsData = result;
                     }

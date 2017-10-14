@@ -11,25 +11,25 @@
                         <table class="ui celled padded table">
                             <tbody>
                             <tr>
-                                <td ><b>KH Name : </b></td>
+                                <td><b>KH Name : </b></td>
                                 <td class="ui blue header">{{khName}}</td>
                                 <td><b>EN Name : </b></td>
                                 <td class="ui blue header">{{enName}}</td>
                             </tr>
                             <tr>
-                                <td> <b>KH Short Name : </b></td>
+                                <td><b>KH Short Name : </b></td>
                                 <td class="ui blue header">{{khShortName}}</td>
                                 <td><b>EN Short Name : </b></td>
                                 <td class="ui blue header">{{enShortName}}</td>
                             </tr>
                             <tr>
-                                <td> <b>KH Address: </b></td>
+                                <td><b>KH Address: </b></td>
                                 <td class="ui blue header">{{khAddress}}</td>
-                                <td> <b>EN Address : </b></td>
+                                <td><b>EN Address : </b></td>
                                 <td class="ui blue header">{{enAddress}}</td>
                             </tr>
                             <tr>
-                                <td> <b>Phone Number : </b></td>
+                                <td><b>Phone Number : </b></td>
                                 <td class="ui blue header">{{telephone}}</td>
                                 <td><b>Email : </b></td>
                                 <td class="ui blue header">{{email}}</td>
@@ -37,11 +37,11 @@
                             <tr>
                                 <td><b>Website : </b></td>
                                 <td class="ui blue header">{{website}}</td>
-                                <td> <b>Base Currency : </b></td>
+                                <td><b>Base Currency : </b></td>
                                 <td class="ui blue header">{{baseCurrency}}</td>
                             </tr>
                             <tr>
-                                <td> <b>Language : </b></td>
+                                <td><b>Language : </b></td>
                                 <td class="ui blue header">{{language}}</td>
                                 <td></td>
                                 <td class="ui blue header"></td>
@@ -51,7 +51,7 @@
                             </tbody>
                         </table>
 
-                       <!-- <div class="ui two columns row">
+                        <!-- <div class="ui two columns row">
                             <div class="column">
                                 <b>KH Name : </b>{{khName}}
                             </div>
@@ -136,7 +136,31 @@
                         {{> afQuickField name='enName'}}
                         {{> afQuickField name='enShortName'}}
                         {{> afQuickField name='khAddress' row=3}}
-                        {{> afQuickField name='baseCurrency'}}
+                        {{> afQuickField name='asigneUser' placeholder="user" options=userOption search=true}}
+                        <div class="three fields">
+                            <div class="field">
+                                {{> afQuickField name='jan'}}
+                                {{> afQuickField name='may'}}
+                                {{> afQuickField name='sep'}}
+                            </div>
+                            <div class="field">
+                                {{> afQuickField name='feb'}}
+                                {{> afQuickField name='jun'}}
+                                {{> afQuickField name='oct'}}
+
+                            </div>
+                            <div class="field">
+                                {{> afQuickField name='mar'}}
+                                {{> afQuickField name='jul'}}
+                                {{> afQuickField name='nov'}}
+                            </div>
+                            <div class="field">
+                                {{> afQuickField name='apr'}}
+                                {{> afQuickField name='aug'}}
+                                {{> afQuickField name='dec'}}
+                            </div>
+
+                        </div>
 
                     </div>
                     <div class="field">
@@ -144,7 +168,14 @@
                         {{> afQuickField name='telephone'}}
                         {{> afQuickField name='email'}}
                         {{> afQuickField name='website'}}
-                        {{> afQuickField name='language'}}
+                        <div class="two fields">
+                            <div class="field">
+                                {{> afQuickField name='baseCurrency'}}
+                            </div>
+                            <div class="field">
+                                {{> afQuickField name='language'}}
+                            </div>
+                        </div>
                         {{> co_actionEdit}}
 
 

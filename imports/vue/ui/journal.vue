@@ -335,8 +335,10 @@
                     params.currencyId = {$in: this.journalReport.currencyOptionsModel};
                 }
 
+                let userId=Meteor.userId();
 
-                Meteor.call('giveMeJournalReport', params, (err, result) => {
+
+                Meteor.call('giveMeJournalReport', params,userId, (err, result) => {
                     if (!err) {
                         console.log(result);
                         this.journalsData = result;

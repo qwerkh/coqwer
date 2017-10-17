@@ -7,38 +7,61 @@ import {SpaceChar} from "../../both/config/space";
 
 
 export default class ClassReport {
-    static registerReport(param,userId) {
+    static registerReport(param, userId) {
         let parameter = {};
         let data = {};
         let total = 0;
         let totalNetTotal = 0;
         let totalBalance = 0;
 
-        let CompanyDoc=Co_Company.findOne({});
+        let CompanyDoc = Co_Company.findOne({});
         if (param) {
             parameter = param;
         }
         let registerList = VW_Register.find(parameter).fetch().map(function (obj) {
+            if (CompanyDoc.asigneUser.indexOf(userId) > -1) {
+                total += obj.netTotal - obj.balance;
+                totalNetTotal += obj.netTotal;
+                totalBalance += obj.balance;
 
-            total += obj.netTotal - obj.balance;
-            totalNetTotal += obj.netTotal;
-            totalBalance += obj.balance;
+                obj.registerDate = moment(obj.registerDate).format("DD/MM/YYYY");
+                obj.serviceDetail = "";
+                obj.medicineDetail = "";
+                obj.itemDetail = "";
+                obj.services.forEach(function (o) {
+                    obj.itemDetail += `<li>` + o.serviceName + `</li>`;
+                })
 
-            obj.registerDate = moment(obj.registerDate).format("DD/MM/YYYY");
-            obj.serviceDetail = "";
-            obj.medicineDetail = "";
-            obj.itemDetail = "";
-            obj.services.forEach(function (o) {
-                obj.itemDetail += `<li>` + o.serviceName + `</li>`;
-            })
+                obj.medicines.forEach(function (o) {
+                    obj.itemDetail += `<li>` + o.medicineName + `</li>`;
+                })
 
-            obj.medicines.forEach(function (o) {
-                obj.itemDetail += `<li>` + o.medicineName + `</li>`;
-            })
+                obj.totalPaid = numeral(obj.netTotal - obj.balance).format("0,00.000");
+                obj.netTotal = numeral(obj.netTotal).format("0,00.000");
+                obj.balance = numeral(obj.balance).format("0,00.000");
+            } else {
+                total += (obj.netTotal - obj.balance) * checkProvision(CompanyDoc, obj.registerDate);
+                totalNetTotal += (obj.netTotal) * checkProvision(CompanyDoc, obj.registerDate);
+                totalBalance += (obj.balance) * checkProvision(CompanyDoc, obj.registerDate);
 
-            obj.totalPaid = numeral(obj.netTotal - obj.balance).format("0,00.000");
-            obj.netTotal = numeral(obj.netTotal).format("0,00.000");
-            obj.balance = numeral(obj.balance).format("0,00.000");
+                obj.registerDate = moment(obj.registerDate).format("DD/MM/YYYY");
+                obj.serviceDetail = "";
+                obj.medicineDetail = "";
+                obj.itemDetail = "";
+                obj.services.forEach(function (o) {
+                    obj.itemDetail += `<li>` + o.serviceName + `</li>`;
+                })
+
+                obj.medicines.forEach(function (o) {
+                    obj.itemDetail += `<li>` + o.medicineName + `</li>`;
+                })
+
+                obj.totalPaid = numeral((obj.netTotal - obj.balance) * checkProvision(CompanyDoc, obj.registerDate)).format("0,00.000");
+                obj.netTotal = numeral((obj.netTotal) * checkProvision(CompanyDoc, obj.registerDate)).format("0,00.000");
+                obj.balance = numeral((obj.balance) * checkProvision(CompanyDoc, obj.registerDate)).format("0,00.000");
+            }
+
+
             return obj;
         });
 
@@ -51,7 +74,7 @@ export default class ClassReport {
         return data;
     }
 
-    static registerByDateReport(param,userId) {
+    static registerByDateReport(param, userId) {
         let parameter = {};
         let data = {};
         let total = 0;
@@ -61,6 +84,8 @@ export default class ClassReport {
         if (param) {
             parameter = param;
         }
+        let CompanyDoc = Co_Company.findOne({});
+
         let registerList = Co_Register.aggregate([
             {$match: parameter},
             {
@@ -84,14 +109,27 @@ export default class ClassReport {
             },
             {$sort: {registerDate: 1}}
         ]).map(function (obj) {
-            obj.registerDate = moment(obj.registerDate).format("DD/MM/YYYY");
-            totalNetTotal += obj.netTotal;
-            totalBalance += obj.balance;
-            total += obj.netTotal - obj.balance;
 
-            obj.totalPaid = numeral(obj.netTotal - obj.balance).format("0,00.000");
-            obj.netTotal = numeral(obj.netTotal).format("0,00.000");
-            obj.balance = numeral(obj.balance).format("0,00.000");
+
+            if (CompanyDoc.asigneUser.indexOf(userId) > -1) {
+                totalNetTotal += obj.netTotal;
+                totalBalance += obj.balance;
+                total += obj.netTotal - obj.balance;
+
+                obj.totalPaid = numeral(obj.netTotal - obj.balance).format("0,00.000");
+                obj.netTotal = numeral(obj.netTotal).format("0,00.000");
+                obj.balance = numeral(obj.balance).format("0,00.000");
+            }else {
+                totalNetTotal += (obj.netTotal) * checkProvision(CompanyDoc, obj.registerDate);
+                totalBalance += (obj.balance) * checkProvision(CompanyDoc, obj.registerDate);
+                total += (obj.netTotal - obj.balance) * checkProvision(CompanyDoc, obj.registerDate);
+
+                obj.totalPaid = numeral((obj.netTotal - obj.balance) * checkProvision(CompanyDoc, obj.registerDate)).format("0,00.000");
+                obj.netTotal = numeral((obj.netTotal) * checkProvision(CompanyDoc, obj.registerDate)).format("0,00.000");
+                obj.balance = numeral((obj.balance) * checkProvision(CompanyDoc, obj.registerDate)).format("0,00.000");
+
+            }
+            obj.registerDate = moment(obj.registerDate).format("DD/MM/YYYY");
             return obj;
 
         });
@@ -100,12 +138,11 @@ export default class ClassReport {
         data.total = numeral(total).format("0,00.000");
         data.totalNetTotal = numeral(totalNetTotal).format("0,00.000");
         data.totalBalance = numeral(totalBalance).format("0,00.000");
-
         return data;
     }
 
 
-    static profitLostReport(param, exchangeId,userId) {
+    static profitLostReport(param, exchangeId, userId) {
         let parameter = {};
 
         if (param) {
@@ -269,11 +306,13 @@ export default class ClassReport {
 
     }
 
-    static journalReport(param,userId) {
+    static journalReport(param, userId) {
         let parameter = {};
         if (param) {
             parameter = param;
         }
+        let CompanyDoc = Co_Company.findOne({});
+
         let journalList = Co_Journal.find(parameter).fetch().map(function (obj) {
             let accountName = "";
             let dr = "";
@@ -333,5 +372,53 @@ let exchangeCoefficient = function ({exchange, fieldToCalculate, baseCurrency}) 
     }
     return coefficient;
 };
+
+let checkProvision = function (companyDoc, date) {
+    let percentage = 0;
+    console.log(date);
+    let month = moment(moment(date, "DD/MM/YYYY").toDate()).format("MM");
+    console.log(month);
+    switch (month) {
+        case "01":
+            percentage = companyDoc.jan;
+            break;
+        case "02":
+            percentage = companyDoc.feb;
+            break;
+        case "03":
+            percentage = companyDoc.mar;
+            break;
+        case "04":
+            percentage = companyDoc.apr;
+            break;
+        case "05":
+            percentage = companyDoc.may;
+            break;
+        case "06":
+            percentage = companyDoc.jun;
+            break;
+        case "07":
+            percentage = companyDoc.jul;
+            break;
+        case "08":
+            percentage = companyDoc.aug;
+            break;
+        case "09":
+            percentage = companyDoc.sep;
+            break;
+        case "10":
+            percentage = companyDoc.oct;
+            break;
+        case "11":
+            percentage = companyDoc.nov;
+            break;
+        case "12":
+            percentage = companyDoc.dec;
+            break;
+    }
+    return percentage / 100;
+
+
+}
 
 

@@ -13,7 +13,7 @@ export const ChartAccountTabular = new Tabular.Table({
         {data: "_id", title: 'Id'},
         {data: "code", title: 'Code'},
         {data: "name", title: 'Name'},
-        {data: "parentName", title: 'Parent'},
+        {data: "parentName", title: 'Sub Account Of'},
         {data: "accountTypeName", title: 'Account Type'},
         {
             tmpl: Meteor.isClient && Template.co_action

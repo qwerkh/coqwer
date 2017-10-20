@@ -121,7 +121,6 @@ Meteor.methods({
                 value: obj._id
             })
         })
-
         return arr;
     },
     accountTypeOption(selector) {

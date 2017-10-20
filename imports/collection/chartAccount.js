@@ -12,7 +12,7 @@ Co_ChartAccount.schema = new SimpleSchema({
     },
     parentId: {
         type: String,
-        label: "Parent",
+        label: "Sub Account Of",
         optional: true,
         autoform: {
             type: "select"
@@ -20,7 +20,7 @@ Co_ChartAccount.schema = new SimpleSchema({
     },
     parentName: {
         type: String,
-        label: "Parent",
+        label: "Sub Account Of",
         optional: true
     },
     accountTypeId: {

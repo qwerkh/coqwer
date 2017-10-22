@@ -115,11 +115,24 @@ Meteor.methods({
         if (accountType) {
             selector.accountTypeId = accountType;
         }
+
+
         Co_ChartAccount.find(selector, {sort: {code: 1}}).fetch().forEach(function (obj) {
-            arr.push({
-                label: SpaceChar.space(obj.level * 6) + obj.code + " | " + obj.name,
-                value: obj._id
-            })
+            let subAccountOfDoc = Co_ChartAccount.findOne({parentId: obj._id});
+            if (subAccountOfDoc) {
+                arr.push({
+                    label: SpaceChar.space(obj.level * 6) + obj.code + " | " + obj.name,
+                    value: obj._id,
+                    class: "item disabled"
+                })
+            } else {
+                arr.push({
+                    label: SpaceChar.space(obj.level * 6) + obj.code + " | " + obj.name,
+                    value: obj._id
+                })
+
+            }
+
         })
         return arr;
     },

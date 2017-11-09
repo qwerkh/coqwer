@@ -1,19 +1,19 @@
 <template>
-    <div class="co-registerByDate-report">
+    <div class="co-unPaidByCustomer-report">
         <div slot="header">
             <el-collapse v-model="activeName" class="no-print" accordion>
                 <el-collapse-item name="1">
                 <span slot="title">
 
-                            Register By Date Report
+                            UnPaid By Customer Report
                         </span>
 
-                    <el-form :inline="true" :model="registerByDateReport" ref="registerByDateReport">
+                    <el-form :inline="true" :model="unPaidByCustomerReport" ref="unPaidByCustomerReport">
                         <el-row type="flex" class="row-bg" justify="left" style="width: 100%">
                             <el-col :span="21">
                                 <el-form-item label="Branch :">
                                     <el-select width="100%" filterable
-                                               v-model="registerByDateReport.roleBranchOptionsModel"
+                                               v-model="unPaidByCustomerReport.roleBranchOptionsModel"
                                                multiple
                                                placeholder="All">
                                         <el-option
@@ -28,7 +28,7 @@
 
                                 <el-form-item label-width="60px" label="Area  :">
                                     <el-select width="100%" filterable
-                                               v-model="registerByDateReport.roleAreaOptionsModel"
+                                               v-model="unPaidByCustomerReport.roleAreaOptionsModel"
                                                multiple
                                                placeholder="All">
                                         <el-option
@@ -40,13 +40,13 @@
                                     </el-select>
                                 </el-form-item>
 
-                                <el-form-item class="registerDateRange" label="Date :">
+                                <el-form-item class="registerDateAs" label="Date :">
                                     <el-date-picker format="dd/MM/yyyy"
-                                                    v-model="registerByDateReport.dateRange"
-                                                    type="daterange"
+                                                    v-model="unPaidByCustomerReport.dateAs"
+                                                    type="date"
                                                     align="right"
-                                                    placeholder="Pick a range"
-                                                    :picker-options="pickerOptions2">
+                                                    placeholder="Pick a Date"
+                                    >
                                     </el-date-picker>
                                 </el-form-item>
 
@@ -62,31 +62,6 @@
                         </el-row>
 
                         <el-row type="flex" class="row-bg" justify="left">
-
-                            <el-col :span="21">
-                                <el-form-item label="Patient :">
-                                    <el-select filterable v-model="registerByDateReport.patientOptionsModel" multiple
-                                               placeholder="All">
-                                        <el-option
-                                                v-for="item in patientOptions"
-                                                :key="item.value"
-                                                :label="item.label"
-                                                :value="item.value">
-                                        </el-option>
-                                    </el-select>
-                                </el-form-item>
-                                <el-form-item label-width="60px" label="Status :">
-                                    <el-select filterable v-model="registerByDateReport.typeOptionsModel" multiple
-                                               placeholder="All">
-                                        <el-option
-                                                v-for="item in typeOptions"
-                                                :key="item.value"
-                                                :label="item.label"
-                                                :value="item.value">
-                                        </el-option>
-                                    </el-select>
-                                </el-form-item>
-                            </el-col>
                             <el-col :span="3">
                                 <el-button v-show="dataExist" :loading="printLoading" type="success"
                                            style="float: right;width: 130px;"
@@ -101,7 +76,6 @@
 
         </div>
         <span slot="content">
-
                         <span slot="content">
                             <div class="title">
                             <div class="title1">
@@ -111,7 +85,7 @@
                                 {{companyEnName}}
                             </div>
                             <div class="title2">
-                                <u>Register By Date Report</u>
+                                <u>Unpaid By Customer Report</u>
                             </div>
                             <div class="title3">
                                 {{addressName}}
@@ -123,38 +97,36 @@
                         </div>
 
                         <div style="width: 50%; float: right;text-align: right;">
-                            <strong>Date:</strong> {{dateRangeHeader}}
+                            <strong>Date:</strong> {{dateHeader}}
                         </div>
                     </div>
                         <table class="ui celled table table-report">
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>Date</th>
-                                        <th>Amount</th>
-                                        <th>Paid</th>
-                                        <th>UnPaid</th>
+                                        <th>Patient Name</th>
+                                        <th>Register Date</th>
+                                        <th>Day Late</th>
+                                        <th>Balance Unpaid</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <slot v-for="(register,index) in registersData.data">
+                                    <slot v-for="(unpaidByCustomer,index) in unPaidByCustomerData.data">
                                         <tr>
                                             <td>{{index + 1}}</td>
-                                            <td>{{register.registerDate}}</td>
-                                            <td style="text-align: right">{{register.netTotal}}</td>
-                                            <td style="text-align: right">{{register.totalPaid}}</td>
-                                            <td style="text-align: right">{{register.balance}}</td>
+                                            <td>{{unpaidByCustomer.khName}}</td>
+                                            <td>{{unpaidByCustomer.registerDate | momentFormat}}</td>
+                                            <td>{{parseInt(unpaidByCustomer.dayLate)}}</td>
+                                            <td style="text-align: right">{{unpaidByCustomer.balance}}</td>
                                         </tr>
                                     </slot>
                                     <tr>
-                                        <td colspan="2" style="text-align: right">Total :</td>
-                                        <td style="text-align: right">{{registersData.totalNetTotal}}</td>
-                                        <td style="text-align: right">{{registersData.total}}</td>
-                                        <td style="text-align: right">{{registersData.totalBalance}}</td>
+                                        <td colspan="4" style="text-align: right">Total :</td>
+                                        <td style="text-align: right">{{unPaidByCustomerData.totalBalanceUnPaid}}</td>
                                     </tr>
                                 </tbody>
                         </table>
-                        <div style="width: 100%">
+                         <div style="width: 100%">
 
                                 <div style="width: 30%; float: left; text-align: right">
                                    <div style="margin-bottom: 7em">
@@ -173,6 +145,8 @@
                                     </div>
                                 </div>
                             </span>
+            <!--</el-col>
+     </el-row>-->
         </span>
     </div>
 </template>
@@ -180,24 +154,18 @@
     export default {
         data() {
             return {
-                registerByDateReport: {
+                unPaidByCustomerReport: {
                     roleBranchOptionsModel: [],
                     roleAreaOptionsModel: [],
-                    patientOptionsModel: [],
-                    typeOptionsModel: [],
-                    dateRange: ""
+                    dateAs: ""
                 },
 
                 roleBranchOptions: [],
                 roleAreaOptions: [],
-                patientOptions: [],
-                typeOptions: [],
 
-                exchangeOptions: [],
-
-                dateRange: "",
+                dateAs: "",
                 activeName: "1",
-                registersData: [],
+                unPaidByCustomerData: {},
                 loading: false,
 
                 companyName: "",
@@ -205,34 +173,8 @@
                 addressName: "",
 
                 branchHeader: "All",
-                dateRangeHeader: "All",
-                pickerOptions2: {
-                    shortcuts: [{
-                        text: 'Last week',
-                        onClick(picker) {
-                            const end = new Date();
-                            const start = new Date();
-                            start.setTime(start.getTime() - 3600 * 1000 * 24 * 7);
-                            picker.$emit('pick', [start, end]);
-                        }
-                    }, {
-                        text: 'Last month',
-                        onClick(picker) {
-                            const end = new Date();
-                            const start = new Date();
-                            start.setTime(start.getTime() - 3600 * 1000 * 24 * 30);
-                            picker.$emit('pick', [start, end]);
-                        }
-                    }, {
-                        text: 'Last 3 months',
-                        onClick(picker) {
-                            const end = new Date();
-                            const start = new Date();
-                            start.setTime(start.getTime() - 3600 * 1000 * 24 * 90);
-                            picker.$emit('pick', [start, end]);
-                        }
-                    }]
-                },
+                dateHeader: "All",
+
                 printLoading: false,
             }
         },
@@ -247,60 +189,30 @@
                     this.roleAreaOptions = result;
                 })
             },
-            fetchPatientOption(val) {
-                Meteor.call("fetchPatientOption", val, (err, result) => {
-                    this.patientOptions = result;
-                })
-            },
-            fetchExchangeOption() {
-                Meteor.call("fetchExchangeOption", (err, result) => {
-                    this.exchangeOptions = result;
-                })
-            },
-            fetchTypeOption() {
-                let list = [];
-                list.push({label: "Active", value: "Active"});
-                list.push({label: "Partial", value: "Partial"});
-                list.push({label: "Complete", value: "Complete"});
-
-                this.typeOptions = list;
-            },
 
             handleRunReport(formName) {
-
                 let params = {};
-                let userId=Meteor.userId();
+                let userId = Meteor.userId();
 
                 this.loading = true;
-                if (this.registerByDateReport.roleAreaOptionsModel != "") {
-                    params.rolesArea = {$in: this.registerByDateReport.roleAreaOptionsModel};
-
-                    Meteor.call("getBranchHeader", this.registerByDateReport.roleAreaOptionsModel, (err, result) => {
+                if (this.unPaidByCustomerReport.roleAreaOptionsModel != "") {
+                    params.rolesArea = {$in: this.unPaidByCustomerReport.roleAreaOptionsModel};
+                    Meteor.call("getBranchHeader", this.unPaidByCustomerReport.roleAreaOptionsModel, (err, result) => {
                         this.branchHeader = result;
                     })
                 }
 
-                if (this.registerByDateReport.dateRange != "") {
+                if (this.unPaidByCustomerReport.dateAs != "") {
                     params.registerDate = {
-                        $gte: moment(this.registerByDateReport.dateRange[0]).startOf("days").toDate(),
-                        $lte: moment(this.registerByDateReport.dateRange[1]).startOf("days").toDate()
+                        $lte: moment(this.unPaidByCustomerReport.dateAs).endOf("days").toDate()
                     };
 
-                    this.dateRangeHeader = moment(this.registerByDateReport.dateRange[0]).format("DD/MM/YYYY") + "-" + moment(this.registerByDateReport.dateRange[1]).format("DD/MM/YYYY");
+                    this.dateHeader = moment(this.unPaidByCustomerReport.dateAs).format("DD/MM/YYYY");
                 }
 
-                if (this.registerByDateReport.patientOptionsModel != "") {
-                    params.patientId = {$in: this.registerByDateReport.patientOptionsModel};
-                }
-
-                if (this.registerByDateReport.typeOptionsModel != "") {
-                    params.status = {$in: this.registerByDateReport.typeOptionsModel};
-                }
-
-
-                Meteor.call('giveMeRegisterByDateReport', params,userId, (err, result) => {
+                Meteor.call('giveMeUnPaidByCustomerReport', params, userId, (err, result) => {
                     if (!err) {
-                        this.registersData = result;
+                        this.unPaidByCustomerData = result;
                     }
                     this.loading = false;
                 });
@@ -324,27 +236,22 @@
         watch: {
 
 
-            "registerByDateReport.roleBranchOptionsModel"(val) {
+            "unPaidByCustomerReport.roleBranchOptionsModel"(val) {
                 this.fetchAreaOption(val);
             }
             ,
-            "registerByDateReport.roleAreaOptionsModel"(val) {
+            "unPaidByCustomerReport.roleAreaOptionsModel"(val) {
                 this.fetchPatientOption(val);
             }
-
         },
         created() {
             this.fetchBranchOption();
-//            this.fetchPatientOption([]);
-            this.fetchTypeOption([]);
             this.getCompany();
-            this.registerByDateReport.dateRange = [moment().startOf("months").toDate(), moment().endOf("months").toDate()];
-
-
+            this.unPaidByCustomerReport.dateAs = new Date();
         },
         computed: {
             dataExist() {
-                return this.registersData.length > 0;
+                return this.unPaidByCustomerData.data > 0;
             }
         },
 
@@ -371,27 +278,6 @@
             top: 0;
         }
 
-        /*el-row {
-            max-width: 2480px;
-            width: 100%;
-        }
-
-        el-table {
-
-            max-width: 2480px;
-            width: 100%;
-            background: #000;
-            height: auto;
-            page-break-inside: avoid;
-        }
-
-        el-table-column {
-            width: auto;
-            overflow: hidden;
-            word-wrap: break-word;
-        }
-*/
-        /* ... the rest of the rules ... */
     }
 
     .el-table {
@@ -407,14 +293,6 @@
         padding: 1px !important;
         text-align: center !important;
     }
-
-    /*.registerDateRange .el-date-editor--daterange.el-input {
-        width: 280px;
-    }*/
-
-    /*.registerExchange .el-select {
-        width: 280px;
-    }*/
 
     .el-table .cell {
         padding-left: 3px;

@@ -18,7 +18,20 @@ export default class ClassReport {
         if (param) {
             parameter = param;
         }
-        let registerList = VW_Register.find(parameter).fetch().map(function (obj) {
+        let registerList = Co_Register.aggregate(
+            [
+                {
+                    $lookup: {
+                        from: "co_patient",
+                        localField: "patientId",
+                        foreignField: "_id",
+                        as: "patientDoc"
+                    }
+                },
+                {$unwind: {path: "$patientDoc", preserveNullAndEmptyArrays: true}},
+                {$match: parameter}
+
+            ]).map(function (obj) {
             if (CompanyDoc.asigneUser.indexOf(userId) > -1) {
                 total += obj.netTotal - obj.balance;
                 totalNetTotal += obj.netTotal;
@@ -74,6 +87,177 @@ export default class ClassReport {
         return data;
     }
 
+    static unpaidByCustomerReport(param, userId) {
+        let parameter = {};
+        let data = {};
+        data.data = [];
+
+        let CompanyDoc = Co_Company.findOne({});
+        if (param) {
+            parameter = param;
+        }
+        let unpaidByCustomerList = Co_Register.aggregate([
+            {
+                $match: parameter
+            },
+            {
+                $lookup: {
+                    from: "co_patient",
+                    localField: "patientId",
+                    foreignField: "_id",
+                    as: "patientDoc"
+                }
+            },
+            {$unwind: {path: "$patientDoc", preserveNullAndEmptyArrays: true}},
+            {
+                $group: {
+                    _id: {
+                        patientId: "$patientId",
+                        khName: "$patientDoc.khName",
+
+                    },
+                    balance: {
+                        $sum: "$balance"
+                    },
+                    registerDate: {
+                        $last: "$registerDate"
+                    }
+                }
+            },
+            {
+                $project: {
+                    patientId: "$_id.patientId",
+                    khName: "$_id.khName",
+                    balance: "$balance",
+                    registerDate: "$registerDate",
+                    dayLate: {
+                        "$divide": [
+                            {$subtract: [moment().toDate(), "$registerDate"]},
+                            1000 * 60 * 60 * 24
+                        ]
+                    }
+                }
+
+            },
+            {
+                $match: {
+                    balance: {$gt: 0}
+                }
+            },
+            {
+                $group: {
+                    _id: null,
+                    data: {$push: "$$ROOT"},
+                    totalBalance: {
+                        $sum: "$balance"
+                    }
+
+                }
+            }
+        ]);
+        data.data = unpaidByCustomerList[0] && unpaidByCustomerList[0].data || [];
+        data.totalBalanceUnPaid = unpaidByCustomerList[0] && unpaidByCustomerList[0].totalBalance || 0;
+
+        return data;
+    }
+
+    static checkQualityMachinReport(param, userId, machinTypeIdList, machinIdList) {
+        let parameter = {};
+
+        let selectorMachin = {};
+        if (machinIdList.length > 0) {
+            selectorMachin["machinDoc._id"] = {$in: machinIdList};
+        }
+
+        if (machinTypeIdList.length > 0) {
+            selectorMachin["machinDoc.machinTypeId"] = {$in: machinTypeIdList};
+        }
+
+        let data = {};
+        data.data = [];
+
+        let CompanyDoc = Co_Company.findOne({});
+        if (param) {
+            parameter = param;
+        }
+
+
+        let checkQualityMachinList = Co_Register.aggregate([
+
+            {
+                $match: parameter
+            },
+            {
+                $unwind: {path: "$services", preserveNullAndEmptyArrays: true}
+            },
+            {
+                $unwind: {path: "$services.machinId", preserveNullAndEmptyArrays: true}
+            },
+            {
+                $match: {"services.machinId": {$exists: true}}
+            },
+
+            {
+                $group: {
+                    _id: {
+                        patientId: "$patientId",
+                        serviceId: "$services.serviceId",
+                        machinId: "$services.machinId"
+                    },
+                    totalUse: {$sum: 1}
+                }
+            },
+            {
+                $lookup: {
+                    from: "co_patient",
+                    localField: "_id.patientId",
+                    foreignField: "_id",
+                    as: "patientDoc"
+                }
+            },
+            {
+                $unwind: {path: "$patientDoc", preserveNullAndEmptyArrays: true}
+            },
+            {
+                $lookup: {
+                    from: "co_service",
+                    localField: "_id.serviceId",
+                    foreignField: "_id",
+                    as: "serviceDoc"
+                }
+            },
+            {
+                $unwind: {path: "$serviceDoc", preserveNullAndEmptyArrays: true}
+            },
+            {
+                $lookup: {
+                    from: "co_machin",
+                    localField: "_id.machinId",
+                    foreignField: "_id",
+                    as: "machinDoc"
+                }
+            },
+            {
+                $unwind: {path: "$machinDoc", preserveNullAndEmptyArrays: true}
+            },
+            {
+                $match: selectorMachin
+            },
+            {
+                $group: {
+                    _id: {
+                        machinDoc: "$machinDoc"
+                    },
+                    totalUseMachin: {$sum: "$totalUse"},
+                    numberPatientUse: {$sum: 1},
+                    data: {$push: "$$ROOT"}
+                }
+            }
+        ]);
+        data.data = checkQualityMachinList;
+        return data;
+    }
+
     static registerByDateReport(param, userId) {
         let parameter = {};
         let data = {};
@@ -119,7 +303,7 @@ export default class ClassReport {
                 obj.totalPaid = numeral(obj.netTotal - obj.balance).format("0,00.000");
                 obj.netTotal = numeral(obj.netTotal).format("0,00.000");
                 obj.balance = numeral(obj.balance).format("0,00.000");
-            }else {
+            } else {
                 totalNetTotal += (obj.netTotal) * checkProvision(CompanyDoc, obj.registerDate);
                 totalBalance += (obj.balance) * checkProvision(CompanyDoc, obj.registerDate);
                 total += (obj.netTotal - obj.balance) * checkProvision(CompanyDoc, obj.registerDate);
@@ -375,9 +559,7 @@ let exchangeCoefficient = function ({exchange, fieldToCalculate, baseCurrency}) 
 
 let checkProvision = function (companyDoc, date) {
     let percentage = 0;
-    console.log(date);
     let month = moment(moment(date, "DD/MM/YYYY").toDate()).format("MM");
-    console.log(month);
     switch (month) {
         case "01":
             percentage = companyDoc.jan;

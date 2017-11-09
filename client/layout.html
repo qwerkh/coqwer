@@ -195,7 +195,7 @@
                         <i class="registered icon"></i> Register
                     </a>
                     <a href="{{pathFor 'co.payment'}}" class="{{isActiveRoute 'co.payment'}} item">
-                        <i class="money icon"></i> Payment
+                        <i class="money icon"></i>Receive Payment
                     </a>
                     <a href="{{pathFor 'co.journal'}}" class="item"><i class="font icon"></i>
                         Journal</a>
@@ -210,12 +210,20 @@
                                                                                       aria-hidden="true"></i>
                                 Register</a>
                             <a href="{{pathFor 'co.registerByDateReport'}}" class="item"><i class="fa fa-file-text-o"
-                                                                                      aria-hidden="true"></i>
+                                                                                            aria-hidden="true"></i>
                                 Register By Date</a>
+
+                            <a href="{{pathFor 'co.unPaidByCustomerReport'}}" class="item"><i class="fa fa-file-text-o"
+                                                                                              aria-hidden="true"></i>
+                                Unpaid By Customer</a>
+                            <a href="{{pathFor 'co.checkQualityMachinReport'}}" class="item"><i
+                                    class="fa fa-file-text-o"
+                                    aria-hidden="true"></i>
+                                Check Quality Machin</a>
                             <a href="{{pathFor 'co.journalReport'}}" class="item"><i class="fa fa-file-text-o"
                                                                                      aria-hidden="true"> </i>
                                 Journal</a>
-                           <a href="{{pathFor 'co.profitLostReport'}}" class="item"><i class="fa fa-file-text-o"
+                            <a href="{{pathFor 'co.profitLostReport'}}" class="item"><i class="fa fa-file-text-o"
                                                                                         aria-hidden="true"> </i> Profit
                                 Lost</a>
                         </div>

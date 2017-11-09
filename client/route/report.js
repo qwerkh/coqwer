@@ -6,6 +6,8 @@ import '../../imports/report/register/register';
 import '../../imports/report/registerByDate/registerByDate';
 import '../../imports/report/journal/journal';
 import '../../imports/report/profitLost/profitLost';
+import '../../imports/report/unpaidByCustomer/unpaidByCustomer';
+import '../../imports/report/checkQualityMachin/checkQualityMachin';
 import '../../imports/ui/fixAsset/fixAsset';
 
 import '../../imports/report/content.html';
@@ -29,6 +31,21 @@ reportData.route('/registerReport', {
     name: 'co.registerReport',
     action: function (query, params) {
         _Report("co_registerReport");
+    }
+})
+
+//Unpaid By Customer
+reportData.route('/unPaidByCustomerReport', {
+    name: 'co.unPaidByCustomerReport',
+    action: function (query, params) {
+        _Report("co_unpaidByCustomerReport");
+    }
+})
+//Check Quality Machin
+reportData.route('/checkQualityMachinReport', {
+    name: 'co.checkQualityMachinReport',
+    action: function (query, params) {
+        _Report("co_checkQualityMachinReport");
     }
 })
 //Register By Date

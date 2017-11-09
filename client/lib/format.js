@@ -32,3 +32,8 @@ Vue.filter('tabFormat', (val) => {
     }
     return char;
 });
+
+
+Vue.filter('momentFormat', (val) => {
+    return moment(val).format('DD/MM/YYYY');
+});

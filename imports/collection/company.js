@@ -76,88 +76,88 @@ Co_Company.schema = new SimpleSchema({
             }
         }
     },
-    asigneUser:{
+    asigneUser: {
         type: [String],
         label: "Assign User",
 
         optional: true,
-        autoform:{
+        autoform: {
             type: "select",
-            multiple:true
+            // multiple: true
         }
     },
-    jan:{
+    jan: {
         type: Number,
         label: "January (%)",
         decimal: true,
-        max:99
+        max: 99
     },
-    feb:{
+    feb: {
         type: Number,
         label: "February (%)",
         decimal: true,
-        max:99
+        max: 99
     },
-    mar:{
+    mar: {
         type: Number,
         label: "March (%)",
         decimal: true,
-        max:99
+        max: 99
     },
-    apr:{
+    apr: {
         type: Number,
         label: "April (%)",
         decimal: true,
-        max:99
+        max: 99
     },
-    may:{
+    may: {
         type: Number,
         label: "May (%)",
         decimal: true,
-        max:99
+        max: 99
     },
-    jun:{
+    jun: {
         type: Number,
         label: "June (%)",
         decimal: true,
-        max:99
+        max: 99
     },
-    jul:{
+    jul: {
         type: Number,
         label: "July (%)",
         decimal: true,
-        max:99
+        max: 99
     },
-    aug:{
+    aug: {
         type: Number,
         label: "August (%)",
         decimal: true,
-        max:99
+        max: 99
     },
-    sep:{
+    sep: {
         type: Number,
         label: "September (%)",
         decimal: true,
-        max:99
+        max: 99
     },
-    oct:{
+    oct: {
         type: Number,
         label: "October (%)",
         decimal: true,
-        max:99
+        max: 99
     },
-    nov:{
+    nov: {
         type: Number,
         label: "November (%)",
         decimal: true,
-        max:99
+        max: 99
     },
 
-    dec:{
+    dec: {
         type: Number,
         label: "December (%)",
         decimal: true,
-        max:99
+        max: 99
     }
 
 })

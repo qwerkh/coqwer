@@ -12,5 +12,13 @@ Meteor.methods({
     },
     giveMeProfitLostReport(param,exchangeId,userId){
         return ClassReport.profitLostReport(param,exchangeId,userId);
+    },
+    giveMeUnPaidByCustomerReport(param,userId){
+        return ClassReport.unpaidByCustomerReport(param,userId);
+
+    },
+    giveMeCheckQualityMachinReport(param,userId,machinTypeId,machinId){
+        return ClassReport.checkQualityMachinReport(param,userId,machinTypeId,machinId);
+
     }
 })

@@ -90,7 +90,6 @@ indexTmpl.events({
     'click .remove'(e){
 
         var self = this;
-        console.log(self);
         if (self.numberOfExpense <= 0) {
             alertify.confirm(
                 'FixAsset',

@@ -17,7 +17,7 @@ import {Co_Exchange} from '../../imports/collection/exchange'
 import {SpaceChar} from "../../both/config/space"
 
 Meteor.methods({
-    fetchPatientOption(rolesArea){
+    fetchPatientOption(rolesArea) {
         let selector = {};
         if (rolesArea.length > 0) {
             selector.rolesArea = {$in: rolesArea};
@@ -28,7 +28,7 @@ Meteor.methods({
         })
         return list;
     },
-    fetchServiceOption(rolesArea){
+    fetchServiceOption(rolesArea) {
         let selector = {};
         if (rolesArea.length > 0) {
             selector.rolesArea = {$in: rolesArea};
@@ -39,7 +39,7 @@ Meteor.methods({
         })
         return list;
     },
-    fetchMedicineOption(rolesArea){
+    fetchMedicineOption(rolesArea) {
         let selector = {};
         if (rolesArea.length > 0) {
             selector.rolesArea = {$in: rolesArea};
@@ -50,7 +50,35 @@ Meteor.methods({
         })
         return list;
     },
-    fetchExchangeOption(){
+
+    fetchMachinTypeOption(rolesArea) {
+        let selector = {};
+        if (rolesArea.length > 0) {
+            selector.rolesArea = {$in: rolesArea};
+        }
+        let list = [];
+        Co_MachinType.find(selector).fetch().forEach(function (obj) {
+            list.push({label: obj.name, value: obj._id});
+        })
+        return list;
+    },
+    fetchMachinOption(rolesArea, machinType) {
+        let selector = {};
+        if (rolesArea.length > 0) {
+            selector.rolesArea = {$in: rolesArea};
+        }
+        if (machinType.length > 0) {
+            selector.machinTypeId = {$in: machinType};
+        }
+
+        let list = [];
+        Co_Machin.find(selector).fetch().forEach(function (obj) {
+            list.push({label: obj.model + " : " + obj.name, value: obj._id});
+        })
+        console.log(list);
+        return list;
+    },
+    fetchExchangeOption() {
 
         let list = [];
         Co_Exchange.find({}).fetch().forEach(function (obj) {

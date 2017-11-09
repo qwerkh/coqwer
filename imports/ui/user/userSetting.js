@@ -141,7 +141,6 @@ editTmpl.onCreated(function () {
     });
     this.autorun(() => {
         let provinceId = this.provinceId.get();
-        console.log(provinceId);
         if (provinceId) {
             Meteor.call('fetchDistricts', provinceId, (err, result) => {
                 if (result) {

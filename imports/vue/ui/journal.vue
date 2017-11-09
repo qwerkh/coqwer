@@ -340,7 +340,6 @@
 
                 Meteor.call('giveMeJournalReport', params,userId, (err, result) => {
                     if (!err) {
-                        console.log(result);
                         this.journalsData = result;
                     }
                     this.loading = false;

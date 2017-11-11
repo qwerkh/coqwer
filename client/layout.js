@@ -13,6 +13,7 @@ import {Co_Company} from '../imports/collection/company'
 
 //Page
 import './layout.html';
+
 Template.navbar.onRendered(function () {
 
     Meteor.call('getCompany', function (err, company) {
@@ -26,7 +27,7 @@ Template.navbar.onRendered(function () {
             $(".dropdown").dropdown();
             $('#settings-dropdown').dropdown();
             // }, 1500)
-            
+
             $('.menu .browse').popup({
                 inline: true,
                 hoverable: true,
@@ -43,7 +44,7 @@ Template.navbar.onRendered(function () {
 
 
 Template.navbar.events({
-    'click .logout'(event, instance){
+    'click .logout'(event, instance) {
         Session.set('area', undefined);
         Session.set('areaName', undefined);
         Meteor.logout();
@@ -52,13 +53,14 @@ Template.navbar.events({
 });
 
 Template.navbar.helpers({
-    getAreaName(){
+    getAreaName() {
+        console.log(Meteor.user());
         return Session.get('areaName');
     }
 });
 
 Template.MainLayout.helpers({
-    notChoosenArea(){
+    notChoosenArea() {
         return _.isUndefined(Session.get('area'));
     }
 });

@@ -127,160 +127,139 @@
                 </a>
 
                 {{#if currentUser}}
+                    {{#if isInRole "super,admin,setting" "co"}}
+                        <div class="ui dropdown item">
+                            <div class="text"><i class="wpforms icon"></i> Setting</div>
+                            <i class="dropdown icon"></i>
+                            <div class="menu">
+                                <a href="{{pathFor 'co.machin'}}" class="item"><i class="camera retro icon"></i> Machin</a>
+                                <a href="{{pathFor 'co.medicine'}}" class="item"><i class="add square icon"></i>
+                                    Medicine</a>
+                                <a href="{{pathFor 'co.service'}}" class="item"><i class="yelp icon"></i> Service</a>
 
-                    <!-- <a class="browse item">
-                         Setting
-                         <i class="dropdown icon"></i>
-                     </a>-->
-                    <div class="ui dropdown item">
-                        <div class="text"><i class="wpforms icon"></i> Form</div>
-                        <i class="dropdown icon"></i>
-                        <div class="menu">
-
-                            <a href="{{pathFor 'co.exchange'}}" class="item"><i class="exchange icon"></i> Exchange</a>
-                            <a href="{{pathFor 'co.endOfProcess'}}" class="item"><i
-                                    class="camera retro icon"></i>
-                                End Of Process</a>
-                            <div class="divider"></div>
-                            <a href="{{pathFor 'co.machin'}}" class="item"><i class="camera retro icon"></i> Machin</a>
-                            <a href="{{pathFor 'co.medicine'}}" class="item"><i class="add square icon"></i>
-                                Medicine</a>
-                            <a href="{{pathFor 'co.service'}}" class="item"><i class="yelp icon"></i> Service</a>
-
-                            <div class="ui left pointing dropdown link item">
-                                <i class="dropdown icon"></i>
-                                <i class="database icon"></i> Data
-                                <div class="menu">
-                                    <a href="{{pathFor 'co.machinType'}}" class="item"><i
-                                            class="camera retro icon"></i>
-                                        Machin Type</a>
-                                    <a href="{{pathFor 'co.medicineType'}}" class="item"><i
-                                            class="add square icon"></i>
-                                        Medicine Type</a>
-                                    <a href="{{pathFor 'co.serviceType'}}" class="item"><i class="yelp icon"></i>
-                                        Service
-                                        Type</a>
-                                    <!--<a href="{{pathFor 'co.reference'}}" class="item"><i
+                                <div class="ui left pointing dropdown link item">
+                                    <i class="dropdown icon"></i>
+                                    <i class="database icon"></i> Data
+                                    <div class="menu">
+                                        <a href="{{pathFor 'co.machinType'}}" class="item"><i
+                                                class="camera retro icon"></i>
+                                            Machin Type</a>
+                                        <a href="{{pathFor 'co.medicineType'}}" class="item"><i
+                                                class="add square icon"></i>
+                                            Medicine Type</a>
+                                        <a href="{{pathFor 'co.serviceType'}}" class="item"><i class="yelp icon"></i>
+                                            Service
+                                            Type</a>
+                                        <!--<a href="{{pathFor 'co.reference'}}" class="item"><i
                                             class="university icon"></i>
                                         Reference</a>-->
+                                    </div>
                                 </div>
+
+                                {{#if isInRole "super,admin,account"  "co"}}
+                                    <div class="divider"></div>
+                                    <div class="ui left pointing dropdown link item">
+                                        <i class="dropdown icon"></i>
+                                        <i class="shield icon"></i> Account
+                                        <div class="menu">
+                                            <a href="{{pathFor 'co.chartAccount'}}" class="item"><i
+                                                    class="camera retro icon"></i>
+                                                Chart Account</a>
+
+                                            <a href="{{pathFor 'co.fixAsset'}}" class="item"><i
+                                                    class="camera retro icon"></i>
+                                                Fix Asset</a>
+                                            <a href="{{pathFor 'co.mapFixAsset'}}" class="item"><i
+                                                    class="camera retro icon"></i>
+                                                Map FixAsset</a>
+
+
+                                        </div>
+                                    </div>
+                                {{/if}}
+
+                                {{#if isInRole "super"  "co"}}
+                                    <div class="divider"></div>
+                                    <a href="{{pathFor 'co.company'}}" class="item"><i class="university icon"></i>
+                                        Company</a>
+                                {{/if}}
                             </div>
-                            <div class="divider"></div>
-                            <div class="ui left pointing dropdown link item">
-                                <i class="dropdown icon"></i>
-                                <i class="shield icon"></i> Account
-                                <div class="menu">
-                                    <a href="{{pathFor 'co.chartAccount'}}" class="item"><i
-                                            class="camera retro icon"></i>
-                                        Chart Account</a>
+                        </div>
+                    {{/if}}
+                    {{#if isInRole "super,admin,data"  "co"}}
+                        <a href="{{pathFor 'co.patient'}}" class="item"><i class="user icon"></i> Patient</a>
 
-                                    <a href="{{pathFor 'co.fixAsset'}}" class="item"><i
-                                            class="camera retro icon"></i>
-                                        Fix Asset</a>
-                                    <a href="{{pathFor 'co.mapFixAsset'}}" class="item"><i
-                                            class="camera retro icon"></i>
-                                        Map FixAsset</a>
+                        <a href="{{pathFor 'co.register'}}" class="{{isActiveRoute 'co.register'}} item">
+                            <i class="registered icon"></i> Register
+                        </a>
+                        <a href="{{pathFor 'co.payment'}}" class="{{isActiveRoute 'co.payment'}} item">
+                            <i class="money icon"></i>Receive Payment
+                        </a>
+                    {{/if}}
 
+                    {{#if isInRole "super,admin,account"}}
+                        <a href="{{pathFor 'co.journal'}}" class="item"><i class="font icon"></i>
+                            Journal</a>
+                    {{/if}}
 
-                                </div>
+                    {{#if isInRole "super,admin,report"  "co"}}
+                        <div class="ui dropdown item">
+                            <div class="text"><i class="wpforms icon"></i> Report</div>
+                            <i class="dropdown icon"></i>
+                            <div class="menu">
+
+                                <a href="{{pathFor 'co.registerReport'}}" class="item"><i class="fa fa-file-text-o"
+                                                                                          aria-hidden="true"></i>
+                                    Register</a>
+                                <a href="{{pathFor 'co.registerByDateReport'}}" class="item"><i
+                                        class="fa fa-file-text-o"
+                                        aria-hidden="true"></i>
+                                    Register By Date</a>
+
+                                <a href="{{pathFor 'co.unPaidByCustomerReport'}}" class="item"><i
+                                        class="fa fa-file-text-o"
+                                        aria-hidden="true"></i>
+                                    Unpaid By Customer</a>
+                                <a href="{{pathFor 'co.checkQualityMachinReport'}}" class="item"><i
+                                        class="fa fa-file-text-o"
+                                        aria-hidden="true"></i>
+                                    Check Quality Machin</a>
+                                <a href="{{pathFor 'co.journalReport'}}" class="item"><i class="fa fa-file-text-o"
+                                                                                         aria-hidden="true"> </i>
+                                    Journal</a>
+                                <a href="{{pathFor 'co.profitLostReport'}}" class="item"><i class="fa fa-file-text-o"
+                                                                                            aria-hidden="true"> </i>
+                                    Profit
+                                    Lost</a>
                             </div>
-                            <div class="divider"></div>
-                            <a href="{{pathFor 'co.company'}}" class="item"><i class="university icon"></i> Company</a>
-
                         </div>
-                    </div>
-                    <a href="{{pathFor 'co.patient'}}" class="item"><i class="user icon"></i> Patient</a>
-
-                    <a href="{{pathFor 'co.register'}}" class="{{isActiveRoute 'co.register'}} item">
-                        <i class="registered icon"></i> Register
-                    </a>
-                    <a href="{{pathFor 'co.payment'}}" class="{{isActiveRoute 'co.payment'}} item">
-                        <i class="money icon"></i>Receive Payment
-                    </a>
-                    <a href="{{pathFor 'co.journal'}}" class="item"><i class="font icon"></i>
-                        Journal</a>
-
-
-                    <div class="ui dropdown item">
-                        <div class="text"><i class="wpforms icon"></i> Report</div>
-                        <i class="dropdown icon"></i>
-                        <div class="menu">
-
-                            <a href="{{pathFor 'co.registerReport'}}" class="item"><i class="fa fa-file-text-o"
-                                                                                      aria-hidden="true"></i>
-                                Register</a>
-                            <a href="{{pathFor 'co.registerByDateReport'}}" class="item"><i class="fa fa-file-text-o"
-                                                                                            aria-hidden="true"></i>
-                                Register By Date</a>
-
-                            <a href="{{pathFor 'co.unPaidByCustomerReport'}}" class="item"><i class="fa fa-file-text-o"
-                                                                                              aria-hidden="true"></i>
-                                Unpaid By Customer</a>
-                            <a href="{{pathFor 'co.checkQualityMachinReport'}}" class="item"><i
-                                    class="fa fa-file-text-o"
-                                    aria-hidden="true"></i>
-                                Check Quality Machin</a>
-                            <a href="{{pathFor 'co.journalReport'}}" class="item"><i class="fa fa-file-text-o"
-                                                                                     aria-hidden="true"> </i>
-                                Journal</a>
-                            <a href="{{pathFor 'co.profitLostReport'}}" class="item"><i class="fa fa-file-text-o"
-                                                                                        aria-hidden="true"> </i> Profit
-                                Lost</a>
+                    {{/if}}
+                    {{#if isInRole "super,admin,​​eop"  "co"}}
+                        <div class="ui dropdown item">
+                            <div class="text"><i class="wpforms icon"></i> ​​EOP</div>
+                            <i class="dropdown icon"></i>
+                            <div class="menu">
+                                <a href="{{pathFor 'co.exchange'}}" class="item"><i class="exchange icon"></i> Exchange</a>
+                                <a href="{{pathFor 'co.endOfProcess'}}" class="item"><i
+                                        class="camera retro icon"></i>
+                                    End Of Process</a>
+                            </div>
                         </div>
-                    </div>
+                    {{/if}}
 
                     <div class="right menu">
                         <div class="ui dropdown item">
-                            {{currentUser.username}} <i class="dropdown icon"></i>
+                            {{currentUser.username}} <i class="dropdown icon">{{userData}}</i>
                             <div class="menu">
                                 <a class="item logout">Sign Out</a>
-                                <a class="item" href="{{pathFor 'co.userSetting'}}">Setting</a>
+
+                                {{#if isInRole 'super,admin'  "co"}}
+                                    <a class="item" href="{{pathFor 'co.userSetting'}}">Setting</a>
+                                {{/if}}
                             </div>
                         </div>
                     </div>
                 {{/if}}
-            </div>
-        </div>
-
-
-        <div class="ui fluid popup bottom left transition hidden">
-            <div class="ui four column relaxed equal height divided grid">
-                <div class="column">
-                    <h4 class="ui header">Fabrics</h4>
-                    <div class="ui link list">
-                        <a class="item">Cashmere</a>
-                        <a class="item">Linen</a>
-                        <a class="item">Cotton</a>
-                        <a class="item">Viscose</a>
-                    </div>
-                </div>
-                <div class="column">
-                    <h4 class="ui header">Size</h4>
-                    <div class="ui link list">
-                        <a class="item">Small</a>
-                        <a class="item">Medium</a>
-                        <a class="item">Large</a>
-                        <a class="item">Plus Sizes</a>
-                    </div>
-                </div>
-                <div class="column">
-                    <h4 class="ui header">Colored</h4>
-                    <div class="ui link list">
-                        <a class="item">Neutrals</a>
-                        <a class="item">Brights</a>
-                        <a class="item">Pastels</a>
-                    </div>
-                </div>
-
-                <div class="column">
-                    <h4 class="ui header">Types</h4>
-                    <div class="ui link list">
-                        <a class="item">Knitwear</a>
-                        <a class="item">Outerwear</a>
-                        <a class="item">Pants</a>
-                        <a class="item">Shoes</a>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
@@ -294,7 +273,7 @@
                     <div class="ten wide column">
 
                         <div class="item">
-                            © 2017 Develope By <i class="heart icon"></i> by Navi Team;.
+                            © 2017 Develope By <i class="heart icon"></i> by H2E Tech
                         </div>
 
                     </div>

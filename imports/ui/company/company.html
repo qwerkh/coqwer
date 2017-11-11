@@ -136,31 +136,33 @@
                         {{> afQuickField name='enName'}}
                         {{> afQuickField name='enShortName'}}
                         {{> afQuickField name='khAddress' row=3}}
-                        {{> afQuickField name='asigneUser' placeholder="user" class="compact selection" multiple=true options=userOption search=true}}
-                        <div class="three fields">
-                            <div class="field">
-                                {{> afQuickField name='jan'}}
-                                {{> afQuickField name='may'}}
-                                {{> afQuickField name='sep'}}
-                            </div>
-                            <div class="field">
-                                {{> afQuickField name='feb'}}
-                                {{> afQuickField name='jun'}}
-                                {{> afQuickField name='oct'}}
 
-                            </div>
-                            <div class="field">
-                                {{> afQuickField name='mar'}}
-                                {{> afQuickField name='jul'}}
-                                {{> afQuickField name='nov'}}
-                            </div>
-                            <div class="field">
-                                {{> afQuickField name='apr'}}
-                                {{> afQuickField name='aug'}}
-                                {{> afQuickField name='dec'}}
-                            </div>
+                        {{#if isInRole "super"  "co"}}
+                            {{> afQuickField name='asigneUser' placeholder="user" class="compact selection" multiple=true options=userOption search=true}}
+                            <div class="three fields">
+                                <div class="field">
+                                    {{> afQuickField name='jan'}}
+                                    {{> afQuickField name='may'}}
+                                    {{> afQuickField name='sep'}}
+                                </div>
+                                <div class="field">
+                                    {{> afQuickField name='feb'}}
+                                    {{> afQuickField name='jun'}}
+                                    {{> afQuickField name='oct'}}
 
-                        </div>
+                                </div>
+                                <div class="field">
+                                    {{> afQuickField name='mar'}}
+                                    {{> afQuickField name='jul'}}
+                                    {{> afQuickField name='nov'}}
+                                </div>
+                                <div class="field">
+                                    {{> afQuickField name='apr'}}
+                                    {{> afQuickField name='aug'}}
+                                    {{> afQuickField name='dec'}}
+                                </div>
+                            </div>
+                        {{/if}}
 
                     </div>
                     <div class="field">

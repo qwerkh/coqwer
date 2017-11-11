@@ -28,7 +28,7 @@ index.events({
     'click .edit'(event, instance) {
         FlowRouter.go(`/co-setting/user-setting/${this._id}/edit`)
     },
-    'click .remove'(event, instance){
+    'click .remove'(event, instance) {
         let data = this;
         $('.delete-user.ui.basic.modal')
             .modal({
@@ -92,20 +92,20 @@ addTmpl.helpers({
     schema() {
         return UserSchema
     },
-    area(){
+    area() {
         return Session.get('area');
     },
-    geoProvinces(){
+    geoProvinces() {
         let instance = Template.instance();
         return instance.geoProvinces.get();
     },
-    geoArea(){
+    geoArea() {
         let instance = Template.instance();
         return instance.geoArea.get();
     }
 });
 addTmpl.events({
-    'change [name="rolesBranch"]'(event, instance){
+    'change [name="rolesBranch"]'(event, instance) {
         let currentValue = event.currentTarget.value;
         if (currentValue != '') {
             instance.provinceId.set(currentValue);
@@ -164,20 +164,20 @@ editTmpl.helpers({
         let user = instance.userData.get();
         return user
     },
-    area(){
+    area() {
         return Session.get('area');
     },
-    geoProvinces(){
+    geoProvinces() {
         let instance = Template.instance();
         return instance.geoProvinces.get();
     },
-    geoArea(){
+    geoArea() {
         let instance = Template.instance();
         return instance.geoArea.get();
     }
 });
 editTmpl.events({
-    'change [name="rolesBranch"]'(event, instance){
+    'change [name="rolesBranch"]'(event, instance) {
         let currentValue = event.currentTarget.value;
         if (currentValue != '') {
             instance.provinceId.set(currentValue);
@@ -186,24 +186,24 @@ editTmpl.events({
 });
 AutoForm.hooks({
     co_userEdit: {
-        onSuccess(formType, result){
+        onSuccess(formType, result) {
             alertify.success('Updated successfully');
             FlowRouter.query.unset();
             FlowRouter.go('co.userSetting')
         },
-        onError(formType, err){
+        onError(formType, err) {
             FlowRouter.query.unset();
             alertify.error(err.message);
         }
     },
     co_userAdd: {
-        onSuccess(formType, result){
+        onSuccess(formType, result) {
             Meteor.setTimeout(function () {
                 FlowRouter.query.unset();
                 alertify.success('Successfully Created');
             }, 500);
         },
-        onError(formType, err){
+        onError(formType, err) {
             Meteor.setTimeout(function () {
                 FlowRouter.query.unset();
                 alertify.error(err.message);

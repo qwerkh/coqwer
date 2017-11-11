@@ -10,26 +10,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="37b05a99-1bf8-426c-a9a5-9f4248831879" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/imports/report/checkQualityMachin/checkQualityMachin.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/imports/report/checkQualityMachin/checkQualityMachin.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/imports/report/unpaidByCustomer/unpaidByCustomer.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/imports/report/unpaidByCustomer/unpaidByCustomer.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/imports/vue/ui/checkQualityMachin.vue" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/imports/vue/ui/unpaidByCustomer.vue" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/layout.html" afterPath="$PROJECT_DIR$/client/layout.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/lib/format.js" afterPath="$PROJECT_DIR$/client/lib/format.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/route/report.js" afterPath="$PROJECT_DIR$/client/route/report.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/imports/collection/company.js" afterPath="$PROJECT_DIR$/imports/collection/company.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/layout.js" afterPath="$PROJECT_DIR$/client/layout.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/imports/collection/userSchema.js" afterPath="$PROJECT_DIR$/imports/collection/userSchema.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/imports/ui/company/company.html" afterPath="$PROJECT_DIR$/imports/ui/company/company.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/imports/ui/fixAsset/fixAsset.js" afterPath="$PROJECT_DIR$/imports/ui/fixAsset/fixAsset.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/imports/ui/payment/payment.html" afterPath="$PROJECT_DIR$/imports/ui/payment/payment.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/imports/ui/user/userSetting.js" afterPath="$PROJECT_DIR$/imports/ui/user/userSetting.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/imports/vue/ui/journal.vue" afterPath="$PROJECT_DIR$/imports/vue/ui/journal.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/imports/vue/ui/registerByDate.vue" afterPath="$PROJECT_DIR$/imports/vue/ui/registerByDate.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/methods/class.js" afterPath="$PROJECT_DIR$/server/methods/class.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/methods/optionsDataReport.js" afterPath="$PROJECT_DIR$/server/methods/optionsDataReport.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/methods/report/reportMethod.js" afterPath="$PROJECT_DIR$/server/methods/report/reportMethod.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -45,99 +31,7 @@
     <option name="PATCH_PATH" value="" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="checkQualityMachin.vue" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/imports/vue/ui/checkQualityMachin.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="257" column="51" lean-forward="false" selection-start-line="257" selection-start-column="51" selection-end-line="257" selection-end-column="51" />
-              <folding>
-                <element signature="n#style#0;n#td#4;n#tr#0;n#slot#0;n#slot#0;n#tbody#0;n#table#0;n#span#0;n#span#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="reportMethod.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/methods/report/reportMethod.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="20" column="34" lean-forward="false" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="34" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="optionsDataReport.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/methods/optionsDataReport.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="64" column="36" lean-forward="false" selection-start-line="64" selection-start-column="36" selection-end-line="64" selection-end-column="36" />
-              <folding>
-                <element signature="e#39#100#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="optionsData.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/methods/optionsData.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="954">
-              <caret line="68" column="23" lean-forward="false" selection-start-line="68" selection-start-column="4" selection-end-line="68" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="format.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/lib/format.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="31" column="5" lean-forward="false" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="checkQualityMachin.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/imports/report/checkQualityMachin/checkQualityMachin.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="11" column="48" lean-forward="false" selection-start-line="11" selection-start-column="48" selection-end-line="11" selection-end-column="48" />
-              <folding>
-                <element signature="e#0#72#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="checkQualityMachin.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/imports/report/checkQualityMachin/checkQualityMachin.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="5" column="11" lean-forward="false" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="class.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/server/methods/class.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="185" column="0" lean-forward="true" selection-start-line="185" selection-start-column="0" selection-end-line="185" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#62#0" expanded="true" />
-                <marker date="1510244270337" expanded="true" signature="17987:18009" ph="..." />
-                <marker date="1510244270337" expanded="true" signature="18059:18081" ph="..." />
-                <marker date="1510244270337" expanded="true" signature="18205:18227" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -150,11 +44,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>.alertify .ajs-footer .ajs-buttons .ajs</find>
-      <find>.alertify .ajs-footer .ajs-buttons .aj</find>
-      <find>.alertify .ajs-footer .ajs-buttons .a</find>
-      <find>.alertify .ajs-footer .ajs-buttons .</find>
-      <find>.alertify .ajs-footer .ajs-buttons</find>
       <find>.ajs-buttons</find>
       <find>journalDocUpdateLine</find>
       <find>depType</find>
@@ -180,6 +69,11 @@
       <find>format</find>
       <find>machinTypeOptions</find>
       <find>cons</find>
+      <find>currencU</find>
+      <find>rol</find>
+      <find>conso</find>
+      <find>#if</find>
+      <find>console.log</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/imports</dir>
@@ -192,15 +86,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/imports/ui/fixAsset/fixAsset.js" />
-        <option value="$PROJECT_DIR$/server/methods/fixAssetExpense.js" />
         <option value="$PROJECT_DIR$/imports/ui/patient/patient.js" />
         <option value="$PROJECT_DIR$/server/methods/report/registerReport.js" />
         <option value="$PROJECT_DIR$/imports/report/journal/journal.html" />
         <option value="$PROJECT_DIR$/imports/report/journal/journal.js" />
         <option value="$PROJECT_DIR$/server/collectionHook/endOfProcess.js" />
         <option value="$PROJECT_DIR$/client/stylesheet/custom.css" />
-        <option value="$PROJECT_DIR$/client/layout.js" />
         <option value="$PROJECT_DIR$/imports/report/profitLost/register.js" />
         <option value="$PROJECT_DIR$/imports/report/profitLost/profitLost.js" />
         <option value="$PROJECT_DIR$/imports/report/profitLost/profitLost.html" />
@@ -227,7 +118,6 @@
         <option value="$PROJECT_DIR$/both/tabular/chartAccount.js" />
         <option value="$PROJECT_DIR$/imports/ui/journal/journalDetail.html" />
         <option value="$PROJECT_DIR$/server/methods/optionsData.js" />
-        <option value="$PROJECT_DIR$/imports/ui/company/company.html" />
         <option value="$PROJECT_DIR$/imports/collection/company.js" />
         <option value="$PROJECT_DIR$/imports/report/upaidByCustomer/unpaidByCustomer.html" />
         <option value="$PROJECT_DIR$/imports/report/upaidByCustomer/unpaidByCustomer.js" />
@@ -237,12 +127,16 @@
         <option value="$PROJECT_DIR$/imports/report/checkQualityMachin/unpaidByCustomer.js" />
         <option value="$PROJECT_DIR$/imports/report/checkQualityMachin/checkQualityMachin.html" />
         <option value="$PROJECT_DIR$/client/route/report.js" />
-        <option value="$PROJECT_DIR$/client/layout.html" />
         <option value="$PROJECT_DIR$/imports/report/checkQualityMachin/checkQualityMachin.js" />
         <option value="$PROJECT_DIR$/server/methods/optionsDataReport.js" />
         <option value="$PROJECT_DIR$/imports/vue/ui/checkQualityMachin.vue" />
         <option value="$PROJECT_DIR$/server/methods/report/reportMethod.js" />
         <option value="$PROJECT_DIR$/server/methods/class.js" />
+        <option value="$PROJECT_DIR$/client/layout.js" />
+        <option value="$PROJECT_DIR$/imports/collection/userSchema.js" />
+        <option value="$PROJECT_DIR$/imports/ui/user/userSetting.js" />
+        <option value="$PROJECT_DIR$/client/layout.html" />
+        <option value="$PROJECT_DIR$/imports/ui/company/company.html" />
       </list>
     </option>
   </component>
@@ -278,14 +172,19 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="cosmetic" type="b2602c69:ProjectViewProjectNode" />
               <item name="cosmetic" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cosmetic" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cosmetic" type="462c0819:PsiDirectoryNode" />
+              <item name=".meteor" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="cosmetic" type="b2602c69:ProjectViewProjectNode" />
@@ -313,6 +212,12 @@
               <item name="cosmetic" type="b2602c69:ProjectViewProjectNode" />
               <item name="cosmetic" type="462c0819:PsiDirectoryNode" />
               <item name="imports" type="462c0819:PsiDirectoryNode" />
+              <item name="collection" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cosmetic" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cosmetic" type="462c0819:PsiDirectoryNode" />
+              <item name="imports" type="462c0819:PsiDirectoryNode" />
               <item name="report" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -321,6 +226,13 @@
               <item name="imports" type="462c0819:PsiDirectoryNode" />
               <item name="report" type="462c0819:PsiDirectoryNode" />
               <item name="checkQualityMachin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cosmetic" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cosmetic" type="462c0819:PsiDirectoryNode" />
+              <item name="imports" type="462c0819:PsiDirectoryNode" />
+              <item name="report" type="462c0819:PsiDirectoryNode" />
+              <item name="journal" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="cosmetic" type="b2602c69:ProjectViewProjectNode" />
@@ -340,7 +252,28 @@
               <item name="cosmetic" type="462c0819:PsiDirectoryNode" />
               <item name="imports" type="462c0819:PsiDirectoryNode" />
               <item name="ui" type="462c0819:PsiDirectoryNode" />
+              <item name="action" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cosmetic" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cosmetic" type="462c0819:PsiDirectoryNode" />
+              <item name="imports" type="462c0819:PsiDirectoryNode" />
+              <item name="ui" type="462c0819:PsiDirectoryNode" />
+              <item name="company" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cosmetic" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cosmetic" type="462c0819:PsiDirectoryNode" />
+              <item name="imports" type="462c0819:PsiDirectoryNode" />
+              <item name="ui" type="462c0819:PsiDirectoryNode" />
               <item name="payment" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cosmetic" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cosmetic" type="462c0819:PsiDirectoryNode" />
+              <item name="imports" type="462c0819:PsiDirectoryNode" />
+              <item name="ui" type="462c0819:PsiDirectoryNode" />
+              <item name="user" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="cosmetic" type="b2602c69:ProjectViewProjectNode" />
@@ -364,14 +297,13 @@
               <item name="cosmetic" type="b2602c69:ProjectViewProjectNode" />
               <item name="cosmetic" type="462c0819:PsiDirectoryNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="methods" type="462c0819:PsiDirectoryNode" />
+              <item name="collectionHook" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="cosmetic" type="b2602c69:ProjectViewProjectNode" />
               <item name="cosmetic" type="462c0819:PsiDirectoryNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
               <item name="methods" type="462c0819:PsiDirectoryNode" />
-              <item name="report" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -678,12 +610,14 @@
       <workItem from="1510191687342" duration="2667000" />
       <workItem from="1510212371535" duration="146000" />
       <workItem from="1510212550852" duration="4765000" />
-      <workItem from="1510242550585" duration="1726000" />
+      <workItem from="1510242550585" duration="1770000" />
+      <workItem from="1510317020253" duration="47000" />
+      <workItem from="1510411844240" duration="5945000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="698699000" />
+    <option name="totallyTimeSpent" value="704735000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -696,46 +630,26 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="277" y="300" width="1920" height="1054" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18541667" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18541667" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972136" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972136" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5324074" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972136" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972136" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972136" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5324074" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
-    <layout-to-restore>
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972136" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972136" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972136" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18754804" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5324074" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -757,62 +671,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/imports/ui/register/registerDetail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="37" lean-forward="false" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/imports/ui/register/register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="825">
-          <caret line="216" column="39" lean-forward="false" selection-start-line="216" selection-start-column="39" selection-end-line="216" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/imports/report/profitLost/profitLost.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="10" lean-forward="true" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/element-ui/lib/transitions/collapse-transition.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/lib/registerHelper.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/lib/render-template.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/stylesheet/print.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/stylesheet/report.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
@@ -852,20 +710,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="7" column="33" lean-forward="true" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/publication.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-864">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/security.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-171">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -968,18 +812,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/imports/ui/company/company.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="138" column="103" lean-forward="false" selection-start-line="138" selection-start-column="103" selection-end-line="138" selection-end-column="103" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/imports/ui/journal/journalDetail.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="6" column="24" lean-forward="true" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1003,14 +839,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/layout.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="218" column="64" lean-forward="true" selection-start-line="218" selection-start-column="64" selection-end-line="218" selection-end-column="64" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1049,9 +877,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="576">
           <caret line="47" column="34" lean-forward="true" selection-start-line="47" selection-start-column="34" selection-end-line="47" selection-end-column="34" />
-          <folding>
-            <element signature="e#93#141#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1063,11 +888,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/lib/format.js">
+    <entry file="file://$PROJECT_DIR$/server/methods/geoData.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="31" column="5" lean-forward="false" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
-          <folding />
+        <state relative-caret-position="189">
+          <caret line="90" column="4" lean-forward="false" selection-start-line="90" selection-start-column="4" selection-end-line="90" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/methods/class.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="180" column="30" lean-forward="true" selection-start-line="180" selection-start-column="30" selection-end-line="180" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#62#0" expanded="true" />
+            <marker date="1510244270337" expanded="true" signature="17987:18009" ph="..." />
+            <marker date="1510244270337" expanded="true" signature="18059:18081" ph="..." />
+            <marker date="1510244270337" expanded="true" signature="18205:18227" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1081,7 +918,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/imports/report/checkQualityMachin/checkQualityMachin.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
+        <state relative-caret-position="198">
           <caret line="11" column="48" lean-forward="false" selection-start-line="11" selection-start-column="48" selection-end-line="11" selection-end-column="48" />
           <folding>
             <element signature="e#0#72#0" expanded="true" />
@@ -1089,16 +926,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/methods/geoData.js">
+    <entry file="file://$PROJECT_DIR$/client/lib/format.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="90" column="4" lean-forward="false" selection-start-line="90" selection-start-column="4" selection-end-line="90" selection-end-column="4" />
+        <state relative-caret-position="432">
+          <caret line="31" column="5" lean-forward="false" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/methods/optionsData.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="954">
+        <state relative-caret-position="855">
           <caret line="68" column="23" lean-forward="false" selection-start-line="68" selection-start-column="4" selection-end-line="68" selection-end-column="23" />
           <folding />
         </state>
@@ -1106,20 +944,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server/methods/optionsDataReport.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
+        <state relative-caret-position="855">
           <caret line="64" column="36" lean-forward="false" selection-start-line="64" selection-start-column="36" selection-end-line="64" selection-end-column="36" />
           <folding>
             <element signature="e#39#100#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/imports/vue/ui/checkQualityMachin.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="257" column="51" lean-forward="false" selection-start-line="257" selection-start-column="51" selection-end-line="257" selection-end-column="51" />
-          <folding>
-            <element signature="n#style#0;n#td#4;n#tr#0;n#slot#0;n#slot#0;n#tbody#0;n#table#0;n#span#0;n#span#0;n#div#0;n#template#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1132,15 +960,114 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/methods/class.js">
+    <entry file="file://$PROJECT_DIR$/imports/vue/ui/checkQualityMachin.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="257" column="51" lean-forward="false" selection-start-line="257" selection-start-column="51" selection-end-line="257" selection-end-column="51" />
+          <folding>
+            <element signature="n#style#0;n#td#4;n#tr#0;n#slot#0;n#slot#0;n#tbody#0;n#table#0;n#span#0;n#span#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.meteor/packages/accounts-base/1.2.14/web.browser/accounts_client.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="542">
+          <caret line="427" column="46" lean-forward="false" selection-start-line="427" selection-start-column="46" selection-end-line="427" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.meteor/packages">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="370">
+          <caret line="30" column="7" lean-forward="true" selection-start-line="30" selection-start-column="7" selection-end-line="30" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/publication.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/security.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="45" column="17" lean-forward="true" selection-start-line="45" selection-start-column="17" selection-end-line="45" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/ui/action/action.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="18" column="38" lean-forward="true" selection-start-line="18" selection-start-column="38" selection-end-line="18" selection-end-column="38" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#template#2;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.meteor/packages/alanning_roles/1.2.16/web.browser/client/uiHelpers.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
-          <caret line="185" column="0" lean-forward="true" selection-start-line="185" selection-start-column="0" selection-end-line="185" selection-end-column="0" />
+          <caret line="44" column="2" lean-forward="false" selection-start-line="44" selection-start-column="2" selection-end-line="44" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/layout.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="317">
+          <caret line="180" column="37" lean-forward="false" selection-start-line="180" selection-start-column="34" selection-end-line="180" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/ui/company/company.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="151" column="0" lean-forward="false" selection-start-line="151" selection-start-column="0" selection-end-line="151" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/layout.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="56" column="34" lean-forward="false" selection-start-line="56" selection-start-column="34" selection-end-line="56" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/collection/userSchema.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="55" column="6" lean-forward="true" selection-start-line="55" selection-start-column="6" selection-end-line="55" selection-end-column="6" />
           <folding>
-            <element signature="e#0#62#0" expanded="true" />
-            <marker date="1510244270337" expanded="true" signature="17987:18009" ph="..." />
-            <marker date="1510244270337" expanded="true" signature="18059:18081" ph="..." />
-            <marker date="1510244270337" expanded="true" signature="18205:18227" ph="..." />
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/ui/user/userSetting.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="111" column="26" lean-forward="true" selection-start-line="111" selection-start-column="26" selection-end-line="111" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/ui/user/userSetting.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="56" lean-forward="true" selection-start-line="9" selection-start-column="56" selection-end-line="9" selection-end-column="56" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
           </folding>
         </state>
       </provider>

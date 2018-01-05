@@ -283,7 +283,7 @@
                 if (this.registerByDateReport.dateRange != "") {
                     params.registerDate = {
                         $gte: moment(this.registerByDateReport.dateRange[0]).startOf("days").toDate(),
-                        $lte: moment(this.registerByDateReport.dateRange[1]).startOf("days").toDate()
+                        $lte: moment(this.registerByDateReport.dateRange[1]).endOf("days").toDate()
                     };
 
                     this.dateRangeHeader = moment(this.registerByDateReport.dateRange[0]).format("DD/MM/YYYY") + "-" + moment(this.registerByDateReport.dateRange[1]).format("DD/MM/YYYY");

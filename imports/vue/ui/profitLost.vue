@@ -293,9 +293,15 @@
                 if (this.profitLostReport.dateRange != "") {
                     params.journalDate = {
                         $gte: moment(this.profitLostReport.dateRange[0]).startOf("days").toDate(),
-                        $lte: moment(this.profitLostReport.dateRange[1]).startOf("days").toDate()
+                        $lte: moment(this.profitLostReport.dateRange[1]).endOf("days").toDate()
                     };
                     this.dateRangeHeader = moment(this.profitLostReport.dateRange[0]).format("DD/MM/YYYY") + "-" + moment(this.profitLostReport.dateRange[1]).format("DD/MM/YYYY");
+                }
+
+                if(this.profitLostReport.exchangeOptionsModel==""){
+                    alertify.error("Exchange Can't Empty!!");
+                    this.loading = false;
+                    return false;
                 }
 
                 Meteor.call('giveMeProfitLostReport', params, this.profitLostReport.exchangeOptionsModel,userId, (err, result) => {

@@ -324,7 +324,7 @@
                 if (this.journalReport.dateRange != "") {
                     params.journalDate = {
                         $gte: moment(this.journalReport.dateRange[0]).startOf("days").toDate(),
-                        $lte: moment(this.journalReport.dateRange[1]).startOf("days").toDate()
+                        $lte: moment(this.journalReport.dateRange[1]).endOf("days").toDate()
                     };
 
                     this.dateRangeHeader = moment(this.journalReport.dateRange[0]).format("DD/MM/YYYY") + "-" + moment(this.journalReport.dateRange[1]).format("DD/MM/YYYY");

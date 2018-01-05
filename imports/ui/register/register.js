@@ -260,8 +260,6 @@ indexTmpl.events({
 
 
             netTotalService.set(self.netTotalService);
-
-
             netTotalMedicine.set(self.netTotalMedicine);
 
 

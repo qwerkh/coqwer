@@ -34,7 +34,7 @@ Co_EndOfProcess.after.insert(function (userId, doc) {
         doc.endDate = doc.endDate;
         doc.rolesArea = doc.rolesArea;
         var selectorExpenseList = [];
-        Co_FixAsset.update({isDep: true}, {$inc: {increment: 1}}, {multi: true});
+        Co_FixAsset.direct.update({isDep: true}, {$inc: {increment: 1}}, {multi: true});
 
         depList.forEach(function (obj) {
             obj.transaction.sort(compareASD);
@@ -111,7 +111,7 @@ Co_EndOfProcess.after.insert(function (userId, doc) {
 
                 obj.transaction = transactionUpdate;
                 obj.numberOfExpense += 1;
-                Co_FixAsset.update({_id: obj._id},
+                Co_FixAsset.direct.update({_id: obj._id},
                     {
                         $set: obj
                     });

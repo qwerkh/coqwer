@@ -10,7 +10,6 @@ Co_Register.before.insert(function (userId, doc) {
     doc.createdAt = moment().toDate();
     doc.createdBy = userId;
 
-
     let prefix = doc.rolesArea + moment().format("YYYY");
     doc._id = GeneralFunction.generatePrefixId(Co_Register, prefix, 6);
 
@@ -37,7 +36,16 @@ Co_Register.after.insert(function (userId, doc) {
         payment.canRemove = true;
         payment.rolesArea = doc.rolesArea;
 
-        Co_Payment.insert(payment);
+
+
+        payment.createdAt = moment().toDate();
+        payment.createdBy = userId;
+
+        let prefix = doc.rolesArea + moment().format("YYYY");
+        payment.paymentDateString = moment(payment.paymentDate).format("DD/MM/YYYY");
+        payment._id = GeneralFunction.generatePrefixId(Co_Payment, prefix, 6);
+
+        Co_Payment.direct.insert(payment);
 
     }
 
@@ -60,13 +68,17 @@ Co_Register.after.update(function (userId, doc) {
     payment.fromRegister = true;
     payment.canRemove = true;
 
+    payment.createdAt = moment().toDate();
+    payment.createdBy = userId;
 
-    let updatePayment = Co_Payment.update({registerId: doc._id}, {$set: payment});
+    payment.paymentDateString = moment(payment.paymentDate).format("DD/MM/YYYY");
+
+    let updatePayment = Co_Payment.direct.update({registerId: doc._id}, {$set: payment});
 
     if (doc.paidAmountUSD > 0 || doc.paidAmountKHR > 0 || doc.paidAmountTHB > 0) {
         payment.registerId = doc._id;
         if (updatePayment == 0) {
-            Co_Payment.insert(payment);
+            Co_Payment.direct.insert(payment);
         }
     }
 

@@ -5,7 +5,7 @@ import {VW_Patient} from '../../imports/collection/patient';
 
 export const PatientTabular = new Tabular.Table({
     name: "co.patient",
-    collection: VW_Patient,
+    collection: Co_Patient,
     order: ['0', 'desc'],
 
     columnDefs: [
@@ -31,7 +31,9 @@ export const PatientTabular = new Tabular.Table({
             data: "dobString", title: 'DOB'
 
         }, {
-            data: "age", title: 'Age'
+            data: "dob", title: 'Age', render: function (val, type, doc) {
+                return moment().diff(val, 'years');
+            }
 
         },
         /*{

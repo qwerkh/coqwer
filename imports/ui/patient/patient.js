@@ -16,17 +16,17 @@ let indexTmpl = Template.co_patient,
 
 
 indexTmpl.helpers({
-    dataTable () {
+    dataTable() {
         return PatientTabular;
     },
-    selector(){
+    selector() {
         return {rolesArea: Session.get("area")};
     }
 
 })
 
 addTmpl.helpers({
-    collection(){
+    collection() {
         return Co_Patient;
     }
 })
@@ -42,7 +42,7 @@ editTmpl.helpers({
         let instance = Template.instance();
         return instance.subUserReady.get()
     },
-    collection(){
+    collection() {
         return Co_Patient;
     }
 })
@@ -51,11 +51,11 @@ editTmpl.helpers({
 //event
 
 indexTmpl.events({
-    'click .add'(){
+    'click .add'() {
         FlowRouter.go('/co-data/patient/add');
     },
 
-    'click .remove'(e){
+    'click .remove'(e) {
         var self = this;
         alertify.confirm(
             'Patient',
@@ -74,11 +74,11 @@ indexTmpl.events({
         )
 
     },
-    'click .edit' (event, instance) {
+    'click .edit'(event, instance) {
         let self = this;
         FlowRouter.go(`/co-data/patient/${self._id}/edit`);
     },
-    'click .show'(event, instance){
+    'click .show'(event, instance) {
         let self = this;
         FlowRouter.go(`/co-data/patient/${self._id}/show`);
     },
@@ -94,13 +94,13 @@ indexTmpl.events({
 
 
 addTmpl.events({
-    'click .cancel'(e, t){
+    'click .cancel'(e, t) {
         FlowRouter.go(`/co-data/patient`);
     }
 })
 
 editTmpl.events({
-    'click .cancel'(e, t){
+    'click .cancel'(e, t) {
         FlowRouter.go(`/co-data/patient`);
     }
 });
@@ -138,11 +138,13 @@ showPatientDetail.onRendered(function () {
 
 
 showPatientDetail.helpers({
-    patientDoc(){
+    patientDoc() {
         let id = FlowRouter.getParam('patientId');
-        return Co_Patient.findOne({_id: id});
+        let paymentDoc = Co_Patient.findOne({_id: id});
+        paymentDoc.age = moment().diff(paymentDoc.dob, 'years');
+        return paymentDoc;
     },
-    registerList(){
+    registerList() {
         let id = FlowRouter.getParam('patientId');
         let data = Co_Register.find({patientId: id}, {sort: {registerDate: -1}}).fetch();
         data.forEach(function (obj) {
@@ -172,7 +174,12 @@ AutoForm.hooks({
     co_patientAdd: {
         before: {
             insert: function (doc) {
-                doc.dob=moment(doc.dob).startOf("day").add(12,"hour").toDate();
+                debugger;
+                if (doc.dob) {
+                    doc.dob = moment(doc.dob).startOf("day").add(12, "hour").toDate();
+                } else {
+                    doc.dob = moment(doc.dob).startOf("day").add(12, "hour").add(-doc.age, "year").toDate();
+                }
                 doc.rolesArea = Session.get('area');
                 return doc;
             }
@@ -192,9 +199,15 @@ AutoForm.hooks({
         }
     },
     co_patientEdit: {
-        before:{
-            update:function (doc) {
-                doc.$set.dob=moment(doc.$set.dob).startOf("day").add(12,"hour").toDate();
+        before: {
+            update: function (doc) {
+                debugger;
+                if (doc.$set.dob) {
+                    doc.$set.dob = moment(doc.$set.dob).startOf("day").add(12, "hour").toDate();
+                } else {
+                    doc.$set.dob = moment(doc.$set.dob).startOf("day").add(12, "hour").add(-doc.$set.age, "year").toDate();
+                }
+                delete doc.$unset.dob;
                 return doc;
             }
         },

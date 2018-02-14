@@ -59,7 +59,6 @@
                                     <td> Product Name</td>
                                     <td> Qty</td>
                                     <td> Price</td>
-                                    <td> Dis(%)</td>
                                     <td> Total</td>
                                 </tr>
 
@@ -70,15 +69,14 @@
                                     </tr>
                                     {{#each services}}
                                         <tr style="height: 20px; padding: 10px;">
-                                            <td align="center"></td>
+                                            <td align="center">{{no @index}}</td>
                                             <td align="left" style="padding-left: 5px;">
                                                 {{serviceName}}
                                             </td>
                                             <td align="right" style="padding-right: 5px;">{{qty}}</td>
 
-                                            <td align="right" style="padding-right: 5px;">{{price}}</td>
-                                            <td align="right" style="padding-right: 5px;">{{amount}}</td>
-                                            <td align="right" style="padding-right: 5px;"></td>
+                                            <td align="right" style="padding-right: 5px;">{{formatNumber price}}</td>
+                                            <td align="right" style="padding-right: 5px;">{{formatNumber amount}}</td>
                                         </tr>
                                     {{/each}}
                                 {{/if}}
@@ -89,15 +87,14 @@
                                     </tr>
                                     {{#each medicines}}
                                         <tr style="height: 20px; padding: 10px;">
-                                            <td align="center"></td>
+                                            <td align="center">{{no @index}}</td>
                                             <td align="left" style="padding-left: 5px;">
                                                 {{medicineName}}
                                             </td>
                                             <td align="right" style="padding-right: 5px;">{{qty}}</td>
 
-                                            <td align="right" style="padding-right: 5px;">{{price}}</td>
-                                            <td align="right" style="padding-right: 5px;">{{amount}}</td>
-                                            <td align="right" style="padding-right: 5px;"></td>
+                                            <td align="right" style="padding-right: 5px;">{{formatNumber price}}</td>
+                                            <td align="right" style="padding-right: 5px;">{{formatNumber amount}}</td>
                                         </tr>
                                     {{/each}}
                                 {{/if}}
@@ -112,20 +109,37 @@
                                      <td><b></b> $</td>
                                  </tr>-->
                                 <tr align="right" style=" height: 25px; font-size: 14px;">
-                                    <td align="right"><b>Discount Service{{getDiscountType  discountServiceType}}</b>:
+                                    <td align="right"><b>Discount Service ({{getDiscountType  discountServiceType}})</b>:
                                     </td>
-                                    <td align="right"><b>{{discountService}}</b></td>
+                                    <td align="right"><b>{{formatNumber discountService}} {{getDiscountType
+                                            discountServiceType}}</b></td>
 
                                 </tr>
                                 <tr align="right" style=" height: 25px; font-size: 14px;">
-                                    <td align="right"><b>Discount Medicine{{getDiscountType discountMedicineType}}</b>:
+                                    <td align="right"><b>Discount Medicine ({{getDiscountType discountMedicineType}}
+                                        )</b>:
                                     </td>
-                                    <td align="right"><b>{{discountMedicine}}</b></td>
+                                    <td align="right"><b>{{formatNumber discountMedicine}} {{getDiscountType
+                                            discountMedicineType}}</b></td>
 
                                 </tr>
                                 <tr align="right" style="height: 25px; font-size: 14px;">
                                     <td><b>Grand Total</b>:</td>
-                                    <td><b>{{netTotal}}</b>$</td>
+                                    <td><b>{{formatNumber netTotal}}</b>{{getSymbolBaseCurrency}}</td>
+                                </tr>
+                                {{#if checkBaseCurrency}}
+                                    <tr align="right" style="height: 25px; font-size: 14px;">
+                                        <td><b>Grand Total (៛)</b>:</td>
+                                        <td><b>{{formatNumber netTotalRiel}}</b>៛</td>
+                                    </tr>
+                                {{/if}}
+                                <tr align="right" style="height: 25px; font-size: 14px;">
+                                    <td><b>Paid</b>:</td>
+                                    <td><b>{{formatNumber totalPaid}}</b>{{getSymbolBaseCurrency}}</td>
+                                </tr>
+                                <tr align="right" style="height: 25px; font-size: 14px;">
+                                    <td><b>Balance</b>:</td>
+                                    <td><b>{{formatNumber balance}}</b>{{getSymbolBaseCurrency}}</td>
                                 </tr>
                                 <!--{{#unless invoiceTypeSaleOrder sale.invoiceType}}
                                     {{#if hasPayment sale.paymentObj}}
@@ -169,10 +183,9 @@
                             </table>
 
                         {{/with}}
-                        {{#if payment}}
+                        <!--{{#if payment}}
                             {{#with payment}}
                                 <table width="100%" style="font-size: 16px;">
-
                                     <tr align="right" style=" height: 25px; font-size: 14px;">
                                         <td align="right">Paid USD:</td>
                                         <td align="right"><b>{{paidAmountUSD}}</b></td>
@@ -192,37 +205,36 @@
 
                                 </table>
                             {{/with}}
-                        {{/if}}
-                        <!--  <div style="height: 7px;"></div>
-                          <div class="row">
-                              <div class="col-md-12">
-                                  <div style="height: 7px;"></div>
-                                  <table width="100%" style="font-size: 16px;">
-                                      <tr align="center">
-                                          <td width="33%" style="font-size: 14px;">
-                                              <b>Buyer</b>
-                                          </td>
-                                          <td width="33%" style="font-size: 14px;">
-                                              <b>Delivery man</b>
-                                          </td>
-                                          <td width="33%" style="font-size: 14px;">
-                                              <b>Seller</b>
-                                          </td>
-                                      </tr>
-                                      <tr align="center">
-                                          <td width="30%" style="height: 200px;">
-                                              ___________________
-                                          </td>
-                                          <td width="30%">
-                                              ___________________
-                                          </td>
-                                          <td width="33%">
-                                              ___________________
-                                          </td>
-                                      </tr>
-                                  </table>
-                              </div>
-                          </div>-->
+                        {{/if}}-->
+                        <div style="height: 7px;"></div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div style="height: 7px;"></div>
+                                <table width="100%" style="font-size: 16px;">
+                                    <tr align="center">
+                                        <td width="33%" style="font-size: 14px;">
+                                            <b>អ្នកបង់ប្រាក់/Payer</b>
+                                        </td>
+                                        <td width="33%" style="font-size: 14px;">
+
+                                        </td>
+                                        <td width="33%" style="font-size: 14px;">
+                                            <b>បេឡា/Cashier</b>
+                                        </td>
+                                    </tr>
+                                    <tr align="center">
+                                        <td width="30%" style="height: 200px;">
+                                            ___________________
+                                        </td>
+                                        <td width="30%">
+                                        </td>
+                                        <td width="33%">
+                                            ___________________
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
 
                     </div>
                 </div>

@@ -1,4 +1,5 @@
 import './a4.html';
+import {Co_Company} from "../../collection/company";
 
 let indexTmpl = Template.co_printA4;
 
@@ -24,24 +25,61 @@ indexTmpl.onRendered(function () {
 });
 
 indexTmpl.helpers({
-    formatDate(value, formatString){
+    formatDate(value, formatString) {
         debugger;
         return moment(value).format(formatString);
     },
-    data(){
+    data() {
         let instance = Template.instance();
         return instance.printData.get();
     },
-    no(index){
+    no(index) {
         return index + 1;
     },
-    getDiscountType(discountType){
-        return discountType == "Percent" ? "(%)" : "($)";
+    getDiscountType(discountType) {
+        let companyDoc = Co_Company.findOne({});
+        let currencySymbol = "";
+        switch (companyDoc.baseCurrency) {
+            case "KHR":
+                currencySymbol = "៛";
+                break;
+            case "USD":
+                currencySymbol = "$";
+                break;
+            case "THB":
+                currencySymbol = "B";
+                break;
+        }
+
+        return discountType == "Percent" ? "%" : currencySymbol;
+    },
+    getSymbolBaseCurrency() {
+        let companyDoc = Co_Company.findOne({});
+        let currencySymbol = "";
+        switch (companyDoc.baseCurrency) {
+            case "KHR":
+                currencySymbol = "៛";
+                break;
+            case "USD":
+                currencySymbol = "$";
+                break;
+            case "THB":
+                currencySymbol = "B";
+                break;
+        }
+        return currencySymbol;
+    },
+    checkBaseCurrency() {
+        let companyDoc = Co_Company.findOne({});
+        if (companyDoc.baseCurrency == "KHR") {
+            return false;
+        }
+        return true;
     }
 
 });
 indexTmpl.events({
-    'click .printInvoice'(event, instance){
+    'click .printInvoice'(event, instance) {
         window.print();
     }
 });

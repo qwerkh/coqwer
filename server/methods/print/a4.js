@@ -2,9 +2,11 @@ import {Co_Register} from '../../../imports/collection/register';
 import {Co_Company} from '../../../imports/collection/company';
 import {Co_Payment} from '../../../imports/collection/payment.js';
 import {Co_Patient} from '../../../imports/collection/patient.js';
+import {Co_Exchange} from '../../../imports/collection/exchange';
+import {GeneralFunction} from "../../../imports/api/methods/generalFunction";
 
 Meteor.methods({
-    printA4({invoiceId}){
+    printA4({invoiceId}) {
         let company = Co_Company.findOne({});
         let register = Co_Register.findOne({
             $or: [
@@ -12,12 +14,14 @@ Meteor.methods({
                 {printId: invoiceId}
             ]
         });
-        register.patient=Co_Patient.findOne({_id: register.patientId});
+        register.patient = Co_Patient.findOne({_id: register.patientId});
+        register.totalPaid = register.netTotal - register.balance;
         let payment = Co_Payment.findOne({registerId: register._id});
-        return {company: company, register: register, payment: payment}
-
+        let exchangeDoc = Co_Exchange.findOne({exDate: {$lte: moment(register.registerDate).endOf("days").toDate()}}, {sort: {exDate: -1}});
+        register.netTotalRiel = GeneralFunction.exchange(company.baseCurrency, "KHR", register.netTotal);
+        return {company: company, register: register, payment: payment};
     },
-    printMini({invoiceId}){
+    printMini({invoiceId}) {
         let invoice = Invoices.aggregate([
             {
                 $match: {

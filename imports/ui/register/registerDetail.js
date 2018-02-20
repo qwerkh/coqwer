@@ -28,26 +28,26 @@ registerServiceTmpl.onCreated(function () {
     })
 })
 registerServiceTmpl.helpers({
-    schemaService(){
+    schemaService() {
         return Co_Register.serviceForm;
     },
-    serviceOption(){
+    serviceOption() {
         reactTotalService();
         return serviceOption.get();
     },
-    serviceList(){
+    serviceList() {
         return serviceTem.find().fetch();
     },
-    totalService(){
+    totalService() {
         return totalService.get();
     },
-    netTotalService(){
+    netTotalService() {
         return netTotalService.get();
     },
-    discountServiceType(){
+    discountServiceType() {
         return discountTypeService.get();
     },
-    discountService(){
+    discountService() {
         return discountService.get();
     }
 })
@@ -61,7 +61,7 @@ registerServiceTmpl.onRendered(function () {
 
 
 registerServiceTmpl.events({
-    'change [name="serviceId"]'(e, t){
+    'change [name="serviceId"]'(e, t) {
         let serviceId = e.currentTarget.value;
         if (serviceId != "") {
             Meteor.call("co_serviceById", serviceId, Session.get("area"), function (err, result) {
@@ -85,7 +85,7 @@ registerServiceTmpl.events({
             })
         }
     },
-    'keyup [name="price"]'(e, t){
+    'keyup [name="price"]'(e, t) {
         let serviceId = $(e.currentTarget).attr("data_id");
         let serviceDoc = serviceTem.findOne({_id: serviceId});
         if (serviceDoc) {
@@ -99,7 +99,7 @@ registerServiceTmpl.events({
         }
 
     },
-    'keyup [name="qty"]'(e, t){
+    'keyup [name="qty"]'(e, t) {
         let serviceId = $(e.currentTarget).attr("data_id");
         let serviceDoc = serviceTem.findOne({_id: serviceId});
         if (serviceDoc) {
@@ -113,7 +113,7 @@ registerServiceTmpl.events({
         }
 
     },
-    'click .delete-service'(e, t){
+    'click .delete-service'(e, t) {
         alertify.confirm("Service", "Are You Sure?", () => {
             serviceTem.remove(this._id, (err, result) => {
                 reactTotalService();
@@ -127,16 +127,16 @@ registerServiceTmpl.events({
         }, null);
 
     },
-    'change [name="discountServiceType"]'(e, t){
+    'change [name="discountServiceType"]'(e, t) {
         discountTypeService.set(e.currentTarget.value);
         reactTotalService();
     },
-    'keyup [name="discountService"]'(e, t){
+    'keyup [name="discountService"]'(e, t) {
         discountService.set(e.currentTarget.value);
         reactTotalService();
     },
 
-    'change [name="isRetailPrice"]'(e, t){
+    'change [name="isRetailPrice"]'(e, t) {
         let isRetail = $(e.currentTarget).prop("checked");
         let serviceId = $(e.currentTarget).attr("data_id");
         Meteor.call("co_serviceById", serviceId, Session.get("area"), function (err, result) {
@@ -169,26 +169,26 @@ registerServiceTmpl.events({
 
 
 registerMedicineTmpl.helpers({
-    medicineOption(){
+    medicineOption() {
         reactTotalMedicine();
         return medicineOption.get();
     },
-    medicineList(){
+    medicineList() {
         return medicineTem.find().fetch();
     },
-    totalMedicine(){
+    totalMedicine() {
         return totalMedicine.get();
     },
-    netTotalMedicine(){
+    netTotalMedicine() {
         return netTotalMedicine.get();
     },
-    schemaMedicine(){
+    schemaMedicine() {
         return Co_Register.medicineForm;
     },
-    discountMedicineType(){
+    discountMedicineType() {
         return discountTypeMedicine.get();
     },
-    discountMedicine(){
+    discountMedicine() {
         return discountMedicine.get();
     }
 })
@@ -212,7 +212,7 @@ registerMedicineTmpl.onCreated(function () {
 })
 
 registerMedicineTmpl.events({
-    'change [name="medicineId"]'(e, t){
+    'change [name="medicineId"]'(e, t) {
         let medicineId = e.currentTarget.value;
         if (medicineId != "") {
             Meteor.call("co_medicineById", medicineId, function (err, result) {
@@ -237,7 +237,7 @@ registerMedicineTmpl.events({
 
 
     },
-    'keyup [name="price"]'(e, t){
+    'keyup [name="price"]'(e, t) {
         let medicineId = $(e.currentTarget).attr("data_id");
         let medicineDoc = medicineTem.findOne({_id: medicineId});
         if (medicineDoc) {
@@ -253,7 +253,7 @@ registerMedicineTmpl.events({
         }
 
     },
-    'keyup [name="qty"]'(e, t){
+    'keyup [name="qty"]'(e, t) {
         let medicineId = $(e.currentTarget).attr("data_id");
         let medicineDoc = medicineTem.findOne({_id: medicineId});
         if (medicineDoc) {
@@ -268,7 +268,7 @@ registerMedicineTmpl.events({
             }, 500)
         }
     },
-    'click .delete-medicine'(e, t){
+    'click .delete-medicine'(e, t) {
 
         alertify.confirm("Medicine", "Are You Sure?", () => {
             medicineTem.remove(this._id, (err) => {
@@ -281,16 +281,16 @@ registerMedicineTmpl.events({
             });
         }, null);
     },
-    'change [name="discountMedicineType"]'(e, t){
+    'change [name="discountMedicineType"]'(e, t) {
         discountTypeMedicine.set(e.currentTarget.value);
         reactTotalMedicine();
     },
-    'keyup [name="discountMedicine"]'(e, t){
+    'keyup [name="discountMedicine"]'(e, t) {
         discountMedicine.set(e.currentTarget.value);
         reactTotalMedicine();
     },
 
-    'change [name="isRetailPrice"]'(e, t){
+    'change [name="isRetailPrice"]'(e, t) {
         let isRetail = $(e.currentTarget).prop("checked");
         let medicineId = $(e.currentTarget).attr("data_id");
         Meteor.call("co_medicineById", medicineId, Session.get("area"), function (err, result) {
@@ -339,11 +339,20 @@ let reactTotalService = function () {
     totalService.set(0);
     amountDiscountService.set(0);
     netTotalService.set(0);
+    // machinOption.set([]);
 
     if (serviceList.length > 0) {
         serviceList.forEach(function (obj) {
             total += obj.amount;
+            Meteor.call("co_machinOptionByIdList", Session.get("area"), obj.machinId, function (err, result) {
+                if (result) {
+                    let machinData = machinOption.get();
+                    machinData.push(...result);
+                    machinOption.set(machinData);
+                }
+            })
         })
+
 
         totalService.set(total);
 
@@ -382,6 +391,6 @@ let reactTotalMedicine = function () {
             netTotal = total - (total * discountMedicine.get() / 100);
             amountDiscountMedicine.set(total * discountMedicine.get() / 100);
         }
-        netTotalMedicine.set(math.round(netTotal,3));
+        netTotalMedicine.set(math.round(netTotal, 3));
     }
 }

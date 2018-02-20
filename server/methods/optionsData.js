@@ -223,6 +223,19 @@ Meteor.methods({
             })
         })
         return list;
-    }
+    },
+
+    co_machinOptionByIdList(rolesArea, machinList) {
+        let selector = {};
+        if (rolesArea) {
+            selector.rolesArea = rolesArea;
+        }
+        selector._id = {$in: machinList};
+        let list = [];
+        Co_Machin.find(selector).fetch().forEach(function (obj) {
+            list.push({label: obj.name, value: obj._id});
+        })
+        return list;
+    },
 
 })

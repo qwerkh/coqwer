@@ -11,7 +11,7 @@ import {Co_MedicineType} from '../../imports/collection/medicineType'
 import {Co_ServiceType} from '../../imports/collection/serviceType'
 
 Meteor.methods({
-    co_serviceById(id, rolesArea){
+    co_serviceById(id, rolesArea) {
         let serviceDoc = Co_Service.findOne({_id: id});
         let machinId = [];
         if (serviceDoc) {
@@ -31,10 +31,10 @@ Meteor.methods({
         return serviceDoc;
 
     },
-    co_medicineById(id){
+    co_medicineById(id) {
         return Co_Medicine.findOne({_id: id});
     },
-    co_patientById(id){
+    co_patientById(id) {
         return Co_Patient.findOne({_id: id});
     }
 })

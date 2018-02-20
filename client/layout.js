@@ -54,7 +54,6 @@ Template.navbar.events({
 
 Template.navbar.helpers({
     getAreaName() {
-        console.log(Meteor.user());
         return Session.get('areaName');
     }
 });

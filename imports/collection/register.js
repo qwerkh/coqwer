@@ -1,4 +1,5 @@
 import './image';
+
 export const Co_Register = new Meteor.Collection("co_register");
 export const VW_Register = new Meteor.Collection("vw_register");
 
@@ -296,11 +297,11 @@ Co_Register.schema = new SimpleSchema({
                 },*/
                 keepLabel: true
             }
-                /*afFieldInput: {
-                    type: 'summernote',
-                    class: 'editor', // optional
-                    // settings: // summernote options goes here
-                }*/
+            /*afFieldInput: {
+                type: 'summernote',
+                class: 'editor', // optional
+                // settings: // summernote options goes here
+            }*/
 
         }
     }

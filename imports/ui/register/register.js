@@ -16,6 +16,7 @@ let indexTmpl = Template.co_register,
 
 
 let patientOption = new ReactiveVar([]);
+machinOption = new ReactiveVar([]);
 let serviceOption = new ReactiveVar([]);
 
 discountTypeService = new ReactiveVar("");
@@ -41,10 +42,10 @@ paidAmount = new ReactiveObj({
 
 
 indexTmpl.helpers({
-    dataTable () {
+    dataTable() {
         return RegisterTabular;
     },
-    selector(){
+    selector() {
         if (FlowRouter.getParam('patientId')) {
             return {rolesArea: Session.get("area"), patientId: FlowRouter.getParam('patientId')};
         }
@@ -53,25 +54,29 @@ indexTmpl.helpers({
 })
 
 addTmpl.helpers({
-    collection(){
+    collection() {
         return Co_Register;
     },
-    patientOption(){
+    patientOption() {
         return patientOption.get();
     },
-    serviceOption(){
+    machinOption() {
+        debugger;
+        return machinOption.get();
+    },
+    serviceOption() {
         return serviceOption.get();
     },
-    netTotal(){
+    netTotal() {
         return netTotalService.get() + netTotalMedicine.get();
     },
-    result(){
+    result() {
         let result = {};
         result.netAmount = numeral(netTotalService.get() + netTotalMedicine.get()).format("0,00.000");
         result.netDiscount = isNaN(parseFloat(amountDiscountService.get()) + parseFloat(amountDiscountMedicine.get())) ? 0 : parseFloat(amountDiscountService.get()) + parseFloat(amountDiscountMedicine.get());
         return result;
     },
-    returnAmount(){
+    returnAmount() {
         let returns = {};
         returns.returnAmountDollar = GeneralFunction.exchange(Session.get("baseCurrency"), "USD", returnAmount.get());
         returns.returnAmountRiel = GeneralFunction.exchange(Session.get("baseCurrency"), "KHR", returnAmount.get());
@@ -79,7 +84,7 @@ addTmpl.helpers({
 
         return returns;
     },
-    remainAmount(){
+    remainAmount() {
         let remain = {};
 
         remainAmount.set(netTotalService.get() + netTotalMedicine.get() - GeneralFunction.exchange("THB", Session.get("baseCurrency"), paidAmount.get("paidAmountBaht")) - GeneralFunction.exchange("USD", Session.get("baseCurrency"), paidAmount.get("paidAmountDollar")) - GeneralFunction.exchange("KHR", Session.get("baseCurrency"), paidAmount.get("paidAmountRiel")));
@@ -101,10 +106,10 @@ addTmpl.helpers({
 
         return remain;
     },
-    balance(){
+    balance() {
         return remainAmount.get();
     },
-    voucherId(){
+    voucherId() {
         return voucherId.get();
     }
 })
@@ -134,25 +139,28 @@ editTmpl.helpers({
         let instance = Template.instance();
         return instance.subUserReady.get()
     },
-    collection(){
+    collection() {
         return Co_Register;
     },
-    patientOption(){
+    patientOption() {
         return patientOption.get();
     },
-    serviceOption(){
+    machinOption() {
+        return machinOption.get();
+    },
+    serviceOption() {
         return serviceOption.get();
     },
-    netTotal(){
+    netTotal() {
         return netTotalService.get() + netTotalMedicine.get();
     },
-    result(){
+    result() {
         let result = {};
         result.netAmount = numeral(netTotalService.get() + netTotalMedicine.get()).format("0,00.000");
         result.netDiscount = isNaN(parseFloat(amountDiscountService.get()) + parseFloat(amountDiscountMedicine.get())) ? 0 : parseFloat(amountDiscountService.get()) + parseFloat(amountDiscountMedicine.get());
         return result;
     },
-    returnAmount(){
+    returnAmount() {
         let returns = {};
         returns.returnAmountDollar = GeneralFunction.exchange(Session.get("baseCurrency"), "USD", returnAmount.get());
         returns.returnAmountRiel = GeneralFunction.exchange(Session.get("baseCurrency"), "KHR", returnAmount.get());
@@ -160,7 +168,7 @@ editTmpl.helpers({
 
         return returns;
     },
-    remainAmount(){
+    remainAmount() {
         let remain = {};
 
         remainAmount.set(netTotalService.get() + netTotalMedicine.get() - GeneralFunction.exchange("THB", Session.get("baseCurrency"), paidAmount.get("paidAmountBaht")) - GeneralFunction.exchange("USD", Session.get("baseCurrency"), paidAmount.get("paidAmountDollar")) - GeneralFunction.exchange("KHR", Session.get("baseCurrency"), paidAmount.get("paidAmountRiel")));
@@ -182,7 +190,7 @@ editTmpl.helpers({
 
         return remain;
     },
-    balance(){
+    balance() {
         return remainAmount.get();
     }
 })
@@ -191,7 +199,7 @@ editTmpl.helpers({
 //event
 
 indexTmpl.events({
-    'click .add'(){
+    'click .add'() {
         serviceTem.remove({});
         medicineTem.remove({});
 
@@ -221,7 +229,7 @@ indexTmpl.events({
         // FlowRouter.go('/co-data/register/add');
     },
 
-    'click .remove'(e){
+    'click .remove'(e) {
         let self = this;
         if (self.paymentNumber <= 1) {
             alertify.confirm(
@@ -244,7 +252,7 @@ indexTmpl.events({
             alertify.error("Can't Remove");
         }
     },
-    'click .edit' (event, instance) {
+    'click .edit'(event, instance) {
         debugger;
         let self = this;
 
@@ -289,7 +297,7 @@ indexTmpl.events({
             alertify.error("Can't Update");
         }
     },
-    'click .show'(event, instance){
+    'click .show'(event, instance) {
         let self = this;
         FlowRouter.go(`/co-data/register/${self._id}/show`);
     }
@@ -298,60 +306,60 @@ indexTmpl.events({
 
 
 addTmpl.events({
-    'click #save-print'(e, t){
+    'click #save-print'(e, t) {
         FlowRouter.query.set({p: 'true'});
     },
-    'click .cancel'(e, t){
+    'click .cancel'(e, t) {
         FlowRouter.go(`/co-data/register`);
     },
-    'keyup [name="paidAmountUSD"]'(e, t){
+    'keyup [name="paidAmountUSD"]'(e, t) {
         if (e.currentTarget.value == "") {
             paidAmount.set("paidAmountDollar", 0);
         } else {
             paidAmount.set("paidAmountDollar", parseFloat(e.currentTarget.value));
         }
     },
-    'keyup [name="paidAmountKHR"]'(e, t){
+    'keyup [name="paidAmountKHR"]'(e, t) {
         if (e.currentTarget.value == "") {
             paidAmount.set("paidAmountRiel", 0);
         } else {
             paidAmount.set("paidAmountRiel", parseFloat(e.currentTarget.value));
         }
     },
-    'keyup [name="paidAmountTHB"]'(e, t){
+    'keyup [name="paidAmountTHB"]'(e, t) {
         if (e.currentTarget.value == "") {
             paidAmount.set("paidAmountBaht", 0);
         } else {
             paidAmount.set("paidAmountBaht", parseFloat(e.currentTarget.value));
         }
     },
-    'change [name="registerDate"]'(e, t){
+    'change [name="registerDate"]'(e, t) {
         Session.set("registerDate", e.currentTarget.value);
     }
 })
 
 editTmpl.events({
-    'click #save-print'(e, t){
+    'click #save-print'(e, t) {
         FlowRouter.query.set({p: 'true'});
     },
-    'click .cancel'(e, t){
+    'click .cancel'(e, t) {
         FlowRouter.go(`/co-data/register`);
     },
-    'keyup [name="paidAmountUSD"]'(e, t){
+    'keyup [name="paidAmountUSD"]'(e, t) {
         if (e.currentTarget.value == "") {
             paidAmount.set("paidAmountDollar", 0);
         } else {
             paidAmount.set("paidAmountDollar", parseFloat(e.currentTarget.value));
         }
     },
-    'keyup [name="paidAmountKHR"]'(e, t){
+    'keyup [name="paidAmountKHR"]'(e, t) {
         if (e.currentTarget.value == "") {
             paidAmount.set("paidAmountRiel", 0);
         } else {
             paidAmount.set("paidAmountRiel", parseFloat(e.currentTarget.value));
         }
     },
-    'keyup [name="paidAmountTHB"]'(e, t){
+    'keyup [name="paidAmountTHB"]'(e, t) {
         if (e.currentTarget.value == "") {
             paidAmount.set("paidAmountBaht", 0);
         } else {
@@ -481,7 +489,7 @@ AutoForm.hooks({
                 if (doc.voucherId != "" || doc.voucherId != "0") {
                     doc.voucherId = doc.voucherId.padStart(6, "0");
                 }
-                doc.registerDate=moment(doc.registerDate).startOf("day").add(12,"hour").toDate();
+                doc.registerDate = moment(doc.registerDate).startOf("day").add(12, "hour").toDate();
                 let services = [];
                 let medicines = [];
                 serviceTem.find().fetch().forEach(function (obj) {
@@ -574,7 +582,7 @@ AutoForm.hooks({
 
                 doc.$set.services = services;
                 doc.$set.medicines = medicines;
-                doc.$set.registerDate=moment(doc.$set.registerDate).startOf("day").add(12,"hour").toDate();
+                doc.$set.registerDate = moment(doc.$set.registerDate).startOf("day").add(12, "hour").toDate();
 
                 if (doc.$set.balance <= 0) {
                     doc.$set.status = "Complete";

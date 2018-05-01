@@ -343,7 +343,7 @@ let reactTotalService = function () {
 
     if (serviceList.length > 0) {
         serviceList.forEach(function (obj) {
-            total += obj.amount;
+            total += math.round(obj.amount, 3);
             Meteor.call("co_machinOptionByIdList", Session.get("area"), obj.machinId, function (err, result) {
                 if (result) {
                     let machinData = machinOption.get();
@@ -379,7 +379,7 @@ let reactTotalMedicine = function () {
 
     if (medicineList.length > 0) {
         medicineList.forEach(function (obj) {
-            total += obj.amount;
+            total += math.round(obj.amount, 3);
         })
 
         totalMedicine.set(total);

@@ -20,7 +20,6 @@ Meteor.methods({
         let exchangeDoc = Co_Exchange.findOne({exDate: {$lte: moment(register.registerDate).endOf("days").toDate()}}, {sort: {exDate: -1}});
         register.netTotalRiel = GeneralFunction.exchange(company.baseCurrency, "KHR", register.netTotal);
         register.ageCal = moment(register.registerDate).diff(register.patient.dob, "year");
-        console.log(register.ageCal);
         return {company: company, register: register, payment: payment};
     },
     printMini({invoiceId}) {

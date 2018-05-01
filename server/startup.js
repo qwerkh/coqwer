@@ -17,7 +17,19 @@ Meteor.startup(function () {
             email: '',
             website: '',
             baseCurrency: "USD",
-            language: "en"
+            language: "en",
+            jan: 50,
+            feb: 50,
+            mar: 50,
+            apr: 50,
+            may: 50,
+            jun: 50,
+            jul: 50,
+            aug: 50,
+            sep: 50,
+            oct: 50,
+            nov: 50,
+            dec: 50
         };
         Co_Company.insert(data);
     }

@@ -253,7 +253,6 @@ indexTmpl.events({
         }
     },
     'click .edit'(event, instance) {
-        debugger;
         let self = this;
 
         if (self.paymentNumber <= 1) {

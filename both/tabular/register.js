@@ -1,5 +1,6 @@
 import {Template} from 'meteor/templating';
 import {Meteor} from 'meteor/meteor';
+
 Meteor.isClient && require('../../imports/ui/action/action');
 
 import {Co_Register} from '../../imports/collection/register';

@@ -4,7 +4,6 @@ import {ReactiveVar} from 'meteor/reactive-var';
 
 import {Co_Register} from '../../collection/register';
 import {GeneralFunction} from '../../api/methods/generalFunction';
-import {Co_Company} from '../../collection/company';
 import {RegisterTabular} from '../../../both/tabular/register';
 
 import './registerDetail';
@@ -87,7 +86,7 @@ addTmpl.helpers({
     remainAmount() {
         let remain = {};
 
-        remainAmount.set(netTotalService.get() + netTotalMedicine.get() - GeneralFunction.exchange("THB", Session.get("baseCurrency"), paidAmount.get("paidAmountBaht")) - GeneralFunction.exchange("USD", Session.get("baseCurrency"), paidAmount.get("paidAmountDollar")) - GeneralFunction.exchange("KHR", Session.get("baseCurrency"), paidAmount.get("paidAmountRiel")));
+        remainAmount.set(math.round(netTotalService.get() + netTotalMedicine.get(), 2) - GeneralFunction.exchange("THB", Session.get("baseCurrency"), paidAmount.get("paidAmountBaht")) - GeneralFunction.exchange("USD", Session.get("baseCurrency"), paidAmount.get("paidAmountDollar")) - GeneralFunction.exchange("KHR", Session.get("baseCurrency"), paidAmount.get("paidAmountRiel")));
 
         if (remainAmount.get() < 0) {
             returnAmount.set(remainAmount.get() * (-1));
@@ -132,7 +131,8 @@ addTmpl.onCreated(function () {
 editTmpl.helpers({
     data() {
         let id = FlowRouter.getParam('registerId');
-        return Co_Register.findOne({_id: id});
+        let data = Co_Register.findOne({_id: id});
+        return data;
 
     },
     subscriptionsReady() {
@@ -170,8 +170,7 @@ editTmpl.helpers({
     },
     remainAmount() {
         let remain = {};
-
-        remainAmount.set(netTotalService.get() + netTotalMedicine.get() - GeneralFunction.exchange("THB", Session.get("baseCurrency"), paidAmount.get("paidAmountBaht")) - GeneralFunction.exchange("USD", Session.get("baseCurrency"), paidAmount.get("paidAmountDollar")) - GeneralFunction.exchange("KHR", Session.get("baseCurrency"), paidAmount.get("paidAmountRiel")));
+        remainAmount.set(math.round(netTotalService.get() + netTotalMedicine.get(), 3) - GeneralFunction.exchange("THB", Session.get("baseCurrency"), paidAmount.get("paidAmountBaht")) - GeneralFunction.exchange("USD", Session.get("baseCurrency"), paidAmount.get("paidAmountDollar")) - GeneralFunction.exchange("KHR", Session.get("baseCurrency"), paidAmount.get("paidAmountRiel")));
 
         if (remainAmount.get() < 0) {
             returnAmount.set(remainAmount.get() * (-1));
@@ -398,6 +397,17 @@ editTmpl.onRendered(function () {
 
 editTmpl.onCreated(function () {
     this.subUserReady = new ReactiveVar(false);
+    Meteor.call('co_patientOption', Session.get("area"), function (err, result) {
+        if (result) {
+            patientOption.set(result);
+        }
+    })
+    Meteor.call('co_serviceOption', function (err, result) {
+        if (result) {
+            serviceOption.set(result);
+        }
+
+    })
     this.autorun(() => {
         let id = FlowRouter.getParam('registerId');
         if (id) {
@@ -405,18 +415,7 @@ editTmpl.onCreated(function () {
         }
     })
 
-    Meteor.call('co_patientOption', Session.get("area"), function (err, result) {
-        if (result) {
-            patientOption.set(result);
-        }
-    })
 
-    Meteor.call('co_serviceOption', function (err, result) {
-        if (result) {
-            serviceOption.set(result);
-        }
-
-    })
 })
 
 addTmpl.onCreated(function () {
@@ -551,6 +550,7 @@ AutoForm.hooks({
     co_registerEdit: {
         before: {
             update: function (doc) {
+                debugger;
 
                 let services = [];
                 let medicines = [];

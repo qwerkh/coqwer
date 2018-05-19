@@ -9,6 +9,7 @@ import '../../imports/ui/journal/journal';
 import '../../imports/ui/fixAsset/fixAsset';
 import '../../imports/ui/print/a4'
 import '../../imports/ui/print/a4Summary'
+import '../../imports/ui/print/a4Sum'
 
 import {_Main} from '../lib/_renderLayout';
 
@@ -82,6 +83,16 @@ coData.route('/register/printSummary', {
      }*/
     action: function (params, queryParams) {
         BlazeLayout.render('PrintLayout', {printLayout: 'co_printA4Summary'});
+    }
+
+})
+coData.route('/register/printSum', {
+    name: 'co.register-print-sum',
+    /*   action: function (query, params) {
+     _Main("co_printA4");
+     }*/
+    action: function (params, queryParams) {
+        BlazeLayout.render('PrintLayout', {printLayout: 'co_printA4Sum'});
     }
 
 })

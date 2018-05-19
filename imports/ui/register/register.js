@@ -258,6 +258,7 @@ indexTmpl.events({
             serviceTem.remove({});
             medicineTem.remove({});
 
+
             discountTypeService.set(self.discountServiceType);
             discountService.set(self.discountService);
 
@@ -291,6 +292,7 @@ indexTmpl.events({
                 }
             })
             FlowRouter.go(`/co-data/register/${self._id}/edit`);
+
         } else {
             alertify.error("Can't Update");
         }
@@ -309,6 +311,9 @@ addTmpl.events({
     },
     'click #save-print-summary'(e, t) {
         FlowRouter.query.set({p: 'summary'});
+    },
+    'click #save-print-sum'(e, t) {
+        FlowRouter.query.set({p: 'sum'});
     },
     'click .cancel'(e, t) {
         FlowRouter.go(`/co-data/register`);
@@ -345,6 +350,9 @@ editTmpl.events({
     },
     'click #save-print-summary'(e, t) {
         FlowRouter.query.set({p: 'summary'});
+    },
+    'click #save-print-sum'(e, t) {
+        FlowRouter.query.set({p: 'sum'});
     },
     'click .cancel'(e, t) {
         FlowRouter.go(`/co-data/register`);
@@ -542,6 +550,10 @@ AutoForm.hooks({
                 FlowRouter.go('/co-data/register/printSummary?inv=' + id);
 
             }
+            else if (print == "sum") {
+                FlowRouter.go('/co-data/register/printSum?inv=' + id);
+
+            }
             else {
                 alertify.success('Successfully');
                 FlowRouter.go(`/co-data/register`);
@@ -615,6 +627,10 @@ AutoForm.hooks({
                 FlowRouter.go('/co-data/register/print?inv=' + id);
             } else if (print == "summary") {
                 FlowRouter.go('/co-data/register/printSummary?inv=' + id);
+
+            }
+            else if (print == "sum") {
+                FlowRouter.go('/co-data/register/printSum?inv=' + id);
 
             } else {
                 alertify.success('Updated Successfully');

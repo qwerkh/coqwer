@@ -1,12 +1,14 @@
 import {Co_Register} from '../../../imports/collection/register';
 import {Co_Company} from '../../../imports/collection/company';
 import {Co_Payment} from '../../../imports/collection/payment.js';
+import {Co_MedicineType} from '../../../imports/collection/medicineType';
+import {Co_Medicine} from '../../../imports/collection/medicine';
 import {Co_Patient} from '../../../imports/collection/patient.js';
 import {Co_Exchange} from '../../../imports/collection/exchange';
 import {GeneralFunction} from "../../../imports/api/methods/generalFunction";
 
 Meteor.methods({
-    printA4({invoiceId}) {
+    printA4({invoiceId, summary}) {
         let company = Co_Company.findOne({});
         let register = Co_Register.findOne({
             $or: [
@@ -14,6 +16,30 @@ Meteor.methods({
                 {printId: invoiceId}
             ]
         });
+        let result = [];
+        if (summary) {
+            register.medicines.forEach((obj) => {
+                let medicineDoc = Co_Medicine.findOne({_id: obj.medicineId})
+                obj.type = Co_MedicineType.findOne({_id: medicineDoc.medicineTypeId}).type;
+                return obj;
+            })
+
+            register.medicines.reduce(function (key, val) {
+                if (!key[val.type]) {
+                    key[val.type] = {
+                        type: val.type,
+                        amount: val.amount
+                    };
+                    result.push(key[val.type]);
+                } else {
+                    key[val.type].amount += math.round(val.amount, 3);
+                }
+                return key;
+            }, {});
+
+            register.medicines = result;
+        }
+
         register.patient = Co_Patient.findOne({_id: register.patientId});
         register.totalPaid = register.netTotal - register.balance;
         let payment = Co_Payment.findOne({registerId: register._id});

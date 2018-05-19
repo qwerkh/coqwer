@@ -14,6 +14,7 @@ export const MedicineTypeTabular = new Tabular.Table({
         {data: "_id", title: 'Id'},
         {data: "name", title: 'Name'},
         {data: "description", title: 'Description'},
+        {data: "type", title: 'Type'},
         {
             tmpl: Meteor.isClient && Template.co_action
         }

@@ -8,6 +8,7 @@ import '../../imports/ui/payment/payment';
 import '../../imports/ui/journal/journal';
 import '../../imports/ui/fixAsset/fixAsset';
 import '../../imports/ui/print/a4'
+import '../../imports/ui/print/a4Summary'
 
 import {_Main} from '../lib/_renderLayout';
 
@@ -70,6 +71,17 @@ coData.route('/register/print', {
      }*/
     action: function (params, queryParams) {
         BlazeLayout.render('PrintLayout', {printLayout: 'co_printA4'});
+    }
+
+})
+
+coData.route('/register/printSummary', {
+    name: 'co.register-print-summary',
+    /*   action: function (query, params) {
+     _Main("co_printA4");
+     }*/
+    action: function (params, queryParams) {
+        BlazeLayout.render('PrintLayout', {printLayout: 'co_printA4Summary'});
     }
 
 })

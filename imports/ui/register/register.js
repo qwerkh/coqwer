@@ -307,6 +307,9 @@ addTmpl.events({
     'click #save-print'(e, t) {
         FlowRouter.query.set({p: 'true'});
     },
+    'click #save-print-summary'(e, t) {
+        FlowRouter.query.set({p: 'summary'});
+    },
     'click .cancel'(e, t) {
         FlowRouter.go(`/co-data/register`);
     },
@@ -339,6 +342,9 @@ addTmpl.events({
 editTmpl.events({
     'click #save-print'(e, t) {
         FlowRouter.query.set({p: 'true'});
+    },
+    'click #save-print-summary'(e, t) {
+        FlowRouter.query.set({p: 'summary'});
     },
     'click .cancel'(e, t) {
         FlowRouter.go(`/co-data/register`);
@@ -532,7 +538,11 @@ AutoForm.hooks({
             let qp = FlowRouter.query.get('qp'); //trigger quick payment
             if (print == 'true') {
                 FlowRouter.go('/co-data/register/print?inv=' + id);
-            } else {
+            } else if (print == "summary") {
+                FlowRouter.go('/co-data/register/printSummary?inv=' + id);
+
+            }
+            else {
                 alertify.success('Successfully');
                 FlowRouter.go(`/co-data/register`);
                 FlowRouter.query.unset();
@@ -603,6 +613,9 @@ AutoForm.hooks({
             // let qp = FlowRouter.query.get('qp'); //trigger quick payment
             if (print == 'true') {
                 FlowRouter.go('/co-data/register/print?inv=' + id);
+            } else if (print == "summary") {
+                FlowRouter.go('/co-data/register/printSummary?inv=' + id);
+
             } else {
                 alertify.success('Updated Successfully');
                 FlowRouter.go(`/co-data/register`);

@@ -26,7 +26,7 @@ registerServiceTmpl.onCreated(function () {
         }
 
     })
-})
+});
 registerServiceTmpl.helpers({
     schemaService() {
         return Co_Register.serviceForm;

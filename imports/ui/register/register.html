@@ -13,8 +13,8 @@
                 <h4 class="ui" style="text-align: right">Register</h4>
             </div>
         </div>
-        <a class="ui primary button add" style="margin-bottom: 2px" href="{{pathFor 'co.registerAdd'}}"><i
-                class="add sign icon"></i>Add Register</a>
+        <!--<a class="ui primary button add" style="margin-bottom: 2px" href="{{pathFor 'co.registerAdd'}}"><i
+                class="add sign icon"></i>Add Register</a>-->
 
         {{> tabular table=dataTable selector=selector class="cursor-pointer ui celled table"}}
 
@@ -209,9 +209,9 @@
         </div>
         <h4 class="ui dividing header">Edit Register</h4>-->
 
-        <div class="progress">
-            <!--<div class="indeterminate"></div>-->
-        </div>
+        <!-- <div class="progress">
+             &lt;!&ndash;<div class="indeterminate"></div>&ndash;&gt;
+         </div>-->
         {{#autoForm collection=collection id="co_registerEdit" type="update" doc=data}}
             <div class="row">
                 <div class="four fields">
@@ -421,11 +421,11 @@
                 </div>
             </div>-->
         {{/autoForm}}
-        {{#if subscriptionsReady}}
+        <!--{{#if subscriptionsReady}}
         {{else}}
             <div class="progress">
                 <div class="indeterminate blue darken-1 "></div>
             </div>
-        {{/if}}
+        {{/if}}-->
     </div>
 </template>

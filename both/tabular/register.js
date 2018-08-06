@@ -71,6 +71,7 @@ export const RegisterTabular = new Tabular.Table({
         "netTotalMedicine",
         "paidAmountUSD",
         "paidAmountKHR",
-        "paidAmountTHB"
+        "paidAmountTHB",
+        "voucherId"
     ]
 })

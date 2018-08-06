@@ -1,4 +1,6 @@
 import './image';
+import {SimpleSchema} from 'meteor/aldeed:simple-schema';
+import {AutoForm} from 'meteor/aldeed:autoform';
 
 export const Co_Register = new Meteor.Collection("co_register");
 export const VW_Register = new Meteor.Collection("vw_register");

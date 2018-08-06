@@ -7,6 +7,7 @@ import {GeneralFunction} from '../../api/methods/generalFunction';
 import {RegisterTabular} from '../../../both/tabular/register';
 
 import './registerDetail';
+import './../../lib/select2Filter'
 
 
 let indexTmpl = Template.co_register,
@@ -14,9 +15,11 @@ let indexTmpl = Template.co_register,
     editTmpl = Template.co_registerEdit;
 
 
-let patientOption = new ReactiveVar([]);
+patientOption = new ReactiveVar([]);
 machinOption = new ReactiveVar([]);
-let serviceOption = new ReactiveVar([]);
+serviceOption = new ReactiveVar([]);
+
+registerDoc = new ReactiveObj();
 
 discountTypeService = new ReactiveVar("");
 discountService = new ReactiveVar(0);
@@ -31,13 +34,13 @@ netTotalMedicine = new ReactiveVar(0);
 
 remainAmount = new ReactiveVar(0);
 returnAmount = new ReactiveVar(0);
-var voucherId = new ReactiveVar("");
+voucherId = new ReactiveVar("");
 
 paidAmount = new ReactiveObj({
     paidAmountDollar: 0,
     paidAmountRiel: 0,
     paidAmountBaht: 0
-})
+});
 
 
 indexTmpl.helpers({
@@ -60,7 +63,7 @@ addTmpl.helpers({
         return patientOption.get();
     },
     machinOption() {
-        debugger;
+
         return machinOption.get();
     },
     serviceOption() {
@@ -114,11 +117,7 @@ addTmpl.helpers({
 });
 
 addTmpl.onCreated(function () {
-    Meteor.call('co_patientOption', Session.get("area"), function (err, result) {
-        if (result) {
-            patientOption.set(result);
-        }
-    });
+
 
     Meteor.call('co_serviceOption', function (err, result) {
         if (result) {
@@ -130,9 +129,11 @@ addTmpl.onCreated(function () {
 
 editTmpl.helpers({
     data() {
-        let id = FlowRouter.getParam('registerId');
+        /*let id = FlowRouter.getParam('registerId');
+
         let data = Co_Register.findOne({_id: id});
-        return data;
+        return data;*/
+        return registerDoc.get("reDoc");
 
     },
     subscriptionsReady() {
@@ -199,33 +200,6 @@ editTmpl.helpers({
 
 indexTmpl.events({
     'click .add'() {
-        serviceTem.remove({});
-        medicineTem.remove({});
-
-        discountTypeService.set("Amount");
-        discountService.set(0);
-
-        discountTypeMedicine.set("Amount");
-        discountMedicine.set(0);
-
-
-        amountDiscountService.set(0);
-        netTotalService.set(0);
-
-
-        amountDiscountMedicine.set(0);
-        netTotalMedicine.set(0);
-
-
-        remainAmount.set(0);
-        returnAmount.set(0);
-
-        paidAmount.set("paidAmountDollar", 0);
-        paidAmount.set("paidAmountRiel", 0);
-        paidAmount.set("paidAmountBaht", 0);
-
-
-        // FlowRouter.go('/co-data/register/add');
     },
 
     'click .remove'(e) {
@@ -251,9 +225,10 @@ indexTmpl.events({
             alertify.error("Can't Remove");
         }
     },
-    'click .edit'(event, instance) {
+    'click button.edit'(event, instance) {
+        event.preventDefault();
         let self = this;
-
+        registerDoc.set("reDoc", {});
         if (self.paymentNumber <= 1) {
             serviceTem.remove({});
             medicineTem.remove({});
@@ -283,14 +258,26 @@ indexTmpl.events({
                     obj.name = obj.medicineName;
                     medicineTem.insert(obj);
                 }
-            })
+            });
             self.services.forEach(function (obj) {
                 if (obj) {
                     obj._id = obj.serviceId;
                     obj.name = obj.serviceName;
                     serviceTem.insert(obj);
                 }
-            })
+            });
+            Meteor.call('co_patientOption', Session.get("area"), self.patientDoc._id, function (err, result) {
+                if (result) {
+                    patientOption.set(result);
+                }
+            });
+
+            Meteor.call("co_registerById", self._id, (err, result) => {
+                if (result) {
+                    registerDoc.set("reDoc", result);
+                }
+            });
+
             FlowRouter.go(`/co-data/register/${self._id}/edit`);
 
         } else {
@@ -342,7 +329,7 @@ addTmpl.events({
     'change [name="registerDate"]'(e, t) {
         Session.set("registerDate", e.currentTarget.value);
     }
-})
+});
 
 editTmpl.events({
     'click #save-print'(e, t) {
@@ -383,6 +370,7 @@ editTmpl.events({
 
 addTmpl.onRendered(function () {
     $('.tabular.menu .item').tab();
+    // select2Filter($("[name='patientId']"));
     this.autorun(() => {
         if (Session.get("registerDate")) {
             Meteor.call('getLastVoucherId', Session.get("area"), Session.get("registerDate"), function (err, result) {
@@ -395,39 +383,36 @@ addTmpl.onRendered(function () {
         }
     })
 
-})
+});
+
+
 editTmpl.onRendered(function () {
 
     $('.tabular.menu .item').tab();
-
-    this.autorun(() => {
+    /*this.autorun(() => {
         if (this.subscription.ready()) {
             this.subUserReady.set(true);
         }
-    });
+    });*/
 
 
 })
 
 editTmpl.onCreated(function () {
     this.subUserReady = new ReactiveVar(false);
-    Meteor.call('co_patientOption', Session.get("area"), function (err, result) {
-        if (result) {
-            patientOption.set(result);
-        }
-    })
+
     Meteor.call('co_serviceOption', function (err, result) {
         if (result) {
             serviceOption.set(result);
         }
 
     })
-    this.autorun(() => {
+    /*this.autorun(() => {
         let id = FlowRouter.getParam('registerId');
         if (id) {
             this.subscription = Meteor.subscribe('co_registerById', {_id: id});
         }
-    })
+    })*/
 
 
 })

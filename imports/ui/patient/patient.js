@@ -51,11 +51,11 @@ editTmpl.helpers({
 //event
 
 indexTmpl.events({
-    'click .add'() {
+    'click button.add'() {
         FlowRouter.go('/co-data/patient/add');
     },
 
-    'click .remove'(e) {
+    'click button.remove'(e) {
         var self = this;
         alertify.confirm(
             'Patient',
@@ -74,11 +74,11 @@ indexTmpl.events({
         )
 
     },
-    'click .edit'(event, instance) {
+    'click button.edit'(event, instance) {
         let self = this;
         FlowRouter.go(`/co-data/patient/${self._id}/edit`);
     },
-    'click .show'(event, instance) {
+    'click button.show'(event, instance) {
         let self = this;
         FlowRouter.go(`/co-data/patient/${self._id}/show`);
     },
@@ -88,6 +88,61 @@ indexTmpl.events({
         var rowData = dataTable.row(event.currentTarget).data();
         FlowRouter.go(`/co-data/patient/${rowData._id}/showDetail`);
         // FlowRouter.go(`/co-data/register/${rowData._id}/byPatient`);
+    },
+    'click button.register'() {
+        serviceTem.remove({});
+        medicineTem.remove({});
+
+        discountTypeService.set("Amount");
+        discountService.set(0);
+
+        discountTypeMedicine.set("Amount");
+        discountMedicine.set(0);
+
+
+        amountDiscountService.set(0);
+        netTotalService.set(0);
+
+
+        amountDiscountMedicine.set(0);
+        netTotalMedicine.set(0);
+
+
+        remainAmount.set(0);
+        returnAmount.set(0);
+
+        paidAmount.set("paidAmountDollar", 0);
+        paidAmount.set("paidAmountRiel", 0);
+        paidAmount.set("paidAmountBaht", 0);
+        let self = this;
+        Meteor.call('co_patientOption', Session.get("area"), self._id, function (err, result) {
+            if (result) {
+                patientOption.set(result);
+            }
+        });
+
+        FlowRouter.go('/co-data/register/add');
+
+    },
+    "click button.receivePayment"() {
+        balanceUnpaid.set(0);
+        Session.set("paymentDate", moment().toDate());
+        let self = this;
+        Meteor.call('co_patientOption', Session.get("area"), self._id, function (err, result) {
+            if (result) {
+                patientPaymentOption.set(result);
+            }
+        });
+
+        Meteor.call('co_registerOption', self._id, true, Session.get("area"), function (err, result) {
+                if (result) {
+                    registerPaymentOption.set(result);
+                }
+            }
+        );
+
+        FlowRouter.go('/co-data/payment/add');
+
     }
 
 })

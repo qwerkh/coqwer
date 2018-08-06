@@ -6,6 +6,7 @@ import {Co_Medicine} from '../../imports/collection/medicine'
 import {Co_Machin} from '../../imports/collection/machin'
 import {Co_Service} from '../../imports/collection/service'
 import {Co_Patient} from '../../imports/collection/patient'
+import {Co_Register} from '../../imports/collection/register'
 import {Co_MachinType} from '../../imports/collection/machinType'
 import {Co_MedicineType} from '../../imports/collection/medicineType'
 import {Co_ServiceType} from '../../imports/collection/serviceType'
@@ -36,5 +37,8 @@ Meteor.methods({
     },
     co_patientById(id) {
         return Co_Patient.findOne({_id: id});
+    },
+    co_registerById(id) {
+        return Co_Register.findOne({_id: id});
     }
 })

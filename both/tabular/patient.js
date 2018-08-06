@@ -62,7 +62,7 @@ export const PatientTabular = new Tabular.Table({
             }
         },
         {
-            tmpl: Meteor.isClient && Template.co_action
+            tmpl: Meteor.isClient && Template.co_actionPatient, title: "Action"
         }
     ],
     extraFields: ["dob"]

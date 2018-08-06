@@ -11,8 +11,8 @@ let indexTmpl = Template.co_payment,
     addTmpl = Template.co_paymentAdd,
     editTmpl = Template.co_paymentEdit;
 
-let patientOption = new ReactiveVar([]);
-let registerOption = new ReactiveVar([]);
+patientPaymentOption = new ReactiveVar([]);
+registerPaymentOption = new ReactiveVar([]);
 
 patientId = new ReactiveVar();
 registerId = new ReactiveVar();
@@ -24,35 +24,22 @@ oldStatus = new ReactiveVar("");
 oldBalance = new ReactiveVar("");
 
 patientDoc = new ReactiveVar();
-var voucherId = new ReactiveVar("");
+voucherId = new ReactiveVar("");
 
 indexTmpl.helpers({
-    dataTable () {
+    dataTable() {
         return PaymentTabular;
     },
-    selector(){
+    selector() {
         return {rolesArea: Session.get("area")};
     }
 
-})
+});
 
 
 addTmpl.onRendered(function () {
 
     this.autorun(function () {
-        Meteor.call('co_patientOption', Session.get("area"), function (err, result) {
-            if (result) {
-                patientOption.set(result);
-            }
-        })
-
-        Meteor.call('co_registerOption', patientId.get(), true, Session.get("area"), function (err, result) {
-                if (result) {
-                    registerOption.set(result);
-                }
-            }
-        )
-
         if (patientId.get()) {
             if (registerId.get()) {
                 Meteor.call('getRegisterByPatient', patientId.get(), registerId.get(), function (err, result) {
@@ -74,7 +61,6 @@ addTmpl.onRendered(function () {
         }
 
         if (Session.get("paymentDate")) {
-            debugger;
             Meteor.call('getLastVoucherId', Session.get("area"), Session.get("paymentDate"), function (err, result) {
                 if (result) {
                     voucherId.set((parseInt(result.voucherId) + 1).toString());
@@ -87,7 +73,7 @@ addTmpl.onRendered(function () {
 })
 
 addTmpl.events({
-    'change [name="patientId"]'(e, t){
+    'change [name="patientId"]'(e, t) {
         patientId.set(e.currentTarget.value);
         registerId.set(undefined);
         $("[name='registerId']").parents('.selection.dropdown').dropdown('clear');
@@ -100,31 +86,31 @@ addTmpl.events({
         });
 
     },
-    'change [name="registerId"]'(e, t){
+    'change [name="registerId"]'(e, t) {
         registerId.set(e.currentTarget.value);
     },
-    'keyup [name="paidAmountUSD"]'(e, t){
+    'keyup [name="paidAmountUSD"]'(e, t) {
         if (e.currentTarget.value == "") {
             paidAmount.set("paidAmountDollar", 0);
         } else {
             paidAmount.set("paidAmountDollar", parseFloat(e.currentTarget.value));
         }
     },
-    'keyup [name="paidAmountKHR"]'(e, t){
+    'keyup [name="paidAmountKHR"]'(e, t) {
         if (e.currentTarget.value == "") {
             paidAmount.set("paidAmountRiel", 0);
         } else {
             paidAmount.set("paidAmountRiel", parseFloat(e.currentTarget.value));
         }
     },
-    'keyup [name="paidAmountTHB"]'(e, t){
+    'keyup [name="paidAmountTHB"]'(e, t) {
         if (e.currentTarget.value == "") {
             paidAmount.set("paidAmountBaht", 0);
         } else {
             paidAmount.set("paidAmountBaht", parseFloat(e.currentTarget.value));
         }
     },
-    'click .quickCashOne'(e, t){
+    'click .quickCashOne'(e, t) {
         let val = numeral(e.currentTarget.text).value();
         if (Session.get("baseCurrency") == "USD") {
             paidAmount.set("paidAmountDollar", val);
@@ -134,7 +120,7 @@ addTmpl.events({
             paidAmount.set("paidAmountBaht", val);
         }
     },
-    'click .quickCashTwo'(e, t){
+    'click .quickCashTwo'(e, t) {
 
         let val = numeral(e.currentTarget.text).value();
         if (Session.get("baseCurrency") == "USD") {
@@ -145,7 +131,7 @@ addTmpl.events({
             paidAmount.set("paidAmountBaht", val);
         }
     },
-    'click .quickCashThree'(e, t){
+    'click .quickCashThree'(e, t) {
 
         let val = numeral(e.currentTarget.text).value();
         if (Session.get("baseCurrency") == "USD") {
@@ -156,7 +142,7 @@ addTmpl.events({
             paidAmount.set("paidAmountBaht", val);
         }
     },
-    'click .quickCashFour'(e, t){
+    'click .quickCashFour'(e, t) {
 
         let val = numeral(e.currentTarget.text).value();
         if (Session.get("baseCurrency") == "USD") {
@@ -167,25 +153,25 @@ addTmpl.events({
             paidAmount.set("paidAmountBaht", val);
         }
     },
-    'change [name="paymentDate"]'(e, t){
+    'change [name="paymentDate"]'(e, t) {
         Session.set("paymentDate", e.currentTarget.value);
     }
 })
 
 addTmpl.helpers({
-    collection(){
+    collection() {
         return Co_Payment;
     },
-    netTotal(){
+    netTotal() {
         return balanceUnpaid.get();
     },
-    result(){
+    result() {
         let result = {};
         result.netAmount = numeral(balanceUnpaid.get()).format("0,00.000");
         result.netDiscount = isNaN(parseFloat(amountDiscountService.get()) + parseFloat(amountDiscountMedicine.get())) ? 0 : parseFloat(amountDiscountService.get()) + parseFloat(amountDiscountMedicine.get());
         return result;
     },
-    returnAmount(){
+    returnAmount() {
         let returns = {};
         returns.returnAmountDollar = GeneralFunction.exchange(Session.get("baseCurrency"), "USD", returnAmount.get());
         returns.returnAmountRiel = GeneralFunction.exchange(Session.get("baseCurrency"), "KHR", returnAmount.get());
@@ -193,7 +179,7 @@ addTmpl.helpers({
 
         return returns;
     },
-    remainAmount(){
+    remainAmount() {
         let remain = {};
 
         remainAmount.set(balanceUnpaid.get() - GeneralFunction.exchange("THB", Session.get("baseCurrency"), paidAmount.get("paidAmountBaht")) - GeneralFunction.exchange("USD", Session.get("baseCurrency"), paidAmount.get("paidAmountDollar")) - GeneralFunction.exchange("KHR", Session.get("baseCurrency"), paidAmount.get("paidAmountRiel")));
@@ -215,46 +201,46 @@ addTmpl.helpers({
 
         return remain;
     },
-    balance(){
+    balance() {
         return remainAmount.get() > 0 ? remainAmount.get() : 0;
     },
-    patientOption(){
-        return patientOption.get();
+    patientOption() {
+        return patientPaymentOption.get();
     },
-    registerOption(){
-        return registerOption.get();
+    registerOption() {
+        return registerPaymentOption.get();
     },
-    registerList(){
+    registerList() {
         return registerTem.find();
     },
-    patientDoc(){
+    patientDoc() {
         return patientDoc.get();
     },
-    paid(){
+    paid() {
         return numeral(GeneralFunction.exchange("USD", Session.get("baseCurrency"), paidAmount.get("paidAmountDollar")) + GeneralFunction.exchange("KHR", Session.get("baseCurrency"), paidAmount.get("paidAmountRiel")) + GeneralFunction.exchange("THB", Session.get("baseCurrency"), paidAmount.get("paidAmountBaht"))).format("0,00.000");
     },
-    quickCashOne(){
+    quickCashOne() {
         return numeral(balanceUnpaid.get()).format("0,00.000");
     },
-    quickCashTwo(){
+    quickCashTwo() {
         return cashTwo(balanceUnpaid.get());
     },
-    quickCashThree(){
+    quickCashThree() {
         return cashThree(balanceUnpaid.get());
     },
-    quickCashFour(){
+    quickCashFour() {
         return cashFour(balanceUnpaid.get());
     },
-    paidAmountUSD(){
+    paidAmountUSD() {
         return paidAmount.get("paidAmountDollar");
     },
-    paidAmountKHR(){
+    paidAmountKHR() {
         return paidAmount.get("paidAmountRiel");
     },
-    paidAmountTHB(){
+    paidAmountTHB() {
         return paidAmount.get("paidAmountBaht");
     },
-    voucherId(){
+    voucherId() {
         return voucherId.get();
     }
 })
@@ -270,7 +256,7 @@ editTmpl.helpers({
         let instance = Template.instance();
         return instance.subUserReady.get()
     },
-    collection(){
+    collection() {
         return Co_Payment;
     }
 })
@@ -279,12 +265,11 @@ editTmpl.helpers({
 //event
 
 indexTmpl.events({
-    'click .add'(){
-        balanceUnpaid.set(0);
-        Session.set("paymentDate", moment().toDate());
+    'click .add'() {
+
     },
 
-    'click .remove'(e){
+    'click .remove'(e) {
         var self = this;
         if (self.fromRegister == false) {
             if (self.canRemove == true) {
@@ -311,13 +296,13 @@ indexTmpl.events({
         }
 
     },
-    'click .edit' (event, instance) {
+    'click .edit'(event, instance) {
         let self = this;
         alertify.error("Can't Edit");
         return false;
         FlowRouter.go(`/co-data/payment/${self._id}/edit`);
     },
-    'click .show'(event, instance){
+    'click .show'(event, instance) {
         let self = this;
         FlowRouter.go(`/co-data/payment/${self._id}/show`);
     }
@@ -326,13 +311,13 @@ indexTmpl.events({
 
 
 addTmpl.events({
-    'click .cancel'(e, t){
+    'click .cancel'(e, t) {
         FlowRouter.go(`/co-data/payment`);
     }
 })
 
 editTmpl.events({
-    'click .cancel'(e, t){
+    'click .cancel'(e, t) {
         FlowRouter.go(`/co-data/payment`);
     }
 });
@@ -392,7 +377,7 @@ AutoForm.hooks({
 
                 doc.voucherId = doc.voucherId.padStart(6, "0");
 
-                doc.paymentDate=moment(doc.paymentDate).startOf("day").add(12,"hour").toDate();
+                doc.paymentDate = moment(doc.paymentDate).startOf("day").add(12, "hour").toDate();
                 doc.rolesArea = Session.get('area');
                 return doc;
             }
@@ -412,9 +397,9 @@ AutoForm.hooks({
         }
     },
     co_paymentEdit: {
-        before:{
+        before: {
             update: function (doc) {
-                doc.$set.paymentDate=moment(doc.paymentDate).startOf("day").add(12,"hour").toDate();
+                doc.$set.paymentDate = moment(doc.paymentDate).startOf("day").add(12, "hour").toDate();
                 return doc;
             }
         },

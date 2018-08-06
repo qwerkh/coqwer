@@ -141,7 +141,7 @@ showPatientDetail.helpers({
     patientDoc() {
         let id = FlowRouter.getParam('patientId');
         let paymentDoc = Co_Patient.findOne({_id: id});
-        paymentDoc.age = moment().diff(paymentDoc.dob, 'years');
+        paymentDoc.age = moment().diff(moment(paymentDoc.dob).startOf("day").toDate(), 'years');
         return paymentDoc;
     },
     registerList() {
@@ -178,7 +178,7 @@ AutoForm.hooks({
                 if (doc.dob) {
                     doc.dob = moment(doc.dob).startOf("day").add(12, "hour").toDate();
                 } else {
-                    doc.dob = moment(doc.dob).startOf("day").add(12, "hour").add(-doc.age, "year").toDate();
+                    doc.dob = moment().startOf("day").add(12, "hour").add(-doc.age, "year").toDate();
                 }
                 doc.rolesArea = Session.get('area');
                 return doc;
@@ -225,5 +225,5 @@ AutoForm.hooks({
             this.done();
         }
     }
-})
+});
 

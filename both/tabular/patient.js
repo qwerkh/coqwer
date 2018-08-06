@@ -32,7 +32,7 @@ export const PatientTabular = new Tabular.Table({
 
         }, {
             data: "dob", title: 'Age', render: function (val, type, doc) {
-                return moment().diff(val, 'years');
+                return moment().diff(moment(val).startOf("day").toDate(), 'years');
             }
 
         },

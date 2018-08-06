@@ -50,7 +50,7 @@ indexTmpl.helpers({
         }
         return {rolesArea: Session.get("area")};
     }
-})
+});
 
 addTmpl.helpers({
     collection() {
@@ -111,14 +111,14 @@ addTmpl.helpers({
     voucherId() {
         return voucherId.get();
     }
-})
+});
 
 addTmpl.onCreated(function () {
     Meteor.call('co_patientOption', Session.get("area"), function (err, result) {
         if (result) {
             patientOption.set(result);
         }
-    })
+    });
 
     Meteor.call('co_serviceOption', function (err, result) {
         if (result) {
@@ -126,7 +126,7 @@ addTmpl.onCreated(function () {
         }
 
     })
-})
+});
 
 editTmpl.helpers({
     data() {

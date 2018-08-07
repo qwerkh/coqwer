@@ -3,9 +3,9 @@ export const Co_Payment = new Meteor.Collection("co_payment");
 Co_Payment.schema = new SimpleSchema({
     patientId: {
         type: String,
-        autoform: {
-            type: 'select'
-        }
+        /* autoform: {
+             type: 'select'
+         }*/
     },
     registerId: {
         type: String,

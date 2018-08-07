@@ -398,7 +398,6 @@ AutoForm.hooks({
     co_journalReceiveAdd: {
         before: {
             insert: function (doc) {
-                debugger;
 
                 //doc.parentName = $("[name='parentId']").parents('.selection.dropdown').dropdown('get text') == "Select One" ? "" : $("[name='parentId']").parents('.selection.dropdown').dropdown('get text');
                 //doc.accountTypeName = $("[name='accountTypeId']").parents('.selection.dropdown').dropdown('get text');

@@ -19,7 +19,7 @@ patientOption = new ReactiveVar([]);
 machinOption = new ReactiveVar([]);
 serviceOption = new ReactiveVar([]);
 
-registerDoc = new ReactiveObj();
+registerDoc = new ReactiveObj({reDoc: {}});
 
 discountTypeService = new ReactiveVar("");
 discountService = new ReactiveVar(0);
@@ -41,7 +41,8 @@ paidAmount = new ReactiveObj({
     paidAmountRiel: 0,
     paidAmountBaht: 0
 });
-
+patientName = new ReactiveVar();
+patientId = new ReactiveVar();
 
 indexTmpl.helpers({
     dataTable() {
@@ -68,6 +69,12 @@ addTmpl.helpers({
     },
     serviceOption() {
         return serviceOption.get();
+    },
+    patientId() {
+        return patientId.get();
+    },
+    patientName() {
+        return patientName.get();
     },
     netTotal() {
         return netTotalService.get() + netTotalMedicine.get();
@@ -266,14 +273,16 @@ indexTmpl.events({
                     serviceTem.insert(obj);
                 }
             });
-            Meteor.call('co_patientOption', Session.get("area"), self.patientDoc._id, function (err, result) {
+            /*Meteor.call('co_patientOption', Session.get("area"), self.patientDoc._id, function (err, result) {
                 if (result) {
+
                     patientOption.set(result);
                 }
-            });
+            });*/
 
             Meteor.call("co_registerById", self._id, (err, result) => {
                 if (result) {
+                    result.patientDoc = self.patientDoc;
                     registerDoc.set("reDoc", result);
                 }
             });
@@ -480,7 +489,6 @@ AutoForm.hooks({
     co_registerAdd: {
         before: {
             insert: function (doc) {
-
                 doc.rolesArea = Session.get('area');
 
                 if (doc.voucherId != "" || doc.voucherId != "0") {
@@ -557,8 +565,6 @@ AutoForm.hooks({
     co_registerEdit: {
         before: {
             update: function (doc) {
-                debugger;
-
                 let services = [];
                 let medicines = [];
                 if (doc.$set.voucherId != "" || doc.$set.voucherId != "0") {

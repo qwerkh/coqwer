@@ -8,9 +8,9 @@ export const VW_Register = new Meteor.Collection("vw_register");
 Co_Register.schema = new SimpleSchema({
     patientId: {
         type: String,
-        autoform: {
-            type: 'select'
-        }
+        /* autoform: {
+             type: 'select'
+         }*/
     },
     registerDate: {
         type: Date,
@@ -292,11 +292,11 @@ Co_Register.schema = new SimpleSchema({
 
             type: "medium",
             mediumOptions: {
-                /*toolbar: {
+                toolbar: {
                     buttons: ['bold', 'italic', 'underline', 'anchor'],
                     diffLeft: 25,
                     diffTop: 10,
-                },*/
+                },
                 keepLabel: true
             }
             /*afFieldInput: {

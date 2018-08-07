@@ -125,7 +125,6 @@ indexTmpl.events({
         FlowRouter.go(`/co-data/fixAsset/${self._id}/show`);
     },
     'click .depList': function (e, t) {
-        debugger;
         let params = {};
         let queryParams = {};
 

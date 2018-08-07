@@ -162,6 +162,10 @@ addTmpl.helpers({
     collection() {
         return Co_Payment;
     },
+  
+    patientDoc() {
+        return patientDoc.get();
+    },
     netTotal() {
         return balanceUnpaid.get();
     },

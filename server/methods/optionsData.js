@@ -97,7 +97,7 @@ Meteor.methods({
             selector.patientId = patientId;
         }
 
-        if (option == true) {
+        if (option === true) {
             selector.status = {$ne: "Complete"};
         }
 

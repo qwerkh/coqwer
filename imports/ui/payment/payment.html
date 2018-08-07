@@ -13,7 +13,7 @@
                 <h4 class="ui" style="text-align: right">Receive Payment</h4>
             </div>
         </div>
-<!--
+        <!--
         <a class="ui primary button" style="margin-bottom: 2px" href="{{pathFor 'co.paymentAdd'}}"><i
                 class="add sign icon"></i>Add Receive Payment</a>
 -->
@@ -122,8 +122,10 @@
 
                         {{> afQuickField name='balance' value=balance label=false hidden=true}}
 
+                        {{> afQuickField name='patientDoc.khName' label='Patient' value=patientDoc.khName readonly=true}}
+                        {{> afQuickField name='patientId' hidden=true value=patientDoc._id label=false}}
+                        <!--  {{> afQuickField name='patientId' placeholder="Select One" options=patientOption search=true}}-->
 
-                        {{> afQuickField name='patientId' placeholder="Select One" options=patientOption search=true}}
                         {{> afQuickField name='registerId' placeholder="Select One" options=registerOption search=true}}
 
                         {{> afQuickField name='paymentDate'}}

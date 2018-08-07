@@ -68,7 +68,8 @@
                             </div>
                         {{/with}}
                         {{> afQuickField name='netTotal' value=netTotal label=false hidden=true}}
-                        {{> afQuickField name='patientId' placeholder="Select One" options=patientOption search=true}}
+                        {{> afQuickField name='patientDoc.khName' label='Patient' value=patientName readonly=true}}
+                        {{> afQuickField name='patientId'  value=patientId  label=false hidden=true}}
 
                         {{> afQuickField name='registerDate'}}
 
@@ -244,8 +245,9 @@
                             </div>
                         {{/with}}
                         {{> afQuickField name='balance' value=balance label=false hidden=true}}
-                        {{> afQuickField name='patientId' placeholder="Select One" options=patientOption search=true}}
-
+                        <!--{{> afQuickField name='patientId' placeholder="Select One" options=patientOption search=true}}-->
+                        {{> afQuickField name='patientDoc.khName' label='Patient' readonly=true}}
+                        {{> afQuickField name='patientId' hidden=true  label=false}}
                         {{> afQuickField name='registerDate'}}
 
                         {{> afQuickField name='voucherId'}}

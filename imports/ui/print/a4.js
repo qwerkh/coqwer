@@ -26,7 +26,6 @@ indexTmpl.onRendered(function () {
 
 indexTmpl.helpers({
     formatDate(value, formatString) {
-        debugger;
         return moment(value).format(formatString);
     },
     data() {

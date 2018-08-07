@@ -224,7 +224,6 @@
                 })
             },
             fetchMachinTypeOption() {
-                debugger;
                 Meteor.call("fetchMachinTypeOption", this.checkQualityMachinReport.roleAreaOptionsModel, (err, result) => {
                     this.machinTypeOptions = result;
                 })

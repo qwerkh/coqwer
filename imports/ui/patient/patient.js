@@ -115,12 +115,8 @@ indexTmpl.events({
         paidAmount.set("paidAmountRiel", 0);
         paidAmount.set("paidAmountBaht", 0);
         let self = this;
-        Meteor.call('co_patientOption', Session.get("area"), self._id, function (err, result) {
-            if (result) {
-                patientOption.set(result);
-            }
-        });
-
+        patientName.set(self.khName);
+        patientId.set(self._id);
         FlowRouter.go('/co-data/register/add');
 
     },
@@ -128,12 +124,8 @@ indexTmpl.events({
         balanceUnpaid.set(0);
         Session.set("paymentDate", moment().toDate());
         let self = this;
-        Meteor.call('co_patientOption', Session.get("area"), self._id, function (err, result) {
-            if (result) {
-                patientPaymentOption.set(result);
-            }
-        });
-
+        patientDoc.set(self);
+        patientId.set(self._id);
         Meteor.call('co_registerOption', self._id, true, Session.get("area"), function (err, result) {
                 if (result) {
                     registerPaymentOption.set(result);
@@ -145,7 +137,7 @@ indexTmpl.events({
 
     }
 
-})
+});
 
 
 addTmpl.events({
@@ -229,7 +221,6 @@ AutoForm.hooks({
     co_patientAdd: {
         before: {
             insert: function (doc) {
-                debugger;
                 if (doc.dob) {
                     doc.dob = moment(doc.dob).startOf("day").add(12, "hour").toDate();
                 } else {
@@ -256,7 +247,6 @@ AutoForm.hooks({
     co_patientEdit: {
         before: {
             update: function (doc) {
-                debugger;
                 if (doc.$set.dob) {
                     doc.$set.dob = moment(doc.$set.dob).startOf("day").add(12, "hour").toDate();
                 } else {

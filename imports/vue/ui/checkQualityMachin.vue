@@ -146,8 +146,8 @@
                                             <tr>
                                             <td></td>
                                             <td>{{index1 + 1}}</td>
-                                            <td>{{checkQuality.patientDoc.khName}}</td>
-                                            <td>{{checkQuality.serviceDoc.name}}</td>
+                                            <td>{{checkQuality.patientDoc && checkQuality.patientDoc.khName || ""}}</td>
+                                            <td>{{checkQuality.serviceDoc && checkQuality.serviceDoc.name || ""}}</td>
                                             <td colspan="2" style="text-align: center">{{checkQuality.totalUse}}</td>
                                              </tr>
                                          </slot>
@@ -302,7 +302,7 @@
         },
         computed: {
             dataExist() {
-                return this.checkQualityMachinData.length > 0;
+                return this.checkQualityMachinData && this.checkQualityMachinData.length > 0;
             }
         },
 

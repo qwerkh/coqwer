@@ -32,7 +32,7 @@ export default class ClassReport {
                 {$match: parameter}
 
             ]).map(function (obj) {
-            if (CompanyDoc.asigneUser.indexOf(userId) > -1) {
+            if (CompanyDoc.asigneUser && CompanyDoc.asigneUser.indexOf(userId) > -1) {
                 total += obj.netTotal - obj.balance;
                 totalNetTotal += obj.netTotal;
                 totalBalance += obj.balance;
@@ -295,7 +295,7 @@ export default class ClassReport {
         ]).map(function (obj) {
 
 
-            if (CompanyDoc.asigneUser.indexOf(userId) > -1) {
+            if (CompanyDoc.asigneUser && CompanyDoc.asigneUser.indexOf(userId) > -1) {
                 totalNetTotal += obj.netTotal;
                 totalBalance += obj.balance;
                 total += obj.netTotal - obj.balance;

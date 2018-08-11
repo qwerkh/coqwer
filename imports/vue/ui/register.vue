@@ -190,7 +190,7 @@
                                     <slot v-for="(register,index) in registersData.data">
                                         <tr>
                                             <td>{{index + 1}}</td>
-                                            <td>{{register.patientDoc.khName}}</td>
+                                            <td>{{register.patientDoc && register.patientDoc.khName || ""}}</td>
                                             <td>{{register.registerDate}}</td>
                                             <td v-html="register.itemDetail"></td>
                                             <td style="text-align: right">{{register.netTotal}}</td>
@@ -323,7 +323,7 @@
             handleRunReport(formName) {
 
                 let params = {};
-                let userId=Meteor.userId();
+                let userId = Meteor.userId();
 
                 this.loading = true;
                 if (this.registerReport.roleAreaOptionsModel != "") {
@@ -352,7 +352,7 @@
                 }
 
 
-                Meteor.call('giveMeRegisterReport', params,userId, (err, result) => {
+                Meteor.call('giveMeRegisterReport', params, userId, (err, result) => {
                     if (!err) {
                         this.registersData = result;
                     }

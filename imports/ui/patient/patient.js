@@ -15,6 +15,8 @@ let indexTmpl = Template.co_patient,
     showPatientDetail = Template.co_patientDetail;
 
 
+let patientDoc = new ReactiveObj();
+let registerDoc = new ReactiveVar([]);
 indexTmpl.helpers({
     dataTable() {
         return PatientTabular;
@@ -45,7 +47,7 @@ editTmpl.helpers({
     collection() {
         return Co_Patient;
     }
-})
+});
 
 
 //event
@@ -86,6 +88,13 @@ indexTmpl.events({
 
         var dataTable = $(event.target).closest('table').DataTable();
         var rowData = dataTable.row(event.currentTarget).data();
+        Meteor.call("co_registerByPatientId", rowData._id, (err, result) => {
+            registerDoc.set(result);
+        });
+        Meteor.call("co_patientById", rowData._id, (err, result) => {
+            patientDoc.set("patient", result);
+        });
+
         FlowRouter.go(`/co-data/patient/${rowData._id}/showDetail`);
         // FlowRouter.go(`/co-data/register/${rowData._id}/byPatient`);
     },
@@ -144,7 +153,7 @@ addTmpl.events({
     'click .cancel'(e, t) {
         FlowRouter.go(`/co-data/patient`);
     }
-})
+});
 
 editTmpl.events({
     'click .cancel'(e, t) {
@@ -161,7 +170,7 @@ editTmpl.onRendered(function () {
             this.subUserReady.set(true);
         }
     });
-})
+});
 
 editTmpl.onCreated(function () {
     this.subUserReady = new ReactiveVar(false);
@@ -171,11 +180,11 @@ editTmpl.onCreated(function () {
             this.subscription = Meteor.subscribe('co_patientById', {_id: id});
         }
     })
-})
+});
 
 addTmpl.onCreated(function () {
 
-})
+});
 
 
 showPatientDetail.onRendered(function () {
@@ -186,20 +195,21 @@ showPatientDetail.onRendered(function () {
 
 showPatientDetail.helpers({
     patientDoc() {
-        let id = FlowRouter.getParam('patientId');
-        let paymentDoc = Co_Patient.findOne({_id: id});
-        paymentDoc.age = moment().diff(moment(paymentDoc.dob).startOf("day").toDate(), 'years');
-        return paymentDoc;
+        //let id = FlowRouter.getParam('patientId');
+        let data = patientDoc.get("patient");
+        data.age = moment().diff(moment(data.dob).startOf("day").toDate(), 'years');
+        return data;
     },
     registerList() {
-        let id = FlowRouter.getParam('patientId');
-        let data = Co_Register.find({patientId: id}, {sort: {registerDate: -1}}).fetch();
+        //let id = FlowRouter.getParam('patientId');
+        //let data = Co_Register.find({patientId: id}, {sort: {registerDate: -1}}).fetch();
+        let data = registerDoc.get();
         data.forEach(function (obj) {
             obj.serviceDiscount = obj.totalService - obj.netTotalService;
             obj.medicineDiscount = obj.totalMedicine - obj.netTotalMedicine;
             obj.total = obj.totalMedicine + obj.totalService;
             obj.discount = obj.serviceDiscount + obj.medicineDiscount;
-        })
+        });
         return data;
     }
 })

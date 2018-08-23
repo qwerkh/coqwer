@@ -17,10 +17,12 @@ Meteor.methods({
             ]
         });
         let result = [];
+        let serviceLength = register && register.services && register.services.length || 0;
         if (summary) {
             register.medicines.forEach((obj) => {
                 let medicineDoc = Co_Medicine.findOne({_id: obj.medicineId})
                 obj.type = Co_MedicineType.findOne({_id: medicineDoc.medicineTypeId}).type;
+                obj.len = serviceLength;
                 return obj;
             })
 
@@ -28,6 +30,7 @@ Meteor.methods({
                 if (!key[val.type]) {
                     key[val.type] = {
                         type: val.type,
+                        len: val.len,
                         amount: val.amount
                     };
                     result.push(key[val.type]);
@@ -46,6 +49,7 @@ Meteor.methods({
         let exchangeDoc = Co_Exchange.findOne({exDate: {$lte: moment(register.registerDate).endOf("days").toDate()}}, {sort: {exDate: -1}});
         register.netTotalRiel = GeneralFunction.exchange(company.baseCurrency, "KHR", register.netTotal);
         register.ageCal = moment(register.registerDate).diff(moment(register.patient.dob).startOf("day").toDate(), "year");
+        register._id = register._id.substr(8, 6);
         return {company: company, register: register, payment: payment};
     },
     printMini({invoiceId}) {

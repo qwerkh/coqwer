@@ -27,6 +27,8 @@ export const RegisterTabular = new Tabular.Table({
         },
         {
             data: "patientDoc.khName", title: "Name"
+        }, {
+            data: "voucherId", title: "Voucher"
         },
         {
             data: "netTotal", title: "Total",

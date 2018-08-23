@@ -382,7 +382,7 @@ addTmpl.onRendered(function () {
     // select2Filter($("[name='patientId']"));
     this.autorun(() => {
         if (Session.get("registerDate")) {
-            Meteor.call('getLastVoucherId', Session.get("area"), Session.get("registerDate"), function (err, result) {
+            Meteor.call('getLastVoucherRegisterId', Session.get("area"), Session.get("registerDate"), function (err, result) {
                 if (result) {
                     voucherId.set((parseInt(result.voucherId) + 1).toString());
                 } else {

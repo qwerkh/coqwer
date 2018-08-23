@@ -35,6 +35,11 @@ indexTmpl.helpers({
     no(index) {
         return index + 1;
     },
+
+    noMedicine(index, len) {
+        console.log(len);
+        return index + 1 + (len || 0);
+    },
     getDiscountType(discountType) {
         let companyDoc = Co_Company.findOne({});
         let currencySymbol = "";

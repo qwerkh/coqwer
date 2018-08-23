@@ -30,7 +30,7 @@
                                 <tr>
                                     <td><b>
                                         Invoice No</b></td>
-                                    <td>: {{_id}}</td>
+                                    <td>: {{voucherId}}</td>
                                     <td><b>Date</b></td>
                                     <td>: {{formatDate registerDate 'DD-MM-YYYY'}} </td>
                                 </tr>
@@ -81,7 +81,7 @@
                                 {{#if medicines}}
                                     {{#each medicines}}
                                         <tr style="padding: 10px;height: 30px !important;">
-                                            <td align="center">{{no @index}}</td>
+                                            <td align="center">{{noMedicine @index len}}</td>
                                             <td align="left" style="padding-left: 5px;">
                                                 {{type}}
                                             </td>

@@ -23,7 +23,7 @@ balanceUnpaid = new ReactiveVar(0);
 oldStatus = new ReactiveVar("");
 oldBalance = new ReactiveVar("");
 
-patientDoc = new ReactiveVar();
+patientDocPayment = new ReactiveVar();
 voucherId = new ReactiveVar("");
 
 indexTmpl.helpers({
@@ -81,7 +81,7 @@ addTmpl.events({
 
         Meteor.call("co_patientById", e.currentTarget.value, function (err, result) {
             if (result) {
-                patientDoc.set(result);
+                patientDocPayment.set(result);
             }
         });
 
@@ -164,7 +164,7 @@ addTmpl.helpers({
     },
   
     patientDoc() {
-        return patientDoc.get();
+        return patientDocPayment.get();
     },
     netTotal() {
         return balanceUnpaid.get();
@@ -216,9 +216,6 @@ addTmpl.helpers({
     },
     registerList() {
         return registerTem.find();
-    },
-    patientDoc() {
-        return patientDoc.get();
     },
     paid() {
         return numeral(GeneralFunction.exchange("USD", Session.get("baseCurrency"), paidAmount.get("paidAmountDollar")) + GeneralFunction.exchange("KHR", Session.get("baseCurrency"), paidAmount.get("paidAmountRiel")) + GeneralFunction.exchange("THB", Session.get("baseCurrency"), paidAmount.get("paidAmountBaht"))).format("0,00.000");

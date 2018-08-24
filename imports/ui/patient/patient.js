@@ -133,8 +133,10 @@ indexTmpl.events({
         balanceUnpaid.set(0);
         Session.set("paymentDate", moment().toDate());
         let self = this;
-        patientDoc.set(self);
+        patientDocPayment.set(self);
         patientId.set(self._id);
+        patientName.set(self.khName);
+
         Meteor.call('co_registerOption', self._id, true, Session.get("area"), function (err, result) {
                 if (result) {
                     registerPaymentOption.set(result);

@@ -539,17 +539,20 @@ AutoForm.hooks({
             let qp = FlowRouter.query.get('qp'); //trigger quick payment
             if (print == 'true') {
                 FlowRouter.go('/co-data/register/print?inv=' + id);
+
             } else if (print == "summary") {
                 FlowRouter.go('/co-data/register/printSummary?inv=' + id);
+
 
             }
             else if (print == "sum") {
                 FlowRouter.go('/co-data/register/printSum?inv=' + id);
 
+
             }
             else {
                 alertify.success('Successfully');
-                FlowRouter.go(`/co-data/register`);
+                FlowRouter.go(`/co-data/patient`);
                 FlowRouter.query.unset();
             }
         },

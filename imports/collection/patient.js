@@ -1,4 +1,5 @@
 import './image';
+
 export const Co_Patient = new Meteor.Collection("co_patient");
 export const VW_Patient = new Meteor.Collection("vw_patient");
 
@@ -44,6 +45,12 @@ Co_Patient.schema = new SimpleSchema({
     age: {
         type: Number,
         label: "Age"
+    },
+    month: {
+        type: Number,
+        label: "Month",
+        optional: true,
+        defaultValue: 0
     },
     dobString: {
         type: String,

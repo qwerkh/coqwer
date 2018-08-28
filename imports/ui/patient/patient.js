@@ -17,12 +17,24 @@ let indexTmpl = Template.co_patient,
 
 let patientDoc = new ReactiveObj();
 let registerDoc = new ReactiveVar([]);
+let customSearch = new ReactiveVar();
 indexTmpl.helpers({
     dataTable() {
         return PatientTabular;
     },
     selector() {
-        return {rolesArea: Session.get("area")};
+        let newSearchName = customSearch.get();
+        let newSelector = {};
+        if (newSearchName !== "" && newSearchName !== undefined) {
+            //let reg = new RegExp(newSearchName + "",'mi');
+            //console.log(reg);
+            newSelector.rolesArea = Session.get("area");
+            newSelector.khName = {$regex: newSearchName, $options: 'mi'};
+
+        } else {
+            newSelector.rolesArea = Session.get("area");
+        }
+        return newSelector;
     }
 
 })
@@ -146,7 +158,10 @@ indexTmpl.events({
 
         FlowRouter.go('/co-data/payment/add');
 
-    }
+    },
+    "keyup #customSearchPatient": _.debounce(function (e, t) {
+        customSearch.set(e.currentTarget.value);
+    }, 200)
 
 });
 
@@ -200,6 +215,7 @@ showPatientDetail.helpers({
         //let id = FlowRouter.getParam('patientId');
         let data = patientDoc.get("patient");
         data.age = moment().diff(moment(data.dob).startOf("day").toDate(), 'years');
+        data.month = parseInt(moment().diff(moment(data.dob).startOf("day").toDate(), 'months')) - parseInt(data.age) * 12;
         return data;
     },
     registerList() {
@@ -237,6 +253,7 @@ AutoForm.hooks({
                     doc.dob = moment(doc.dob).startOf("day").add(12, "hour").toDate();
                 } else {
                     doc.dob = moment().startOf("day").add(12, "hour").add(-doc.age, "year").toDate();
+                    doc.dob = moment(doc.dob).startOf("day").add(12, "hour").add(-doc.month || 0, "month").toDate();
                 }
                 doc.rolesArea = Session.get('area');
                 return doc;
@@ -283,4 +300,3 @@ AutoForm.hooks({
         }
     }
 });
-

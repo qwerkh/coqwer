@@ -49,6 +49,7 @@ Meteor.methods({
         let exchangeDoc = Co_Exchange.findOne({exDate: {$lte: moment(register.registerDate).endOf("days").toDate()}}, {sort: {exDate: -1}});
         register.netTotalRiel = GeneralFunction.exchange(company.baseCurrency, "KHR", register.netTotal);
         register.ageCal = moment(register.registerDate).diff(moment(register.patient.dob).startOf("day").toDate(), "year");
+        register.monthCal = parseInt(moment(register.registerDate).diff(moment(register.patient.dob).startOf("day").toDate(), "month")) - parseInt(moment(register.registerDate).diff(moment(register.patient.dob).startOf("day").toDate(), "year")) * 12;
         register._id = register._id.substr(8, 6);
         return {company: company, register: register, payment: payment};
     },

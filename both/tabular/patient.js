@@ -11,9 +11,14 @@ export const PatientTabular = new Tabular.Table({
     columnDefs: [
         {"width": "10px", "targets": 0}
     ],
+    searching: false,
+
     columns: [
         {data: "_id", title: 'Id'},
-        {data: "enName", title: 'En Name'},
+        {
+            data: "enName", title: 'En Name'
+
+        },
         {data: "khName", title: 'Kh Name'},
         {data: "nickName", title: 'Nick Name'},
         {
@@ -33,6 +38,12 @@ export const PatientTabular = new Tabular.Table({
         }, {
             data: "dob", title: 'Age', render: function (val, type, doc) {
                 return moment().diff(moment(val).startOf("day").toDate(), 'years');
+            }
+
+        },
+        {
+            data: "dob", title: 'Month', render: function (val, type, doc) {
+                return parseInt(moment().diff(moment(val).startOf("day").toDate(), 'months')) - parseInt(moment().diff(moment(val).startOf("day").toDate(), 'years')) * 12;
             }
 
         },

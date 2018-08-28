@@ -12,11 +12,24 @@
             <div class="column">
                 <h4 class="ui" style="text-align: right">Patient</h4>
             </div>
-        </div>
-        <a class="ui primary button" style="margin-bottom: 2px" href="{{pathFor 'co.patientAdd'}}"><i
-                class="add sign icon"></i>Add Patient</a>
 
-        {{> tabular table=dataTable selector=selector class="cursor-pointer ui celled table"}}
+        </div>
+        <div class="ui grid">
+            <div class="eight  wide column">
+                <a class="ui primary button" style="margin-bottom: 2px" href="{{pathFor 'co.patientAdd'}}"><i
+                        class="add sign icon"></i>Add Patient</a>
+            </div>
+            <div class="eight  wide column" style="width: 50% !important;">
+                <div class="ui search" style="width: 100% !important;">
+                    <div class="ui icon input" style="width: 100% !important;">
+                        <input class="prompt" type="text" id="customSearchPatient" placeholder="Search Name patient...">
+                        <i class="search icon"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {{> tabular table=dataTable id="patientSearch" selector=selector class="cursor-pointer ui celled table"}}
 
     </div>
 </template>
@@ -49,6 +62,7 @@
 
                         {{> afQuickField name='dob' class="month year"}}
                         {{> afQuickField name='age'}}
+                        {{> afQuickField name='month'}}
 
                         {{> afQuickField name='phoneNumber'}}
                         {{> afQuickField name='picture'}}
@@ -161,7 +175,7 @@
                                     <b>DOB</b> <a class="pull-right" style="float: right">{{dobString}}</a>
                                 </li>
                                 <li class="list-group-item">
-                                    <b>Age</b> <a class="pull-right" style="float: right">{{age}}</a>
+                                    <b>Age</b> <a class="pull-right" style="float: right">{{age}} ឆ្នាំ {{month}} ខែ</a>
                                 </li>
                                 <li class="list-group-item">
                                     <b>Address</b> <a class="pull-right" style="float: right">{{address}}</a>

@@ -15,6 +15,7 @@ export const RegisterTabular = new Tabular.Table({
     columnDefs: [
         {"width": "10px", "targets": 0}
     ],
+    searching: false,
     columns: [
         {data: "_id", title: 'Id'},
         {

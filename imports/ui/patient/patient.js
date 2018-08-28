@@ -29,7 +29,13 @@ indexTmpl.helpers({
             //let reg = new RegExp(newSearchName + "",'mi');
             //console.log(reg);
             newSelector.rolesArea = Session.get("area");
-            newSelector.khName = {$regex: newSearchName, $options: 'mi'};
+            newSelector.$or = [
+                {khName: {$regex: newSearchName, $options: 'mi'}},
+                {phoneNumber: {$regex: newSearchName, $options: 'mi'}},
+                {dobString: {$regex: newSearchName, $options: 'mi'}},
+                {address: {$regex: newSearchName, $options: 'mi'}},
+                {enName: {$regex: newSearchName, $options: 'mi'}}
+            ]
 
         } else {
             newSelector.rolesArea = Session.get("area");

@@ -43,16 +43,35 @@ paidAmount = new ReactiveObj({
 });
 patientName = new ReactiveVar();
 patientId = new ReactiveVar();
+let customSearch = new ReactiveVar();
 
 indexTmpl.helpers({
     dataTable() {
         return RegisterTabular;
     },
     selector() {
-        if (FlowRouter.getParam('patientId')) {
-            return {rolesArea: Session.get("area"), patientId: FlowRouter.getParam('patientId')};
+
+        let newSearchName = customSearch.get();
+        let newSelector = {};
+        if (newSearchName !== "" && newSearchName !== undefined) {
+            //let reg = new RegExp(newSearchName + "",'mi');
+            //console.log(reg);
+            newSelector.rolesArea = Session.get("area");
+            newSelector.$or = [
+                {"patientDoc.khName": {$regex: newSearchName, $options: 'mi'}},
+                {"patientDoc.enName": {$regex: newSearchName, $options: 'mi'}},
+                {voucherId: {$regex: newSearchName, $options: 'mi'}},
+                {registerDate: {$regex: newSearchName, $options: 'mi'}}
+            ]
+
+        } else {
+            newSelector.rolesArea = Session.get("area");
         }
-        return {rolesArea: Session.get("area")};
+        if (FlowRouter.getParam('patientId')) {
+            newSelector.patientId = FlowRouter.getParam('patientId');
+        }
+        return newSelector;
+
     }
 });
 
@@ -296,7 +315,10 @@ indexTmpl.events({
     'click .show'(event, instance) {
         let self = this;
         FlowRouter.go(`/co-data/register/${self._id}/show`);
-    }
+    },
+    "keyup #customSearchRegister": _.debounce(function (e, t) {
+        customSearch.set(e.currentTarget.value);
+    }, 200)
 
 })
 

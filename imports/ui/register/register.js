@@ -428,6 +428,9 @@ editTmpl.onRendered(function () {
 
 
 })
+indexTmpl.onRendered(function () {
+    customSearch.set("");
+})
 
 editTmpl.onCreated(function () {
     this.subUserReady = new ReactiveVar(false);

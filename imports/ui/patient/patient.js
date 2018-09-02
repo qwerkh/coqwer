@@ -187,6 +187,9 @@ editTmpl.events({
 
 addTmpl.onRendered(function () {
 })
+indexTmpl.onRendered(function () {
+    customSearch.set("");
+})
 editTmpl.onRendered(function () {
     this.autorun(() => {
         if (this.subscription.ready()) {

@@ -21,7 +21,9 @@ Meteor.methods({
         if (summary) {
             register.medicines.forEach((obj) => {
                 let medicineDoc = Co_Medicine.findOne({_id: obj.medicineId})
-                obj.type = Co_MedicineType.findOne({_id: medicineDoc.medicineTypeId}).type;
+                let typeDoc = Co_MedicineType.findOne({_id: medicineDoc.medicineTypeId});
+                obj.type = typeDoc && typeDoc.type || "";
+
                 obj.len = serviceLength;
                 return obj;
             })

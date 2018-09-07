@@ -64,6 +64,10 @@ Co_Patient.schema = new SimpleSchema({
         type: String,
         optional: true
     },
+    occupation: {
+        type: String,
+        optional: true
+    },
     picture: {
         type: String,
         optional: true,

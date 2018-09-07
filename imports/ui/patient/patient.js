@@ -34,7 +34,8 @@ indexTmpl.helpers({
                 {phoneNumber: {$regex: newSearchName, $options: 'mi'}},
                 {dobString: {$regex: newSearchName, $options: 'mi'}},
                 {address: {$regex: newSearchName, $options: 'mi'}},
-                {enName: {$regex: newSearchName, $options: 'mi'}}
+                {enName: {$regex: newSearchName, $options: 'mi'}},
+                {occupation: {$regex: newSearchName, $options: 'mi'}}
             ]
 
         } else {

@@ -55,6 +55,7 @@ export const PatientTabular = new Tabular.Table({
 
          },*/
         {data: "address", title: "Address"},
+        {data: "occupation", title: "Occupation"},
         {data: "phoneNumber", title: "Phone Number"},
         {
             data: "imageDoc", title: "Photo",

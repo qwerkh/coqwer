@@ -19,6 +19,7 @@ import '../../imports/ui/reference/reference';
 import '../../imports/ui/chartAccount/chartAccount';
 import '../../imports/ui/endOfProcess/endOfProcess';
 import '../../imports/ui/mapFixAsset/mapFixAsset';
+import '../../imports/ui/dashboard/dashBoard';
 
 //import layout render
 import {_Main} from '../lib/_renderLayout';
@@ -35,6 +36,16 @@ var coSetting = FlowRouter.group({
     name: 'coSetting',
     triggersEnter: [function (context, redirect) {
         if (!CheckRoles({roles: ['setting', 'super']})) {
+            redirect('co.home');
+        }
+    }]
+});
+
+var coDirector = FlowRouter.group({
+    prefix: '/co-director',
+    name: 'coDirector',
+    triggersEnter: [function (context, redirect) {
+        if (!CheckRoles({roles: ['director', 'super']})) {
             redirect('co.home');
         }
     }]
@@ -497,6 +508,20 @@ coSetting.route('/endOfProcess', {
     action: function (query, params) {
         if (CheckRoles({roles: ['setting', 'super']})) {
             _Main("co_endOfProcess");
+        } else {
+            FlowRouter.go('co.home');
+        }
+    }
+
+})
+
+
+//End Of Process
+coDirector.route('/dashboard', {
+    name: 'co.dashboard',
+    action: function (query, params) {
+        if (CheckRoles({roles: ['director', 'super']})) {
+            _Main("dashboard");
         } else {
             FlowRouter.go('co.home');
         }

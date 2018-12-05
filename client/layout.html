@@ -119,9 +119,15 @@
     <div class="no-print">
         <div class="ui top fixed teal inverted labeled huge menu">
             <div class="ui container">
-                <a href="{{pathFor 'co.home'}}" class="{{isActiveRoute 'co.home'}} item">
-                    <i class="home icon"></i>Home
-                </a>
+                {{# if isInRole "super,director" "co"}}
+                    <a href="{{pathFor 'co.dashboard'}}" class="{{isActiveRoute 'co.dashboard'}} item">
+                        <i class="home icon"></i>Dashboard
+                    </a>
+                {{else}}
+                    <a href="{{pathFor 'co.home'}}" class="{{isActiveRoute 'co.home'}} item">
+                        <i class="home icon"></i>Home
+                    </a>
+                {{/if}}
                 <a href="{{pathFor 'co.area'}}" class="{{isActiveRoute 'co.area'}} item">
                     <i class="marker icon"></i>{{getAreaName}}
                 </a>

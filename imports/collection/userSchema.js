@@ -67,6 +67,7 @@ export const UserSchema = new SimpleSchema({
                     {label: 'Setting', value: 'setting'},
                     {label: 'Report', value: 'report'},
                     {label: 'Account', value: 'account'},
+                    {label: 'Director', value: 'director'},
                     {label: 'EOP', value: 'eop'}
                 ]
             }

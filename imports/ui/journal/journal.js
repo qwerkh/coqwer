@@ -127,7 +127,7 @@ indexTmpl.events({
         }
 
     },
-    'click .edit' (event, instance) {
+    'click button.edit' (event, instance) {
         let self = this;
         if (self.endId != "0" || self.refFrom != undefined) {
             alertify.warning("Can't not update! Is not a normal Transaction");

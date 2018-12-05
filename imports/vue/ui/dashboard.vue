@@ -188,7 +188,7 @@
 
         },
         mounted() {
-            this.$jQuery('body').off();
+            //this.$jQuery('body').off();
 
         },
         data() {

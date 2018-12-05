@@ -1,5 +1,5 @@
 import VeeValidate from 'vee-validate';
-import 'element-ui/lib/theme-default/index.css';
+import 'element-ui/lib/theme-chalk/index.css';
 import ElementUI from 'element-ui/lib/index.js';
 import locale from 'element-ui/lib/locale/lang/en'
 import CollapseTransition from 'element-ui/lib/transitions/collapse-transition';

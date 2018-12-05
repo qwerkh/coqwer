@@ -49,9 +49,9 @@ export const RegisterTabular = new Tabular.Table({
                 if (val == "Complete") {
                     return `<i class="star icon blue"> </i>` + val;
                 } else if (val == "Partial") {
-                    return `<i class="star half empty icon green"> </i>` + val;
+                    return `<i class="star half outline icon green"> </i>` + val;
                 } else {
-                    return `<i class="empty star icon blue"> </i>` + val;
+                    return `<i class="star outline icon"> </i>` + val;
                 }
             }
         },

@@ -297,7 +297,7 @@ indexTmpl.events({
         }
 
     },
-    'click .edit'(event, instance) {
+    'click button.edit'(event, instance) {
         let self = this;
         alertify.error("Can't Edit");
         return false;

@@ -112,7 +112,7 @@ indexTmpl.events({
         }
 
     },
-    'click .edit' (event, instance) {
+    'click button.edit' (event, instance) {
         let self = this;
         if (self.numberOfExpense <= 0) {
             FlowRouter.go(`/co-data/fixAsset/${self._id}/edit`);

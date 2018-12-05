@@ -8,7 +8,7 @@
                             Register Report
                         </span>
 
-                    <el-form :inline="true" :model="registerReport" ref="registerReport">
+                    <el-form :inline="inl" label-position="top" :model="registerReport" ref="registerReport">
                         <el-row type="flex" class="row-bg" justify="left" style="width: 100%">
                             <el-col :span="21">
                                 <el-form-item label="Branch :">
@@ -96,7 +96,6 @@
                     </el-form>
                 </el-collapse-item>
             </el-collapse>
-
         </div>
         <span slot="content">
              <!--<el-row type="flex" class="row-bg a4-portrait" justify="center">
@@ -241,17 +240,16 @@
                     typeOptionsModel: [],
                     dateRange: ""
                 },
-
+                inl: true,
                 roleBranchOptions: [],
                 roleAreaOptions: [],
                 patientOptions: [],
                 typeOptions: [],
 
                 exchangeOptions: [],
-
                 dateRange: "",
                 activeName: "1",
-                registersData: [],
+                registersData: {},
                 loading: false,
 
                 companyName: "",
@@ -433,7 +431,7 @@
         },
         computed: {
             dataExist() {
-                return this.registersData.length > 0;
+                return this.registersData && this.registersData.data && this.registersData.data.length > 0;
             }
         },
 

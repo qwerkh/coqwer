@@ -45,7 +45,7 @@ editTmpl.helpers({
 //event
 
 indexTmpl.events({
-    'click .edit' (event, instance) {
+    'click button.edit' (event, instance) {
         let doc = Co_Company.findOne();
         FlowRouter.go(`/co-setting/company/${doc._id}/edit`);
     }

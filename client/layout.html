@@ -1,10 +1,11 @@
 <head>
     <title>Cosmetic</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet"
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <!--<link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/element-ui/1.3.7/theme-default/fonts/element-icons.ttf">
     <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/element-ui/1.3.7/theme-default/fonts/element-icons.woff">
+          href="https://cdnjs.cloudflare.com/ajax/libs/element-ui/1.3.7/theme-default/fonts/element-icons.woff">-->
 </head>
 
 <template name="MainLayout">
@@ -135,13 +136,14 @@
                 {{#if currentUser}}
                     {{#if isInRole "super,admin,setting" "co"}}
                         <div class="ui dropdown item">
-                            <div class="text"><i class="wpforms icon"></i> Setting</div>
+                            <div class="text"><i class="cogs icon"></i> Setting</div>
                             <i class="dropdown icon"></i>
                             <div class="menu">
                                 <a href="{{pathFor 'co.machin'}}" class="item"><i class="camera retro icon"></i> Machin</a>
                                 <a href="{{pathFor 'co.medicine'}}" class="item"><i class="add square icon"></i>
                                     Medicine</a>
-                                <a href="{{pathFor 'co.service'}}" class="item"><i class="yelp icon"></i> Service</a>
+                                <a href="{{pathFor 'co.service'}}" class="item"><i class="tint icon"></i>
+                                    Service</a>
 
                                 <div class="ui left pointing dropdown link item">
                                     <i class="dropdown icon"></i>
@@ -153,7 +155,8 @@
                                         <a href="{{pathFor 'co.medicineType'}}" class="item"><i
                                                 class="add square icon"></i>
                                             Medicine Type</a>
-                                        <a href="{{pathFor 'co.serviceType'}}" class="item"><i class="yelp icon"></i>
+                                        <a href="{{pathFor 'co.serviceType'}}" class="item"><i
+                                                class="tint icon"></i>
                                             Service
                                             Type</a>
                                         <!--<a href="{{pathFor 'co.reference'}}" class="item"><i
@@ -166,7 +169,7 @@
                                     <div class="divider"></div>
                                     <div class="ui left pointing dropdown link item">
                                         <i class="dropdown icon"></i>
-                                        <i class="shield icon"></i> Account
+                                        <i class="bell icon"></i> Account
                                         <div class="menu">
                                             <a href="{{pathFor 'co.chartAccount'}}" class="item"><i
                                                     class="camera retro icon"></i>
@@ -199,7 +202,7 @@
                             <i class="registered icon"></i> Register List
                         </a>
                         <a href="{{pathFor 'co.payment'}}" class="{{isActiveRoute 'co.payment'}} item">
-                            <i class="money icon"></i>Receive Payment List
+                            <i class="dollar icon"></i>Receive Payment List
                         </a>
                     {{/if}}
 
@@ -210,7 +213,7 @@
 
                     {{#if isInRole "super,admin,report"  "co"}}
                         <div class="ui dropdown item">
-                            <div class="text"><i class="wpforms icon"></i> Report</div>
+                            <div class="text"><i class="file icon"></i> Report</div>
                             <i class="dropdown icon"></i>
                             <div class="menu">
 
@@ -242,10 +245,10 @@
                     {{/if}}
                     {{#if isInRole "super,admin,​​eop"  "co"}}
                         <div class="ui dropdown item">
-                            <div class="text"><i class="wpforms icon"></i> ​​EOP</div>
+                            <div class="text"><i class="compress icon"></i> ​​EOP</div>
                             <i class="dropdown icon"></i>
                             <div class="menu">
-                                <a href="{{pathFor 'co.exchange'}}" class="item"><i class="exchange icon"></i> Exchange</a>
+                                <a href="{{pathFor 'co.exchange'}}" class="item"><i class="arrow circle right icon"></i> Exchange</a>
                                 <a href="{{pathFor 'co.endOfProcess'}}" class="item"><i
                                         class="camera retro icon"></i>
                                     End Of Process</a>

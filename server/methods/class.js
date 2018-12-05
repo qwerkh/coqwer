@@ -4,7 +4,7 @@ import {Co_Journal} from "../../imports/collection/journal";
 import {Co_Exchange} from "../../imports/collection/exchange";
 import {Co_Company} from "../../imports/collection/company";
 import {SpaceChar} from "../../both/config/space";
-
+import {Meteor} from 'meteor/meteor';
 
 export default class ClassReport {
     static registerReport(param, userId) {
@@ -18,8 +18,10 @@ export default class ClassReport {
         if (param) {
             parameter = param;
         }
+
         let registerList = Co_Register.aggregate(
             [
+                {$match: parameter},
                 {
                     $lookup: {
                         from: "co_patient",
@@ -29,7 +31,6 @@ export default class ClassReport {
                     }
                 },
                 {$unwind: {path: "$patientDoc", preserveNullAndEmptyArrays: true}},
-                {$match: parameter}
 
             ]).map(function (obj) {
             if (CompanyDoc.asigneUser && CompanyDoc.asigneUser.indexOf(userId) > -1) {

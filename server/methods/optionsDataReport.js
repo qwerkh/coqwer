@@ -13,7 +13,6 @@ import {Co_Register} from '../../imports/collection/register'
 import {Co_ChartAccount} from '../../imports/collection/chartAccount'
 import {Co_AccountType} from '../../imports/collection/accountType'
 import {Co_Exchange} from '../../imports/collection/exchange'
-
 import {SpaceChar} from "../../both/config/space"
 
 Meteor.methods({

@@ -25,7 +25,7 @@ index.events({
         let rowData = dataTalbe.row(event.currentTarget).data();
         FlowRouter.go(`/co-setting/user-setting/${rowData._id}/edit`)
     },
-    'click .edit'(event, instance) {
+    'click button.edit'(event, instance) {
         FlowRouter.go(`/co-setting/user-setting/${this._id}/edit`)
     },
     'click .remove'(event, instance) {

@@ -60,7 +60,7 @@ indexTmpl.events({
         )
 
     },
-    'click .edit' (event, instance) {
+    'click button.edit' (event, instance) {
         let self = this;
         FlowRouter.go(`/co-setting/reference/${self._id}/edit`);
     },

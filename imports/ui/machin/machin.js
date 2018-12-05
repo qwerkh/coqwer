@@ -13,20 +13,20 @@ let indexTmpl = Template.co_machin,
 let machinTypeOption = new ReactiveVar([]);
 
 indexTmpl.helpers({
-    dataTable () {
+    dataTable() {
         return MachinTabular;
     },
-    selector(){
+    selector() {
         return {rolesArea: Session.get("area")};
     }
 
 })
 
 addTmpl.helpers({
-    collection(){
+    collection() {
         return Co_Machin;
     },
-    machinTypeOption(){
+    machinTypeOption() {
         return machinTypeOption.get();
     }
 })
@@ -51,10 +51,10 @@ editTmpl.helpers({
         let instance = Template.instance();
         return instance.subUserReady.get()
     },
-    collection(){
+    collection() {
         return Co_Machin;
     },
-    machinTypeOption(){
+    machinTypeOption() {
         return machinTypeOption.get();
     }
 })
@@ -70,11 +70,11 @@ editTmpl.onCreated(function () {
 //event
 
 indexTmpl.events({
-    'click .add'(){
+    'click .add'() {
         FlowRouter.go('/co-setting/machin/add');
     },
 
-    'click .remove'(e){
+    'click .remove'(e) {
         var self = this;
         alertify.confirm(
             'Machin',
@@ -94,11 +94,11 @@ indexTmpl.events({
         )
 
     },
-    'click .edit' (event, instance) {
+    'click button.edit'(event, instance) {
         let self = this;
         FlowRouter.go(`/co-setting/machin/${self._id}/edit`);
     },
-    'click .show'(event, instance){
+    'click .show'(event, instance) {
         let self = this;
         FlowRouter.go(`/co-setting/machin/${self._id}/show`);
     }
@@ -107,13 +107,13 @@ indexTmpl.events({
 
 
 addTmpl.events({
-    'click .cancel'(e, t){
+    'click .cancel'(e, t) {
         FlowRouter.go(`/co-setting/machin`);
     }
 })
 
 editTmpl.events({
-    'click .cancel'(e, t){
+    'click .cancel'(e, t) {
         FlowRouter.go(`/co-setting/machin`);
     }
 });
@@ -150,7 +150,7 @@ AutoForm.hooks({
         before: {
             insert: function (doc) {
 
-                doc.buyDate=moment(doc.buyDate).startOf("day").add(12,"hour").toDate();
+                doc.buyDate = moment(doc.buyDate).startOf("day").add(12, "hour").toDate();
                 doc.rolesArea = Session.get('area');
                 return doc;
             }
@@ -170,9 +170,9 @@ AutoForm.hooks({
         }
     },
     co_machinEdit: {
-        before:{
+        before: {
             update: function (doc) {
-                doc.$set.buyDate=moment(doc.$set.buyDate).startOf("day").add(12,"hour").toDate();
+                doc.$set.buyDate = moment(doc.$set.buyDate).startOf("day").add(12, "hour").toDate();
                 return doc;
             }
         },

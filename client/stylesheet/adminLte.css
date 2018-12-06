@@ -214,6 +214,7 @@ img {
     background: linear-gradient(60deg, #ab47bc, #8e24aa);
     box-shadow: 0 4px 20px 0 rgba(0, 0, 0, .14), 0 7px 10px -5px rgba(156, 39, 176, .4);
 }
+
 .card [data-background-color] {
     box-shadow: 0 10px 30px -12px rgba(0, 0, 0, .42), 0 4px 25px 0 rgba(0, 0, 0, .12), 0 8px 10px -5px rgba(0, 0, 0, .2);
     margin: -20px 15px 0;

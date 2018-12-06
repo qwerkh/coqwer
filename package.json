@@ -31,5 +31,7 @@
       }
     }
   },
-  "devDependencies": {}
+  "devDependencies": {
+	"autoprefixer": "^6.3.1"
+	}
 }

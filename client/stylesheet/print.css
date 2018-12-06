@@ -3,8 +3,12 @@
         display: none;
     }
 
-    .main-layout{
+    .main-layout {
         margin-top: 10px !important;
+    }
+
+    .invoice-title {
+        /*font-size: 18px;*/
     }
 
 }

@@ -100,7 +100,8 @@
                             <!-- small box -->
                             <div class="small-box bg-yellow">
                                 <div class="inner">
-                                    <h2>{{dashboardData.totalMedicine}}</h2>
+                                    <h2>{{dashboardData.totalMedicine}}<sup
+                                            style="font-size: 20px">{{dashboardData.currency}}</sup></h2>
 
                                     <p style="font-family: 'Khmer OS Battambang';font-size: 17px !important;">
                                         សរុបការលក់ថ្នាំ</p>

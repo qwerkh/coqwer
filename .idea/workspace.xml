@@ -9,13 +9,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="37b05a99-1bf8-426c-a9a5-9f4248831879" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/imports/vue/ui/dashboard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/imports/vue/ui/dashboard.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bcrypt/lib/binding/bcrypt_lib.node" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/bcrypt/lib/binding/bcrypt_lib.node" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/methods/class.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/methods/class.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/methods/report/dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/methods/report/dashboard.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -126,8 +120,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/imports/vue/ui/dashboard.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="123" column="61" selection-start-line="123" selection-start-column="61" selection-end-line="123" selection-end-column="61" />
+            <state relative-caret-position="558">
+              <caret line="100" column="61" selection-start-line="100" selection-start-column="61" selection-end-line="100" selection-end-column="61" />
               <folding>
                 <element signature="n#style#0;n#el-col#0;n#el-row#1;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#slot#1;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
@@ -681,12 +675,12 @@
       <workItem from="1544012737674" duration="3788000" />
       <workItem from="1544060207745" duration="11425000" />
       <workItem from="1544104393658" duration="990000" />
-      <workItem from="1544150263901" duration="5510000" />
+      <workItem from="1544150263901" duration="6131000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="852679000" />
+    <option name="totallyTimeSpent" value="853300000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1082,8 +1076,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/imports/vue/ui/dashboard.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="123" column="61" selection-start-line="123" selection-start-column="61" selection-end-line="123" selection-end-column="61" />
+        <state relative-caret-position="558">
+          <caret line="100" column="61" selection-start-line="100" selection-start-column="61" selection-end-line="100" selection-end-column="61" />
           <folding>
             <element signature="n#style#0;n#el-col#0;n#el-row#1;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#slot#1;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />

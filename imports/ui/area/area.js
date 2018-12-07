@@ -1,8 +1,10 @@
 import {Co_Company} from '../../collection/company';
 import './area.html';
+
 let indexTmpl = Template.sample_area;
 //import schema
 import {areaSchema} from '../../collection/area';
+
 indexTmpl.onCreated(function () {
     this.rolesBranch = new ReactiveVar([]);
     this.rolesArea = new ReactiveVar([]);
@@ -40,34 +42,40 @@ indexTmpl.onCreated(function () {
 });
 
 indexTmpl.helpers({
-    fetchGeoDataReady(){
+    fetchGeoDataReady() {
         let instance = Template.instance();
         return instance.fetchGeoReady.get();
     },
-    rolesBranchOptions(){
+    rolesBranchOptions() {
         let instance = Template.instance();
         return instance.rolesBranch.get();
     },
-    rolesAreaOptions(){
+    rolesAreaOptions() {
         let instance = Template.instance();
         return instance.rolesArea.get();
     },
     schema() {
         return areaSchema;
     },
-    district(){
+    district() {
         let district = Session.get('area');
     }
 });
 indexTmpl.events({
-    'change [name="rolesBranch"]'(event, instance){
+    'change [name="rolesBranch"]'(event, instance) {
         let currentValue = event.currentTarget.value;
         if (currentValue != '') {
             instance.provinceId.set(currentValue);
         }
     },
-    'click .sumitArea'(event, instance){
+    'click .sumitArea'(event, instance) {
         $('#area').submit();
+    },
+    'click #logout'() {
+        Session.set('area', undefined);
+        Session.set('areaName', undefined);
+        Meteor.logout();
+        FlowRouter.go('co.home');
     }
 });
 AutoForm.hooks({

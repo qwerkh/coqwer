@@ -44,28 +44,12 @@
                     <div class="row-new">
                         <div class="col-lg-3 col-xs-6">
                             <!-- small box -->
-                            <div class="small-box bg-purple">
-                                <div class="inner">
-                                    <h3>{{dashboardData.totalReceivePayment}}<sup
-                                            style="font-size: 20px"> {{dashboardData.currency}}</sup></h3>
-
-                                    <p style="font-family: 'Khmer OS Battambang'">ទទួលលុយ</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="ion ion-bag"></i>
-                                </div>
-                                <a style="font-family: 'Khmer OS Battambang'" href="#" class="small-box-footer">ថ្ងៃ
-                                    ({{dashboardData.today}}) <i
-                                            class="fa fa-arrow-circle-right"></i></a>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-xs-6">
-                            <!-- small box -->
                             <div class="small-box bg-aqua">
                                 <div class="inner">
-                                    <h3>{{dashboardData.totalNumberInvoice}}</h3>
+                                    <h2>{{dashboardData.totalNumberInvoice}}</h2>
 
-                                    <p style="font-family: 'Khmer OS Battambang'">ចំនួនវិក័យបត្រ</p>
+                                    <p style="font-family: 'Khmer OS Battambang';font-size: 17px !important;">
+                                        ចំនួនវិក័យបត្រ</p>
                                 </div>
                                 <div class="icon">
                                     <i class="ion ion-bag"></i>
@@ -80,11 +64,11 @@
                             <!-- small box -->
                             <div class="small-box bg-green">
                                 <div class="inner">
-                                    <h3>{{dashboardData.totalInvoice}} <sup
+                                    <h2>{{dashboardData.total}} <sup
                                             style="font-size: 20px">{{dashboardData.currency}}</sup>
-                                    </h3>
+                                    </h2>
 
-                                    <p style="font-family: 'Khmer OS Battambang'">សរុបការលក់</p>
+                                    <p style="font-family: 'Khmer OS Battambang';font-size: 17px !important;">សរុប</p>
                                 </div>
                                 <div class="icon">
                                     <i class="ion ion-stats-bars"></i>
@@ -97,17 +81,18 @@
                             <!-- small box -->
                             <div class="small-box bg-fuchsia-active">
                                 <div class="inner">
-                                    <h3>{{dashboardData.debtTotal}} <sup
+                                    <h2>{{dashboardData.totalService}} <sup
                                             style="font-size: 20px">{{dashboardData.currency}}</sup>
-                                    </h3>
+                                    </h2>
 
-                                    <p style="font-family: 'Khmer OS Battambang'">សរុបបំណុលគិតត្រឹមថ្ងៃនេះ</p>
+                                    <p style="font-family: 'Khmer OS Battambang';font-size: 17px !important;">
+                                        សរុបការផ្តល់សេវាកម្ម</p>
                                 </div>
                                 <div class="icon">
                                     <i class="ion ion-stats-bars"></i>
                                 </div>
-                                <a href="#" class="small-box-footer" style="font-family: 'Khmer OS Battambang'">គិតត្រឹមថ្ងៃនេះ
-                                    ({{dashboardData.todayAs}}) <i class="fa fa-arrow-circle-right"></i></a>
+                                <a href="#" class="small-box-footer" style="font-family: 'Khmer OS Battambang'">ថ្ងៃ
+                                    ({{dashboardData.today}}) <i class="fa fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
                         <!-- ./col -->
@@ -115,9 +100,10 @@
                             <!-- small box -->
                             <div class="small-box bg-yellow">
                                 <div class="inner">
-                                    <h3>{{dashboardData.totalNumberInvoiceReceiveItem}}</h3>
+                                    <h2>{{dashboardData.totalMedicine}}</h2>
 
-                                    <p style="font-family: 'Khmer OS Battambang'">ចំនួនវិក័យបត្រយកទំនិញកុម្មង់</p>
+                                    <p style="font-family: 'Khmer OS Battambang';font-size: 17px !important;">
+                                        សរុបការលក់ថ្នាំ</p>
 
                                 </div>
                                 <div class="icon">
@@ -127,40 +113,43 @@
                                     ({{dashboardData.today}}) <i class="fa fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
-                        <!-- ./col -->
-                        <div class="col-lg-3 col-xs-6">
-                            <!-- small box -->
-                            <div class="small-box bg-red">
-                                <div class="inner">
-                                    <h3>{{dashboardData.totalReceiveItem}} <sup
-                                            style="font-size: 20px">{{dashboardData.currency}}</sup></h3>
 
-                                    <p style="font-family: 'Khmer OS Battambang'">សរុបការយកទំនិញកុម្មង់</p>
-
-                                </div>
-                                <div class="icon">
-                                    <i class="ion ion-pie-graph"></i>
-                                </div>
-                                <a href="#" class="small-box-footer">ថ្ងៃ
-                                    ({{dashboardData.today}}) <i class="fa fa-arrow-circle-right"></i></a>
-                            </div>
-                        </div>
-                        <!-- ./col -->
                     </div>
                     <br>
+                    <br>
+                    <br>
+                    <h1>សេវាកម្ម</h1>
 
                     <div class="row">
-                        <table class="table table-report-block-summary table-bordered">
+                        <table class="ui celled striped table">
                             <thead style="margin-top: 5px">
                             <tr>
                                 <th>ល.រ</th>
                                 <th>ឈ្មោះផលិតផល</th>
-                                <th>ចំនួនលក់បាន</th>
-                                <th>ចំនួនពីកុម្មង់</th>
-                                <th>សរុបចំនួន</th>
+                                <th>ចំនួន</th>
                             </tr>
                             </thead>
-                            <tbody style="margin-bottom: 5px;" v-html="dashboardData.htmlInvoice">
+                            <tbody style="margin-bottom: 5px;" v-html="dashboardData.htmlInvoiceService">
+
+                            </tbody>
+
+
+                        </table>
+                    </div>
+                    <br>
+                    <br>
+                    <h1>លក់ថ្នាំ</h1>
+
+                    <div class="row">
+                        <table class="ui celled striped table">
+                            <thead style="margin-top: 5px">
+                            <tr>
+                                <th>ល.រ</th>
+                                <th>ឈ្មោះផលិតផល</th>
+                                <th>ចំនួន</th>
+                            </tr>
+                            </thead>
+                            <tbody style="margin-bottom: 5px;" v-html="dashboardData.htmlInvoiceMedicine">
 
                             </tbody>
 
@@ -231,8 +220,7 @@
         methods: {
             queryData: _.debounce(function () {
                 let param = {};
-                param.area = Session.get("area");
-                param.locationId = "";
+                param.area = Session.get('area');
                 param.today = moment().toDate();
                 param.minusDay = this.params.dateChoose || 0;
 

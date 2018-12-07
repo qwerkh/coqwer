@@ -10,10 +10,10 @@ let indexTmpl = Template.co_company,
 
 let userOpt = new ReactiveVar([]);
 indexTmpl.helpers({
-    selector(){
+    selector() {
         return {};
     },
-    data(){
+    data() {
         return Co_Company.findOne();
     }
 })
@@ -33,10 +33,10 @@ editTmpl.helpers({
         let instance = Template.instance();
         return instance.subUserReady.get()
     },
-    collection(){
+    collection() {
         return Co_Company;
     },
-    userOption(){
+    userOption() {
         return userOpt.get();
     }
 })
@@ -45,7 +45,7 @@ editTmpl.helpers({
 //event
 
 indexTmpl.events({
-    'click button.edit' (event, instance) {
+    'click .edit'(event, instance) {
         let doc = Co_Company.findOne();
         FlowRouter.go(`/co-setting/company/${doc._id}/edit`);
     }
@@ -54,7 +54,7 @@ indexTmpl.events({
 
 
 editTmpl.events({
-    'click .cancel'(e, t){
+    'click .cancel'(e, t) {
         FlowRouter.go(`/co-setting/company`);
     }
 });

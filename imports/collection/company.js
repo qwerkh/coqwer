@@ -158,6 +158,13 @@ Co_Company.schema = new SimpleSchema({
         label: "December (%)",
         decimal: true,
         max: 99
+    },
+    hideIfGreater: {
+        type: Number,
+        label: "Hide if Greater",
+        decimal: true,
+        optional: true,
+        defaultValue:9999999999
     }
 
 })

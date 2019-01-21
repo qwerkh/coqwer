@@ -64,17 +64,6 @@
                         <el-row type="flex" class="row-bg" justify="left">
 
                             <el-col :span="21">
-                                <el-form-item label="Patient :">
-                                    <el-select filterable v-model="registerByDateReport.patientOptionsModel" multiple
-                                               placeholder="All">
-                                        <el-option
-                                                v-for="item in patientOptions"
-                                                :key="item.value"
-                                                :label="item.label"
-                                                :value="item.value">
-                                        </el-option>
-                                    </el-select>
-                                </el-form-item>
                                 <el-form-item label-width="60px" label="Status :">
                                     <el-select filterable v-model="registerByDateReport.typeOptionsModel" multiple
                                                placeholder="All">

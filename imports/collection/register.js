@@ -40,7 +40,7 @@ Co_Register.schema = new SimpleSchema({
     'services.$.serviceName': {
         type: String
     },
-    'medicines.$.isRetailPrice': {
+    'services.$.isRetailPrice': {
         type: Boolean,
         label: " "
     },

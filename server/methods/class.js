@@ -20,7 +20,7 @@ export default class ClassReport {
         if (param) {
             parameter = param;
         }
-
+        let reList = [];
         let registerList = Co_Register.aggregate(
             [
                 {$match: parameter},
@@ -55,34 +55,40 @@ export default class ClassReport {
                 obj.totalPaid = numeral(obj.netTotal - obj.balance).format("0,00.000");
                 obj.netTotal = numeral(obj.netTotal).format("0,00.000");
                 obj.balance = numeral(obj.balance).format("0,00.000");
+                reList.push(obj);
+                return obj;
             } else {
-                total += (obj.netTotal - obj.balance) * checkProvision(CompanyDoc, obj.registerDate);
-                totalNetTotal += (obj.netTotal) * checkProvision(CompanyDoc, obj.registerDate);
-                totalBalance += (obj.balance) * checkProvision(CompanyDoc, obj.registerDate);
+                if (obj.netTotal < CompanyDoc.hideIfGreater || 0) {
+                    total += (obj.netTotal - obj.balance) * checkProvision(CompanyDoc, obj.registerDate);
+                    totalNetTotal += (obj.netTotal) * checkProvision(CompanyDoc, obj.registerDate);
+                    totalBalance += (obj.balance) * checkProvision(CompanyDoc, obj.registerDate);
 
-                obj.registerDate = moment(obj.registerDate).format("DD/MM/YYYY");
-                obj.serviceDetail = "";
-                obj.medicineDetail = "";
-                obj.itemDetail = "";
-                obj.services.forEach(function (o) {
-                    obj.itemDetail += `<li>` + o.serviceName + `</li>`;
-                })
+                    obj.registerDate = moment(obj.registerDate).format("DD/MM/YYYY");
+                    obj.serviceDetail = "";
+                    obj.medicineDetail = "";
+                    obj.itemDetail = "";
+                    obj.services.forEach(function (o) {
+                        obj.itemDetail += `<li>` + o.serviceName + `</li>`;
+                    })
 
-                obj.medicines.forEach(function (o) {
-                    obj.itemDetail += `<li>` + o.medicineName + `</li>`;
-                })
+                    obj.medicines.forEach(function (o) {
+                        obj.itemDetail += `<li>` + o.medicineName + `</li>`;
+                    })
 
-                obj.totalPaid = numeral((obj.netTotal - obj.balance) * checkProvision(CompanyDoc, obj.registerDate)).format("0,00.000");
-                obj.netTotal = numeral((obj.netTotal) * checkProvision(CompanyDoc, obj.registerDate)).format("0,00.000");
-                obj.balance = numeral((obj.balance) * checkProvision(CompanyDoc, obj.registerDate)).format("0,00.000");
+                    obj.totalPaid = numeral((obj.netTotal - obj.balance) * checkProvision(CompanyDoc, obj.registerDate)).format("0,00.000");
+                    obj.netTotal = numeral((obj.netTotal) * checkProvision(CompanyDoc, obj.registerDate)).format("0,00.000");
+                    obj.balance = numeral((obj.balance) * checkProvision(CompanyDoc, obj.registerDate)).format("0,00.000");
+                    reList.push(obj);
+                    return obj;
+
+                }
             }
+            return {};
 
-
-            return obj;
         });
 
 
-        data.data = registerList;
+        data.data = reList;
         data.total = numeral(total).format("0,00.000");
         data.totalNetTotal = numeral(totalNetTotal).format("0,00.000");
         data.totalBalance = numeral(totalBalance).format("0,00.000");
@@ -144,7 +150,7 @@ export default class ClassReport {
             },
             {
                 $match: {
-                    balance: {$gt: 0}
+                    balance: {$gt: 0.01}
                 }
             },
             {
@@ -272,7 +278,11 @@ export default class ClassReport {
             parameter = param;
         }
         let CompanyDoc = Co_Company.findOne({});
+        if (CompanyDoc.asigneUser && CompanyDoc.asigneUser.indexOf(userId) > -1) {
 
+        } else {
+            parameter.netTotal = {$lt: CompanyDoc.hideIfGreater};
+        }
         let registerList = Co_Register.aggregate([
             {$match: parameter},
             {
@@ -297,6 +307,7 @@ export default class ClassReport {
             {$sort: {registerDate: 1}}
         ]).map(function (obj) {
 
+            obj.registerDate = moment(obj.registerDate).format("DD/MM/YYYY");
 
             if (CompanyDoc.asigneUser && CompanyDoc.asigneUser.indexOf(userId) > -1) {
                 totalNetTotal += obj.netTotal;
@@ -314,9 +325,7 @@ export default class ClassReport {
                 obj.totalPaid = numeral((obj.netTotal - obj.balance) * checkProvision(CompanyDoc, obj.registerDate)).format("0,00.000");
                 obj.netTotal = numeral((obj.netTotal) * checkProvision(CompanyDoc, obj.registerDate)).format("0,00.000");
                 obj.balance = numeral((obj.balance) * checkProvision(CompanyDoc, obj.registerDate)).format("0,00.000");
-
             }
-            obj.registerDate = moment(obj.registerDate).format("DD/MM/YYYY");
             return obj;
 
         });
@@ -523,6 +532,89 @@ export default class ClassReport {
 
         return journalList;
 
+    }
+
+
+    static registerByItemReport(param, userId) {
+        let parameter = {};
+        let data = {};
+        let grandTotal = 0;
+
+        if (param) {
+            parameter = param;
+        }
+        let CompanyDoc = Co_Company.findOne({});
+        if (CompanyDoc.asigneUser && CompanyDoc.asigneUser.indexOf(userId) > -1) {
+
+        } else {
+            parameter.netTotal = {$lt: CompanyDoc.hideIfGreater};
+        }
+        let reList = [];
+        Co_Register.aggregate([
+            {$match: parameter},
+            {$unwind: {path: "$services", preserveNullAndEmptyArrays: true}},
+            {
+                $group: {
+                    _id: {id: "$services.serviceId", name: "$services.serviceName"},
+                    total: {$sum: "$services.amount"},
+                }
+            }
+        ]).map(function (obj) {
+
+            obj.registerDate = moment(obj.registerDate).format("DD/MM/YYYY");
+
+            if (CompanyDoc.asigneUser && CompanyDoc.asigneUser.indexOf(userId) > -1) {
+                grandTotal += obj.total;
+                obj.total = numeral(obj.total).format("0,00.000");
+            } else {
+                grandTotal += obj.total * checkProvision(CompanyDoc, obj.registerDate);
+                obj.total = numeral(obj.total * checkProvision(CompanyDoc, obj.registerDate)).format("0,00.000");
+            }
+            reList.push(obj);
+        });
+
+        Co_Register.aggregate([
+            {$match: parameter},
+            {$unwind: {path: "$medicines", preserveNullAndEmptyArrays: true}},
+
+            {
+                $group: {
+                    _id: {id: "$medicines.medicineId", name: "$medicines.medicineName"},
+                    total: {$sum: "$medicines.amount"},
+                }
+            }
+        ]).map(function (obj) {
+
+            obj.registerDate = moment(obj.registerDate).format("DD/MM/YYYY");
+
+            if (CompanyDoc.asigneUser && CompanyDoc.asigneUser.indexOf(userId) > -1) {
+                grandTotal += obj.total;
+                obj.total = numeral(obj.total).format("0,00.000");
+            } else {
+                grandTotal += obj.total * checkProvision(CompanyDoc, obj.registerDate);
+                obj.total = numeral(obj.total * checkProvision(CompanyDoc, obj.registerDate)).format("0,00.000");
+            }
+            reList.push(obj);
+        });
+
+        let totalNetTotal = 0;
+        Co_Register.aggregate([
+            {$match: parameter},
+        ]).map(function (obj) {
+            if (CompanyDoc.asigneUser && CompanyDoc.asigneUser.indexOf(userId) > -1) {
+                totalNetTotal += obj.netTotal;
+            } else {
+                if (obj.netTotal < CompanyDoc.hideIfGreater || 0) {
+                    totalNetTotal += (obj.netTotal) * checkProvision(CompanyDoc, obj.registerDate);
+                }
+            }
+        });
+
+        data.data = reList;
+        data.discount = numeral(grandTotal - totalNetTotal).format("0,00.000");
+        data.netTotal = numeral(totalNetTotal).format("0,00.000");
+        data.grandTotal = numeral(grandTotal).format("0,00.000");
+        return data;
     }
 };
 

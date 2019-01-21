@@ -1,19 +1,19 @@
 <template>
-    <div class="co-checkQualityMachin-report">
+    <div class="co-registerByDate-report">
         <div slot="header">
             <el-collapse v-model="activeName" class="no-print" accordion>
                 <el-collapse-item name="1">
                 <span slot="title">
 
-                            Check Quality Machin Report
+                            Register By Item Report
                         </span>
 
-                    <el-form :inline="true" :model="checkQualityMachinReport" ref="checkQualityMachinReport">
+                    <el-form :inline="true" :model="registerByDateReport" ref="registerByDateReport">
                         <el-row type="flex" class="row-bg" justify="left" style="width: 100%">
                             <el-col :span="21">
                                 <el-form-item label="Branch :">
                                     <el-select width="100%" filterable
-                                               v-model="checkQualityMachinReport.roleBranchOptionsModel"
+                                               v-model="registerByDateReport.roleBranchOptionsModel"
                                                multiple
                                                placeholder="All">
                                         <el-option
@@ -28,7 +28,7 @@
 
                                 <el-form-item label-width="60px" label="Area  :">
                                     <el-select width="100%" filterable
-                                               v-model="checkQualityMachinReport.roleAreaOptionsModel"
+                                               v-model="registerByDateReport.roleAreaOptionsModel"
                                                multiple
                                                placeholder="All">
                                         <el-option
@@ -40,15 +40,16 @@
                                     </el-select>
                                 </el-form-item>
 
-                                <el-form-item class="registerDateAs" label="Date :">
+                                <el-form-item class="registerDateRange" label="Date :">
                                     <el-date-picker format="dd/MM/yyyy"
-                                                    v-model="checkQualityMachinReport.dateAs"
-                                                    type="date"
+                                                    v-model="registerByDateReport.dateRange"
+                                                    type="daterange"
                                                     align="right"
-                                                    placeholder="Pick a Date"
-                                    >
+                                                    placeholder="Pick a range"
+                                                    :picker-options="pickerOptions2">
                                     </el-date-picker>
                                 </el-form-item>
+
                             </el-col>
                             <el-col :span="3">
                                 <el-button :loading="loading" @click="handleRunReport('dynamicValidateForm')"
@@ -59,27 +60,15 @@
                                 </el-button>
                             </el-col>
                         </el-row>
+
                         <el-row type="flex" class="row-bg" justify="left">
+
                             <el-col :span="21">
-                                <el-form-item label="Machin Type :">
-                                    <el-select filterable
-                                               v-model="checkQualityMachinReport.machinTypeOptionsModel"
-                                               multiple
+                                <el-form-item label-width="60px" label="Status :">
+                                    <el-select filterable v-model="registerByDateReport.typeOptionsModel" multiple
                                                placeholder="All">
                                         <el-option
-                                                v-for="item in machinTypeOptions"
-                                                :key="item.value"
-                                                :label="item.label"
-                                                :value="item.value">
-                                        </el-option>
-                                    </el-select>
-                                </el-form-item>
-                                <el-form-item label-width="80px" label="Machin :">
-                                    <el-select filterable v-model="checkQualityMachinReport.machinOptionsModel"
-                                               multiple
-                                               placeholder="All">
-                                        <el-option
-                                                v-for="item in machinOptions"
+                                                v-for="item in typeOptions"
                                                 :key="item.value"
                                                 :label="item.label"
                                                 :value="item.value">
@@ -101,6 +90,7 @@
 
         </div>
         <span slot="content">
+
                         <span slot="content">
                             <div class="title">
                             <div class="title1">
@@ -110,7 +100,7 @@
                                 {{companyEnName}}
                             </div>
                             <div class="title2">
-                                <u>Check Quality Machin  Report</u>
+                                <u>Register By Item Report</u>
                             </div>
                             <div class="title3">
                                 {{addressName}}
@@ -122,40 +112,40 @@
                         </div>
 
                         <div style="width: 50%; float: right;text-align: right;">
-                            <strong>Date:</strong> {{dateHeader}}
+                            <strong>Date:</strong> {{dateRangeHeader}}
                         </div>
                     </div>
                         <table class="ui celled table table-report">
-                             <thead>
+                                <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th colspan="3">Model & Machin Name</th>
-                                        <th colspan="2">Times</th>
+                                        <th>Item</th>
+                                        <th>Amount</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <slot v-for="(checkQualityMachin,index) in checkQualityMachinData.data">
+                                    <slot v-for="(register,index) in registersData.data">
                                         <tr>
                                             <td>{{index + 1}}</td>
-                                            <td colspan="3">{{checkQualityMachin._id.machinDoc.model}} : {{checkQualityMachin._id.machinDoc.name}} ({{checkQualityMachin._id.machinDoc.buyDate | momentFormat}})</td>
-                                            <td>Total : {{checkQualityMachin.totalUseMachin }}</td>
-                                            <td>Average : {{(checkQualityMachin.totalUseMachin / checkQualityMachin.numberPatientUse) | numFormat}}</td>
-                                  </tr>
-
-                                         <slot v-for="(checkQuality,index1) in checkQualityMachin.data">
-                                            <tr>
-                                            <td></td>
-                                            <td>{{index1 + 1}}</td>
-                                            <td>{{checkQuality.patientDoc && checkQuality.patientDoc.khName || ""}}</td>
-                                            <td>{{checkQuality.serviceDoc && checkQuality.serviceDoc.name || ""}}</td>
-                                            <td colspan="2" style="text-align: center">{{checkQuality.totalUse}}</td>
-                                             </tr>
-                                         </slot>
+                                            <td>{{register._id.name}}</td>
+                                            <td style="text-align: right">{{register.total}}</td>
+                                        </tr>
                                     </slot>
-
+                                    <tr>
+                                        <td colspan="2" style="text-align: right">Total :</td>
+                                        <td style="text-align: right">{{registersData.grandTotal}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2" style="text-align: right">Discount :</td>
+                                        <td style="text-align: right">{{registersData.discount}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2" style="text-align: right">Net Total :</td>
+                                        <td style="text-align: right">{{registersData.netTotal}}</td>
+                                    </tr>
                                 </tbody>
                         </table>
-                         <div style="width: 100%">
+                        <div style="width: 100%">
 
                                 <div style="width: 30%; float: left; text-align: right">
                                    <div style="margin-bottom: 7em">
@@ -174,8 +164,6 @@
                                     </div>
                                 </div>
                             </span>
-            <!--</el-col>
-     </el-row>-->
         </span>
     </div>
 </template>
@@ -183,32 +171,59 @@
     export default {
         data() {
             return {
-                checkQualityMachinReport: {
+                registerByDateReport: {
                     roleBranchOptionsModel: [],
                     roleAreaOptionsModel: [],
-                    machinTypeOptionsModel: [],
-                    machinOptionsModel: [],
-                    dateAs: ""
+                    patientOptionsModel: [],
+                    typeOptionsModel: [],
+                    dateRange: ""
                 },
 
                 roleBranchOptions: [],
                 roleAreaOptions: [],
+                patientOptions: [],
+                typeOptions: [],
 
-                dateAs: "",
+                exchangeOptions: [],
+
+                dateRange: "",
                 activeName: "1",
-                checkQualityMachinData: {},
+                registersData: [],
                 loading: false,
-
-                machinTypeOptions: [],
-                machinOptions: [],
 
                 companyName: "",
                 companyEnName: "",
                 addressName: "",
 
                 branchHeader: "All",
-                dateHeader: "All",
-
+                dateRangeHeader: "All",
+                pickerOptions2: {
+                    shortcuts: [{
+                        text: 'Last week',
+                        onClick(picker) {
+                            const end = new Date();
+                            const start = new Date();
+                            start.setTime(start.getTime() - 3600 * 1000 * 24 * 7);
+                            picker.$emit('pick', [start, end]);
+                        }
+                    }, {
+                        text: 'Last month',
+                        onClick(picker) {
+                            const end = new Date();
+                            const start = new Date();
+                            start.setTime(start.getTime() - 3600 * 1000 * 24 * 30);
+                            picker.$emit('pick', [start, end]);
+                        }
+                    }, {
+                        text: 'Last 3 months',
+                        onClick(picker) {
+                            const end = new Date();
+                            const start = new Date();
+                            start.setTime(start.getTime() - 3600 * 1000 * 24 * 90);
+                            picker.$emit('pick', [start, end]);
+                        }
+                    }]
+                },
                 printLoading: false,
             }
         },
@@ -223,40 +238,60 @@
                     this.roleAreaOptions = result;
                 })
             },
-            fetchMachinTypeOption() {
-                Meteor.call("fetchMachinTypeOption", this.checkQualityMachinReport.roleAreaOptionsModel, (err, result) => {
-                    this.machinTypeOptions = result;
+            fetchPatientOption(val) {
+                Meteor.call("fetchPatientOption", val, (err, result) => {
+                    this.patientOptions = result;
                 })
             },
-            fetchMachinOption(val) {
-                Meteor.call("fetchMachinOption", this.checkQualityMachinReport.roleAreaOptionsModel, val, (err, result) => {
-                    this.machinOptions = result;
+            fetchExchangeOption() {
+                Meteor.call("fetchExchangeOption", (err, result) => {
+                    this.exchangeOptions = result;
                 })
+            },
+            fetchTypeOption() {
+                let list = [];
+                list.push({label: "Active", value: "Active"});
+                list.push({label: "Partial", value: "Partial"});
+                list.push({label: "Complete", value: "Complete"});
+
+                this.typeOptions = list;
             },
 
             handleRunReport(formName) {
+
                 let params = {};
                 let userId = Meteor.userId();
-                this.checkQualityMachinData = [];
+
                 this.loading = true;
-                if (this.checkQualityMachinReport.roleAreaOptionsModel != "") {
-                    params.rolesArea = {$in: this.checkQualityMachinReport.roleAreaOptionsModel};
-                    Meteor.call("getBranchHeader", this.checkQualityMachinReport.roleAreaOptionsModel, (err, result) => {
+                if (this.registerByDateReport.roleAreaOptionsModel != "") {
+                    params.rolesArea = {$in: this.registerByDateReport.roleAreaOptionsModel};
+
+                    Meteor.call("getBranchHeader", this.registerByDateReport.roleAreaOptionsModel, (err, result) => {
                         this.branchHeader = result;
                     })
                 }
 
-                if (this.checkQualityMachinReport.dateAs != "") {
+                if (this.registerByDateReport.dateRange != "") {
                     params.registerDate = {
-                        $lte: moment(this.checkQualityMachinReport.dateAs).endOf("days").toDate()
+                        $gte: moment(this.registerByDateReport.dateRange[0]).startOf("days").toDate(),
+                        $lte: moment(this.registerByDateReport.dateRange[1]).endOf("days").toDate()
                     };
 
-                    this.dateHeader = moment(this.checkQualityMachinReport.dateAs).format("DD/MM/YYYY");
+                    this.dateRangeHeader = moment(this.registerByDateReport.dateRange[0]).format("DD/MM/YYYY") + "-" + moment(this.registerByDateReport.dateRange[1]).format("DD/MM/YYYY");
                 }
 
-                Meteor.call('giveMeCheckQualityMachinReport', params, userId, this.checkQualityMachinReport.machinTypeOptionsModel, this.checkQualityMachinReport.machinOptionsModel, (err, result) => {
+                if (this.registerByDateReport.patientOptionsModel != "") {
+                    params.patientId = {$in: this.registerByDateReport.patientOptionsModel};
+                }
+
+                if (this.registerByDateReport.typeOptionsModel != "") {
+                    params.status = {$in: this.registerByDateReport.typeOptionsModel};
+                }
+
+
+                Meteor.call('giveMeRegisterByItemReport', params, userId, (err, result) => {
                     if (!err) {
-                        this.checkQualityMachinData = result;
+                        this.registersData = result;
                     }
                     this.loading = false;
                 });
@@ -279,30 +314,28 @@
         },
         watch: {
 
-            "checkQualityMachinReport.roleBranchOptionsModel"(val) {
+
+            "registerByDateReport.roleBranchOptionsModel"(val) {
                 this.fetchAreaOption(val);
             }
             ,
-            "checkQualityMachinReport.roleAreaOptionsModel"(val) {
+            "registerByDateReport.roleAreaOptionsModel"(val) {
                 this.fetchPatientOption(val);
-            },
-
-
-            "checkQualityMachinReport.machinTypeOptionsModel"(val) {
-                this.fetchMachinOption(val);
-
             }
 
         },
         created() {
             this.fetchBranchOption();
-            this.fetchMachinTypeOption();
+//            this.fetchPatientOption([]);
+            this.fetchTypeOption([]);
             this.getCompany();
-            this.checkQualityMachinReport.dateAs = new Date();
+            this.registerByDateReport.dateRange = [moment().startOf("months").toDate(), moment().endOf("months").toDate()];
+
+
         },
         computed: {
             dataExist() {
-                return this.checkQualityMachinData && this.checkQualityMachinData.length > 0;
+                return this.registersData.length > 0;
             }
         },
 
@@ -329,6 +362,27 @@
             top: 0;
         }
 
+        /*el-row {
+            max-width: 2480px;
+            width: 100%;
+        }
+
+        el-table {
+
+            max-width: 2480px;
+            width: 100%;
+            background: #000;
+            height: auto;
+            page-break-inside: avoid;
+        }
+
+        el-table-column {
+            width: auto;
+            overflow: hidden;
+            word-wrap: break-word;
+        }
+*/
+        /* ... the rest of the rules ... */
     }
 
     .el-table {
@@ -344,6 +398,14 @@
         padding: 1px !important;
         text-align: center !important;
     }
+
+    /*.registerDateRange .el-date-editor--daterange.el-input {
+        width: 280px;
+    }*/
+
+    /*.registerExchange .el-select {
+        width: 280px;
+    }*/
 
     .el-table .cell {
         padding-left: 3px;

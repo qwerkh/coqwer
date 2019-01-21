@@ -117,12 +117,12 @@
                                             <td>{{unpaidByCustomer.khName}}</td>
                                             <td>{{unpaidByCustomer.registerDate | momentFormat}}</td>
                                             <td>{{parseInt(unpaidByCustomer.dayLate)}}</td>
-                                            <td style="text-align: right">{{unpaidByCustomer.balance}}</td>
+                                            <td style="text-align: right">{{ unpaidByCustomer.balance | numFormat}}</td>
                                         </tr>
                                     </slot>
                                     <tr>
                                         <td colspan="4" style="text-align: right">Total :</td>
-                                        <td style="text-align: right">{{unPaidByCustomerData.totalBalanceUnPaid}}</td>
+                                        <td style="text-align: right">{{unPaidByCustomerData.totalBalanceUnPaid | numFormat}}</td>
                                     </tr>
                                 </tbody>
                         </table>

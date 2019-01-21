@@ -15,7 +15,7 @@ Vue.use(ElementUI, {locale});
 Vue.use(VeeValidate);
 
 Vue.filter('numFormat', (val) => {
-    return numeral(val).format('(0,0.00)');
+    return numeral(val).format('(0,0.000)');
 });
 
 Vue.filter('numFormatRiel', (val) => {

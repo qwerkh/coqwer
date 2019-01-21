@@ -4,6 +4,7 @@ import {CheckRoles} from '../../imports/api/methods/checkRoles';
 //template js 
 import '../../imports/report/register/register';
 import '../../imports/report/registerByDate/registerByDate';
+import '../../imports/report/registerByItem/registerByItem';
 import '../../imports/report/journal/journal';
 import '../../imports/report/profitLost/profitLost';
 import '../../imports/report/unpaidByCustomer/unpaidByCustomer';
@@ -53,6 +54,13 @@ reportData.route('/registerByDateReport', {
     name: 'co.registerByDateReport',
     action: function (query, params) {
         _Report("co_registerByDateReport");
+    }
+})
+//Register By Item
+reportData.route('/registerByItemReport', {
+    name: 'co.registerByItemReport',
+    action: function (query, params) {
+        _Report("co_registerByItemReport");
     }
 })
 

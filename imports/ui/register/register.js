@@ -61,7 +61,8 @@ indexTmpl.helpers({
                 {"patientDoc.khName": {$regex: newSearchName, $options: 'mi'}},
                 {"patientDoc.enName": {$regex: newSearchName, $options: 'mi'}},
                 {voucherId: {$regex: newSearchName, $options: 'mi'}},
-                {registerDate: {$regex: newSearchName, $options: 'mi'}}
+                {registerDate: {$regex: newSearchName, $options: 'mi'}},
+                {_id: {$regex: newSearchName, $options: 'mi'}}
             ]
 
         } else {
@@ -528,7 +529,7 @@ AutoForm.hooks({
                         serviceName: obj.name,
                         isRetailPrice: obj.isRetailPrice,
                         machinId: obj.machinId,
-                        qty: obj.qty,
+                        qty: parseFloat(obj.qty),
                         price: obj.price,
                         amount: obj.amount
                     })
@@ -538,7 +539,7 @@ AutoForm.hooks({
                         medicineId: obj._id,
                         medicineName: obj.name,
                         isRetailPrice: obj.isRetailPrice,
-                        qty: obj.qty,
+                        qty: parseFloat(obj.qty),
                         price: obj.price,
                         amount: obj.amount
                     })
@@ -604,7 +605,7 @@ AutoForm.hooks({
                         serviceName: obj.name,
                         isRetailPrice: obj.isRetailPrice,
                         machinId: obj.machinId,
-                        qty: obj.qty,
+                        qty: parseFloat(obj.qty),
                         price: obj.price,
                         amount: obj.amount
                     })
@@ -614,7 +615,7 @@ AutoForm.hooks({
                         medicineId: obj._id,
                         medicineName: obj.name,
                         isRetailPrice: obj.isRetailPrice,
-                        qty: obj.qty,
+                        qty: parseFloat(obj.qty),
                         price: obj.price,
                         amount: obj.amount
                     })

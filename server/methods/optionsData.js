@@ -218,7 +218,6 @@ Meteor.methods({
     userOption: function () {
         let list = [];
         let userList = Meteor.users.find({username: {$ne: "super"}}).fetch();
-        console.log(userList);
         userList.forEach(function (obj) {
             list.push({
                 label: obj.username,

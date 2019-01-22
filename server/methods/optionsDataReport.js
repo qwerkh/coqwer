@@ -74,7 +74,6 @@ Meteor.methods({
         Co_Machin.find(selector).fetch().forEach(function (obj) {
             list.push({label: obj.model + " : " + obj.name, value: obj._id});
         })
-        console.log(list);
         return list;
     },
     fetchExchangeOption() {

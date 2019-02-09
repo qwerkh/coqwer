@@ -1,19 +1,19 @@
 <template>
-    <div class="co-registerByItem-report">
+    <div class="co-registerService-report">
         <div slot="header">
             <el-collapse v-model="activeName" class="no-print" accordion>
                 <el-collapse-item name="1">
                 <span slot="title">
 
-                            Register By Item Report
+                            Register Service Report
                         </span>
 
-                    <el-form :inline="true" :model="registerByItemReport" ref="registerByItemReport">
+                    <el-form :inline="true" :model="registerServiceReport" ref="registerServiceReport">
                         <el-row type="flex" class="row-bg" justify="left" style="width: 100%">
                             <el-col :span="21">
                                 <el-form-item label="Branch :">
                                     <el-select width="100%" filterable
-                                               v-model="registerByItemReport.roleBranchOptionsModel"
+                                               v-model="registerServiceReport.roleBranchOptionsModel"
                                                multiple
                                                placeholder="All">
                                         <el-option
@@ -28,7 +28,7 @@
 
                                 <el-form-item label-width="60px" label="Area  :">
                                     <el-select width="100%" filterable
-                                               v-model="registerByItemReport.roleAreaOptionsModel"
+                                               v-model="registerServiceReport.roleAreaOptionsModel"
                                                multiple
                                                placeholder="All">
                                         <el-option
@@ -42,7 +42,7 @@
 
                                 <el-form-item class="registerDateRange" label="Date :">
                                     <el-date-picker format="dd/MM/yyyy"
-                                                    v-model="registerByItemReport.dateRange"
+                                                    v-model="registerServiceReport.dateRange"
                                                     type="daterange"
                                                     align="right"
                                                     placeholder="Pick a range"
@@ -65,7 +65,7 @@
 
                             <el-col :span="21">
                                 <el-form-item label-width="60px" label="Status :">
-                                    <el-select filterable v-model="registerByItemReport.typeOptionsModel" multiple
+                                    <el-select filterable v-model="registerServiceReport.typeOptionsModel" multiple
                                                placeholder="All">
                                         <el-option
                                                 v-for="item in typeOptions"
@@ -75,6 +75,37 @@
                                         </el-option>
                                     </el-select>
                                 </el-form-item>
+
+                                <el-form-item label="Service Type :">
+                                    <el-select width="100%" filterable
+                                               v-model="registerServiceReport.serviceTypeOptionsModel"
+                                               clearable
+                                               placeholder="All">
+                                        <el-option
+                                                v-for="item in serviceTypeOptions"
+                                                :key="item.value"
+                                                :label="item.label"
+                                                :value="item.value">
+                                        </el-option>
+                                    </el-select>
+                                </el-form-item>
+
+
+                                <el-form-item label-width="60px" label="Service  :">
+                                    <el-select width="100%" filterable
+                                               v-model="registerServiceReport.serviceOptionsModel"
+                                               multiple
+                                               clearable
+                                               placeholder="All">
+                                        <el-option
+                                                v-for="item in serviceOptions"
+                                                :key="item.value"
+                                                :label="item.label"
+                                                :value="item.value">
+                                        </el-option>
+                                    </el-select>
+                                </el-form-item>
+
                             </el-col>
                             <el-col :span="3">
                                 <el-button v-show="dataExist" :loading="printLoading" type="success"
@@ -135,14 +166,7 @@
                                         <td colspan="2" style="text-align: right">Total :</td>
                                         <td style="text-align: right">{{registersData.grandTotal}}</td>
                                     </tr>
-                                    <tr>
-                                        <td colspan="2" style="text-align: right">Discount :</td>
-                                        <td style="text-align: right">{{registersData.discount}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="2" style="text-align: right">Net Total :</td>
-                                        <td style="text-align: right">{{registersData.netTotal}}</td>
-                                    </tr>
+
                                 </tbody>
                         </table>
                         <div style="width: 100%">
@@ -171,11 +195,13 @@
     export default {
         data() {
             return {
-                registerByItemReport: {
+                registerServiceReport: {
                     roleBranchOptionsModel: [],
                     roleAreaOptionsModel: [],
                     patientOptionsModel: [],
                     typeOptionsModel: [],
+                    serviceTypeOptionsModel: "",
+                    serviceOptionsModel: [],
                     dateRange: ""
                 },
 
@@ -184,6 +210,8 @@
                 patientOptions: [],
                 typeOptions: [],
 
+                serviceTypeOptions: [],
+                serviceOptions: [],
                 exchangeOptions: [],
 
                 dateRange: "",
@@ -256,40 +284,55 @@
 
                 this.typeOptions = list;
             },
-
+            fetchServiceType() {
+                let vm = this;
+                Meteor.call("co_serviceTypeOption", function (err, result) {
+                    if (result) {
+                        vm.serviceTypeOptions = result;
+                    }
+                })
+            },
+            fetchService(serviceType) {
+                let vm = this;
+                Meteor.call("co_serviceByTypeOption", serviceType, function (err, result) {
+                    if (result) {
+                        vm.serviceOptions = result;
+                    }
+                })
+            },
             handleRunReport(formName) {
 
                 let params = {};
                 let userId = Meteor.userId();
 
                 this.loading = true;
-                if (this.registerByItemReport.roleAreaOptionsModel != "") {
-                    params.rolesArea = {$in: this.registerByItemReport.roleAreaOptionsModel};
+                if (this.registerServiceReport.roleAreaOptionsModel != "") {
+                    params.rolesArea = {$in: this.registerServiceReport.roleAreaOptionsModel};
 
-                    Meteor.call("getBranchHeader", this.registerByItemReport.roleAreaOptionsModel, (err, result) => {
+                    Meteor.call("getBranchHeader", this.registerServiceReport.roleAreaOptionsModel, (err, result) => {
                         this.branchHeader = result;
                     })
                 }
 
-                if (this.registerByItemReport.dateRange != "") {
+                if (this.registerServiceReport.dateRange != "") {
                     params.registerDate = {
-                        $gte: moment(this.registerByItemReport.dateRange[0]).startOf("days").toDate(),
-                        $lte: moment(this.registerByItemReport.dateRange[1]).endOf("days").toDate()
+                        $gte: moment(this.registerServiceReport.dateRange[0]).startOf("days").toDate(),
+                        $lte: moment(this.registerServiceReport.dateRange[1]).endOf("days").toDate()
                     };
 
-                    this.dateRangeHeader = moment(this.registerByItemReport.dateRange[0]).format("DD/MM/YYYY") + "-" + moment(this.registerByItemReport.dateRange[1]).format("DD/MM/YYYY");
+                    this.dateRangeHeader = moment(this.registerServiceReport.dateRange[0]).format("DD/MM/YYYY") + "-" + moment(this.registerServiceReport.dateRange[1]).format("DD/MM/YYYY");
                 }
 
-                if (this.registerByItemReport.patientOptionsModel != "") {
-                    params.patientId = {$in: this.registerByItemReport.patientOptionsModel};
+                if (this.registerServiceReport.patientOptionsModel != "") {
+                    params.patientId = {$in: this.registerServiceReport.patientOptionsModel};
                 }
 
-                if (this.registerByItemReport.typeOptionsModel != "") {
-                    params.status = {$in: this.registerByItemReport.typeOptionsModel};
+                if (this.registerServiceReport.typeOptionsModel != "") {
+                    params.status = {$in: this.registerServiceReport.typeOptionsModel};
                 }
 
 
-                Meteor.call('giveMeRegisterByItemReport', params, userId, (err, result) => {
+                Meteor.call('giveMeRegisterServiceReport', params, this.registerServiceReport.serviceTypeOptionsModel, this.registerServiceReport.serviceOptionsModel, userId, (err, result) => {
                     if (!err) {
                         this.registersData = result;
                     }
@@ -313,14 +356,16 @@
             }
         },
         watch: {
-
-
-            "registerByItemReport.roleBranchOptionsModel"(val) {
+            "registerServiceReport.roleBranchOptionsModel"(val) {
                 this.fetchAreaOption(val);
             }
             ,
-            "registerByItemReport.roleAreaOptionsModel"(val) {
+            "registerServiceReport.roleAreaOptionsModel"(val) {
                 this.fetchPatientOption(val);
+            },
+            "registerServiceReport.serviceTypeOptionsModel"(val) {
+                this.registerServiceReport.serviceOptionsModel = [];
+                this.fetchService(val);
             }
 
         },
@@ -329,7 +374,8 @@
 //            this.fetchPatientOption([]);
             this.fetchTypeOption([]);
             this.getCompany();
-            this.registerByItemReport.dateRange = [moment().startOf("months").toDate(), moment().endOf("months").toDate()];
+            this.fetchServiceType();
+            this.registerServiceReport.dateRange = [moment().startOf("months").toDate(), moment().endOf("months").toDate()];
 
 
         },

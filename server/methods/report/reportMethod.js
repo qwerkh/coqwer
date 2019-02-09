@@ -10,6 +10,12 @@ Meteor.methods({
     giveMeRegisterByItemReport(param, userId) {
         return ClassReport.registerByItemReport(param, userId);
     },
+    giveMeRegisterServiceReport(param, serviceType, service, userId) {
+        return ClassReport.registerServiceReport(param, serviceType, service, userId);
+    },
+    giveMeRegisterMedicineReport(param, medicineType, medicine, userId) {
+        return ClassReport.registerMedicineReport(param, medicineType, medicine, userId);
+    },
     giveMeJournalReport(param, userId) {
         return ClassReport.journalReport(param, userId);
     },

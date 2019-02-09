@@ -7,6 +7,8 @@ import {SpaceChar} from "../../both/config/space";
 import {Meteor} from 'meteor/meteor';
 import math from "mathjs";
 import numeral from 'numeral';
+import {Co_Medicine} from "../../imports/collection/medicine";
+import {Co_Service} from "../../imports/collection/service";
 
 export default class ClassReport {
     static registerReport(param, userId) {
@@ -560,17 +562,18 @@ export default class ClassReport {
                 }
             }
         ]).map(function (obj) {
+            if (obj.total > 0) {
+                obj.registerDate = moment(obj.registerDate).format("DD/MM/YYYY");
 
-            obj.registerDate = moment(obj.registerDate).format("DD/MM/YYYY");
-
-            if (CompanyDoc.asigneUser && CompanyDoc.asigneUser.indexOf(userId) > -1) {
-                grandTotal += obj.total;
-                obj.total = numeral(obj.total).format("0,00.000");
-            } else {
-                grandTotal += obj.total * checkProvision(CompanyDoc, obj.registerDate);
-                obj.total = numeral(obj.total * checkProvision(CompanyDoc, obj.registerDate)).format("0,00.000");
+                if (CompanyDoc.asigneUser && CompanyDoc.asigneUser.indexOf(userId) > -1) {
+                    grandTotal += obj.total;
+                    obj.total = numeral(obj.total).format("0,00.000");
+                } else {
+                    grandTotal += obj.total * checkProvision(CompanyDoc, obj.registerDate);
+                    obj.total = numeral(obj.total * checkProvision(CompanyDoc, obj.registerDate)).format("0,00.000");
+                }
+                reList.push(obj);
             }
-            reList.push(obj);
         });
 
         Co_Register.aggregate([
@@ -584,17 +587,18 @@ export default class ClassReport {
                 }
             }
         ]).map(function (obj) {
+            if (obj.total > 0) {
+                obj.registerDate = moment(obj.registerDate).format("DD/MM/YYYY");
 
-            obj.registerDate = moment(obj.registerDate).format("DD/MM/YYYY");
-
-            if (CompanyDoc.asigneUser && CompanyDoc.asigneUser.indexOf(userId) > -1) {
-                grandTotal += obj.total;
-                obj.total = numeral(obj.total).format("0,00.000");
-            } else {
-                grandTotal += obj.total * checkProvision(CompanyDoc, obj.registerDate);
-                obj.total = numeral(obj.total * checkProvision(CompanyDoc, obj.registerDate)).format("0,00.000");
+                if (CompanyDoc.asigneUser && CompanyDoc.asigneUser.indexOf(userId) > -1) {
+                    grandTotal += obj.total;
+                    obj.total = numeral(obj.total).format("0,00.000");
+                } else {
+                    grandTotal += obj.total * checkProvision(CompanyDoc, obj.registerDate);
+                    obj.total = numeral(obj.total * checkProvision(CompanyDoc, obj.registerDate)).format("0,00.000");
+                }
+                reList.push(obj);
             }
-            reList.push(obj);
         });
 
         let totalNetTotal = 0;
@@ -616,6 +620,124 @@ export default class ClassReport {
         data.grandTotal = numeral(grandTotal).format("0,00.000");
         return data;
     }
+
+
+    static registerServiceReport(param, serviceType, service, userId) {
+        let parameter = {};
+        let data = {};
+        let grandTotal = 0;
+
+        if (param) {
+            parameter = param;
+        }
+        let CompanyDoc = Co_Company.findOne({});
+        if (CompanyDoc.asigneUser && CompanyDoc.asigneUser.indexOf(userId) > -1) {
+
+        } else {
+            parameter.netTotal = {$lt: CompanyDoc.hideIfGreater};
+        }
+
+        let newParameter = {};
+        if (serviceType !== "") {
+            if (service.length > 0) {
+                newParameter["services.serviceId"] = {$in: service};
+            } else {
+                let newService = Co_Service.find({serviceTypeId: serviceType}).map((obj) => obj._id);
+                newParameter["services.serviceId"] = {$in: newService};
+            }
+        }
+
+
+        let reList = [];
+        Co_Register.aggregate([
+            {$match: parameter},
+            {$unwind: {path: "$services", preserveNullAndEmptyArrays: true}},
+            {$match: newParameter},
+            {
+                $group: {
+                    _id: {id: "$services.serviceId", name: "$services.serviceName"},
+                    total: {$sum: "$services.amount"},
+                }
+            }
+        ]).map(function (obj) {
+            if (obj.total > 0) {
+                obj.registerDate = moment(obj.registerDate).format("DD/MM/YYYY");
+
+                if (CompanyDoc.asigneUser && CompanyDoc.asigneUser.indexOf(userId) > -1) {
+                    grandTotal += obj.total;
+                    obj.total = numeral(obj.total).format("0,00.000");
+                } else {
+                    grandTotal += obj.total * checkProvision(CompanyDoc, obj.registerDate);
+                    obj.total = numeral(obj.total * checkProvision(CompanyDoc, obj.registerDate)).format("0,00.000");
+                }
+                reList.push(obj);
+            }
+        });
+
+
+        data.data = reList;
+        data.grandTotal = numeral(grandTotal).format("0,00.000");
+        return data;
+    }
+
+
+    static registerMedicineReport(param, medicineType, medicine, userId) {
+        let parameter = {};
+        let data = {};
+        let grandTotal = 0;
+
+        if (param) {
+            parameter = param;
+        }
+        let CompanyDoc = Co_Company.findOne({});
+        if (CompanyDoc.asigneUser && CompanyDoc.asigneUser.indexOf(userId) > -1) {
+
+        } else {
+            parameter.netTotal = {$lt: CompanyDoc.hideIfGreater};
+        }
+        let reList = [];
+
+        let newParameter = {};
+        if (medicineType !== "") {
+            if (medicine.length > 0) {
+                newParameter["medicines.medicineId"] = {$in: medicine};
+            } else {
+                let newMedicine = Co_Medicine.find({medicineTypeId: medicineType}).map((obj) => obj._id);
+                newParameter["medicines.medicineId"] = {$in: newMedicine};
+            }
+        }
+
+
+        Co_Register.aggregate([
+            {$match: parameter},
+            {$unwind: {path: "$medicines", preserveNullAndEmptyArrays: true}},
+            {$match: newParameter},
+            {
+                $group: {
+                    _id: {id: "$medicines.medicineId", name: "$medicines.medicineName"},
+                    total: {$sum: "$medicines.amount"},
+                }
+            }
+        ]).map(function (obj) {
+            if (obj.total > 0) {
+                obj.registerDate = moment(obj.registerDate).format("DD/MM/YYYY");
+
+                if (CompanyDoc.asigneUser && CompanyDoc.asigneUser.indexOf(userId) > -1) {
+                    grandTotal += obj.total;
+                    obj.total = numeral(obj.total).format("0,00.000");
+                } else {
+                    grandTotal += obj.total * checkProvision(CompanyDoc, obj.registerDate);
+                    obj.total = numeral(obj.total * checkProvision(CompanyDoc, obj.registerDate)).format("0,00.000");
+                }
+                reList.push(obj);
+            }
+        });
+
+        data.data = reList;
+        data.grandTotal = numeral(grandTotal).format("0,00.000");
+        return data;
+    }
+
 };
 
 

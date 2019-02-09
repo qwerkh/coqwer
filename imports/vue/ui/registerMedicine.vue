@@ -1,19 +1,19 @@
 <template>
-    <div class="co-registerByItem-report">
+    <div class="co-registerMedicine-report">
         <div slot="header">
             <el-collapse v-model="activeName" class="no-print" accordion>
                 <el-collapse-item name="1">
                 <span slot="title">
 
-                            Register By Item Report
+                            Register Medicine Report
                         </span>
 
-                    <el-form :inline="true" :model="registerByItemReport" ref="registerByItemReport">
+                    <el-form :inline="true" :model="registerMedicineReport" ref="registerMedicineReport">
                         <el-row type="flex" class="row-bg" justify="left" style="width: 100%">
                             <el-col :span="21">
                                 <el-form-item label="Branch :">
                                     <el-select width="100%" filterable
-                                               v-model="registerByItemReport.roleBranchOptionsModel"
+                                               v-model="registerMedicineReport.roleBranchOptionsModel"
                                                multiple
                                                placeholder="All">
                                         <el-option
@@ -28,7 +28,7 @@
 
                                 <el-form-item label-width="60px" label="Area  :">
                                     <el-select width="100%" filterable
-                                               v-model="registerByItemReport.roleAreaOptionsModel"
+                                               v-model="registerMedicineReport.roleAreaOptionsModel"
                                                multiple
                                                placeholder="All">
                                         <el-option
@@ -42,7 +42,7 @@
 
                                 <el-form-item class="registerDateRange" label="Date :">
                                     <el-date-picker format="dd/MM/yyyy"
-                                                    v-model="registerByItemReport.dateRange"
+                                                    v-model="registerMedicineReport.dateRange"
                                                     type="daterange"
                                                     align="right"
                                                     placeholder="Pick a range"
@@ -65,7 +65,7 @@
 
                             <el-col :span="21">
                                 <el-form-item label-width="60px" label="Status :">
-                                    <el-select filterable v-model="registerByItemReport.typeOptionsModel" multiple
+                                    <el-select filterable v-model="registerMedicineReport.typeOptionsModel" multiple
                                                placeholder="All">
                                         <el-option
                                                 v-for="item in typeOptions"
@@ -75,6 +75,38 @@
                                         </el-option>
                                     </el-select>
                                 </el-form-item>
+
+
+                                <el-form-item label="Medicine Type :">
+                                    <el-select width="100%" filterable
+                                               v-model="registerMedicineReport.medicineTypeOptionsModel"
+                                               clearable
+                                               placeholder="All">
+                                        <el-option
+                                                v-for="item in medicineTypeOptions"
+                                                :key="item.value"
+                                                :label="item.label"
+                                                :value="item.value">
+                                        </el-option>
+                                    </el-select>
+                                </el-form-item>
+
+
+                                <el-form-item label-width="60px" label="Medicine  :">
+                                    <el-select width="100%" filterable
+                                               v-model="registerMedicineReport.medicineOptionsModel"
+                                               multiple
+                                               clearable
+                                               placeholder="All">
+                                        <el-option
+                                                v-for="item in medicineOptions"
+                                                :key="item.value"
+                                                :label="item.label"
+                                                :value="item.value">
+                                        </el-option>
+                                    </el-select>
+                                </el-form-item>
+
                             </el-col>
                             <el-col :span="3">
                                 <el-button v-show="dataExist" :loading="printLoading" type="success"
@@ -135,14 +167,6 @@
                                         <td colspan="2" style="text-align: right">Total :</td>
                                         <td style="text-align: right">{{registersData.grandTotal}}</td>
                                     </tr>
-                                    <tr>
-                                        <td colspan="2" style="text-align: right">Discount :</td>
-                                        <td style="text-align: right">{{registersData.discount}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="2" style="text-align: right">Net Total :</td>
-                                        <td style="text-align: right">{{registersData.netTotal}}</td>
-                                    </tr>
                                 </tbody>
                         </table>
                         <div style="width: 100%">
@@ -171,11 +195,13 @@
     export default {
         data() {
             return {
-                registerByItemReport: {
+                registerMedicineReport: {
                     roleBranchOptionsModel: [],
                     roleAreaOptionsModel: [],
                     patientOptionsModel: [],
                     typeOptionsModel: [],
+                    medicineTypeOptionsModel: "",
+                    medicineOptionsModel: [],
                     dateRange: ""
                 },
 
@@ -183,6 +209,8 @@
                 roleAreaOptions: [],
                 patientOptions: [],
                 typeOptions: [],
+                medicineTypeOptions: [],
+                medicineOptions: [],
 
                 exchangeOptions: [],
 
@@ -256,40 +284,51 @@
 
                 this.typeOptions = list;
             },
-
+            fetchMedicineType() {
+                let vm = this;
+                Meteor.call("co_medicineTypeOption", function (err, result) {
+                    if (result) {
+                        vm.medicineTypeOptions = result;
+                    }
+                })
+            },
+            fetchMedicine(medicineType) {
+                let vm = this;
+                Meteor.call("co_medicineByTypeOption", medicineType, function (err, result) {
+                    if (result) {
+                        vm.medicineOptions = result;
+                    }
+                })
+            },
             handleRunReport(formName) {
-
+                let vm = this;
                 let params = {};
                 let userId = Meteor.userId();
 
                 this.loading = true;
-                if (this.registerByItemReport.roleAreaOptionsModel != "") {
-                    params.rolesArea = {$in: this.registerByItemReport.roleAreaOptionsModel};
+                if (this.registerMedicineReport.roleAreaOptionsModel != "") {
+                    params.rolesArea = {$in: this.registerMedicineReport.roleAreaOptionsModel};
 
-                    Meteor.call("getBranchHeader", this.registerByItemReport.roleAreaOptionsModel, (err, result) => {
+                    Meteor.call("getBranchHeader", this.registerMedicineReport.roleAreaOptionsModel, (err, result) => {
                         this.branchHeader = result;
                     })
                 }
 
-                if (this.registerByItemReport.dateRange != "") {
+                if (this.registerMedicineReport.dateRange != "") {
                     params.registerDate = {
-                        $gte: moment(this.registerByItemReport.dateRange[0]).startOf("days").toDate(),
-                        $lte: moment(this.registerByItemReport.dateRange[1]).endOf("days").toDate()
+                        $gte: moment(this.registerMedicineReport.dateRange[0]).startOf("days").toDate(),
+                        $lte: moment(this.registerMedicineReport.dateRange[1]).endOf("days").toDate()
                     };
 
-                    this.dateRangeHeader = moment(this.registerByItemReport.dateRange[0]).format("DD/MM/YYYY") + "-" + moment(this.registerByItemReport.dateRange[1]).format("DD/MM/YYYY");
+                    this.dateRangeHeader = moment(this.registerMedicineReport.dateRange[0]).format("DD/MM/YYYY") + "-" + moment(this.registerMedicineReport.dateRange[1]).format("DD/MM/YYYY");
                 }
 
-                if (this.registerByItemReport.patientOptionsModel != "") {
-                    params.patientId = {$in: this.registerByItemReport.patientOptionsModel};
-                }
-
-                if (this.registerByItemReport.typeOptionsModel != "") {
-                    params.status = {$in: this.registerByItemReport.typeOptionsModel};
+                if (this.registerMedicineReport.typeOptionsModel != "") {
+                    params.status = {$in: this.registerMedicineReport.typeOptionsModel};
                 }
 
 
-                Meteor.call('giveMeRegisterByItemReport', params, userId, (err, result) => {
+                Meteor.call('giveMeRegisterMedicineReport', params, this.registerMedicineReport.medicineTypeOptionsModel, vm.registerMedicineReport.medicineOptionsModel, userId, (err, result) => {
                     if (!err) {
                         this.registersData = result;
                     }
@@ -313,23 +352,26 @@
             }
         },
         watch: {
-
-
-            "registerByItemReport.roleBranchOptionsModel"(val) {
+            "registerMedicineReport.roleBranchOptionsModel"(val) {
                 this.fetchAreaOption(val);
             }
             ,
-            "registerByItemReport.roleAreaOptionsModel"(val) {
+            "registerMedicineReport.roleAreaOptionsModel"(val) {
                 this.fetchPatientOption(val);
+            },
+            "registerMedicineReport.medicineTypeOptionsModel"(val) {
+                this.registerMedicineReport.medicineOptionsModel = [];
+                this.fetchMedicine(val);
             }
 
         },
         created() {
             this.fetchBranchOption();
+            this.fetchMedicineType();
 //            this.fetchPatientOption([]);
             this.fetchTypeOption([]);
             this.getCompany();
-            this.registerByItemReport.dateRange = [moment().startOf("months").toDate(), moment().endOf("months").toDate()];
+            this.registerMedicineReport.dateRange = [moment().startOf("months").toDate(), moment().endOf("months").toDate()];
 
 
         },

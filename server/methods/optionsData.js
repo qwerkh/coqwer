@@ -41,6 +41,22 @@ Meteor.methods({
         })
         return list;
     },
+    co_medicineByTypeOption(medicineType) {
+
+        let list = [];
+        Co_Medicine.find({medicineTypeId: medicineType}).fetch().forEach(function (obj) {
+            list.push({label: obj.name, value: obj._id});
+        })
+        return list;
+    },
+    co_serviceByTypeOption(serviceType) {
+
+        let list = [];
+        Co_Service.find({serviceTypeId: serviceType}).fetch().forEach(function (obj) {
+            list.push({label: obj.name, value: obj._id});
+        })
+        return list;
+    },
     co_machinOption(rolesArea) {
         let selector = {};
         list.push({label: "(Select One)", value: ""});

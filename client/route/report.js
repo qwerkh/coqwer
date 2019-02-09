@@ -5,6 +5,8 @@ import {CheckRoles} from '../../imports/api/methods/checkRoles';
 import '../../imports/report/register/register';
 import '../../imports/report/registerByDate/registerByDate';
 import '../../imports/report/registerByItem/registerByItem';
+import '../../imports/report/registerService/registerService';
+import '../../imports/report/registerMedicine/registerMedicine';
 import '../../imports/report/journal/journal';
 import '../../imports/report/profitLost/profitLost';
 import '../../imports/report/unpaidByCustomer/unpaidByCustomer';
@@ -61,6 +63,20 @@ reportData.route('/registerByItemReport', {
     name: 'co.registerByItemReport',
     action: function (query, params) {
         _Report("co_registerByItemReport");
+    }
+})
+//Register Service
+reportData.route('/registerServiceReport', {
+    name: 'co.registerServiceReport',
+    action: function (query, params) {
+        _Report("co_registerServiceReport");
+    }
+})
+//Register Medicine
+reportData.route('/registerMedicineReport', {
+    name: 'co.registerMedicineReport',
+    action: function (query, params) {
+        _Report("co_registerMedicineReport");
     }
 })
 

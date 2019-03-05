@@ -27,6 +27,7 @@ Co_MedicineType.schema = new SimpleSchema({
                 list.push({label: "ថ្នាំទឹក", value: "ថ្នាំទឹក"});
                 list.push({label: "ថ្នាំបន្តោង", value: "ថ្នាំបន្តោង"});
                 list.push({label: "ថ្នាំបន្តក់", value: "ថ្នាំបន្តក់"});
+                list.push({label: "សាប៊ូ", value: "សាប៊ូ"});
 
                 return list;
 

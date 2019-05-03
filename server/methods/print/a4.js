@@ -3,6 +3,8 @@ import {Co_Company} from '../../../imports/collection/company';
 import {Co_Payment} from '../../../imports/collection/payment.js';
 import {Co_MedicineType} from '../../../imports/collection/medicineType';
 import {Co_Medicine} from '../../../imports/collection/medicine';
+import {Co_Service} from '../../../imports/collection/service';
+import {Co_ServiceType} from '../../../imports/collection/serviceType';
 import {Co_Patient} from '../../../imports/collection/patient.js';
 import {Co_Exchange} from '../../../imports/collection/exchange';
 import {GeneralFunction} from "../../../imports/api/methods/generalFunction";
@@ -17,6 +19,7 @@ Meteor.methods({
             ]
         });
         let result = [];
+        let resultService = [];
         let serviceLength = register && register.services && register.services.length || 0;
         if (summary) {
             register.medicines.forEach((obj) => {
@@ -43,6 +46,29 @@ Meteor.methods({
             }, {});
 
             register.medicines = result;
+
+
+            register.services.forEach((obj) => {
+                let serviceDoc = Co_Service.findOne({_id: obj.serviceId})
+                let typeDoc = Co_ServiceType.findOne({_id: serviceDoc.serviceTypeId});
+                obj.type = typeDoc && typeDoc.name || "";
+
+                return obj;
+            })
+
+            register.services.reduce(function (key, val) {
+                if (!key[val.type]) {
+                    key[val.type] = {
+                        type: val.type,
+                        amount: val.amount
+                    };
+                    resultService.push(key[val.type]);
+                } else {
+                    key[val.type].amount += math.round(val.amount, 3);
+                }
+                return key;
+            }, {});
+            register.services = resultService;
         }
 
         register.patient = Co_Patient.findOne({_id: register.patientId});

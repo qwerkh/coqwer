@@ -8,6 +8,7 @@ import {RegisterTabular} from '../../../both/tabular/register';
 
 import './registerDetail';
 import './../../lib/select2Filter'
+import {Co_Company} from "../../collection/company";
 
 
 let indexTmpl = Template.co_register,
@@ -35,6 +36,8 @@ netTotalMedicine = new ReactiveVar(0);
 remainAmount = new ReactiveVar(0);
 returnAmount = new ReactiveVar(0);
 voucherId = new ReactiveVar("");
+
+isReadOnlyVar = new ReactiveVar(false);
 
 paidAmount = new ReactiveObj({
     paidAmountDollar: 0,
@@ -451,6 +454,22 @@ editTmpl.onCreated(function () {
 
 
 })
+
+
+indexTmpl.onCreated(function () {
+    let companyDoc = Co_Company.findOne();
+    if (companyDoc.isDisablePrice && companyDoc.isDisablePrice === true) {
+        if (companyDoc.asigneUser.indexOf(Meteor.userId()) > -1) {
+            isReadOnlyVar.set(false);
+        } else {
+            isReadOnlyVar.set(true);
+        }
+
+    } else {
+        isReadOnlyVar.set(false);
+    }
+})
+
 
 addTmpl.onCreated(function () {
 

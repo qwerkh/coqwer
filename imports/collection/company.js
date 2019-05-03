@@ -164,7 +164,17 @@ Co_Company.schema = new SimpleSchema({
         label: "Hide if Greater",
         decimal: true,
         optional: true,
-        defaultValue:9999999999
+        defaultValue: 9999999999
+    },
+    isDisablePrice: {
+        type: Boolean,
+        defaultValue: false,
+        optional: true
+    },
+    isCutHeader:{
+        type: Boolean,
+        defaultValue: false,
+        optional: true
     }
 
 })

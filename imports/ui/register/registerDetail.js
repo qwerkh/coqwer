@@ -49,7 +49,11 @@ registerServiceTmpl.helpers({
     },
     discountService() {
         return discountService.get();
+    },
+    isReadOnly() {
+        return isReadOnlyVar.get();
     }
+
 })
 
 registerServiceTmpl.onRendered(function () {
@@ -190,6 +194,9 @@ registerMedicineTmpl.helpers({
     },
     discountMedicine() {
         return discountMedicine.get();
+    },
+    isReadOnly() {
+        return isReadOnlyVar.get();
     }
 })
 

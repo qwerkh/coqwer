@@ -74,6 +74,10 @@ indexTmpl.helpers({
             return false;
         }
         return true;
+    },
+    isCutHeader() {
+        let companyDoc = Co_Company.findOne({});
+        return companyDoc.isCutHeader || false;
     }
 
 });

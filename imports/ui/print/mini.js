@@ -1,4 +1,5 @@
 import './mini.html';
+import {Co_Company} from "../../collection/company";
 
 let indexTmpl = Template.pos_printMini;
 
@@ -67,6 +68,10 @@ indexTmpl.helpers({
             </tr>`
         }
         return concate;
+    },
+    isCutHeader() {
+        let companyDoc = Co_Company.findOne({});
+        return companyDoc.isCutHeader || false;
     }
 });
 indexTmpl.events({

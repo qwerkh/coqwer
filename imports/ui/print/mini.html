@@ -15,7 +15,42 @@
                 </div>
 
                 <div class="invoice-title">
-                    <br>
+                    {{#if isCutHeader}}
+                        <div>
+                            <table width="100%">
+                                <tr>
+                                    <td><b>Date</b></td>
+                                    <td>: {{formatDate registerDate 'DD-MM-YYYY'}} </td>
+                                    <td><b>Grand Total</b></td>
+                                    <td><b>: {{formatNumber register.netTotal}}</b>{{getSymbolBaseCurrency}}</td>
+
+                                </tr>
+                                <tr>
+                                    <td><b>
+                                        Invoice No</b></td>
+                                    <td>: {{register.voucherId}}</td>
+
+                                    <td><b>Paid</b></td>
+                                    <td><b>: {{formatNumber register.totalPaid}}</b>{{getSymbolBaseCurrency}}</td>
+
+                                </tr>
+                                <tr>
+                                    <td><b>Patient</b></td>
+                                    <td>: {{register.patient.khName}}</td>
+
+                                    <td><b>Balance</b></td>
+                                    <td><b>: {{formatNumber register.balance}}</b>{{getSymbolBaseCurrency}}</td>
+
+                                </tr>
+                            </table>
+                        </div>
+                        <div style="top: 10px; margin:10px 0px 10px 0px; padding: 0px 0px 0px 0px; border-width: 1px; border-bottom-width:1px;
+   border-bottom-color:black;
+   border-bottom-style: dashed;
+   width: 100%;"></div>
+                    {{else}}
+                        <br>
+                    {{/if}}
                     {{#with company}}
 
                         <div style="height: 40px;">

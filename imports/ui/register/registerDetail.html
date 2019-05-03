@@ -33,7 +33,7 @@
                             <td class="ui toggle checkbox">
                                 {{> afFieldInput name="isRetailPrice" value=isRetailPrice data_id=_id}}
                             </td>
-                            <td>{{> afQuickField name='price' data_id=_id label=false value=price class="small"}}</td>
+                            <td>{{> afQuickField name='price' data_id=_id label=false value=price class="small" readonly=isReadOnly}}</td>
                             <td>{{> afQuickField name='qty' data_id=_id label=false value=qty class="small"}}</td>
                             <td>
                                 {{> afFieldInput name='amount' label=false value=amount class="small" readonly=true}}
@@ -101,7 +101,7 @@
                             <td class="ui toggle checkbox">
                                 {{> afFieldInput name="isRetailPrice" value=isRetailPrice  data_id=_id}}
                             </td>
-                            <td>{{> afQuickField name='price'  data_id=_id label=false value=price class="small"}}</td>
+                            <td>{{> afQuickField name='price'  data_id=_id label=false value=price class="small" readonly=isReadOnly}}</td>
                             <td>{{> afQuickField name='qty'  data_id=_id label=false value=qty class="small"}}</td>
                             <td>{{> afQuickField name='amount' label=false value=amount class="small" readonly=true class="loading"}}</td>
                             <td>

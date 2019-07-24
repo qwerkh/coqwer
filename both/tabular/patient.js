@@ -15,6 +15,7 @@ export const PatientTabular = new Tabular.Table({
 
     columns: [
         {data: "_id", title: 'Id'},
+        {data: "order", title: 'Order'},
         {
             data: "enName", title: 'En Name'
 

@@ -16,6 +16,10 @@ Co_Patient.schema = new SimpleSchema({
         type: String,
         optional: true
     },
+    order: {
+        type: String,
+        optional: true
+    },
     gender: {
         type: String,
         // optional: true,

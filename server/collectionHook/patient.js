@@ -11,6 +11,12 @@ Co_Patient.before.insert(function (userId, doc) {
 
     let prefix = doc.rolesArea + moment().format("YYYY");
     doc.dobString = moment(doc.dob).format("DD/MM/YYYY");
+
+    let nameByCharacter = doc.khName.charAt(0);
+    let nameSearch = new RegExp("\^" + nameByCharacter);
+    let numPatientByCharacter = Co_Patient.find({khName: {$regex: nameSearch, $options: 'mi'}}).count();
+    doc.order = numPatientByCharacter + 1;
+
     doc._id = GeneralFunction.generatePrefixId(Co_Patient, prefix, 6);
 
 })

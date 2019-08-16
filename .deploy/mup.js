@@ -2,7 +2,7 @@ module.exports = {
     servers: {
         one: {
             // TODO: set host address, username, and authentication method
-            host: '167.99.70.150',
+            host: '139.162.31.153',
             username: 'root',
             // pem: './path/to/pem'
             password: 'rrqwer123#'
@@ -26,8 +26,8 @@ module.exports = {
         env: {
             // TODO: Change to your app's url
             // If you are using ssl, it needs to start with https://
-            PORT: 7777,
-            ROOT_URL: 'http://167.99.70.150',
+            PORT: 6699,
+            ROOT_URL: 'http://139.162.31.153',
             MONGO_URL: 'mongodb://localhost/label',
             //MONGO_OPLOG_URL: 'mongodb://mongodb/local',
             TZ: 'Asia/Bangkok'

@@ -40,6 +40,7 @@ indexTmpl.helpers({
 
         } else {
             newSelector.rolesArea = Session.get("area");
+            newSelector.createdAt = {$gte: moment().add(-3, "months").toDate()}
         }
         return newSelector;
     }

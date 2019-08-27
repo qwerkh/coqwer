@@ -9,7 +9,6 @@ export const PaymentTabular = new Tabular.Table({
     collection: Co_Payment,
     responsive: true,
     order: ['0', 'desc'],
-
     columnDefs: [
         {"width": "10px", "targets": 0}
     ],

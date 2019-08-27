@@ -9,13 +9,16 @@ import {VW_Register} from '../../imports/collection/register';
 
 export const RegisterTabular = new Tabular.Table({
     name: "co.register",
-    collection: VW_Register,
+    collection: Co_Register,
     order: ['0', 'desc'],
 
     columnDefs: [
         {"width": "10px", "targets": 0}
     ],
     searching: false,
+    /*skipCount: true,
+    pagingType: 'simple',
+    infoCallback: (settings, start, end) => `Showing ${start} to ${end}`,*/
     columns: [
         {data: "_id", title: 'Id'},
         {
@@ -27,7 +30,7 @@ export const RegisterTabular = new Tabular.Table({
             }
         },
         {
-            data: "patientDoc.khName", title: "Name"
+            data: "patientName", title: "Name"
         }, {
             data: "voucherId", title: "Voucher"
         },
@@ -64,6 +67,7 @@ export const RegisterTabular = new Tabular.Table({
         }
     ],
     extraFields: [
+        "patientId",
         "services",
         "medicines",
         "discountService",

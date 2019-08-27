@@ -12,6 +12,13 @@ Co_Register.schema = new SimpleSchema({
              type: 'select'
          }*/
     },
+    patientName: {
+        type: String,
+        optional: true
+        /* autoform: {
+             type: 'select'
+         }*/
+    },
     registerDate: {
         type: Date,
         label: 'Register Date',

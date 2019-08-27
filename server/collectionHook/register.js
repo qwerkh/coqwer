@@ -3,12 +3,14 @@ import {GeneralFunction} from '../../imports/api/methods/generalFunction';
 import {Co_Register} from '../../imports/collection/register';
 import {Co_Payment} from '../../imports/collection/payment';
 import moment from "moment";
+import {Co_Patient} from "../../imports/collection/patient";
 
 
 Co_Register.before.insert(function (userId, doc) {
     doc.printId = doc._id;
     doc.createdAt = moment().toDate();
     doc.createdBy = userId;
+    doc.patientName = Co_Patient.findOne({_id: doc.patientId}).khName;
 
     let prefix = doc.rolesArea + moment().format("YYYY");
     doc._id = GeneralFunction.generatePrefixId(Co_Register, prefix, 6);
@@ -35,7 +37,6 @@ Co_Register.after.insert(function (userId, doc) {
         payment.fromRegister = true;
         payment.canRemove = true;
         payment.rolesArea = doc.rolesArea;
-
 
 
         payment.createdAt = moment().toDate();
@@ -88,7 +89,6 @@ Co_Register.after.update(function (userId, doc) {
 Co_Register.after.remove(function (userId, doc) {
     Co_Payment.direct.remove({registerId: doc._id});
 })
-
 
 
 Co_Payment.before.update(function (userId, doc, fieldNames, modifier, options) {

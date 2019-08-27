@@ -61,8 +61,7 @@ indexTmpl.helpers({
             //console.log(reg);
             newSelector.rolesArea = Session.get("area");
             newSelector.$or = [
-                {"patientDoc.khName": {$regex: newSearchName, $options: 'mi'}},
-                {"patientDoc.enName": {$regex: newSearchName, $options: 'mi'}},
+                {patientName: {$regex: newSearchName, $options: 'mi'}},
                 {voucherId: {$regex: newSearchName, $options: 'mi'}},
                 {registerDate: {$regex: newSearchName, $options: 'mi'}},
                 {_id: {$regex: newSearchName, $options: 'mi'}}
@@ -70,6 +69,8 @@ indexTmpl.helpers({
 
         } else {
             newSelector.rolesArea = Session.get("area");
+            newSelector.createdAt = {$gte: moment().add(-2, "months").toDate()}
+
         }
         if (FlowRouter.getParam('patientId')) {
             newSelector.patientId = FlowRouter.getParam('patientId');
@@ -305,7 +306,6 @@ indexTmpl.events({
 
             Meteor.call("co_registerById", self._id, (err, result) => {
                 if (result) {
-                    result.patientDoc = self.patientDoc;
                     registerDoc.set("reDoc", result);
                 }
             });

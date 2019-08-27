@@ -12,7 +12,6 @@ export const PatientTabular = new Tabular.Table({
         {"width": "10px", "targets": 0}
     ],
     searching: false,
-
     columns: [
         {data: "_id", title: 'Id'},
         {data: "order", title: 'Order'},

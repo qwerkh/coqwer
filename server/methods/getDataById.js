@@ -39,7 +39,9 @@ Meteor.methods({
         return Co_Patient.findOne({_id: id});
     },
     co_registerById(id) {
-        return Co_Register.findOne({_id: id});
+        let data = Co_Register.findOne({_id: id});
+        data.patientDoc = Co_Patient.findOne({_id: data.patientId});
+        return data;
     },
     co_registerByPatientId(patientId) {
         return Co_Register.find({patientId: patientId}, {sort: {registerDate: -1}}).fetch();

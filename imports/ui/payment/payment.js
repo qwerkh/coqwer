@@ -5,6 +5,7 @@ import {ReactiveVar} from 'meteor/reactive-var';
 import {Co_Payment} from '../../collection/payment';
 import {PaymentTabular} from '../../../both/tabular/payment';
 import {GeneralFunction} from '../../api/methods/generalFunction'
+import {Co_Company} from "../../collection/company";
 
 
 let indexTmpl = Template.co_payment,
@@ -31,6 +32,28 @@ indexTmpl.helpers({
         return PaymentTabular;
     },
     selector() {
+        let userId = Meteor.userId();
+        let companyDoc = Co_Company.findOne({});
+        if (companyDoc.asigneUser.indexOf(userId) > -1) {
+        } else {
+            let hideDollar = companyDoc.hideIfGreater;
+            let hideRiel = 0;
+            let hideBaht = 0;
+            if (companyDoc.baseCurrency === "USD") {
+                hideDollar = companyDoc.hideIfGreater;
+                hideRiel = companyDoc.hideIfGreater * 4000;
+                hideBaht = companyDoc.hideIfGreater * 33;
+            } else if (companyDoc.baseCurrency === "KHR") {
+                hideDollar = companyDoc.hideIfGreater / 4000;
+                hideRiel = companyDoc.hideIfGreater;
+                hideBaht = companyDoc.hideIfGreater / 120;
+            } else {
+                hideDollar = companyDoc.hideIfGreater / 33;
+                hideRiel = companyDoc.hideIfGreater * 120;
+                hideBaht = companyDoc.hideIfGreater;
+            }
+            return {rolesArea: Session.get("area"), paidAmountUSD: {$lt: hideDollar}, paidAmountKHR: {$lt: hideRiel}, paidAmountTHB: {$lt: hideBaht}};
+        }
         return {rolesArea: Session.get("area")};
     }
 
@@ -162,7 +185,7 @@ addTmpl.helpers({
     collection() {
         return Co_Payment;
     },
-  
+
     patientDoc() {
         return patientDocPayment.get();
     },

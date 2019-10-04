@@ -234,8 +234,6 @@
             }
         },
         watch: {
-
-
             "unPaidByCustomerReport.roleBranchOptionsModel"(val) {
                 this.fetchAreaOption(val);
             }

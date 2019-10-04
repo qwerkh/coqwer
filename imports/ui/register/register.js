@@ -75,6 +75,13 @@ indexTmpl.helpers({
         if (FlowRouter.getParam('patientId')) {
             newSelector.patientId = FlowRouter.getParam('patientId');
         }
+
+        let userId = Meteor.userId();
+        let companyDoc = Co_Company.findOne({});
+        if (companyDoc.asigneUser.indexOf(userId) > -1) {
+        } else {
+            newSelector.netTotal = {$lt: companyDoc.hideIfGreater};
+        }
         return newSelector;
 
     }

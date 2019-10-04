@@ -107,6 +107,16 @@ export default class ClassReport {
         if (param) {
             parameter = param;
         }
+
+        let paramBalance = {};
+        if (CompanyDoc.asigneUser.indexOf(userId) > -1) {
+
+            paramBalance.balance = {$gt: 0.01};
+
+        } else {
+            paramBalance.balance = {$gt: 0.01, $lt: CompanyDoc.hideIfGreater};
+        }
+
         let unpaidByCustomerList = Co_Register.aggregate([
             {
                 $match: parameter
@@ -151,9 +161,7 @@ export default class ClassReport {
 
             },
             {
-                $match: {
-                    balance: {$gt: 0.01}
-                }
+                $match: paramBalance
             },
             {
                 $group: {

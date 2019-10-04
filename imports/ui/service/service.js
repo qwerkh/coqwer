@@ -1,6 +1,7 @@
 import './service.html';
 
 import {Co_Service} from '../../collection/service';
+import {Co_Company} from '../../collection/company';
 import {ServiceTabular} from '../../../both/tabular/service';
 
 
@@ -12,11 +13,17 @@ let indexTmpl = Template.co_service,
 let serviceTypeOption = new ReactiveVar([]);
 let machinTypeOption = new ReactiveVar([]);
 indexTmpl.helpers({
-    dataTable () {
+    dataTable() {
         return ServiceTabular;
     },
-    selector(){
-        return {};
+    selector() {
+        let userId = Meteor.userId();
+        let companyDoc = Co_Company.findOne({});
+        if (companyDoc.asigneUser.indexOf(userId) > -1) {
+            return {};
+
+        }
+        return {retailPrice: {$lt: companyDoc.hideIfGreater}};
         // return {rolesArea: Session.get("area")};
     }
 
@@ -44,13 +51,13 @@ addTmpl.onCreated(function () {
 })
 
 addTmpl.helpers({
-    collection(){
+    collection() {
         return Co_Service;
     },
-    serviceTypeOption(){
+    serviceTypeOption() {
         return serviceTypeOption.get();
     },
-    machinTypeOption(){
+    machinTypeOption() {
         return machinTypeOption.get();
     }
 
@@ -88,13 +95,13 @@ editTmpl.helpers({
         let instance = Template.instance();
         return instance.subUserReady.get()
     },
-    collection(){
+    collection() {
         return Co_Service;
     },
-    serviceTypeOption(){
+    serviceTypeOption() {
         return serviceTypeOption.get();
     },
-    machinTypeOption(){
+    machinTypeOption() {
         return machinTypeOption.get();
     }
 })
@@ -103,11 +110,11 @@ editTmpl.helpers({
 //event
 
 indexTmpl.events({
-    'click .add'(){
+    'click .add'() {
         FlowRouter.go('/co-setting/service/add');
     },
 
-    'click .remove'(e){
+    'click .remove'(e) {
         var self = this;
         alertify.confirm(
             'Service',
@@ -127,11 +134,11 @@ indexTmpl.events({
         )
 
     },
-    'click button.edit' (event, instance) {
+    'click button.edit'(event, instance) {
         let self = this;
         FlowRouter.go(`/co-setting/service/${self._id}/edit`);
     },
-    'click .show'(event, instance){
+    'click .show'(event, instance) {
         let self = this;
         FlowRouter.go(`/co-setting/service/${self._id}/show`);
     }
@@ -140,13 +147,13 @@ indexTmpl.events({
 
 
 addTmpl.events({
-    'click .cancel'(e, t){
+    'click .cancel'(e, t) {
         FlowRouter.go(`/co-setting/service`);
     }
 })
 
 editTmpl.events({
-    'click .cancel'(e, t){
+    'click .cancel'(e, t) {
         FlowRouter.go(`/co-setting/service`);
     }
 });

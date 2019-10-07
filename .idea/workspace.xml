@@ -9,9 +9,10 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/imports/ui/payment/payment.js" beforeDir="false" afterPath="$PROJECT_DIR$/imports/ui/payment/payment.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/imports/ui/register/register.js" beforeDir="false" afterPath="$PROJECT_DIR$/imports/ui/register/register.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imports/ui/service/service.js" beforeDir="false" afterPath="$PROJECT_DIR$/imports/ui/service/service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imports/vue/ui/unpaidByCustomer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/imports/vue/ui/unpaidByCustomer.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imports/ui/user/userSetting.js" beforeDir="false" afterPath="$PROJECT_DIR$/imports/ui/user/userSetting.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imports/vue/ui/dashboard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/imports/vue/ui/dashboard.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/methods/class.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/methods/class.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/methods/report/dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/methods/report/dashboard.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -29,7 +30,7 @@
     <session id="-1917067959">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="50" />
+          <entry key="project.closed" value="51" />
           <entry key="project.open.time.0" value="17" />
           <entry key="project.open.time.1" value="5" />
           <entry key="project.open.time.16" value="1" />
@@ -39,18 +40,18 @@
           <entry key="project.open.time.22" value="1" />
           <entry key="project.open.time.23" value="1" />
           <entry key="project.open.time.27" value="2" />
-          <entry key="project.open.time.3" value="7" />
+          <entry key="project.open.time.3" value="8" />
           <entry key="project.open.time.4" value="9" />
           <entry key="project.open.time.5" value="2" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="54" />
+          <entry key="project.opened" value="55" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="css" value="25" />
           <entry key="html" value="108" />
-          <entry key="js" value="206" />
+          <entry key="js" value="214" />
           <entry key="json" value="19" />
           <entry key="less" value="12" />
           <entry key="packages" value="2" />
@@ -58,7 +59,7 @@
           <entry key="rnc" value="2" />
           <entry key="ts" value="9" />
           <entry key="versions" value="1" />
-          <entry key="vue" value="32" />
+          <entry key="vue" value="34" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -66,23 +67,23 @@
           <entry key="CSS" value="25" />
           <entry key="HTML" value="108" />
           <entry key="JSON" value="19" />
-          <entry key="JavaScript" value="206" />
+          <entry key="JavaScript" value="214" />
           <entry key="Less" value="12" />
           <entry key="PLAIN_TEXT" value="4" />
           <entry key="RNG Compact" value="2" />
           <entry key="TypeScript" value="9" />
-          <entry key="Vue.js" value="32" />
+          <entry key="Vue.js" value="34" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="155" />
           <entry key="html" value="1377" />
-          <entry key="js" value="4603" />
+          <entry key="js" value="4827" />
           <entry key="json" value="6" />
           <entry key="less" value="2" />
           <entry key="packages" value="2" />
-          <entry key="vue" value="918" />
+          <entry key="vue" value="942" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -90,10 +91,10 @@
           <entry key="CSS" value="155" />
           <entry key="HTML" value="1377" />
           <entry key="JSON" value="6" />
-          <entry key="JavaScript" value="4603" />
+          <entry key="JavaScript" value="4827" />
           <entry key="Less" value="2" />
           <entry key="PLAIN_TEXT" value="2" />
-          <entry key="Vue.js" value="918" />
+          <entry key="Vue.js" value="942" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
@@ -106,21 +107,12 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/imports/vue/ui/unpaidByCustomer.vue">
+        <entry file="file://$PROJECT_DIR$/server/methods/report/dashboard.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="647">
-              <caret line="212" column="74" selection-start-line="212" selection-start-column="68" selection-end-line="212" selection-end-column="74" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/imports/ui/register/register.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="580">
-              <caret line="83" column="9" lean-forward="true" selection-start-line="80" selection-start-column="7" selection-end-line="83" selection-end-column="9" />
+            <state relative-caret-position="340">
+              <caret line="110" column="47" selection-start-line="110" selection-start-column="36" selection-end-line="110" selection-end-column="47" />
               <folding>
-                <element signature="e#0#25#0" expanded="true" />
+                <element signature="e#0#37#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -129,8 +121,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/methods/report/reportMethod.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="500">
-              <caret line="25" column="40" lean-forward="true" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="40" />
+            <state relative-caret-position="80">
+              <caret line="4" column="36" lean-forward="true" selection-start-line="4" selection-start-column="36" selection-end-line="4" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -138,13 +130,22 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server/methods/class.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="112" lean-forward="true" selection-start-line="112" selection-end-line="112" />
+            <state relative-caret-position="520">
+              <caret line="63" column="56" selection-start-line="63" selection-start-column="56" selection-end-line="63" selection-end-column="56" />
               <folding>
                 <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/imports/vue/ui/dashboard.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="588">
+              <caret line="227" column="40" selection-start-line="227" selection-start-column="40" selection-end-line="227" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -209,9 +210,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/imports/ui/company/company.js" />
-        <option value="$PROJECT_DIR$/imports/vue/ui/checkQualityMachin.vue" />
-        <option value="$PROJECT_DIR$/client/lib/format.js" />
         <option value="$PROJECT_DIR$/imports/report/registerByItem/registerByDate.js" />
         <option value="$PROJECT_DIR$/imports/report/registerByItem/registerByItem.html" />
         <option value="$PROJECT_DIR$/imports/report/registerByItem/registerByItem.js" />
@@ -256,10 +254,13 @@
         <option value="$PROJECT_DIR$/imports/ui/payment/payment.html" />
         <option value="$PROJECT_DIR$/server/collectionHook/register.js" />
         <option value="$PROJECT_DIR$/imports/ui/service/service.js" />
+        <option value="$PROJECT_DIR$/imports/vue/ui/unpaidByCustomer.vue" />
+        <option value="$PROJECT_DIR$/imports/ui/user/userSetting.js" />
+        <option value="$PROJECT_DIR$/imports/vue/ui/dashboard.vue" />
         <option value="$PROJECT_DIR$/imports/ui/register/register.js" />
         <option value="$PROJECT_DIR$/imports/ui/payment/payment.js" />
-        <option value="$PROJECT_DIR$/imports/vue/ui/unpaidByCustomer.vue" />
         <option value="$PROJECT_DIR$/server/methods/class.js" />
+        <option value="$PROJECT_DIR$/server/methods/report/dashboard.js" />
       </list>
     </option>
   </component>
@@ -364,6 +365,13 @@
               <item name="imports" type="462c0819:PsiDirectoryNode" />
               <item name="ui" type="462c0819:PsiDirectoryNode" />
               <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cosmetic" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cosmetic" type="462c0819:PsiDirectoryNode" />
+              <item name="imports" type="462c0819:PsiDirectoryNode" />
+              <item name="ui" type="462c0819:PsiDirectoryNode" />
+              <item name="user" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="cosmetic" type="b2602c69:ProjectViewProjectNode" />
@@ -747,12 +755,13 @@
       <workItem from="1566018957360" duration="152000" />
       <workItem from="1566916508697" duration="8104000" />
       <workItem from="1567050224668" duration="70000" />
-      <workItem from="1570179339225" duration="3456000" />
+      <workItem from="1570179339225" duration="4065000" />
+      <workItem from="1570427223608" duration="2296000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="922117000" />
+    <option name="totallyTimeSpent" value="925022000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -827,19 +836,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/imports/ui/home/home.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/publication.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/route/setting.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="381" column="19" selection-start-line="381" selection-start-column="19" selection-end-line="381" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/imports/ui/company/company.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="331">
@@ -1074,9 +1070,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="500">
           <caret line="25" column="62" lean-forward="true" selection-start-line="25" selection-start-column="62" selection-end-line="25" selection-end-column="62" />
-          <folding>
-            <element signature="e#0#24#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1084,13 +1077,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="320">
           <caret line="17" column="46" lean-forward="true" selection-start-line="17" selection-start-column="46" selection-end-line="17" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/imports/ui/payment/payment.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="700">
-          <caret line="60" lean-forward="true" selection-start-line="60" selection-end-line="60" />
         </state>
       </provider>
     </entry>
@@ -1105,9 +1091,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="380">
           <caret line="20" column="27" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1118,34 +1101,68 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/imports/vue/ui/unpaidByCustomer.vue">
+    <entry file="file://$PROJECT_DIR$/imports/ui/user/userSetting.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="647">
-          <caret line="212" column="74" selection-start-line="212" selection-start-column="68" selection-end-line="212" selection-end-column="74" />
+        <state relative-caret-position="360">
+          <caret line="21" column="17" lean-forward="true" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/vue/ui/dashboard.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="588">
+          <caret line="227" column="40" selection-start-line="227" selection-start-column="40" selection-end-line="227" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/ui/payment/payment.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/imports/ui/register/register.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="580">
-          <caret line="83" column="9" lean-forward="true" selection-start-line="80" selection-start-column="7" selection-end-line="83" selection-end-column="9" />
+        <state relative-caret-position="560">
+          <caret line="82" column="67" lean-forward="true" selection-start-line="82" selection-start-column="67" selection-end-line="82" selection-end-column="67" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/imports/vue/ui/unpaidByCustomer.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="212" column="41" lean-forward="true" selection-start-line="212" selection-start-column="41" selection-end-line="212" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/methods/report/dashboard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="110" column="47" selection-start-line="110" selection-start-column="36" selection-end-line="110" selection-end-column="47" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/server/methods/report/reportMethod.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="25" column="40" lean-forward="true" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="40" />
+        <state relative-caret-position="80">
+          <caret line="4" column="36" lean-forward="true" selection-start-line="4" selection-start-column="36" selection-end-line="4" selection-end-column="36" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/methods/class.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="112" lean-forward="true" selection-start-line="112" selection-end-line="112" />
+        <state relative-caret-position="520">
+          <caret line="63" column="56" selection-start-line="63" selection-start-column="56" selection-end-line="63" selection-end-column="56" />
           <folding>
             <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />

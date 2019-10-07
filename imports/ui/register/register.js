@@ -78,7 +78,7 @@ indexTmpl.helpers({
 
         let userId = Meteor.userId();
         let companyDoc = Co_Company.findOne({});
-        if (companyDoc.asigneUser.indexOf(userId) > -1) {
+        if (companyDoc.asigneUser && companyDoc.asigneUser.indexOf(userId) > -1) {
         } else {
             newSelector.netTotal = {$lt: companyDoc.hideIfGreater};
         }

@@ -12,7 +12,12 @@ let index = Template.co_userSetting,
     editTmpl = Template.co_userSettingEdit;
 index.helpers({
     selector() {
-        return {username: {$ne: 'super'}}
+        let userDoc = Meteor.user();
+        if (userDoc.username === "super" || userDoc.username === "thyda") {
+            return {username: {$ne: 'super'}}
+        }else {
+            return {username: {$nin: ['super','thyda']}};
+        }
     },
     dataTable() {
         return UserSettingTabular

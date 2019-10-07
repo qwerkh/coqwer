@@ -109,7 +109,7 @@ export default class ClassReport {
         }
 
         let paramBalance = {};
-        if (CompanyDoc.asigneUser.indexOf(userId) > -1) {
+        if (CompanyDoc.asigneUser && CompanyDoc.asigneUser.indexOf(userId) > -1) {
 
             paramBalance.balance = {$gt: 0.01};
 

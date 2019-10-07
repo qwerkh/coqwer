@@ -3,6 +3,7 @@ import numeral from 'numeral';
 import {Co_Company} from "../../../imports/collection/company";
 import {Co_Register} from "../../../imports/collection/register";
 import math from "mathjs";
+import moment from "moment";
 
 Meteor.methods({
     dashboardReport(params) {
@@ -86,6 +87,11 @@ Meteor.methods({
 
         }
 
+        if (companyDoc.asigneUser && companyDoc.asigneUser.indexOf(params.userId) > -1) {
+
+        } else {
+            registerParameter.netTotal = {$lt: companyDoc.hideIfGreater};
+        }
 
         let registerList = Co_Register.aggregate([
             {$match: registerParameter},
@@ -138,10 +144,19 @@ Meteor.methods({
             }
         ])
         if (registerList.length > 0) {
-            data.totalNumberInvoice = registerList[0].totalNumberInvoice;
-            data.total = formatCurrency(registerList[0].total, companyDoc.baseCurrency);
-            data.totalService = formatCurrency(registerList[0].totalService, companyDoc.baseCurrency);
-            data.totalMedicine = formatCurrency(registerList[0].totalMedicine, companyDoc.baseCurrency);
+
+            if (companyDoc.asigneUser && companyDoc.asigneUser.indexOf(params.userId) > -1) {
+                data.totalNumberInvoice = registerList[0].totalNumberInvoice;
+                data.total = formatCurrency(registerList[0].total, companyDoc.baseCurrency);
+                data.totalService = formatCurrency(registerList[0].totalService, companyDoc.baseCurrency);
+                data.totalMedicine = formatCurrency(registerList[0].totalMedicine, companyDoc.baseCurrency);
+            } else {
+                data.totalNumberInvoice = registerList[0].totalNumberInvoice;
+                data.total = formatCurrency(registerList[0].total * checkProvision(companyDoc, moment().toDate()), companyDoc.baseCurrency);
+                data.totalService = formatCurrency(registerList[0].totalService * checkProvision(companyDoc, moment().toDate()), companyDoc.baseCurrency);
+                data.totalMedicine = formatCurrency(registerList[0].totalMedicine * checkProvision(companyDoc, moment().toDate()), companyDoc.baseCurrency);
+            }
+
         } else {
             data.totalNumberInvoice = 0;
             data.total = 0;
@@ -254,5 +269,56 @@ let newFormFormat = (digit) => {
     form += ")";
     return form;
 };
+
+
+let checkProvision = function (companyDoc, date) {
+    let percentage = 0;
+    let month = moment(moment(date, "DD/MM/YYYY").toDate()).format("MM");
+    switch (month) {
+        case "01":
+            percentage = companyDoc.jan;
+            break;
+        case "02":
+            percentage = companyDoc.feb;
+            break;
+        case "03":
+            percentage = companyDoc.mar;
+            break;
+        case "04":
+            percentage = companyDoc.apr;
+            break;
+        case "05":
+            percentage = companyDoc.may;
+            break;
+        case "06":
+            percentage = companyDoc.jun;
+            break;
+        case "07":
+            percentage = companyDoc.jul;
+            break;
+        case "08":
+            percentage = companyDoc.aug;
+            break;
+        case "09":
+            percentage = companyDoc.sep;
+            break;
+        case "10":
+            percentage = companyDoc.oct;
+            break;
+        case "11":
+            percentage = companyDoc.nov;
+            break;
+        case "12":
+            percentage = companyDoc.dec;
+            break;
+    }
+    return percentage / 100;
+
+
+}
+
+
+
+
 
 

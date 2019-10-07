@@ -34,7 +34,7 @@ indexTmpl.helpers({
     selector() {
         let userId = Meteor.userId();
         let companyDoc = Co_Company.findOne({});
-        if (companyDoc.asigneUser.indexOf(userId) > -1) {
+        if (companyDoc.asigneUser && companyDoc.asigneUser.indexOf(userId) > -1) {
         } else {
             let hideDollar = companyDoc.hideIfGreater;
             let hideRiel = 0;
@@ -52,7 +52,12 @@ indexTmpl.helpers({
                 hideRiel = companyDoc.hideIfGreater * 120;
                 hideBaht = companyDoc.hideIfGreater;
             }
-            return {rolesArea: Session.get("area"), paidAmountUSD: {$lt: hideDollar}, paidAmountKHR: {$lt: hideRiel}, paidAmountTHB: {$lt: hideBaht}};
+            return {
+                rolesArea: Session.get("area"),
+                paidAmountUSD: {$lt: hideDollar},
+                paidAmountKHR: {$lt: hideRiel},
+                paidAmountTHB: {$lt: hideBaht}
+            };
         }
         return {rolesArea: Session.get("area")};
     }

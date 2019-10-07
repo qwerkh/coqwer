@@ -224,7 +224,7 @@
                 param.area = Session.get('area');
                 param.today = moment().toDate();
                 param.minusDay = this.params.dateChoose || 0;
-
+                param.userId = Meteor.userId();
                 Meteor.call('dashboardReport', param, (err, result) => {
                     if (!err) {
                         this.dashboardData = result;

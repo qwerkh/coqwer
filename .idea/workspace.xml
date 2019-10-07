@@ -6,13 +6,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="37b05a99-1bf8-426c-a9a5-9f4248831879" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imports/ui/payment/payment.js" beforeDir="false" afterPath="$PROJECT_DIR$/imports/ui/payment/payment.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imports/ui/register/register.js" beforeDir="false" afterPath="$PROJECT_DIR$/imports/ui/register/register.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/both/tabular/userSetting.js" beforeDir="false" afterPath="$PROJECT_DIR$/both/tabular/userSetting.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/imports/ui/user/userSetting.js" beforeDir="false" afterPath="$PROJECT_DIR$/imports/ui/user/userSetting.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imports/vue/ui/dashboard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/imports/vue/ui/dashboard.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/methods/class.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/methods/class.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/methods/report/dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/methods/report/dashboard.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -51,7 +46,7 @@
         <counts>
           <entry key="css" value="25" />
           <entry key="html" value="108" />
-          <entry key="js" value="214" />
+          <entry key="js" value="216" />
           <entry key="json" value="19" />
           <entry key="less" value="12" />
           <entry key="packages" value="2" />
@@ -67,7 +62,7 @@
           <entry key="CSS" value="25" />
           <entry key="HTML" value="108" />
           <entry key="JSON" value="19" />
-          <entry key="JavaScript" value="214" />
+          <entry key="JavaScript" value="216" />
           <entry key="Less" value="12" />
           <entry key="PLAIN_TEXT" value="4" />
           <entry key="RNG Compact" value="2" />
@@ -79,7 +74,7 @@
         <counts>
           <entry key="css" value="155" />
           <entry key="html" value="1377" />
-          <entry key="js" value="4827" />
+          <entry key="js" value="4913" />
           <entry key="json" value="6" />
           <entry key="less" value="2" />
           <entry key="packages" value="2" />
@@ -91,7 +86,7 @@
           <entry key="CSS" value="155" />
           <entry key="HTML" value="1377" />
           <entry key="JSON" value="6" />
-          <entry key="JavaScript" value="4827" />
+          <entry key="JavaScript" value="4913" />
           <entry key="Less" value="2" />
           <entry key="PLAIN_TEXT" value="2" />
           <entry key="Vue.js" value="942" />
@@ -106,46 +101,27 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/methods/report/dashboard.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="110" column="47" selection-start-line="110" selection-start-column="36" selection-end-line="110" selection-end-column="47" />
-              <folding>
-                <element signature="e#0#37#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/methods/report/reportMethod.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="4" column="36" lean-forward="true" selection-start-line="4" selection-start-column="36" selection-end-line="4" selection-end-column="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/server/methods/class.js">
+        <entry file="file://$PROJECT_DIR$/imports/ui/user/userSetting.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="520">
-              <caret line="63" column="56" selection-start-line="63" selection-start-column="56" selection-end-line="63" selection-end-column="56" />
+            <state relative-caret-position="420">
+              <caret line="22" column="9" lean-forward="true" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
               <folding>
-                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+                <element signature="e#0#28#0" expanded="true" />
+                <element signature="e#219#287#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/imports/vue/ui/dashboard.vue">
+        <entry file="file://$PROJECT_DIR$/both/tabular/userSetting.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="588">
-              <caret line="227" column="40" selection-start-line="227" selection-start-column="40" selection-end-line="227" selection-end-column="40" />
+            <state relative-caret-position="680">
+              <caret line="34" column="32" lean-forward="true" selection-start-line="34" selection-start-column="32" selection-end-line="34" selection-end-column="32" />
+              <folding>
+                <element signature="e#0#43#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -210,7 +186,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/imports/report/registerByItem/registerByDate.js" />
         <option value="$PROJECT_DIR$/imports/report/registerByItem/registerByItem.html" />
         <option value="$PROJECT_DIR$/imports/report/registerByItem/registerByItem.js" />
         <option value="$PROJECT_DIR$/imports/vue/ui/registerByDate.vue" />
@@ -255,12 +230,13 @@
         <option value="$PROJECT_DIR$/server/collectionHook/register.js" />
         <option value="$PROJECT_DIR$/imports/ui/service/service.js" />
         <option value="$PROJECT_DIR$/imports/vue/ui/unpaidByCustomer.vue" />
-        <option value="$PROJECT_DIR$/imports/ui/user/userSetting.js" />
         <option value="$PROJECT_DIR$/imports/vue/ui/dashboard.vue" />
         <option value="$PROJECT_DIR$/imports/ui/register/register.js" />
         <option value="$PROJECT_DIR$/imports/ui/payment/payment.js" />
         <option value="$PROJECT_DIR$/server/methods/class.js" />
         <option value="$PROJECT_DIR$/server/methods/report/dashboard.js" />
+        <option value="$PROJECT_DIR$/both/tabular/userSetting.js" />
+        <option value="$PROJECT_DIR$/imports/ui/user/userSetting.js" />
       </list>
     </option>
   </component>
@@ -756,12 +732,12 @@
       <workItem from="1566916508697" duration="8104000" />
       <workItem from="1567050224668" duration="70000" />
       <workItem from="1570179339225" duration="4065000" />
-      <workItem from="1570427223608" duration="2296000" />
+      <workItem from="1570427223608" duration="3120000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="925022000" />
+    <option name="totallyTimeSpent" value="925846000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -836,13 +812,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/imports/ui/company/company.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="23" column="2" lean-forward="true" selection-start-line="23" selection-start-column="2" selection-end-line="23" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/imports/ui/register/registerDetail.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="143">
@@ -1101,23 +1070,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/imports/ui/user/userSetting.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="21" column="17" lean-forward="true" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/imports/vue/ui/dashboard.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="588">
-          <caret line="227" column="40" selection-start-line="227" selection-start-column="40" selection-end-line="227" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/imports/ui/payment/payment.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -1142,12 +1094,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/methods/report/dashboard.js">
+    <entry file="file://$PROJECT_DIR$/server/methods/class.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="110" column="47" selection-start-line="110" selection-start-column="36" selection-end-line="110" selection-end-column="47" />
+        <state relative-caret-position="520">
+          <caret line="63" column="56" selection-start-line="63" selection-start-column="56" selection-end-line="63" selection-end-column="56" />
           <folding>
-            <element signature="e#0#37#0" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1159,14 +1113,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/methods/class.js">
+    <entry file="file://$PROJECT_DIR$/server/methods/report/dashboard.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="520">
-          <caret line="63" column="56" selection-start-line="63" selection-start-column="56" selection-end-line="63" selection-end-column="56" />
+        <state relative-caret-position="340">
+          <caret line="110" column="47" selection-start-line="110" selection-start-column="36" selection-end-line="110" selection-end-column="47" />
           <folding>
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/vue/ui/dashboard.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="588">
+          <caret line="227" column="40" selection-start-line="227" selection-start-column="40" selection-end-line="227" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/both/tabular/userSetting.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="34" column="32" lean-forward="true" selection-start-line="34" selection-start-column="32" selection-end-line="34" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/ui/user/userSetting.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="22" column="9" lean-forward="true" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+            <element signature="e#219#287#0" expanded="true" />
           </folding>
         </state>
       </provider>

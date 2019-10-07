@@ -32,5 +32,5 @@ export const UserSettingTabular = new Tabular.Table({
             tmpl: Meteor.isClient && Template.co_action
         }
     ],
-    extraFields: ["email"]
+    extraFields: ["email","_id"]
 });

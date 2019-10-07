@@ -5,6 +5,7 @@ import {Template} from 'meteor/templating'
 import {UserSchema} from '../../collection/userSchema'
 // import tabular
 import {UserSettingTabular} from '../../../both/tabular/userSetting'
+import {Co_Company} from "../../collection/company";
 
 let index = Template.co_userSetting,
     userSettingOptions = Template.co_userSettingOptions,
@@ -13,10 +14,12 @@ let index = Template.co_userSetting,
 index.helpers({
     selector() {
         let userDoc = Meteor.user();
-        if (userDoc.username === "super" || userDoc.username === "thyda") {
+        let userId = Meteor.userId();
+        let companyDoc = Co_Company.findOne();
+        if (userDoc.username === "super" || companyDoc.asigneUser.indexOf(userId) > -1) {
             return {username: {$ne: 'super'}}
-        }else {
-            return {username: {$nin: ['super','thyda']}};
+        } else {
+            return {username: {$ne: 'super'}, _id: {$nin: (companyDoc.asigneUser || [])}};
         }
     },
     dataTable() {

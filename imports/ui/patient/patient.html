@@ -96,7 +96,7 @@
         <div class="progress">
             <!--<div class="indeterminate"></div>-->
         </div>
-        {{#if subscriptionsReady}}
+        <!--{{#if subscriptionsReady}}-->
             {{#autoForm collection=collection id="co_patientEdit" type="update" doc=data}}
                 <div class="row">
                     <div class="two fields">
@@ -131,11 +131,11 @@
                 </div>
             {{/autoForm}}
 
-        {{else}}
+        <!--{{else}}
             <div class="progress ">
                 <div class="indeterminate blue darken-1 "></div>
             </div>
-        {{/if}}
+        {{/if}}-->
 
     </div>
 </template>
@@ -206,9 +206,6 @@
                             <table class="ui celled table">
                                 {{#if registerList}}
                                     <thead>
-                                    <th>
-                                        Date
-                                    </th>
                                     <th>#Id</th>
                                     <th>Service Name</th>
                                     <th>Qty</th>
@@ -218,7 +215,7 @@
                                     {{#each registerList}}
                                         <thead>
                                         <tr>
-                                            <th colspan="6">
+                                            <th colspan="5">
                                                 {{formatDate registerDate}} ( <span
                                                     style="color: blue"> Net Total: {{formatNumber
                                                     netTotalService}}</span> , <span
@@ -230,7 +227,6 @@
                                         <tbody>
                                         {{#each services}}
                                             <tr>
-                                                <td class="collapsing"></td>
                                                 <td>{{serviceId}}</td>
                                                 <td>{{serviceName}}</td>
                                                 <td>{{qty}}</td>
@@ -249,9 +245,6 @@
                             <table class="ui celled table">
                                 {{#if registerList}}
                                     <thead>
-                                    <th>
-                                        Date
-                                    </th>
                                     <th>#Id</th>
                                     <th>Medicine Name</th>
                                     <th>Qty</th>
@@ -261,7 +254,7 @@
                                     {{#each registerList}}
                                         <thead>
                                         <tr>
-                                            <th colspan="6">
+                                            <th colspan="5">
                                                 {{formatDate registerDate}} ( <span
                                                     style="color: blue"> Net Total: {{formatNumber
                                                     netTotalMedicine}}</span> , <span
@@ -273,7 +266,6 @@
                                         <tbody>
                                         {{#each medicines}}
                                             <tr>
-                                                <td class="collapsing"></td>
                                                 <td>{{medicineId}}</td>
                                                 <td>{{medicineName}}</td>
                                                 <td>{{qty}}</td>

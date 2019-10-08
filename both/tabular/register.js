@@ -34,7 +34,7 @@ export const RegisterTabular = new Tabular.Table({
         }, {
             data: "voucherId", title: "Voucher"
         },
-        {
+       /* {
             data: "netTotal", title: "Total",
             render: function (val, type, doc) {
                 return numeral(val).format("0,00.000");
@@ -45,7 +45,7 @@ export const RegisterTabular = new Tabular.Table({
             render: function (val, type, doc) {
                 return numeral(val).format("0,00.000");
             }
-        },
+        },*/
         {
             data: "status", title: "Status",
             render: function (val, type, doc) {
@@ -79,6 +79,8 @@ export const RegisterTabular = new Tabular.Table({
         "paidAmountUSD",
         "paidAmountKHR",
         "paidAmountTHB",
-        "voucherId"
+        "voucherId",
+        "netTotal",
+        "balance"
     ]
 })

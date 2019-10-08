@@ -55,15 +55,16 @@ addTmpl.helpers({
 
 editTmpl.helpers({
     data() {
-
-        let id = FlowRouter.getParam('patientId');
-        return Co_Patient.findOne({_id: id});
+        /*let id = FlowRouter.getParam('patientId');
+        return Co_Patient.findOne({_id: id});*/
+        let data = patientDoc.get("patient");
+        return data;
 
     },
-    subscriptionsReady() {
+    /*subscriptionsReady() {
         let instance = Template.instance();
         return instance.subUserReady.get()
-    },
+    },*/
     collection() {
         return Co_Patient;
     }
@@ -98,7 +99,14 @@ indexTmpl.events({
     },
     'click button.edit'(event, instance) {
         let self = this;
-        FlowRouter.go(`/co-data/patient/${self._id}/edit`);
+        patientDoc.set("patient", {});
+        Meteor.call("co_patientById", self._id, (err, result) => {
+            if (result) {
+                patientDoc.set("patient", result);
+                FlowRouter.go(`/co-data/patient/${self._id}/edit`);
+            }
+        });
+
     },
     'click button.show'(event, instance) {
         let self = this;
@@ -108,14 +116,28 @@ indexTmpl.events({
 
         var dataTable = $(event.target).closest('table').DataTable();
         var rowData = dataTable.row(event.currentTarget).data();
-        Meteor.call("co_registerByPatientId", rowData._id, (err, result) => {
+        patientDoc.set("patient", {});
+        registerDoc.set([]);
+        /*Meteor.call("co_registerByPatientId", rowData._id, (err, result) => {
+            console.log(result);
             registerDoc.set(result);
         });
+
         Meteor.call("co_patientById", rowData._id, (err, result) => {
-            patientDoc.set("patient", result);
+            if (result) {
+                patientDoc.set("patient", result);
+                FlowRouter.go(`/co-data/patient/${rowData._id}/showDetail`);
+            }
+        });*/
+        Meteor.call("co_getPatientAndRegisterByPatientId", rowData._id, Meteor.userId(), (err, result) => {
+            if (result) {
+                patientDoc.set("patient", result.patientDoc);
+                registerDoc.set(result.registerList);
+                FlowRouter.go(`/co-data/patient/${rowData._id}/showDetail`);
+            }
         });
 
-        FlowRouter.go(`/co-data/patient/${rowData._id}/showDetail`);
+
         // FlowRouter.go(`/co-data/register/${rowData._id}/byPatient`);
     },
     'click button.register'() {
@@ -193,21 +215,21 @@ indexTmpl.onRendered(function () {
     customSearch.set("");
 })
 editTmpl.onRendered(function () {
-    this.autorun(() => {
+    /*this.autorun(() => {
         if (this.subscription.ready()) {
             this.subUserReady.set(true);
         }
-    });
+    });*/
 });
 
 editTmpl.onCreated(function () {
-    this.subUserReady = new ReactiveVar(false);
-    this.autorun(() => {
-        let id = FlowRouter.getParam('patientId');
-        if (id) {
-            this.subscription = Meteor.subscribe('co_patientById', {_id: id});
-        }
-    })
+    /* this.subUserReady = new ReactiveVar(false);
+     this.autorun(() => {
+         let id = FlowRouter.getParam('patientId');
+         if (id) {
+             this.subscription = Meteor.subscribe('co_patientById', {_id: id});
+         }
+     })*/
 });
 
 addTmpl.onCreated(function () {
@@ -245,14 +267,14 @@ showPatientDetail.helpers({
 
 
 showPatientDetail.onCreated(function () {
-    this.subUserReady = new ReactiveVar(false);
+    /*this.subUserReady = new ReactiveVar(false);
     this.autorun(() => {
         let id = FlowRouter.getParam('patientId');
         if (id) {
             this.subscription = Meteor.subscribe('co_patientById', {_id: id});
             this.subscription = Meteor.subscribe('co_registerByPatientId', {patientId: id});
         }
-    })
+    })*/
 })
 
 

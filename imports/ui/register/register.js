@@ -71,17 +71,19 @@ indexTmpl.helpers({
             newSelector.rolesArea = Session.get("area");
             newSelector.createdAt = {$gte: moment().add(-2, "months").toDate()}
 
+            let userId = Meteor.userId();
+            let companyDoc = Co_Company.findOne({});
+            if (companyDoc.asigneUser && companyDoc.asigneUser.indexOf(userId) > -1) {
+            } else {
+                newSelector.netTotal = {$lt: companyDoc.hideIfGreater};
+            }
+
         }
         if (FlowRouter.getParam('patientId')) {
             newSelector.patientId = FlowRouter.getParam('patientId');
         }
 
-        let userId = Meteor.userId();
-        let companyDoc = Co_Company.findOne({});
-        if (companyDoc.asigneUser && companyDoc.asigneUser.indexOf(userId) > -1) {
-        } else {
-            newSelector.netTotal = {$lt: companyDoc.hideIfGreater};
-        }
+
         return newSelector;
 
     }

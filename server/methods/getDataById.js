@@ -65,9 +65,10 @@ Meteor.methods({
                     obj.netTotalService = 0;
                     obj.totalService = 0;
                     obj.services = [];
-                    
+
                     obj.netTotal = obj.netTotalMedicine;
                     obj.balance = 0;
+                    obj.description = "";
 
                     return obj;
                 }

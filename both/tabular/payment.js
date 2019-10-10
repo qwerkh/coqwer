@@ -1,5 +1,6 @@
 import {Template} from 'meteor/templating';
 import {Meteor} from 'meteor/meteor';
+
 Meteor.isClient && require('../../imports/ui/action/action');
 
 import {Co_Payment} from '../../imports/collection/payment';
@@ -17,7 +18,7 @@ export const PaymentTabular = new Tabular.Table({
         {data: "registerId", title: 'Register Id'},
         {data: "voucherId", title: 'Voucher'},
         {data: "paymentDateString", title: 'Pay Date'},
-        {
+        /*{
             data: "paidAmountUSD", title: 'Paid Dollar',
             render: function (val, type, doc) {
                 return numeral(val).format("0,00.000");
@@ -35,11 +36,11 @@ export const PaymentTabular = new Tabular.Table({
             render: function (val, type, doc) {
                 return numeral(val).format("0,00");
             }
-        },
+        },*/
         {
             tmpl: Meteor.isClient && Template.co_action
         }
     ],
-    extraFields: ["fromRegister", "canRemove"]
+    extraFields: ["fromRegister", "canRemove", "paidAmountUSD", "paidAmountKHR", "paidAmountTHB"]
 
 })

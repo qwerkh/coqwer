@@ -270,7 +270,7 @@ indexTmpl.events({
         let self = this;
         registerDoc.set("reDoc", {});
         if (self.paymentNumber <= 1) {
-            
+
             serviceTem.remove({});
             medicineTem.remove({});
 

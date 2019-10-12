@@ -270,15 +270,7 @@ indexTmpl.events({
         let self = this;
         registerDoc.set("reDoc", {});
         if (self.paymentNumber <= 1) {
-
-            let userId = Meteor.userId();
-            let companyDoc = Co_Company.findOne({});
-            if (companyDoc.asigneUser && companyDoc.asigneUser.indexOf(userId) > -1) {
-            } else {
-                alertify.error("Can't Update");
-                return false;
-            }
-
+            
             serviceTem.remove({});
             medicineTem.remove({});
 

@@ -26,14 +26,32 @@ oldBalance = new ReactiveVar("");
 
 patientDocPayment = new ReactiveVar();
 voucherId = new ReactiveVar("");
-
+let customSearch = new ReactiveVar();
 indexTmpl.helpers({
     dataTable() {
         return PaymentTabular;
     },
     selector() {
         let userId = Meteor.userId();
+        let newSearchName = customSearch.get();
         let companyDoc = Co_Company.findOne({});
+        let newSelector = {};
+        newSelector.rolesArea = Session.get("area");
+
+        if (newSearchName !== "" && newSearchName !== undefined) {
+
+            newSelector.$or = [
+                {registerId: {$regex: newSearchName, $options: 'mi'}},
+                {patientId: {$regex: newSearchName, $options: 'mi'}},
+                {voucherId: {$regex: newSearchName, $options: 'mi'}},
+                {_id: {$regex: newSearchName, $options: 'mi'}}
+            ]
+
+        } else {
+            newSelector.paymentDate = {$gte: moment().add(-2, "months").toDate()}
+        }
+
+
         if (companyDoc.asigneUser && companyDoc.asigneUser.indexOf(userId) > -1) {
         } else {
             let hideDollar = companyDoc.hideIfGreater;
@@ -52,14 +70,15 @@ indexTmpl.helpers({
                 hideRiel = companyDoc.hideIfGreater * 120;
                 hideBaht = companyDoc.hideIfGreater;
             }
-            return {
-                rolesArea: Session.get("area"),
-                paidAmountUSD: {$lt: hideDollar},
-                paidAmountKHR: {$lt: hideRiel},
-                paidAmountTHB: {$lt: hideBaht}
-            };
+
+            newSelector.paidAmountUSD = {$lt: hideDollar};
+            newSelector.paidAmountKHR = {$lt: hideRiel};
+            newSelector.paidAmountTHB = {$lt: hideBaht};
+            return newSelector;
         }
-        return {rolesArea: Session.get("area")};
+
+        console.log(newSelector)
+        return newSelector;
     }
 
 });
@@ -334,7 +353,10 @@ indexTmpl.events({
     'click .show'(event, instance) {
         let self = this;
         FlowRouter.go(`/co-data/payment/${self._id}/show`);
-    }
+    },
+    "keyup #customSearchPayment": _.debounce(function (e, t) {
+        customSearch.set(e.currentTarget.value);
+    }, 200)
 
 })
 

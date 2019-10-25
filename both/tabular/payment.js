@@ -10,12 +10,14 @@ export const PaymentTabular = new Tabular.Table({
     collection: Co_Payment,
     responsive: true,
     order: ['0', 'desc'],
+    searching: false,
     columnDefs: [
         {"width": "10px", "targets": 0}
     ],
     columns: [
         {data: "_id", title: 'Id'},
         {data: "registerId", title: 'Register Id'},
+        {data: "patientId", title: 'Patient Id'},
         {data: "voucherId", title: 'Voucher'},
         {data: "paymentDateString", title: 'Pay Date'},
         /*{

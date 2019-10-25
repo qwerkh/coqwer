@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/imports/ui/patient/patient.js" line="221" />
+    <bookmark url="file://$PROJECT_DIR$/imports/ui/patient/patient.js" line="233" />
     <bookmark url="file://$PROJECT_DIR$/imports/ui/register/register.js" line="443" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="37b05a99-1bf8-426c-a9a5-9f4248831879" name="Default" comment="" />
+    <list default="true" id="37b05a99-1bf8-426c-a9a5-9f4248831879" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/both/tabular/payment.js" beforeDir="false" afterPath="$PROJECT_DIR$/both/tabular/payment.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imports/ui/patient/patient.html" beforeDir="false" afterPath="$PROJECT_DIR$/imports/ui/patient/patient.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imports/ui/patient/patient.js" beforeDir="false" afterPath="$PROJECT_DIR$/imports/ui/patient/patient.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imports/ui/payment/payment.html" beforeDir="false" afterPath="$PROJECT_DIR$/imports/ui/payment/payment.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imports/ui/payment/payment.js" beforeDir="false" afterPath="$PROJECT_DIR$/imports/ui/payment/payment.js" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -22,8 +29,8 @@
     <session id="-1917067959">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="58" />
-          <entry key="project.open.time.0" value="19" />
+          <entry key="project.closed" value="59" />
+          <entry key="project.open.time.0" value="20" />
           <entry key="project.open.time.1" value="5" />
           <entry key="project.open.time.16" value="1" />
           <entry key="project.open.time.18" value="2" />
@@ -33,18 +40,18 @@
           <entry key="project.open.time.23" value="1" />
           <entry key="project.open.time.27" value="2" />
           <entry key="project.open.time.3" value="9" />
-          <entry key="project.open.time.4" value="11" />
+          <entry key="project.open.time.4" value="12" />
           <entry key="project.open.time.5" value="2" />
           <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="61" />
+          <entry key="project.opened" value="63" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="css" value="25" />
-          <entry key="html" value="112" />
-          <entry key="js" value="243" />
+          <entry key="html" value="115" />
+          <entry key="js" value="251" />
           <entry key="json" value="19" />
           <entry key="less" value="12" />
           <entry key="packages" value="2" />
@@ -58,9 +65,9 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="25" />
-          <entry key="HTML" value="112" />
+          <entry key="HTML" value="115" />
           <entry key="JSON" value="19" />
-          <entry key="JavaScript" value="243" />
+          <entry key="JavaScript" value="251" />
           <entry key="Less" value="12" />
           <entry key="PLAIN_TEXT" value="4" />
           <entry key="RNG Compact" value="2" />
@@ -71,8 +78,8 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="155" />
-          <entry key="html" value="1381" />
-          <entry key="js" value="5557" />
+          <entry key="html" value="1411" />
+          <entry key="js" value="5755" />
           <entry key="json" value="6" />
           <entry key="less" value="2" />
           <entry key="packages" value="2" />
@@ -82,9 +89,9 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="155" />
-          <entry key="HTML" value="1381" />
+          <entry key="HTML" value="1411" />
           <entry key="JSON" value="6" />
-          <entry key="JavaScript" value="5557" />
+          <entry key="JavaScript" value="5755" />
           <entry key="Less" value="2" />
           <entry key="PLAIN_TEXT" value="2" />
           <entry key="Vue.js" value="942" />
@@ -98,7 +105,56 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/imports/ui/patient/patient.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="580">
+              <caret line="46" column="13" lean-forward="true" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/imports/ui/payment/payment.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="413">
+              <caret line="51" column="9" lean-forward="true" selection-start-line="51" selection-start-column="9" selection-end-line="51" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/both/tabular/payment.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="16" column="14" lean-forward="true" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/imports/collection/payment.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="3" column="13" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/imports/ui/payment/payment.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="420">
+              <caret line="21" column="71" lean-forward="true" selection-start-line="21" selection-start-column="71" selection-end-line="21" selection-end-column="71" />
+              <folding>
+                <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -137,10 +193,10 @@
       <find>co_company</find>
       <find>publi</find>
       <find>custo</find>
-      <find>customSearch</find>
       <find>patientDoc</find>
       <find>subs</find>
       <find>cons</find>
+      <find>customSearch</find>
     </findStrings>
     <replaceStrings>
       <replace>click button.edit</replace>
@@ -192,23 +248,23 @@
         <option value="$PROJECT_DIR$/imports/ui/print/a4Summary.html" />
         <option value="$PROJECT_DIR$/both/tabular/patient.js" />
         <option value="$PROJECT_DIR$/imports/collection/register.js" />
-        <option value="$PROJECT_DIR$/imports/ui/payment/payment.html" />
         <option value="$PROJECT_DIR$/server/collectionHook/register.js" />
         <option value="$PROJECT_DIR$/imports/ui/service/service.js" />
         <option value="$PROJECT_DIR$/imports/vue/ui/unpaidByCustomer.vue" />
         <option value="$PROJECT_DIR$/imports/vue/ui/dashboard.vue" />
-        <option value="$PROJECT_DIR$/imports/ui/payment/payment.js" />
         <option value="$PROJECT_DIR$/server/methods/class.js" />
         <option value="$PROJECT_DIR$/server/methods/report/dashboard.js" />
         <option value="$PROJECT_DIR$/both/tabular/userSetting.js" />
         <option value="$PROJECT_DIR$/imports/ui/user/userSetting.js" />
         <option value="$PROJECT_DIR$/both/tabular/register.js" />
         <option value="$PROJECT_DIR$/server/createIndex.js" />
+        <option value="$PROJECT_DIR$/server/methods/getDataById.js" />
+        <option value="$PROJECT_DIR$/imports/ui/register/register.js" />
         <option value="$PROJECT_DIR$/imports/ui/patient/patient.html" />
         <option value="$PROJECT_DIR$/imports/ui/patient/patient.js" />
-        <option value="$PROJECT_DIR$/server/methods/getDataById.js" />
+        <option value="$PROJECT_DIR$/imports/ui/payment/payment.html" />
         <option value="$PROJECT_DIR$/both/tabular/payment.js" />
-        <option value="$PROJECT_DIR$/imports/ui/register/register.js" />
+        <option value="$PROJECT_DIR$/imports/ui/payment/payment.js" />
       </list>
     </option>
   </component>
@@ -723,11 +779,13 @@
       <workItem from="1570529922390" duration="15000" />
       <workItem from="1570709215570" duration="1096000" />
       <workItem from="1570845431510" duration="691000" />
+      <workItem from="1571037508585" duration="136000" />
+      <workItem from="1571973475885" duration="2245000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="938873000" />
+    <option name="totallyTimeSpent" value="941254000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -740,6 +798,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2169399" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -801,20 +860,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/imports/ui/register/registerDetail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-462">
-          <caret line="30" column="44" lean-forward="true" selection-start-line="30" selection-start-column="44" selection-end-line="30" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/imports/ui/print/a4.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1600">
-          <caret line="80" column="5" lean-forward="true" selection-start-line="76" selection-start-column="5" selection-end-line="80" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/methods/print/a4.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="380">
@@ -840,13 +885,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="280">
           <caret line="17" column="42" lean-forward="true" selection-start-line="14" selection-start-column="4" selection-end-line="17" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/imports/collection/patient.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="18" column="9" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -989,20 +1027,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/imports/ui/payment/payment.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-247">
-          <caret line="247" lean-forward="true" selection-start-line="247" selection-end-line="247" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/both/tabular/patient.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="693">
-          <caret line="79" column="22" selection-start-line="79" selection-start-column="19" selection-end-line="79" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/methods/view.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="20">
@@ -1048,13 +1072,6 @@
     <entry file="file://$PROJECT_DIR$/server/_securityMethod.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/imports/ui/payment/payment.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/methods/report/reportMethod.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
@@ -1069,13 +1086,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/imports/ui/patient/patient.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="511">
-          <caret line="131" column="43" selection-start-line="131" selection-start-column="43" selection-end-line="131" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/methods/getDataById.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="513">
@@ -1083,27 +1093,93 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/both/tabular/payment.js">
+    <entry file="file://$PROJECT_DIR$/both/tabular/patient.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="633">
-          <caret line="39" column="9" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
+        <state relative-caret-position="380">
+          <caret line="20" column="10" lean-forward="true" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/imports/ui/patient/patient.html">
+    <entry file="file://$PROJECT_DIR$/both/tabular/payment.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="598">
-          <caret line="306" column="62" selection-start-line="306" selection-start-column="51" selection-end-line="306" selection-end-column="62" />
+        <state relative-caret-position="300">
+          <caret line="16" column="14" lean-forward="true" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/ui/register/register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="16" column="75" lean-forward="true" selection-start-line="16" selection-start-column="75" selection-end-line="16" selection-end-column="75" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/collection/payment.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="3" column="13" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/imports/ui/register/register.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="272" column="12" selection-start-line="272" selection-start-column="12" selection-end-line="272" selection-end-column="12" />
+        <state relative-caret-position="1363">
+          <caret line="80" column="9" lean-forward="true" selection-start-line="58" selection-start-column="7" selection-end-line="80" selection-end-column="9" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/collection/patient.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-360">
+          <caret line="18" column="9" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/ui/patient/patient.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="24" column="86" selection-start-line="24" selection-start-column="62" selection-end-line="24" selection-end-column="86" />
+          <folding>
+            <element signature="n#style#0;n#h4#0;n#div#1;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#div#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/ui/payment/payment.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="21" column="71" lean-forward="true" selection-start-line="21" selection-start-column="71" selection-end-line="21" selection-end-column="71" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/ui/patient/patient.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="580">
+          <caret line="46" column="13" lean-forward="true" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/ui/payment/payment.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="413">
+          <caret line="51" column="9" lean-forward="true" selection-start-line="51" selection-start-column="9" selection-end-line="51" selection-end-column="9" />
         </state>
       </provider>
     </entry>

@@ -18,17 +18,25 @@ let indexTmpl = Template.co_patient,
 let patientDoc = new ReactiveObj();
 let registerDoc = new ReactiveVar([]);
 let customSearch = new ReactiveVar();
+let customSearchOrder = new ReactiveVar();
 indexTmpl.helpers({
     dataTable() {
         return PatientTabular;
     },
     selector() {
         let newSearchName = customSearch.get();
+        let newSearchOrder = customSearchOrder.get();
         let newSelector = {};
+        newSelector.rolesArea = Session.get("area");
+
+        if (newSearchOrder && newSearchOrder !== "" && newSearchOrder !== undefined) {
+            newSelector.order = parseInt(newSearchOrder);
+        }
+
         if (newSearchName !== "" && newSearchName !== undefined) {
             //let reg = new RegExp(newSearchName + "",'mi');
             //console.log(reg);
-            newSelector.rolesArea = Session.get("area");
+
             newSelector.$or = [
                 {khName: {$regex: newSearchName, $options: 'mi'}},
                 {phoneNumber: {$regex: newSearchName, $options: 'mi'}},
@@ -38,8 +46,8 @@ indexTmpl.helpers({
                 {occupation: {$regex: newSearchName, $options: 'mi'}}
             ]
 
+        } else if (newSearchOrder && newSearchOrder !== "" && newSearchOrder !== undefined) {
         } else {
-            newSelector.rolesArea = Session.get("area");
             newSelector.createdAt = {$gte: moment().add(-3, "months").toDate()}
         }
         return newSelector;
@@ -191,6 +199,9 @@ indexTmpl.events({
     },
     "keyup #customSearchPatient": _.debounce(function (e, t) {
         customSearch.set(e.currentTarget.value);
+    }, 200),
+    "keyup #customSearchOrderPatient": _.debounce(function (e, t) {
+        customSearchOrder.set(e.currentTarget.value);
     }, 200)
 
 });
@@ -213,6 +224,7 @@ addTmpl.onRendered(function () {
 })
 indexTmpl.onRendered(function () {
     customSearch.set("");
+    customSearchOrder.set("");
 })
 editTmpl.onRendered(function () {
     /*this.autorun(() => {

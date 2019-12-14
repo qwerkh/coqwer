@@ -64,7 +64,7 @@ indexTmpl.helpers({
                 {patientName: {$regex: newSearchName, $options: 'mi'}},
                 {voucherId: {$regex: newSearchName, $options: 'mi'}},
                 {registerDate: {$regex: newSearchName, $options: 'mi'}},
-                {_id: {$regex: newSearchName, $options: 'mi'}}
+                {patientId: {$regex: newSearchName, $options: 'mi'}}
             ]
 
         } else {

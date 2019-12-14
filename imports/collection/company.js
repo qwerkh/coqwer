@@ -175,6 +175,11 @@ Co_Company.schema = new SimpleSchema({
         type: Boolean,
         defaultValue: false,
         optional: true
+    },
+    isMiniInvoice:{
+        type: Boolean,
+        defaultValue: false,
+        optional: true
     }
 
 })

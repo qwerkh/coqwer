@@ -38,6 +38,7 @@ indexTmpl.helpers({
             //console.log(reg);
 
             newSelector.$or = [
+                {_id: {$regex: newSearchName, $options: 'mi'}},
                 {khName: {$regex: newSearchName, $options: 'mi'}},
                 {phoneNumber: {$regex: newSearchName, $options: 'mi'}},
                 {dobString: {$regex: newSearchName, $options: 'mi'}},

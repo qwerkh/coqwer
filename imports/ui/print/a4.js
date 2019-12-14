@@ -78,6 +78,10 @@ indexTmpl.helpers({
     isCutHeader() {
         let companyDoc = Co_Company.findOne({});
         return companyDoc.isCutHeader || false;
+    },
+    isMini() {
+        let companyDoc = Co_Company.findOne({});
+        return companyDoc.isMiniInvoice || false;
     }
 
 });

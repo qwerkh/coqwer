@@ -8,7 +8,7 @@ indexTmpl.onCreated(function () {
     // this.autorun(() => {
     let inv = FlowRouter.query.get('inv');
     if (inv) {
-        Meteor.call('printA4', {invoiceId: inv}, (err, result) => {
+        Meteor.call('printA4', {invoiceId: inv, summary: true}, (err, result) => {
             if (result) {
                 this.printData.set(result);
             }
@@ -34,6 +34,11 @@ indexTmpl.helpers({
     },
     no(index) {
         return index + 1;
+    },
+
+    noMedicine(index, len) {
+        console.log(len);
+        return index + 1 + (len || 0);
     },
     getDiscountType(discountType) {
         let companyDoc = Co_Company.findOne({});

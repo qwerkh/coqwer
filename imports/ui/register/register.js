@@ -338,7 +338,7 @@ indexTmpl.events({
 
 
 addTmpl.events({
-    'click #save-print'(e, t) {
+    'click #save-printMini'(e, t) {
         FlowRouter.query.set({p: 'true'});
     },
     'click #save-print-summary'(e, t) {
@@ -377,7 +377,7 @@ addTmpl.events({
 });
 
 editTmpl.events({
-    'click #save-print'(e, t) {
+    'click #save-printMini'(e, t) {
         FlowRouter.query.set({p: 'true'});
     },
     'click #save-print-summary'(e, t) {

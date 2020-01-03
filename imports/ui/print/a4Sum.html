@@ -18,7 +18,7 @@
                                 <tr>
                                     <td><b>
                                         លេខ</b></td>
-                                    <td>: {{register.voucherId}}</td>
+                                    <td>: {{register.patient.order}}</td>
                                 </tr>
                                 <tr>
                                     <td><b>ឈ្មោះអ្នកជម្ងឺ</b></td>
@@ -79,28 +79,17 @@
                                 </tr>
                                 <tr>
                                     <td><b>ភេទ</b></td>
-                                    <td>: {{patient.gender}}</td>
+                                    <td>: {{patient.gender}} {{ageCal}} ឆ្នាំ {{monthCal}} ខែ</td>
 
                                 </tr>
+
                                 <tr>
-                                    <td><b>អាយុ</b></td>
-                                    <td>: {{ageCal}} ឆ្នាំ {{monthCal}} ខែ</td>
+                                    <td><b>កាលបរិច្ឋេទ</b></td>
+                                    <td>: {{formatDate registerDate 'DD-MM-YYYY'}} ({{patient.order}})</td>
                                 </tr>
                                 <tr>
                                     <td><b>អាស័យដ្ឋាន</b></td>
                                     <td>: {{patient.address}}</td>
-                                </tr>
-                                <tr>
-                                    <td><b>មុខរបរ</b></td>
-                                    <td>: {{patient.occupation}}</td>
-                                </tr>
-                                <tr>
-                                    <td><b>កាលបរិច្ឋេទ</b></td>
-                                    <td>: {{formatDate registerDate 'DD-MM-YYYY'}} </td>
-                                </tr>
-                                <tr>
-                                    <td><b>លេខរៀង</b></td>
-                                    <td>: {{patient.order}}</td>
                                 </tr>
                             </table>
                             <div style="height: 7px;"></div>
@@ -145,18 +134,10 @@
 
                             <table width="100%" style="font-size: 16px;">
                                 <tr align="right" style=" height: 25px; font-size: 14px;">
-                                    <td align="right"><b>បញ្ចុះតម្លៃសេវាកម្ម ({{getDiscountType  discountServiceType}})</b>:
+                                    <td align="right"><b>បញ្ចុះតម្លៃ ({{getDiscountType  discountServiceType}})</b>:
                                     </td>
-                                    <td align="right"><b>{{formatNumber discountService}} {{getDiscountType
+                                    <td align="right"><b>{{formatNumber totalDiscount}} {{getDiscountType
                                             discountServiceType}}</b></td>
-
-                                </tr>
-                                <tr align="right" style=" height: 25px; font-size: 14px;">
-                                    <td align="right"><b>បញ្ចុះតម្លៃថ្នាំ ({{getDiscountType discountMedicineType}}
-                                        )</b>:
-                                    </td>
-                                    <td align="right"><b>{{formatNumber discountMedicine}} {{getDiscountType
-                                            discountMedicineType}}</b></td>
 
                                 </tr>
                                 <tr align="right" style="height: 25px; font-size: 14px;">
@@ -189,7 +170,7 @@
                         <tr>
                             <td style="font-size: 11px !important;"><b>
                                 <span style="font-family: khmer os Moul">ណាត់ជួប៖</span> </b>
-                                ថ្ងៃទី .................ខែ ................ឆ្នាំ 20..........
+                                ថ្ងៃទី ......ខែ ......ឆ្នាំ 20.....
 
                             </td>
                         </tr>
@@ -230,8 +211,8 @@
                                     </tr>
                                     <tr>
                                         <td><b>
-                                            Invoice No</b></td>
-                                        <td>: {{register.voucherId}}</td>
+                                            Order</b></td>
+                                        <td>: {{register.patient.order}}</td>
 
                                         <td><b>Paid</b></td>
                                         <td><b>: {{formatNumber register.totalPaid}}</b>{{getSymbolBaseCurrency}}</td>
@@ -349,19 +330,14 @@
 
 
                                 <table width="100%" style="font-size: 16px;">
-                                    <tr align="right" style=" height: 25px; font-size: 14px;">
-                                        <td align="right"><b>Discount Service ({{getDiscountType  discountServiceType}})</b>:
-                                        </td>
-                                        <td align="right"><b>{{formatNumber discountService}} {{getDiscountType
-                                                discountServiceType}}</b></td>
 
-                                    </tr>
                                     <tr align="right" style=" height: 25px; font-size: 14px;">
-                                        <td align="right"><b>Discount Medicine ({{getDiscountType discountMedicineType}}
+                                        <td align="right"><b>Discount ({{getDiscountType
+                                                discountServiceType}}
                                             )</b>:
                                         </td>
-                                        <td align="right"><b>{{formatNumber discountMedicine}} {{getDiscountType
-                                                discountMedicineType}}</b></td>
+                                        <td align="right"><b>{{formatNumber totalDiscount}} {{getDiscountType
+                                                discountServiceType}}</b></td>
 
                                     </tr>
                                     <tr align="right" style="height: 25px; font-size: 14px;">

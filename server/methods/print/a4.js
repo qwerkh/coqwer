@@ -18,6 +18,8 @@ Meteor.methods({
                 {printId: invoiceId}
             ]
         });
+        register.totalDiscount=register.discountService+register.discountMedicine;
+
         let result = [];
         let resultService = [];
         let serviceLength = register && register.services && register.services.length || 0;

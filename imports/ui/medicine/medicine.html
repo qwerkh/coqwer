@@ -10,6 +10,8 @@
                 </div>
             </div>
             <div class="column">
+                    <!--{{>barcode code="123" test="aa"}}-->
+
                 <h4 class="ui" style="text-align: right">Medicine</h4>
             </div>
         </div>
@@ -47,6 +49,7 @@
                     <div class="field">
                         {{> afQuickField name='price'}}
                         {{> afQuickField name='retailPrice'}}
+                        {{> afQuickField name='barcode'}}
 
                         {{> co_actionAdd}}
 
@@ -90,6 +93,7 @@
                         <div class="field">
                             {{> afQuickField name='price'}}
                             {{> afQuickField name='retailPrice'}}
+                            {{> afQuickField name='barcode'}}
                             {{> co_actionEdit}}
 
                         </div>

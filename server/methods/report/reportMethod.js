@@ -29,5 +29,9 @@ Meteor.methods({
     giveMeCheckQualityMachinReport(param, userId, machinTypeId, machinId) {
         return ClassReport.checkQualityMachinReport(param, userId, machinTypeId, machinId);
 
+    },
+    giveMeMedicineBarcodeReport(param) {
+        return ClassReport.medicineBarcodeReport(param);
+
     }
 })

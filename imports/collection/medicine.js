@@ -42,6 +42,10 @@ Co_Medicine.schema = new SimpleSchema({
     rolesArea: {
         type: String,
         optional: true
+    },
+    barcode: {
+        type: String,
+        optional: true
     }
 
 })

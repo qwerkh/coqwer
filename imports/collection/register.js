@@ -508,6 +508,10 @@ Co_Register.medicineForm = new SimpleSchema({
     isRetailPrice: {
         type: Boolean,
         label: " "
+    },
+    barcode: {
+        type: String,
+        optional: true
     }
 })
 

@@ -73,8 +73,11 @@
                 <table class="ui celled striped table">
                     <thead>
                     <tr>
-                        <th colspan="5">
+                        <th colspan="4">
                             {{> afQuickField name='medicineId' label=false placeholder="Medicine" options=medicineOption search=true}}
+                        </th>
+                        <th>
+                            {{> afQuickField name='barcode'  label=false value=barcodeVal placeholder="Barcode"}}
                         </th>
                         <th>
                             {{> afQuickField name='totalMedicine' value=totalMedicine label=false readonly=true}}

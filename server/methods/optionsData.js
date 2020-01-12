@@ -41,6 +41,14 @@ Meteor.methods({
         })
         return list;
     },
+    co_medicineOptionForReport() {
+
+        let list = [];
+        Co_Medicine.find({}).fetch().forEach(function (obj) {
+            list.push({label: obj.name, value: obj._id});
+        })
+        return list;
+    },
     co_medicineByTypeOption(medicineType) {
 
         let list = [];

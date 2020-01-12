@@ -34,7 +34,7 @@ Meteor.methods({
 
     },
     co_medicineById(id) {
-        return Co_Medicine.findOne({_id: id});
+        return Co_Medicine.findOne({$or: [{_id: id}, {barcode: id}]});
     },
     co_patientById(id) {
         let doc = Co_Patient.findOne({_id: id});

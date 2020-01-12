@@ -7,6 +7,7 @@ import '../../imports/report/registerByDate/registerByDate';
 import '../../imports/report/registerByItem/registerByItem';
 import '../../imports/report/registerService/registerService';
 import '../../imports/report/registerMedicine/registerMedicine';
+import '../../imports/report/medicineBarcode/medicineBarcode';
 import '../../imports/report/journal/journal';
 import '../../imports/report/profitLost/profitLost';
 import '../../imports/report/unpaidByCustomer/unpaidByCustomer';
@@ -77,6 +78,13 @@ reportData.route('/registerMedicineReport', {
     name: 'co.registerMedicineReport',
     action: function (query, params) {
         _Report("co_registerMedicineReport");
+    }
+})
+//Medicine Barcode
+reportData.route('/medicineBarcodeReport', {
+    name: 'co.medicineBarcodeReport',
+    action: function (query, params) {
+        _Report("co_medicineBarcodeReport");
     }
 })
 

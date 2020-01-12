@@ -1,6 +1,8 @@
 import './medicine.html';
+import '../barcode/barcode.js'
 import {Template} from 'meteor/templating';
 import {ReactiveVar} from 'meteor/reactive-var';
+import JsBarcode from "jsbarcode";
 
 import {Co_Medicine} from '../../collection/medicine';
 import {MedicineTabular} from '../../../both/tabular/medicine';
@@ -10,29 +12,32 @@ let indexTmpl = Template.co_medicine,
     addTmpl = Template.co_medicineAdd,
     editTmpl = Template.co_medicineEdit;
 
-let medicineTypeOption=new ReactiveVar([]);
+let medicineTypeOption = new ReactiveVar([]);
 
 indexTmpl.helpers({
-    dataTable () {
+    dataTable() {
         return MedicineTabular;
     },
-    selector(){
+    selector() {
         return {};
         // return {rolesArea: Session.get("area")};
     }
 })
 
+indexTmpl.onCreated(function () {
+})
+
 addTmpl.helpers({
-    collection(){
+    collection() {
         return Co_Medicine;
     },
-    medicineTypeOption(){
+    medicineTypeOption() {
         return medicineTypeOption.get();
     }
 })
 addTmpl.onCreated(function () {
-    Meteor.call("co_medicineTypeOption",function (err,result) {
-        if(result){
+    Meteor.call("co_medicineTypeOption", function (err, result) {
+        if (result) {
             medicineTypeOption.set(result);
         }
     })
@@ -40,25 +45,25 @@ addTmpl.onCreated(function () {
 
 editTmpl.helpers({
     data() {
-            let id = FlowRouter.getParam('medicineId');
-            return Co_Medicine.findOne({_id: id});
+        let id = FlowRouter.getParam('medicineId');
+        return Co_Medicine.findOne({_id: id});
 
     },
     subscriptionsReady() {
         let instance = Template.instance();
         return instance.subUserReady.get()
     },
-    collection(){
+    collection() {
         return Co_Medicine;
     },
-    medicineTypeOption(){
+    medicineTypeOption() {
         return medicineTypeOption.get();
     }
 })
 
 editTmpl.onCreated(function () {
-    Meteor.call("co_medicineTypeOption",function (err,result) {
-        if(result){
+    Meteor.call("co_medicineTypeOption", function (err, result) {
+        if (result) {
             medicineTypeOption.set(result);
         }
     })
@@ -67,11 +72,11 @@ editTmpl.onCreated(function () {
 //event
 
 indexTmpl.events({
-    'click .add'(){
+    'click .add'() {
         FlowRouter.go('/co-setting/medicine/add');
     },
 
-    'click .remove'(e){
+    'click .remove'(e) {
         var self = this;
         alertify.confirm(
             'Medicine',
@@ -91,11 +96,11 @@ indexTmpl.events({
         )
 
     },
-    'click button.edit' (event, instance) {
+    'click button.edit'(event, instance) {
         let self = this;
         FlowRouter.go(`/co-setting/medicine/${self._id}/edit`);
     },
-    'click .show'(event, instance){
+    'click .show'(event, instance) {
         let self = this;
         FlowRouter.go(`/co-setting/medicine/${self._id}/show`);
     }
@@ -104,18 +109,27 @@ indexTmpl.events({
 
 
 addTmpl.events({
-    'click .cancel'(e, t){
+    'click .cancel'(e, t) {
         FlowRouter.go(`/co-setting/medicine`);
     }
 })
 
 editTmpl.events({
-    'click .cancel'(e, t){
+    'click .cancel'(e, t) {
         FlowRouter.go(`/co-setting/medicine`);
     }
 });
 
 
+indexTmpl.onRendered(function () {
+    /*JsBarcode("#barcode", "1234", {
+        format: "pharmacode",
+        lineColor: "#0aa",
+        width: 4,
+        height: 40,
+        displayValue: false
+    });*/
+})
 addTmpl.onRendered(function () {
 
 })
@@ -137,7 +151,6 @@ editTmpl.onCreated(function () {
         }
     })
 })
-
 
 
 AutoForm.hooks({

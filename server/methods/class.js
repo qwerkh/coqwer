@@ -746,6 +746,10 @@ export default class ClassReport {
         return data;
     }
 
+    static medicineBarcodeReport(param) {
+        return Co_Medicine.find(param).fetch();
+    }
+
 };
 
 

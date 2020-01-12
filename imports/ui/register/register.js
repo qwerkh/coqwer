@@ -39,6 +39,9 @@ voucherId = new ReactiveVar("");
 
 isReadOnlyVar = new ReactiveVar(false);
 
+barcode = new ReactiveVar("");
+
+
 paidAmount = new ReactiveObj({
     paidAmountDollar: 0,
     paidAmountRiel: 0,

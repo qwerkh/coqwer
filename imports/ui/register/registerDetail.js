@@ -197,6 +197,9 @@ registerMedicineTmpl.helpers({
     },
     isReadOnly() {
         return isReadOnlyVar.get();
+    },
+    barcodeVal() {
+        return barcode.get();
     }
 })
 
@@ -205,6 +208,7 @@ registerMedicineTmpl.onRendered(function () {
     $('.ui.checkbox')
         .checkbox()
     ;
+
 })
 
 registerMedicineTmpl.onCreated(function () {
@@ -325,6 +329,49 @@ registerMedicineTmpl.events({
                 }
             }
         })
+    },
+    'keypress [name="barcode"]': function (evt, template) {
+        if (evt.which === 13) {
+            let barcodeOnKey = evt.currentTarget.value;
+            barcode.set(barcodeOnKey);
+            if (barcodeOnKey != "") {
+                Meteor.call("co_medicineById", barcodeOnKey, function (err, result) {
+                    if (result) {
+                        let medicine = medicineTem.find({_id: result._id}).fetch();
+                        if (medicine.length == 0 && result._id != "") {
+                            medicineTem.insert({
+                                _id: result._id,
+                                name: result.name,
+                                isRetailPrice: false,
+                                price: result.price,
+                                qty: 1,
+                                amount: result.price
+                            })
+
+                            alertify.success("បញ្ចូលបានជោគជ័យ!");
+                        } else {
+                            medicineTem.update({_id: result._id}, {
+                                $inc: {
+                                    qty: 1,
+                                    amount: result.price
+                                }
+                            })
+                            alertify.warning("បន្ថែមចំនួនបានជោគជ័យ!");
+
+                        }
+
+                        $('[name="barcode"]').val("");
+                        barcode.set("");
+                    } else {
+                        alertify.error("គ្មានថ្នាំនេះទេ");
+                        $('[name="barcode"]').val("");
+                    }
+
+                })
+            }
+
+
+        }
     }
 
 })

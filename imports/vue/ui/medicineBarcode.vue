@@ -150,9 +150,9 @@
                     this.roleAreaOptions = result;
                 })
             },
-            fetchMedicineOption() {
+            fetchMedicineOption(typeId) {
                 let vm = this;
-                Meteor.call('co_medicineOptionForReport', function (err, result) {
+                Meteor.call('co_medicineOptionForReportByType', typeId, function (err, result) {
                     if (result) {
                         vm.medicineOption = result;
                     }
@@ -211,6 +211,9 @@
 
             "medicineBarcodeReport.roleBranchOptionsModel"(val) {
                 this.fetchAreaOption(val);
+            }
+            , "medicineBarcodeReport.medicineTypeModel"(val) {
+                this.fetchMedicineOption(val);
             }
 
         },

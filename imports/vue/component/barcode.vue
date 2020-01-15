@@ -12,8 +12,10 @@
                 JsBarcode(this.$el.querySelector('svg.barcode'), (this.doc && this.doc._id || ""), {
                     textAlign: 'left',
                     fontSize: 9,
-                    width: 1.6,
+                    width: 1.1,
                     height: 40,
+                    displayValue: false
+
                     // text: this.company.enShortName + (this.doc && this.doc.code || "")
 //                marginLeft: 920.7
                 });
@@ -24,8 +26,9 @@
                 JsBarcode(this.$el.querySelector('svg.barcode'), (obj._id || ""), {
                     textAlign: 'left',
                     fontSize: 9,
-                    width: 1.6,
+                    width: 1.1,
                     height: 40,
+                    displayValue: false
                     // text: this.company.enShortName + (this.doc && this.doc.code || "")
 //                marginLeft: 920.7
                 });

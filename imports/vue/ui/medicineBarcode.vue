@@ -86,12 +86,28 @@
 
                 <div v-if="isChooseMedicine">
                     {{d.name}}
-                    <el-row type="flex" v-for="b in 14">
-                        <el-col :span="6" v-for="a in 4">
+                    <br><br>
+                    <el-row type="flex" v-for="b in 16"
+                            style="margin-left: -7px !important;margin-bottom: 2px !important;">
+                        <el-col :span="5">
+                        <barcode :doc="d"></barcode>
+                        </el-col>
+                        <el-col :span="5">
+                        <barcode :doc="d"></barcode>
+                        </el-col>
+
+                        <el-col :span="5">
+                        <barcode :doc="d"></barcode>
+                        </el-col>
+                        <el-col :span="5">
+                        <barcode :doc="d"></barcode>
+                        </el-col>
+                        <el-col :span="5">
                         <barcode :doc="d"></barcode>
                         </el-col>
 
                     </el-row>
+
                 </div>
                 <div v-else>
                     <el-row type="flex">
@@ -174,7 +190,7 @@
                     if (valid) {
                         let params = {};
                         let userId = Meteor.userId();
-                        this.isChooseMedicine = false;
+                        this.isChooseMedicine = true;
 
                         this.loading = true;
                         if (this.medicineBarcodeReport.roleAreaOptionsModel != "") {
@@ -183,9 +199,9 @@
                         }
                         if (this.medicineBarcodeReport.medicineModel != "") {
                             params._id = this.medicineBarcodeReport.medicineModel;
-                            this.isChooseMedicine = false;
-                        } else {
                             this.isChooseMedicine = true;
+                        } else {
+                            this.isChooseMedicine = false;
 
                         }
 

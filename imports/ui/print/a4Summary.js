@@ -1,5 +1,6 @@
 import './a4Summary.html';
 import {Co_Company} from "../../collection/company";
+import JsBarcode from "jsbarcode";
 
 let indexTmpl = Template.co_printA4Summary;
 

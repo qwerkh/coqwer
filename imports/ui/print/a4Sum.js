@@ -1,8 +1,9 @@
 import './a4Sum.html';
 import {Co_Company} from "../../collection/company";
+import JsBarcode from "jsbarcode";
 
 let indexTmpl = Template.co_printA4Sum;
-
+patientId = new ReactiveVar("");
 indexTmpl.onCreated(function () {
     this.printData = new ReactiveVar({});
     // this.autorun(() => {
@@ -10,6 +11,7 @@ indexTmpl.onCreated(function () {
     if (inv) {
         Meteor.call('printA4', {invoiceId: inv, summary: true}, (err, result) => {
             if (result) {
+                patientId.set(result.register.patient._id);
                 this.printData.set(result);
             }
         });
@@ -37,7 +39,6 @@ indexTmpl.helpers({
     },
 
     noMedicine(index, len) {
-        console.log(len);
         return index + 1 + (len || 0);
     },
     getDiscountType(discountType) {
@@ -87,6 +88,9 @@ indexTmpl.helpers({
     isMini() {
         let companyDoc = Co_Company.findOne({});
         return companyDoc.isMiniInvoice || false;
+    },
+    barcodeId() {
+        return patientId.get();
     }
 
 });

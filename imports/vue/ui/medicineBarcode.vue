@@ -8,7 +8,7 @@
                             Register Report
                         </span>
 
-                    <el-form :inline="inl" label-position="top" :model="medicineBarcodeReport"
+                    <el-form :inline="inl" label-position="top" :model="medicineBarcodeReport" :rules="rules"
                              ref="medicineBarcodeReport">
                         <el-row type="flex" class="row-bg" justify="left" style="width: 100%">
                             <el-col :span="21">
@@ -34,6 +34,18 @@
                                                placeholder="All">
                                         <el-option
                                                 v-for="item in roleAreaOptions"
+                                                :key="item.value"
+                                                :label="item.label"
+                                                :value="item.value">
+                                        </el-option>
+                                    </el-select>
+                                </el-form-item>
+                                <el-form-item label-width="60px" label="Medicine Type  :" prop="medicineTypeModel">
+                                    <el-select width="100%" filterable
+                                               v-model="medicineBarcodeReport.medicineTypeModel"
+                                               placeholder="Select">
+                                        <el-option
+                                                v-for="item in medicineTypeOption"
                                                 :key="item.value"
                                                 :label="item.label"
                                                 :value="item.value">
@@ -107,19 +119,24 @@
                 medicineBarcodeReport: {
                     roleBranchOptionsModel: [],
                     roleAreaOptionsModel: [],
-                    medicineBarcodeReport: ""
+                    medicineBarcodeReport: "",
+                    medicineTypeModel: ""
                 },
                 inl: true,
                 roleBranchOptions: [],
                 roleAreaOptions: [],
                 medicineOption: [],
+                medicineTypeOption: [],
                 activeName: "1",
                 medicineBarcodesData: {},
                 loading: false,
 
                 branchHeader: "All",
                 printLoading: false,
-                isChooseMedicine: false
+                isChooseMedicine: false,
+                rules: {
+                    medicineTypeModel: [{required: true, message: 'Please input Medicine Type', trigger: 'change'}],
+                },
             }
         },
         methods: {
@@ -142,26 +159,45 @@
 
                 })
             },
+            fetchMedicineTypeOption() {
+                let vm = this;
+                Meteor.call('co_medicineTypeOption', function (err, result) {
+                    if (result) {
+                        vm.medicineTypeOption = result;
+                    }
+
+                })
+            },
             handleRunReport(formName) {
 
-                let params = {};
-                let userId = Meteor.userId();
+                this.$refs["medicineBarcodeReport"].validate((valid) => {
+                    if (valid) {
+                        let params = {};
+                        let userId = Meteor.userId();
+                        this.isChooseMedicine = false;
 
-                this.loading = true;
-                if (this.medicineBarcodeReport.roleAreaOptionsModel != "") {
-                    params.rolesArea = {$in: this.medicineBarcodeReport.roleAreaOptionsModel};
+                        this.loading = true;
+                        if (this.medicineBarcodeReport.roleAreaOptionsModel != "") {
+                            params.rolesArea = {$in: this.medicineBarcodeReport.roleAreaOptionsModel};
 
-                }
-                if (this.medicineBarcodeReport.medicineModel != "") {
-                    params._id = this.medicineBarcodeReport.medicineModel;
-                    this.isChooseMedicine = true
-                }
+                        }
+                        if (this.medicineBarcodeReport.medicineModel != "") {
+                            params._id = this.medicineBarcodeReport.medicineModel;
+                            this.isChooseMedicine = false;
+                        } else {
+                            this.isChooseMedicine = true;
 
-                Meteor.call('giveMeMedicineBarcodeReport', params, userId, (err, result) => {
-                    if (!err) {
-                        this.medicineBarcodesData = result;
+                        }
+
+                        params.medicineTypeId = this.medicineBarcodeReport.medicineTypeModel;
+
+                        Meteor.call('giveMeMedicineBarcodeReport', params, userId, (err, result) => {
+                            if (!err) {
+                                this.medicineBarcodesData = result;
+                            }
+                            this.loading = false;
+                        });
                     }
-                    this.loading = false;
                 });
 
 
@@ -181,6 +217,7 @@
         created() {
             this.fetchBranchOption();
             this.fetchMedicineOption();
+            this.fetchMedicineTypeOption();
 
 
         },

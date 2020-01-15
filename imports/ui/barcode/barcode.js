@@ -7,11 +7,14 @@ let indexTmpl = Template.barcode;
 
 indexTmpl.onRendered(function () {
     let instance = Template.instance();
+    // console.log(instance.data.code);
     JsBarcode("#barcode", (instance.data.code || ""), {
         format: "pharmacode",
         lineColor: "#0aa",
-        width: 4,
-        height: 40,
-        displayValue: false
+        width: 2,
+        // height: 40,
+        height: 30,
+        fontSize: 9,
+        displayValue: true
     });
 })

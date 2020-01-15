@@ -4,196 +4,199 @@
     {{#if data}}
         {{#with data}}
             {{#if isMini}}
-            <div align="center" class="container"
-                 style="font-family: 'Khmer OS Battambang'; font-size: 14px !important; width: 260px !important; margin: 0 auto;">
-                <div class="invoice-title">
-                    {{#if isCutHeader}}
-                        <br>
-                        <div>
-                            <table width="100%">
-                                <tr>
-                                    <td><b>កាលបរិច្ឋេទ</b></td>
-                                    <td>: {{formatDate registerDate 'DD-MM-YYYY'}} </td>
-                                </tr>
-                                <tr>
-                                    <td><b>
-                                        លេខ</b></td>
-                                    <td>: {{register.patient.order}}</td>
-                                </tr>
-                                <tr>
-                                    <td><b>ឈ្មោះអ្នកជម្ងឺ</b></td>
-                                    <td>: {{register.patient.khName}}</td>
-                                </tr>
-                                <tr>
-                                    <td><b>សរុប</b></td>
-                                    <td><b>: {{formatNumber register.netTotal}}</b>{{getSymbolBaseCurrency}}</td>
+                <div align="center" class="container"
+                     style="font-family: 'Khmer OS Battambang'; font-size: 14px !important; width: 260px !important; margin: 0 auto;">
+                    <div class="invoice-title">
+                        {{#if isCutHeader}}
+                            <br>
+                            <div>
+                                <table width="100%">
+                                    <tr>
+                                        <td><b>កាលបរិច្ឋេទ</b></td>
+                                        <td>: {{formatDate registerDate 'DD-MM-YYYY'}} </td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>
+                                            លេខ</b></td>
+                                        <td>: {{register.patient.order}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>ឈ្មោះអ្នកជម្ងឺ</b></td>
+                                        <td>: {{register.patient.khName}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>សរុប</b></td>
+                                        <td><b>: {{formatNumber register.netTotal}}</b>{{getSymbolBaseCurrency}}</td>
 
-                                </tr>
-                                <tr>
-                                    <td><b>បានបង់</b></td>
-                                    <td><b>: {{formatNumber register.totalPaid}}</b>{{getSymbolBaseCurrency}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>បានបង់</b></td>
+                                        <td><b>: {{formatNumber register.totalPaid}}</b>{{getSymbolBaseCurrency}}</td>
 
-                                </tr>
-                                <tr>
-                                    <td><b>នៅសល់</b></td>
-                                    <td><b>: {{formatNumber register.balance}}</b>{{getSymbolBaseCurrency}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>នៅសល់</b></td>
+                                        <td><b>: {{formatNumber register.balance}}</b>{{getSymbolBaseCurrency}}</td>
 
-                                </tr>
-                            </table>
-                        </div>
-                        <div style="top: 10px; margin:10px 0px 10px 0px; padding: 0px 0px 0px 0px; border-width: 1px; border-bottom-width:1px;
+                                    </tr>
+                                </table>
+                            </div>
+                            <div style="top: 10px; margin:10px 0px 10px 0px; padding: 0px 0px 0px 0px; border-width: 1px; border-bottom-width:1px;
    border-bottom-color:black;
    border-bottom-style: dashed;
    width: 100%;"></div>
-                    {{else}}
-                        <br>
-                    {{/if}}
-                    {{#with company}}
-                        <div style="text-align: center">
+                        {{else}}
+                            <br>
+                        {{/if}}
+                        {{#with company}}
+                            <div style="text-align: center">
                         <span style="font-weight: bold;font-size: 18px; ​font-family:'Khmer OS Muol Light'">
                             {{khName}}</span>
-                        </div>
+                            </div>
 
-                        <div>
-                            អាស័យដ្ឋានៈ {{khAddress}} <br>
-                            Tel: {{telephone}}
-                        </div>
-                    {{/with}}
-                    <span style="font-weight: bold;font-size: 16px;​font-family:'Khmer OS Muol Light'">
+                            <div>
+                                អាស័យដ្ឋានៈ {{khAddress}} <br>
+                                Tel: {{telephone}}
+                            </div>
+                        {{/with}}
+                        <span style="font-weight: bold;font-size: 16px;​font-family:'Khmer OS Muol Light'">
                    វិក្កយបត្រ</span><br>
-                    <div class="col-md-12">
-                        <div style="top: 10px; margin:10px 0px 10px 0px; padding: 0px 0px 0px 0px; border-width: 1px; border-bottom-width:1px;
+                        <div class="col-md-12">
+                            <div style="top: 10px; margin:10px 0px 10px 0px; padding: 0px 0px 0px 0px; border-width: 1px; border-bottom-width:1px;
    border-bottom-color:black;
    border-bottom-style: dashed;
    width: 100%;"></div>
-                        {{#with register}}
-                            <table width="100%">
-                                <tr>
-                                    <td><b>
-                                        លេខ</b></td>
-                                    <td>: {{voucherId}}</td>
-                                </tr>
-                                <tr>
-                                    <td><b>ឈ្មោះអ្នកជម្ងឺ</b></td>
-                                    <td>: {{patient.khName}}</td>
-                                </tr>
-                                <tr>
-                                    <td><b>ភេទ</b></td>
-                                    <td>: {{patient.gender}} {{ageCal}} ឆ្នាំ {{monthCal}} ខែ</td>
-
-                                </tr>
-
-                                <tr>
-                                    <td><b>កាលបរិច្ឋេទ</b></td>
-                                    <td>: {{formatDate registerDate 'DD-MM-YYYY'}} ({{patient.order}})</td>
-                                </tr>
-                                <tr>
-                                    <td><b>អាស័យដ្ឋាន</b></td>
-                                    <td>: {{patient.address}}</td>
-                                </tr>
-                            </table>
-                            <div style="height: 7px;"></div>
-                            <span style="font-weight: bold;font-size: 20px;">Invoice</span>
-                            <table border="1" width="100%"
-                                   style="font-size: 12px !important; border-collapse:collapse; font-family: 'Khmer OS Battambang';">
-                                <tr align="center"
-                                    style="-webkit-print-color-adjust: exact; background-color: lightgrey !important; font-weight: bold; height: 20px;">
-                                    <td>លរ​</td>
-                                    <td> ឈ្មោះ</td>
-                                    <td> សរុប</td>
-                                </tr>
-
-                                {{#if services}}
-                                    {{#each services}}
-                                        <tr style="padding: 10px;height: 30px !important;">
-                                            <td align="center">{{no @index}}</td>
-                                            <td align="left" style="padding-left: 5px;">
-                                                {{type}}
-                                            </td>
-
-                                            <td align="right" style="padding-right: 5px;">{{formatNumber amount}}</td>
-                                        </tr>
-                                    {{/each}}
-                                {{/if}}
-                                {{#if medicines}}
-                                    {{#each medicines}}
-                                        <tr style="padding: 10px;height: 30px !important;">
-                                            <td align="center">{{noMedicine @index len}}</td>
-                                            <td align="left" style="padding-left: 5px;">
-                                                {{type}}
-                                            </td>
-
-                                            <td align="right" style="padding-right: 5px;">{{formatNumber amount}}</td>
-                                        </tr>
-                                    {{/each}}
-                                {{/if}}
-
-
-                            </table>
-
-
-                            <table width="100%" style="font-size: 16px;">
-                                <tr align="right" style=" height: 25px; font-size: 14px;">
-                                    <td align="right"><b>បញ្ចុះតម្លៃ ({{getDiscountType  discountServiceType}})</b>:
-                                    </td>
-                                    <td align="right"><b>{{formatNumber totalDiscount}} {{getDiscountType
-                                            discountServiceType}}</b></td>
-
-                                </tr>
-                                <tr align="right" style="height: 25px; font-size: 14px;">
-                                    <td><b>សរុប</b>:</td>
-                                    <td><b>{{formatNumber netTotal}}</b>{{getSymbolBaseCurrency}}</td>
-                                </tr>
-                                {{#if checkBaseCurrency}}
-                                    <tr align="right" style="height: 25px; font-size: 14px;">
-                                        <td><b>សរុប (៛)</b>:</td>
-                                        <td><b>{{formatNumber netTotalRiel}}</b>៛</td>
+                            {{#with register}}
+                                <table width="100%">
+                                    <tr>
+                                        <td><b>
+                                            លេខ</b></td>
+                                        <td>: {{voucherId}}</td>
                                     </tr>
-                                {{/if}}
-                                <tr align="right" style="height: 25px; font-size: 14px;">
-                                    <td><b>បានបង់</b>:</td>
-                                    <td><b>{{formatNumber totalPaid}}</b>{{getSymbolBaseCurrency}}</td>
-                                </tr>
-                                <tr align="right" style="height: 25px; font-size: 14px;">
-                                    <td><b>នៅសល់</b>:</td>
-                                    <td><b>{{formatNumber balance}}</b>{{getSymbolBaseCurrency}}</td>
-                                </tr>
+                                    <tr>
+                                        <td><b>ឈ្មោះអ្នកជម្ងឺ</b></td>
+                                        <td>: {{patient.khName}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>ភេទ</b></td>
+                                        <td>: {{patient.gender}} {{ageCal}} ឆ្នាំ {{monthCal}} ខែ</td>
 
-                            </table>
+                                    </tr>
 
-                        {{/with}}
+                                    <tr>
+                                        <td><b>កាលបរិច្ឋេទ</b></td>
+                                        <td>: {{formatDate registerDate 'DD-MM-YYYY'}} ({{patient.order}})</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>អាស័យដ្ឋាន</b></td>
+                                        <td>: {{patient.address}}</td>
+                                    </tr>
+                                </table>
+                                <div style="height: 7px;"></div>
+                                <span style="font-weight: bold;font-size: 20px;">Invoice</span>
+                                <!--{{>barcode code=barcodeId}}-->
+                                <table border="1" width="100%"
+                                       style="font-size: 12px !important; border-collapse:collapse; font-family: 'Khmer OS Battambang';">
+                                    <tr align="center"
+                                        style="-webkit-print-color-adjust: exact; background-color: lightgrey !important; font-weight: bold; height: 20px;">
+                                        <td>លរ​</td>
+                                        <td> ឈ្មោះ</td>
+                                        <td> សរុប</td>
+                                    </tr>
+
+                                    {{#if services}}
+                                        {{#each services}}
+                                            <tr style="padding: 10px;height: 30px !important;">
+                                                <td align="center">{{no @index}}</td>
+                                                <td align="left" style="padding-left: 5px;">
+                                                    {{type}}
+                                                </td>
+
+                                                <td align="right" style="padding-right: 5px;">{{formatNumber
+                                                        amount}}</td>
+                                            </tr>
+                                        {{/each}}
+                                    {{/if}}
+                                    {{#if medicines}}
+                                        {{#each medicines}}
+                                            <tr style="padding: 10px;height: 30px !important;">
+                                                <td align="center">{{noMedicine @index len}}</td>
+                                                <td align="left" style="padding-left: 5px;">
+                                                    {{type}}
+                                                </td>
+
+                                                <td align="right" style="padding-right: 5px;">{{formatNumber
+                                                        amount}}</td>
+                                            </tr>
+                                        {{/each}}
+                                    {{/if}}
+
+
+                                </table>
+
+
+                                <table width="100%" style="font-size: 16px;">
+                                    <tr align="right" style=" height: 25px; font-size: 14px;">
+                                        <td align="right"><b>បញ្ចុះតម្លៃ ({{getDiscountType  discountServiceType}})</b>:
+                                        </td>
+                                        <td align="right"><b>{{formatNumber totalDiscount}} {{getDiscountType
+                                                discountServiceType}}</b></td>
+
+                                    </tr>
+                                    <tr align="right" style="height: 25px; font-size: 14px;">
+                                        <td><b>សរុប</b>:</td>
+                                        <td><b>{{formatNumber netTotal}}</b>{{getSymbolBaseCurrency}}</td>
+                                    </tr>
+                                    {{#if checkBaseCurrency}}
+                                        <tr align="right" style="height: 25px; font-size: 14px;">
+                                            <td><b>សរុប (៛)</b>:</td>
+                                            <td><b>{{formatNumber netTotalRiel}}</b>៛</td>
+                                        </tr>
+                                    {{/if}}
+                                    <tr align="right" style="height: 25px; font-size: 14px;">
+                                        <td><b>បានបង់</b>:</td>
+                                        <td><b>{{formatNumber totalPaid}}</b>{{getSymbolBaseCurrency}}</td>
+                                    </tr>
+                                    <tr align="right" style="height: 25px; font-size: 14px;">
+                                        <td><b>នៅសល់</b>:</td>
+                                        <td><b>{{formatNumber balance}}</b>{{getSymbolBaseCurrency}}</td>
+                                    </tr>
+
+                                </table>
+
+                            {{/with}}
+
+                        </div>
+                    </div>
+                    <div>
+                        <table width="100%">
+                            <tr>
+                                <td style="font-size: 11px !important;"><b>
+                                    <span style="font-family: khmer os Moul">ណាត់ជួប៖</span> </b>
+                                    ថ្ងៃទី ......ខែ ......ឆ្នាំ 20.....
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="font-size: 12px !important;">
+                                    <div class="ui checkbox" style="color: black !important;">
+                                        <input type="checkbox" name="example2">
+                                        <label>ព្រឹក 7:00AM</label>
+                                    </div>
+                                    <div class="ui checkbox">
+                                        <input type="checkbox" name="example2">
+                                        <label>ថ្ងៃ 11:00AM</label>
+                                    </div>
+                                    <div class="ui checkbox">
+                                        <input type="checkbox" name="example2">
+                                        <label>ល្ងាច 5:00PM</label>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
 
                     </div>
                 </div>
-                <div>
-                    <table width="100%">
-                        <tr>
-                            <td style="font-size: 11px !important;"><b>
-                                <span style="font-family: khmer os Moul">ណាត់ជួប៖</span> </b>
-                                ថ្ងៃទី ......ខែ ......ឆ្នាំ 20.....
-
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="font-size: 12px !important;">
-                                <div class="ui checkbox" style="color: black !important;">
-                                    <input type="checkbox" name="example2">
-                                    <label>ព្រឹក 7:00AM</label>
-                                </div>
-                                <div class="ui checkbox">
-                                    <input type="checkbox" name="example2">
-                                    <label>ថ្ងៃ 11:00AM</label>
-                                </div>
-                                <div class="ui checkbox">
-                                    <input type="checkbox" name="example2">
-                                    <label>ល្ងាច 5:00PM</label>
-                                </div>
-                            </td>
-                        </tr>
-                    </table>
-
-                </div>
-            </div>
             {{else}}
                 <div align="center" class="container"
                      style="font-family: 'Khmer OS Battambang'; font-size: 14px !important; width: 95% !important; margin: 0 auto;">
@@ -290,7 +293,7 @@
                                     </tr>
                                 </table>
                                 <div style="height: 7px;"></div>
-                                <span style="font-weight: bold;font-size: 20px;">Invoice</span>
+                                <span style="font-weight: bold;font-size: 20px;">Invoice</span>{{>barcode code=barcodeId}}
                                 <table border="1" width="100%"
                                        style="font-size: 16px !important; border-collapse:collapse; font-family: 'Khmer OS Battambang';">
                                     <tr align="center"
@@ -308,7 +311,8 @@
                                                     {{type}}
                                                 </td>
 
-                                                <td align="right" style="padding-right: 5px;">{{formatNumber amount}}</td>
+                                                <td align="right" style="padding-right: 5px;">{{formatNumber
+                                                        amount}}</td>
                                             </tr>
                                         {{/each}}
                                     {{/if}}
@@ -320,7 +324,8 @@
                                                     {{type}}
                                                 </td>
 
-                                                <td align="right" style="padding-right: 5px;">{{formatNumber amount}}</td>
+                                                <td align="right" style="padding-right: 5px;">{{formatNumber
+                                                        amount}}</td>
                                             </tr>
                                         {{/each}}
                                     {{/if}}

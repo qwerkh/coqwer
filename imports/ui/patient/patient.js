@@ -7,7 +7,7 @@ import {Co_Patient} from '../../collection/patient';
 import {Co_Register} from '../../collection/register';
 import {PatientTabular} from '../../../both/tabular/patient';
 import {Images} from '../../collection/image'
-
+import "../ImportFile/importFile"
 
 let indexTmpl = Template.co_patient,
     addTmpl = Template.co_patientAdd,
@@ -275,6 +275,13 @@ showPatientDetail.helpers({
             obj.discount = obj.serviceDiscount + obj.medicineDiscount;
         });
         return data;
+    }
+})
+
+showPatientDetail.events({
+    'change #file-input': function (evt) {
+        console.log(evt.currentTarget.files[0].name);
+        console.log(evt);
     }
 })
 

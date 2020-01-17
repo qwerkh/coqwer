@@ -81,6 +81,7 @@
             </el-collapse>
         </div>
         <span slot="content">
+
             <div v-for="d in medicineBarcodesData">
 
 
@@ -125,9 +126,12 @@
 </template>
 <script>
     import MedicineBarcode from "../component/barcode"
+    import "./ImportFile"
+    import ImportFile from "./ImportFile";
 
     export default {
         components: {
+            ImportFile,
             "barcode": MedicineBarcode,
         },
         data() {

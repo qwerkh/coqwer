@@ -15,14 +15,15 @@
 
         </div>
         <div class="ui grid">
-            <div class="five  wide column"  style="width: 20% !important;">
+            <div class="five  wide column" style="width: 20% !important;">
                 <a class="ui primary button" style="margin-bottom: 2px" href="{{pathFor 'co.patientAdd'}}"><i
                         class="add sign icon"></i>Add Patient</a>
             </div>
             <div class="three  wide column" style="width: 20% !important;">
                 <div class="ui search" style="width: 100% !important;">
                     <div class="ui icon input" style="width: 100% !important;">
-                        <input class="prompt" type="text" id="customSearchOrderPatient" placeholder="Search Order patient...">
+                        <input class="prompt" type="text" id="customSearchOrderPatient"
+                               placeholder="Search Order patient...">
                         <i class="search icon"></i>
                     </div>
                 </div>
@@ -104,42 +105,42 @@
         <div class="progress">
             <!--<div class="indeterminate"></div>-->
         </div>
-        <!--{{#if subscriptionsReady}}-->
-            {{#autoForm collection=collection id="co_patientEdit" type="update" doc=data}}
-                <div class="row">
-                    <div class="two fields">
-                        <div class="field">
+            <!--{{#if subscriptionsReady}}-->
+        {{#autoForm collection=collection id="co_patientEdit" type="update" doc=data}}
+            <div class="row">
+                <div class="two fields">
+                    <div class="field">
 
-                            {{> afQuickField name='khName'}}
-                            {{> afQuickField name='enName'}}
-                            {{> afQuickField name='nickName'}}
-                            {{> afQuickField name='gender'}}
-                            {{> afQuickField name='occupation'}}
-                            {{> afQuickField name='address'}}
+                        {{> afQuickField name='khName'}}
+                        {{> afQuickField name='enName'}}
+                        {{> afQuickField name='nickName'}}
+                        {{> afQuickField name='gender'}}
+                        {{> afQuickField name='occupation'}}
+                        {{> afQuickField name='address'}}
 
-                        </div>
-                        <div class="field">
+                    </div>
+                    <div class="field">
 
-                            {{> afQuickField name='dob'}}
-                            <!--{{> afQuickField name='age'}}-->
-                            {{> afQuickField name='phoneNumber'}}
-                            {{> afQuickField name='picture'}}
-                            {{> co_actionEdit}}
+                        {{> afQuickField name='dob'}}
+                        <!--{{> afQuickField name='age'}}-->
+                        {{> afQuickField name='phoneNumber'}}
+                        {{> afQuickField name='picture'}}
+                        {{> co_actionEdit}}
 
-
-                        </div>
 
                     </div>
 
                 </div>
-                <div class="row">
-                    <div class="col s11">
-                        {{> co_preloader}}
-                    </div>
-                </div>
-            {{/autoForm}}
 
-        <!--{{else}}
+            </div>
+            <div class="row">
+                <div class="col s11">
+                    {{> co_preloader}}
+                </div>
+            </div>
+        {{/autoForm}}
+
+            <!--{{else}}
             <div class="progress ">
                 <div class="indeterminate blue darken-1 "></div>
             </div>
@@ -207,6 +208,7 @@
                         <a class="item" data-tab="history-tab-medicine"><i class="history icon blue"></i>Medicine
                             History</a>
                         <a class="item" data-tab="register-tab"><i class="registered icon blue"></i> Register</a>
+                        <a class="item" data-tab="weightTest-tab"><i class="weight icon blue"></i> Weight Test</a>
                     </div>
 
                     <div class="ui tab active" data-tab="history-tab-service">
@@ -321,6 +323,16 @@
                             </table>
                         </div>
 
+                    </div>
+                    <div class="ui tab" data-tab="weightTest-tab">
+                        {{> importTest}}
+
+                        <!--<div class="ui form">
+                            <label class="ui primary button" for="file-input" type="button">Choose File</label>
+                            &lt;!&ndash; accept a text file &ndash;&gt;
+                            <input type="file" id="file-input" style="display:none" accept="text/plain" />
+                        </div>
+-->
                     </div>
 
                 </div>

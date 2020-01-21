@@ -40,3 +40,4 @@ import locale from 'element-ui/lib/locale/lang/en';
 Vue.use(VeeValidate, {fieldsBagName: 'formFields'});
 Vue.use(ElementUI, {locale});
 
+

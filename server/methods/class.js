@@ -750,6 +750,7 @@ export default class ClassReport {
         return Co_Medicine.find(param).fetch();
     }
 
+
 };
 
 

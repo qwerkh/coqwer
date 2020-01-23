@@ -221,7 +221,7 @@
   <tr>
      <th style="border: 0px !important;height: 100px !important;" colspan="9"><span class="convertToWhite"><img
              src="/fat.jpg" alt=""
-             style="width: 100%; height: 100px"></span></th>
+             style="width: 100%; height: 80px"></span></th>
   </tr>
   </thead>
   <tbody>

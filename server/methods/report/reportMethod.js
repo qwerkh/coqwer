@@ -33,5 +33,9 @@ Meteor.methods({
     giveMeMedicineBarcodeReport(param) {
         return ClassReport.medicineBarcodeReport(param);
 
+    },
+    giveMeWeightTestReport(param) {
+        return ClassReport.weightTestReport(param);
+
     }
 })

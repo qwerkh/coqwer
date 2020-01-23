@@ -9,6 +9,7 @@ import math from "mathjs";
 import numeral from 'numeral';
 import {Co_Medicine} from "../../imports/collection/medicine";
 import {Co_Service} from "../../imports/collection/service";
+import {Co_WeightTest} from "../../imports/collection/weightTest";
 
 export default class ClassReport {
     static registerReport(param, userId) {
@@ -748,6 +749,97 @@ export default class ClassReport {
 
     static medicineBarcodeReport(param) {
         return Co_Medicine.find(param).fetch();
+    }
+
+    static weightTestReport(param) {
+        let doc = Co_WeightTest.findOne(param);
+        let weightNormal = doc.muscleFatAnalysis.weightNormal.split("~");
+        doc.muscleFatAnalysis.weightUnder = parseFloat(doc.muscleFatAnalysis.weight) < parseFloat(weightNormal[0]) ? parseFloat(doc.muscleFatAnalysis.weight).toString() : "";
+        doc.muscleFatAnalysis.weightFit = parseFloat(doc.muscleFatAnalysis.weight) >= parseFloat(weightNormal[0]) && parseFloat(doc.muscleFatAnalysis.weight) <= parseFloat(weightNormal[1]) ? parseFloat(doc.muscleFatAnalysis.weight).toString() : "";
+        doc.muscleFatAnalysis.weightOver = parseFloat(doc.muscleFatAnalysis.weight) > parseFloat(weightNormal[1]) ? parseFloat(doc.muscleFatAnalysis.weight).toString() : "";
+
+        let skeletalNormal = doc.muscleFatAnalysis.skeletalNormal.split("~");
+        doc.muscleFatAnalysis.skeletalUnder = parseFloat(doc.muscleFatAnalysis.skeletal) < parseFloat(skeletalNormal[0]) ? parseFloat(doc.muscleFatAnalysis.skeletal).toString() : "";
+        doc.muscleFatAnalysis.skeletalFit = parseFloat(doc.muscleFatAnalysis.skeletal) >= parseFloat(skeletalNormal[0]) && parseFloat(doc.muscleFatAnalysis.skeletal) <= parseFloat(skeletalNormal[1]) ? parseFloat(doc.muscleFatAnalysis.skeletal).toString() : "";
+        doc.muscleFatAnalysis.skeletalOver = parseFloat(doc.muscleFatAnalysis.skeletal) > parseFloat(skeletalNormal[1]) ? parseFloat(doc.muscleFatAnalysis.skeletal).toString() : "";
+
+
+        let bodyFatNormal = doc.muscleFatAnalysis.bodyFatNormal.split("~");
+        doc.muscleFatAnalysis.bodyFatUnder = parseFloat(doc.muscleFatAnalysis.bodyFat) < parseFloat(bodyFatNormal[0]) ? parseFloat(doc.muscleFatAnalysis.bodyFat).toString() : "";
+        doc.muscleFatAnalysis.bodyFatFit = parseFloat(doc.muscleFatAnalysis.bodyFat) >= parseFloat(bodyFatNormal[0]) && parseFloat(doc.muscleFatAnalysis.bodyFat) <= parseFloat(bodyFatNormal[1]) ? parseFloat(doc.muscleFatAnalysis.bodyFat).toString() : "";
+        doc.muscleFatAnalysis.bodyFatOver = parseFloat(doc.muscleFatAnalysis.bodyFat) > parseFloat(bodyFatNormal[1]) ? parseFloat(doc.muscleFatAnalysis.bodyFat).toString() : "";
+
+
+        let waterRateNormal = doc.obesityAnalysis.waterRateNormal.split("~");
+        doc.obesityAnalysis.waterRateUnder = parseFloat(doc.obesityAnalysis.waterRate) < parseFloat(waterRateNormal[0]) ? parseFloat(doc.obesityAnalysis.waterRate).toString() + "%" : "";
+        doc.obesityAnalysis.waterRateFit = parseFloat(doc.obesityAnalysis.waterRate) >= parseFloat(waterRateNormal[0]) && parseFloat(doc.obesityAnalysis.waterRate) <= parseFloat(waterRateNormal[1]) ? parseFloat(doc.obesityAnalysis.waterRate).toString() + "%" : "";
+        doc.obesityAnalysis.waterRateOver = parseFloat(doc.obesityAnalysis.waterRate) > parseFloat(waterRateNormal[1]) ? parseFloat(doc.obesityAnalysis.waterRate).toString() + "%" : "";
+
+        let waistHipFatRateNormal = doc.obesityAnalysis.waistHipFatRateNormal.split("~");
+        doc.obesityAnalysis.waistHipFatRateUnder = parseFloat(doc.obesityAnalysis.waistHipFatRate) < parseFloat(waistHipFatRateNormal[0]) ? parseFloat(doc.obesityAnalysis.waistHipFatRate).toString() + "%" : "";
+        doc.obesityAnalysis.waistHipFatRateFit = parseFloat(doc.obesityAnalysis.waistHipFatRate) >= parseFloat(waistHipFatRateNormal[0]) && parseFloat(doc.obesityAnalysis.waistHipFatRate) <= parseFloat(waistHipFatRateNormal[1]) ? parseFloat(doc.obesityAnalysis.waistHipFatRate).toString() + "%" : "";
+        doc.obesityAnalysis.waistHipFatRateOver = parseFloat(doc.obesityAnalysis.waistHipFatRate) > parseFloat(waistHipFatRateNormal[1]) ? parseFloat(doc.obesityAnalysis.waistHipFatRate).toString() + "%" : "";
+
+        let bodyFatPercentNormal = doc.obesityAnalysis.bodyFatPercentNormal.split("~");
+        doc.obesityAnalysis.bodyFatPercentUnder = parseFloat(doc.obesityAnalysis.bodyFatPercent) < parseFloat(bodyFatPercentNormal[0]) ? parseFloat(doc.obesityAnalysis.bodyFatPercent).toString() + "%" : "";
+        doc.obesityAnalysis.bodyFatPercentFit = parseFloat(doc.obesityAnalysis.bodyFatPercent) >= parseFloat(bodyFatPercentNormal[0]) && parseFloat(doc.obesityAnalysis.bodyFatPercent) <= parseFloat(bodyFatPercentNormal[1]) ? parseFloat(doc.obesityAnalysis.bodyFatPercent).toString() + "%" : "";
+        doc.obesityAnalysis.bodyFatPercentOver = parseFloat(doc.obesityAnalysis.bodyFatPercent) > parseFloat(bodyFatPercentNormal[1]) ? parseFloat(doc.obesityAnalysis.bodyFatPercent).toString() + "%" : "";
+
+        let bmiNormal = doc.obesityAnalysis.bmiNormal.split("~");
+        doc.obesityAnalysis.bmiUnder = parseFloat(doc.obesityAnalysis.bmi) < parseFloat(bmiNormal[0]) ? parseFloat(doc.obesityAnalysis.bmi).toString() + "%" : "";
+        doc.obesityAnalysis.bmiFit = parseFloat(doc.obesityAnalysis.bmi) >= parseFloat(bmiNormal[0]) && parseFloat(doc.obesityAnalysis.bmi) <= parseFloat(bmiNormal[1]) ? parseFloat(doc.obesityAnalysis.bmi).toString() + "%" : "";
+        doc.obesityAnalysis.bmiOver = parseFloat(doc.obesityAnalysis.bmi) > parseFloat(bmiNormal[1]) ? parseFloat(doc.obesityAnalysis.bmi).toString() + "%" : "";
+
+
+        doc.nutritionalAssessment.proteinNormal = doc.nutritionalAssessment.protein === "Normal";
+        doc.nutritionalAssessment.proteinLack = doc.nutritionalAssessment.protein === "Lack";
+        doc.nutritionalAssessment.proteinExcessive = doc.nutritionalAssessment.protein === "Excessive";
+
+        doc.nutritionalAssessment.inorganicNormal = doc.nutritionalAssessment.inorganic === "Normal";
+        doc.nutritionalAssessment.inorganicLack = doc.nutritionalAssessment.inorganic === "Lack";
+        doc.nutritionalAssessment.inorganicExcessive = doc.nutritionalAssessment.inorganic === "Excessive";
+
+        doc.nutritionalAssessment.fatNormal = doc.nutritionalAssessment.fat === "Normal";
+        doc.nutritionalAssessment.fatLack = doc.nutritionalAssessment.fat === "Lack";
+        doc.nutritionalAssessment.fatExcessive = doc.nutritionalAssessment.fat === "Excessive";
+
+        doc.weightAssessment.weightNormal = doc.weightAssessment.weight === "Normal";
+        doc.weightAssessment.weightUnder= doc.weightAssessment.weight === "Under";
+        doc.weightAssessment.weightExcessive = doc.weightAssessment.weight === "Excessive";
+
+        doc.weightAssessment.muscleNormal = doc.weightAssessment.muscle === "Normal";
+        doc.weightAssessment.muscleUnder= doc.weightAssessment.muscle === "Under";
+        doc.weightAssessment.muscleExcessive = doc.weightAssessment.muscle === "Excessive";
+
+
+        doc.weightAssessment.bodyFatNormal = parseFloat(doc.muscleFatAnalysis.bodyFat) >= parseFloat(bodyFatNormal[0]) && parseFloat(doc.muscleFatAnalysis.bodyFat) <= parseFloat(bodyFatNormal[1]);
+        doc.weightAssessment.bodyFatUnder= parseFloat(doc.muscleFatAnalysis.bodyFat) < parseFloat(bodyFatNormal[0]);
+        doc.weightAssessment.bodyFatExcessive = parseFloat(doc.muscleFatAnalysis.bodyFat) > parseFloat(bodyFatNormal[1]);
+
+
+        doc.obesityAnalysis2.bmiNormal = doc.obesityAnalysis2.bmi === "Normal";
+        doc.obesityAnalysis2.bmiLack = doc.obesityAnalysis2.bmi === "Under";
+        doc.obesityAnalysis2.bmiExcessive = doc.obesityAnalysis2.bmi === "Excessive";
+
+        doc.obesityAnalysis2.bodyFatPNormal = doc.obesityAnalysis2.bodyFatP === "Normal";
+        doc.obesityAnalysis2.bodyFatPThin = doc.obesityAnalysis2.bodyFatP === "Thin";
+        doc.obesityAnalysis2.bodyFatPFat = doc.obesityAnalysis2.bodyFatP === "Fat";
+        doc.obesityAnalysis2.bodyFatPSevereObesity = doc.obesityAnalysis2.bodyFatP === "Severe obesity";
+
+
+        doc.obesityAnalysis2.bodyShape1 = doc.obesityAnalysis2.bodyShape === "Fat1";
+        doc.obesityAnalysis2.bodyShape2 = doc.obesityAnalysis2.bodyShape === "Fat2";
+        doc.obesityAnalysis2.bodyShape3 = doc.obesityAnalysis2.bodyShape === "Fat3";
+        doc.obesityAnalysis2.bodyShape4 = doc.obesityAnalysis2.bodyShape === "Fat4";
+        doc.obesityAnalysis2.bodyShape5 = doc.obesityAnalysis2.bodyShape === "Fat5";
+        doc.obesityAnalysis2.bodyShape6 = doc.obesityAnalysis2.bodyShape === "Fat6";
+        doc.obesityAnalysis2.bodyShape7 = doc.obesityAnalysis2.bodyShape === "Fat7";
+        doc.obesityAnalysis2.bodyShape8 = doc.obesityAnalysis2.bodyShape === "Fat8";
+        doc.obesityAnalysis2.bodyShape9 = doc.obesityAnalysis2.bodyShape === "Fat9";
+
+
+
+        return doc;
     }
 
 

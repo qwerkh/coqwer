@@ -16,9 +16,10 @@ import '../../imports/ui/fixAsset/fixAsset';
 
 import '../../imports/report/content.html';
 import '../../imports/report/sign-footer.html';
+import '../../imports/report/weightTest/weightTest';
 
 
-import {_Report} from '../lib/_renderLayout';
+import {_Main, _Report} from '../lib/_renderLayout';
 import {_ReportNoSideBar} from '../lib/_renderLayout';
 
 var reportData = FlowRouter.group({
@@ -116,4 +117,12 @@ reportData.route('/fixAssetDepSummaryList', {
     action: function (query, params) {
         _ReportNoSideBar("co_fixAssetDepSummaryList");
     }
+})
+
+reportData.route('/weightTest/:weightTestId/print', {
+    name: 'co.weightTestReport',
+    action: function (query, params) {
+        _Main("co_weightTestReport");
+    }
+
 })

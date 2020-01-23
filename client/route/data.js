@@ -56,6 +56,7 @@ coData.route('/patient/:patientId/showDetail', {
 })
 
 
+
 //Register
 coData.route('/register', {
     name: 'co.register',

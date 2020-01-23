@@ -134,7 +134,7 @@
                                        @click="removeWeightTest(scope.$index,scope.row,weightTestData)"
                                        :disabled="disabledRemove"></el-button>
                             <el-button type="success" size="medium" class="cursor-pointer"
-                                       @click="printWeightTest(scope)"
+                                       @click="printWeightTest(scope.row)"
                             >Print
                             </el-button>
                         </el-button-group>
@@ -203,6 +203,9 @@
             },
             handleCurrentChange(val) {
                 this.currentPage = val;
+            },
+            printWeightTest(data) {
+                FlowRouter.go(`/co-report/weightTest/${data._id}/print`);
             },
             queryData: _.debounce(function (val, skip, limit) {
                 this.newLoading = true;

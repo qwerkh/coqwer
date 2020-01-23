@@ -10,8 +10,8 @@
                                 </div>
                                 <div style="width: 85%;">
                                         <div class="title1">
-                                            <span class="convertToWhite" style="font-size: 22px !important;">បន្ទប់ពិគ្រោះព្យាបាលជំងឺ និង ឡាស៊ែរថែរក្សាសម្ផស្ស </span><span
-                                                style="font-family: 'Khmer OS Moul';font-size: 25px"> ឡាបែល</span>
+                                            <span class="convertToWhite" style="font-size: 18px !important;">បន្ទប់ពិគ្រោះព្យាបាលជំងឺ និង ឡាស៊ែរថែរក្សាសម្ផស្ស </span><span
+                                                style="font-family: 'Khmer OS Moul';font-size: 22px"> ឡាបែល</span>
                                         </div>
                                         <div class="title3">
                                             <span class="convertToWhite">{{addressName}} 077/0886  554565/012644497</span>
@@ -47,10 +47,10 @@
                         </div>
                         <div style="width: 100%;height: 25px">
                             <div style="width: 10%;float: left">
-                                <span>&nbsp;</span>
+                                <span>{{weightTestData.id}}</span>
                             </div>
                             <div style="width: 25%;float: left">
-                                <span>{{weightTestData.id}}</span>
+                                <span>{{weightTestData.patientDoc.khName}}</span>
                             </div>
                             <div style="width: 10%;float: left">
                                 <span>{{weightTestData.sex}}</span>
@@ -705,7 +705,7 @@
         <td style="border: 0px !important;"><span class="convertToWhite">kg</span></td>
     </tr>
     <tr style="border: 0px !important;">
-        <th style="border: 0px !important;"><span class="convertToWhite">តុលយភាពខ្លាញ់</span></th>
+        <th style="border: 0px !important;"><span class="convertToWhite">តុល្យភាពខ្លាញ់</span></th>
         <td style="border: 0px !important;">{{weightTestData.weightControl.fatControl}}</td>
         <td style="border: 0px !important;"><span class="convertToWhite">kg</span></td>
     </tr>
@@ -845,7 +845,6 @@
                 Meteor.call('giveMeWeightTestReport', params, (err, result) => {
                     if (!err) {
                         this.weightTestData = result;
-                        console.log(result);
                     }
                     this.loading = false;
                 });

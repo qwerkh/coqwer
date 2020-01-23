@@ -10,6 +10,7 @@ import numeral from 'numeral';
 import {Co_Medicine} from "../../imports/collection/medicine";
 import {Co_Service} from "../../imports/collection/service";
 import {Co_WeightTest} from "../../imports/collection/weightTest";
+import {Co_Patient} from "../../imports/collection/patient";
 
 export default class ClassReport {
     static registerReport(param, userId) {
@@ -753,6 +754,7 @@ export default class ClassReport {
 
     static weightTestReport(param) {
         let doc = Co_WeightTest.findOne(param);
+        let patientDoc = Co_Patient.findOne({_id: doc.patientId});
         let weightNormal = doc.muscleFatAnalysis.weightNormal.split("~");
         doc.muscleFatAnalysis.weightUnder = parseFloat(doc.muscleFatAnalysis.weight) < parseFloat(weightNormal[0]) ? parseFloat(doc.muscleFatAnalysis.weight).toString() : "";
         doc.muscleFatAnalysis.weightFit = parseFloat(doc.muscleFatAnalysis.weight) >= parseFloat(weightNormal[0]) && parseFloat(doc.muscleFatAnalysis.weight) <= parseFloat(weightNormal[1]) ? parseFloat(doc.muscleFatAnalysis.weight).toString() : "";
@@ -804,16 +806,16 @@ export default class ClassReport {
         doc.nutritionalAssessment.fatExcessive = doc.nutritionalAssessment.fat === "Excessive";
 
         doc.weightAssessment.weightNormal = doc.weightAssessment.weight === "Normal";
-        doc.weightAssessment.weightUnder= doc.weightAssessment.weight === "Under";
+        doc.weightAssessment.weightUnder = doc.weightAssessment.weight === "Under";
         doc.weightAssessment.weightExcessive = doc.weightAssessment.weight === "Excessive";
 
         doc.weightAssessment.muscleNormal = doc.weightAssessment.muscle === "Normal";
-        doc.weightAssessment.muscleUnder= doc.weightAssessment.muscle === "Under";
+        doc.weightAssessment.muscleUnder = doc.weightAssessment.muscle === "Under";
         doc.weightAssessment.muscleExcessive = doc.weightAssessment.muscle === "Excessive";
 
 
         doc.weightAssessment.bodyFatNormal = parseFloat(doc.muscleFatAnalysis.bodyFat) >= parseFloat(bodyFatNormal[0]) && parseFloat(doc.muscleFatAnalysis.bodyFat) <= parseFloat(bodyFatNormal[1]);
-        doc.weightAssessment.bodyFatUnder= parseFloat(doc.muscleFatAnalysis.bodyFat) < parseFloat(bodyFatNormal[0]);
+        doc.weightAssessment.bodyFatUnder = parseFloat(doc.muscleFatAnalysis.bodyFat) < parseFloat(bodyFatNormal[0]);
         doc.weightAssessment.bodyFatExcessive = parseFloat(doc.muscleFatAnalysis.bodyFat) > parseFloat(bodyFatNormal[1]);
 
 
@@ -837,8 +839,7 @@ export default class ClassReport {
         doc.obesityAnalysis2.bodyShape8 = doc.obesityAnalysis2.bodyShape === "Fat8";
         doc.obesityAnalysis2.bodyShape9 = doc.obesityAnalysis2.bodyShape === "Fat9";
 
-
-
+        doc.patientDoc = patientDoc;
         return doc;
     }
 

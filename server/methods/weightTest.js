@@ -66,11 +66,11 @@ Meteor.methods({
         data.bioimpedance.ll50 = list[33].split("*")[1].split(" ")[6];
         data.bioimpedance.ll100 = list[34].split("*")[1].split(" ")[5];
 
-        data.weightControl.targetWeight = list[37].split("*")[1].split(" ")[6];
-        data.weightControl.weightControl = list[38].split("*")[1].split(":")[1].split(" ")[0] + list[38].split("*")[1].split(" ")[5];
-        data.weightControl.fatControl = list[39].split("*")[1].split(":")[1].split(" ")[0] + list[39].split("*")[1].split(" ")[8];
-        data.weightControl.muscleControl = list[40].split("*")[1].split(":")[1].split(" ")[0] + list[40].split("*")[1].split(" ")[5];
-        data.weightControl.basalMet = list[41].split("*")[1].split(" ")[6];
+        data.weightControl.targetWeight = list[37].split("*")[1].split(":")[1].replace(/[^\d\.]*/g, '');
+        data.weightControl.weightControl = list[38].split("*")[1].split(":")[1].split(" ")[0] + list[38].split("*")[1].split(":")[1].replace(/[^\d\.]*/g, '');
+        data.weightControl.fatControl = list[39].split("*")[1].split(":")[1].split(" ")[0] + list[39].split("*")[1].split(":")[1].replace(/[^\d\.]*/g, '');
+        data.weightControl.muscleControl = list[40].split("*")[1].split(":")[1].split(" ")[0] + list[40].split("*")[1].split(":")[1].replace(/[^\d\.]*/g, '');
+        data.weightControl.basalMet = list[41].split("*")[1].split(":")[1].replace(/[^\d\.]*/g, '');
 
         data.nutritionalAssessment.protein = list[44].split("*")[1].split(" ")[11];
         data.nutritionalAssessment.inorganic = list[45].split("*")[1].split(" ")[9];

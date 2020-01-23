@@ -6,27 +6,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="37b05a99-1bf8-426c-a9a5-9f4248831879" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/imports/report/weightTest/weightTest.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imports/report/weightTest/weightTest.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imports/vue/ui/weightTestReport.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fat.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/five.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/four.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/labell.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/one.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/seven.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/six.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/three.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/two.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/route/data.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/route/data.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/route/report.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/route/report.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imports/vue/ui/ImportFile.vue" beforeDir="false" afterPath="$PROJECT_DIR$/imports/vue/ui/ImportFile.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/methods/class.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/methods/class.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/methods/report/reportMethod.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/methods/report/reportMethod.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/methods/weightTest.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/methods/weightTest.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imports/vue/ui/weightTestReport.vue" beforeDir="false" afterPath="$PROJECT_DIR$/imports/vue/ui/weightTestReport.vue" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -104,7 +84,7 @@
           <entry key="json" value="6" />
           <entry key="less" value="2" />
           <entry key="packages" value="2" />
-          <entry key="vue" value="6634" />
+          <entry key="vue" value="6650" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -115,7 +95,7 @@
           <entry key="JavaScript" value="9275" />
           <entry key="Less" value="2" />
           <entry key="PLAIN_TEXT" value="2" />
-          <entry key="Vue.js" value="6634" />
+          <entry key="Vue.js" value="6650" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
@@ -133,8 +113,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/imports/vue/ui/weightTestReport.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="499">
-              <caret line="949" column="13" lean-forward="true" selection-start-line="949" selection-start-column="13" selection-end-line="949" selection-end-column="13" />
+            <state relative-caret-position="619">
+              <caret line="962" lean-forward="true" selection-start-line="962" selection-end-line="962" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#span#0;n#span#0;n#div#0;n#template#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#span#0;n#span#0;n#div#0;n#template#0;n#!!top" expanded="true" />
@@ -1121,12 +1101,12 @@
       <workItem from="1579683961581" duration="6076000" />
       <workItem from="1579701435055" duration="8835000" />
       <workItem from="1579745148894" duration="10876000" />
-      <workItem from="1579762969855" duration="10924000" />
+      <workItem from="1579762969855" duration="11551000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1058608000" />
+    <option name="totallyTimeSpent" value="1059235000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1199,7 +1179,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/imports/vue/ui/weightTestReport.vue</url>
-          <line>180</line>
+          <line>183</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
@@ -1535,8 +1515,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/imports/vue/ui/weightTestReport.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="499">
-          <caret line="949" column="13" lean-forward="true" selection-start-line="949" selection-start-column="13" selection-end-line="949" selection-end-column="13" />
+        <state relative-caret-position="619">
+          <caret line="962" lean-forward="true" selection-start-line="962" selection-end-line="962" />
           <folding>
             <element signature="n#style#0;n#div#0;n#span#0;n#span#0;n#div#0;n#template#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#span#0;n#span#0;n#div#0;n#template#0;n#!!top" expanded="true" />

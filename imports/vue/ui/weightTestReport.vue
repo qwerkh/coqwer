@@ -72,10 +72,11 @@
                         <div style="width: 100%">
                             <div style="width: 57%;float: left">
                                   <div>
-                                        <span class="convertToWhite"><div class="temp-no-print" style="float: left"></div>
+                                        <span class="convertToWhite"><div class="temp-no-print"
+                                                                          style="float: left"></div>
                                             <img src="/one.png" alt=""> Body Composition</span>
                                   </div>
-<table class="ui celled table sizeFont" style="border: 0px !important;">
+<table class="change ui celled table sizeFont" style="border: 0px !important;">
   <thead>
   <tr>
      <th style="border: 0px !important;"></th>
@@ -117,9 +118,10 @@
   </tbody>
 </table>
                             <div>
-                                <span class="convertToWhite"><div class="temp-no-print" style="float: left"></div><img src="/two.png" alt=""> Muscle fat</span>
+                                <span class="convertToWhite"><div class="temp-no-print" style="float: left"></div><img
+                                        src="/two.png" alt=""> Muscle fat</span>
                             </div>
-<table class="ui celled table sizeFont" style="border: 0px !important;">
+<table class="change ui celled table sizeFont" style="border: 0px !important;">
   <thead>
   <tr>
      <th style="border: 0px !important;"></th>
@@ -155,9 +157,10 @@
   </tbody>
 </table>
                       <div>
-                                <span class="convertToWhite"><div class="temp-no-print" style="float: left"></div><img src="/three.png" alt=""> Analysis of obesity</span>
+                                <span class="convertToWhite"><div class="temp-no-print" style="float: left"></div><img
+                                        src="/three.png" alt=""> Analysis of obesity</span>
                       </div>
-<table class="ui celled table sizeFont" style="border: 0px !important;">
+<table class="change ui celled table sizeFont" style="border: 0px !important;">
   <thead>
   <tr>
      <th style="border: 0px !important;"></th>
@@ -210,9 +213,10 @@
                                   </div>
 
         <div>
-                                <span class="convertToWhite"><div class="temp-no-print" style="float: left"> </div><img src="/four.png" alt=""> Obesity diagnosis</span>
+                                <span class="convertToWhite"><div class="temp-no-print" style="float: left"> </div><img
+                                        src="/four.png" alt=""> Obesity diagnosis</span>
                       </div>
-<table class="ui celled table sizeFont" style="border: 0px !important;">
+<table class="change ui celled table sizeFont" style="border: 0px !important;">
   <thead>
   <tr>
      <th style="border: 0px !important;height: 100px !important;" colspan="9"><span class="convertToWhite"><img
@@ -265,9 +269,11 @@
                             <div style="width: 43%;float: left">
 
                                  <div>
-                                    <span class="convertToWhite"><div class="temp-no-print" style="float: left"></div><img src="/five.png" alt=""> Comprehensive assessment</span>
+                                    <span class="convertToWhite"><div class="temp-no-print"
+                                                                      style="float: left"></div><img src="/five.png"
+                                                                                                     alt=""> Comprehensive assessment</span>
                                  </div>
-<table class="ui celled table sizeFont" style="border: 0px !important;">
+<table class="change ui celled table sizeFont" style="border: 0px !important;">
   <tbody>
     <tr style="border: 0px !important;">
         <td colspan="4" style="border: 0px !important;"><span class="convertToWhite">Nutritional assessment</span></td>
@@ -418,7 +424,7 @@
   </tbody>
 </table>
 
-<table class="ui celled table sizeFont" style="border: 0px !important;">
+<table class="change ui celled table sizeFont" style="border: 0px !important;">
   <tbody>
     <tr style="border: 0px !important;">
         <td colspan="4" style="border: 0px !important;"><span class="convertToWhite">Weight assessment</span></td>
@@ -565,7 +571,7 @@
   </tbody>
 </table>
 
-<table class="ui celled table sizeFont" style="border: 0px !important;">
+<table class="change ui celled table sizeFont" style="border: 0px !important;">
   <tbody>
     <tr style="border: 0px !important;">
         <td colspan="4" style="border: 0px !important;"><span class="convertToWhite">Obesity assessment</span></td>
@@ -686,7 +692,7 @@
     <span class="convertToWhite"><div class="temp-no-print" style="float: left"></div><img src="/six.png" alt=""> Weight control</span>
 </div>
 
-<table class="ui celled table sizeFont" style="border: 0px !important;">
+<table class="change ui celled table sizeFont" style="border: 0px !important;">
   <tbody>
     <tr style="border: 0px !important;">
         <th style="border: 0px !important;"><span class="convertToWhite">ទំងន់ស្តង់ដា</span></th>
@@ -718,7 +724,7 @@
 </table>
 
 
-<table class="ui celled table sizeFont" style="border: 0px !important;">
+<table class="change ui celled table sizeFont" style="border: 0px !important;">
   <tbody>
     <tr style="border: 0px !important;">
         <td style="border: 0px !important;"><span class="convertToWhite">Health assessment</span></td>
@@ -734,7 +740,7 @@
     <span class="convertToWhite"><div class="temp-no-print" style="float: left"></div><img src="/seven.png" alt=""> Bioelectrical impedance</span>
 </div>
 
-<table class="ui celled table sizeFont" style="border: 0px !important;">
+<table class="change ui celled table sizeFont" style="border: 0px !important;">
   <tbody>
     <tr style="border: 0px !important;">
         <td style="border: 0px !important;"><span class="convertToWhite">Z</span></td>
@@ -950,11 +956,12 @@
     .fontTd {
         font-size: 11px !important;
     }
+
     .fontTd2 {
         font-size: 8px !important;
     }
 
-    .ui.table td {
+    .change.ui.table td {
         font-size: 11px !important;
     }
 

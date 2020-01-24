@@ -6,7 +6,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="37b05a99-1bf8-426c-a9a5-9f4248831879" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/imports/vue/ui/weightTestReport.vue" beforeDir="false" afterPath="$PROJECT_DIR$/imports/vue/ui/weightTestReport.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/methods/weightTest.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/methods/weightTest.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -24,8 +26,8 @@
     <session id="-1917067959">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="79" />
-          <entry key="project.open.time.0" value="26" />
+          <entry key="project.closed" value="80" />
+          <entry key="project.open.time.0" value="27" />
           <entry key="project.open.time.1" value="6" />
           <entry key="project.open.time.16" value="1" />
           <entry key="project.open.time.18" value="2" />
@@ -43,14 +45,14 @@
           <entry key="project.open.time.7" value="2" />
           <entry key="project.open.time.8" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="83" />
+          <entry key="project.opened" value="84" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="css" value="25" />
           <entry key="html" value="152" />
-          <entry key="js" value="345" />
+          <entry key="js" value="346" />
           <entry key="json" value="19" />
           <entry key="less" value="12" />
           <entry key="packages" value="3" />
@@ -59,7 +61,7 @@
           <entry key="rnc" value="2" />
           <entry key="ts" value="14" />
           <entry key="versions" value="1" />
-          <entry key="vue" value="73" />
+          <entry key="vue" value="74" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -68,23 +70,23 @@
           <entry key="HTML" value="152" />
           <entry key="Image" value="1" />
           <entry key="JSON" value="19" />
-          <entry key="JavaScript" value="345" />
+          <entry key="JavaScript" value="346" />
           <entry key="Less" value="12" />
           <entry key="PLAIN_TEXT" value="5" />
           <entry key="RNG Compact" value="2" />
           <entry key="TypeScript" value="14" />
-          <entry key="Vue.js" value="73" />
+          <entry key="Vue.js" value="74" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="155" />
           <entry key="html" value="2256" />
-          <entry key="js" value="9414" />
+          <entry key="js" value="9606" />
           <entry key="json" value="6" />
           <entry key="less" value="2" />
           <entry key="packages" value="2" />
-          <entry key="vue" value="6678" />
+          <entry key="vue" value="6706" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -92,10 +94,10 @@
           <entry key="CSS" value="155" />
           <entry key="HTML" value="2256" />
           <entry key="JSON" value="6" />
-          <entry key="JavaScript" value="9414" />
+          <entry key="JavaScript" value="9606" />
           <entry key="Less" value="2" />
           <entry key="PLAIN_TEXT" value="2" />
-          <entry key="Vue.js" value="6678" />
+          <entry key="Vue.js" value="6706" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
@@ -110,11 +112,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/imports/vue/ui/weightTestReport.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
-              <caret line="225" column="10" lean-forward="true" selection-start-line="225" selection-start-column="10" selection-end-line="225" selection-end-column="10" />
+            <state relative-caret-position="3137">
+              <caret line="244" column="90" lean-forward="true" selection-start-line="244" selection-start-column="90" selection-end-line="244" selection-end-column="90" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#span#0;n#span#0;n#div#0;n#template#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#span#0;n#span#0;n#div#0;n#template#0;n#!!top" expanded="true" />
@@ -212,6 +214,7 @@
                 <element signature="n#style#0;n#div#3;n#div#0;n#div#3;n#span#0;n#span#0;n#div#0;n#template#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#span#0;n#div#4;n#div#0;n#div#3;n#span#0;n#span#0;n#div#0;n#template#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#table#3;n#div#0;n#div#3;n#span#0;n#span#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#tr#0;n#thead#0;n#table#3;n#div#0;n#div#3;n#span#0;n#span#0;n#div#0;n#template#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#3;n#div#0;n#div#3;n#span#0;n#span#0;n#div#0;n#template#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#span#0;n#th#0;n#tr#0;n#thead#0;n#table#3;n#div#0;n#div#3;n#span#0;n#span#0;n#div#0;n#template#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#tr#0;n#tbody#0;n#table#3;n#div#0;n#div#3;n#span#0;n#span#0;n#div#0;n#template#0;n#!!top" expanded="true" />
@@ -401,25 +404,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/methods/report/reportMethod.js">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/server/methods/weightTest.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="740">
-              <caret line="37" column="34" selection-start-line="37" selection-start-column="34" selection-end-line="37" selection-end-column="34" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/methods/class.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2053">
-              <caret line="842" column="19" lean-forward="true" selection-start-line="842" selection-start-column="19" selection-end-line="842" selection-end-column="19" />
-              <folding>
-                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="320">
+              <caret line="89" column="42" lean-forward="true" selection-start-line="89" selection-start-column="42" selection-end-line="89" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -437,7 +426,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>medicineType</find>
       <find>medicineTypeOptions</find>
       <find>medicineOptions</find>
       <find>push</find>
@@ -467,6 +455,7 @@
       <find>cons</find>
       <find>conso</find>
       <find>consol</find>
+      <find>replace(&quot; &quot;</find>
     </findStrings>
     <replaceStrings>
       <replace>click button.edit</replace>
@@ -532,9 +521,9 @@
         <option value="$PROJECT_DIR$/imports/ui/patient/patient.js" />
         <option value="$PROJECT_DIR$/imports/vue/ui/ImportFile.vue" />
         <option value="$PROJECT_DIR$/server/methods/report/reportMethod.js" />
-        <option value="$PROJECT_DIR$/server/methods/weightTest.js" />
         <option value="$PROJECT_DIR$/server/methods/class.js" />
         <option value="$PROJECT_DIR$/imports/vue/ui/weightTestReport.vue" />
+        <option value="$PROJECT_DIR$/server/methods/weightTest.js" />
       </list>
     </option>
   </component>
@@ -554,18 +543,17 @@
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="67" />
+  <component name="ProjectFrameBounds" extendedState="4">
+    <option name="x" value="811" />
     <option name="y" value="25" />
-    <option name="width" value="1286" />
-    <option name="height" value="789" />
+    <option name="width" value="1109" />
+    <option name="height" value="1055" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -700,6 +688,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1070,12 +1059,13 @@
       <workItem from="1579701435055" duration="8835000" />
       <workItem from="1579745148894" duration="10876000" />
       <workItem from="1579762969855" duration="11998000" />
-      <workItem from="1579787438384" duration="3657000" />
+      <workItem from="1579787438384" duration="4268000" />
+      <workItem from="1579869221997" duration="3309000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1063339000" />
+    <option name="totallyTimeSpent" value="1067259000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1087,10 +1077,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
+    <frame x="811" y="25" width="1109" height="1055" extended-state="4" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49837837" visible="true" weight="0.19234973" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49837837" visible="true" weight="0.027624309" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" sideWeight="0.5016216" side_tool="true" weight="0.19234973" />
@@ -1456,13 +1446,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/methods/weightTest.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-80">
-          <caret line="75" column="84" lean-forward="true" selection-start-line="75" selection-start-column="84" selection-end-line="75" selection-end-column="84" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/methods/report/reportMethod.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="740">
@@ -1474,18 +1457,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2053">
           <caret line="842" column="19" lean-forward="true" selection-start-line="842" selection-start-column="19" selection-end-line="842" selection-end-column="19" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/imports/vue/ui/weightTestReport.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="225" column="10" lean-forward="true" selection-start-line="225" selection-start-column="10" selection-end-line="225" selection-end-column="10" />
+        <state relative-caret-position="3137">
+          <caret line="244" column="90" lean-forward="true" selection-start-line="244" selection-start-column="90" selection-end-line="244" selection-end-column="90" />
           <folding>
             <element signature="n#style#0;n#div#0;n#span#0;n#span#0;n#div#0;n#template#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#span#0;n#span#0;n#div#0;n#template#0;n#!!top" expanded="true" />
@@ -1583,6 +1561,7 @@
             <element signature="n#style#0;n#div#3;n#div#0;n#div#3;n#span#0;n#span#0;n#div#0;n#template#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#span#0;n#div#4;n#div#0;n#div#3;n#span#0;n#span#0;n#div#0;n#template#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#table#3;n#div#0;n#div#3;n#span#0;n#span#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#tr#0;n#thead#0;n#table#3;n#div#0;n#div#3;n#span#0;n#span#0;n#div#0;n#template#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#3;n#div#0;n#div#3;n#span#0;n#span#0;n#div#0;n#template#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#span#0;n#th#0;n#tr#0;n#thead#0;n#table#3;n#div#0;n#div#3;n#span#0;n#span#0;n#div#0;n#template#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#tr#0;n#tbody#0;n#table#3;n#div#0;n#div#3;n#span#0;n#span#0;n#div#0;n#template#0;n#!!top" expanded="true" />
@@ -1768,6 +1747,13 @@
             <element signature="n#style#0;n#td#5;n#tr#3;n#tbody#0;n#table#5;n#div#1;n#div#3;n#span#0;n#span#0;n#div#0;n#template#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/methods/weightTest.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="89" column="42" lean-forward="true" selection-start-line="89" selection-start-column="42" selection-end-line="89" selection-end-column="42" />
         </state>
       </provider>
     </entry>

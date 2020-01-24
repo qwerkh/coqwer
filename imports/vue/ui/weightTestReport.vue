@@ -2,7 +2,7 @@
     <div class="co-weightTest-report">
         <span slot="content" v-if="weightTestData">
             <span slot="content">
-
+                        <br>
                         <div class="title" style="border-bottom: 0px !important;">
                             <div style="width: 100%">
                                  <div style="width: 15%;float: right">
@@ -218,32 +218,42 @@
                       </div>
 <table class="change ui celled table sizeFont" style="border: 0px !important;">
   <thead>
-  <tr>
-     <th style="border: 0px !important;height: 100px !important;" colspan="9"><span class="convertToWhite"><img
+  <tr style="padding: 0px !important;">
+     <th style="border: 0px !important;height: 100px !important;padding: 0px !important;" colspan="9"><span
+             class="convertToWhite"><img
              src="/fat.jpg" alt=""
              style="width: 100%; height: 80px"></span></th>
   </tr>
   </thead>
   <tbody>
-    <tr style="border: 0px !important;">
-        <td style="border: 0px !important; text-align: center"><i v-if="weightTestData.obesityAnalysis2.bodyShape1"
-                                                                  class="el-icon-check"></i></td>
-        <td style="border: 0px !important; text-align: center"><i v-if="weightTestData.obesityAnalysis2.bodyShape2"
-                                                                  class="el-icon-check"></i></td>
-        <td style="border: 0px !important; text-align: center"><i v-if="weightTestData.obesityAnalysis2.bodyShape3"
-                                                                  class="el-icon-check"></i></td>
-        <td style="border: 0px !important; text-align: center"><i v-if="weightTestData.obesityAnalysis2.bodyShape4"
-                                                                  class="el-icon-check"></i></td>
-        <td style="border: 0px !important; text-align: center"><i v-if="weightTestData.obesityAnalysis2.bodyShape5"
-                                                                  class="el-icon-check"></i></td>
-        <td style="border: 0px !important; text-align: center"><i v-if="weightTestData.obesityAnalysis2.bodyShape6"
-                                                                  class="el-icon-check"></i></td>
-        <td style="border: 0px !important; text-align: center"><i v-if="weightTestData.obesityAnalysis2.bodyShape7"
-                                                                  class="el-icon-check"></i></td>
-        <td style="border: 0px !important; text-align: center"><i v-if="weightTestData.obesityAnalysis2.bodyShape8"
-                                                                  class="el-icon-check"></i></td>
-        <td style="border: 0px !important; text-align: center"><i v-if="weightTestData.obesityAnalysis2.bodyShape9"
-                                                                  class="el-icon-check"></i></td>
+    <tr style="border: 0px !important;padding: 0px !important;">
+        <td style="border: 0px !important; text-align: center;padding: 0px !important;"><i
+                v-if="weightTestData.obesityAnalysis2.bodyShape1"
+                class="el-icon-check"></i></td>
+        <td style="border: 0px !important; text-align: center;padding: 0px !important;"><i
+                v-if="weightTestData.obesityAnalysis2.bodyShape2"
+                class="el-icon-check"></i></td>
+        <td style="border: 0px !important; text-align: center;padding: 0px !important;"><i
+                v-if="weightTestData.obesityAnalysis2.bodyShape3"
+                class="el-icon-check"></i></td>
+        <td style="border: 0px !important; text-align: center;padding: 0px !important;"><i
+                v-if="weightTestData.obesityAnalysis2.bodyShape4"
+                class="el-icon-check"></i></td>
+        <td style="border: 0px !important; text-align: center;padding: 0px !important;"><i
+                v-if="weightTestData.obesityAnalysis2.bodyShape5"
+                class="el-icon-check"></i></td>
+        <td style="border: 0px !important; text-align: center;padding: 0px !important;"><i
+                v-if="weightTestData.obesityAnalysis2.bodyShape6"
+                class="el-icon-check"></i></td>
+        <td style="border: 0px !important; text-align: center;padding: 0px !important;"><i
+                v-if="weightTestData.obesityAnalysis2.bodyShape7"
+                class="el-icon-check"></i></td>
+        <td style="border: 0px !important; text-align: center;padding: 0px !important;"><i
+                v-if="weightTestData.obesityAnalysis2.bodyShape8"
+                class="el-icon-check"></i></td>
+        <td style="border: 0px !important; text-align: center;padding: 0px !important;"><i
+                v-if="weightTestData.obesityAnalysis2.bodyShape9"
+                class="el-icon-check"></i></td>
     </tr>
     <tr style="border: 0px !important;word-wrap:break-word;">
      <th style="border: 0px !important;text-align: center" width="11%"><span

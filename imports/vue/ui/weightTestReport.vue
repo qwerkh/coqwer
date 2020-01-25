@@ -14,7 +14,9 @@
                                                 style="font-family: 'Khmer OS Moul';font-size: 22px"> ឡាបែល</span>
                                         </div>
                                         <div class="title3">
-                                            <span class="convertToWhite">{{addressName}} 077/0886  554565/012644497</span>
+                                            <span class="convertToWhite">{{addressName}}  (ខាងកើតលោកតាដំបងក្រញ៉ូង ២០០ម)</span><br>
+                                            <span class="convertToWhite">077/086 55 45 65/ 012 64 44 97 (ជាប់ក្លោងទ្វាធំ បុរីរតនៈ)​</span>
+
                                         </div>
                                 </div>
 
@@ -221,7 +223,7 @@
   <tr style="padding: 0px !important;">
      <th style="border: 0px !important;height: 100px !important;padding: 0px !important;" colspan="9"><span
              class="convertToWhite"><img
-             src="/fat.jpg" alt=""
+             src="/fat.png" alt=""
              style="width: 100%; height: 80px"></span></th>
   </tr>
   </thead>
@@ -802,9 +804,10 @@
 
             </span>
         </span>
-        <div class="convertToWhite" style="text-align: center;float: left">
-            ផ្ទះលេខ ៤-៥ ភូមិ រំចេក៤ សង្កាត់ រតនះ ក្រុង បាត់ដំបង ខេត្ត បាត់ដំបង (ខាងកើតលោកតាដំបងក្រញ៉ូង ២០០ម) ​
-        </div>
+        <!--<div class="convertToWhite" style="text-align: center;float: left">
+            ផ្ទះលេខ ៤-៥ ភូមិ រំចេក៤ សង្កាត់ រតនះ ក្រុង បាត់ដំបង ខេត្ត បាត់ដំបង (ខាងកើតលោកតាដំបងក្រញ៉ូង ២០០ម) <br>
+            077/086 55 45 65/ 012 64 44 97 (ជាប់ក្លោងទ្វាធំ បុរីរតនៈ)​
+        </div>-->
 
     </div>
 </template>

@@ -6,14 +6,14 @@
                         <div class="title" style="border-bottom: 0px !important;">
                             <div style="width: 100%">
                                  <div style="width: 15%;float: right">
-                                    <img src="/labell.jpg" alt="" style="width: 60px;height: 60px;">
+                                    <img src="/labell.jpg" alt="" style="width: 70px;height: 70px;">
                                 </div>
                                 <div style="width: 85%;">
                                         <div class="title1">
-                                            <span class="convertToWhite" style="font-size: 18px !important;">បន្ទប់ពិគ្រោះព្យាបាលជំងឺ និង ឡាស៊ែរថែរក្សាសម្ផស្ស </span><span
+                                            <span class="convertToWhite" style="font-size: 14px !important;">បន្ទប់ពិគ្រោះព្យាបាលជំងឺ និង ឡាស៊ែរថែរក្សាសម្ផស្ស </span><span
                                                 style="font-family: 'Khmer OS Moul';font-size: 22px"> ឡាបែល</span>
                                         </div>
-                                        <div class="title3">
+                                        <div class="title3L" style="padding-top: 4px !important;">
                                             <span class="convertToWhite">{{addressName}}  (ខាងកើតលោកតាដំបងក្រញ៉ូង ២០០ម)</span><br>
                                             <span class="convertToWhite">077/086 55 45 65/ 012 64 44 97 (ជាប់ក្លោងទ្វាធំ បុរីរតនៈ)​</span>
 
@@ -78,43 +78,43 @@
                                                                           style="float: left"></div>
                                             <img src="/one.png" alt=""> Body Composition</span>
                                   </div>
-<table class="change ui celled table sizeFont" style="border: 0px !important;">
+<table class="change ui celled table sizeFont" style="border: 0px !important;margin: 0px !important;">
   <thead>
   <tr>
-     <th style="border: 0px !important;"></th>
-     <th style="border: 0px !important;"><span class="convertToWhite">Value</span></th>
-     <th style="border: 0px !important;"><span class="convertToWhite">FFM(kg)</span></th>
-     <th style="border: 0px !important;"><span class="convertToWhite">Weight(kg)</span></th>
-     <th style="border: 0px !important;"><span class="convertToWhite">Normal range</span></th>
+     <th style="border: 0px !important;" class="paddingHeader"></th>
+     <th style="border: 0px !important;" class="paddingHeader"><span class="convertToWhite">Value</span></th>
+     <th style="border: 0px !important;" class="paddingHeader"><span class="convertToWhite">FFM(kg)</span></th>
+     <th style="border: 0px !important;" class="paddingHeader"><span class="convertToWhite">Weight(kg)</span></th>
+     <th style="border: 0px !important;" class="paddingHeader"><span class="convertToWhite">Normal range</span></th>
   </tr></thead>
   <tbody>
     <tr style="border: 0px !important;">
         <th style="border: 0px !important;"><span class="convertToWhite">ជាតិទឹកក្នុងរាងកាយ kg</span></th>
-        <td style="border: 0px !important;">{{weightTestData.bodyElementsAnalysis.waterC}}</td>
+        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.bodyElementsAnalysis.waterC}}</td>
         <td style="border: 0px !important;"></td>
         <td style="border: 0px !important;"></td>
-        <td style="border: 0px !important;">{{weightTestData.bodyElementsAnalysis.waterCNormal}}</td>
+        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.bodyElementsAnalysis.waterCNormal}}</td>
     </tr>
     <tr style="border: 0px !important;">
         <th style="border: 0px !important;"><span class="convertToWhite">ជាតិសាច់ kg</span></th>
-        <td style="border: 0px !important;">{{weightTestData.bodyElementsAnalysis.protein}}</td>
+        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.bodyElementsAnalysis.protein}}</td>
         <td style="border: 0px !important;"></td>
         <td style="border: 0px !important;"></td>
-        <td style="border: 0px !important;">{{weightTestData.bodyElementsAnalysis.proteinNormal}}</td>
+        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.bodyElementsAnalysis.proteinNormal}}</td>
     </tr>
     <tr style="border: 0px !important;">
         <th style="border: 0px !important;"><span class="convertToWhite">អំបិលខនិជ kg</span></th>
-        <td style="border: 0px !important;">{{weightTestData.bodyElementsAnalysis.inoSalt}}</td>
+        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.bodyElementsAnalysis.inoSalt}}</td>
         <td style="border: 0px !important;"></td>
         <td style="border: 0px !important;"></td>
-        <td style="border: 0px !important;">{{weightTestData.bodyElementsAnalysis.inoSaltNormal}}</td>
+        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.bodyElementsAnalysis.inoSaltNormal}}</td>
     </tr>
     <tr style="border: 0px !important;">
         <th style="border: 0px !important;"><span class="convertToWhite">ខ្លាញ់ kg</span></th>
-        <td style="border: 0px !important;">{{weightTestData.bodyElementsAnalysis.bodyFat}}</td>
+        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.bodyElementsAnalysis.bodyFat}}</td>
         <td style="border: 0px !important;"></td>
-        <td style="border: 0px !important;">{{weightTestData.bodyElementsAnalysis.weight}}</td>
-        <td style="border: 0px !important;">{{weightTestData.bodyElementsAnalysis.bodyFatNormal}}</td>
+        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.bodyElementsAnalysis.weight}}</td>
+        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.bodyElementsAnalysis.bodyFatNormal}}</td>
     </tr>
 
   </tbody>
@@ -123,36 +123,36 @@
                                 <span class="convertToWhite"><div class="temp-no-print" style="float: left"></div><img
                                         src="/two.png" alt=""> Muscle fat</span>
                             </div>
-<table class="change ui celled table sizeFont" style="border: 0px !important;">
+<table class="change ui celled table sizeFont" style="border: 0px !important;margin: 0px !important;">
   <thead>
   <tr>
-     <th style="border: 0px !important;"></th>
-     <th style="border: 0px !important;"><span class="convertToWhite">Under</span></th>
-     <th style="border: 0px !important;"><span class="convertToWhite">Normal</span></th>
-     <th style="border: 0px !important;"><span class="convertToWhite">Over</span></th>
-     <th style="border: 0px !important;"><span class="convertToWhite">Normal range</span></th>
+     <th style="border: 0px !important;" class="paddingHeader"></th>
+     <th style="border: 0px !important;" class="paddingHeader"><span class="convertToWhite">Under</span></th>
+     <th style="border: 0px !important;" class="paddingHeader"><span class="convertToWhite">Normal</span></th>
+     <th style="border: 0px !important;" class="paddingHeader"><span class="convertToWhite">Over</span></th>
+     <th style="border: 0px !important;" class="paddingHeader"><span class="convertToWhite">Normal range</span></th>
   </tr></thead>
   <tbody>
     <tr style="border: 0px !important;">
         <th style="border: 0px !important;"><span class="convertToWhite">ទំងន់ kg</span></th>
-        <td style="border: 0px !important;">{{weightTestData.muscleFatAnalysis.weightUnder}}</td>
-        <td style="border: 0px !important;">{{weightTestData.muscleFatAnalysis.weightFit}}</td>
-        <td style="border: 0px !important;">{{weightTestData.muscleFatAnalysis.weightOver}}</td>
-        <td style="border: 0px !important;">{{weightTestData.muscleFatAnalysis.weightNormal}}</td>
+        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.muscleFatAnalysis.weightUnder}}</td>
+        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.muscleFatAnalysis.weightFit}}</td>
+        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.muscleFatAnalysis.weightOver}}</td>
+        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.muscleFatAnalysis.weightNormal}}</td>
     </tr>
     <tr style="border: 0px !important;">
         <th style="border: 0px !important;"><span class="convertToWhite">សាច់ដុំឆ្អឹង kg</span></th>
-        <td style="border: 0px !important;">{{weightTestData.muscleFatAnalysis.skeletalUnder}}</td>
-        <td style="border: 0px !important;">{{weightTestData.muscleFatAnalysis.skeletalFit}}</td>
-        <td style="border: 0px !important;">{{weightTestData.muscleFatAnalysis.skeletalOver}}</td>
-        <td style="border: 0px !important;">{{weightTestData.muscleFatAnalysis.skeletalNormal}}</td>
+        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.muscleFatAnalysis.skeletalUnder}}</td>
+        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.muscleFatAnalysis.skeletalFit}}</td>
+        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.muscleFatAnalysis.skeletalOver}}</td>
+        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.muscleFatAnalysis.skeletalNormal}}</td>
     </tr>
     <tr style="border: 0px !important;">
         <th style="border: 0px !important;"><span class="convertToWhite">ខ្លាញ់ kg</span></th>
-        <td style="border: 0px !important;">{{weightTestData.muscleFatAnalysis.bodyFatUnder}}</td>
-        <td style="border: 0px !important;">{{weightTestData.muscleFatAnalysis.bodyFatFit}}</td>
-        <td style="border: 0px !important;">{{weightTestData.muscleFatAnalysis.bodyFatOver}}</td>
-        <td style="border: 0px !important;">{{weightTestData.muscleFatAnalysis.bodyFatNormal}}</td>
+        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.muscleFatAnalysis.bodyFatUnder}}</td>
+        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.muscleFatAnalysis.bodyFatFit}}</td>
+        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.muscleFatAnalysis.bodyFatOver}}</td>
+        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.muscleFatAnalysis.bodyFatNormal}}</td>
     </tr>
 
 
@@ -162,43 +162,48 @@
                                 <span class="convertToWhite"><div class="temp-no-print" style="float: left"></div><img
                                         src="/three.png" alt=""> Analysis of obesity</span>
                       </div>
-<table class="change ui celled table sizeFont" style="border: 0px !important;">
+<table class="change ui celled table sizeFont" style="border: 0px !important;margin: 0px !important;">
   <thead>
   <tr>
-     <th style="border: 0px !important;"></th>
-     <th style="border: 0px !important;"><span class="convertToWhite">Under</span></th>
-     <th style="border: 0px !important;"><span class="convertToWhite">Normal</span></th>
-     <th style="border: 0px !important;"><span class="convertToWhite">Over</span></th>
-     <th style="border: 0px !important;"><span class="convertToWhite">Normal range</span></th>
+     <th style="border: 0px !important;" class="paddingHeader"></th>
+     <th style="border: 0px !important;" class="paddingHeader"><span class="convertToWhite">Under</span></th>
+     <th style="border: 0px !important;" class="paddingHeader"><span class="convertToWhite">Normal</span></th>
+     <th style="border: 0px !important;" class="paddingHeader"><span class="convertToWhite">Over</span></th>
+     <th style="border: 0px !important;" class="paddingHeader"><span class="convertToWhite">Normal range</span></th>
   </tr></thead>
   <tbody>
     <tr style="border: 0px !important;">
         <th style="border: 0px !important;"><span class="convertToWhite">BMI (kg/m<sup>2</sup>)</span></th>
-        <td style="border: 0px !important;">{{weightTestData.obesityAnalysis.bmiUnder}}</td>
-        <td style="border: 0px !important;">{{weightTestData.obesityAnalysis.bmiFit}}</td>
-        <td style="border: 0px !important;">{{weightTestData.obesityAnalysis.bmiOver}}</td>
-        <td style="border: 0px !important;">{{weightTestData.obesityAnalysis.bmiNormal}}</td>
+        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.obesityAnalysis.bmiUnder}}</td>
+        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.obesityAnalysis.bmiFit}}</td>
+        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.obesityAnalysis.bmiOver}}</td>
+        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.obesityAnalysis.bmiNormal}}</td>
     </tr>
     <tr style="border: 0px !important;">
         <th style="border: 0px !important;"><span class="convertToWhite">ខ្លាញ់ក្បាលពោះ (%)</span></th>
-        <td style="border: 0px !important;">{{weightTestData.obesityAnalysis.bodyFatPercentUnder}}</td>
-        <td style="border: 0px !important;">{{weightTestData.obesityAnalysis.bodyFatPercentFit}}</td>
-        <td style="border: 0px !important;">{{weightTestData.obesityAnalysis.bodyFatPercentOver}}</td>
-        <td style="border: 0px !important;">{{weightTestData.obesityAnalysis.bodyFatPercentNormal}}</td>
+        <td style="border: 0px !important;"
+        >{{weightTestData.obesityAnalysis.bodyFatPercentUnder}}</td>
+        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.obesityAnalysis.bodyFatPercentFit}}</td>
+        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.obesityAnalysis.bodyFatPercentOver}}</td>
+        <td style="border: 0px !important;font-size: 15px !important;"
+        >{{weightTestData.obesityAnalysis.bodyFatPercentNormal}}</td>
     </tr>
     <tr style="border: 0px !important;">
         <th style="border: 0px !important;"><span class="convertToWhite">ខ្លាញ់ត្រគាក (%)</span></th>
-        <td style="border: 0px !important;">{{weightTestData.obesityAnalysis.waistHipFatRateUnder}}</td>
-        <td style="border: 0px !important;">{{weightTestData.obesityAnalysis.waistHipFatRateFit}}</td>
-        <td style="border: 0px !important;">{{weightTestData.obesityAnalysis.waistHipFatRateOver}}</td>
-        <td style="border: 0px !important;">{{weightTestData.obesityAnalysis.waistHipFatRateNormal}}</td>
+        <td style="border: 0px !important;font-size: 15px !important;"
+        >{{weightTestData.obesityAnalysis.waistHipFatRateUnder}}</td>
+        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.obesityAnalysis.waistHipFatRateFit}}</td>
+        <td style="border: 0px !important;font-size: 15px !important;"
+        >{{weightTestData.obesityAnalysis.waistHipFatRateOver}}</td>
+        <td style="border: 0px !important;font-size: 15px !important;"
+        >{{weightTestData.obesityAnalysis.waistHipFatRateNormal}}</td>
     </tr>
     <tr style="border: 0px !important;">
         <th style="border: 0px !important;"><span class="convertToWhite">ជាតិទឹក (%)</span></th>
-        <td style="border: 0px !important;">{{weightTestData.obesityAnalysis.waterRateUnder}}</td>
-        <td style="border: 0px !important;">{{weightTestData.obesityAnalysis.waterRateFit}}</td>
-        <td style="border: 0px !important;">{{weightTestData.obesityAnalysis.waterRateOver}}</td>
-        <td style="border: 0px !important;">{{weightTestData.obesityAnalysis.waterRateNormal}}</td>
+        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.obesityAnalysis.waterRateUnder}}</td>
+        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.obesityAnalysis.waterRateFit}}</td>
+        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.obesityAnalysis.waterRateOver}}</td>
+        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.obesityAnalysis.waterRateNormal}}</td>
     </tr>
 
 
@@ -218,7 +223,7 @@
                                 <span class="convertToWhite"><div class="temp-no-print" style="float: left"> </div><img
                                         src="/four.png" alt=""> Obesity diagnosis</span>
                       </div>
-<table class="change ui celled table sizeFont" style="border: 0px !important;">
+<table class="change ui celled table sizeFont" style="border: 0px !important;margin: 0px !important;">
   <thead>
   <tr style="padding: 0px !important;">
      <th style="border: 0px !important;height: 100px !important;padding: 0px !important;" colspan="9"><span
@@ -285,7 +290,7 @@
                                                                       style="float: left"></div><img src="/five.png"
                                                                                                      alt=""> Comprehensive assessment</span>
                                  </div>
-<table class="change ui celled table sizeFont" style="border: 0px !important;">
+<table class="change ui celled table sizeFont" style="border: 0px !important;margin: 0px !important;">
   <tbody>
     <tr style="border: 0px !important;">
         <td colspan="4" style="border: 0px !important;"><span class="convertToWhite">Nutritional assessment</span></td>
@@ -436,7 +441,7 @@
   </tbody>
 </table>
 
-<table class="change ui celled table sizeFont" style="border: 0px !important;">
+<table class="change ui celled table sizeFont" style="border: 0px !important;margin: 0px !important;">
   <tbody>
     <tr style="border: 0px !important;">
         <td colspan="4" style="border: 0px !important;"><span class="convertToWhite">Weight assessment</span></td>
@@ -583,7 +588,7 @@
   </tbody>
 </table>
 
-<table class="change ui celled table sizeFont" style="border: 0px !important;">
+<table class="change ui celled table sizeFont" style="border: 0px !important;margin: 0px !important;">
   <tbody>
     <tr style="border: 0px !important;">
         <td colspan="4" style="border: 0px !important;"><span class="convertToWhite">Obesity assessment</span></td>
@@ -687,14 +692,14 @@
                 style="width: 12px;height: 12px"
                 alt=""> <span
                 class="convertToWhite fontTd2"><!--<i
-                class="el-icon-check convetToTransparent" style="width:20px !important;height:20px !important;"></i>-->Severe obesity</span></td>
+                class="el-icon-check convetToTransparent" style="width:20px !important;height:20px !important;"></i>-->Obesity^</span></td>
         <td style="border: 0px !important;"
             v-if="!weightTestData.obesityAnalysis2.bodyFatPSevereObesity"> <img
                 class="temp-no-print"
                 src="/box.png"
                 style="width: 12px;height: 12px"
                 alt=""> <span
-                class="convertToWhite fontTd2"><!--&nbsp;&nbsp;&nbsp;-->Severe obesity</span></td>
+                class="convertToWhite fontTd2"><!--&nbsp;&nbsp;&nbsp;-->Obesity^</span></td>
 
     </tr>
   </tbody>
@@ -704,31 +709,31 @@
     <span class="convertToWhite"><div class="temp-no-print" style="float: left"></div><img src="/six.png" alt=""> Weight control</span>
 </div>
 
-<table class="change ui celled table sizeFont" style="border: 0px !important;">
+<table class="change ui celled table sizeFont" style="border: 0px !important;margin: 0px !important;">
   <tbody>
     <tr style="border: 0px !important;">
         <th style="border: 0px !important;"><span class="convertToWhite">ទំងន់ស្តង់ដា</span></th>
-        <td style="border: 0px !important;">{{weightTestData.weightControl.targetWeight}}</td>
+        <th style="border: 0px !important;font-size: 15px !important;">{{weightTestData.weightControl.targetWeight}}</th>
         <td style="border: 0px !important;"><span class="convertToWhite">kg</span></td>
     </tr>
     <tr style="border: 0px !important;">
         <th style="border: 0px !important;"><span class="convertToWhite">តុល្យភាពទំងន់</span></th>
-        <td style="border: 0px !important;">{{weightTestData.weightControl.weightControl}}</td>
+        <th style="border: 0px !important;font-size: 15px !important;">{{weightTestData.weightControl.weightControl}}</th>
         <td style="border: 0px !important;"><span class="convertToWhite">kg</span></td>
     </tr>
     <tr style="border: 0px !important;">
         <th style="border: 0px !important;"><span class="convertToWhite">តុល្យភាពខ្លាញ់</span></th>
-        <td style="border: 0px !important;">{{weightTestData.weightControl.fatControl}}</td>
+        <th style="border: 0px !important;font-size: 15px !important;">{{weightTestData.weightControl.fatControl}}</th>
         <td style="border: 0px !important;"><span class="convertToWhite">kg</span></td>
     </tr>
     <tr style="border: 0px !important;">
         <th style="border: 0px !important;"><span class="convertToWhite">តុល្យភាពសាច់</span></th>
-        <td style="border: 0px !important;">{{weightTestData.weightControl.muscleControl}}</td>
+        <th style="border: 0px !important;font-size: 15px !important;">{{weightTestData.weightControl.muscleControl}}</th>
         <td style="border: 0px !important;"><span class="convertToWhite">kg</span></td>
     </tr>
     <tr style="border: 0px !important;">
         <th style="border: 0px !important;"><span class="convertToWhite">តម្រូវការប្រចាំថ្ងៃ</span></th>
-        <td style="border: 0px !important;">{{weightTestData.weightControl.basalMet}}</td>
+        <th style="border: 0px !important;font-size: 15px !important;">{{parseFloat(weightTestData.weightControl.basalMet)}}</th>
         <td style="border: 0px !important;"><span class="convertToWhite">kcal</span></td>
     </tr>
 
@@ -752,7 +757,7 @@
     <span class="convertToWhite"><div class="temp-no-print" style="float: left"></div><img src="/seven.png" alt=""> Bioelectrical impedance</span>
 </div>
 
-<table class="change ui celled table sizeFont" style="border: 0px !important;">
+<table class="change ui celled table sizeFont" style="border: 0px !important;margin: 0px !important;">
   <tbody>
     <tr style="border: 0px !important;">
         <td style="border: 0px !important;"><span class="convertToWhite">Z</span></td>
@@ -970,12 +975,16 @@
     }
 
     .fontTd2 {
-        font-size: 8px !important;
+        font-size: 10px !important;
     }
 
     .change.ui.table td {
         font-size: 11px !important;
     }
+
+    /*.paddingHeader {
+        padding: 0px !important;
+    }*/
 
 
 </style>

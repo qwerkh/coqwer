@@ -1,6 +1,6 @@
 <template>
     <div class="co-weightTest-report">
-        <span slot="content" v-if="weightTestData">
+        <span slot="content" v-if="weightTestData && weightTestData.patientDoc">
             <span slot="content">
                         <br>
                         <div class="title" style="border-bottom: 0px !important;">
@@ -52,7 +52,7 @@
                                 <span>{{weightTestData.id}}</span>
                             </div>
                             <div style="width: 25%;float: left">
-                                <span>{{weightTestData.patientDoc.khName}}</span>
+                                <span>{{weightTestData.patientDoc && weightTestData.patientDoc.khName || ""}}</span>
                             </div>
                             <div style="width: 10%;float: left">
                                 <span>{{weightTestData.sex}}</span>
@@ -90,31 +90,31 @@
   <tbody>
     <tr style="border: 0px !important;">
         <th style="border: 0px !important;"><span class="convertToWhite">ជាតិទឹកក្នុងរាងកាយ kg</span></th>
-        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.bodyElementsAnalysis.waterC}}</td>
+        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.bodyElementsAnalysis && weightTestData.bodyElementsAnalysis.waterC || ""}}</td>
         <td style="border: 0px !important;"></td>
         <td style="border: 0px !important;"></td>
-        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.bodyElementsAnalysis.waterCNormal}}</td>
+        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.bodyElementsAnalysis && weightTestData.bodyElementsAnalysis.waterCNormal || ""}}</td>
     </tr>
     <tr style="border: 0px !important;">
         <th style="border: 0px !important;"><span class="convertToWhite">ជាតិសាច់ kg</span></th>
-        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.bodyElementsAnalysis.protein}}</td>
+        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.bodyElementsAnalysis && weightTestData.bodyElementsAnalysis.protein || ""}}</td>
         <td style="border: 0px !important;"></td>
         <td style="border: 0px !important;"></td>
-        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.bodyElementsAnalysis.proteinNormal}}</td>
+        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.bodyElementsAnalysis && weightTestData.bodyElementsAnalysis.proteinNormal || ""}}</td>
     </tr>
     <tr style="border: 0px !important;">
         <th style="border: 0px !important;"><span class="convertToWhite">អំបិលខនិជ kg</span></th>
-        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.bodyElementsAnalysis.inoSalt}}</td>
+        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.bodyElementsAnalysis && weightTestData.bodyElementsAnalysis.inoSalt || ""}}</td>
         <td style="border: 0px !important;"></td>
         <td style="border: 0px !important;"></td>
-        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.bodyElementsAnalysis.inoSaltNormal}}</td>
+        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.bodyElementsAnalysis && weightTestData.bodyElementsAnalysis.inoSaltNormal || ""}}</td>
     </tr>
     <tr style="border: 0px !important;">
         <th style="border: 0px !important;"><span class="convertToWhite">ខ្លាញ់ kg</span></th>
-        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.bodyElementsAnalysis.bodyFat}}</td>
+        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.bodyElementsAnalysis && weightTestData.bodyElementsAnalysis.bodyFat || ""}}</td>
         <td style="border: 0px !important;"></td>
-        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.bodyElementsAnalysis.weight}}</td>
-        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.bodyElementsAnalysis.bodyFatNormal}}</td>
+        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.bodyElementsAnalysis && weightTestData.bodyElementsAnalysis.weight || ""}}</td>
+        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.bodyElementsAnalysis && weightTestData.bodyElementsAnalysis.bodyFatNormal || ""}}</td>
     </tr>
 
   </tbody>
@@ -135,24 +135,24 @@
   <tbody>
     <tr style="border: 0px !important;">
         <th style="border: 0px !important;"><span class="convertToWhite">ទំងន់ kg</span></th>
-        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.muscleFatAnalysis.weightUnder}}</td>
-        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.muscleFatAnalysis.weightFit}}</td>
-        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.muscleFatAnalysis.weightOver}}</td>
-        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.muscleFatAnalysis.weightNormal}}</td>
+        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.muscleFatAnalysis && weightTestData.muscleFatAnalysis.weightUnder || ""}}</td>
+        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.muscleFatAnalysis && weightTestData.muscleFatAnalysis.weightFit || ""}}</td>
+        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.muscleFatAnalysis && weightTestData.muscleFatAnalysis.weightOver || ""}}</td>
+        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.muscleFatAnalysis && weightTestData.muscleFatAnalysis.weightNormal || ""}}</td>
     </tr>
     <tr style="border: 0px !important;">
         <th style="border: 0px !important;"><span class="convertToWhite">សាច់ដុំឆ្អឹង kg</span></th>
-        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.muscleFatAnalysis.skeletalUnder}}</td>
-        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.muscleFatAnalysis.skeletalFit}}</td>
-        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.muscleFatAnalysis.skeletalOver}}</td>
-        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.muscleFatAnalysis.skeletalNormal}}</td>
+        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.muscleFatAnalysis && weightTestData.muscleFatAnalysis.skeletalUnder || ""}}</td>
+        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.muscleFatAnalysis && weightTestData.muscleFatAnalysis.skeletalFit || ""}}</td>
+        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.muscleFatAnalysis && weightTestData.muscleFatAnalysis.skeletalOver || ""}}</td>
+        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.muscleFatAnalysis && weightTestData.muscleFatAnalysis.skeletalNormal || ""}}</td>
     </tr>
     <tr style="border: 0px !important;">
         <th style="border: 0px !important;"><span class="convertToWhite">ខ្លាញ់ kg</span></th>
-        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.muscleFatAnalysis.bodyFatUnder}}</td>
-        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.muscleFatAnalysis.bodyFatFit}}</td>
-        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.muscleFatAnalysis.bodyFatOver}}</td>
-        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.muscleFatAnalysis.bodyFatNormal}}</td>
+        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.muscleFatAnalysis && weightTestData.muscleFatAnalysis.bodyFatUnder || ""}}</td>
+        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.muscleFatAnalysis && weightTestData.muscleFatAnalysis.bodyFatFit || ""}}</td>
+        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.muscleFatAnalysis && weightTestData.muscleFatAnalysis.bodyFatOver || ""}}</td>
+        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.muscleFatAnalysis && weightTestData.muscleFatAnalysis.bodyFatNormal || ""}}</td>
     </tr>
 
 
@@ -174,36 +174,36 @@
   <tbody>
     <tr style="border: 0px !important;">
         <th style="border: 0px !important;"><span class="convertToWhite">BMI (kg/m<sup>2</sup>)</span></th>
-        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.obesityAnalysis.bmiUnder}}</td>
-        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.obesityAnalysis.bmiFit}}</td>
-        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.obesityAnalysis.bmiOver}}</td>
-        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.obesityAnalysis.bmiNormal}}</td>
+        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.obesityAnalysis && weightTestData.obesityAnalysis.bmiUnder || ""}}</td>
+        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.obesityAnalysis && weightTestData.obesityAnalysis.bmiFit || ""}}</td>
+        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.obesityAnalysis && weightTestData.obesityAnalysis.bmiOver || ""}}</td>
+        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.obesityAnalysis && weightTestData.obesityAnalysis.bmiNormal || ""}}</td>
     </tr>
     <tr style="border: 0px !important;">
         <th style="border: 0px !important;"><span class="convertToWhite">ខ្លាញ់ក្បាលពោះ (%)</span></th>
         <td style="border: 0px !important;"
-        >{{weightTestData.obesityAnalysis.bodyFatPercentUnder}}</td>
-        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.obesityAnalysis.bodyFatPercentFit}}</td>
-        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.obesityAnalysis.bodyFatPercentOver}}</td>
+        >{{weightTestData.obesityAnalysis && weightTestData.obesityAnalysis.bodyFatPercentUnder || ""}}</td>
+        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.obesityAnalysis && weightTestData.obesityAnalysis.bodyFatPercentFit || ""}}</td>
+        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.obesityAnalysis && weightTestData.obesityAnalysis.bodyFatPercentOver || ""}}</td>
         <td style="border: 0px !important;font-size: 15px !important;"
-        >{{weightTestData.obesityAnalysis.bodyFatPercentNormal}}</td>
+        >{{weightTestData.obesityAnalysis && weightTestData.obesityAnalysis.bodyFatPercentNormal || ""}}</td>
     </tr>
     <tr style="border: 0px !important;">
         <th style="border: 0px !important;"><span class="convertToWhite">ខ្លាញ់ត្រគាក (%)</span></th>
         <td style="border: 0px !important;font-size: 15px !important;"
-        >{{weightTestData.obesityAnalysis.waistHipFatRateUnder}}</td>
-        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.obesityAnalysis.waistHipFatRateFit}}</td>
+        >{{weightTestData.obesityAnalysis && weightTestData.obesityAnalysis.waistHipFatRateUnder || ""}}</td>
+        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.obesityAnalysis && weightTestData.obesityAnalysis.waistHipFatRateFit || ""}}</td>
         <td style="border: 0px !important;font-size: 15px !important;"
-        >{{weightTestData.obesityAnalysis.waistHipFatRateOver}}</td>
+        >{{weightTestData.obesityAnalysis && weightTestData.obesityAnalysis.waistHipFatRateOver || ""}}</td>
         <td style="border: 0px !important;font-size: 15px !important;"
-        >{{weightTestData.obesityAnalysis.waistHipFatRateNormal}}</td>
+        >{{weightTestData.obesityAnalysis && weightTestData.obesityAnalysis.waistHipFatRateNormal || ""}}</td>
     </tr>
     <tr style="border: 0px !important;">
         <th style="border: 0px !important;"><span class="convertToWhite">ជាតិទឹក (%)</span></th>
-        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.obesityAnalysis.waterRateUnder}}</td>
-        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.obesityAnalysis.waterRateFit}}</td>
-        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.obesityAnalysis.waterRateOver}}</td>
-        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.obesityAnalysis.waterRateNormal}}</td>
+        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.obesityAnalysis && weightTestData.obesityAnalysis.waterRateUnder || ""}}</td>
+        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.obesityAnalysis && weightTestData.obesityAnalysis.waterRateFit || ""}}</td>
+        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.obesityAnalysis && weightTestData.obesityAnalysis.waterRateOver || ""}}</td>
+        <td style="border: 0px !important;font-size: 15px !important;">{{weightTestData.obesityAnalysis && weightTestData.obesityAnalysis.waterRateNormal || ""}}</td>
     </tr>
 
 
@@ -770,31 +770,31 @@
 
     <tr style="border: 0px !important;">
         <td style="border: 0px !important;"><span class="convertToWhite">20kHz</span></td>
-        <td style="border: 0px !important;">{{weightTestData.bioimpedance.ra20}}</td>
-        <td style="border: 0px !important;">{{weightTestData.bioimpedance.la20}}</td>
-        <td style="border: 0px !important;">{{weightTestData.bioimpedance.tr20}}</td>
-        <td style="border: 0px !important;">{{weightTestData.bioimpedance.rl20}}</td>
-        <td style="border: 0px !important;">{{weightTestData.bioimpedance.ll20}}</td>
+        <td style="border: 0px !important;">{{weightTestData.bioimpedance && weightTestData.bioimpedance.ra20 || ""}}</td>
+        <td style="border: 0px !important;">{{weightTestData.bioimpedance && weightTestData.bioimpedance.la20 || ""}}</td>
+        <td style="border: 0px !important;">{{weightTestData.bioimpedance && weightTestData.bioimpedance.tr20 || ""}}</td>
+        <td style="border: 0px !important;">{{weightTestData.bioimpedance && weightTestData.bioimpedance.rl20 || ""}}</td>
+        <td style="border: 0px !important;">{{weightTestData.bioimpedance && weightTestData.bioimpedance.ll20 || ""}}</td>
 
     </tr>
 
     <tr style="border: 0px !important;">
         <td style="border: 0px !important;"><span class="convertToWhite">50kHz</span></td>
-        <td style="border: 0px !important;">{{weightTestData.bioimpedance.ra50}}</td>
-        <td style="border: 0px !important;">{{weightTestData.bioimpedance.la50}}</td>
-        <td style="border: 0px !important;">{{weightTestData.bioimpedance.tr50}}</td>
-        <td style="border: 0px !important;">{{weightTestData.bioimpedance.rl50}}</td>
-        <td style="border: 0px !important;">{{weightTestData.bioimpedance.ll50}}</td>
+        <td style="border: 0px !important;">{{weightTestData.bioimpedance && weightTestData.bioimpedance.ra50 || ""}}</td>
+        <td style="border: 0px !important;">{{weightTestData.bioimpedance && weightTestData.bioimpedance.la50 || ""}}</td>
+        <td style="border: 0px !important;">{{weightTestData.bioimpedance && weightTestData.bioimpedance.tr50 || ""}}</td>
+        <td style="border: 0px !important;">{{weightTestData.bioimpedance && weightTestData.bioimpedance.rl50 || ""}}</td>
+        <td style="border: 0px !important;">{{weightTestData.bioimpedance && weightTestData.bioimpedance.ll50 || ""}}</td>
 
     </tr>
 
     <tr style="border: 0px !important;">
         <td style="border: 0px !important;"><span class="convertToWhite">100kHz</span></td>
-         <td style="border: 0px !important;">{{weightTestData.bioimpedance.ra100}}</td>
-        <td style="border: 0px !important;">{{weightTestData.bioimpedance.la100}}</td>
-        <td style="border: 0px !important;">{{weightTestData.bioimpedance.tr100}}</td>
-        <td style="border: 0px !important;">{{weightTestData.bioimpedance.rl100}}</td>
-        <td style="border: 0px !important;">{{weightTestData.bioimpedance.ll100}}</td>
+        <td style="border: 0px !important;">{{weightTestData.bioimpedance && weightTestData.bioimpedance.ra100 || ""}}</td>
+        <td style="border: 0px !important;">{{weightTestData.bioimpedance && weightTestData.bioimpedance.la100 || ""}}</td>
+        <td style="border: 0px !important;">{{weightTestData.bioimpedance && weightTestData.bioimpedance.tr100 || ""}}</td>
+        <td style="border: 0px !important;">{{weightTestData.bioimpedance && weightTestData.bioimpedance.rl100 || ""}}</td>
+        <td style="border: 0px !important;">{{weightTestData.bioimpedance && weightTestData.bioimpedance.ll100 || ""}}</td>
 
     </tr>
   </tbody>

@@ -4,6 +4,9 @@ Meteor.methods({
     giveMeRegisterReport(param, userId) {
         return ClassReport.registerReport(param, userId);
     },
+    giveMeReceivePaymentReport(param, userId) {
+        return ClassReport.receivePaymentReport(param, userId);
+    },
     giveMeRegisterByDateReport(param, userId) {
         return ClassReport.registerByDateReport(param, userId);
     },

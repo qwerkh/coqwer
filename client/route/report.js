@@ -17,6 +17,7 @@ import '../../imports/ui/fixAsset/fixAsset';
 import '../../imports/report/content.html';
 import '../../imports/report/sign-footer.html';
 import '../../imports/report/weightTest/weightTest';
+import '../../imports/report/receivePayment/receivePayment';
 
 
 import {_Main, _Report} from '../lib/_renderLayout';
@@ -36,6 +37,13 @@ reportData.route('/registerReport', {
     name: 'co.registerReport',
     action: function (query, params) {
         _Report("co_registerReport");
+    }
+})
+//ReceivePayment
+reportData.route('/receivePaymentReport', {
+    name: 'co.receivePaymentReport',
+    action: function (query, params) {
+        _Report("co_receivePaymentReport");
     }
 })
 

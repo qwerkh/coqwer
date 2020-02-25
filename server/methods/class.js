@@ -1,5 +1,6 @@
 import {VW_Register} from "../../imports/collection/register";
 import {Co_Register} from "../../imports/collection/register";
+import {Co_Payment} from "../../imports/collection/payment";
 import {Co_Journal} from "../../imports/collection/journal";
 import {Co_Exchange} from "../../imports/collection/exchange";
 import {Co_Company} from "../../imports/collection/company";
@@ -96,6 +97,79 @@ export default class ClassReport {
         data.total = numeral(total).format("0,00.000");
         data.totalNetTotal = numeral(totalNetTotal).format("0,00.000");
         data.totalBalance = numeral(totalBalance).format("0,00.000");
+
+        return data;
+    }
+
+    static receivePaymentReport(param, userId) {
+        let parameter = {};
+        let data = {};
+        let totalPaidAmountUSD = 0;
+        let totalPaidAmountKHR = 0;
+        let totalPaidAmountTHB = 0;
+
+        let CompanyDoc = Co_Company.findOne({});
+        if (param) {
+            parameter = param;
+        }
+        let reList = [];
+        let paymentList = Co_Payment.aggregate(
+            [
+                {$match: parameter},
+                {
+                    $lookup: {
+                        from: "co_patient",
+                        localField: "patientId",
+                        foreignField: "_id",
+                        as: "patientDoc"
+                    }
+                },
+                {$unwind: {path: "$patientDoc", preserveNullAndEmptyArrays: true}},
+
+            ]).map(function (obj) {
+            if (CompanyDoc.asigneUser && CompanyDoc.asigneUser.indexOf(userId) > -1) {
+
+                let returnMoneyUSD = obj.paidAmountUSD > obj.returnAmountUSD ? obj.returnAmountUSD : 0;
+                let returnMoneyKHR = returnMoneyUSD > 0 && obj.paidAmountKHR > obj.returnAmountKHR ? obj.returnAmountKHR : 0;
+                let returnMoneyTHB = returnMoneyKHR > 0 && obj.paidAmountTHB > obj.returnAmountTHB ? obj.returnAmountTHB : 0;
+                totalPaidAmountUSD += obj.paidAmountUSD - returnMoneyUSD;
+                totalPaidAmountKHR += obj.paidAmountKHR - returnMoneyKHR;
+                totalPaidAmountTHB += obj.paidAmountTHB - returnMoneyTHB;
+
+
+                obj.paidAmountUSD = numeral(obj.paidAmountUSD - returnMoneyUSD).format("0,00.000");
+                obj.paidAmountKHR = numeral(obj.paidAmountKHR - returnMoneyKHR).format("0,00.000");
+                obj.paidAmountTHB = numeral(obj.paidAmountTHB - returnMoneyTHB).format("0,00.000");
+                reList.push(obj);
+                return obj;
+            } else {
+                if (obj.netTotal < CompanyDoc.hideIfGreater || 0) {
+
+                    let returnMoneyUSD = obj.paidAmountUSD > obj.returnAmountUSD ? obj.returnAmountUSD : 0;
+                    let returnMoneyKHR = returnMoneyUSD > 0 && obj.paidAmountKHR > obj.returnAmountKHR ? obj.returnAmountKHR : 0;
+                    let returnMoneyTHB = returnMoneyKHR > 0 && obj.paidAmountTHB > obj.returnAmountTHB ? obj.returnAmountTHB : 0;
+                    totalPaidAmountUSD += (obj.paidAmountUSD - returnMoneyUSD) * checkProvision(CompanyDoc, obj.registerDate);
+                    totalPaidAmountKHR += (obj.paidAmountKHR - returnMoneyKHR) * checkProvision(CompanyDoc, obj.registerDate);
+                    totalPaidAmountTHB += (obj.paidAmountTHB - returnMoneyTHB) * checkProvision(CompanyDoc, obj.registerDate);
+
+
+                    obj.paidAmountUSD = numeral((obj.paidAmountUSD - returnMoneyUSD) * checkProvision(CompanyDoc, obj.registerDate) * checkProvision(CompanyDoc, obj.paymentDate)).format("0,00.000");
+                    obj.paidAmountKHR = numeral((obj.paidAmountKHR - returnMoneyKHR) * checkProvision(CompanyDoc, obj.registerDate) * checkProvision(CompanyDoc, obj.paymentDate)).format("0,00.000");
+                    obj.paidAmountTHB = numeral((obj.paidAmountTHB - returnMoneyTHB) * checkProvision(CompanyDoc, obj.registerDate) * checkProvision(CompanyDoc, obj.paymentDate)).format("0,00.000");
+                    reList.push(obj);
+                    return obj;
+
+                }
+            }
+            return {};
+
+        });
+
+
+        data.data = reList;
+        data.totalPaidAmountUSD = numeral(totalPaidAmountUSD).format("0,00.000");
+        data.totalPaidAmountKHR = numeral(totalPaidAmountKHR).format("0,00.000");
+        data.totalPaidAmountTHB = numeral(totalPaidAmountTHB).format("0,00.000");
 
         return data;
     }

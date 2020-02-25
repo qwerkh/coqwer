@@ -20,6 +20,7 @@ registerId = new ReactiveVar();
 
 registerTem = new Meteor.Collection(null);
 balanceUnpaid = new ReactiveVar(0);
+totalBalanceUnpaid = new ReactiveVar(0);
 
 oldStatus = new ReactiveVar("");
 oldBalance = new ReactiveVar("");
@@ -105,6 +106,10 @@ addTmpl.onRendered(function () {
                     }
                 })
             }
+
+            Meteor.call("getUnpaidByPatient", patientId.get(), function (err, result) {
+                totalBalanceUnpaid.set(result);
+            })
         }
 
         if (Session.get("paymentDate")) {
@@ -215,6 +220,9 @@ addTmpl.helpers({
     },
     netTotal() {
         return balanceUnpaid.get();
+    },
+    totalUnpaid() {
+        return numeral(totalBalanceUnpaid.get()).format("0,00.000") + Session.get("baseCurrency");
     },
     result() {
         let result = {};

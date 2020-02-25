@@ -5,7 +5,7 @@
 import {Co_Register} from '../../imports/collection/register'
 
 Meteor.methods({
-    getRegisterByPatient(patientId, registerId){
+    getRegisterByPatient(patientId, registerId) {
         let selector = {};
         if (patientId) {
             selector.patientId = patientId;
@@ -17,7 +17,21 @@ Meteor.methods({
         selector.status = {$in: ["Active", "Partial"]};
         return Co_Register.findOne(selector);
     },
-    getAllRegisterBypatient(parientId){
+    getUnpaidByPatient(patientId) {
+        let selector = {};
+        if (patientId) {
+            selector.patientId = patientId;
+        }
+
+        selector.status = {$in: ["Active", "Partial"]};
+        let unpaid = 0;
+        Co_Register.find(selector).fetch().map((obj) => {
+            unpaid += obj.balance;
+        });
+
+        return unpaid;
+    },
+    getAllRegisterBypatient(parientId) {
         return Co_Register.find({parientId: parientId});
     }
 })

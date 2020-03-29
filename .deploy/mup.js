@@ -10,7 +10,7 @@ module.exports = {
         }
     },
 
-    app: {
+    meteor: {
         // TODO: change app name and path
         name: 'label',
         path: '../.',

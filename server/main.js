@@ -5,7 +5,7 @@ Meteor.startup(() => {
         let superId = Accounts.createUser({
             username: 'super',
             email: 'super@navi.com',
-            password: 'superh2e@123',
+            password: 'supercode@123',
             approved: true
         });
     }

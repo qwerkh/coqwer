@@ -35,7 +35,10 @@ module.exports = {
 
         docker: {
             // change to 'abernix/meteord:base' if your app is using Meteor 1.4 - 1.5
-            image: 'abernix/meteord:node-8.4.0-base',
+            //image: 'abernix/meteord:node-8.4.0-base',
+	    //image: 'zodern/meteor:root',
+            //image: 'abernix/meteord:node-8-base',
+	    image: 'abernix/meteord:node-12.14.0-base',
             //image: 'abernix/meteord:base',
         },
 
@@ -46,7 +49,7 @@ module.exports = {
 
     mongo: {
         port: 27017,
-        version: '3.6',
+        version: '4.2',
         oplog: true,
         servers: {
             one: {}

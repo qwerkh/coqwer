@@ -44,7 +44,9 @@ indexTmpl.helpers({
                 {dobString: {$regex: newSearchName, $options: 'mi'}},
                 {address: {$regex: newSearchName, $options: 'mi'}},
                 {enName: {$regex: newSearchName, $options: 'mi'}},
-                {occupation: {$regex: newSearchName, $options: 'mi'}}
+                {occupation: {$regex: newSearchName, $options: 'mi'}},
+                {code: {$regex: newSearchName, $options: 'mi'}},
+                {info: {$regex: newSearchName, $options: 'mi'}}
             ]
 
         } else if (newSearchOrder && newSearchOrder !== "" && newSearchOrder !== undefined) {

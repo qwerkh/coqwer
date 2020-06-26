@@ -20,7 +20,7 @@ export const PatientTabular = new Tabular.Table({
 
         },
         {data: "khName", title: 'Kh Name'},
-        {data: "nickName", title: 'Nick Name'},
+        {data: "code", title: 'Code'},
         {
             data: "gender", title: 'Gender',
             render: function (val, type, doc) {
@@ -54,6 +54,7 @@ export const PatientTabular = new Tabular.Table({
          }
 
          },*/
+        {data: "info", title: "Information"},
         {data: "address", title: "Address"},
         {data: "occupation", title: "Occupation"},
         {data: "phoneNumber", title: "Phone Number"},

@@ -12,10 +12,6 @@ Co_Patient.schema = new SimpleSchema({
         type: String
     },
 
-    nickName: {
-        type: String,
-        optional: true
-    },
     order: {
         type: String,
         optional: true
@@ -69,6 +65,14 @@ Co_Patient.schema = new SimpleSchema({
         optional: true
     },
     occupation: {
+        type: String,
+        optional: true
+    },
+    code: {
+        type: String,
+        optional: true
+    },
+    info: {
         type: String,
         optional: true
     },

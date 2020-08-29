@@ -36,6 +36,22 @@
                                     <td><b>: {{formatNumber register.balance}}</b>{{getSymbolBaseCurrency}}</td>
 
                                 </tr>
+                                {{#with rawRegister}}
+                                    <tr align="center"
+                                        style="-webkit-print-color-adjust: exact; background-color: lightgrey !important; font-weight: bold; height: 20px;">
+                                        <td> Qty</td>
+                                        <td colspan="2"> Medicine</td>
+                                    </tr>
+                                    {{#each medicines}}
+                                        <tr style="padding: 10px;height: 30px !important;">
+                                            <td align="center" style="padding-right: 5px;">{{qty}}</td>
+                                            <td colspan="2" align="left" style="padding-left: 5px;">
+                                                {{medicineName}}
+                                            </td>
+
+                                        </tr>
+                                    {{/each}}
+                                {{/with}}
                             </table>
                         </div>
                         <div style="top: 10px; margin:10px 0px 10px 0px; padding: 0px 0px 0px 0px; border-width: 1px; border-bottom-width:1px;
@@ -88,6 +104,8 @@
                                     <td><b>អាស័យដ្ឋាន</b></td>
                                     <td>: {{patient.address}}</td>
                                 </tr>
+
+
                             </table>
                             <div style="height: 7px;"></div>
                             <span style="font-weight: bold;font-size: 20px;">Invoice</span>

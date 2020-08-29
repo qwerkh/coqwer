@@ -38,7 +38,6 @@ indexTmpl.helpers({
     },
 
     noMedicine(index, len) {
-        console.log(len);
         return index + 1 + (len || 0);
     },
     getDiscountType(discountType) {
@@ -56,7 +55,7 @@ indexTmpl.helpers({
                 break;
         }
 
-        return discountType == "Percent" ? "%" : currencySymbol;
+        return discountType === "Percent" ? "%" : currencySymbol;
     },
     getSymbolBaseCurrency() {
         let companyDoc = Co_Company.findOne({});
@@ -76,7 +75,7 @@ indexTmpl.helpers({
     },
     checkBaseCurrency() {
         let companyDoc = Co_Company.findOne({});
-        if (companyDoc.baseCurrency == "KHR") {
+        if (companyDoc.baseCurrency === "KHR") {
             return false;
         }
         return true;

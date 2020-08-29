@@ -282,8 +282,8 @@ showPatientDetail.helpers({
 
 showPatientDetail.events({
     'change #file-input': function (evt) {
-        console.log(evt.currentTarget.files[0].name);
-        console.log(evt);
+        /*console.log(evt.currentTarget.files[0].name);
+        console.log(evt);*/
     }
 })
 

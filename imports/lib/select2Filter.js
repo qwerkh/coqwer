@@ -1,10 +1,8 @@
 let modelMatcher = function (params, data) {
     data.parentText = data.parentText || "";
 
-    console.log(data);
     // Always return the object if there is nothing to compare
     if ($.trim(params.term) === '') {
-        console.log(data);
         return data;
     }
 
@@ -63,7 +61,6 @@ let modelMatcher = function (params, data) {
 };
 
 select2Filter = function (jQueryName) {
-    console.log(jQueryName);
     if (jQueryName.length > 0) {
         jQueryName.select2({
             matcher: modelMatcher

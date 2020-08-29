@@ -18,7 +18,9 @@ Meteor.methods({
                 {printId: invoiceId}
             ]
         });
-        register.totalDiscount=register.discountService+register.discountMedicine;
+        let rawRegister={};
+        register.totalDiscount = register.discountService + register.discountMedicine;
+        rawRegister.medicines = register.medicines;
 
         let result = [];
         let resultService = [];
@@ -81,7 +83,7 @@ Meteor.methods({
         register.ageCal = moment(register.registerDate).diff(moment(register.patient.dob).startOf("day").toDate(), "year");
         register.monthCal = parseInt(moment(register.registerDate).diff(moment(register.patient.dob).startOf("day").toDate(), "month")) - parseInt(moment(register.registerDate).diff(moment(register.patient.dob).startOf("day").toDate(), "year")) * 12;
         register._id = register._id.substr(8, 6);
-        return {company: company, register: register, payment: payment};
+        return {company: company, register: register, rawRegister: rawRegister, payment: payment};
     },
     printMini({invoiceId}) {
         let invoice = Invoices.aggregate([

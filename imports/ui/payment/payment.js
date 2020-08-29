@@ -78,7 +78,6 @@ indexTmpl.helpers({
             return newSelector;
         }
 
-        console.log(newSelector)
         return newSelector;
     }
 

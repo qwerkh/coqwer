@@ -39,6 +39,23 @@
                                         <td><b>: {{formatNumber register.balance}}</b>{{getSymbolBaseCurrency}}</td>
 
                                     </tr>
+
+                                    {{#with rawRegister}}
+                                        <tr align="center"
+                                            style="-webkit-print-color-adjust: exact; background-color: lightgrey !important; font-weight: bold; height: 20px;">
+                                            <td> Qty</td>
+                                            <td> Medicine</td>
+                                        </tr>
+                                        {{#each medicines}}
+                                            <tr style="padding: 10px;height: 30px !important;">
+                                                <td align="center" style="padding-right: 5px;">{{qty}}</td>
+                                                <td align="left" style="padding-left: 5px;">
+                                                    {{medicineName}}
+                                                </td>
+
+                                            </tr>
+                                        {{/each}}
+                                    {{/with}}
                                 </table>
                             </div>
                             <div style="top: 10px; margin:10px 0px 10px 0px; padding: 0px 0px 0px 0px; border-width: 1px; border-bottom-width:1px;
@@ -228,6 +245,24 @@
                                         <td><b>: {{formatNumber register.balance}}</b>{{getSymbolBaseCurrency}}</td>
 
                                     </tr>
+                                    {{#with rawRegister}}
+                                        <tr align="center"
+                                            style="-webkit-print-color-adjust: exact; background-color: lightgrey !important; font-weight: bold; height: 20px;">
+                                            <td>N<sup>o</sup>​</td>
+                                            <td colspan="2"> Medicine</td>
+                                            <td> Qty</td>
+                                        </tr>
+                                        {{#each medicines}}
+                                            <tr style="padding: 10px;height: 30px !important;">
+                                                <td align="center">{{no @index}}</td>
+                                                <td colspan="2" align="left" style="padding-left: 5px;">
+                                                    {{medicineName}}
+                                                </td>
+
+                                                <td align="right" style="padding-right: 5px;">{{qty}}</td>
+                                            </tr>
+                                        {{/each}}
+                                    {{/with}}
                                 </table>
                             </div>
                             <div style="top: 10px; margin:10px 0px 10px 0px; padding: 0px 0px 0px 0px; border-width: 1px; border-bottom-width:1px;

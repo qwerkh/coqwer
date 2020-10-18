@@ -12,6 +12,10 @@ Co_Register.schema = new SimpleSchema({
              type: 'select'
          }*/
     },
+    code: {
+        type: String,
+        optional: true
+    },
     patientName: {
         type: String,
         optional: true
@@ -69,6 +73,10 @@ Co_Register.schema = new SimpleSchema({
     },
     'services.$.amount': {
         type: Number,
+        decimal: true
+    },
+    'services.$.code': {
+        type: String,
         decimal: true
     },
 

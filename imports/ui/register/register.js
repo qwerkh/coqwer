@@ -67,7 +67,8 @@ indexTmpl.helpers({
                 {patientName: {$regex: newSearchName, $options: 'mi'}},
                 {voucherId: {$regex: newSearchName, $options: 'mi'}},
                 {registerDate: {$regex: newSearchName, $options: 'mi'}},
-                {patientId: {$regex: newSearchName, $options: 'mi'}}
+                {patientId: {$regex: newSearchName, $options: 'mi'}},
+                {code: {$regex: newSearchName, $options: 'mi'}}
             ]
 
         } else {
@@ -78,7 +79,7 @@ indexTmpl.helpers({
             let companyDoc = Co_Company.findOne({});
             if (companyDoc.asigneUser && companyDoc.asigneUser.indexOf(userId) > -1) {
             } else {
-                newSelector.netTotal = {$lt: companyDoc.hideIfGreater};
+                 newSelector.$or = [{netTotal: {$lt: companyDoc.hideIfGreater}}, {createdAt: {$gte: moment().startOf("days").toDate()}}];
             }
 
         }
@@ -563,7 +564,8 @@ AutoForm.hooks({
                         machinId: obj.machinId,
                         qty: parseFloat(obj.qty),
                         price: obj.price,
-                        amount: obj.amount
+                        amount: obj.amount,
+                        code: obj.code || "",
                     })
                 });
                 medicineTem.find().fetch().forEach(function (obj) {
@@ -602,13 +604,11 @@ AutoForm.hooks({
                 FlowRouter.go('/co-data/register/printSummary?inv=' + id);
 
 
-            }
-            else if (print == "sum") {
+            } else if (print == "sum") {
                 FlowRouter.go('/co-data/register/printSum?inv=' + id);
 
 
-            }
-            else {
+            } else {
                 alertify.success('Successfully');
                 FlowRouter.go(`/co-data/patient`);
                 FlowRouter.query.unset();
@@ -639,7 +639,8 @@ AutoForm.hooks({
                         machinId: obj.machinId,
                         qty: parseFloat(obj.qty),
                         price: obj.price,
-                        amount: obj.amount
+                        amount: obj.amount,
+                        code: obj.code || "",
                     })
                 });
                 medicineTem.find().fetch().forEach(function (obj) {
@@ -680,8 +681,7 @@ AutoForm.hooks({
             } else if (print == "summary") {
                 FlowRouter.go('/co-data/register/printSummary?inv=' + id);
 
-            }
-            else if (print == "sum") {
+            } else if (print == "sum") {
                 FlowRouter.go('/co-data/register/printSum?inv=' + id);
 
             } else {

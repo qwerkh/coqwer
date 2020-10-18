@@ -79,7 +79,8 @@ registerServiceTmpl.events({
                             price: result.price,
                             qty: 1,
                             machinId: result.machinId,
-                            amount: result.price
+                            amount: result.price,
+                            code: result.code || ""
                         })
                     }
                     serviceId = "";

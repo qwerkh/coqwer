@@ -4,6 +4,7 @@ import {Co_Register} from '../../imports/collection/register';
 import {Co_Payment} from '../../imports/collection/payment';
 import moment from "moment";
 import {Co_Patient} from "../../imports/collection/patient";
+import {Co_Counter} from "../../imports/collection/counter";
 
 
 Co_Register.before.insert(function (userId, doc) {
@@ -14,6 +15,23 @@ Co_Register.before.insert(function (userId, doc) {
 
     let prefix = doc.rolesArea + moment().format("YYYY");
     doc._id = GeneralFunction.generatePrefixId(Co_Register, prefix, 6);
+
+    let year = moment().format("YY");
+    let codePrefix = "";
+    let i = 0;
+    doc.services.forEach((d) => {
+        if (d && d.code && d.code !== "" && d.code !== null && i === 0) {
+            codePrefix = d.code;
+            codePrefix += year;
+            doc.code = generateCodePrefix({
+                prefix: codePrefix,
+                collectionName: "co_register",
+                length: 4,
+                groupType: d.code
+            });
+            i++;
+        }
+    })
 
 })
 
@@ -96,3 +114,23 @@ Co_Payment.before.update(function (userId, doc, fieldNames, modifier, options) {
     modifier.$set.updatedAt = moment().toDate();
     modifier.$set.updatedBy = userId;
 })
+
+
+let generateCodePrefix = ({prefix, collectionName, length, groupType}) => {
+    let doc = Co_Counter.findOne({type: collectionName + "", groupType: groupType});
+    let padCount = pad(1, length);
+    if (!!doc) {
+        Co_Counter.update({type: collectionName + "", groupType: groupType}, {$inc: {count: 1}});
+        padCount = pad(doc.count + 1, length);
+    } else {
+        Co_Counter.insert({type: collectionName + "", count: 1, groupType: groupType});
+    }
+    return !!prefix ? prefix + padCount : padCount;
+
+}
+
+
+function pad(str, max) {
+    str = str.toString();
+    return str.length < max ? pad("0" + str, max) : str;
+}

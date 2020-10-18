@@ -42,6 +42,7 @@ if (false) {
                 $project: {
                     "name": 1,
                     "price": 1,
+                    "code": 1,
                     "retailPrice": 1,
                     "description": 1,
                     "status": 1,

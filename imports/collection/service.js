@@ -9,6 +9,10 @@ Co_Service.schema = new SimpleSchema({
         type: String,
         optional: true
     },
+    code: {
+        type: String,
+        optional: true
+    },
     price: {
         type: Number,
         decimal: true,

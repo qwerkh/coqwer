@@ -15,8 +15,8 @@ let indexTmpl = Template.co_patient,
     showPatientDetail = Template.co_patientDetail;
 
 
-let patientDoc = new ReactiveObj();
-let registerDoc = new ReactiveVar([]);
+patientDoc = new ReactiveObj();
+registerDoc = new ReactiveVar([]);
 let customSearch = new ReactiveVar();
 let customSearchOrder = new ReactiveVar();
 indexTmpl.helpers({

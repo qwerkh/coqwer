@@ -30,8 +30,6 @@ export const RegisterTabular = new Tabular.Table({
             }
         },
         {
-            data: "code", title: "Code"
-        }, {
             data: "patientName", title: "Name"
         }, {
             data: "voucherId", title: "Voucher"

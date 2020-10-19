@@ -2,17 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="37b05a99-1bf8-426c-a9a5-9f4248831879" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/imports/collection/counter.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imports/collection/patientCode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imports/ui/co_patientCode/co_patientCode.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imports/ui/co_patientCode/co_patientCode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imports/vue/ui/co_patientCode.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/methods/co_patientCode.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/both/tabular/register.js" beforeDir="false" afterPath="$PROJECT_DIR$/both/tabular/register.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/both/tabular/service.js" beforeDir="false" afterPath="$PROJECT_DIR$/both/tabular/service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/layout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/route/data.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/route/data.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imports/collection/patient.js" beforeDir="false" afterPath="$PROJECT_DIR$/imports/collection/patient.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/imports/collection/register.js" beforeDir="false" afterPath="$PROJECT_DIR$/imports/collection/register.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imports/collection/service.js" beforeDir="false" afterPath="$PROJECT_DIR$/imports/collection/service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imports/ui/patient/patient.js" beforeDir="false" afterPath="$PROJECT_DIR$/imports/ui/patient/patient.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/imports/ui/register/register.js" beforeDir="false" afterPath="$PROJECT_DIR$/imports/ui/register/register.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imports/ui/register/registerDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/imports/ui/register/registerDetail.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imports/ui/service/service.html" beforeDir="false" afterPath="$PROJECT_DIR$/imports/ui/service/service.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/collectionHook/register.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/collectionHook/register.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/methods/view.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/methods/view.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/publication.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/publication.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,51 +34,6 @@
         <option value="CSS File" />
       </list>
     </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>co_company</find>
-      <find>publi</find>
-      <find>custo</find>
-      <find>patientDoc</find>
-      <find>subs</find>
-      <find>customSearch</find>
-      <find>dataExist</find>
-      <find>computed</find>
-      <find>serviceOption</find>
-      <find>medicineOption</find>
-      <find>event</find>
-      <find>im</find>
-      <find>barc</find>
-      <find>area</find>
-      <find>FlowRouter.get</find>
-      <find>element</find>
-      <find>Flow</find>
-      <find>waterC</find>
-      <find>word</find>
-      <find>height:</find>
-      <find>height</find>
-      <find>consol</find>
-      <find>replace(&quot; &quot;</find>
-      <find>bodyFatPercentUnder</find>
-      <find>Reg</find>
-      <find>status</find>
-      <find>superh2e</find>
-      <find>cons</find>
-      <find>console.log</find>
-      <find>conso</find>
-    </findStrings>
-    <replaceStrings>
-      <replace>click button.edit</replace>
-    </replaceStrings>
-    <dirStrings>
-      <dir>$PROJECT_DIR$/server</dir>
-      <dir>$PROJECT_DIR$/imports/ui</dir>
-      <dir>$PROJECT_DIR$/imports</dir>
-      <dir>$PROJECT_DIR$/client</dir>
-      <dir>$PROJECT_DIR$/both</dir>
-      <dir>$PROJECT_DIR$</dir>
-    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -97,7 +56,7 @@
     <property name="js.meteor.library.cached" value="$PROJECT_DIR$/.meteor" />
     <property name="js.meteor.library.was.enabled" value="true" />
     <property name="js.meteor.project" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/imports/collection" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../spa" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path" value="/usr/bin/node" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -107,11 +66,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/imports/collection" />
+      <recent name="$PROJECT_DIR$/imports/ui" />
+      <recent name="$PROJECT_DIR$/server/methods" />
       <recent name="$PROJECT_DIR$/imports/vue/ui" />
-      <recent name="$PROJECT_DIR$/imports/report" />
-      <recent name="$PROJECT_DIR$/public" />
-      <recent name="$PROJECT_DIR$/server/methods/report" />
+      <recent name="$PROJECT_DIR$/both/tabular" />
+      <recent name="$PROJECT_DIR$/imports/collection" />
     </key>
   </component>
   <component name="RunManager">
@@ -469,7 +428,9 @@
       <workItem from="1593182617972" duration="1074000" />
       <workItem from="1598665930794" duration="8151000" />
       <workItem from="1598708125006" duration="145000" />
-      <workItem from="1602989647235" duration="4190000" />
+      <workItem from="1602989647235" duration="4274000" />
+      <workItem from="1603025821110" duration="6758000" />
+      <workItem from="1603072863658" duration="4116000" />
     </task>
     <servers />
   </component>
@@ -485,14 +446,15 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
-  </component>
   <component name="WindowStateProjectService">
-    <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1602989706352">
+    <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1603076668838">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1602989706352" />
+    <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1603076668838" />
+    <state x="684" y="291" width="618" height="522" key="find.popup" timestamp="1603075048377">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="684" y="291" width="618" height="522" key="find.popup/67.27.1853.1053@67.27.1853.1053" timestamp="1603075048377" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

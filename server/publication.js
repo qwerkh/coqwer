@@ -16,6 +16,19 @@ import {Co_Journal} from '../imports/collection/journal';
 import {Co_FixAsset} from '../imports/collection/fixAsset';
 import {Co_EndOfProcess} from '../imports/collection/endOfProcess';
 import {Co_MapFixAsset} from '../imports/collection/mapFixAsset';
+import {Co_PatientCodeReact} from '../imports/collection/patientCode';
+import {Meteor} from "meteor/meteor";
+
+
+Meteor.publish('Co_PatientCodeReact', function () {
+    if (this.userId) {
+        return Co_PatientCodeReact.find({});
+    }
+    return this.ready();
+
+});
+
+
 
 Meteor.publish('co_patientById', function co_patientById({id}) {
     if (this.userId) {

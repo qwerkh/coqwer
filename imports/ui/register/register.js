@@ -79,7 +79,7 @@ indexTmpl.helpers({
             let companyDoc = Co_Company.findOne({});
             if (companyDoc.asigneUser && companyDoc.asigneUser.indexOf(userId) > -1) {
             } else {
-                 newSelector.$or = [{netTotal: {$lt: companyDoc.hideIfGreater}}, {createdAt: {$gte: moment().startOf("days").toDate()}}];
+                newSelector.netTotal = {$lt: companyDoc.hideIfGreater};
             }
 
         }

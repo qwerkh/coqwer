@@ -7,6 +7,7 @@ import '../../imports/ui/register/register';
 import '../../imports/ui/payment/payment';
 import '../../imports/ui/journal/journal';
 import '../../imports/ui/fixAsset/fixAsset';
+import '../../imports/ui/co_patientCode/co_patientCode';
 import '../../imports/ui/print/a4'
 import '../../imports/ui/print/a4Summary'
 import '../../imports/ui/print/a4Sum'
@@ -27,6 +28,13 @@ coData.route('/patient', {
     name: 'co.patient',
     action: function (query, params) {
         _Main("co_patient");
+    }
+
+})
+coData.route('/patientCode', {
+    name: 'co.patientCode',
+    action: function (query, params) {
+        _Main("co_patientCode");
     }
 
 })

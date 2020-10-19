@@ -12,10 +12,7 @@ Co_Register.schema = new SimpleSchema({
              type: 'select'
          }*/
     },
-    code: {
-        type: String,
-        optional: true
-    },
+
     patientName: {
         type: String,
         optional: true
@@ -320,6 +317,46 @@ Co_Register.schema = new SimpleSchema({
                 // settings: // summernote options goes here
             }*/
 
+        }
+    },
+    createdAt: {
+        type: Date,
+        optional: true,
+
+        autoValue() {
+            if (this.isInsert) {
+                return moment().toDate();
+            }
+        }
+    },
+    updatedAt: {
+        type: Date,
+        optional: true,
+
+        autoValue() {
+            if (this.isUpdate) {
+                return moment().toDate();
+            }
+        }
+    },
+    createdUser: {
+        type: String,
+        optional: true,
+
+        autoValue() {
+            if (this.isInsert) {
+                return Meteor.userId();
+            }
+        }
+    },
+    updatedUser: {
+        type: String,
+        optional: true,
+
+        autoValue() {
+            if (this.isUpdate) {
+                return Meteor.userId();
+            }
         }
     }
 

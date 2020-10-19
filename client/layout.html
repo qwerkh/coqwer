@@ -139,6 +139,8 @@
                             <div class="text"><i class="cogs icon"></i> Setting</div>
                             <i class="dropdown icon"></i>
                             <div class="menu">
+                                <a href="{{pathFor 'co.patientCode'}}" class="item"><i class="user icon"></i>
+                                    Patient Code</a>
                                 <a href="{{pathFor 'co.machin'}}" class="item"><i class="camera retro icon"></i> Machin</a>
                                 <a href="{{pathFor 'co.medicine'}}" class="item"><i class="add square icon"></i>
                                     Medicine</a>
@@ -236,8 +238,9 @@
                                         class="fa fa-file-text-o"
                                         aria-hidden="true"></i>
                                     Register Medicine</a>
-                                <a href="{{pathFor 'co.receivePaymentReport'}}" class="item"><i class="fa fa-file-text-o"
-                                                                                          aria-hidden="true"></i>
+                                <a href="{{pathFor 'co.receivePaymentReport'}}" class="item"><i
+                                        class="fa fa-file-text-o"
+                                        aria-hidden="true"></i>
                                     Receive Payment</a>
                                 <a href="{{pathFor 'co.unPaidByCustomerReport'}}" class="item"><i
                                         class="fa fa-file-text-o"
@@ -261,9 +264,9 @@
                             </div>
                         </div>
                     {{/if}}
-                    {{#if isInRole "super,admin,​​eop"  "co"}}
+                    {{#if isInRole "super,admin,eop"  "co"}}
                         <div class="ui dropdown item">
-                            <div class="text"><i class="compress icon"></i> ​​EOP</div>
+                            <div class="text"><i class="compress icon"></i> EOP</div>
                             <i class="dropdown icon"></i>
                             <div class="menu">
                                 <a href="{{pathFor 'co.exchange'}}" class="item"><i class="arrow circle right icon"></i>
@@ -301,7 +304,7 @@
                     <div class="ten wide column">
 
                         <div class="item">
-                            © 2017 Develope By <i class="heart icon"></i> by H2E Tech
+                            © 2017 Develope By <i class="heart icon"></i> by Zib Solution
                         </div>
 
                     </div>

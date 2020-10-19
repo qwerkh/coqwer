@@ -5,6 +5,7 @@ import {Co_Payment} from '../../imports/collection/payment';
 import moment from "moment";
 import {Co_Patient} from "../../imports/collection/patient";
 import {Co_Counter} from "../../imports/collection/counter";
+import {Co_PatientCode} from "../../imports/collection/patientCode";
 
 
 Co_Register.before.insert(function (userId, doc) {
@@ -20,16 +21,31 @@ Co_Register.before.insert(function (userId, doc) {
     let codePrefix = "";
     let i = 0;
     doc.services.forEach((d) => {
-        if (d && d.code && d.code !== "" && d.code !== null && i === 0) {
-            codePrefix = d.code;
-            codePrefix += year;
-            doc.code = generateCodePrefix({
-                prefix: codePrefix,
-                collectionName: "co_register",
-                length: 4,
-                groupType: d.code
-            });
-            i++;
+        if (d && d.code && d.code !== "" && d.code !== null) {
+            let patientCodeDoc = Co_PatientCode.findOne({patientId: doc.patientId, type: d.code})
+            if (patientCodeDoc && patientCodeDoc !== undefined) {
+
+            } else {
+                let newPatientDoc = {};
+                newPatientDoc.patientId = doc.patientId;
+                newPatientDoc.rolesArea = doc.rolesArea;
+                newPatientDoc.type = d.code;
+                newPatientDoc.lastDate = moment(doc.registerDate).format("DD/MM/YYYY");
+                codePrefix = d.code;
+                codePrefix += year;
+                newPatientDoc.code = generateCodePrefix({
+                    prefix: codePrefix,
+                    collectionName: "co_register",
+                    length: 4,
+                    groupType: d.code
+                });
+
+                Meteor.call("insertPatientCode", newPatientDoc, (err, r) => {
+                    if (err) {
+                        console.log(err.message);
+                    }
+                })
+            }
         }
     })
 

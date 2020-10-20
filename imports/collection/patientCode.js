@@ -1,6 +1,10 @@
 export const Co_PatientCode = new Meteor.Collection("co_patientCode");
 
 Co_PatientCode.schema = new SimpleSchema({
+    registerId: {
+        type: String,
+        optional: true
+    },
     code: {
         type: String
     },

@@ -28,6 +28,7 @@ Co_Register.before.insert(function (userId, doc) {
             } else {
                 let newPatientDoc = {};
                 newPatientDoc.patientId = doc.patientId;
+                newPatientDoc.registerId = doc._id;
                 newPatientDoc.rolesArea = doc.rolesArea;
                 newPatientDoc.type = d.code;
                 newPatientDoc.lastDate = moment(doc.registerDate).format("DD/MM/YYYY");
@@ -122,6 +123,7 @@ Co_Register.after.update(function (userId, doc) {
 
 Co_Register.after.remove(function (userId, doc) {
     Co_Payment.direct.remove({registerId: doc._id});
+    Co_PatientCode.direct.remove({registerId: doc._id});
 })
 
 

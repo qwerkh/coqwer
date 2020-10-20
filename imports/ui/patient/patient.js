@@ -16,7 +16,7 @@ let indexTmpl = Template.co_patient,
 
 
 patientDoc = new ReactiveObj();
-registerDoc = new ReactiveVar([]);
+registerDocInpatient = new ReactiveVar([]);
 let customSearch = new ReactiveVar();
 let customSearchOrder = new ReactiveVar();
 indexTmpl.helpers({
@@ -128,10 +128,10 @@ indexTmpl.events({
         var dataTable = $(event.target).closest('table').DataTable();
         var rowData = dataTable.row(event.currentTarget).data();
         patientDoc.set("patient", {});
-        registerDoc.set([]);
+        registerDocInpatient.set([]);
         /*Meteor.call("co_registerByPatientId", rowData._id, (err, result) => {
             console.log(result);
-            registerDoc.set(result);
+            registerDocInpatient.set(result);
         });
 
         Meteor.call("co_patientById", rowData._id, (err, result) => {
@@ -143,7 +143,7 @@ indexTmpl.events({
         Meteor.call("co_getPatientAndRegisterByPatientId", rowData._id, Meteor.userId(), (err, result) => {
             if (result) {
                 patientDoc.set("patient", result.patientDoc);
-                registerDoc.set(result.registerList);
+                registerDocInpatient.set(result.registerList);
                 FlowRouter.go(`/co-data/patient/${rowData._id}/showDetail`);
             }
         });
@@ -269,7 +269,7 @@ showPatientDetail.helpers({
     registerList() {
         //let id = FlowRouter.getParam('patientId');
         //let data = Co_Register.find({patientId: id}, {sort: {registerDate: -1}}).fetch();
-        let data = registerDoc.get();
+        let data = registerDocInpatient.get();
         data.forEach(function (obj) {
             obj.serviceDiscount = obj.totalService - obj.netTotalService;
             obj.medicineDiscount = obj.totalMedicine - obj.netTotalMedicine;

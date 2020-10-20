@@ -211,11 +211,11 @@ export default {
     }, 300),
     goToDetail(doc) {
       patientDoc.set("patient", {});
-      registerDoc.set([]);
+      registerDocInpatient.set([]);
       Meteor.call("co_getPatientAndRegisterByPatientId", doc.patientDoc._id, Meteor.userId(), (err, result) => {
         if (result) {
           patientDoc.set("patient", result.patientDoc);
-          registerDoc.set(result.registerList);
+          registerDocInpatient.set(result.registerList);
           FlowRouter.go(`/co-data/patient/${doc.patientDoc._id}/showDetail`);
         }
       });

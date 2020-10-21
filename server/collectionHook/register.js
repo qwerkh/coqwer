@@ -118,6 +118,39 @@ Co_Register.after.update(function (userId, doc) {
         }
     }
 
+    let year = moment().format("YY");
+    let codePrefix = "";
+    let i = 0;
+    doc.services.forEach((d) => {
+        if (d && d.code && d.code !== "" && d.code !== null) {
+            let patientCodeDoc = Co_PatientCode.findOne({patientId: doc.patientId, type: d.code})
+            if (patientCodeDoc && patientCodeDoc !== undefined) {
+
+            } else {
+                let newPatientDoc = {};
+                newPatientDoc.patientId = doc.patientId;
+                newPatientDoc.registerId = doc._id;
+                newPatientDoc.rolesArea = doc.rolesArea;
+                newPatientDoc.type = d.code;
+                newPatientDoc.lastDate = moment(doc.registerDate).format("DD/MM/YYYY");
+                codePrefix = d.code;
+                codePrefix += year;
+                newPatientDoc.code = generateCodePrefix({
+                    prefix: codePrefix,
+                    collectionName: "co_register",
+                    length: 4,
+                    groupType: d.code
+                });
+
+                Meteor.call("insertPatientCode", newPatientDoc, (err, r) => {
+                    if (err) {
+                        console.log(err.message);
+                    }
+                })
+            }
+        }
+    })
+
 
 })
 
@@ -131,6 +164,8 @@ Co_Payment.before.update(function (userId, doc, fieldNames, modifier, options) {
 
     modifier.$set.updatedAt = moment().toDate();
     modifier.$set.updatedBy = userId;
+
+
 })
 
 

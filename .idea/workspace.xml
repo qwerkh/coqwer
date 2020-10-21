@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="37b05a99-1bf8-426c-a9a5-9f4248831879" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imports/collection/patientCode.js" beforeDir="false" afterPath="$PROJECT_DIR$/imports/collection/patientCode.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/collectionHook/register.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/collectionHook/register.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -421,7 +420,9 @@
       <workItem from="1603072863658" duration="4159000" />
       <workItem from="1603156729629" duration="852000" />
       <workItem from="1603157678944" duration="12000" />
-      <workItem from="1603205709026" duration="192000" />
+      <workItem from="1603205709026" duration="235000" />
+      <workItem from="1603245973498" duration="61000" />
+      <workItem from="1603292866224" duration="243000" />
     </task>
     <servers />
   </component>
@@ -438,10 +439,10 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1603157688639">
+    <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1603246032659">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1603157688639" />
+    <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1603246032659" />
     <state x="684" y="291" width="618" height="522" key="find.popup" timestamp="1603075048377">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>

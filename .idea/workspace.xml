@@ -3,7 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="37b05a99-1bf8-426c-a9a5-9f4248831879" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/collectionHook/register.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/collectionHook/register.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/lib/registerHelper.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/registerHelper.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imports/ui/print/a4.html" beforeDir="false" afterPath="$PROJECT_DIR$/imports/ui/print/a4.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imports/ui/print/a4Sum.html" beforeDir="false" afterPath="$PROJECT_DIR$/imports/ui/print/a4Sum.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imports/ui/print/a4Summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/imports/ui/print/a4Summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imports/ui/print/mini.html" beforeDir="false" afterPath="$PROJECT_DIR$/imports/ui/print/mini.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +47,7 @@
     <property name="js.meteor.library.cached" value="$PROJECT_DIR$/.meteor" />
     <property name="js.meteor.library.was.enabled" value="true" />
     <property name="js.meteor.project" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../realestate-ui" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path" value="/usr/bin/node" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -422,7 +426,9 @@
       <workItem from="1603157678944" duration="12000" />
       <workItem from="1603205709026" duration="235000" />
       <workItem from="1603245973498" duration="61000" />
-      <workItem from="1603292866224" duration="243000" />
+      <workItem from="1603292866224" duration="563000" />
+      <workItem from="1603333471968" duration="12000" />
+      <workItem from="1604763797493" duration="2463000" />
     </task>
     <servers />
   </component>
@@ -439,14 +445,14 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1603246032659">
+    <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1604765973091">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1603246032659" />
-    <state x="684" y="291" width="618" height="522" key="find.popup" timestamp="1603075048377">
+    <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1604765973091" />
+    <state x="684" y="291" width="618" height="522" key="find.popup" timestamp="1604765727298">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="684" y="291" width="618" height="522" key="find.popup/67.27.1853.1053@67.27.1853.1053" timestamp="1603075048377" />
+    <state x="684" y="291" width="618" height="522" key="find.popup/67.27.1853.1053@67.27.1853.1053" timestamp="1604765727298" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

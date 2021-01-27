@@ -4,10 +4,6 @@
     <list default="true" id="37b05a99-1bf8-426c-a9a5-9f4248831879" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/lib/registerHelper.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/registerHelper.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imports/ui/print/a4.html" beforeDir="false" afterPath="$PROJECT_DIR$/imports/ui/print/a4.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imports/ui/print/a4Sum.html" beforeDir="false" afterPath="$PROJECT_DIR$/imports/ui/print/a4Sum.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imports/ui/print/a4Summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/imports/ui/print/a4Summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imports/ui/print/mini.html" beforeDir="false" afterPath="$PROJECT_DIR$/imports/ui/print/mini.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,13 +37,14 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="HbShouldOpenHtmlAsHb" value="enabled" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js-jscs-nodeInterpreter" value="/usr/bin/node" />
     <property name="js.eslint.eslintPackage" value="" />
     <property name="js.meteor.library.cached" value="$PROJECT_DIR$/.meteor" />
     <property name="js.meteor.library.was.enabled" value="true" />
     <property name="js.meteor.project" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../realestate-ui" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path" value="/usr/bin/node" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -428,7 +425,8 @@
       <workItem from="1603245973498" duration="61000" />
       <workItem from="1603292866224" duration="563000" />
       <workItem from="1603333471968" duration="12000" />
-      <workItem from="1604763797493" duration="2463000" />
+      <workItem from="1604763797493" duration="2563000" />
+      <workItem from="1611746845220" duration="315000" />
     </task>
     <servers />
   </component>

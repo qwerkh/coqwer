@@ -14,6 +14,7 @@ Template.registerHelper('formatNumber', (dataNumber) => {
 
 Template.registerHelper('seperateNumber', (val) => {
     if (val !== "" && val !== undefined && val !== 0 && val !== '0' && val !== null) {
+        val = math.round(val * 100) / 100;
         val = numeral(val).value() + "";
         let newVal = val.split(".");
         return newVal[0].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + (!!newVal[1] ? "." + newVal[1] : "");

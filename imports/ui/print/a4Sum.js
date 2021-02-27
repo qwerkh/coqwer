@@ -56,7 +56,7 @@ indexTmpl.helpers({
                 break;
         }
 
-        return discountType == "Percent" ? "%" : currencySymbol;
+        return (discountType == "Percent" || discountType==="P") ? "%" : currencySymbol;
     },
     getSymbolBaseCurrency() {
         let companyDoc = Co_Company.findOne({});

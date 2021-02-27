@@ -2,8 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="37b05a99-1bf8-426c-a9a5-9f4248831879" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.deploy/mup.js" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy/mup.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/lib/registerHelper.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/registerHelper.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imports/ui/print/a4.html" beforeDir="false" afterPath="$PROJECT_DIR$/imports/ui/print/a4.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imports/ui/print/a4.js" beforeDir="false" afterPath="$PROJECT_DIR$/imports/ui/print/a4.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imports/ui/print/a4Sum.html" beforeDir="false" afterPath="$PROJECT_DIR$/imports/ui/print/a4Sum.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imports/ui/print/a4Sum.js" beforeDir="false" afterPath="$PROJECT_DIR$/imports/ui/print/a4Sum.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imports/ui/print/a4Summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/imports/ui/print/a4Summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imports/ui/print/a4Summary.js" beforeDir="false" afterPath="$PROJECT_DIR$/imports/ui/print/a4Summary.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/methods/print/a4.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/methods/print/a4.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -426,7 +433,10 @@
       <workItem from="1603292866224" duration="563000" />
       <workItem from="1603333471968" duration="12000" />
       <workItem from="1604763797493" duration="2563000" />
-      <workItem from="1611746845220" duration="315000" />
+      <workItem from="1611746845220" duration="929000" />
+      <workItem from="1611756128876" duration="21000" />
+      <workItem from="1614352076998" duration="1775000" />
+      <workItem from="1614390414560" duration="5283000" />
     </task>
     <servers />
   </component>
@@ -441,16 +451,6 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1604765973091">
-      <screen x="67" y="27" width="1853" height="1053" />
-    </state>
-    <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1604765973091" />
-    <state x="684" y="291" width="618" height="522" key="find.popup" timestamp="1604765727298">
-      <screen x="67" y="27" width="1853" height="1053" />
-    </state>
-    <state x="684" y="291" width="618" height="522" key="find.popup/67.27.1853.1053@67.27.1853.1053" timestamp="1604765727298" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

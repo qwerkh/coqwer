@@ -6,6 +6,7 @@ import 'lodash';
 import '../imports/ui/area/area';
 import '../imports/ui/preloader/preloader';
 import '../imports/ui/action/action';
+import '../imports/firebase/config';
 import {sAlert} from 'meteor/juliancwirko:s-alert';
 import moment from 'moment';
 

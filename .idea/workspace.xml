@@ -2,15 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="37b05a99-1bf8-426c-a9a5-9f4248831879" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.deploy/mup.js" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy/mup.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imports/firebase/config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imports/ui/UploadPatientImage/uploadPatientImage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imports/ui/UploadPatientImage/uploadPatientImage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imports/vue/ui/patientImage.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/clicktoupload.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/no-image-icon.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imports/ui/print/a4.html" beforeDir="false" afterPath="$PROJECT_DIR$/imports/ui/print/a4.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imports/ui/print/a4.js" beforeDir="false" afterPath="$PROJECT_DIR$/imports/ui/print/a4.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imports/ui/print/a4Sum.html" beforeDir="false" afterPath="$PROJECT_DIR$/imports/ui/print/a4Sum.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imports/ui/print/a4Sum.js" beforeDir="false" afterPath="$PROJECT_DIR$/imports/ui/print/a4Sum.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imports/ui/print/a4Summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/imports/ui/print/a4Summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imports/ui/print/a4Summary.js" beforeDir="false" afterPath="$PROJECT_DIR$/imports/ui/print/a4Summary.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/methods/print/a4.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/methods/print/a4.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/layout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/layout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/route/data.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/route/data.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imports/collection/patient.js" beforeDir="false" afterPath="$PROJECT_DIR$/imports/collection/patient.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imports/ui/action/action.html" beforeDir="false" afterPath="$PROJECT_DIR$/imports/ui/action/action.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imports/ui/patient/patient.html" beforeDir="false" afterPath="$PROJECT_DIR$/imports/ui/patient/patient.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imports/ui/patient/patient.js" beforeDir="false" afterPath="$PROJECT_DIR$/imports/ui/patient/patient.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imports/vue/ui/co_patientCode.vue" beforeDir="false" afterPath="$PROJECT_DIR$/imports/vue/ui/co_patientCode.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/methods/co_patientCode.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/methods/co_patientCode.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +60,7 @@
     <property name="js.meteor.library.cached" value="$PROJECT_DIR$/.meteor" />
     <property name="js.meteor.library.was.enabled" value="true" />
     <property name="js.meteor.project" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../spa" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path" value="/usr/bin/node" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -61,11 +70,14 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/imports" />
+      <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/imports/ui" />
+      <recent name="$PROJECT_DIR$/public/images" />
       <recent name="$PROJECT_DIR$/server/methods" />
-      <recent name="$PROJECT_DIR$/imports/vue/ui" />
-      <recent name="$PROJECT_DIR$/both/tabular" />
-      <recent name="$PROJECT_DIR$/imports/collection" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/images" />
     </key>
   </component>
   <component name="RunManager">
@@ -436,7 +448,13 @@
       <workItem from="1611746845220" duration="929000" />
       <workItem from="1611756128876" duration="21000" />
       <workItem from="1614352076998" duration="1775000" />
-      <workItem from="1614390414560" duration="5283000" />
+      <workItem from="1614390414560" duration="5917000" />
+      <workItem from="1621406333859" duration="6189000" />
+      <workItem from="1621589406081" duration="2665000" />
+      <workItem from="1621839056342" duration="69000" />
+      <workItem from="1621926271099" duration="622000" />
+      <workItem from="1621932527124" duration="4526000" />
+      <workItem from="1622081146408" duration="11782000" />
     </task>
     <servers />
   </component>

@@ -1,6 +1,6 @@
 import {Co_PatientCode} from '../../imports/collection/patientCode';
 import {Co_PatientCodeReact} from '../../imports/collection/patientCode';
-import {Co_Patient} from '../../imports/collection/patient';
+import {Co_Patient, Co_PatientImage} from '../../imports/collection/patient';
 
 Meteor.methods({
     queryPatientCode({q, filter, options = {limit: 10, skip: 0}}) {
@@ -109,7 +109,26 @@ Meteor.methods({
         }
         return isInserted;
     },
-
+    updatePatientUrl(patientId, url) {
+        if (Meteor.userId()) {
+            let patientDoc = Co_Patient.findOne({_id: patientId});
+            let urlList = patientDoc.urlList || [];
+            urlList.unshift(url);
+            let isUpdated = Co_Patient.update({_id: patientId}, {$set: {urlList: urlList}});
+            return isUpdated;
+        }
+    },
+    removePatientImage(patientId, url) {
+        if (Meteor.userId()) {
+            let patientDoc = Co_Patient.findOne({_id: patientId});
+            let urlList = (patientDoc.urlList || []).filter((e) => e !== url);
+            let isUpdated = Co_Patient.update({_id: patientId}, {$set: {urlList: urlList}});
+            if (isUpdated) {
+                Co_PatientImage.insert({patientId: patientId, url: url});
+            }
+            return isUpdated;
+        }
+    }
 });
 
 

@@ -1,6 +1,7 @@
 import './image';
 
 export const Co_Patient = new Meteor.Collection("co_patient");
+export const Co_PatientImage = new Meteor.Collection("co_patientImage");
 export const VW_Patient = new Meteor.Collection("vw_patient");
 
 Co_Patient.schema = new SimpleSchema({
@@ -76,7 +77,7 @@ Co_Patient.schema = new SimpleSchema({
         type: String,
         optional: true
     },
-    picture: {
+    /*picture: {
         type: String,
         optional: true,
         autoform: {
@@ -86,6 +87,11 @@ Co_Patient.schema = new SimpleSchema({
                 label: false
             }
         }
+    },*/
+    urlList: {
+        type: [String],
+        optional: true,
+
     },
     rolesArea: {
         type: String,
@@ -133,7 +139,58 @@ Co_Patient.schema = new SimpleSchema({
     }
 
 })
+Co_PatientImage.schema = new SimpleSchema({
+    patientId: {
+        type: String,
+        optional: true
+    },
+    url: {
+        type: String
+    },
+    createdAt: {
+        type: Date,
+        optional: true,
+
+        autoValue() {
+            if (this.isInsert) {
+                return moment().toDate();
+            }
+        }
+    },
+    updatedAt: {
+        type: Date,
+        optional: true,
+
+        autoValue() {
+            if (this.isUpdate) {
+                return moment().toDate();
+            }
+        }
+    },
+    createdUser: {
+        type: String,
+        optional: true,
+
+        autoValue() {
+            if (this.isInsert) {
+                return Meteor.userId();
+            }
+        }
+    },
+    updatedUser: {
+        type: String,
+        optional: true,
+
+        autoValue() {
+            if (this.isUpdate) {
+                return Meteor.userId();
+            }
+        }
+    }
+
+})
 
 Meteor.startup(function () {
     Co_Patient.attachSchema(Co_Patient.schema);
+    Co_PatientImage.attachSchema(Co_PatientImage.schema);
 })

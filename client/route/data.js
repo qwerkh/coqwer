@@ -8,6 +8,7 @@ import '../../imports/ui/payment/payment';
 import '../../imports/ui/journal/journal';
 import '../../imports/ui/fixAsset/fixAsset';
 import '../../imports/ui/co_patientCode/co_patientCode';
+import '../../imports/ui/UploadPatientImage/uploadPatientImage';
 import '../../imports/ui/print/a4'
 import '../../imports/ui/print/a4Summary'
 import '../../imports/ui/print/a4Sum'
@@ -63,6 +64,13 @@ coData.route('/patient/:patientId/showDetail', {
 
 })
 
+coData.route('/patientImage/:patientId/view', {
+    name: 'co.patientImage',
+    action: function (query, params) {
+        _Main("uploadPatientImage");
+    }
+
+})
 
 
 //Register

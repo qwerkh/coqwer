@@ -182,6 +182,11 @@ indexTmpl.events({
         FlowRouter.go('/co-data/register/add');
 
     },
+    'click button.patientImage'() {
+        let self = this;
+        FlowRouter.go(`/co-data/patientImage/${self._id}/view`);
+
+    },
     "click button.receivePayment"() {
         balanceUnpaid.set(0);
         Session.set("paymentDate", moment().toDate());

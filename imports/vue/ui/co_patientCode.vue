@@ -105,11 +105,13 @@
 
             <el-table-column
                 label="Action"
-                width="80"
+                width="120"
             >
               <template slot-scope="scope">
                 <el-button-group>
-
+                  <el-button type="success" icon="el-icon-picture" size="small" class="cursor-pointer"
+                             @click="goToDetailImage(scope.row)"
+                  ></el-button>
                   <el-button type="primary" icon="el-icon-view" size="small" class="cursor-pointer"
                              @click="goToDetail(scope.row)"
                   ></el-button>
@@ -217,6 +219,13 @@ export default {
           patientDoc.set("patient", result.patientDoc);
           registerDocInpatient.set(result.registerList);
           FlowRouter.go(`/co-data/patient/${doc.patientDoc._id}/showDetail`);
+        }
+      });
+    },
+    goToDetailImage(doc) {
+      Meteor.call("co_getPatientAndRegisterByPatientId", doc.patientDoc._id, Meteor.userId(), (err, result) => {
+        if (result) {
+          FlowRouter.go(`/co-data/patientImage/${doc.patientDoc._id}/view`);
         }
       });
     },

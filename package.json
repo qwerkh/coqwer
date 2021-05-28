@@ -8,7 +8,7 @@
     "@babel/runtime": "^7.5.5",
     "axios": "^0.21.1",
     "babel-runtime": "^6.26.0",
-    "bcrypt": "^3.0.8",
+    "bcrypt": "^5.0.0",
     "compress": "^0.99.0",
     "compress.js": "^1.1.2",
     "element-ui": "^2.11.1",

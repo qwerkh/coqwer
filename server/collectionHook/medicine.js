@@ -1,4 +1,5 @@
 import {GeneralFunction} from '../../imports/api/methods/generalFunction';
+import axios from "axios";
 
 import {Co_Medicine} from '../../imports/collection/medicine';
 import moment from "moment";

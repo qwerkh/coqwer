@@ -6,6 +6,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.5.5",
+    "axios": "^0.21.1",
     "babel-runtime": "^6.26.0",
     "bcrypt": "^3.0.8",
     "compress": "^0.99.0",

@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="37b05a99-1bf8-426c-a9a5-9f4248831879" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/imports/lib/constant.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/collectionHook/medicine.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/collectionHook/medicine.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imports/vue/ui/medicineBarcode.vue" beforeDir="false" afterPath="$PROJECT_DIR$/imports/vue/ui/medicineBarcode.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/methods/report/reportMethod.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/methods/report/reportMethod.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +45,7 @@
     <property name="js.meteor.library.cached" value="$PROJECT_DIR$/.meteor" />
     <property name="js.meteor.library.was.enabled" value="true" />
     <property name="js.meteor.project" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../realestate-ui" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path" value="/usr/bin/node" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -442,7 +440,10 @@
       <workItem from="1621926271099" duration="622000" />
       <workItem from="1621932527124" duration="4526000" />
       <workItem from="1622081146408" duration="14316000" />
-      <workItem from="1622166982117" duration="3296000" />
+      <workItem from="1622166982117" duration="3896000" />
+      <workItem from="1622270372642" duration="12000" />
+      <workItem from="1622342906066" duration="18000" />
+      <workItem from="1622538035350" duration="2263000" />
     </task>
     <servers />
   </component>

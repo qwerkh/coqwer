@@ -49,7 +49,7 @@
           <img :src="imgUrl || '/images/clicktoupload.jpg'" style="height: 200px; width: 300px;"
                class="mb-4 mt-2"
                alt="logo" @click="$refs.fileInput.click()"/>
-          <input style="display: none !important;" type="file" @change="onFileSelected"
+          <input style="display: none !important;" type="file" @change="onFileSelected" multiple
                  ref="fileInput"></input>
           <br>
           <br>
@@ -113,8 +113,7 @@ export default {
           let img1 = obj;
           let base64str = img1.data;
           let imgExt = img1.ext;
-          this.selectedFile = Compress.convertBase64ToFile(base64str, imgExt);
-          vm.savePatientImage(this.selectedFile, obj.alt.split(".")[0]);
+          vm.savePatientImage(Compress.convertBase64ToFile(base64str, imgExt), obj.alt.split(".")[0]);
         })
       })
     },

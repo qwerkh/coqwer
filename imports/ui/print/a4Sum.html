@@ -221,13 +221,31 @@
                                             <td><b>{{seperateNumber netTotalRiel}}</b>៛</td>
                                         </tr>
                                     {{/if}}
+                                    {{#if isPaidKHR}}
                                     <tr align="right" style="height: 25px; font-size: 14px;">
-                                        <td><b>បានបង់</b>:</td>
-                                        <td><b>{{seperateNumber totalPaid}}</b>{{getSymbolBaseCurrency}}</td>
+                                        <td  style="font-size: 16px !important;"><b>បានបង់ (៛)</b>:</td>
+                                        <td  style="font-size: 18px !important;"><b>{{seperateNumber paidAmountKHR}}</b>៛</td>
+                                    </tr>
+                                    {{/if}}
+                                    {{#if isPaidUSD}}
+                                    <tr align="right" style="height: 25px; font-size: 14px;">
+                                        <td  style="font-size: 16px !important;"><b>បានបង់ ($)</b>:</td>
+                                        <td  style="font-size: 18px !important;"><b>{{seperateNumber paidAmountUSD}}</b>$</td>
+                                    </tr>
+                                    {{/if}}
+                                    {{#if isPaidTHB}}
+                                    <tr align="right" style="height: 25px; font-size: 14px;">
+                                        <td  style="font-size: 16px !important;"><b>បានបង់ (B)</b>:</td>
+                                        <td  style="font-size: 18px !important;"><b>{{seperateNumber paidAmountTHB}}</b>B</td>
+                                    </tr>
+                                    {{/if}}
+                                    <tr align="right" style="height: 25px; font-size: 14px;">
+                                        <td style="font-size: 16px !important;"><b>លុយអាប់ជា(៛)</b>:</td>
+                                        <td  style="font-size: 18px !important;"><b>{{seperateNumber returnAmountKHR}}</b>៛</td>
                                     </tr>
                                     <tr align="right" style="height: 25px; font-size: 14px;">
-                                        <td><b>នៅសល់</b>:</td>
-                                        <td><b>{{seperateNumber balance}}</b>{{getSymbolBaseCurrency}}</td>
+                                        <td style="font-size: 16px !important;"><b>លុយអាប់ជា($)</b>:</td>
+                                        <td  style="font-size: 18px !important;"><b>{{seperateNumber returnAmountUSD}}</b>$</td>
                                     </tr>
 
                                 </table>
@@ -492,13 +510,31 @@
                                             <td><b>{{seperateNumber netTotalRiel}}</b>៛</td>
                                         </tr>
                                     {{/if}}
+                                    {{#if isPaidKHR}}
                                     <tr align="right" style="height: 25px; font-size: 14px;">
-                                        <td><b>Paid</b>:</td>
-                                        <td><b>{{seperateNumber totalPaid}}</b>{{getSymbolBaseCurrency}}</td>
+                                        <td  style="font-size: 16px !important;"><b>Paid (៛)</b>:</td>
+                                        <td  style="font-size: 18px !important;"><b>{{seperateNumber paidAmountKHR}}</b>៛</td>
+                                    </tr>
+                                    {{/if}}
+                                    {{#if isPaidUSD}}
+                                    <tr align="right" style="height: 25px; font-size: 14px;">
+                                        <td  style="font-size: 16px !important;"><b>Paid ($)</b>:</td>
+                                        <td  style="font-size: 18px !important;"><b>{{seperateNumber paidAmountUSD}}</b>$</td>
+                                    </tr>
+                                    {{/if}}
+                                    {{#if isPaidTHB}}
+                                    <tr align="right" style="height: 25px; font-size: 14px;">
+                                        <td  style="font-size: 16px !important;"><b>Paid (B)</b>:</td>
+                                        <td  style="font-size: 18px !important;"><b>{{seperateNumber paidAmountTHB}}</b>B</td>
+                                    </tr>
+                                    {{/if}}
+                                    <tr align="right" style="height: 25px; font-size: 14px;">
+                                        <td style="font-size: 16px !important;"><b>Return (៛)</b>:</td>
+                                        <td  style="font-size: 18px !important;"><b>{{seperateNumber returnAmountKHR}}</b>៛</td>
                                     </tr>
                                     <tr align="right" style="height: 25px; font-size: 14px;">
-                                        <td><b>Balance</b>:</td>
-                                        <td><b>{{seperateNumber balance}}</b>{{getSymbolBaseCurrency}}</td>
+                                        <td style="font-size: 16px !important;"><b>Return($)</b>:</td>
+                                        <td  style="font-size: 18px !important;"><b>{{seperateNumber returnAmountUSD}}</b>$</td>
                                     </tr>
                                     <!--{{#unless invoiceTypeSaleOrder sale.invoiceType}}
                                         {{#if hasPayment sale.paymentObj}}

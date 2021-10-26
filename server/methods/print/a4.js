@@ -83,6 +83,9 @@ Meteor.methods({
         register.ageCal = moment(register.registerDate).diff(moment(register.patient.dob).startOf("day").toDate(), "year");
         register.monthCal = parseInt(moment(register.registerDate).diff(moment(register.patient.dob).startOf("day").toDate(), "month")) - parseInt(moment(register.registerDate).diff(moment(register.patient.dob).startOf("day").toDate(), "year")) * 12;
         register._id = register._id.substr(8, 6);
+        register.isPaidKHR=register.paidAmountKHR>0;
+        register.isPaidUSD=register.paidAmountUSD>0;
+        register.isPaidTHB=register.paidAmountTHB>0;
         return {company: company, register: register, rawRegister: rawRegister, payment: payment};
     },
     printMini({invoiceId}) {

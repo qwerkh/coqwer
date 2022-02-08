@@ -31,6 +31,8 @@ Co_MedicineType.schema = new SimpleSchema({
                 list.push({label: "Gel បិទ", value: "Gel បិទ"});
                 list.push({label: "Gel ស្អំ", value: "Gel ស្អំ"});
                 list.push({label: "Mask", value: "Mask"});
+                list.push({label: "Serum", value: "Serum"});
+                list.push({label: "UV", value: "UV"});
                 list.push({label: "Other", value: "Other"});
 
                 return list;

@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="37b05a99-1bf8-426c-a9a5-9f4248831879" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.deploy/mup.js" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy/mup.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imports/ui/print/a4.html" beforeDir="false" afterPath="$PROJECT_DIR$/imports/ui/print/a4.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imports/ui/print/a4Sum.html" beforeDir="false" afterPath="$PROJECT_DIR$/imports/ui/print/a4Sum.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imports/ui/print/a4Summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/imports/ui/print/a4Summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/methods/print/a4.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/methods/print/a4.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imports/collection/medicineType.js" beforeDir="false" afterPath="$PROJECT_DIR$/imports/collection/medicineType.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -455,6 +451,8 @@
       <workItem from="1630297372542" duration="460000" />
       <workItem from="1630324931941" duration="17000" />
       <workItem from="1635234225200" duration="3021000" />
+      <workItem from="1635382948890" duration="43000" />
+      <workItem from="1644322144368" duration="601000" />
     </task>
     <servers />
   </component>

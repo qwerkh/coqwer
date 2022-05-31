@@ -3,6 +3,7 @@ import {GeneralFunction} from '../../imports/api/methods/generalFunction';
 import {Co_Payment} from '../../imports/collection/payment';
 import {Co_Register} from '../../imports/collection/register';
 import moment from "moment";
+import GlobalFn from "../../imports/lib/globalFn";
 
 
 Co_Payment.before.insert(function (userId, doc) {
@@ -100,4 +101,6 @@ Co_Payment.before.update(function (userId, doc, fieldNames, modifier, options) {
 
     modifier.$set.updatedAt = moment().toDate();
     modifier.$set.updatedBy = userId;
+    GlobalFn.collectionAudit("Co_PaymentAudit", doc, "Update");
+
 })

@@ -6,6 +6,7 @@ import moment from "moment";
 import {Co_Patient} from "../../imports/collection/patient";
 import {Co_Counter} from "../../imports/collection/counter";
 import {Co_PatientCode} from "../../imports/collection/patientCode";
+import GlobalFn from "../../imports/lib/globalFn";
 
 
 Co_Register.before.insert(function (userId, doc) {
@@ -155,8 +156,21 @@ Co_Register.after.update(function (userId, doc) {
 })
 
 Co_Register.after.remove(function (userId, doc) {
+    Co_Payment.find({registerId: doc._id}).fetch().forEach((d) => {
+        GlobalFn.collectionAudit("Co_PaymentAudit", d, "Remove");
+    });
     Co_Payment.direct.remove({registerId: doc._id});
     Co_PatientCode.direct.remove({registerId: doc._id});
+})
+
+Co_Register.before.remove(function (userId, doc) {
+    GlobalFn.collectionAudit("Co_RegisterAudit", doc, "Remove");
+
+})
+
+Co_Register.before.update(function (userId, doc, fieldName, modifier, option) {
+    GlobalFn.collectionAudit("Co_RegisterAudit", doc, "Update");
+
 })
 
 
@@ -164,6 +178,8 @@ Co_Payment.before.update(function (userId, doc, fieldNames, modifier, options) {
 
     modifier.$set.updatedAt = moment().toDate();
     modifier.$set.updatedBy = userId;
+
+    GlobalFn.collectionAudit("Co_PaymentAudit", doc, "Update");
 
 
 })

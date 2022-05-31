@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="37b05a99-1bf8-426c-a9a5-9f4248831879" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/imports/lib/globalFn.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imports/collection/medicineType.js" beforeDir="false" afterPath="$PROJECT_DIR$/imports/collection/medicineType.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imports/collection/patient.js" beforeDir="false" afterPath="$PROJECT_DIR$/imports/collection/patient.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imports/collection/payment.js" beforeDir="false" afterPath="$PROJECT_DIR$/imports/collection/payment.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imports/collection/register.js" beforeDir="false" afterPath="$PROJECT_DIR$/imports/collection/register.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/collectionHook/payment.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/collectionHook/payment.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/collectionHook/register.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/collectionHook/register.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/methods/class.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/methods/class.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +50,7 @@
     <property name="js.meteor.library.cached" value="$PROJECT_DIR$/.meteor" />
     <property name="js.meteor.library.was.enabled" value="true" />
     <property name="js.meteor.project" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/imports/lib" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path" value="/usr/bin/node" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -54,11 +60,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/imports/lib" />
       <recent name="$PROJECT_DIR$/imports" />
       <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/imports/ui" />
       <recent name="$PROJECT_DIR$/public/images" />
-      <recent name="$PROJECT_DIR$/server/methods" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public/images" />
@@ -452,7 +458,15 @@
       <workItem from="1630324931941" duration="17000" />
       <workItem from="1635234225200" duration="3021000" />
       <workItem from="1635382948890" duration="43000" />
-      <workItem from="1644322144368" duration="601000" />
+      <workItem from="1644322144368" duration="636000" />
+      <workItem from="1644488844386" duration="608000" />
+      <workItem from="1647691983102" duration="754000" />
+      <workItem from="1650787397541" duration="135000" />
+      <workItem from="1650935998520" duration="18000" />
+      <workItem from="1651669696462" duration="436000" />
+      <workItem from="1651756891986" duration="89000" />
+      <workItem from="1652169708312" duration="606000" />
+      <workItem from="1653962462726" duration="4311000" />
     </task>
     <servers />
   </component>

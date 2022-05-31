@@ -125,6 +125,15 @@ export default class ClassReport {
                     }
                 },
                 {$unwind: {path: "$patientDoc", preserveNullAndEmptyArrays: true}},
+                {
+                    $lookup: {
+                        from: "co_register",
+                        localField: "registerId",
+                        foreignField: "_id",
+                        as: "registerDoc"
+                    }
+                },
+                {$unwind: {path: "$registerDoc", preserveNullAndEmptyArrays: true}},
 
             ]).map(function (obj) {
             if (CompanyDoc.asigneUser && CompanyDoc.asigneUser.indexOf(userId) > -1) {
@@ -143,19 +152,21 @@ export default class ClassReport {
                 reList.push(obj);
                 return obj;
             } else {
-                if (obj.netTotal < CompanyDoc.hideIfGreater || 0) {
+                if ((obj.registerDoc && obj.registerDoc.netTotal || 0) < CompanyDoc.hideIfGreater || 0) {
 
                     let returnMoneyUSD = obj.paidAmountUSD > obj.returnAmountUSD ? obj.returnAmountUSD : 0;
                     let returnMoneyKHR = returnMoneyUSD > 0 && obj.paidAmountKHR > obj.returnAmountKHR ? obj.returnAmountKHR : 0;
                     let returnMoneyTHB = returnMoneyKHR > 0 && obj.paidAmountTHB > obj.returnAmountTHB ? obj.returnAmountTHB : 0;
-                    totalPaidAmountUSD += (obj.paidAmountUSD - returnMoneyUSD) * checkProvision(CompanyDoc, obj.registerDate);
-                    totalPaidAmountKHR += (obj.paidAmountKHR - returnMoneyKHR) * checkProvision(CompanyDoc, obj.registerDate);
-                    totalPaidAmountTHB += (obj.paidAmountTHB - returnMoneyTHB) * checkProvision(CompanyDoc, obj.registerDate);
+
+                    totalPaidAmountUSD += (obj.paidAmountUSD - returnMoneyUSD) * checkProvision(CompanyDoc, obj.paymentDate);
+                    totalPaidAmountKHR += (obj.paidAmountKHR - returnMoneyKHR) * checkProvision(CompanyDoc, obj.paymentDate);
+                    totalPaidAmountTHB += (obj.paidAmountTHB - returnMoneyTHB) * checkProvision(CompanyDoc, obj.paymentDate);
 
 
-                    obj.paidAmountUSD = numeral((obj.paidAmountUSD - returnMoneyUSD) * checkProvision(CompanyDoc, obj.registerDate) * checkProvision(CompanyDoc, obj.paymentDate)).format("0,00.000");
-                    obj.paidAmountKHR = numeral((obj.paidAmountKHR - returnMoneyKHR) * checkProvision(CompanyDoc, obj.registerDate) * checkProvision(CompanyDoc, obj.paymentDate)).format("0,00.000");
-                    obj.paidAmountTHB = numeral((obj.paidAmountTHB - returnMoneyTHB) * checkProvision(CompanyDoc, obj.registerDate) * checkProvision(CompanyDoc, obj.paymentDate)).format("0,00.000");
+                    obj.paidAmountUSD = numeral((obj.paidAmountUSD - returnMoneyUSD) * checkProvision(CompanyDoc, obj.paymentDate)).format("0,00.000");
+                    obj.paidAmountKHR = numeral((obj.paidAmountKHR - returnMoneyKHR) * checkProvision(CompanyDoc, obj.paymentDate)).format("0,00.000");
+                    obj.paidAmountTHB = numeral((obj.paidAmountTHB - returnMoneyTHB) * checkProvision(CompanyDoc, obj.paymentDate)).format("0,00.000");
+
                     reList.push(obj);
                     return obj;
 

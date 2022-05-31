@@ -1,3 +1,5 @@
+import {Mongo} from "meteor/mongo";
+
 export const Co_Payment = new Meteor.Collection("co_payment");
 
 Co_Payment.schema = new SimpleSchema({
@@ -145,6 +147,59 @@ Co_Payment.schema = new SimpleSchema({
 
 })
 
+export const Co_PaymentAudit = new Mongo.Collection('co_paymentAudit');
+Co_PaymentAudit.schema = new SimpleSchema({
+    createdAt: {
+        type: Date,
+        optional: true,
+
+        autoValue() {
+            if (this.isInsert) {
+                return moment().toDate();
+            }
+        }
+    },
+    updatedAt: {
+        type: Date,
+        optional: true,
+
+        autoValue() {
+            if (this.isUpdate) {
+                return moment().toDate();
+            }
+        }
+    },
+    createdUser: {
+        type: String,
+        optional: true,
+
+        autoValue() {
+            if (this.isInsert) {
+                return Meteor.userId();
+            }
+        }
+    },
+    updatedUser: {
+        type: String,
+        optional: true,
+
+        autoValue() {
+            if (this.isUpdate) {
+                return Meteor.userId();
+            }
+        }
+    },
+    type: {
+        type: String,
+        optional: true,
+    },
+    data: {
+        type: Object,
+        optional: true,
+        blackbox: true
+    }
+});
 Meteor.startup(function () {
     Co_Payment.attachSchema(Co_Payment.schema);
+    Co_PaymentAudit.attachSchema(Co_PaymentAudit.schema);
 });

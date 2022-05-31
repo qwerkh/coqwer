@@ -1,6 +1,7 @@
 import './image';
 import {SimpleSchema} from 'meteor/aldeed:simple-schema';
 import {AutoForm} from 'meteor/aldeed:autoform';
+import {Mongo} from "meteor/mongo";
 
 export const Co_Register = new Meteor.Collection("co_register");
 export const VW_Register = new Meteor.Collection("vw_register");
@@ -560,6 +561,59 @@ Co_Register.medicineForm = new SimpleSchema({
     }
 })
 
+export const Co_RegisterAudit = new Mongo.Collection('co_registerAudit');
+Co_RegisterAudit.schema = new SimpleSchema({
+    createdAt: {
+        type: Date,
+        optional: true,
+
+        autoValue() {
+            if (this.isInsert) {
+                return moment().toDate();
+            }
+        }
+    },
+    updatedAt: {
+        type: Date,
+        optional: true,
+
+        autoValue() {
+            if (this.isUpdate) {
+                return moment().toDate();
+            }
+        }
+    },
+    createdUser: {
+        type: String,
+        optional: true,
+
+        autoValue() {
+            if (this.isInsert) {
+                return Meteor.userId();
+            }
+        }
+    },
+    updatedUser: {
+        type: String,
+        optional: true,
+
+        autoValue() {
+            if (this.isUpdate) {
+                return Meteor.userId();
+            }
+        }
+    },
+    type: {
+        type: String,
+        optional: true,
+    },
+    data: {
+        type: Object,
+        optional: true,
+        blackbox: true
+    }
+});
 Meteor.startup(function () {
     Co_Register.attachSchema(Co_Register.schema);
+    Co_RegisterAudit.attachSchema(Co_RegisterAudit.schema);
 });

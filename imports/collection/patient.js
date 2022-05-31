@@ -1,4 +1,5 @@
 import './image';
+import {Mongo} from "meteor/mongo";
 
 export const Co_Patient = new Meteor.Collection("co_patient");
 export const Co_PatientImage = new Meteor.Collection("co_patientImage");
@@ -190,7 +191,60 @@ Co_PatientImage.schema = new SimpleSchema({
 
 })
 
+export const Co_PatientAudit = new Mongo.Collection('co_patientAudit');
+Co_PatientAudit.schema = new SimpleSchema({
+    createdAt: {
+        type: Date,
+        optional: true,
+
+        autoValue() {
+            if (this.isInsert) {
+                return moment().toDate();
+            }
+        }
+    },
+    updatedAt: {
+        type: Date,
+        optional: true,
+
+        autoValue() {
+            if (this.isUpdate) {
+                return moment().toDate();
+            }
+        }
+    },
+    createdUser: {
+        type: String,
+        optional: true,
+
+        autoValue() {
+            if (this.isInsert) {
+                return Meteor.userId();
+            }
+        }
+    },
+    updatedUser: {
+        type: String,
+        optional: true,
+
+        autoValue() {
+            if (this.isUpdate) {
+                return Meteor.userId();
+            }
+        }
+    },
+    type: {
+        type: String,
+        optional: true,
+    },
+    data: {
+        type: Object,
+        optional: true,
+        blackbox: true
+    }
+});
 Meteor.startup(function () {
     Co_Patient.attachSchema(Co_Patient.schema);
+    Co_PatientAudit.attachSchema(Co_PatientAudit.schema);
     Co_PatientImage.attachSchema(Co_PatientImage.schema);
 })

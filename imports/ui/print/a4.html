@@ -236,8 +236,13 @@
                                 </tr>
                                 {{/if}}
                                 <tr align="right">
-                                    <td><b>នៅសល់:</b></td>
-                                    <td style="font-size: 18px !important;"><b> {{seperateNumber balance}}</b>{{getSymbolBaseCurrency}}</td>
+                                    <td><b>នៅសល់ជា(៛):</b></td>
+                                    <td style="font-size: 18px !important;"><b>{{exchangeFn balance "KHR"}}</b>៛</td>
+
+                                </tr>
+                                <tr align="right">
+                                    <td><b>នៅសល់ជា($):</b></td>
+                                    <td style="font-size: 18px !important;"><b> {{exchangeFn balance "USD"}}</b>$</td>
 
                                 </tr>
                                 <tr align="right" style="height: 25px; font-size: 14px;">

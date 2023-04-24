@@ -26,7 +26,7 @@
     "vee-validate": "^2.2.15",
     "vue": "^2.6.10",
     "vue-meteor-tracker": "^1.2.3",
-    "xlsx": "^0.15.4"
+    "xlsx": "^0.18.5"
   },
   "postcss": {
     "plugins": {

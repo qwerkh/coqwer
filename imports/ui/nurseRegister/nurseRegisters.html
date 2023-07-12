@@ -1,0 +1,49 @@
+<template name="co_nurseRegister">
+    <div class="ui form container animated fadeIn">
+        <div class="ui breadcrumb">
+            <a href="/">Home</a>
+            <div class="divider"> /</div>
+            <a href="{{pathFor 'co.nurseRegister'}}">Patient</a>
+            <div class="divider"> /</div>
+            <div class="active section">Add Nurse Register</div>
+        </div>
+        <div class="progress">
+            <!--<div class="indeterminate"></div>-->
+        </div>
+        {{ #autoForm collection = collection id = "co_nurseRegister" type = "insert" }}
+        <div class="row">
+            <div class="two fields">
+                <div class="field">
+                    <h1>{{ patientName }}</h1>
+                    {{ > afQuickField name = 'patientId'  value = patientId  label = false hidden = true }}
+                    {{ > afQuickField name = 'history' }}
+                    {{ > afQuickField name = 'physicalExam' }}
+                    {{ > afQuickField name = 'patientComplaint' }}
+
+
+                </div>
+                <div class="field">
+
+                    {{ > afQuickField name = 'diagnosis' }}
+                    {{ > afQuickField name = 'planning' }}
+                    {{ > afQuickField name = 'implementation' }}
+                    {{ > afQuickField name = 'evaluation' }}
+
+                    {{ > afQuickField name = 'other' }}
+
+                    {{ > co_actionAdd }}
+
+
+                </div>
+
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="field">
+                {{ > co_preloader }}
+            </div>
+        </div>
+        {{ /autoForm }}
+    </div>
+</template>

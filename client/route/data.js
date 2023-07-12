@@ -4,6 +4,8 @@ import {CheckRoles} from '../../imports/api/methods/checkRoles';
 //template js 
 import '../../imports/ui/patient/patient';
 import '../../imports/ui/register/register';
+import '../../imports/ui/drRegister/drRegister';
+import '../../imports/ui/nurseRegister/nurseRegister';
 import '../../imports/ui/payment/payment';
 import '../../imports/ui/journal/journal';
 import '../../imports/ui/fixAsset/fixAsset';
@@ -78,6 +80,22 @@ coData.route('/register', {
     name: 'co.register',
     action: function (query, params) {
         _Main("co_register");
+    }
+
+})
+//Register
+coData.route('/drRegister', {
+    name: 'co.drRegister',
+    action: function (query, params) {
+        _Main("co_drRegister");
+    }
+
+})
+//Register
+coData.route('/nurseRegister', {
+    name: 'co.nurseRegister',
+    action: function (query, params) {
+        _Main("co_nurseRegister");
     }
 
 })

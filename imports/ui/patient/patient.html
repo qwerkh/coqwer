@@ -220,6 +220,8 @@
                             History</a>
                         <a class="item" data-tab="register-tab"><i class="registered icon blue"></i> Register</a>
                         <a class="item" data-tab="weightTest-tab"><i class="weight icon blue"></i> Weight Test</a>
+                        <a class="item" data-tab="dr-tab"><i class="doctor icon blue"></i> Dr Register</a>
+                        <a class="item" data-tab="nurse-tab"><i class="female icon blue"></i> Nurse Register</a>
                     </div>
 
                     <div class="ui tab active" data-tab="history-tab-service">
@@ -344,6 +346,89 @@
                             <input type="file" id="file-input" style="display:none" accept="text/plain" />
                         </div>
 -->
+                    </div>
+                    <div class="ui tab" data-tab="dr-tab">
+                        <div class="ui form">
+                            <table class="ui celled table">
+                                {{#if drRegisterList}}
+                                <thead>
+                                <th>
+                                    Date
+                                </th>
+                                <th>History</th>
+                                <th>Physical Exam</th>
+                                <th>Past Medical</th>
+                                <th>Current Medical</th>
+                                <th>Patient Complaint</th>
+                                <th>Allergie</th>
+                                <th>Other (Assessment)</th>
+                                <th>Diagnosis</th>
+                                <th>Para Clinic</th>
+                                <th>Treatment</th>
+                                <th>Other</th>
+                                </thead>
+                                <tbody>
+                                {{#each drRegisterList}}
+                                <tr>
+                                    <td>{{date}}</td>
+                                    <td>{{{history}}}</td>
+                                    <td>{{{physicalExam}}}</td>
+                                    <td>{{{pastMedical}}}</td>
+                                    <td>{{{currentMedical}}}</td>
+                                    <td>{{{patientComplaint}}}</td>
+                                    <td>{{{allergie}}}</td>
+                                    <td>{{{otherInAssessment}}}</td>
+                                    <td>{{{diagnosis}}}</td>
+                                    <td>{{{paraClinic}}}</td>
+                                    <td>{{{treatment}}}</td>
+                                    <td>{{{other}}}</td>
+
+                                </tr>
+                                {{/each}}
+                                </tbody>
+                                {{/if}}
+                            </table>
+                        </div>
+
+                    </div>
+                    <div class="ui tab" data-tab="nurse-tab">
+                        <div class="ui form">
+                            <table class="ui celled table">
+                                {{#if nurseRegisterList}}
+                                <thead>
+                                <th>
+                                    Date
+                                </th>
+                                <th>History</th>
+                                <th>Physical Exam</th>
+                                <th>Patient Complaint</th>
+                                <th>Diagnosis</th>
+                                <th>Planing</th>
+                                <th>Implementation</th>
+                                <th>Evaluation</th>
+                                <th>Other</th>
+                                </thead>
+                                <tbody>
+                                {{#each nurseRegisterList}}
+                                <tr>
+                                    <td>{{date}}</td>
+                                    <td>{{{history}}}</td>
+                                    <td>{{{physicalExam}}}</td>
+                                    <td>{{{patientComplaint}}}</td>
+
+                                    <td>{{{diagnosis}}}</td>
+                                    <td>{{{planning}}}</td>
+                                    <td>{{{implementation}}}</td>
+                                    <td>{{{evaluation}}}</td>
+                                    <td>{{{other}}}</td>
+
+                                </tr>
+                                {{/each}}
+                                </tbody>
+                                {{/if}}
+                            </table>
+                        </div>
+
                     </div>
 
                 </div>

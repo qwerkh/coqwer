@@ -16,6 +16,8 @@ import {Co_Journal} from '../imports/collection/journal';
 import {Co_FixAsset} from '../imports/collection/fixAsset';
 import {Co_EndOfProcess} from '../imports/collection/endOfProcess';
 import {Co_MapFixAsset} from '../imports/collection/mapFixAsset';
+import {Co_DrRegister} from '../imports/collection/drRegister';
+import {Co_NurseRegister} from '../imports/collection/nurseRegister';
 import {Security} from 'meteor/ongoworks:security';
 
 /*Security.permit(['insert', 'update', 'remove']).collections([
@@ -49,5 +51,7 @@ Security.permit(['insert', 'update', 'remove']).collections([
     Co_Journal,
     Co_FixAsset,
     Co_EndOfProcess,
+    Co_DrRegister,
+    Co_NurseRegister,
     Co_MapFixAsset
 ]).allowInClientCode();

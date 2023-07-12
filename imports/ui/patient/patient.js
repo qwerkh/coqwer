@@ -17,6 +17,8 @@ let indexTmpl = Template.co_patient,
 
 patientDoc = new ReactiveObj();
 registerDocInpatient = new ReactiveVar([]);
+drRegisterList = new ReactiveVar([]);
+nurseRegisterList = new ReactiveVar([]);
 let customSearch = new ReactiveVar();
 let customSearchOrder = new ReactiveVar();
 indexTmpl.helpers({
@@ -144,6 +146,9 @@ indexTmpl.events({
             if (result) {
                 patientDoc.set("patient", result.patientDoc);
                 registerDocInpatient.set(result.registerList);
+                drRegisterList.set(result.drRegisterList);
+                nurseRegisterList.set(result.nurseRegisterList);
+
                 FlowRouter.go(`/co-data/patient/${rowData._id}/showDetail`);
             }
         });
@@ -180,6 +185,22 @@ indexTmpl.events({
         patientName.set(self.khName);
         patientId.set(self._id);
         FlowRouter.go('/co-data/register/add');
+
+    },
+    'click button.drregister'() {
+
+        let self = this;
+        patientName.set(self.khName);
+        patientId.set(self._id);
+        FlowRouter.go('/co-data/drRegister');
+
+    },
+    'click button.nurseregister'() {
+
+        let self = this;
+        patientName.set(self.khName);
+        patientId.set(self._id);
+        FlowRouter.go('/co-data/nurseRegister');
 
     },
     'click button.patientImage'() {
@@ -264,6 +285,12 @@ showPatientDetail.onRendered(function () {
 
 
 showPatientDetail.helpers({
+    drRegisterList() {
+       return drRegisterList.get();
+    },
+    nurseRegisterList() {
+       return nurseRegisterList.get();
+    },
     patientDoc() {
         //let id = FlowRouter.getParam('patientId');
         let data = patientDoc.get("patient");

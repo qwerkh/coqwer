@@ -11,6 +11,8 @@ import {Co_MachinType} from '../../imports/collection/machinType'
 import {Co_MedicineType} from '../../imports/collection/medicineType'
 import {Co_ServiceType} from '../../imports/collection/serviceType'
 import {Co_Company} from "../../imports/collection/company";
+import {Co_DrRegister} from "../../imports/collection/drRegister";
+import {Co_NurseRegister} from "../../imports/collection/nurseRegister";
 
 Meteor.methods({
     co_serviceById(id, rolesArea) {
@@ -76,6 +78,9 @@ Meteor.methods({
             });
         }
         data.registerList = registerList || [];
+
+        data.drRegisterList = Co_DrRegister.find({patientId: patientId}, {sort: {date: -1}}).fetch();
+        data.nurseRegisterList = Co_NurseRegister.find({patientId: patientId}, {sort: {date: -1}}).fetch();
 
         return data;
     }

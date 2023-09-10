@@ -91,6 +91,15 @@ coData.route('/drRegister', {
     }
 
 })
+
+coData.route('/drRegister/:drRegisterId/edit', {
+    name: 'co.drRegisterEdit',
+    action: function (query, params) {
+        _Main("co_drRegisterEdit");
+    }
+
+})
+
 //Register
 coData.route('/nurseRegister', {
     name: 'co.nurseRegister',
@@ -99,6 +108,16 @@ coData.route('/nurseRegister', {
     }
 
 })
+
+
+coData.route('/nurseRegister/:nurseRegisterId/edit', {
+    name: 'co.nurseRegisterEdit',
+    action: function (query, params) {
+        _Main("co_nurseRegisterEdit");
+    }
+
+})
+
 //Register
 coData.route('/register/print', {
     name: 'co.register-print',

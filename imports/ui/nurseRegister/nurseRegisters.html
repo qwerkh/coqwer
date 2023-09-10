@@ -47,3 +47,63 @@
         {{ /autoForm }}
     </div>
 </template>
+
+
+<template name="co_nurseRegisterEdit">
+    <div class="ui container animated fadeIn">
+        <div class="ui breadcrumb">
+            <a href="/">Home</a>
+            <div class="divider"> /</div>
+            <a href="{{pathFor 'co.nurseRegister'}}">Patient</a>
+            <div class="divider"> /</div>
+            <div class="active section">Edit Nurse Register</div>
+        </div>
+        <div class="progress">
+            <!--<div class="indeterminate"></div>-->
+        </div>
+        <!--{{#if subscriptionsReady}}-->
+        {{#autoForm collection=collection id="co_nurseRegisterEdit" type="update" doc=data}}
+        <div class="row">
+            <div class="two fields">
+                <div class="field">
+                    <h1>{{ patientName }}</h1>
+                    {{ > afQuickField name = 'patientId'  value = patientId  label=false hidden = true }}
+                    {{ > afQuickField name = 'history' }}
+                    {{ > afQuickField name = 'physicalExam' }}
+                    {{ > afQuickField name = 'patientComplaint' }}
+
+
+                </div>
+                <div class="field">
+
+                    {{ > afQuickField name = 'diagnosis' }}
+                    {{ > afQuickField name = 'planning' }}
+                    {{ > afQuickField name = 'implementation' }}
+                    {{ > afQuickField name = 'evaluation' }}
+
+                    {{ > afQuickField name = 'other' }}
+
+                    {{ > co_actionAdd }}
+
+
+                </div>
+
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col s11">
+                {{> co_preloader}}
+            </div>
+        </div>
+        {{/autoForm}}
+
+        <!--{{else}}
+        <div class="progress ">
+            <div class="indeterminate blue darken-1 "></div>
+        </div>
+    {{/if}}-->
+
+    </div>
+</template>
+

@@ -286,10 +286,10 @@ showPatientDetail.onRendered(function () {
 
 showPatientDetail.helpers({
     drRegisterList() {
-       return drRegisterList.get();
+        return drRegisterList.get();
     },
     nurseRegisterList() {
-       return nurseRegisterList.get();
+        return nurseRegisterList.get();
     },
     patientDoc() {
         //let id = FlowRouter.getParam('patientId');
@@ -316,7 +316,33 @@ showPatientDetail.events({
     'change #file-input': function (evt) {
         /*console.log(evt.currentTarget.files[0].name);
         console.log(evt);*/
-    }
+    },
+    'click button.editNurse'(event, instance) {
+        let self = this;
+        patientDoc.set("patient", {});
+        Meteor.call("co_patientById", self.patientId, (err, result) => {
+            if (result) {
+                patientDoc.set("patient", result);
+                patientName.set(result.khName);
+                patientId.set(result._id);
+                FlowRouter.go(`/co-data/nurseRegister/${self._id}/edit`);
+            }
+        });
+
+    },
+    'click button.editDr'(event, instance) {
+        let self = this;
+        patientDoc.set("patient", {});
+        Meteor.call("co_patientById", self.patientId, (err, result) => {
+            if (result) {
+                patientDoc.set("patient", result);
+                patientName.set(result.khName);
+                patientId.set(result._id);
+                FlowRouter.go(`/co-data/drRegister/${self._id}/edit`);
+            }
+        });
+
+    },
 })
 
 

@@ -13,7 +13,7 @@ export const PatientTabular = new Tabular.Table({
     ],
     searching: false,
     columns: [
-        {data: "_id", title: 'Id'},
+
         {data: "order", title: 'Order'},
         {
             data: "enName", title: 'En Name'
@@ -58,6 +58,10 @@ export const PatientTabular = new Tabular.Table({
         {data: "address", title: "Address"},
         {data: "occupation", title: "Occupation"},
         {data: "phoneNumber", title: "Phone Number"},
+
+        {
+            tmpl: Meteor.isClient && Template.co_actionPatient, title: "Action"
+        },
         {
             data: "imageDoc", title: "Photo",
             render: function (val, type, doc) {
@@ -74,9 +78,7 @@ export const PatientTabular = new Tabular.Table({
 
             }
         },
-        {
-            tmpl: Meteor.isClient && Template.co_actionPatient, title: "Action"
-        }
+        {data: "_id", title: 'Id'},
     ],
     extraFields: ["dob"],
 

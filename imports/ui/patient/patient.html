@@ -366,6 +366,7 @@
                                 <th>Para Clinic</th>
                                 <th>Treatment</th>
                                 <th>Other</th>
+                                <th>Action</th>
                                 </thead>
                                 <tbody>
                                 {{#each drRegisterList}}
@@ -382,6 +383,7 @@
                                     <td>{{{paraClinic}}}</td>
                                     <td>{{{treatment}}}</td>
                                     <td>{{{other}}}</td>
+                                    <td> <button class="ui positive button editDr"><i class="edit icon"></i></button></td>
 
                                 </tr>
                                 {{/each}}
@@ -407,6 +409,7 @@
                                 <th>Implementation</th>
                                 <th>Evaluation</th>
                                 <th>Other</th>
+                                <th>Action</th>
                                 </thead>
                                 <tbody>
                                 {{#each nurseRegisterList}}
@@ -421,6 +424,7 @@
                                     <td>{{{implementation}}}</td>
                                     <td>{{{evaluation}}}</td>
                                     <td>{{{other}}}</td>
+                                    <td> <button class="ui positive button editNurse"><i class="edit icon"></i></button></td>
 
                                 </tr>
                                 {{/each}}

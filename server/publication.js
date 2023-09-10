@@ -16,6 +16,8 @@ import {Co_Journal} from '../imports/collection/journal';
 import {Co_FixAsset} from '../imports/collection/fixAsset';
 import {Co_EndOfProcess} from '../imports/collection/endOfProcess';
 import {Co_MapFixAsset} from '../imports/collection/mapFixAsset';
+import {Co_NurseRegister} from '../imports/collection/nurseRegister';
+import {Co_DrRegister} from '../imports/collection/drRegister';
 import {Co_PatientCodeReact} from '../imports/collection/patientCode';
 import {Meteor} from "meteor/meteor";
 
@@ -29,6 +31,20 @@ Meteor.publish('Co_PatientCodeReact', function () {
 });
 
 
+
+Meteor.publish('co_nurseRegisterById', function co_nurseRegisterById({id}) {
+    if (this.userId) {
+        return Co_NurseRegister.find({id});
+    }
+    return this.ready();
+})
+
+Meteor.publish('co_drRegisterById', function co_drRegisterById({id}) {
+    if (this.userId) {
+        return Co_DrRegister.find({id});
+    }
+    return this.ready();
+})
 
 Meteor.publish('co_patientById', function co_patientById({id}) {
     if (this.userId) {

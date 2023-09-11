@@ -6,7 +6,7 @@ import {VW_Patient} from '../../imports/collection/patient';
 export const PatientTabular = new Tabular.Table({
     name: "co.patient",
     collection: Co_Patient,
-    order: ['0', 'desc'],
+    order: ['14', 'desc'],
 
     columnDefs: [
         {"width": "10px", "targets": 0}

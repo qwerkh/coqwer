@@ -4,14 +4,6 @@
     <list default="true" id="37b05a99-1bf8-426c-a9a5-9f4248831879" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/both/tabular/patient.js" beforeDir="false" afterPath="$PROJECT_DIR$/both/tabular/patient.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/route/data.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/route/data.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imports/ui/drRegister/drRegister.js" beforeDir="false" afterPath="$PROJECT_DIR$/imports/ui/drRegister/drRegister.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imports/ui/drRegister/drRegisters.html" beforeDir="false" afterPath="$PROJECT_DIR$/imports/ui/drRegister/drRegisters.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imports/ui/nurseRegister/nurseRegister.js" beforeDir="false" afterPath="$PROJECT_DIR$/imports/ui/nurseRegister/nurseRegister.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imports/ui/nurseRegister/nurseRegisters.html" beforeDir="false" afterPath="$PROJECT_DIR$/imports/ui/nurseRegister/nurseRegisters.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imports/ui/patient/patient.html" beforeDir="false" afterPath="$PROJECT_DIR$/imports/ui/patient/patient.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imports/ui/patient/patient.js" beforeDir="false" afterPath="$PROJECT_DIR$/imports/ui/patient/patient.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/publication.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/publication.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -481,7 +473,10 @@
       <workItem from="1689085634523" duration="2761000" />
       <workItem from="1689124744737" duration="117000" />
       <workItem from="1689171245658" duration="6172000" />
-      <workItem from="1694353965887" duration="4269000" />
+      <workItem from="1694353965887" duration="4831000" />
+      <workItem from="1694358810075" duration="8000" />
+      <workItem from="1694395308353" duration="100000" />
+      <workItem from="1694437868922" duration="832000" />
     </task>
     <servers />
   </component>
@@ -509,6 +504,12 @@
           <url>file://$PROJECT_DIR$/imports/vue/ui/weightTestReport.vue</url>
           <line>186</line>
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/.deploy/mup.js</url>
+          <line>12</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

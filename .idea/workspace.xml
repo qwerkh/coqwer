@@ -1,9 +1,247 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="37b05a99-1bf8-426c-a9a5-9f4248831879" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.deploy/mup.js" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy/mup.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/both/tabular/patient.js" beforeDir="false" afterPath="$PROJECT_DIR$/both/tabular/patient.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/core-util-is/float.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/core-util-is/lib/util.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/core-util-is/lib/util.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/core-util-is/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/core-util-is/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/core-util-is/test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/alert.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/alert.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/autocomplete.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/autocomplete.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/badge.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/badge.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/breadcrumb-item.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/breadcrumb-item.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/breadcrumb.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/breadcrumb.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/button-group.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/button-group.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/button.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/button.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/card.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/card.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/carousel-item.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/carousel-item.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/carousel.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/carousel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/cascader.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/cascader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/checkbox-button.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/checkbox-button.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/checkbox-group.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/checkbox-group.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/checkbox.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/checkbox.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/col.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/col.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/collapse-item.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/collapse-item.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/collapse.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/collapse.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/color-picker.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/color-picker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/date-picker.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/date-picker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/dialog.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/dialog.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/dropdown-item.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/dropdown-item.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/dropdown-menu.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/dropdown-menu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/dropdown.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/dropdown.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/element-ui.common.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/element-ui.common.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/form-item.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/form-item.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/form.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/form.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/icon.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/icon.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/input-number.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/input-number.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/input.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/input.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/loading.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/loading.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/locale/lang/af-ZA.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/locale/lang/af-ZA.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/locale/lang/bg.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/locale/lang/bg.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/locale/lang/ca.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/locale/lang/ca.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/locale/lang/da.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/locale/lang/da.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/locale/lang/de.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/locale/lang/de.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/locale/lang/ee.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/locale/lang/ee.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/locale/lang/el.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/locale/lang/el.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/locale/lang/en.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/locale/lang/en.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/locale/lang/es.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/locale/lang/es.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/locale/lang/fa.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/locale/lang/fa.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/locale/lang/fi.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/locale/lang/fi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/locale/lang/fr.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/locale/lang/fr.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/locale/lang/id.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/locale/lang/id.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/locale/lang/it.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/locale/lang/it.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/locale/lang/ja.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/locale/lang/ja.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/locale/lang/ko.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/locale/lang/ko.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/locale/lang/lv.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/locale/lang/lv.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/locale/lang/nb-NO.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/locale/lang/nb-NO.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/locale/lang/nl.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/locale/lang/nl.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/locale/lang/pl.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/locale/lang/pl.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/locale/lang/pt-br.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/locale/lang/pt-br.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/locale/lang/pt.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/locale/lang/pt.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/locale/lang/ru-RU.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/locale/lang/ru-RU.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/locale/lang/sk.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/locale/lang/sk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/locale/lang/sl.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/locale/lang/sl.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/locale/lang/sv-SE.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/locale/lang/sv-SE.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/locale/lang/ta.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/locale/lang/ta.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/locale/lang/th.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/locale/lang/th.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/locale/lang/tk.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/locale/lang/tk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/locale/lang/tr-TR.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/locale/lang/tr-TR.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/locale/lang/ua.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/locale/lang/ua.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/locale/lang/vi.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/locale/lang/vi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/locale/lang/zh-CN.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/locale/lang/zh-CN.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/locale/lang/zh-TW.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/locale/lang/zh-TW.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/menu-item-group.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/menu-item-group.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/menu-item.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/menu-item.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/menu.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/menu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/message-box.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/message-box.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/message.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/message.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/notification.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/notification.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/option-group.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/option-group.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/option.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/option.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/pagination.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/pagination.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/popover.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/popover.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/progress.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/progress.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/radio-button.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/radio-button.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/radio-group.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/radio-group.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/radio.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/radio.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/rate.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/rate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/row.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/row.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/scrollbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/scrollbar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/select.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/select.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/slider.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/slider.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/spinner.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/spinner.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/step.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/step.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/steps.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/steps.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/submenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/submenu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/switch.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/switch.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/tab-pane.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/tab-pane.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/table-column.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/table-column.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/table.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/table.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/tabs.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/tabs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/tag.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/tag.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/time-picker.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/time-picker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/time-select.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/time-select.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/tooltip.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/tooltip.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/transfer.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/transfer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/tree.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/tree.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/umd/locale/af-ZA.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/umd/locale/af-ZA.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/umd/locale/bg.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/umd/locale/bg.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/umd/locale/ca.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/umd/locale/ca.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/umd/locale/da.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/umd/locale/da.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/umd/locale/de.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/umd/locale/de.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/umd/locale/ee.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/umd/locale/ee.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/umd/locale/el.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/umd/locale/el.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/umd/locale/en.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/umd/locale/en.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/umd/locale/es.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/umd/locale/es.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/umd/locale/fa.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/umd/locale/fa.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/umd/locale/fi.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/umd/locale/fi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/umd/locale/fr.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/umd/locale/fr.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/umd/locale/id.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/umd/locale/id.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/umd/locale/it.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/umd/locale/it.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/umd/locale/ja.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/umd/locale/ja.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/umd/locale/ko.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/umd/locale/ko.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/umd/locale/lv.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/umd/locale/lv.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/umd/locale/nb-NO.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/umd/locale/nb-NO.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/umd/locale/nl.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/umd/locale/nl.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/umd/locale/pl.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/umd/locale/pl.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/umd/locale/pt-br.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/umd/locale/pt-br.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/umd/locale/pt.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/umd/locale/pt.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/umd/locale/ru-RU.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/umd/locale/ru-RU.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/umd/locale/sk.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/umd/locale/sk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/umd/locale/sl.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/umd/locale/sl.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/umd/locale/sv-SE.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/umd/locale/sv-SE.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/umd/locale/ta.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/umd/locale/ta.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/umd/locale/th.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/umd/locale/th.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/umd/locale/tk.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/umd/locale/tk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/umd/locale/tr-TR.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/umd/locale/tr-TR.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/umd/locale/ua.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/umd/locale/ua.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/umd/locale/vi.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/umd/locale/vi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/umd/locale/zh-CN.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/umd/locale/zh-CN.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/umd/locale/zh-TW.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/umd/locale/zh-TW.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/upload.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/upload.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/utils/dom.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/utils/dom.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/utils/resize-event.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/utils/resize-event.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/lib/utils/util.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/lib/utils/util.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/packages/autocomplete/src/autocomplete-suggestions.vue" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/packages/autocomplete/src/autocomplete-suggestions.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/packages/autocomplete/src/autocomplete.vue" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/packages/autocomplete/src/autocomplete.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/packages/badge/src/main.vue" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/packages/badge/src/main.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/packages/button/src/button.vue" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/packages/button/src/button.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/packages/carousel/src/item.vue" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/packages/carousel/src/item.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/packages/carousel/src/main.vue" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/packages/carousel/src/main.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/packages/checkbox/src/checkbox.vue" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/packages/checkbox/src/checkbox.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/packages/color-picker/src/color.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/packages/color-picker/src/color.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/packages/date-picker/src/basic/date-table.vue" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/packages/date-picker/src/basic/date-table.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/packages/date-picker/src/basic/month-table.vue" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/packages/date-picker/src/basic/month-table.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/packages/date-picker/src/basic/time-spinner.vue" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/packages/date-picker/src/basic/time-spinner.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/packages/date-picker/src/basic/year-table.vue" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/packages/date-picker/src/basic/year-table.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/packages/date-picker/src/panel/date-range.vue" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/packages/date-picker/src/panel/date-range.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/packages/date-picker/src/panel/date.vue" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/packages/date-picker/src/panel/date.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/packages/date-picker/src/picker.vue" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/packages/date-picker/src/picker.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/packages/dropdown/src/dropdown.vue" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/packages/dropdown/src/dropdown.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/packages/form/src/form-item.vue" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/packages/form/src/form-item.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/packages/form/src/form.vue" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/packages/form/src/form.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/packages/input-number/src/input-number.vue" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/packages/input-number/src/input-number.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/packages/input/src/input.vue" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/packages/input/src/input.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/packages/loading/src/directive.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/packages/loading/src/directive.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/packages/loading/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/packages/loading/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/packages/menu/src/menu.vue" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/packages/menu/src/menu.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/packages/message-box/src/main.vue" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/packages/message-box/src/main.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/packages/message/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/packages/message/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/packages/notification/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/packages/notification/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/packages/popover/src/main.vue" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/packages/popover/src/main.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/packages/progress/src/progress.vue" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/packages/progress/src/progress.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/packages/radio/src/radio-button.vue" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/packages/radio/src/radio-button.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/packages/radio/src/radio-group.vue" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/packages/radio/src/radio-group.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/packages/radio/src/radio.vue" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/packages/radio/src/radio.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/packages/row/src/row.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/packages/row/src/row.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/packages/select/src/option.vue" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/packages/select/src/option.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/packages/select/src/select.vue" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/packages/select/src/select.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/packages/switch/src/component.vue" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/packages/switch/src/component.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/packages/table/src/table-body.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/packages/table/src/table-body.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/packages/table/src/table-column.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/packages/table/src/table-column.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/packages/table/src/table-footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/packages/table/src/table-footer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/packages/table/src/table-header.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/packages/table/src/table-header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/packages/table/src/table-layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/packages/table/src/table-layout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/packages/table/src/table.vue" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/packages/table/src/table.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/packages/table/src/util.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/packages/table/src/util.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/packages/tabs/src/tab-bar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/packages/tabs/src/tab-bar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/packages/tabs/src/tab-nav.vue" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/packages/tabs/src/tab-nav.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/packages/tooltip/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/packages/tooltip/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/packages/tree/src/model/node.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/packages/tree/src/model/node.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/src/locale/lang/af-ZA.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/src/locale/lang/af-ZA.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/src/locale/lang/bg.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/src/locale/lang/bg.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/src/locale/lang/ca.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/src/locale/lang/ca.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/src/locale/lang/da.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/src/locale/lang/da.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/src/locale/lang/de.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/src/locale/lang/de.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/src/locale/lang/ee.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/src/locale/lang/ee.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/src/locale/lang/el.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/src/locale/lang/el.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/src/locale/lang/en.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/src/locale/lang/en.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/src/locale/lang/es.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/src/locale/lang/es.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/src/locale/lang/fa.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/src/locale/lang/fa.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/src/locale/lang/fi.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/src/locale/lang/fi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/src/locale/lang/fr.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/src/locale/lang/fr.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/src/locale/lang/id.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/src/locale/lang/id.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/src/locale/lang/it.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/src/locale/lang/it.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/src/locale/lang/ja.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/src/locale/lang/ja.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/src/locale/lang/ko.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/src/locale/lang/ko.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/src/locale/lang/lv.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/src/locale/lang/lv.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/src/locale/lang/nb-NO.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/src/locale/lang/nb-NO.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/src/locale/lang/nl.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/src/locale/lang/nl.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/src/locale/lang/pl.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/src/locale/lang/pl.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/src/locale/lang/pt-br.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/src/locale/lang/pt-br.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/src/locale/lang/pt.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/src/locale/lang/pt.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/src/locale/lang/ru-RU.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/src/locale/lang/ru-RU.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/src/locale/lang/sk.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/src/locale/lang/sk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/src/locale/lang/sl.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/src/locale/lang/sl.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/src/locale/lang/sv-SE.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/src/locale/lang/sv-SE.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/src/locale/lang/ta.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/src/locale/lang/ta.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/src/locale/lang/th.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/src/locale/lang/th.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/src/locale/lang/tk.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/src/locale/lang/tk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/src/locale/lang/tr-TR.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/src/locale/lang/tr-TR.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/src/locale/lang/ua.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/src/locale/lang/ua.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/src/locale/lang/vi.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/src/locale/lang/vi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/src/locale/lang/zh-CN.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/src/locale/lang/zh-CN.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/src/locale/lang/zh-TW.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/src/locale/lang/zh-TW.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/src/utils/dom.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/src/utils/dom.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/src/utils/resize-event.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/src/utils/resize-event.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/element-ui/src/utils/util.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/element-ui/src/utils/util.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/isarray/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/isarray/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/readable-stream/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/readable-stream/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/readable-stream/lib/_stream_readable.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/readable-stream/lib/_stream_readable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/readable-stream/lib/_stream_writable.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/readable-stream/lib/_stream_writable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/readable-stream/lib/internal/streams/BufferList.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/readable-stream/lib/internal/streams/BufferList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/readable-stream/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/readable-stream/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,30 +266,29 @@
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="1j264FNQbWoNeFT51e6Z7mVbFej" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="HbShouldOpenHtmlAsHb" value="enabled" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="js-jscs-nodeInterpreter" value="/usr/bin/node" />
-    <property name="js.eslint.eslintPackage" value="" />
-    <property name="js.meteor.library.cached" value="$PROJECT_DIR$/.meteor" />
-    <property name="js.meteor.library.was.enabled" value="true" />
-    <property name="js.meteor.project" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="nodejs_interpreter_path" value="/usr/bin/node" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
-    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
-    <property name="vue.rearranger.settings.migration" value="true" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "/home/snr/Desktop/Project/cveamls_ui",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "ts.external.directory.path": "/home/snr/App/WebStorm-232.10203.14/plugins/javascript-impl/jsLanguageServicesImpl/external",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/imports/ui" />
@@ -477,6 +714,11 @@
       <workItem from="1694358810075" duration="8000" />
       <workItem from="1694395308353" duration="100000" />
       <workItem from="1694437868922" duration="832000" />
+      <workItem from="1704206365808" duration="1110000" />
+      <workItem from="1704245679531" duration="1027000" />
+      <workItem from="1708181252330" duration="1229000" />
+      <workItem from="1711725639087" duration="836000" />
+      <workItem from="1711940543165" duration="72000" />
     </task>
     <servers />
   </component>
@@ -508,7 +750,6 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/.deploy/mup.js</url>
           <line>12</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>

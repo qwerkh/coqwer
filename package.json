@@ -18,7 +18,7 @@
     "lodash": "^4.17.15",
     "mathjs": "^5.10.3",
     "meteor-node-stubs": "^0.2.11",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "node-excel-export": "^1.4.4",
     "numeral": "^2.0.6",
     "print-this": "^1.15.1",
